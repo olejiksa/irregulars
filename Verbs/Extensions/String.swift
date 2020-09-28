@@ -1,5 +1,5 @@
 //
-//  String+Contains.swift
+//  String.swift
 //  Verbs
 //
 //  Created by Oleg Samoylov on 26.09.2020.
@@ -8,7 +8,7 @@
 
 extension String {
     
-    func containsIgnoringCase<T>(_ other: T) -> Bool where T : StringProtocol {
+    func containsIgnoringCase<T>(_ other: T) -> Bool where T: StringProtocol {
         lowercased().contains(other.lowercased())
     }
 }

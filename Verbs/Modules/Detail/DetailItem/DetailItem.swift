@@ -21,3 +21,10 @@ struct DetailItem {
         self.actionBlock = actionBlock
     }
 }
+
+// MARK: - ItemProtocol
+
+extension DetailItem: ItemProtocol {
+    
+    var identifier: String { DetailCell.identifier }
+}

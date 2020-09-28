@@ -18,3 +18,17 @@ final class SubtitleCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+// MARK: - CellProtocol
+
+extension SubtitleCell: CellProtocol {
+    
+    static var identifier: String { "\(SubtitleCell.self)" }
+    
+    func setup(with item: ItemProtocol) {
+        guard let item = item as? SubtitleItem else { return }
+        
+        textLabel?.text = item.title
+        detailTextLabel?.text = item.subtitle
+    }
+}

@@ -11,11 +11,11 @@ import AVFoundation
 final class AudioService {
     
     private let synth = AVSpeechSynthesizer()
-    private var myUtterance = AVSpeechUtterance(string: "")
+    private var utterance = AVSpeechUtterance(string: "")
     
     func play(text: String) {
-        myUtterance = AVSpeechUtterance(string: text)
-        myUtterance.rate = 0.3
-        synth.speak(myUtterance)
+        utterance = AVSpeechUtterance(string: text)
+        utterance.rate = 0.3
+        synth.speak(utterance)
     }
 }

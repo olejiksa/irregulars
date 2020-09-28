@@ -10,7 +10,6 @@ import UIKit
 
 final class ListViewController: UIViewController {
 
-    private let cellID = "\(SubtitleCell.self)"
     private let searchController = UISearchController(searchResultsController: nil)
     private var keyboardService: KeyboardService?
     private let verbsService = VerbsService()
@@ -42,7 +41,7 @@ private extension ListViewController {
     }
     
     func setupTableView() {
-        tableView.register(SubtitleCell.self, forCellReuseIdentifier: cellID)
+        tableView.register(SubtitleCell.self, forCellReuseIdentifier: SubtitleCell.identifier)
     }
     
     func setupSearchController() {
@@ -71,19 +70,11 @@ extension ListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellID,
-                                                     for: indexPath) as? SubtitleCell
-        else {
-            return .init(frame: .zero)
-        }
-        
-        let item = !searchController.isActive
+        let verb = !searchController.isActive
             ? verbsService.groupedItems[indexPath.section][indexPath.row]
             : verbsService.searchedItems[indexPath.row]
-        cell.textLabel?.text = item.infinitive
-        cell.detailTextLabel?.text = item.description
-        return cell
+        let item = SubtitleItem(title: verb.infinitive, subtitle: verb.description)
+        return tableView.dequeueReusableCell(for: item, at: indexPath)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

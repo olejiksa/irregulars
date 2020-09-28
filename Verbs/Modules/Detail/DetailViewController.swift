@@ -12,27 +12,15 @@ import AVFoundation
 final class DetailViewController: UIViewController {
 
     private let audioService = AudioService()
-    private let cellID = "\(DetailCell.self)"
     private let verb: Verb
-    private var items: [DetailItem] = []
+    private var items: [ItemProtocol] = []
     
     @IBOutlet private weak var tableView: UITableView!
     
     init(verb: Verb) {
         self.verb = verb
         super.init(nibName: nil, bundle: nil)
-        self.items = [DetailItem(caption: "Базовая форма",
-                                 title: verb.infinitive,
-                                 actionBlock: self.playButtonDidTap),
-                      DetailItem(caption: "Форма прошедшего времени (2-я)",
-                                 title: verb.pastSimple,
-                                 actionBlock: self.playButtonDidTap),
-                      DetailItem(caption: "Форма причастия прошедшего времени (3-я)",
-                                 title: verb.pastParticiple,
-                                 actionBlock: self.playButtonDidTap),
-                      DetailItem(caption: "Перевод",
-                                 title: verb.infinitive,
-                                 actionBlock: self.playButtonDidTap)].compactMap { $0 }
+        setItems()
     }
     
     required init?(coder: NSCoder) {
@@ -57,11 +45,23 @@ private extension DetailViewController {
     }
     
     func setupTableView() {
-        let nib = UINib(nibName: cellID, bundle: .main)
-        tableView.register(nib, forCellReuseIdentifier: cellID)
+        tableView.register(DetailCell.self, TranslationCell.self)
     }
     
-    func playButtonDidTap(text: String) {
+    func setItems() {
+        items = [DetailItem(caption: "Infinitive",
+                            title: verb.infinitive,
+                            actionBlock: play),
+                 DetailItem(caption: "Past Simple",
+                            title: verb.pastSimple,
+                            actionBlock: play),
+                 DetailItem(caption: "Past Participle",
+                            title: verb.pastParticiple,
+                            actionBlock: play)].compactMap { $0 }
+        items.append(TranslationItem(caption: "Перевод", text: verb.translation))
+    }
+    
+    func play(text: String) {
         audioService.play(text: text)
     }
 }
@@ -75,15 +75,8 @@ extension DetailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellID,
-                                                     for: indexPath) as? DetailCell
-        else {
-            return .init(frame: .zero)
-        }
-        
-        cell.setup(item: items[indexPath.row])
-        return cell
+        let item = items[indexPath.row]
+        return tableView.dequeueReusableCell(for: item, at: indexPath)
     }
 }
 

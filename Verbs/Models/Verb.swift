@@ -12,11 +12,13 @@ struct Verb: Decodable {
         case infinitive = "Base"
         case pastSimple = "Past-simple"
         case pastParticiple = "Past-Participle"
+        case translation = "Translation"
     }
     
     let infinitive: String
     let pastSimple: String
     let pastParticiple: String?
+    let translation: String
 }
 
 // MARK: - Comparable
