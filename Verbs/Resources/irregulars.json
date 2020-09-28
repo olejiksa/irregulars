@@ -33,443 +33,635 @@
         "Base": "beat",
         "Past-simple": "beat",
         "Past-Participle": "beaten",
-        "Translation": ""
+        "Translation": "бить"
     },
     {
         "Base": "become",
         "Past-simple": "became",
         "Past-Participle": "become",
-        "Translation": ""
+        "Translation": "становиться, делаться"
     },
     {
         "Base": "begin",
         "Past-simple": "began",
         "Past-Participle": "begun",
-        "Translation": ""
+        "Translation": "начинать"
     },
     {
         "Base": "bend",
         "Past-simple": "bent",
         "Past-Participle": "bent",
-        "Translation": ""
+        "Translation": "сгибать, гнуть"
     },
     {
         "Base": "bet",
         "Past-simple": "bet",
         "Past-Participle": "bet",
-        "Translation": ""
+        "Translation": "держать пари"
     },
     {
         "Base": "bind",
         "Past-simple": "bound",
         "Past-Participle": "bound",
-        "Translation": ""
+        "Translation": "связать"
     },
     {
         "Base": "bite",
         "Past-simple": "bit",
         "Past-Participle": "bitten",
-        "Translation": ""
+        "Translation": "кусать"
     },
     {
         "Base": "bleed",
         "Past-simple": "bled",
         "Past-Participle": "bled",
-        "Translation": ""
+        "Translation": "кровоточить"
     },
     {
         "Base": "blow",
         "Past-simple": "blew",
         "Past-Participle": "blown",
-        "Translation": ""
+        "Translation": "думать"
     },
     {
         "Base": "break",
         "Past-simple": "broke",
         "Past-Participle": "broken",
-        "Translation": ""
+        "Translation": "ломать"
     },
     {
         "Base": "breed",
         "Past-simple": "bred",
         "Past-Participle": "bred",
-        "Translation": ""
+        "Translation": "выращивать"
     },
     {
         "Base": "bring",
         "Past-simple": "brought",
         "Past-Participle": "brought",
-        "Translation": ""
+        "Translation": "приносить"
     },
     {
         "Base": "broadcast",
         "Past-simple": "broadcast",
         "Past-Participle": "broadcast",
-        "Translation": ""
+        "Translation": "распространять, разбрасывать"
+    },
+    {
+        "Base": "browbeat",
+        "Past-simple": "browbeat",
+        "Past-Participle": "browbeat",
+        "Translation": "запугивать"
     },
     {
         "Base": "build",
         "Past-simple": "built",
         "Past-Participle": "built",
-        "Translation": ""
+        "Translation": "строить"
     },
     {
         "Base": "burn",
         "Past-simple": "burnt/burned",
         "Past-Participle": "burnt/burned",
-        "Translation": ""
+        "Translation": "гореть, жечь"
     },
     {
         "Base": "burst",
         "Past-simple": "burst",
         "Past-Participle": "burst",
-        "Translation": ""
+        "Translation": "взрываться, прорываться"
+    },
+    {
+        "Base": "bust",
+        "Past-simple": "bust",
+        "Past-Participle": "bust",
+        "Translation": "разжаловать"
     },
     {
         "Base": "buy",
         "Past-simple": "bought",
         "Past-Participle": "bought",
-        "Translation": ""
+        "Translation": "покупать"
     },
     {
         "Base": "can",
         "Past-simple": "could",
         "Past-Participle": "been able",
-        "Translation": ""
+        "Translation": "мочь, уметь"
+    },
+    {
+        "Base": "cast",
+        "Past-simple": "cast",
+        "Past-Participle": "cast",
+        "Translation": "бросить, кинуть, вышвырнуть"
     },
     {
         "Base": "catch",
         "Past-simple": "caught",
         "Past-Participle": "caught",
-        "Translation": ""
+        "Translation": "ловить, хватать, успеть"
     },
     {
         "Base": "choose",
         "Past-simple": "chose",
         "Past-Participle": "chosen",
-        "Translation": ""
+        "Translation": "выбирать"
     },
     {
         "Base": "cling",
         "Past-simple": "clung",
         "Past-Participle": "clung",
-        "Translation": ""
+        "Translation": "цепляться, льнуть"
+    },
+    {
+        "Base": "clothe",
+        "Past-simple": "clad",
+        "Past-Participle": "clad",
+        "Translation": "одевать (кого-либо)"
     },
     {
         "Base": "come",
         "Past-simple": "came",
         "Past-Participle": "come",
-        "Translation": ""
+        "Translation": "приходить"
     },
     {
         "Base": "cost",
         "Past-simple": "cost",
         "Past-Participle": "cost",
-        "Translation": ""
+        "Translation": "стоить, обходиться (в какую-либо сумму)"
     },
     {
         "Base": "creep",
         "Past-simple": "crept",
         "Past-Participle": "crept",
-        "Translation": ""
+        "Translation": "ползать"
     },
     {
         "Base": "cut",
         "Past-simple": "cut",
         "Past-Participle": "cut",
-        "Translation": ""
+        "Translation": "резать, разрезать"
     },
     {
         "Base": "deal",
         "Past-simple": "dealt",
         "Past-Participle": "dealt",
-        "Translation": ""
+        "Translation": "иметь дело"
     },
     {
         "Base": "dig",
         "Past-simple": "dug",
         "Past-Participle": "dug",
-        "Translation": ""
+        "Translation": "копать"
+    },
+    {
+        "Base": "dive",
+        "Past-simple": "dove",
+        "Past-Participle": "dived",
+        "Translation": "нырять, погружаться"
     },
     {
         "Base": "do",
         "Past-simple": "did",
         "Past-Participle": "done",
-        "Translation": ""
+        "Translation": "делать, выполнять"
     },
     {
         "Base": "draw",
         "Past-simple": "drew",
         "Past-Participle": "drawn",
-        "Translation": ""
+        "Translation": "рисовать, чертить"
     },
     {
         "Base": "dream",
         "Past-simple": "dreamt/dreamed",
         "Past-Participle": "dreamt/dreamed",
-        "Translation": ""
+        "Translation": "грезить, мечтать"
     },
     {
         "Base": "drink",
         "Past-simple": "drank",
         "Past-Participle": "drunk",
-        "Translation": ""
+        "Translation": "пить"
     },
     {
         "Base": "drive",
         "Past-simple": "drove",
         "Past-Participle": "driven",
-        "Translation": ""
+        "Translation": "управлять (авто)"
+    },
+    {
+        "Base": "dwell",
+        "Past-simple": "dwelt/dwelled",
+        "Past-Participle": "dwelt/dwelled",
+        "Translation": "обитать, находиться"
     },
     {
         "Base": "eat",
         "Past-simple": "ate",
         "Past-Participle": "eaten",
-        "Translation": ""
+        "Translation": "есть, кушать"
     },
     {
         "Base": "fall",
         "Past-simple": "fell",
         "Past-Participle": "fallen",
-        "Translation": ""
+        "Translation": "падать"
     },
     {
         "Base": "feed",
         "Past-simple": "fed",
         "Past-Participle": "fed",
-        "Translation": ""
+        "Translation": "кормить"
     },
     {
         "Base": "feel",
         "Past-simple": "felt",
         "Past-Participle": "felt",
-        "Translation": ""
+        "Translation": "чувствовать"
     },
     {
         "Base": "fight",
         "Past-simple": "fought",
         "Past-Participle": "fought",
-        "Translation": ""
+        "Translation": "драться, сражаться, бороться"
     },
     {
         "Base": "find",
         "Past-simple": "found",
         "Past-Participle": "found",
-        "Translation": ""
+        "Translation": "находить"
+    },
+    {
+        "Base": "fit",
+        "Past-simple": "fit",
+        "Past-Participle": "fit",
+        "Translation": "подходить по размеру"
+    },
+    {
+        "Base": "flee",
+        "Past-simple": "fled",
+        "Past-Participle": "fled",
+        "Translation": "убегать, спасаться"
+    },
+    {
+        "Base": "fling",
+        "Past-simple": "flung",
+        "Past-Participle": "flung",
+        "Translation": "бросаться, ринуться"
     },
     {
         "Base": "fly",
         "Past-simple": "flew",
         "Past-Participle": "flown",
-        "Translation": ""
+        "Translation": "летать"
     },
     {
         "Base": "forbid",
         "Past-simple": "forbade",
         "Past-Participle": "forbidden",
-        "Translation": ""
+        "Translation": "запрещать"
+    },
+    {
+        "Base": "forecast",
+        "Past-simple": "forecast",
+        "Past-Participle": "forecast",
+        "Translation": "предсказывать, предвосхищать"
+    },
+    {
+        "Base": "forsee",
+        "Past-simple": "forsaw",
+        "Past-Participle": "forseen",
+        "Translation": "предвидеть"
+    },
+    {
+        "Base": "foretell",
+        "Past-simple": "foretold",
+        "Past-Participle": "foretold",
+        "Translation": "предсказывать, прогнозировать"
     },
     {
         "Base": "forget",
         "Past-simple": "forgot",
         "Past-Participle": "forgotten",
-        "Translation": ""
+        "Translation": "забывать"
     },
     {
         "Base": "forgive",
         "Past-simple": "forgave",
         "Past-Participle": "forgiven",
-        "Translation": ""
+        "Translation": "прощать"
+    },
+    {
+        "Base": "forsake",
+        "Past-simple": "forsook",
+        "Past-Participle": "forsaken",
+        "Translation": "покидать"
     },
     {
         "Base": "freeze",
         "Past-simple": "froze",
         "Past-Participle": "frozen",
-        "Translation": ""
+        "Translation": "замерзать"
     },
     {
         "Base": "get",
         "Past-simple": "got",
         "Past-Participle": "got",
-        "Translation": ""
+        "Translation": "получать, достигать"
     },
     {
         "Base": "give",
         "Past-simple": "gave",
         "Past-Participle": "given",
-        "Translation": ""
+        "Translation": "давать"
     },
     {
         "Base": "go",
         "Past-simple": "went",
         "Past-Participle": "gone",
-        "Translation": ""
+        "Translation": "идти, ехать"
     },
     {
         "Base": "grind",
         "Past-simple": "ground",
         "Past-Participle": "ground",
-        "Translation": ""
+        "Translation": "молоть, толочь"
     },
     {
         "Base": "grow",
         "Past-simple": "grew",
         "Past-Participle": "grown",
-        "Translation": ""
+        "Translation": "расти"
     },
     {
         "Base": "hang",
         "Past-simple": "hung",
         "Past-Participle": "hung",
-        "Translation": ""
+        "Translation": "вешать, развешивать"
     },
     {
         "Base": "have",
         "Past-simple": "had",
         "Past-Participle": "had",
-        "Translation": ""
+        "Translation": "иметь"
     },
     {
         "Base": "hear",
         "Past-simple": "heard",
         "Past-Participle": "heard",
-        "Translation": ""
+        "Translation": "слышать"
+    },
+    {
+        "Base": "hew",
+        "Past-simple": "hewed",
+        "Past-Participle": "hewn/hewed",
+        "Translation": "рубить"
     },
     {
         "Base": "hide",
         "Past-simple": "hid",
         "Past-Participle": "hidden",
-        "Translation": ""
+        "Translation": "прятаться, скрываться"
     },
     {
         "Base": "hit",
         "Past-simple": "hit",
         "Past-Participle": "hit",
-        "Translation": ""
+        "Translation": "ударять, поражать"
     },
     {
         "Base": "hold",
         "Past-simple": "held",
         "Past-Participle": "held",
-        "Translation": ""
+        "Translation": "держать, удерживать, фиксировать"
     },
     {
         "Base": "hurt",
         "Past-simple": "hurt",
         "Past-Participle": "hurt",
-        "Translation": ""
+        "Translation": "ранить, причинить боль"
+    },
+    {
+        "Base": "inlay",
+        "Past-simple": "inlaid",
+        "Past-Participle": "inlaid",
+        "Translation": "вкладывать, вставлять, выстилать"
+    },
+    {
+        "Base": "input",
+        "Past-simple": "input/inputted",
+        "Past-Participle": "input/inputted",
+        "Translation": "входить"
+    },
+    {
+        "Base": "interweave",
+        "Past-simple": "interwove",
+        "Past-Participle": "interwoven",
+        "Translation": "воткать"
     },
     {
         "Base": "keep",
         "Past-simple": "kept",
         "Past-Participle": "kept",
-        "Translation": ""
+        "Translation": "держать, хранить"
     },
     {
         "Base": "kneel",
-        "Past-simple": "knelt",
-        "Past-Participle": "knelt",
-        "Translation": ""
+        "Past-simple": "knelt/kneeled",
+        "Past-Participle": "knelt/kneeled",
+        "Translation": "становиться на колени"
+    },
+    {
+        "Base": "knit",
+        "Past-simple": "knit/knitted",
+        "Past-Participle": "knit/knitted",
+        "Translation": "вязать"
     },
     {
         "Base": "know",
         "Past-simple": "knew",
         "Past-Participle": "known",
-        "Translation": ""
+        "Translation": "знать, иметь представление (о чем-либо)"
     },
     {
         "Base": "lay",
         "Past-simple": "laid",
         "Past-Participle": "laid",
-        "Translation": ""
+        "Translation": "класть, положить"
     },
     {
         "Base": "lead",
         "Past-simple": "led",
         "Past-Participle": "led",
-        "Translation": ""
+        "Translation": "вести, руководить, управлять"
     },
     {
         "Base": "lean",
         "Past-simple": "leant/leaned",
         "Past-Participle": "leant/leaned",
-        "Translation": ""
+        "Translation": "опираться, прислоняться"
+    },
+    {
+        "Base": "leap",
+        "Past-simple": "leapt/leaped",
+        "Past-Participle": "leapt/leaped",
+        "Translation": "прыгать, скакать"
     },
     {
         "Base": "learn",
         "Past-simple": "learnt/learned",
         "Past-Participle": "learnt/learned",
-        "Translation": ""
+        "Translation": "учить"
     },
     {
         "Base": "leave",
         "Past-simple": "left",
         "Past-Participle": "left",
-        "Translation": ""
+        "Translation": "покидать, оставлять"
     },
     {
         "Base": "lent",
         "Past-simple": "lent",
         "Past-Participle": "lent",
-        "Translation": ""
+        "Translation": "одалживать, давать взаймы"
     },
     {
         "Base": "lie (in bed)",
         "Past-simple": "lay",
         "Past-Participle": "lain",
-        "Translation": ""
+        "Translation": "лежать"
     },
     {
         "Base": "lie (to not tell the truth)",
         "Past-simple": "lied",
         "Past-Participle": "lied",
-        "Translation": ""
+        "Translation": "лгать"
     },
     {
         "Base": "light",
         "Past-simple": "lit/lighted",
         "Past-Participle": "lit/lighted",
-        "Translation": ""
+        "Translation": "освещать"
     },
     {
         "Base": "lose",
         "Past-simple": "lost",
         "Past-Participle": "lost",
-        "Translation": ""
+        "Translation": "терять"
     },
     {
         "Base": "make",
         "Past-simple": "made",
         "Past-Participle": "made",
-        "Translation": ""
+        "Translation": "делать, производить, создавать"
     },
     {
         "Base": "may",
         "Past-simple": "might",
-        "Translation": ""
+        "Translation": "мочь, иметь возможность"
     },
     {
         "Base": "mean",
         "Past-simple": "meant",
         "Past-Participle": "meant",
-        "Translation": ""
+        "Translation": "значить, иметь ввиду"
     },
     {
         "Base": "meet",
         "Past-simple": "met",
         "Past-Participle": "met",
-        "Translation": ""
+        "Translation": "встречать"
+    },
+    {
+        "Base": "miscast",
+        "Past-simple": "miscast",
+        "Past-Participle": "miscast",
+        "Translation": "неправильно распределять роли"
+    },
+    {
+        "Base": "misdeal",
+        "Past-simple": "misdealt",
+        "Past-Participle": "misdealt",
+        "Translation": "поступать неправильно"
+    },
+    {
+        "Base": "misdo",
+        "Past-simple": "misdid",
+        "Past-Participle": "misdone",
+        "Translation": "делать что-либо неправильно или небрежно"
+    },
+    {
+        "Base": "misgive",
+        "Past-simple": "misgave",
+        "Past-Participle": "misgiven",
+        "Translation": "внушать недоверия, опасения"
+    },
+    {
+        "Base": "mishear",
+        "Past-simple": "misheard",
+        "Past-Participle": "misheard",
+        "Translation": "ослышаться"
+    },
+    {
+        "Base": "mishit",
+        "Past-simple": "mishit",
+        "Past-Participle": "mishit",
+        "Translation": "промахнуться"
+    },
+    {
+        "Base": "mislay",
+        "Past-simple": "misled",
+        "Past-Participle": "misled",
+        "Translation": "класть не на место"
+    },
+    {
+        "Base": "mislead",
+        "Past-simple": "misled",
+        "Past-Participle": "misled",
+        "Translation": "ввести в заблуждение"
+    },
+    {
+        "Base": "misread",
+        "Past-simple": "misread",
+        "Past-Participle": "misread",
+        "Translation": "неправильно истолковывать"
+    },
+    {
+        "Base": "misspell",
+        "Past-simple": "misspelt",
+        "Past-Participle": "misspelt",
+        "Translation": "писать с ошибками"
+    },
+    {
+        "Base": "misspend",
+        "Past-simple": "misspent",
+        "Past-Participle": "misspent",
+        "Translation": "неразумно, зря тратить"
+    },
+    {
+        "Base": "mistake",
+        "Past-simple": "mistook",
+        "Past-Participle": "mistaken",
+        "Translation": "ошибаться"
+    },
+    {
+        "Base": "misunderstand",
+        "Past-simple": "misunderstood",
+        "Past-Participle": "misunderstood",
+        "Translation": "неправильно понимать"
     },
     {
         "Base": "mow",
         "Past-simple": "mowed",
         "Past-Participle": "mown/mowed",
-        "Translation": ""
+        "Translation": "косить"
     },
     {
         "Base": "must",
         "Past-simple": "had to",
-        "Translation": ""
+        "Translation": "должен (сделать что-то)"
     },
     {
         "Base": "overtake",

@@ -16,7 +16,8 @@ final class VerbsService {
         return items.filter {
             $0.infinitive.containsIgnoringCase(searchText) ||
             $0.pastSimple.containsIgnoringCase(searchText) ||
-            $0.pastParticiple?.containsIgnoringCase(searchText) ?? false
+            $0.pastParticiple?.containsIgnoringCase(searchText) ?? false ||
+            $0.translation.containsIgnoringCase(searchText)
         }
     }
     
