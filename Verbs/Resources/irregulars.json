@@ -667,364 +667,376 @@
         "Base": "overtake",
         "Past-simple": "overtook",
         "Past-Participle": "overtaken",
-        "Translation": ""
+        "Translation": "догонять"
     },
     {
         "Base": "pay",
         "Past-simple": "paid",
         "Past-Participle": "paid",
-        "Translation": ""
+        "Translation": "платить"
     },
     {
         "Base": "put",
         "Past-simple": "put",
         "Past-Participle": "put",
-        "Translation": ""
+        "Translation": "класть, ставить, размещать"
     },
     {
         "Base": "read",
         "Past-simple": "read",
         "Past-Participle": "read",
-        "Translation": ""
+        "Translation": "читать"
     },
     {
         "Base": "ride",
         "Past-simple": "rode",
         "Past-Participle": "ridden",
-        "Translation": ""
+        "Translation": "ездить верхом"
     },
     {
         "Base": "ring",
         "Past-simple": "rang",
         "Past-Participle": "rung",
-        "Translation": ""
+        "Translation": "звонить"
     },
     {
         "Base": "rise",
         "Past-simple": "rose",
         "Past-Participle": "risen",
-        "Translation": ""
+        "Translation": "подняться"
     },
     {
         "Base": "run",
         "Past-simple": "ran",
         "Past-Participle": "run",
-        "Translation": ""
+        "Translation": "бегать"
     },
     {
         "Base": "saw",
         "Past-simple": "sawed",
         "Past-Participle": "sawn/sawed",
-        "Translation": ""
+        "Translation": "пилить"
     },
     {
         "Base": "say",
         "Past-simple": "said",
         "Past-Participle": "said",
-        "Translation": ""
+        "Translation": "сказать, заявить"
     },
     {
         "Base": "see",
         "Past-simple": "saw",
         "Past-Participle": "seen",
-        "Translation": ""
+        "Translation": "видеть"
     },
     {
         "Base": "sell",
         "Past-simple": "sold",
         "Past-Participle": "sold",
-        "Translation": ""
+        "Translation": "продавать"
     },
     {
         "Base": "send",
         "Past-simple": "sent",
         "Past-Participle": "sent",
-        "Translation": ""
+        "Translation": "посылать"
     },
     {
         "Base": "set",
         "Past-simple": "set",
         "Past-Participle": "set",
-        "Translation": ""
+        "Translation": "ставить, устанавливать"
     },
     {
         "Base": "sew",
         "Past-simple": "sewed",
         "Past-Participle": "sewn/sewed",
-        "Translation": ""
+        "Translation": "шить"
     },
     {
         "Base": "shake",
         "Past-simple": "shook",
         "Past-Participle": "shaken",
-        "Translation": ""
+        "Translation": "трясти"
     },
     {
         "Base": "shall",
         "Past-simple": "should",
-        "Translation": ""
+        "Translation": "делать что-то (в будущем)"
     },
     {
         "Base": "shed",
         "Past-simple": "shed",
         "Past-Participle": "shed",
-        "Translation": ""
+        "Translation": "проливать"
     },
     {
         "Base": "shine",
         "Past-simple": "shone",
         "Past-Participle": "shone",
-        "Translation": ""
+        "Translation": "светить, сиять, озарять"
     },
     {
         "Base": "shoot",
         "Past-simple": "shot",
         "Past-Participle": "shot",
-        "Translation": ""
+        "Translation": "стрелять, давать побеги"
     },
     {
         "Base": "show",
         "Past-simple": "showed",
         "Past-Participle": "shown",
-        "Translation": ""
+        "Translation": "показывать"
     },
     {
         "Base": "shrink",
         "Past-simple": "shrank",
         "Past-Participle": "shrunk",
-        "Translation": ""
+        "Translation": "сокращаться, сжиматься"
     },
     {
         "Base": "shut",
         "Past-simple": "shut",
         "Past-Participle": "shut",
-        "Translation": ""
+        "Translation": "закрывать, запирать, затворять"
     },
     {
         "Base": "sing",
         "Past-simple": "sang",
         "Past-Participle": "sung",
-        "Translation": ""
+        "Translation": "петь"
     },
     {
         "Base": "sink",
         "Past-simple": "sank",
         "Past-Participle": "sunk",
-        "Translation": ""
+        "Translation": "тонуть, погружаться (под воду)"
     },
     {
         "Base": "sit",
         "Past-simple": "sat",
         "Past-Participle": "sat",
-        "Translation": ""
+        "Translation": "сидеть"
     },
     {
         "Base": "sleep",
         "Past-simple": "slept",
         "Past-Participle": "slept",
-        "Translation": ""
+        "Translation": "спать"
     },
     {
         "Base": "slide",
         "Past-simple": "slid",
         "Past-Participle": "slid",
-        "Translation": ""
+        "Translation": "скользить"
     },
     {
         "Base": "smell",
         "Past-simple": "smelt",
         "Past-Participle": "smelt",
-        "Translation": ""
+        "Translation": "пахнуть, нюхать"
     },
     {
         "Base": "sow",
         "Past-simple": "sowed",
         "Past-Participle": "sown/sowed",
-        "Translation": ""
+        "Translation": "сеять"
     },
     {
         "Base": "speak",
         "Past-simple": "spoke",
         "Past-Participle": "spoken",
-        "Translation": ""
+        "Translation": "говорить"
     },
     {
         "Base": "spell",
         "Past-simple": "spelt/spelled",
         "Past-Participle": "spelt/spelled",
-        "Translation": ""
+        "Translation": "писать или читать по буквам"
     },
     {
         "Base": "spend",
         "Past-simple": "spent",
         "Past-Participle": "spent",
-        "Translation": ""
+        "Translation": "тратить, расходовать"
     },
     {
         "Base": "spill",
         "Past-simple": "spilt/spilled",
         "Past-Participle": "spilt/spilled",
-        "Translation": ""
+        "Translation": "проливать, разливать"
     },
     {
         "Base": "spit",
         "Past-simple": "spat",
         "Past-Participle": "spat",
-        "Translation": ""
+        "Translation": "плевать"
     },
     {
         "Base": "spread",
         "Past-simple": "spread",
         "Past-Participle": "spread",
-        "Translation": ""
+        "Translation": "распространиться"
     },
     {
         "Base": "stand",
         "Past-simple": "stood",
         "Past-Participle": "stood",
-        "Translation": ""
+        "Translation": "стоять"
     },
     {
         "Base": "steal",
         "Past-simple": "stole",
         "Past-Participle": "stolen",
-        "Translation": ""
+        "Translation": "воровать, красть"
     },
     {
         "Base": "stick",
         "Past-simple": "stuck",
         "Past-Participle": "stuck",
-        "Translation": ""
+        "Translation": "уколоть, приклеить"
     },
     {
         "Base": "sting",
         "Past-simple": "stung",
         "Past-Participle": "stung",
-        "Translation": ""
+        "Translation": "жалить"
     },
     {
         "Base": "stink",
         "Past-simple": "stank",
         "Past-Participle": "stunk",
-        "Translation": ""
+        "Translation": "вонять"
     },
     {
         "Base": "strike",
         "Past-simple": "struck",
         "Past-Participle": "struck",
-        "Translation": ""
+        "Translation": "ударить, бить, бастовать"
     },
     {
         "Base": "swear",
         "Past-simple": "swore",
         "Past-Participle": "sworn",
-        "Translation": ""
+        "Translation": "клясться, присягать"
     },
     {
         "Base": "sweep",
         "Past-simple": "swept",
         "Past-Participle": "swept",
-        "Translation": ""
+        "Translation": "мести, подметать, сметать"
     },
     {
         "Base": "swell",
         "Past-simple": "swelled",
         "Past-Participle": "swollen/swelled",
-        "Translation": ""
+        "Translation": "разбухать"
     },
     {
         "Base": "swim",
         "Past-simple": "swam",
         "Past-Participle": "swum",
-        "Translation": ""
+        "Translation": "плавать, плыть"
     },
     {
         "Base": "swing",
         "Past-simple": "swung",
         "Past-Participle": "swung",
-        "Translation": ""
+        "Translation": "качать, раскачивать, вертеть"
     },
     {
         "Base": "take",
         "Past-simple": "took",
         "Past-Participle": "taken",
-        "Translation": ""
+        "Translation": "брать, взять"
     },
     {
         "Base": "teach",
         "Past-simple": "taught",
         "Past-Participle": "taught",
-        "Translation": ""
+        "Translation": "учить"
     },
     {
         "Base": "tear",
         "Past-simple": "tore",
         "Past-Participle": "torn",
-        "Translation": ""
+        "Translation": "рвать"
     },
     {
         "Base": "tell",
         "Past-simple": "told",
         "Past-Participle": "told",
-        "Translation": ""
+        "Translation": "рассказать"
     },
     {
         "Base": "think",
         "Past-simple": "thought",
         "Past-Participle": "thought",
-        "Translation": ""
+        "Translation": "думать"
     },
     {
         "Base": "throw",
         "Past-simple": "threw",
         "Past-Participle": "thrown",
-        "Translation": ""
+        "Translation": "бросить"
     },
     {
         "Base": "understand",
         "Past-simple": "understood",
         "Past-Participle": "understood",
-        "Translation": ""
+        "Translation": "понимать, постигать"
     },
     {
         "Base": "wake",
-        "Past-simple": "woke",
-        "Past-Participle": "woken",
-        "Translation": ""
+        "Past-simple": "woke/waked",
+        "Past-Participle": "woken/waked",
+        "Translation": "просыпаться"
+    },
+    {
+        "Base": "waylay",
+        "Past-simple": "waylaid",
+        "Past-Participle": "waylaid",
+        "Translation": "подстерегать"
     },
     {
         "Base": "wear",
         "Past-simple": "wore",
         "Past-Participle": "worn",
-        "Translation": ""
+        "Translation": "носить (одежду)"
     },
     {
         "Base": "weep",
         "Past-simple": "wept",
         "Past-Participle": "wept",
-        "Translation": ""
+        "Translation": "плакать, рыдать"
     },
     {
         "Base": "will",
         "Past-simple": "would",
-        "Translation": ""
+        "Translation": "делать что-то (в будущем)"
     },
     {
         "Base": "win",
         "Past-simple": "won",
         "Past-Participle": "won",
-        "Translation": ""
+        "Translation": "победить, выиграть"
     },
     {
-        "Base": "wind",
-        "Past-simple": "wound",
-        "Past-Participle": "wound",
-        "Translation": ""
+        "Base": "withstand",
+        "Past-simple": "withstood",
+        "Past-Participle": "withstood",
+        "Translation": "противостоять"
+    },
+    {
+        "Base": "wring",
+        "Past-simple": "wrung",
+        "Past-Participle": "wrung",
+        "Translation": "скрутить, сжимать"
     },
     {
         "Base": "write",
         "Past-simple": "wrote",
         "Past-Participle": "written",
-        "Translation": ""
+        "Translation": "писать"
     }
 ]

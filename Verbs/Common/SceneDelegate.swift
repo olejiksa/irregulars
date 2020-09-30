@@ -19,11 +19,25 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let vc = ListViewController()
-        let nvc = UINavigationController(rootViewController: vc)
-        
-        window?.rootViewController = nvc
+        window?.rootViewController = splitViewController
         window?.makeKeyAndVisible()
         window?.windowScene = windowScene
+    }
+}
+
+// MARK: - Private
+
+private extension SceneDelegate {
+    
+    var splitViewController: UISplitViewController {
+        let masterVc = ListViewController()
+        let masterNvc = UINavigationController(rootViewController: masterVc)
+        
+        let detailVc = EmptyViewController()
+        let detailNvc = UINavigationController(rootViewController: detailVc)
+        
+        let svc = SplitViewController()
+        svc.viewControllers = [masterNvc, detailNvc]
+        return svc
     }
 }
