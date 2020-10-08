@@ -52,6 +52,10 @@
 		EBEB1D92251F15B40019972C /* VerbsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB1D91251F15B40019972C /* VerbsService.swift */; };
 		EBEB1D94251F15D30019972C /* Verb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB1D93251F15D30019972C /* Verb.swift */; };
 		EBF4A126252E901A003E3A44 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4A125252E901A003E3A44 /* NavigationController.swift */; };
+		EBF4A12E252E981F003E3A44 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4A12C252E981F003E3A44 /* ListCell.swift */; };
+		EBF4A12F252E981F003E3A44 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBF4A12D252E981F003E3A44 /* ListCell.xib */; };
+		EBF4A135252E9961003E3A44 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4A134252E9961003E3A44 /* ListItem.swift */; };
+		EBF4A13B252EA2F6003E3A44 /* FeatureToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4A13A252EA2F6003E3A44 /* FeatureToggle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +125,10 @@
 		EBEB1D91251F15B40019972C /* VerbsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbsService.swift; sourceTree = "<group>"; };
 		EBEB1D93251F15D30019972C /* Verb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verb.swift; sourceTree = "<group>"; };
 		EBF4A125252E901A003E3A44 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		EBF4A12C252E981F003E3A44 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		EBF4A12D252E981F003E3A44 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
+		EBF4A134252E9961003E3A44 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		EBF4A13A252EA2F6003E3A44 /* FeatureToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureToggle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +165,7 @@
 		EB2F5E09251F53FD007DCF60 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				EBF4A12B252E9804003E3A44 /* ListItem */,
 				EBEB1D89251F13570019972C /* ListViewController.swift */,
 				EBEB1D8A251F13570019972C /* ListView.xib */,
 			);
@@ -181,6 +190,7 @@
 				EBEB1D75251F11900019972C /* AppDelegate.swift */,
 				EBB3BC16251F4D60006E0DC7 /* JSONParser.swift */,
 				EBEB1D77251F11900019972C /* SceneDelegate.swift */,
+				EBF4A13A252EA2F6003E3A44 /* FeatureToggle.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -335,6 +345,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		EBF4A12B252E9804003E3A44 /* ListItem */ = {
+			isa = PBXGroup;
+			children = (
+				EBF4A134252E9961003E3A44 /* ListItem.swift */,
+				EBF4A12C252E981F003E3A44 /* ListCell.swift */,
+				EBF4A12D252E981F003E3A44 /* ListCell.xib */,
+			);
+			path = ListItem;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -430,6 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBEB1D82251F11910019972C /* LaunchScreen.storyboard in Resources */,
+				EBF4A12F252E981F003E3A44 /* ListCell.xib in Resources */,
 				EBB01C0D2521825000BB646B /* TranslationCell.xib in Resources */,
 				EBEB1D7F251F11910019972C /* Assets.xcassets in Resources */,
 				EB2F5E12251F5B26007DCF60 /* DetailCell.xib in Resources */,
@@ -468,6 +489,7 @@
 				EB7DFF4E25236DA4000B711D /* EmptyViewController.swift in Sources */,
 				EBEB1D76251F11900019972C /* AppDelegate.swift in Sources */,
 				EBB01C252521903A00BB646B /* Identifiable.swift in Sources */,
+				EBF4A135252E9961003E3A44 /* ListItem.swift in Sources */,
 				EBB01C0C2521825000BB646B /* TranslationCell.swift in Sources */,
 				EBB01C0925217F5400BB646B /* Language.swift in Sources */,
 				EBB3BC10251F3545006E0DC7 /* KeyboardService.swift in Sources */,
@@ -481,9 +503,11 @@
 				EB2F5E0D251F543A007DCF60 /* DetailViewController.swift in Sources */,
 				EBB3BC09251F2ADB006E0DC7 /* String.swift in Sources */,
 				EBB01C192521870200BB646B /* DetailItem.swift in Sources */,
+				EBF4A13B252EA2F6003E3A44 /* FeatureToggle.swift in Sources */,
 				EBF4A126252E901A003E3A44 /* NavigationController.swift in Sources */,
 				EBB01C1B2521874E00BB646B /* TableView.swift in Sources */,
 				EBB01C0F2521828400BB646B /* TranslationItem.swift in Sources */,
+				EBF4A12E252E981F003E3A44 /* ListCell.swift in Sources */,
 				EBEB1D8B251F13570019972C /* ListViewController.swift in Sources */,
 				EB7DFF5625244977000B711D /* SplitViewController.swift in Sources */,
 			);

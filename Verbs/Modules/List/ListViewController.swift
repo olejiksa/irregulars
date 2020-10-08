@@ -41,10 +41,12 @@ private extension ListViewController {
     }
     
     func setupTableView() {
-        tableView.register(SubtitleCell.self, forCellReuseIdentifier: SubtitleCell.identifier)
+        tableView.register(ListCell.self)
     }
     
     func setupSearchController() {
+        guard FeatureToggle.isPaid else { return }
+        
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
@@ -56,7 +58,7 @@ private extension ListViewController {
 extension ListViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        let count = !searchController.isActive
+        let count = !(searchController.isActive && FeatureToggle.isPaid)
             ? verbsService.groupedItems.count
             : (verbsService.searchedItems.count > 0 ? 1 : 0)
         tableView.separatorStyle = count > 0 ? .singleLine : .none
@@ -64,28 +66,28 @@ extension ListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        !searchController.isActive
+        !(searchController.isActive && FeatureToggle.isPaid)
             ? verbsService.groupedItems[section].count
             : verbsService.searchedItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let verb = !searchController.isActive
+        let verb = !(searchController.isActive && FeatureToggle.isPaid)
             ? verbsService.groupedItems[indexPath.section][indexPath.row]
             : verbsService.searchedItems[indexPath.row]
-        let item = SubtitleItem(title: verb.infinitive, subtitle: verb.description)
+        let item = ListItem(verb: verb)
         return tableView.dequeueReusableCell(for: item, at: indexPath)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard !searchController.isActive else { return nil }
+        guard !searchController.isActive && FeatureToggle.isPaid else { return nil }
         let items = verbsService.groupedItems[section]
         guard let letter = items.first?.infinitive.first else { return nil }
         return letter.uppercased()
     }
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        guard !searchController.isActive else { return nil }
+        guard !searchController.isActive && FeatureToggle.isPaid else { return nil }
         let set = Set(verbsService.items.compactMap { item -> String? in
             guard let character = item.infinitive.first else { return nil }
             return character.uppercased()

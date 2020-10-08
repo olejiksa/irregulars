@@ -28,6 +28,11 @@ final class DetailCell: UITableViewCell {
 private extension DetailCell {
     
     func setupPlayButton() {
+        guard FeatureToggle.isPaid else {
+            playButton.isHidden = true
+            return
+        }
+        
         let largeConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular, scale: .large)
         let largeImage = UIImage(systemName: "play.circle", withConfiguration: largeConfig)
         playButton.setImage(largeImage, for: .normal)
