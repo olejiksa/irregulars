@@ -11,25 +11,10 @@ import UIKit
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
-    func scene(_ scene: UIScene,
-               willConnectTo session: UISceneSession,
-               options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = scene as? UIWindowScene else { return }
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        
-        window?.rootViewController = splitViewController
-        window?.makeKeyAndVisible()
-        window?.windowScene = windowScene
-    }
-}
-
-// MARK: - Private
-
-private extension SceneDelegate {
     
-    var splitViewController: UISplitViewController {
+    private let deeplinkService = DeeplinkService()
+    
+    private var splitViewController: UISplitViewController = {
         let masterVc = ListViewController()
         let masterNvc = UINavigationController(rootViewController: masterVc)
         
@@ -39,5 +24,26 @@ private extension SceneDelegate {
         let svc = SplitViewController()
         svc.viewControllers = [masterNvc, detailNvc]
         return svc
+    }()
+
+    func scene(_ scene: UIScene,
+               willConnectTo session: UISceneSession,
+               options connectionOptions: UIScene.ConnectionOptions) {
+        guard let windowScene = scene as? UIWindowScene else { return }
+        
+        window = UIWindow(windowScene: windowScene)
+        window?.rootViewController = splitViewController
+        window?.makeKeyAndVisible()
+        
+        self.scene(scene, openURLContexts: connectionOptions.urlContexts)
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        guard
+            let context = URLContexts.first,
+            let host = context.url.host
+        else { return }
+        
+        deeplinkService.handle(host, in: splitViewController)
     }
 }

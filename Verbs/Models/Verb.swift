@@ -6,6 +6,8 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
+import Foundation
+
 struct Verb: Decodable {
     
     private enum CodingKeys: String, CodingKey {
@@ -19,6 +21,24 @@ struct Verb: Decodable {
     let pastSimple: String
     let pastParticiple: String?
     let translation: String
+    
+    var pastSimpleShortened: String {
+        guard let shortened = pastSimple.split(separator: "/").first else { return pastSimple }
+        return String(shortened)
+    }
+    
+    var pastParticipleShortened: String? {
+        guard
+            let pastParticiple = pastParticiple,
+            let shortened = pastParticiple.split(separator: "/").first
+        else { return nil }
+        
+        return String(shortened)
+    }
+    
+    var url: URL? {
+        URL(string: "verbs://\(infinitive)")
+    }
 }
 
 // MARK: - Comparable

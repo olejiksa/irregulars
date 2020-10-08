@@ -8,8 +8,6 @@
 
 final class VerbsService {
     
-    private let parser = JSONParser<Verb>()
-    
     var searchText = ""
     
     var searchedItems: [Verb] {
@@ -20,6 +18,8 @@ final class VerbsService {
             $0.translation.containsIgnoringCase(searchText)
         }
     }
+    
+    var randomItem: Verb? { items.randomElement() }
     
     lazy var groupedItems: [[Verb]] = {
         var grouped = [[Verb]]()
@@ -36,7 +36,8 @@ final class VerbsService {
         return grouped
     }()
     
-    lazy var items: [Verb] = {
+    var items: [Verb] = {
+        let parser = JSONParser<Verb>()
         let set = Set(parser.read(from: "irregulars"))
         return Array(set).sorted(by: <)
     }()

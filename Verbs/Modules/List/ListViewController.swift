@@ -106,12 +106,7 @@ extension ListViewController: UITableViewDelegate {
             : verbsService.searchedItems[indexPath.row]
         
         let vc = DetailViewController(verb: verb)
-        if let splitVc = splitViewController, !splitVc.isCollapsed {
-            let nvc = splitVc.viewControllers.last as? UINavigationController
-            nvc?.pushViewController(vc, animated: true)
-        } else {
-            navigationController?.pushViewController(vc, animated: true)
-        }
+        navigationController?.push(vc, in: splitViewController)
     }
 }
 

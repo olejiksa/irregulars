@@ -15,6 +15,19 @@
 		EB7DFF4E25236DA4000B711D /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7DFF4C25236DA4000B711D /* EmptyViewController.swift */; };
 		EB7DFF4F25236DA4000B711D /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB7DFF4D25236DA4000B711D /* EmptyView.xib */; };
 		EB7DFF5625244977000B711D /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7DFF5425244977000B711D /* SplitViewController.swift */; };
+		EB7DFF64252451D2000B711D /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7DFF63252451D1000B711D /* WidgetKit.framework */; };
+		EB7DFF66252451D2000B711D /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7DFF65252451D2000B711D /* SwiftUI.framework */; };
+		EB7DFF69252451D2000B711D /* VerbsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7DFF68252451D2000B711D /* VerbsWidget.swift */; };
+		EB7DFF6C252451D4000B711D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB7DFF6B252451D4000B711D /* Assets.xcassets */; };
+		EB7DFF6E252451D4000B711D /* VerbsWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = EB7DFF6A252451D2000B711D /* VerbsWidget.intentdefinition */; };
+		EB7DFF6F252451D4000B711D /* VerbsWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = EB7DFF6A252451D2000B711D /* VerbsWidget.intentdefinition */; };
+		EB7DFF72252451D4000B711D /* VerbsWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EB7DFF61252451D1000B711D /* VerbsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EB7DFF83252B1CB8000B711D /* VerbsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB1D91251F15B40019972C /* VerbsService.swift */; };
+		EB7DFF89252B1CD7000B711D /* Verb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB1D93251F15D30019972C /* Verb.swift */; };
+		EB7DFF8C252B1CE6000B711D /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3BC16251F4D60006E0DC7 /* JSONParser.swift */; };
+		EB7DFF8F252B1CED000B711D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3BC08251F2ADB006E0DC7 /* String.swift */; };
+		EB7DFF95252B25DD000B711D /* irregulars.json in Resources */ = {isa = PBXBuildFile; fileRef = EBB3BC14251F4BAA006E0DC7 /* irregulars.json */; };
+		EB9A4FBC252E8D9800443D47 /* DeeplinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */; };
 		EBB01C0925217F5400BB646B /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB01C0825217F5400BB646B /* Language.swift */; };
 		EBB01C0C2521825000BB646B /* TranslationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB01C0A2521825000BB646B /* TranslationCell.swift */; };
 		EBB01C0D2521825000BB646B /* TranslationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBB01C0B2521825000BB646B /* TranslationCell.xib */; };
@@ -38,7 +51,32 @@
 		EBEB1D8E251F13BA0019972C /* SubtitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB1D8D251F13BA0019972C /* SubtitleCell.swift */; };
 		EBEB1D92251F15B40019972C /* VerbsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB1D91251F15B40019972C /* VerbsService.swift */; };
 		EBEB1D94251F15D30019972C /* Verb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB1D93251F15D30019972C /* Verb.swift */; };
+		EBF4A126252E901A003E3A44 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4A125252E901A003E3A44 /* NavigationController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EB7DFF70252451D4000B711D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBEB1D6A251F11900019972C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB7DFF60252451D1000B711D;
+			remoteInfo = VerbsWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EB7DFF76252451D4000B711D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EB7DFF72252451D4000B711D /* VerbsWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EB2F5E0B251F543A007DCF60 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +87,14 @@
 		EB7DFF4C25236DA4000B711D /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		EB7DFF4D25236DA4000B711D /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		EB7DFF5425244977000B711D /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		EB7DFF61252451D1000B711D /* VerbsWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VerbsWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB7DFF63252451D1000B711D /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		EB7DFF65252451D2000B711D /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		EB7DFF68252451D2000B711D /* VerbsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbsWidget.swift; sourceTree = "<group>"; };
+		EB7DFF6A252451D2000B711D /* VerbsWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = VerbsWidget.intentdefinition; sourceTree = "<group>"; };
+		EB7DFF6B252451D4000B711D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EB7DFF6D252451D4000B711D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkService.swift; sourceTree = "<group>"; };
 		EBB01C0825217F5400BB646B /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		EBB01C0A2521825000BB646B /* TranslationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationCell.swift; sourceTree = "<group>"; };
 		EBB01C0B2521825000BB646B /* TranslationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TranslationCell.xib; sourceTree = "<group>"; };
@@ -74,9 +120,19 @@
 		EBEB1D8D251F13BA0019972C /* SubtitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleCell.swift; sourceTree = "<group>"; };
 		EBEB1D91251F15B40019972C /* VerbsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbsService.swift; sourceTree = "<group>"; };
 		EBEB1D93251F15D30019972C /* Verb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verb.swift; sourceTree = "<group>"; };
+		EBF4A125252E901A003E3A44 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EB7DFF5E252451D1000B711D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB7DFF66252451D2000B711D /* SwiftUI.framework in Frameworks */,
+				EB7DFF64252451D2000B711D /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBEB1D6F251F11900019972C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -146,6 +202,26 @@
 			path = Split;
 			sourceTree = "<group>";
 		};
+		EB7DFF62252451D1000B711D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB7DFF63252451D1000B711D /* WidgetKit.framework */,
+				EB7DFF65252451D2000B711D /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB7DFF67252451D2000B711D /* VerbsWidget */ = {
+			isa = PBXGroup;
+			children = (
+				EB7DFF68252451D2000B711D /* VerbsWidget.swift */,
+				EB7DFF6A252451D2000B711D /* VerbsWidget.intentdefinition */,
+				EB7DFF6B252451D4000B711D /* Assets.xcassets */,
+				EB7DFF6D252451D4000B711D /* Info.plist */,
+			);
+			path = VerbsWidget;
+			sourceTree = "<group>";
+		};
 		EBB01C102521828800BB646B /* DetailItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				EB2F5E15251F71DD007DCF60 /* AudioService.swift */,
+				EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */,
 				EBB3BC0F251F3545006E0DC7 /* KeyboardService.swift */,
 				EBEB1D91251F15B40019972C /* VerbsService.swift */,
 			);
@@ -199,6 +276,7 @@
 		EBB3BC07251F2749006E0DC7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				EBF4A125252E901A003E3A44 /* NavigationController.swift */,
 				EBB3BC08251F2ADB006E0DC7 /* String.swift */,
 				EBB01C1A2521874E00BB646B /* TableView.swift */,
 			);
@@ -217,6 +295,8 @@
 			isa = PBXGroup;
 			children = (
 				EBEB1D74251F11900019972C /* Verbs */,
+				EB7DFF67252451D2000B711D /* VerbsWidget */,
+				EB7DFF62252451D1000B711D /* Frameworks */,
 				EBEB1D73251F11900019972C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -225,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				EBEB1D72251F11900019972C /* Verbs.app */,
+				EB7DFF61252451D1000B711D /* VerbsWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -257,6 +338,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		EB7DFF60252451D1000B711D /* VerbsWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB7DFF73252451D4000B711D /* Build configuration list for PBXNativeTarget "VerbsWidgetExtension" */;
+			buildPhases = (
+				EB7DFF5D252451D1000B711D /* Sources */,
+				EB7DFF5E252451D1000B711D /* Frameworks */,
+				EB7DFF5F252451D1000B711D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VerbsWidgetExtension;
+			productName = VerbsWidgetExtension;
+			productReference = EB7DFF61252451D1000B711D /* VerbsWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		EBEB1D71251F11900019972C /* Verbs */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBEB1D86251F11910019972C /* Build configuration list for PBXNativeTarget "Verbs" */;
@@ -264,10 +362,12 @@
 				EBEB1D6E251F11900019972C /* Sources */,
 				EBEB1D6F251F11900019972C /* Frameworks */,
 				EBEB1D70251F11900019972C /* Resources */,
+				EB7DFF76252451D4000B711D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EB7DFF71252451D4000B711D /* PBXTargetDependency */,
 			);
 			name = Verbs;
 			packageProductDependencies = (
@@ -282,10 +382,13 @@
 		EBEB1D6A251F11900019972C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1170;
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Oleg Samoylov";
 				TargetAttributes = {
+					EB7DFF60252451D1000B711D = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
 					EBEB1D71251F11900019972C = {
 						CreatedOnToolsVersion = 11.7;
 					};
@@ -307,11 +410,21 @@
 			projectRoot = "";
 			targets = (
 				EBEB1D71251F11900019972C /* Verbs */,
+				EB7DFF60252451D1000B711D /* VerbsWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EB7DFF5F252451D1000B711D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB7DFF6C252451D4000B711D /* Assets.xcassets in Resources */,
+				EB7DFF95252B25DD000B711D /* irregulars.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBEB1D70251F11900019972C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -330,6 +443,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EB7DFF5D252451D1000B711D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB7DFF69252451D2000B711D /* VerbsWidget.swift in Sources */,
+				EB7DFF89252B1CD7000B711D /* Verb.swift in Sources */,
+				EB7DFF8C252B1CE6000B711D /* JSONParser.swift in Sources */,
+				EB7DFF83252B1CB8000B711D /* VerbsService.swift in Sources */,
+				EB7DFF8F252B1CED000B711D /* String.swift in Sources */,
+				EB7DFF6E252451D4000B711D /* VerbsWidget.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBEB1D6E251F11900019972C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -337,6 +463,7 @@
 				EBB01C2D25219E9A00BB646B /* SubtitleItem.swift in Sources */,
 				EBEB1D94251F15D30019972C /* Verb.swift in Sources */,
 				EBB01C1D2521897000BB646B /* CellProtocol.swift in Sources */,
+				EB7DFF6F252451D4000B711D /* VerbsWidget.intentdefinition in Sources */,
 				EB2F5E11251F5B26007DCF60 /* DetailCell.swift in Sources */,
 				EB7DFF4E25236DA4000B711D /* EmptyViewController.swift in Sources */,
 				EBEB1D76251F11900019972C /* AppDelegate.swift in Sources */,
@@ -348,11 +475,13 @@
 				EBEB1D8E251F13BA0019972C /* SubtitleCell.swift in Sources */,
 				EBB01C1F25218BAB00BB646B /* ItemProtocol.swift in Sources */,
 				EBB3BC17251F4D60006E0DC7 /* JSONParser.swift in Sources */,
+				EB9A4FBC252E8D9800443D47 /* DeeplinkService.swift in Sources */,
 				EBEB1D78251F11900019972C /* SceneDelegate.swift in Sources */,
 				EB2F5E16251F71DD007DCF60 /* AudioService.swift in Sources */,
 				EB2F5E0D251F543A007DCF60 /* DetailViewController.swift in Sources */,
 				EBB3BC09251F2ADB006E0DC7 /* String.swift in Sources */,
 				EBB01C192521870200BB646B /* DetailItem.swift in Sources */,
+				EBF4A126252E901A003E3A44 /* NavigationController.swift in Sources */,
 				EBB01C1B2521874E00BB646B /* TableView.swift in Sources */,
 				EBB01C0F2521828400BB646B /* TranslationItem.swift in Sources */,
 				EBEB1D8B251F13570019972C /* ListViewController.swift in Sources */,
@@ -361,6 +490,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EB7DFF71252451D4000B711D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB7DFF60252451D1000B711D /* VerbsWidgetExtension */;
+			targetProxy = EB7DFF70252451D4000B711D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EBEB1D80251F11910019972C /* LaunchScreen.storyboard */ = {
@@ -374,6 +511,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		EB7DFF74252451D4000B711D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B2FMGUSH44;
+				INFOPLIST_FILE = VerbsWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EB7DFF75252451D4000B711D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B2FMGUSH44;
+				INFOPLIST_FILE = VerbsWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		EBEB1D84251F11910019972C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -491,6 +672,7 @@
 		EBEB1D87251F11910019972C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
@@ -510,6 +692,7 @@
 		EBEB1D88251F11910019972C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
@@ -529,6 +712,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EB7DFF73252451D4000B711D /* Build configuration list for PBXNativeTarget "VerbsWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB7DFF74252451D4000B711D /* Debug */,
+				EB7DFF75252451D4000B711D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EBEB1D6D251F11900019972C /* Build configuration list for PBXProject "Verbs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

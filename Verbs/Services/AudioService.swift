@@ -14,6 +14,7 @@ final class AudioService {
     private var utterance = AVSpeechUtterance(string: "")
     
     func play(text: String) {
+        try? AVAudioSession.sharedInstance().setCategory(.playback)
         utterance = AVSpeechUtterance(string: text)
         utterance.rate = 0.3
         synth.speak(utterance)
