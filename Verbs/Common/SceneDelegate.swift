@@ -15,14 +15,11 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private let deeplinkService = DeeplinkService()
     
     private var splitViewController: UISplitViewController = {
-        let masterVc = ListViewController()
-        let masterNvc = UINavigationController(rootViewController: masterVc)
-        
+        let svc = SplitViewController()
+        let masterVc = ListAssembly().viewController(with: svc)
         let detailVc = EmptyViewController()
         let detailNvc = UINavigationController(rootViewController: detailVc)
-        
-        let svc = SplitViewController()
-        svc.viewControllers = [masterNvc, detailNvc]
+        svc.viewControllers = [masterVc.navigationController, detailNvc].compactMap { $0 }
         return svc
     }()
 

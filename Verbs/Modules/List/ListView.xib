@@ -22,10 +22,6 @@
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V0M-pM-VS4">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="nQP-zk-aIV"/>
-                        <outlet property="delegate" destination="-1" id="5my-Wd-hX5"/>
-                    </connections>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

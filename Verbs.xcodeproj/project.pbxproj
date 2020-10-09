@@ -17,6 +17,9 @@
 		EB717DC7252EDA1C007791AD /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB717DC6252EDA1C007791AD /* Settings.swift */; };
 		EB717DD5252EE37B007791AD /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB717DC2252ED9EB007791AD /* UserDefaultsService.swift */; };
 		EB717DD8252EE380007791AD /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB717DC6252EDA1C007791AD /* Settings.swift */; };
+		EB717DE42530C04A007791AD /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB717DE32530C04A007791AD /* ListPresenter.swift */; };
+		EB717DEE2530C5A4007791AD /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB717DED2530C5A4007791AD /* ListRouter.swift */; };
+		EB717DF42530D5B7007791AD /* ListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB717DF32530D5B7007791AD /* ListAssembly.swift */; };
 		EB7DFF4E25236DA4000B711D /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7DFF4C25236DA4000B711D /* EmptyViewController.swift */; };
 		EB7DFF4F25236DA4000B711D /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB7DFF4D25236DA4000B711D /* EmptyView.xib */; };
 		EB7DFF5625244977000B711D /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7DFF5425244977000B711D /* SplitViewController.swift */; };
@@ -101,6 +104,9 @@
 		EB717DBA252ED6B9007791AD /* SwitchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchItem.swift; sourceTree = "<group>"; };
 		EB717DC2252ED9EB007791AD /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		EB717DC6252EDA1C007791AD /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		EB717DE32530C04A007791AD /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
+		EB717DED2530C5A4007791AD /* ListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
+		EB717DF32530D5B7007791AD /* ListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAssembly.swift; sourceTree = "<group>"; };
 		EB7DFF4C25236DA4000B711D /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		EB7DFF4D25236DA4000B711D /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		EB7DFF5425244977000B711D /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +191,9 @@
 			isa = PBXGroup;
 			children = (
 				EBF4A12B252E9804003E3A44 /* ListItem */,
+				EB717DF32530D5B7007791AD /* ListAssembly.swift */,
+				EB717DE32530C04A007791AD /* ListPresenter.swift */,
+				EB717DED2530C5A4007791AD /* ListRouter.swift */,
 				EBEB1D89251F13570019972C /* ListViewController.swift */,
 				EBEB1D8A251F13570019972C /* ListView.xib */,
 			);
@@ -530,13 +539,16 @@
 				EBB01C2D25219E9A00BB646B /* SubtitleItem.swift in Sources */,
 				EBEB1D94251F15D30019972C /* Verb.swift in Sources */,
 				EBB01C1D2521897000BB646B /* CellProtocol.swift in Sources */,
+				EB717DF42530D5B7007791AD /* ListAssembly.swift in Sources */,
 				EB7DFF6F252451D4000B711D /* VerbsWidget.intentdefinition in Sources */,
 				EB717DC7252EDA1C007791AD /* Settings.swift in Sources */,
 				EB2F5E11251F5B26007DCF60 /* DetailCell.swift in Sources */,
 				EBF4A13F252EC9A3003E3A44 /* SystemIcon.swift in Sources */,
+				EB717DEE2530C5A4007791AD /* ListRouter.swift in Sources */,
 				EB7DFF4E25236DA4000B711D /* EmptyViewController.swift in Sources */,
 				EBEB1D76251F11900019972C /* AppDelegate.swift in Sources */,
 				EBB01C252521903A00BB646B /* Identifiable.swift in Sources */,
+				EB717DE42530C04A007791AD /* ListPresenter.swift in Sources */,
 				EBF4A135252E9961003E3A44 /* ListItem.swift in Sources */,
 				EB717DC3252ED9EB007791AD /* UserDefaultsService.swift in Sources */,
 				EBB01C0C2521825000BB646B /* TranslationCell.swift in Sources */,
