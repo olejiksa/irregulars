@@ -15,6 +15,8 @@ final class SplitViewController: UISplitViewController {
 
         delegate = self
         preferredDisplayMode = .oneBesideSecondary
+        preferredPrimaryColumnWidthFraction = 0.5
+        maximumPrimaryColumnWidth = 2_000
     }
 }
 

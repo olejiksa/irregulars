@@ -13,6 +13,7 @@ final class ListViewController: UIViewController {
     private let searchController = UISearchController(searchResultsController: nil)
     private var keyboardService: KeyboardService?
     private let verbsService = VerbsService()
+    private let userDefaultsService = UserDefaultsService()
     
     @IBOutlet private weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
     @IBOutlet private weak var tableView: UITableView!
@@ -20,7 +21,7 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupKeyboardService()
+        setupServices()
         setupNavigationBar()
         setupTableView()
         setupSearchController()
@@ -31,13 +32,22 @@ final class ListViewController: UIViewController {
 
 private extension ListViewController {
     
-    func setupKeyboardService() {
+    func setupServices() {
         keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
+        verbsService.shouldRegularVerbsBeShown = userDefaultsService.load()?.isOn ?? true
     }
     
     func setupNavigationBar() {
         navigationItem.title = "Глаголы"
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        guard FeatureToggle.isPaid else { return }
+        
+        let settings = UIBarButtonItem(image: SystemIcon.gear.image,
+                                       style: .plain,
+                                       target: self,
+                                       action: #selector(goToSettings))
+        navigationItem.rightBarButtonItem = settings
     }
     
     func setupTableView() {
@@ -50,6 +60,19 @@ private extension ListViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
+    }
+    
+    @objc func goToSettings() {
+        let vc = SettingsViewController()
+        vc.shouldRegularVerbsBeShownBlock = { [weak self] in
+            guard let self = self else { return }
+           
+            self.verbsService.shouldRegularVerbsBeShown = $0
+            self.tableView.reloadData()
+        }
+        
+        let nvc = UINavigationController(rootViewController: vc)
+        navigationController?.present(nvc, animated: true)
     }
 }
 
@@ -101,8 +124,6 @@ extension ListViewController: UITableViewDataSource {
 extension ListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
         let verb = !searchController.isActive
             ? verbsService.groupedItems[indexPath.section][indexPath.row]
             : verbsService.searchedItems[indexPath.row]

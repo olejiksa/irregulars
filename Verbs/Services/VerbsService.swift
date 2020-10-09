@@ -8,6 +8,8 @@
 
 final class VerbsService {
     
+    private let parser = JSONParser<Verb>()
+    
     var searchText = ""
     
     var searchedItems: [Verb] {
@@ -21,7 +23,35 @@ final class VerbsService {
     
     var randomItem: Verb? { items.randomElement() }
     
-    lazy var groupedItems: [[Verb]] = {
+    var items: [Verb] = []
+    var groupedItems: [[Verb]] = []
+    
+    var shouldRegularVerbsBeShown: Bool = true {
+        didSet {
+            setItems()
+            setGroupedItems()
+        }
+    }
+    
+    init() {
+        setItems()
+        setGroupedItems()
+    }
+}
+
+extension VerbsService {
+    
+    func setItems() {
+        var set = Set(parser.read(from: "irregulars"))
+        if !shouldRegularVerbsBeShown {
+            let elements = set.filter { $0.hasRegular }
+            elements.forEach { set.remove($0) }
+        }
+        
+        items = Array(set).sorted(by: <)
+    }
+    
+    func setGroupedItems() {
         var grouped = [[Verb]]()
         var letter: Character?
         var index = -1
@@ -33,12 +63,7 @@ final class VerbsService {
             }
             grouped[index].append(item)
         }
-        return grouped
-    }()
-    
-    var items: [Verb] = {
-        let parser = JSONParser<Verb>()
-        let set = Set(parser.read(from: "irregulars"))
-        return Array(set).sorted(by: <)
-    }()
+        
+        groupedItems = grouped
+    }
 }

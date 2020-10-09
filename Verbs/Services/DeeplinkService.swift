@@ -23,7 +23,7 @@ final class DeeplinkService {
             : splitViewController.viewControllers.first as? UINavigationController
         
         guard !checkIfAlreadyOpened(by: host, in: nvc) else { return }
-        nvc?.pushViewController(vc, animated: true)
+        nvc?.push(vc)
     }
 }
 

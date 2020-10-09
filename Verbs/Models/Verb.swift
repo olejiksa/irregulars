@@ -11,16 +11,18 @@ import Foundation
 struct Verb: Decodable {
     
     private enum CodingKeys: String, CodingKey {
-        case infinitive = "Base"
-        case pastSimple = "Past-simple"
-        case pastParticiple = "Past-Participle"
-        case translation = "Translation"
+        case infinitive
+        case pastSimple
+        case pastParticiple
+        case translation = "ru"
+        case hasRegular
     }
     
     let infinitive: String
     let pastSimple: String
     let pastParticiple: String?
     let translation: String
+    let hasRegular: Bool
     
     var pastSimpleShortened: String {
         guard let shortened = pastSimple.split(separator: "/").first else { return pastSimple }
@@ -56,18 +58,5 @@ extension Verb: Hashable {
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(infinitive)
-    }
-}
-
-// MARK: - CustomStringConvertible
-
-extension Verb: CustomStringConvertible {
-    
-    var description: String {
-        if let pastParticiple = pastParticiple {
-            return "\(pastSimple), \(pastParticiple)"
-        } else {
-            return "\(pastSimple)"
-        }
     }
 }

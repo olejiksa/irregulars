@@ -8,10 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListViewController" customModule="Verbs" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="Verbs" customModuleProvider="target">
             <connections>
-                <outlet property="keyboardHeightLayoutConstraint" destination="AIG-vE-uxN" id="e6u-C1-lCC"/>
-                <outlet property="tableView" destination="V0M-pM-VS4" id="EMg-Nt-9cZ"/>
+                <outlet property="tableView" destination="gjz-Q3-OUj" id="XtE-v0-FbK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,28 +19,32 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V0M-pM-VS4">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gjz-Q3-OUj">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="nQP-zk-aIV"/>
-                        <outlet property="delegate" destination="-1" id="5my-Wd-hX5"/>
+                        <outlet property="dataSource" destination="-1" id="BHJ-xz-Z3X"/>
+                        <outlet property="delegate" destination="-1" id="MN7-gH-rJX"/>
                     </connections>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="V0M-pM-VS4" secondAttribute="bottom" id="AIG-vE-uxN"/>
-                <constraint firstAttribute="trailing" secondItem="V0M-pM-VS4" secondAttribute="trailing" id="Hvr-Bd-9Tw"/>
-                <constraint firstItem="V0M-pM-VS4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="z6G-W8-wYH"/>
-                <constraint firstItem="V0M-pM-VS4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zCq-pz-0lY"/>
+                <constraint firstAttribute="trailing" secondItem="gjz-Q3-OUj" secondAttribute="trailing" id="23H-7G-9BF"/>
+                <constraint firstItem="gjz-Q3-OUj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="W9x-mj-KoP"/>
+                <constraint firstItem="gjz-Q3-OUj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="aeH-4Q-xSu"/>
+                <constraint firstAttribute="bottom" secondItem="gjz-Q3-OUj" secondAttribute="bottom" id="nZA-Pg-QO0"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="129"/>
+            <point key="canvasLocation" x="139" y="70"/>
         </view>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

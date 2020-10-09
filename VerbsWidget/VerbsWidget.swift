@@ -18,7 +18,8 @@ struct Provider: IntentTimelineProvider {
         let verb = Verb(infinitive: "-",
                         pastSimple: "-",
                         pastParticiple: "-",
-                        translation: "-")
+                        translation: "-",
+                        hasRegular: false)
         return .init(date: Date(),
                      verb: verb,
                      configuration: ConfigurationIntent())
@@ -30,7 +31,8 @@ struct Provider: IntentTimelineProvider {
         let verb = Verb(infinitive: "arise",
                         pastSimple: "arose",
                         pastParticiple: "arisen",
-                        translation: "Перевод")
+                        translation: "Перевод",
+                        hasRegular: false)
         let entry = VerbEntry(date: Date(),
                               verb: verb,
                               configuration: configuration)
@@ -106,7 +108,8 @@ struct VerbsWidget_Previews: PreviewProvider {
         let verb = Verb(infinitive: "arise",
                         pastSimple: "arose",
                         pastParticiple: "arisen",
-                        translation: "Перевод")
+                        translation: "Перевод",
+                        hasRegular: false)
         VerbsWidgetEntryView(entry: VerbEntry(date: Date(),
                                               verb: verb,
                                               configuration: ConfigurationIntent()))
