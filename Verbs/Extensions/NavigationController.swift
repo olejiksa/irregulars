@@ -12,12 +12,14 @@ extension UINavigationController {
     
     func push(_ viewController: UIViewController,
               in splitViewController: UISplitViewController? = nil) {
-        guard let splitViewController = splitViewController, !splitViewController.isCollapsed else {
+        guard
+            let splitViewController = splitViewController,
+            !splitViewController.isCollapsed
+        else {
             pushViewController(viewController, animated: true)
             return
         }
         
-        let nvc = splitViewController.viewControllers.last as? UINavigationController
-        nvc?.pushViewController(viewController, animated: true)
+        splitViewController.showDetailViewController(viewController, sender: self)
     }
 }

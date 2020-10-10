@@ -29,6 +29,7 @@ final class ListRouter {
         vc.shouldRegularVerbsBeShownBlock = shouldRegularVerbsBeShownBlock
         
         let nvc = UINavigationController(rootViewController: vc)
+        nvc.modalPresentationStyle = .formSheet
         navigationController?.present(nvc, animated: true)
     }
 }
