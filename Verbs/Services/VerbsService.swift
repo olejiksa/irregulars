@@ -6,6 +6,8 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
+import Foundation
+
 final class VerbsService {
     
     private let parser = JSONParser<Verb>()
@@ -22,7 +24,7 @@ final class VerbsService {
     }
     
     var randomItem: Verb? { items.randomElement() }
-    
+
     var items: [Verb] = []
     var groupedItems: [[Verb]] = []
     
@@ -37,9 +39,22 @@ final class VerbsService {
         setItems()
         setGroupedItems()
     }
+    
+    func indexPath(of infinitive: String?) -> IndexPath? {
+        var indexPath: IndexPath?
+        for index in 0..<groupedItems.count {
+            for subindex in 0..<groupedItems[index].count {
+                if groupedItems[index][subindex].infinitive == infinitive {
+                    indexPath = IndexPath(row: subindex, section: index)
+                }
+            }
+        }
+        
+        return indexPath
+    }
 }
 
-extension VerbsService {
+private extension VerbsService {
     
     func setItems() {
         var set = Set(parser.read(from: "irregulars"))

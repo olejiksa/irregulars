@@ -11,13 +11,18 @@ import UIKit
 final class EmptyViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        guard animated else { return }
+        NotificationCenter.default.post(name: Notification.Name.infinitive,
+                                        object: nil,
+                                        userInfo: ["infinitive": ""])
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
+        super.viewWillDisappear(animated)
         
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }

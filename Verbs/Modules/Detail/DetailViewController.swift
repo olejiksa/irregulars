@@ -32,6 +32,7 @@ final class DetailViewController: UIViewController {
 
         setupNavigationBar()
         setupTableView()
+        setupDelegate()
     }
 }
 
@@ -46,6 +47,10 @@ private extension DetailViewController {
     
     func setupTableView() {
         tableView.register(DetailCell.self, TranslationCell.self)
+    }
+    
+    func setupDelegate() {
+        navigationController?.delegate = self
     }
     
     func setItems() {
@@ -86,5 +91,20 @@ extension DetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+// MARK: - UINavigationControllerDelegate
+
+extension DetailViewController: UINavigationControllerDelegate {
+    
+    func navigationController(_ navigationController: UINavigationController,
+                              willShow viewController: UIViewController,
+                              animated: Bool) {
+        guard animated else { return }
+        let title = viewController.navigationItem.title ?? ""
+        NotificationCenter.default.post(name: Notification.Name.infinitive,
+                                        object: nil,
+                                        userInfo: ["infinitive": title])
     }
 }

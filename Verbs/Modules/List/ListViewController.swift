@@ -40,6 +40,18 @@ final class ListViewController: UIViewController {
     func reloadData() {
         tableView.reloadData()
     }
+    
+    func selectRow(at indexPath: IndexPath?) {
+        guard let indexPath = indexPath else {
+            if let indexPathForSelectedRow = tableView.indexPathForSelectedRow {
+                tableView.deselectRow(at: indexPathForSelectedRow, animated: true)
+            }
+            
+            return
+        }
+        
+        tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+    }
 }
 
 // MARK: - Private

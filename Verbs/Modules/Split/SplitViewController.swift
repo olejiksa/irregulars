@@ -56,15 +56,14 @@ extension SplitViewController: UISplitViewControllerDelegate {
                              separateSecondaryFrom primaryViewController: UIViewController) -> UIViewController? {
         guard
             let primaryNavigationController = splitViewController.viewControllers.first as? UINavigationController,
-            let primaryViewController = primaryNavigationController.viewControllers.last,
-            !(primaryViewController is UINavigationController),
-            !(primaryViewController is ListViewController)
+            let detailViewController = primaryNavigationController.viewControllers.last as? DetailViewController
         else { return nil }
         
+        detailViewController.navigationController?.delegate = detailViewController
         primaryNavigationController.popToRootViewController(animated: false)
         let emptyVc = EmptyViewController()
         let nvc = UINavigationController(rootViewController: emptyVc)
-        nvc.pushViewController(primaryViewController, animated: false)
+        nvc.pushViewController(detailViewController, animated: false)
         return nvc
     }
 }

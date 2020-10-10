@@ -14,6 +14,12 @@ final class ListPresenter: NSObject {
     private let userDefaultsService: UserDefaultsService
     private var isSearchActive = false
     
+    private var infinitive: String? {
+        didSet {
+            didSelectedItemSet()
+        }
+    }
+    
     weak var viewController: ListViewController?
     var router: ListRouter?
     
@@ -25,6 +31,16 @@ final class ListPresenter: NSObject {
         super.init()
         
         verbsService.shouldRegularVerbsBeShown = userDefaultsService.load()?.isOn ?? true
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(didSelectedItemUpdate),
+                                               name: Notification.Name.infinitive,
+                                               object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self,
+                                                  name: Notification.Name.infinitive,
+                                                  object: nil)
     }
     
     @objc func goToSettings() {
@@ -36,6 +52,22 @@ final class ListPresenter: NSObject {
         }
                                              
         router?.goToSettings(with: shouldRegularVerbsBeShownBlock)
+    }
+}
+
+// MARK: - Private
+
+private extension ListPresenter {
+    
+    @objc func didSelectedItemUpdate(_ notification: Notification) {
+        infinitive = notification.userInfo?[Notification.Name.infinitive] as? String ?? ""
+    }
+    
+    func didSelectedItemSet() {
+        guard !isSearchActive else { return }
+        
+        let indexPath = verbsService.indexPath(of: infinitive)
+        viewController?.selectRow(at: indexPath)
     }
 }
 
@@ -88,12 +120,15 @@ extension ListPresenter: UITableViewDataSource {
 extension ListPresenter: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        if isSearchActive {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
 
         let verb = !isSearchActive
             ? verbsService.groupedItems[indexPath.section][indexPath.row]
             : verbsService.searchedItems[indexPath.row]
         
+        guard infinitive != verb.infinitive else { return }
         router?.goToDetail(with: verb)
     }
 }
@@ -119,5 +154,9 @@ extension ListPresenter: UISearchControllerDelegate {
     
     func willDismissSearchController(_ searchController: UISearchController) {
         isSearchActive = false
+    }
+    
+    func didDismissSearchController(_ searchController: UISearchController) {
+        didSelectedItemSet()
     }
 }
