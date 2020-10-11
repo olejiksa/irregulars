@@ -31,7 +31,7 @@ final class SettingsViewController: UIViewController {
 private extension SettingsViewController {
     
     func setupNavigationBar() {
-        navigationItem.title = "Settings"
+        navigationItem.title = "Settings".localized
         navigationItem.largeTitleDisplayMode = .never
         
         let closeButton = UIBarButtonItem(barButtonSystemItem: .close,
@@ -46,7 +46,7 @@ private extension SettingsViewController {
     
     func setupItems() {
         let isOn = userDefaultsService.load()?.isOn ?? true
-        items = [SwitchItem(text: "Regular verbs (-ed)",
+        items = [SwitchItem(text: "Regular verbs (-ed)".localized,
                             isOn: isOn,
                             actionBlock: didSwitchValueChange)]
     }
@@ -78,7 +78,7 @@ extension SettingsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        "General"
+        "General".localized
     }
 }
 

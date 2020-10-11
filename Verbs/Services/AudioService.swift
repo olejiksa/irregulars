@@ -10,13 +10,13 @@ import AVFoundation
 
 final class AudioService {
     
-    private let synth = AVSpeechSynthesizer()
-    private var utterance = AVSpeechUtterance(string: "")
+    private let synthesizer = AVSpeechSynthesizer()
     
     func play(text: String) {
         try? AVAudioSession.sharedInstance().setCategory(.playback)
-        utterance = AVSpeechUtterance(string: text)
+        let utterance = AVSpeechUtterance(string: text)
         utterance.rate = 0.3
-        synth.speak(utterance)
+        utterance.voice = AVSpeechSynthesisVoice(language: Language.english.rawValue)
+        synthesizer.speak(utterance)
     }
 }

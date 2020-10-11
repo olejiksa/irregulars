@@ -11,6 +11,7 @@ import UIKit
 final class DetailViewController: UIViewController {
 
     private let audioService = AudioService()
+    private let languageService = LanguageService()
     private let verb: Verb
     private let isOpenedByDeeplink: Bool
     private var items: [ItemProtocol] = []
@@ -64,7 +65,10 @@ private extension DetailViewController {
                  DetailItem(caption: "Past Participle",
                             title: verb.pastParticiple,
                             actionBlock: play)].compactMap { $0 }
-        items.append(TranslationItem(caption: "Перевод", text: verb.translation))
+        if languageService.hasTranslation {
+            items.append(TranslationItem(caption: "Translation".localized,
+                                         text: verb.translation))
+        }
     }
     
     func play(text: String) {

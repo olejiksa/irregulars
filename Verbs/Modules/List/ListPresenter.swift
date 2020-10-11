@@ -77,7 +77,7 @@ private extension ListPresenter {
 extension ListPresenter: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        let count = !(isSearchActive && FeatureToggle.isPaid)
+        let count = !isSearchActive
             ? verbsService.groupedItems.count
             : (verbsService.searchedItems.count > 0 ? 1 : 0)
         tableView.separatorStyle = count > 0 ? .singleLine : .none
@@ -85,13 +85,13 @@ extension ListPresenter: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        !(isSearchActive && FeatureToggle.isPaid)
+        !isSearchActive
             ? verbsService.groupedItems[section].count
             : verbsService.searchedItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let verb = !(isSearchActive && FeatureToggle.isPaid)
+        let verb = !isSearchActive
             ? verbsService.groupedItems[indexPath.section][indexPath.row]
             : verbsService.searchedItems[indexPath.row]
         let item = ListItem(verb: verb)
@@ -99,7 +99,7 @@ extension ListPresenter: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard !isSearchActive && FeatureToggle.isPaid else { return nil }
+        guard !isSearchActive else { return nil }
         let items = verbsService.groupedItems[section]
         guard let letter = items.first?.infinitive.first else { return nil }
         return letter.uppercased()

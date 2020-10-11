@@ -63,7 +63,7 @@ private extension ListViewController {
     }
     
     func setupNavigationBar() {
-        navigationItem.title = "Глаголы"
+        navigationItem.title = "Verbs".localized
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     

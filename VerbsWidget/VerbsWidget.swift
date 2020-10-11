@@ -18,7 +18,6 @@ struct Provider: IntentTimelineProvider {
         let verb = Verb(infinitive: "-",
                         pastSimple: "-",
                         pastParticiple: "-",
-                        translation: "-",
                         hasRegular: false)
         return .init(date: Date(),
                      verb: verb,
@@ -31,7 +30,6 @@ struct Provider: IntentTimelineProvider {
         let verb = Verb(infinitive: "arise",
                         pastSimple: "arose",
                         pastParticiple: "arisen",
-                        translation: "Перевод",
                         hasRegular: false)
         let entry = VerbEntry(date: Date(),
                               verb: verb,
@@ -43,9 +41,9 @@ struct Provider: IntentTimelineProvider {
                      in context: Context,
                      completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [VerbEntry] = []
-        for _ in 1...24 {
+        for _ in 1...4 {
             guard let verb = service.randomItem else { continue }
-            let date = Calendar.current.date(byAdding: .minute, value: 1, to: Date()) ?? Date()
+            let date = Calendar.current.date(byAdding: .minute, value: 15, to: Date()) ?? Date()
             let entry = VerbEntry(date: date,
                                   verb: verb,
                                   configuration: configuration)
@@ -108,7 +106,6 @@ struct VerbsWidget_Previews: PreviewProvider {
         let verb = Verb(infinitive: "arise",
                         pastSimple: "arose",
                         pastParticiple: "arisen",
-                        translation: "Перевод",
                         hasRegular: false)
         VerbsWidgetEntryView(entry: VerbEntry(date: Date(),
                                               verb: verb,

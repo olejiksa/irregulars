@@ -3,1494 +3,1358 @@
         "infinitive": "abide",
         "pastSimple": "abode",
         "pastParticiple": "abode",
-        "ru": "терпеть, соблюдать, пребывать",
         "hasRegular": true
     },
     {
         "infinitive": "arise",
         "pastSimple": "arose",
         "pastParticiple": "arisen",
-        "ru": "возникать, подниматься",
         "hasRegular": false
     },
     {
         "infinitive": "awake",
         "pastSimple": "awoke",
         "pastParticiple": "awoken",
-        "ru": "будить, просыпаться",
         "hasRegular": true
     },
     {
         "infinitive": "backslid",
         "pastSimple": "backslid",
         "pastParticiple": "backslid/backslidden",
-        "ru": "отказываться от прежних убеждений",
         "hasRegular": false
     },
     {
         "infinitive": "be",
         "pastSimple": "was, were",
         "pastParticiple": "been",
-        "ru": "быть",
         "hasRegular": false
     },
     {
         "infinitive": "bear",
         "pastSimple": "bore",
         "pastParticiple": "born/borne",
-        "ru": "нести, рождать",
         "hasRegular": false
     },
     {
         "infinitive": "beat",
         "pastSimple": "beat",
         "pastParticiple": "beaten",
-        "ru": "бить",
         "hasRegular": false
     },
     {
         "infinitive": "become",
         "pastSimple": "became",
         "pastParticiple": "become",
-        "ru": "становиться",
         "hasRegular": false
     },
     {
         "infinitive": "beget",
         "pastSimple": "begot",
         "pastParticiple": "begotten",
-        "ru": "порождать",
         "hasRegular": false
     },
     {
         "infinitive": "begin",
         "pastSimple": "began",
         "pastParticiple": "begun",
-        "ru": "начинать",
         "hasRegular": false
     },
     {
         "infinitive": "bend",
         "pastSimple": "bent",
         "pastParticiple": "bent",
-        "ru": "гнуть, сгибать",
         "hasRegular": false
+    },
+    {
+        "infinitive": "bereave",
+        "pastSimple": "bereft",
+        "pastParticiple": "bereft",
+        "hasRegular": true
     },
     {
         "infinitive": "bet",
         "pastSimple": "bet",
         "pastParticiple": "bet",
-        "ru": "держать пари",
         "hasRegular": false
     },
     {
         "infinitive": "bid",
-        "pastSimple": "bid",
-        "pastParticiple": "bid",
-        "ru": "предлагать цену, велеть, просить",
+        "pastSimple": "bid/bade",
+        "pastParticiple": "bid/bidden",
         "hasRegular": false
     },
     {
         "infinitive": "bind",
         "pastSimple": "bound",
         "pastParticiple": "bound",
-        "ru": "связывать",
         "hasRegular": false
     },
     {
         "infinitive": "bite",
         "pastSimple": "bit",
         "pastParticiple": "bitten",
-        "ru": "кусать",
         "hasRegular": false
     },
     {
         "infinitive": "bleed",
         "pastSimple": "bled",
         "pastParticiple": "bled",
-        "ru": "истекать кровью, кровоточить",
         "hasRegular": false
     },
     {
         "infinitive": "bless",
         "pastSimple": "blest",
         "pastParticiple": "blest",
-        "ru": "благословлять",
         "hasRegular": true
     },
     {
         "infinitive": "blow",
         "pastSimple": "blew",
         "pastParticiple": "blown",
-        "ru": "дуть",
         "hasRegular": false
     },
     {
         "infinitive": "break",
         "pastSimple": "broke",
         "pastParticiple": "broken",
-        "ru": "ломать, прерывать, разбивать",
         "hasRegular": false
     },
     {
         "infinitive": "breed",
         "pastSimple": "bred",
         "pastParticiple": "bred",
-        "ru": "выращивать, выводить, разводить",
         "hasRegular": false
     },
     {
         "infinitive": "bring",
         "pastSimple": "brought",
         "pastParticiple": "brought",
-        "ru": "приносить, приводить",
         "hasRegular": false
     },
     {
         "infinitive": "broadcast",
         "pastSimple": "broadcast",
         "pastParticiple": "broadcast",
-        "ru": "транслировать, распространять",
         "hasRegular": true
     },
     {
         "infinitive": "browbeat",
         "pastSimple": "browbeat",
         "pastParticiple": "browbeat",
-        "ru": "запугивать",
         "hasRegular": false
     },
     {
         "infinitive": "build",
         "pastSimple": "built",
         "pastParticiple": "built",
-        "ru": "строить",
         "hasRegular": false
     },
     {
         "infinitive": "burn",
         "pastSimple": "burnt",
         "pastParticiple": "burnt",
-        "ru": "гореть, жечь",
         "hasRegular": true
     },
     {
         "infinitive": "burst",
         "pastSimple": "burst",
         "pastParticiple": "burst",
-        "ru": "взрывать(ся)",
         "hasRegular": false
     },
     {
         "infinitive": "bust",
         "pastSimple": "bust",
         "pastParticiple": "bust",
-        "ru": "разжаловать",
         "hasRegular": false
     },
     {
         "infinitive": "buy",
         "pastSimple": "bought",
         "pastParticiple": "bought",
-        "ru": "покупать",
         "hasRegular": false
     },
     {
         "infinitive": "can",
         "pastSimple": "could",
         "pastParticiple": "been able",
-        "ru": "мочь, уметь",
         "hasRegular": false
     },
     {
         "infinitive": "cast",
         "pastSimple": "cast",
         "pastParticiple": "cast",
-        "ru": "бросить, кинуть, вышвырнуть",
         "hasRegular": false
     },
     {
         "infinitive": "catch",
         "pastSimple": "caught",
         "pastParticiple": "caught",
-        "ru": "ловить, хватать",
         "hasRegular": false
+    },
+    {
+        "infinitive": "chide",
+        "pastSimple": "chid",
+        "pastParticiple": "chidden",
+        "hasRegular": true
     },
     {
         "infinitive": "choose",
         "pastSimple": "chose",
         "pastParticiple": "chosen",
-        "ru": "выбирать",
         "hasRegular": false
     },
     {
         "infinitive": "clap",
         "pastSimple": "clapt",
         "pastParticiple": "clapt",
-        "ru": "хлопать, аплодировать",
         "hasRegular": true
     },
     {
         "infinitive": "cleave",
         "pastSimple": "clove",
         "pastParticiple": "cloven",
-        "ru": "раскалывать",
         "hasRegular": true
     },
     {
         "infinitive": "cling",
         "pastSimple": "clung",
         "pastParticiple": "clung",
-        "ru": "цепляться, льнуть",
         "hasRegular": false
     },
     {
         "infinitive": "clothe",
         "pastSimple": "clad",
         "pastParticiple": "clad",
-        "ru": "одевать (кого-либо)",
         "hasRegular": true
     },
     {
         "infinitive": "come",
         "pastSimple": "came",
         "pastParticiple": "come",
-        "ru": "приходить",
         "hasRegular": false
     },
     {
         "infinitive": "cost",
         "pastSimple": "cost",
         "pastParticiple": "cost",
-        "ru": "стоить, обходиться (в какую-либо сумму)",
         "hasRegular": false
     },
     {
         "infinitive": "creep",
         "pastSimple": "crept",
         "pastParticiple": "crept",
-        "ru": "ползать",
         "hasRegular": false
     },
     {
         "infinitive": "crow",
         "pastSimple": "crew",
         "pastParticiple": "crowed",
-        "ru": "кукарекать",
         "hasRegular": true
     },
     {
         "infinitive": "cut",
         "pastSimple": "cut",
         "pastParticiple": "cut",
-        "ru": "резать, разрезать",
         "hasRegular": false
     },
     {
         "infinitive": "deal",
         "pastSimple": "dealt",
         "pastParticiple": "dealt",
-        "ru": "иметь дела, разрешать трудности",
         "hasRegular": false
     },
     {
         "infinitive": "dig",
         "pastSimple": "dug",
         "pastParticiple": "dug",
-        "ru": "копать",
         "hasRegular": false
     },
     {
         "infinitive": "dive",
         "pastSimple": "dove",
         "pastParticiple": "dived",
-        "ru": "нырять, погружаться",
         "hasRegular": true
     },
     {
         "infinitive": "do",
         "pastSimple": "did",
         "pastParticiple": "done",
-        "ru": "делать, выполнять",
         "hasRegular": false
     },
     {
         "infinitive": "draw",
         "pastSimple": "drew",
         "pastParticiple": "drawn",
-        "ru": "рисовать, чертить",
         "hasRegular": false
     },
     {
         "infinitive": "dream",
         "pastSimple": "dreamt",
         "pastParticiple": "dreamt",
-        "ru": "грезить, мечтать",
         "hasRegular": true
     },
     {
         "infinitive": "drink",
         "pastSimple": "drank",
         "pastParticiple": "drunk",
-        "ru": "пить, выпивать",
         "hasRegular": false
     },
     {
         "infinitive": "drive",
         "pastSimple": "drove",
         "pastParticiple": "driven",
-        "ru": "водить",
         "hasRegular": false
     },
     {
         "infinitive": "dwell",
         "pastSimple": "dwelt",
         "pastParticiple": "dwelt",
-        "ru": "обитать, жить",
         "hasRegular": true
     },
     {
         "infinitive": "eat",
         "pastSimple": "ate",
         "pastParticiple": "eaten",
-        "ru": "есть пищу, кушать",
         "hasRegular": false
     },
     {
         "infinitive": "fall",
         "pastSimple": "fell",
         "pastParticiple": "fallen",
-        "ru": "падать",
         "hasRegular": false
     },
     {
         "infinitive": "feed",
         "pastSimple": "fed",
         "pastParticiple": "fed",
-        "ru": "кормить(ся)",
         "hasRegular": false
     },
     {
         "infinitive": "feel",
         "pastSimple": "felt",
         "pastParticiple": "felt",
-        "ru": "чувствовать",
         "hasRegular": false
     },
     {
         "infinitive": "fight",
         "pastSimple": "fought",
         "pastParticiple": "fought",
-        "ru": "драться, сражаться, бороться",
         "hasRegular": false
     },
     {
         "infinitive": "find",
         "pastSimple": "found",
         "pastParticiple": "found",
-        "ru": "находить",
         "hasRegular": false
     },
     {
         "infinitive": "fit",
         "pastSimple": "fit",
         "pastParticiple": "fit",
-        "ru": "подходить (по размеру)",
         "hasRegular": true
     },
     {
         "infinitive": "flee",
         "pastSimple": "fled",
         "pastParticiple": "fled",
-        "ru": "убегать, спасаться бегством",
         "hasRegular": false
     },
     {
         "infinitive": "fling",
         "pastSimple": "flung",
         "pastParticiple": "flung",
-        "ru": "бросать, швырнуть",
         "hasRegular": false
     },
     {
         "infinitive": "fly",
         "pastSimple": "flew",
         "pastParticiple": "flown",
-        "ru": "летать",
         "hasRegular": false
     },
     {
         "infinitive": "forbid",
         "pastSimple": "forbade",
         "pastParticiple": "forbidden",
-        "ru": "запрещать",
         "hasRegular": false
     },
     {
         "infinitive": "forecast",
         "pastSimple": "forecast",
         "pastParticiple": "forecast",
-        "ru": "предсказывать, прогнозировать",
         "hasRegular": true
     },
     {
         "infinitive": "forsee",
         "pastSimple": "forsaw",
         "pastParticiple": "forseen",
-        "ru": "предвидеть",
         "hasRegular": false
     },
     {
         "infinitive": "foretell",
         "pastSimple": "foretold",
         "pastParticiple": "foretold",
-        "ru": "предсказывать",
         "hasRegular": false
     },
     {
         "infinitive": "forget",
         "pastSimple": "forgot",
         "pastParticiple": "forgotten",
-        "ru": "забывать",
         "hasRegular": false
     },
     {
         "infinitive": "forgive",
         "pastSimple": "forgave",
         "pastParticiple": "forgiven",
-        "ru": "прощать",
         "hasRegular": false
     },
     {
         "infinitive": "forsake",
         "pastSimple": "forsook",
         "pastParticiple": "forsaken",
-        "ru": "покидать, отказываться, бросать",
         "hasRegular": false
     },
     {
         "infinitive": "freeze",
         "pastSimple": "froze",
         "pastParticiple": "frozen",
-        "ru": "замерзать, замораживать",
         "hasRegular": false
     },
     {
         "infinitive": "get",
         "pastSimple": "got",
         "pastParticiple": "got/gotten",
-        "ru": "получать",
         "hasRegular": false
     },
     {
         "infinitive": "give",
         "pastSimple": "gave",
         "pastParticiple": "given",
-        "ru": "давать",
         "hasRegular": false
     },
     {
         "infinitive": "go",
         "pastSimple": "went",
         "pastParticiple": "gone",
-        "ru": "идти, двигаться",
         "hasRegular": false
     },
     {
         "infinitive": "grind",
         "pastSimple": "ground",
         "pastParticiple": "ground",
-        "ru": "молоть, толочь",
         "hasRegular": false
     },
     {
         "infinitive": "grow",
         "pastSimple": "grew",
         "pastParticiple": "grown",
-        "ru": "расти, выращивать",
         "hasRegular": false
     },
     {
         "infinitive": "handwrite",
         "pastSimple": "handwrote",
         "pastParticiple": "handwritten",
-        "ru": "писать вручную",
         "hasRegular": false
     },
     {
         "infinitive": "hang",
         "pastSimple": "hung",
         "pastParticiple": "hung",
-        "ru": "вешать, висеть, повесить",
         "hasRegular": false
     },
     {
         "infinitive": "have",
         "pastSimple": "had",
         "pastParticiple": "had",
-        "ru": "иметь",
         "hasRegular": false
     },
     {
         "infinitive": "hew",
         "pastSimple": "hewed",
         "pastParticiple": "hewn",
-        "ru": "рубить",
         "hasRegular": false
     },
     {
         "infinitive": "hide",
         "pastSimple": "hid",
         "pastParticiple": "hidden",
-        "ru": "прятать(ся), скрывать(ся)",
         "hasRegular": false
     },
     {
         "infinitive": "hit",
         "pastSimple": "hit",
         "pastParticiple": "hit",
-        "ru": "ударять, поражать",
         "hasRegular": false
     },
     {
         "infinitive": "hold",
         "pastSimple": "held",
         "pastParticiple": "held",
-        "ru": "держать, удерживать",
         "hasRegular": false
     },
     {
         "infinitive": "hurt",
         "pastSimple": "hurt",
         "pastParticiple": "hurt",
-        "ru": "ранить, причинять боль",
         "hasRegular": false
     },
     {
         "infinitive": "inlay",
         "pastSimple": "inlaid",
         "pastParticiple": "inlaid",
-        "ru": "вкладывать, выстилать",
         "hasRegular": false
     },
     {
         "infinitive": "input",
         "pastSimple": "input",
         "pastParticiple": "input",
-        "ru": "вводить данные",
         "hasRegular": true
     },
     {
         "infinitive": "interweave",
         "pastSimple": "interwove",
         "pastParticiple": "interwoven",
-        "ru": "воткать",
         "hasRegular": false
     },
     {
         "infinitive": "keep",
         "pastSimple": "kept",
         "pastParticiple": "kept",
-        "ru": "держать, хранить",
         "hasRegular": false
     },
     {
         "infinitive": "kneel",
         "pastSimple": "knelt",
         "pastParticiple": "knelt",
-        "ru": "становиться на колени",
         "hasRegular": true
     },
     {
         "infinitive": "knit",
         "pastSimple": "knit",
         "pastParticiple": "knit",
-        "ru": "вязать",
         "hasRegular": true
     },
     {
         "infinitive": "know",
         "pastSimple": "knew",
         "pastParticiple": "known",
-        "ru": "знать, иметь представление (о чем-либо)",
         "hasRegular": false
     },
     {
         "infinitive": "lay",
         "pastSimple": "laid",
         "pastParticiple": "laid",
-        "ru": "класть, положить",
         "hasRegular": false
     },
     {
         "infinitive": "lead",
         "pastSimple": "led",
         "pastParticiple": "led",
-        "ru": "вести, руководить, управлять",
         "hasRegular": false
     },
     {
         "infinitive": "lean",
         "pastSimple": "leant",
         "pastParticiple": "leant",
-        "ru": "опираться, прислоняться, наклоняться",
         "hasRegular": true
     },
     {
         "infinitive": "leap",
         "pastSimple": "leapt",
         "pastParticiple": "leapt",
-        "ru": "прыгать, скакать",
         "hasRegular": true
     },
     {
         "infinitive": "learn",
         "pastSimple": "learnt",
         "pastParticiple": "learnt",
-        "ru": "учить(ся)",
         "hasRegular": true
     },
     {
         "infinitive": "leave",
         "pastSimple": "left",
         "pastParticiple": "left",
-        "ru": "покидать, оставлять",
         "hasRegular": false
     },
     {
         "infinitive": "lend",
         "pastSimple": "lent",
         "pastParticiple": "lent",
-        "ru": "одалживать, давать взаймы",
         "hasRegular": false
     },
     {
         "infinitive": "let",
         "pastSimple": "let",
         "pastParticiple": "let",
-        "ru": "позволять",
         "hasRegular": false
     },
     {
         "infinitive": "lie",
         "pastSimple": "lay",
         "pastParticiple": "lain",
-        "ru": "лежать",
         "hasRegular": false
     },
     {
         "infinitive": "light",
         "pastSimple": "lit",
         "pastParticiple": "lit",
-        "ru": "освещать",
         "hasRegular": true
     },
     {
         "infinitive": "lose",
         "pastSimple": "lost",
         "pastParticiple": "lost",
-        "ru": "терять",
         "hasRegular": false
     },
     {
         "infinitive": "make",
         "pastSimple": "made",
         "pastParticiple": "made",
-        "ru": "делать, производить, создавать",
         "hasRegular": false
     },
     {
         "infinitive": "may",
         "pastSimple": "might",
-        "ru": "мочь, иметь возможность",
         "hasRegular": false
     },
     {
         "infinitive": "mean",
         "pastSimple": "meant",
         "pastParticiple": "meant",
-        "ru": "значить, подразумевать, иметь в виду",
         "hasRegular": false
     },
     {
         "infinitive": "meet",
         "pastSimple": "met",
         "pastParticiple": "met",
-        "ru": "встречать, знакомиться",
         "hasRegular": false
     },
     {
         "infinitive": "melt",
         "pastSimple": "melted",
         "pastParticiple": "molten",
-        "ru": "таять, плавиться",
         "hasRegular": true
     },
     {
         "infinitive": "miscast",
         "pastSimple": "miscast",
         "pastParticiple": "miscast",
-        "ru": "неправильно распределять роли",
         "hasRegular": false
     },
     {
         "infinitive": "misdeal",
         "pastSimple": "misdealt",
         "pastParticiple": "misdealt",
-        "ru": "поступать неправильно",
         "hasRegular": false
     },
     {
         "infinitive": "misdo",
         "pastSimple": "misdid",
         "pastParticiple": "misdone",
-        "ru": "делать что-либо неправильно или небрежно",
         "hasRegular": false
     },
     {
         "infinitive": "misgive",
         "pastSimple": "misgave",
         "pastParticiple": "misgiven",
-        "ru": "внушать недоверия, опасения",
         "hasRegular": false
     },
     {
         "infinitive": "mishear",
         "pastSimple": "misheard",
         "pastParticiple": "misheard",
-        "ru": "ослышаться",
         "hasRegular": false
     },
     {
         "infinitive": "mishit",
         "pastSimple": "mishit",
         "pastParticiple": "mishit",
-        "ru": "промахнуться",
         "hasRegular": false
     },
     {
         "infinitive": "mislay",
         "pastSimple": "misled",
         "pastParticiple": "misled",
-        "ru": "класть не на место",
         "hasRegular": false
     },
     {
         "infinitive": "mislead",
         "pastSimple": "misled",
         "pastParticiple": "misled",
-        "ru": "ввести в заблуждение",
         "hasRegular": false
     },
     {
         "infinitive": "misread",
         "pastSimple": "misread",
         "pastParticiple": "misread",
-        "ru": "неправильно истолковывать",
         "hasRegular": false
     },
     {
         "infinitive": "misspell",
         "pastSimple": "misspelt",
         "pastParticiple": "misspelt",
-        "ru": "писать с ошибками",
         "hasRegular": false
     },
     {
         "infinitive": "misspend",
         "pastSimple": "misspent",
         "pastParticiple": "misspent",
-        "ru": "неразумно, зря тратить",
         "hasRegular": false
     },
     {
         "infinitive": "mistake",
         "pastSimple": "mistook",
         "pastParticiple": "mistaken",
-        "ru": "ошибаться",
         "hasRegular": false
     },
     {
         "infinitive": "misunderstand",
         "pastSimple": "misunderstood",
         "pastParticiple": "misunderstood",
-        "ru": "неправильно понимать",
         "hasRegular": false
     },
     {
         "infinitive": "mow",
         "pastSimple": "mowed",
         "pastParticiple": "mown",
-        "ru": "косить, жать, подстригать (траву)",
         "hasRegular": true
     },
     {
         "infinitive": "must",
         "pastSimple": "had to",
-        "ru": "должен (сделать что-то)",
+        "hasRegular": false
+    },
+    {
+        "infinitive": "offset",
+        "pastSimple": "offset",
+        "pastParticiple": "offset",
+        "hasRegular": false
+    },
+    {
+        "infinitive": "overcome",
+        "pastSimple": "overcame",
+        "pastParticiple": "overcome",
         "hasRegular": false
     },
     {
         "infinitive": "overhear",
         "pastSimple": "overheard",
         "pastParticiple": "overheard",
-        "ru": "подслушивать",
         "hasRegular": false
     },
     {
         "infinitive": "overtake",
         "pastSimple": "overtook",
         "pastParticiple": "overtaken",
-        "ru": "догонять",
+        "hasRegular": false
+    },
+    {
+        "infinitive": "partake",
+        "pastSimple": "partook",
+        "pastParticiple": "partaken",
         "hasRegular": false
     },
     {
         "infinitive": "pay",
         "pastSimple": "paid",
         "pastParticiple": "paid",
-        "ru": "платить",
+        "hasRegular": false
+    },
+    {
+        "infinitive": "plead",
+        "pastSimple": "pled",
+        "pastParticiple": "pled",
+        "hasRegular": true
+    },
+    {
+        "infinitive": "preset",
+        "pastSimple": "preset",
+        "pastParticiple": "preset",
         "hasRegular": false
     },
     {
         "infinitive": "prove",
         "pastSimple": "proved",
         "pastParticiple": "proven",
-        "ru": "доказывать",
         "hasRegular": true
     },
     {
         "infinitive": "put",
         "pastSimple": "put",
         "pastParticiple": "put",
-        "ru": "класть, ставить, размещать",
         "hasRegular": false
     },
     {
         "infinitive": "quit",
         "pastSimple": "quit",
         "pastParticiple": "quit",
-        "ru": "оставлять, покидать",
         "hasRegular": true
     },
     {
         "infinitive": "read",
         "pastSimple": "read",
         "pastParticiple": "read",
-        "ru": "читать",
+        "hasRegular": false
+    },
+    {
+        "infinitive": "relay",
+        "pastSimple": "relaid",
+        "pastParticiple": "relaid",
+        "hasRegular": false
+    },
+    {
+        "infinitive": "rend",
+        "pastSimple": "rent",
+        "pastParticiple": "rent",
         "hasRegular": false
     },
     {
         "infinitive": "rid",
         "pastSimple": "rid",
         "pastParticiple": "rid",
-        "ru": "избавлять(ся), освобождать",
         "hasRegular": true
     },
     {
         "infinitive": "ride",
         "pastSimple": "rode",
         "pastParticiple": "ridden",
-        "ru": "ездить верхом",
         "hasRegular": false
     },
     {
         "infinitive": "ring",
         "pastSimple": "rang",
         "pastParticiple": "rung",
-        "ru": "звенеть, звонить",
         "hasRegular": false
     },
     {
         "infinitive": "rise",
         "pastSimple": "rose",
         "pastParticiple": "risen",
-        "ru": "восходить, подниматься",
         "hasRegular": false
     },
     {
         "infinitive": "run",
         "pastSimple": "ran",
         "pastParticiple": "run",
-        "ru": "бежать, течь",
         "hasRegular": false
     },
     {
         "infinitive": "saw",
         "pastSimple": "sawed",
         "pastParticiple": "sawn",
-        "ru": "пилить",
         "hasRegular": true
     },
     {
         "infinitive": "say",
         "pastSimple": "said",
         "pastParticiple": "said",
-        "ru": "сказать, говорить",
         "hasRegular": false
     },
     {
         "infinitive": "see",
         "pastSimple": "saw",
         "pastParticiple": "seen",
-        "ru": "видеть",
         "hasRegular": false
     },
     {
         "infinitive": "seek",
         "pastSimple": "sought",
         "pastParticiple": "sought",
-        "ru": "искать",
         "hasRegular": false
     },
     {
         "infinitive": "sell",
         "pastSimple": "sold",
         "pastParticiple": "sold",
-        "ru": "продавать",
         "hasRegular": false
     },
     {
         "infinitive": "send",
         "pastSimple": "sent",
         "pastParticiple": "sent",
-        "ru": "посылать, отправлять",
         "hasRegular": false
     },
     {
         "infinitive": "set",
         "pastSimple": "set",
         "pastParticiple": "set",
-        "ru": "ставить, устанавливать, задавать",
         "hasRegular": false
     },
     {
         "infinitive": "sew",
         "pastSimple": "sewed",
         "pastParticiple": "sewn",
-        "ru": "шить, пришивать, сшивать",
         "hasRegular": true
     },
     {
         "infinitive": "shake",
         "pastSimple": "shook",
         "pastParticiple": "shaken",
-        "ru": "трясти",
         "hasRegular": false
     },
     {
         "infinitive": "shall",
         "pastSimple": "should",
-        "ru": "делать что-то (в будущем)",
         "hasRegular": false
     },
     {
         "infinitive": "shave",
         "pastSimple": "shaved",
         "pastParticiple": "shaven",
-        "ru": "брить(ся)",
         "hasRegular": true
     },
     {
         "infinitive": "shear",
         "pastSimple": "shore",
         "pastParticiple": "shorn",
-        "ru": "срезать, стричь",
         "hasRegular": true
     },
     {
         "infinitive": "shed",
         "pastSimple": "shed",
         "pastParticiple": "shed",
-        "ru": "проливать, сбрасывать",
         "hasRegular": false
     },
     {
         "infinitive": "shine",
         "pastSimple": "shone",
         "pastParticiple": "shone",
-        "ru": "светить, сиять, озарять",
+        "hasRegular": false
+    },
+    {
+        "infinitive": "shoe",
+        "pastSimple": "shod",
+        "pastParticiple": "shod",
         "hasRegular": false
     },
     {
         "infinitive": "shoot",
         "pastSimple": "shot",
         "pastParticiple": "shot",
-        "ru": "стрелять",
         "hasRegular": false
     },
     {
         "infinitive": "show",
         "pastSimple": "showed",
         "pastParticiple": "shown",
-        "ru": "показывать",
         "hasRegular": false
     },
     {
         "infinitive": "shrink",
         "pastSimple": "shrank",
         "pastParticiple": "shrunk",
-        "ru": "сокращаться, сжиматься",
         "hasRegular": false
     },
     {
         "infinitive": "shut",
         "pastSimple": "shut",
         "pastParticiple": "shut",
-        "ru": "закрывать(ся), запирать(ся), затворять",
         "hasRegular": false
     },
     {
         "infinitive": "sing",
         "pastSimple": "sang",
         "pastParticiple": "sung",
-        "ru": "петь",
         "hasRegular": false
     },
     {
         "infinitive": "sink",
-        "pastSimple": "sank",
-        "pastParticiple": "sunk",
-        "ru": "тонуть, опускаться, погружаться (под воду)",
+        "pastSimple": "sank/sunk",
+        "pastParticiple": "sunk/sunken",
         "hasRegular": false
     },
     {
         "infinitive": "sit",
         "pastSimple": "sat",
         "pastParticiple": "sat",
-        "ru": "сидеть",
+        "hasRegular": false
+    },
+    {
+        "infinitive": "slay",
+        "pastSimple": "slew",
+        "pastParticiple": "slain",
         "hasRegular": false
     },
     {
         "infinitive": "sleep",
         "pastSimple": "slept",
         "pastParticiple": "slept",
-        "ru": "спать",
         "hasRegular": false
     },
     {
         "infinitive": "slide",
         "pastSimple": "slid",
         "pastParticiple": "slid",
-        "ru": "скользить",
         "hasRegular": false
     },
     {
         "infinitive": "sling",
         "pastSimple": "slung",
         "pastParticiple": "slung",
-        "ru": "метать, швырять",
         "hasRegular": false
     },
     {
         "infinitive": "slink",
         "pastSimple": "slink",
         "pastParticiple": "slink",
-        "ru": "красться",
-        "hasRegular": false
+        "hasRegular": true
     },
     {
         "infinitive": "slit",
         "pastSimple": "slit",
         "pastParticiple": "slit",
-        "ru": "разрезать (вдоль), делать разрез",
         "hasRegular": false
     },
     {
         "infinitive": "smell",
         "pastSimple": "smelt",
         "pastParticiple": "smelt",
-        "ru": "пахнуть, нюхать",
         "hasRegular": true
     },
     {
         "infinitive": "sneak",
         "pastSimple": "snuck",
         "pastParticiple": "snuck",
-        "ru": "красться, подкрадываться",
         "hasRegular": true
     },
     {
         "infinitive": "sow",
         "pastSimple": "sowed",
         "pastParticiple": "sown",
-        "ru": "сеять, засеивать",
-        "hasRegular": false
+        "hasRegular": true
     },
     {
         "infinitive": "speak",
         "pastSimple": "spoke",
         "pastParticiple": "spoken",
-        "ru": "говорить",
         "hasRegular": false
     },
     {
-        "infinitive": "speeed",
+        "infinitive": "speed",
         "pastSimple": "sped",
         "pastParticiple": "sped",
-        "ru": "спешить, ускорять",
         "hasRegular": true
     },
     {
         "infinitive": "spell",
         "pastSimple": "spelt",
         "pastParticiple": "spelt",
-        "ru": "писать или читать по буквам",
         "hasRegular": true
     },
     {
         "infinitive": "spend",
         "pastSimple": "spent",
         "pastParticiple": "spent",
-        "ru": "тратить, расходовать",
         "hasRegular": false
     },
     {
         "infinitive": "spill",
         "pastSimple": "spilt",
         "pastParticiple": "spilt",
-        "ru": "проливать, разливать",
         "hasRegular": true
     },
     {
         "infinitive": "spin",
         "pastSimple": "spin",
         "pastParticiple": "spin",
-        "ru": "крутить, прясть",
         "hasRegular": false
     },
     {
         "infinitive": "spit",
-        "pastSimple": "spat",
-        "pastParticiple": "spat",
-        "ru": "плевать",
+        "pastSimple": "spit/spat",
+        "pastParticiple": "spit/spat",
         "hasRegular": false
     },
     {
         "infinitive": "split",
         "pastSimple": "split",
         "pastParticiple": "split",
-        "ru": "разделять, расщеплять, раскалывать",
         "hasRegular": false
     },
     {
         "infinitive": "spoil",
         "pastSimple": "spoilt",
         "pastParticiple": "spoilt",
-        "ru": "портить",
         "hasRegular": true
     },
     {
         "infinitive": "spread",
         "pastSimple": "spread",
         "pastParticiple": "spread",
-        "ru": "распространять(ся), развернуть",
         "hasRegular": false
     },
     {
         "infinitive": "spring",
         "pastSimple": "sprang",
         "pastParticiple": "sprung",
-        "ru": "прагать, скакать",
         "hasRegular": false
     },
     {
         "infinitive": "stand",
         "pastSimple": "stood",
         "pastParticiple": "stood",
-        "ru": "стоять",
         "hasRegular": false
     },
     {
         "infinitive": "steal",
         "pastSimple": "stole",
         "pastParticiple": "stolen",
-        "ru": "воровать, красть",
         "hasRegular": false
     },
     {
         "infinitive": "stick",
         "pastSimple": "stuck",
         "pastParticiple": "stuck",
-        "ru": "уколоть, приклеивать(ся), липнуть, втыкать",
         "hasRegular": false
     },
     {
         "infinitive": "sting",
         "pastSimple": "stung",
         "pastParticiple": "stung",
-        "ru": "жалить",
         "hasRegular": false
     },
     {
         "infinitive": "stink",
         "pastSimple": "stank",
         "pastParticiple": "stunk",
-        "ru": "вонять",
         "hasRegular": false
+    },
+    {
+        "infinitive": "strew",
+        "pastSimple": "strewed",
+        "pastParticiple": "strewn",
+        "hasRegular": true
     },
     {
         "infinitive": "stride",
         "pastSimple": "strode",
         "pastParticiple": "stridden",
-        "ru": "шагать",
         "hasRegular": false
     },
     {
         "infinitive": "strike",
         "pastSimple": "struck",
-        "pastParticiple": "struck",
-        "ru": "бастовать, поражать, ударять",
+        "pastParticiple": "struck/stricken",
         "hasRegular": false
     },
     {
         "infinitive": "string",
         "pastSimple": "strung",
         "pastParticiple": "strung",
-        "ru": "натягивать, нанизывать",
         "hasRegular": false
     },
     {
         "infinitive": "strive",
         "pastSimple": "strove",
         "pastParticiple": "striven",
-        "ru": "стараться, стремиться",
         "hasRegular": false
     },
     {
         "infinitive": "swear",
         "pastSimple": "swore",
         "pastParticiple": "sworn",
-        "ru": "клясться, присягать, ругаться",
         "hasRegular": false
     },
     {
         "infinitive": "sweat",
         "pastSimple": "sweat",
         "pastParticiple": "sweat",
-        "ru": "потеть",
         "hasRegular": true
     },
     {
         "infinitive": "sweep",
         "pastSimple": "swept",
         "pastParticiple": "swept",
-        "ru": "подметать, сметать",
         "hasRegular": false
     },
     {
         "infinitive": "swell",
         "pastSimple": "swelled",
         "pastParticiple": "swollen",
-        "ru": "набухать, разбухать, раздуваться",
         "hasRegular": true
     },
     {
         "infinitive": "swim",
         "pastSimple": "swam",
         "pastParticiple": "swum",
-        "ru": "плавать",
         "hasRegular": false
     },
     {
         "infinitive": "swing",
         "pastSimple": "swung",
         "pastParticiple": "swung",
-        "ru": "качать(ся), раскачивать, вертеть",
         "hasRegular": false
     },
     {
         "infinitive": "take",
         "pastSimple": "took",
         "pastParticiple": "taken",
-        "ru": "брать, взять",
         "hasRegular": false
     },
     {
         "infinitive": "teach",
         "pastSimple": "taught",
         "pastParticiple": "taught",
-        "ru": "учить",
         "hasRegular": false
     },
     {
         "infinitive": "tear",
         "pastSimple": "tore",
         "pastParticiple": "torn",
-        "ru": "рвать",
         "hasRegular": false
     },
     {
         "infinitive": "tell",
         "pastSimple": "told",
         "pastParticiple": "told",
-        "ru": "рассказывать",
         "hasRegular": false
     },
     {
         "infinitive": "think",
         "pastSimple": "thought",
         "pastParticiple": "thought",
-        "ru": "думать",
         "hasRegular": false
     },
     {
         "infinitive": "thrive",
         "pastSimple": "throve",
         "pastParticiple": "thriven",
-        "ru": "преуспевать, процветать",
         "hasRegular": true
     },
     {
         "infinitive": "throw",
         "pastSimple": "threw",
         "pastParticiple": "thrown",
-        "ru": "бросать, кидать",
         "hasRegular": false
     },
     {
         "infinitive": "thrust",
         "pastSimple": "thrust",
         "pastParticiple": "thrust",
-        "ru": "пропихивать, протыкать, совать, толкать",
         "hasRegular": false
     },
     {
         "infinitive": "tread",
         "pastSimple": "trod",
         "pastParticiple": "trodden",
-        "ru": "ступать, топтать",
+        "hasRegular": false
+    },
+    {
+        "infinitive": "typeset",
+        "pastSimple": "typeset",
+        "pastParticiple": "typeset",
         "hasRegular": false
     },
     {
         "infinitive": "undergo",
         "pastSimple": "underwent",
         "pastParticiple": "undergone",
-        "ru": "испытывать, переносить",
         "hasRegular": false
     },
     {
         "infinitive": "understand",
         "pastSimple": "understood",
         "pastParticiple": "understood",
-        "ru": "понимать",
         "hasRegular": false
     },
     {
         "infinitive": "undertake",
         "pastSimple": "undertook",
         "pastParticiple": "undertaken",
-        "ru": "предпринимать",
         "hasRegular": false
     },
     {
         "infinitive": "upset",
         "pastSimple": "upset",
         "pastParticiple": "upset",
-        "ru": "расстроиться, опрокидывать(ся)",
         "hasRegular": false
     },
     {
         "infinitive": "wake",
         "pastSimple": "woke",
         "pastParticiple": "woken",
-        "ru": "будить, просыпаться",
         "hasRegular": true
     },
     {
         "infinitive": "waylay",
         "pastSimple": "waylaid",
         "pastParticiple": "waylaid",
-        "ru": "подстерегать",
         "hasRegular": false
     },
     {
         "infinitive": "wear",
         "pastSimple": "wore",
         "pastParticiple": "worn",
-        "ru": "носить (одежду)",
         "hasRegular": false
     },
     {
         "infinitive": "weave",
         "pastSimple": "wove",
         "pastParticiple": "woven",
-        "ru": "ткать",
         "hasRegular": false
     },
     {
         "infinitive": "wed",
         "pastSimple": "wed",
         "pastParticiple": "wed",
-        "ru": "жениться, выходить/выдавать замуж",
         "hasRegular": true
     },
     {
         "infinitive": "weep",
         "pastSimple": "wept",
         "pastParticiple": "wept",
-        "ru": "плакать, рыдать",
         "hasRegular": false
     },
     {
         "infinitive": "will",
         "pastSimple": "would",
-        "ru": "делать что-то (в будущем)",
         "hasRegular": false
     },
     {
         "infinitive": "wet",
         "pastSimple": "wet",
         "pastParticiple": "wet",
-        "ru": "мочить, промокать, увлажнять",
         "hasRegular": true
     },
     {
         "infinitive": "win",
         "pastSimple": "won",
         "pastParticiple": "won",
-        "ru": "выигрывать, побеждать",
         "hasRegular": false
     },
     {
         "infinitive": "wind",
         "pastSimple": "wound",
         "pastParticiple": "wound",
-        "ru": "виться, заводить (механизм), наматывать",
         "hasRegular": false
     },
     {
         "infinitive": "withdraw",
         "pastSimple": "withdrew",
         "pastParticiple": "withdrawn",
-        "ru": "забирать назад, отзывать, изымать",
         "hasRegular": false
     },
     {
         "infinitive": "withhold",
         "pastSimple": "withheld",
         "pastParticiple": "withheld",
-        "ru": "воздерживаться, отказывать(ся), удерживать, утаивать",
         "hasRegular": false
     },
     {
         "infinitive": "withstand",
         "pastSimple": "withstood",
         "pastParticiple": "withstood",
-        "ru": "выдерживать, не поддаваться",
         "hasRegular": false
     },
     {
         "infinitive": "wring",
         "pastSimple": "wrung",
         "pastParticiple": "wrung",
-        "ru": "выжимать, сдавливать, скручивать",
         "hasRegular": false
     },
     {
         "infinitive": "write",
         "pastSimple": "wrote",
         "pastParticiple": "written",
-        "ru": "писать",
         "hasRegular": false
     }
 ]
