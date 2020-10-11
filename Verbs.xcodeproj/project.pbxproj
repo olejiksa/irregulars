@@ -308,8 +308,8 @@
 				EB2F5E15251F71DD007DCF60 /* AudioService.swift */,
 				EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */,
 				EBB3BC0F251F3545006E0DC7 /* KeyboardService.swift */,
-				EBEB1D91251F15B40019972C /* VerbsService.swift */,
 				EB717DC2252ED9EB007791AD /* UserDefaultsService.swift */,
+				EBEB1D91251F15B40019972C /* VerbsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";

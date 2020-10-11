@@ -49,6 +49,7 @@ final class ListPresenter: NSObject {
             
             self.verbsService.shouldRegularVerbsBeShown = $0
             self.viewController?.reloadData()
+            self.didSelectedItemSet()
         }
                                              
         router?.goToSettings(with: shouldRegularVerbsBeShownBlock)

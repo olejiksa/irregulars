@@ -7,18 +7,19 @@
 //
 
 import UIKit
-import AVFoundation
 
 final class DetailViewController: UIViewController {
 
     private let audioService = AudioService()
     private let verb: Verb
+    private let isOpenedByDeeplink: Bool
     private var items: [ItemProtocol] = []
     
     @IBOutlet private weak var tableView: UITableView!
     
-    init(verb: Verb) {
+    init(verb: Verb, isOpenedByDeeplink: Bool = false) {
         self.verb = verb
+        self.isOpenedByDeeplink = isOpenedByDeeplink
         super.init(nibName: nil, bundle: nil)
         setItems()
     }
@@ -101,7 +102,7 @@ extension DetailViewController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController,
                               willShow viewController: UIViewController,
                               animated: Bool) {
-        guard animated else { return }
+        guard animated || isOpenedByDeeplink else { return }
         let title = viewController.navigationItem.title ?? ""
         NotificationCenter.default.post(name: Notification.Name.infinitive,
                                         object: nil,
