@@ -10,6 +10,7 @@
 "Settings" = "Réglages";
 "General" = "Général";
 "Regular verbs (-ed)" = "Verbes réguliers (-ed)";
+"Derived forms" = "Formes dérivées";
 "Translation" = "Traduction";
 "EmptyViewControllerLabel" = "Pour afficher des informations sur un verbe irrégulier, appuyer dessus sur le côté gauche de l'écran";
 

@@ -18,7 +18,8 @@ final class UserDefaultsService {
     private let jsonEncoder = JSONEncoder()
     private let jsonDecorder = JSONDecoder()
     
-    func save(_ settings: Settings) {
+    func save(_ settings: Settings?) {
+        guard let settings = settings else { return }
         let encoded = try? jsonEncoder.encode(settings)
         defaults.set(encoded, forKey: Keys.settings.rawValue)
     }

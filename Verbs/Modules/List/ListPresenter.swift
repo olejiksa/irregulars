@@ -30,17 +30,12 @@ final class ListPresenter: NSObject {
         
         super.init()
         
-        verbsService.shouldRegularVerbsBeShown = userDefaultsService.load()?.isOn ?? true
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(didSelectedItemUpdate),
-                                               name: Notification.Name.infinitive,
-                                               object: nil)
+        loadSettings()
+        subscribe()
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self,
-                                                  name: Notification.Name.infinitive,
-                                                  object: nil)
+        unsubscribe()
     }
     
     @objc func goToSettings() {
@@ -51,8 +46,17 @@ final class ListPresenter: NSObject {
             self.viewController?.reloadData()
             self.didSelectedItemSet()
         }
+        
+        let shouldDerivedFormsBeShownBlock: ((Bool) -> ()) = { [weak self] in
+            guard let self = self else { return }
+            
+            self.verbsService.shouldDerivedFormsBeShown = $0
+            self.viewController?.reloadData()
+            self.didSelectedItemSet()
+        }
                                              
-        router?.goToSettings(with: shouldRegularVerbsBeShownBlock)
+        router?.goToSettings(regularVerbsBlock: shouldRegularVerbsBeShownBlock,
+                             derivedFormsBlock: shouldDerivedFormsBeShownBlock)
     }
 }
 
@@ -60,8 +64,22 @@ final class ListPresenter: NSObject {
 
 private extension ListPresenter {
     
-    @objc func didSelectedItemUpdate(_ notification: Notification) {
-        infinitive = notification.userInfo?[Notification.Name.infinitive] as? String ?? ""
+    func loadSettings() {
+        verbsService.shouldRegularVerbsBeShown = userDefaultsService.load()?.shouldRegularVerbsBeShown ?? true
+        verbsService.shouldDerivedFormsBeShown = userDefaultsService.load()?.shouldDerivedFormsBeShown ?? true
+    }
+    
+    func subscribe() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(didSelectedItemUpdate),
+                                               name: Notification.Name.infinitive,
+                                               object: nil)
+    }
+    
+    func unsubscribe() {
+        NotificationCenter.default.removeObserver(self,
+                                                  name: Notification.Name.infinitive,
+                                                  object: nil)
     }
     
     func didSelectedItemSet() {
@@ -69,6 +87,10 @@ private extension ListPresenter {
         
         let indexPath = verbsService.indexPath(of: infinitive)
         viewController?.selectRow(at: indexPath)
+    }
+    
+    @objc func didSelectedItemUpdate(_ notification: Notification) {
+        infinitive = notification.userInfo?[Notification.Name.infinitive] as? String ?? ""
     }
 }
 

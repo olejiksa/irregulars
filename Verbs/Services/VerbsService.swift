@@ -35,6 +35,13 @@ final class VerbsService {
         }
     }
     
+    var shouldDerivedFormsBeShown: Bool = true {
+        didSet {
+            setItems()
+            setGroupedItems()
+        }
+    }
+    
     init() {
         setItems()
         setGroupedItems()
@@ -58,8 +65,14 @@ private extension VerbsService {
     
     func setItems() {
         var set = Set(parser.read(from: "irregulars"))
+       
         if !shouldRegularVerbsBeShown {
             let elements = set.filter { $0.hasRegular }
+            elements.forEach { set.remove($0) }
+        }
+        
+        if !shouldDerivedFormsBeShown {
+            let elements = set.filter { $0.isDerived }
             elements.forEach { set.remove($0) }
         }
         

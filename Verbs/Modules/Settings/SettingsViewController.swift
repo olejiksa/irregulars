@@ -11,11 +11,13 @@ import UIKit
 final class SettingsViewController: UIViewController {
     
     var shouldRegularVerbsBeShownBlock: ((Bool) -> ())?
+    var shouldDerivedFormsBeShownBlock: ((Bool) -> ())?
 
     @IBOutlet private weak var tableView: UITableView!
     
     private let userDefaultsService = UserDefaultsService()
     private var items: [ItemProtocol] = []
+    private var settings: Settings?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,19 +47,29 @@ private extension SettingsViewController {
     }
     
     func setupItems() {
-        let isOn = userDefaultsService.load()?.isOn ?? true
+        settings = userDefaultsService.load() ?? .init()
         items = [SwitchItem(text: "Regular verbs (-ed)".localized,
-                            isOn: isOn,
-                            actionBlock: didSwitchValueChange)]
+                            isOn: settings?.shouldRegularVerbsBeShown ?? true,
+                            actionBlock: didRegularVerbsOptionChange),
+                 SwitchItem(text: "Derived forms".localized,
+                            isOn: settings?.shouldDerivedFormsBeShown ?? true,
+                            actionBlock: didDerivedFormsOptionChange)]
     }
     
     @objc func didCloseTap() {
         dismiss(animated: true)
     }
     
-    func didSwitchValueChange(isOn: Bool) {
-        userDefaultsService.save(Settings(isOn: isOn))
-        shouldRegularVerbsBeShownBlock?(isOn)
+    func didRegularVerbsOptionChange(_ value: Bool) {
+        settings?.shouldRegularVerbsBeShown = value
+        userDefaultsService.save(settings)
+        shouldRegularVerbsBeShownBlock?(value)
+    }
+    
+    func didDerivedFormsOptionChange(_ value: Bool) {
+        settings?.shouldDerivedFormsBeShown = value
+        userDefaultsService.save(settings)
+        shouldDerivedFormsBeShownBlock?(value)
     }
 }
 

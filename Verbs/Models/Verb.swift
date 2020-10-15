@@ -14,6 +14,7 @@ struct Verb: Decodable {
     let pastSimple: String
     let pastParticiple: String?
     let hasRegular: Bool
+    let isDerived: Bool
     
     var translation: String { infinitive.localized }
     var url: URL? { URL(string: "verbs://\(infinitive)") }

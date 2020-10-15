@@ -8,5 +8,11 @@
 
 struct Settings: Codable {
     
-    let isOn: Bool
+    var shouldRegularVerbsBeShown: Bool
+    var shouldDerivedFormsBeShown: Bool
+    
+    init() {
+        shouldRegularVerbsBeShown = true
+        shouldDerivedFormsBeShown = true
+    }
 }
