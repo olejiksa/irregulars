@@ -1618,7 +1618,7 @@
     {
         "infinitive": {
             "value": "lose",
-            "transcription": "/lu:z/"
+            "transcription": "/luːz/"
         },
         "simplePast": {
             "value": "lost",
@@ -1632,175 +1632,394 @@
         "isDerived": false
     },
     {
-        "infinitive": "make",
-        "simplePast": "made",
-        "pastParticiple": "made",
+        "infinitive": {
+            "value": "make",
+            "transcription": "/meɪk/"
+        },
+        "simplePast": {
+            "value": "made",
+            "transcription": "/meɪd/"
+        },
+        "pastParticiple": {
+            "value": "made",
+            "transcription": "/meɪd/"
+        },
         "hasRegular": false,
         "isDerived": false
     },
     {
-        "infinitive": "may",
-        "simplePast": "might",
+        "infinitive": {
+            "value": "may",
+            "transcription": "/meɪ/"
+        },
+        "simplePast": {
+            "value": "might",
+            "transcription": "/mʌɪt/"
+        },
         "hasRegular": false,
         "isDerived": false
     },
     {
-        "infinitive": "mean",
-        "simplePast": "meant",
-        "pastParticiple": "meant",
+        "infinitive": {
+            "value": "mean",
+            "transcription": "/miːn/"
+        },
+        "simplePast": {
+            "value": "meant",
+            "transcription": "/mɛnt/"
+        },
+        "pastParticiple": {
+            "value": "meant",
+            "transcription": "/mɛnt/"
+        },
         "hasRegular": false,
         "isDerived": false
     },
     {
-        "infinitive": "meet",
-        "simplePast": "met",
-        "pastParticiple": "met",
+        "infinitive": {
+            "value": "meet",
+            "transcription": "/miːt/"
+        },
+        "simplePast": {
+            "value": "met",
+            "transcription": "/mɛt/"
+        },
+        "pastParticiple": {
+            "value": "met",
+            "transcription": "/mɛt/"
+        },
         "hasRegular": false,
         "isDerived": false
     },
     {
-        "infinitive": "melt",
-        "simplePast": "melted",
-        "pastParticiple": "molten",
+        "infinitive": {
+            "value": "melt",
+            "transcription": "/mɛlt/"
+        },
+        "simplePast": {
+            "value": "melted",
+            "transcription": "/'mɛlt(ə)d/"
+        },
+        "pastParticiple": {
+            "value": "molt",
+            "transcription": "/məʊlt/"
+        },
         "hasRegular": true,
         "isDerived": false
     },
     {
-        "infinitive": "miscast",
-        "simplePast": "miscast",
-        "pastParticiple": "miscast",
+        "infinitive": {
+            "value": "miscast",
+            "transcription": "/ˌmɪs'kɑːst/"
+        },
+        "simplePast": {
+            "value": "miscast",
+            "transcription": "/ˌmɪs'kɑːst/"
+        },
+        "pastParticiple": {
+            "value": "miscast",
+            "transcription": "/ˌmɪs'kɑːst/"
+        },
         "hasRegular": false,
         "isDerived": true
     },
     {
-        "infinitive": "misdeal",
-        "simplePast": "misdealt",
-        "pastParticiple": "misdealt",
+        "infinitive": {
+            "value": "misdeal",
+            "transcription": "/ˌmɪs'diːl/"
+        },
+        "simplePast": {
+            "value": "misdealt",
+            "transcription": "/ˌmɪs'dɛlt/"
+        },
+        "pastParticiple": {
+            "value": "misdealt",
+            "transcription": "/ˌmɪs'dɛlt/"
+        },
         "hasRegular": false,
         "isDerived": true
     },
     {
-        "infinitive": "misdo",
-        "simplePast": "misdid",
-        "pastParticiple": "misdone",
+        "infinitive": {
+            "value": "misdo",
+            "transcription": "/ˌmɪs'duː/"
+        },
+        "simplePast": {
+            "value": "misdid",
+            "transcription": "/ˌmɪs'dɪd/"
+        },
+        "pastParticiple": {
+            "value": "misdone",
+            "transcription": "/ˌmɪs'dʌn/"
+        },
         "hasRegular": false,
         "isDerived": true
     },
     {
-        "infinitive": "misgive",
-        "simplePast": "misgave",
-        "pastParticiple": "misgiven",
+        "infinitive": {
+            "value": "misgive",
+            "transcription": "/ˌmɪs'gɪv/"
+        },
+        "simplePast": {
+            "value": "misgave",
+            "transcription": "/ˌmɪs'geɪv/"
+        },
+        "pastParticiple": {
+            "value": "misgiven",
+            "transcription": "/ˌmɪs'gɪv(ə)n/"
+        },
         "hasRegular": false,
         "isDerived": true
     },
     {
-        "infinitive": "mishear",
-        "simplePast": "misheard",
-        "pastParticiple": "misheard",
+        "infinitive": {
+            "value": "mishear",
+            "transcription": "/ˌmɪs'hɪə(r)/"
+        },
+        "simplePast": {
+            "value": "misheard",
+            "transcription": "/ˌmɪs'həː(r)d/"
+        },
+        "pastParticiple": {
+            "value": "misheard",
+            "transcription": "/ˌmɪs'həː(r)d/"
+        },
         "hasRegular": false,
         "isDerived": true
     },
     {
-        "infinitive": "mishit",
-        "simplePast": "mishit",
-        "pastParticiple": "mishit",
+        "infinitive": {
+            "value": "mishit",
+            "transcription": "/ˌmɪs'hɪt/"
+        },
+        "simplePast": {
+            "value": "mishit",
+            "transcription": "/ˌmɪs'hɪt/"
+        },
+        "pastParticiple": {
+            "value": "mishit",
+            "transcription": "/ˌmɪs'hɪt/"
+        },
         "hasRegular": false,
         "isDerived": true
     },
     {
-        "infinitive": "mislay",
-        "simplePast": "misled",
-        "pastParticiple": "misled",
+        "infinitive": {
+            "value": "mislay",
+            "transcription": "/ˌmɪs'leɪ/"
+        },
+        "simplePast": {
+            "value": "mislaid",
+            "transcription": "/ˌmɪs'leɪd/"
+        },
+        "pastParticiple": {
+            "value": "mislaid",
+            "transcription": "/ˌmɪs'leɪd/"
+        },
         "hasRegular": false,
         "isDerived": true
     },
     {
-        "infinitive": "mislead",
-        "simplePast": "misled",
-        "pastParticiple": "misled",
+        "infinitive": {
+            "value": "mislead",
+            "transcription": "/ˌmɪs'liːd/"
+        },
+        "simplePast": {
+            "value": "misled",
+            "transcription": "/ˌmɪs'lɛd/"
+        },
+        "pastParticiple": {
+            "value": "misled",
+            "transcription": "/ˌmɪs'lɛd/"
+        },
         "hasRegular": false,
         "isDerived": true
     },
     {
-        "infinitive": "misread",
-        "simplePast": "misread",
-        "pastParticiple": "misread",
+        "infinitive": {
+            "value": "misread",
+            "transcription": "/ˌmɪs'riːd/"
+        },
+        "simplePast": {
+            "value": "misred",
+            "transcription": "/ˌmɪs'rɛd/"
+        },
+        "pastParticiple": {
+            "value": "misred",
+            "transcription": "/ˌmɪs'rɛd/"
+        },
         "hasRegular": false,
         "isDerived": true
     },
     {
-        "infinitive": "misspell",
-        "simplePast": "misspelt",
-        "pastParticiple": "misspelt",
+        "infinitive": {
+            "value": "misspell",
+            "transcription": "/ˌmɪs'spɛl/"
+        },
+        "simplePast": {
+            "value": "misspelt",
+            "transcription": "/ˌmɪs'spɛlt/"
+        },
+        "pastParticiple": {
+            "value": "misspelt",
+            "transcription": "/ˌmɪs'spɛlt/"
+        },
         "hasRegular": false,
         "isDerived": true
     },
     {
-        "infinitive": "misspend",
-        "simplePast": "misspent",
-        "pastParticiple": "misspent",
+        "infinitive": {
+            "value": "misspend",
+            "transcription": "/ˌmɪs'spɛnd/"
+        },
+        "simplePast": {
+            "value": "misspent",
+            "transcription": "/ˌmɪs'spɛnt/"
+        },
+        "pastParticiple": {
+            "value": "misspent",
+            "transcription": "/ˌmɪs'spɛnt/"
+        },
         "hasRegular": false,
         "isDerived": true
     },
     {
-        "infinitive": "mistake",
-        "simplePast": "mistook",
-        "pastParticiple": "mistaken",
+        "infinitive": {
+            "value": "mistake",
+            "transcription": "/ˌmɪs'teɪk/"
+        },
+        "simplePast": {
+            "value": "mistook",
+            "transcription": "/ˌmɪs'tʊk/"
+        },
+        "pastParticiple": {
+            "value": "mistaken",
+            "transcription": "/ˌmɪs'teɪk(ə)n/"
+        },
         "hasRegular": false,
         "isDerived": true
     },
     {
-        "infinitive": "misunderstand",
-        "simplePast": "misunderstood",
-        "pastParticiple": "misunderstood",
+        "infinitive": {
+            "value": "misunderstand",
+            "transcription": "/ˌmɪsʌndər'stænd/"
+        },
+        "simplePast": {
+            "value": "misunderstood",
+            "transcription": "/ˌmɪsʌndər'stʊd/"
+        },
+        "pastParticiple": {
+            "value": "misunderstood",
+            "transcription": "/ˌmɪsʌndər'stʊd/"
+        },
         "hasRegular": false,
         "isDerived": true
     },
     {
-        "infinitive": "mow",
-        "simplePast": "mowed",
-        "pastParticiple": "mown",
+        "infinitive": {
+            "value": "mow",
+            "transcription": "/məʊ/"
+        },
+        "simplePast": {
+            "value": "mowed",
+            "transcription": "/məʊd/"
+        },
+        "pastParticiple": {
+            "value": "mown",
+            "transcription": "/məʊn/"
+        },
         "hasRegular": true,
         "isDerived": false
     },
     {
-        "infinitive": "must",
-        "simplePast": "had to",
+        "infinitive": {
+            "value": "must",
+            "transcription": "/mʌst/"
+        },
+        "simplePast": {
+            "value": "had to",
+            "transcription": "/hæd tuː/"
+        },
         "hasRegular": false,
         "isDerived": false
     },
     {
-        "infinitive": "offset",
-        "simplePast": "offset",
-        "pastParticiple": "offset",
+        "infinitive": {
+            "value": "offset",
+            "transcription": "/ˈɒfˌset/"
+        },
+        "simplePast": {
+            "value": "offset",
+            "transcription": "/ˈɒfˌset/"
+        },
+        "pastParticiple": {
+            "value": "offset",
+            "transcription": "/ˈɒfˌset/"
+        },
         "hasRegular": false,
         "isDerived": true
     },
     {
-        "infinitive": "overcome",
-        "simplePast": "overcame",
-        "pastParticiple": "overcome",
+        "infinitive": {
+            "value": "overcome",
+            "transcription": "/ˌəʊvə(r)ˈkʌm/"
+        },
+        "simplePast": {
+            "value": "overcame",
+            "transcription": "/ˌəʊvə(r)ˈkeɪm/"
+        },
+        "pastParticiple": {
+            "value": "overcome",
+            "transcription": "/ˌəʊvə(r)ˈkʌm/"
+        },
         "hasRegular": false,
         "isDerived": true
     },
     {
-        "infinitive": "overhear",
-        "simplePast": "overheard",
-        "pastParticiple": "overheard",
+        "infinitive": {
+            "value": "overhear",
+            "transcription": "/ˌəʊvə(r)ˈhɪə(r)/"
+        },
+        "simplePast": {
+            "value": "overheard",
+            "transcription": "/ˌəʊvə(r)ˈhəː(r)d/"
+        },
+        "pastParticiple": {
+            "value": "overheard",
+            "transcription": "/ˌəʊvə(r)ˈhəː(r)d/"
+        },
         "hasRegular": false,
         "isDerived": true
     },
     {
-        "infinitive": "overtake",
-        "simplePast": "overtook",
-        "pastParticiple": "overtaken",
+        "infinitive": {
+            "value": "overtake",
+            "transcription": "/ˌəʊvə(r)ˈteɪk/"
+        },
+        "simplePast": {
+            "value": "overtook",
+            "transcription": "/ˌəʊvə(r)ˈtʊk/"
+        },
+        "pastParticiple": {
+            "value": "overtaken",
+            "transcription": "/ˌəʊvə(r)'teɪk(ə)n/"
+        },
         "hasRegular": false,
         "isDerived": true
     },
     {
-        "infinitive": "partake",
-        "simplePast": "partook",
-        "pastParticiple": "partaken",
+        "infinitive": {
+            "value": "partake",
+            "transcription": "/pɑː(r)ˈteɪk/"
+        },
+        "simplePast": {
+            "value": "partook",
+            "transcription": "/pɑː(r)ˈtʊk/"
+        },
+        "pastParticiple": {
+            "value": "partaken",
+            "transcription": "/pɑː(r)'teɪk(ə)n/"
+        },
         "hasRegular": false,
         "isDerived": true
     },
