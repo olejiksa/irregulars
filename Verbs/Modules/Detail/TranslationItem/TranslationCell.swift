@@ -10,7 +10,6 @@ import UIKit
 
 final class TranslationCell: UITableViewCell {
     
-    @IBOutlet private weak var captionLabel: UILabel!
     @IBOutlet private weak var contentLabel: UILabel!
 }
 
@@ -23,7 +22,6 @@ extension TranslationCell: CellProtocol {
     func setup(with item: ItemProtocol) {
         guard let item = item as? TranslationItem else { return }
         
-        captionLabel.text = item.caption
         contentLabel.text = item.text
     }
 }

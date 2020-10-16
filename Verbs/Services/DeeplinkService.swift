@@ -13,7 +13,7 @@ final class DeeplinkService {
     private let verbsService = VerbsService()
     
     func handle(_ host: String, in splitViewController: UISplitViewController) {
-        guard let verb = verbsService.items.first(where: { host == $0.infinitive }) else { return }
+        guard let verb = verbsService.items.first(where: { host == $0.infinitive.value }) else { return }
         
         let vc = DetailViewController(verb: verb, isOpenedByDeeplink: true)
         let nvc: UINavigationController?

@@ -14,7 +14,9 @@ final class DetailViewController: UIViewController {
     private let languageService = LanguageService()
     private let verb: Verb
     private let isOpenedByDeeplink: Bool
-    private var items: [ItemProtocol] = []
+    private let sections = ["Infinitive, Simple Past, Past Participle",
+                            "Translation".localized]
+    private var items: [[ItemProtocol]] = []
     
     @IBOutlet private weak var tableView: UITableView!
     
@@ -43,7 +45,7 @@ final class DetailViewController: UIViewController {
 private extension DetailViewController {
     
     func setupNavigationBar() {
-        navigationItem.title = verb.infinitive
+        navigationItem.title = verb.infinitive.value
         navigationItem.largeTitleDisplayMode = .never
     }
     
@@ -56,18 +58,11 @@ private extension DetailViewController {
     }
     
     func setItems() {
-        items = [DetailItem(caption: "Infinitive",
-                            title: verb.infinitive,
-                            actionBlock: play),
-                 DetailItem(caption: "Past Simple",
-                            title: verb.pastSimple,
-                            actionBlock: play),
-                 DetailItem(caption: "Past Participle",
-                            title: verb.pastParticiple,
-                            actionBlock: play)].compactMap { $0 }
+        items = [[DetailItem(word: verb.infinitive, actionBlock: play),
+                  DetailItem(word: verb.simplePast, actionBlock: play),
+                  DetailItem(word: verb.pastParticiple, actionBlock: play)].compactMap { $0 }]
         if languageService.hasTranslation {
-            items.append(TranslationItem(caption: "Translation".localized,
-                                         text: verb.translation))
+            items += [[TranslationItem(header: "Translation".localized, text: verb.translation)]]
         }
     }
     
@@ -80,12 +75,21 @@ private extension DetailViewController {
 
 extension DetailViewController: UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         items.count
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        items[section].count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard section < sections.count else { return nil }
+        return sections[section]
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = items[indexPath.row]
+        let item = items[indexPath.section][indexPath.row]
         return tableView.dequeueReusableCell(for: item, at: indexPath)
     }
 }

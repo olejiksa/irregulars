@@ -8,7 +8,7 @@
 
 struct TranslationItem {
     
-    let caption: String
+    let header: String
     let text: String
 }
 
@@ -18,3 +18,7 @@ extension TranslationItem: ItemProtocol {
     
     var identifier: String { TranslationCell.identifier }
 }
+
+// MARK: - SectionProtocol
+
+extension TranslationItem: SectionProtocol {}

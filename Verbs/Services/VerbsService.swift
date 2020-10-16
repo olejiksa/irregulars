@@ -16,9 +16,9 @@ final class VerbsService {
     
     var searchedItems: [Verb] {
         items.filter {
-            $0.infinitive.containsIgnoringCase(searchText) ||
-            $0.pastSimple.containsIgnoringCase(searchText) ||
-            $0.pastParticiple?.containsIgnoringCase(searchText) ?? false ||
+            $0.infinitive.value.containsIgnoringCase(searchText) ||
+            $0.simplePast.value.containsIgnoringCase(searchText) ||
+            $0.pastParticiple?.value.containsIgnoringCase(searchText) ?? false ||
             $0.translation.containsIgnoringCase(searchText)
         }
     }
@@ -51,7 +51,7 @@ final class VerbsService {
         var indexPath: IndexPath?
         for index in 0..<groupedItems.count {
             for subindex in 0..<groupedItems[index].count {
-                if groupedItems[index][subindex].infinitive == infinitive {
+                if groupedItems[index][subindex].infinitive.value == infinitive {
                     indexPath = IndexPath(row: subindex, section: index)
                 }
             }
@@ -84,8 +84,8 @@ private extension VerbsService {
         var letter: Character?
         var index = -1
         for item in items {
-            if item.infinitive.first != letter {
-                letter = item.infinitive.first
+            if item.infinitive.value.first != letter {
+                letter = item.infinitive.value.first
                 grouped.append([Verb]())
                 index += 1
             }

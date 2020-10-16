@@ -123,14 +123,14 @@ extension ListPresenter: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard !isSearchActive else { return nil }
         let items = verbsService.groupedItems[section]
-        guard let letter = items.first?.infinitive.first else { return nil }
+        guard let letter = items.first?.infinitive.value.first else { return nil }
         return letter.uppercased()
     }
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         guard !isSearchActive && FeatureToggle.isPaid else { return nil }
         let set = Set(verbsService.items.compactMap { item -> String? in
-            guard let character = item.infinitive.first else { return nil }
+            guard let character = item.infinitive.value.first else { return nil }
             return character.uppercased()
         })
         
@@ -151,7 +151,7 @@ extension ListPresenter: UITableViewDelegate {
             ? verbsService.groupedItems[indexPath.section][indexPath.row]
             : verbsService.searchedItems[indexPath.row]
         
-        guard infinitive != verb.infinitive else { return }
+        guard infinitive != verb.infinitive.value else { return }
         router?.goToDetail(with: verb)
     }
 }

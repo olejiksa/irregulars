@@ -8,16 +8,13 @@
 
 struct DetailItem {
     
-    let caption: String
-    let title: String
+    let word: Word
     let actionBlock: ((String) -> ())
     
-    init?(caption: String,
-          title: String?,
+    init?(word: Word?,
           actionBlock: @escaping ((String) -> ())) {
-        guard let title = title else { return nil }
-        self.caption = caption
-        self.title = title
+        guard let word = word else { return nil }
+        self.word = word
         self.actionBlock = actionBlock
     }
 }

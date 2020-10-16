@@ -10,8 +10,8 @@ import UIKit
 
 final class DetailCell: UITableViewCell {
         
-    @IBOutlet private weak var captionLabel: UILabel!
     @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var transcriptionLabel: UILabel!
     @IBOutlet private weak var playButton: UIButton!
     
     private var actionBlock: ((String) -> ())?
@@ -30,13 +30,13 @@ private extension DetailCell {
     func setupPlayButton() {
         guard FeatureToggle.isPaid else {
             playButton.isHidden = true
+            transcriptionLabel.isHidden = true
             return
         }
         
-        let largeConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular, scale: .large)
-        let largeImage = UIImage(systemName: "play.circle", withConfiguration: largeConfig)
-        playButton.setImage(largeImage, for: .normal)
-        playButton.addTarget(self, action: #selector(playButtonDidTap), for: .touchUpInside)
+        playButton.addTarget(self,
+                             action: #selector(playButtonDidTap),
+                             for: .touchUpInside)
     }
     
     @objc func playButtonDidTap() {
@@ -54,8 +54,8 @@ extension DetailCell: CellProtocol {
     func setup(with item: ItemProtocol) {
         guard let item = item as? DetailItem else { return }
         
-        captionLabel.text = item.caption
-        titleLabel.text = item.title
+        titleLabel.text = item.word.value
+        transcriptionLabel.text = item.word.transcription
         actionBlock = item.actionBlock
     }
 }

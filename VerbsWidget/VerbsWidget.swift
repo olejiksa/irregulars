@@ -15,9 +15,9 @@ struct Provider: IntentTimelineProvider {
     private let service = VerbsService()
     
     func placeholder(in context: Context) -> VerbEntry {
-        let verb = Verb(infinitive: "-",
-                        pastSimple: "-",
-                        pastParticiple: "-",
+        let verb = Verb(infinitive: Word(),
+                        simplePast: Word(),
+                        pastParticiple: Word(),
                         hasRegular: false,
                         isDerived: false)
         return .init(date: Date(),
@@ -28,9 +28,9 @@ struct Provider: IntentTimelineProvider {
     func getSnapshot(for configuration: ConfigurationIntent,
                      in context: Context,
                      completion: @escaping (VerbEntry) -> ()) {
-        let verb = Verb(infinitive: "arise",
-                        pastSimple: "arose",
-                        pastParticiple: "arisen",
+        let verb = Verb(infinitive: Word(value: "arise"),
+                        simplePast: Word(value: "arose"),
+                        pastParticiple: Word(value: "arisen"),
                         hasRegular: false,
                         isDerived: true)
         let entry = VerbEntry(date: Date(),
@@ -70,11 +70,11 @@ struct VerbsWidgetEntryView : View {
         VStack(alignment: .leading, spacing: 5) {
             Text("Infinitive")
                 .font(.caption)
-            Text(entry.verb.infinitive)
+            Text(entry.verb.infinitive.value)
                 .bold()
-            Text("Past Simple")
+            Text("Simple Past")
                 .font(.caption)
-            Text(entry.verb.pastSimpleShortened)
+            Text(entry.verb.simplePastShortened)
                 .bold()
             if let pastParticiple = entry.verb.pastParticipleShortened {
                 Text("Past Participle")
@@ -105,9 +105,9 @@ struct VerbsWidget: Widget {
 
 struct VerbsWidget_Previews: PreviewProvider {
     static var previews: some View {
-        let verb = Verb(infinitive: "arise",
-                        pastSimple: "arose",
-                        pastParticiple: "arisen",
+        let verb = Verb(infinitive: Word(value: "arise"),
+                        simplePast: Word(value: "arose"),
+                        pastParticiple: Word(value: "arisen"),
                         hasRegular: false,
                         isDerived: true)
         VerbsWidgetEntryView(entry: VerbEntry(date: Date(),

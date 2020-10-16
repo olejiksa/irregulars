@@ -21,6 +21,9 @@
 		EB717DE42530C04A007791AD /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB717DE32530C04A007791AD /* ListPresenter.swift */; };
 		EB717DEE2530C5A4007791AD /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB717DED2530C5A4007791AD /* ListRouter.swift */; };
 		EB717DF42530D5B7007791AD /* ListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB717DF32530D5B7007791AD /* ListAssembly.swift */; };
+		EB7B85612537E4CA00542D3C /* SectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7B85602537E4CA00542D3C /* SectionProtocol.swift */; };
+		EB7B85652537FAE000542D3C /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7B85642537FAE000542D3C /* Word.swift */; };
+		EB7B85682537FB0C00542D3C /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7B85642537FAE000542D3C /* Word.swift */; };
 		EB7DFF4E25236DA4000B711D /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7DFF4C25236DA4000B711D /* EmptyViewController.swift */; };
 		EB7DFF4F25236DA4000B711D /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB7DFF4D25236DA4000B711D /* EmptyView.xib */; };
 		EB7DFF5625244977000B711D /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7DFF5425244977000B711D /* SplitViewController.swift */; };
@@ -111,6 +114,8 @@
 		EB717DE32530C04A007791AD /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
 		EB717DED2530C5A4007791AD /* ListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
 		EB717DF32530D5B7007791AD /* ListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAssembly.swift; sourceTree = "<group>"; };
+		EB7B85602537E4CA00542D3C /* SectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionProtocol.swift; sourceTree = "<group>"; };
+		EB7B85642537FAE000542D3C /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		EB7DFF4C25236DA4000B711D /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		EB7DFF4D25236DA4000B711D /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		EB7DFF5425244977000B711D /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
@@ -295,6 +300,7 @@
 				EBB01C1C2521897000BB646B /* CellProtocol.swift */,
 				EBB01C242521903A00BB646B /* Identifiable.swift */,
 				EBB01C1E25218BAB00BB646B /* ItemProtocol.swift */,
+				EB7B85602537E4CA00542D3C /* SectionProtocol.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -383,6 +389,7 @@
 				EB717DC6252EDA1C007791AD /* Settings.swift */,
 				EBF4A13E252EC9A3003E3A44 /* SystemIcon.swift */,
 				EBEB1D93251F15D30019972C /* Verb.swift */,
+				EB7B85642537FAE000542D3C /* Word.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -537,6 +544,7 @@
 			files = (
 				EB7DFF69252451D2000B711D /* VerbsWidget.swift in Sources */,
 				EB7DFF89252B1CD7000B711D /* Verb.swift in Sources */,
+				EB7B85682537FB0C00542D3C /* Word.swift in Sources */,
 				EB7DFF8C252B1CE6000B711D /* JSONParser.swift in Sources */,
 				EB7DFF83252B1CB8000B711D /* VerbsService.swift in Sources */,
 				EB717DD5252EE37B007791AD /* UserDefaultsService.swift in Sources */,
@@ -567,6 +575,7 @@
 				EBF4A135252E9961003E3A44 /* ListItem.swift in Sources */,
 				EB717DC3252ED9EB007791AD /* UserDefaultsService.swift in Sources */,
 				EBB01C0C2521825000BB646B /* TranslationCell.swift in Sources */,
+				EB7B85612537E4CA00542D3C /* SectionProtocol.swift in Sources */,
 				EBB01C0925217F5400BB646B /* Language.swift in Sources */,
 				EBB3BC10251F3545006E0DC7 /* KeyboardService.swift in Sources */,
 				EBEB1D92251F15B40019972C /* VerbsService.swift in Sources */,
@@ -578,6 +587,7 @@
 				EBEB1D78251F11900019972C /* SceneDelegate.swift in Sources */,
 				EB2F5E16251F71DD007DCF60 /* AudioService.swift in Sources */,
 				EBF4A147252ED2CA003E3A44 /* SettingsViewController.swift in Sources */,
+				EB7B85652537FAE000542D3C /* Word.swift in Sources */,
 				EB2F5E0D251F543A007DCF60 /* DetailViewController.swift in Sources */,
 				EBB3BC09251F2ADB006E0DC7 /* String.swift in Sources */,
 				EBB01C192521870200BB646B /* DetailItem.swift in Sources */,

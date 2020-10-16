@@ -1,1585 +1,2510 @@
 [
     {
-        "infinitive": "abide",
-        "pastSimple": "abode",
-        "pastParticiple": "abode",
+        "infinitive": {
+            "value": "abide",
+            "transcription": "/əˈbʌɪd/"
+        },
+        "simplePast": {
+            "value": "abode",
+            "transcription": "/əˈbəʊd/"
+        },
+        "pastParticiple": {
+            "value": "abode",
+            "transcription": "/əˈbəʊd/"
+        },
         "hasRegular": true,
         "isDerived": false
     },
     {
-        "infinitive": "arise",
-        "pastSimple": "arose",
-        "pastParticiple": "arisen",
+        "infinitive": {
+            "value": "arise",
+            "transcription": "/əˈrʌɪz/"
+        },
+        "simplePast": {
+            "value": "arose",
+            "transcription": "/əˈrəʊz/"
+        },
+        "pastParticiple": {
+            "value": "arisen",
+            "transcription": "/əˈrɪz(ə)n/"
+        },
         "hasRegular": false,
         "isDerived": true
     },
     {
-        "infinitive": "awake",
-        "pastSimple": "awoke",
-        "pastParticiple": "awoken",
+        "infinitive": {
+            "value": "awake",
+            "transcription": "/əˈweɪk/"
+        },
+        "simplePast": {
+            "value": "awoke",
+            "transcription": "/əˈwəʊk/"
+        },
+        "pastParticiple": {
+            "value": "awoken",
+            "transcription": "/əˈwəʊk(ə)n/"
+        },
         "hasRegular": true,
         "isDerived": true
     },
     {
-        "infinitive": "backslid",
-        "pastSimple": "backslid",
-        "pastParticiple": "backslid/backslidden",
+        "infinitive": {
+            "value": "backslide",
+            "transcription": "/ˈbækslʌɪd/"
+        },
+        "simplePast":  {
+            "value": "backslid",
+            "transcription": "/ˈbækslɪd/"
+        },
+        "pastParticiple": {
+            "value": "backslid/backslidden",
+            "transcription": "/ˈbækslɪd/, /ˈbækslɪd(ə)n/"
+        },
         "hasRegular": false,
         "isDerived": false
     },
     {
-        "infinitive": "be",
-        "pastSimple": "was, were",
-        "pastParticiple": "been",
+        "infinitive": {
+            "value": "be",
+            "transcription": "/biː/"
+        },
+        "simplePast": {
+            "value": "was/were",
+            "transcription": "/wɒz/, /wəː(r)/"
+        },
+        "pastParticiple": {
+            "value": "been",
+            "transcription": "/biːn/"
+        },
         "hasRegular": false,
         "isDerived": false
     },
     {
-        "infinitive": "bear",
-        "pastSimple": "bore",
-        "pastParticiple": "born/borne",
+        "infinitive": {
+            "value": "bear",
+            "transcription": "/bɛː(r)/"
+        },
+        "simplePast": {
+            "value": "bore",
+            "transcription": "/bɔː(r)/"
+        },
+        "pastParticiple": {
+            "value": "born/borne",
+            "transcription": "/bɔː(r)n/"
+        },
         "hasRegular": false,
         "isDerived": false
     },
     {
-        "infinitive": "beat",
-        "pastSimple": "beat",
-        "pastParticiple": "beaten",
+        "infinitive": {
+            "value": "beat",
+            "transcription": "/bi:t/"
+        },
+        "simplePast": {
+            "value": "beat",
+            "transcription": "/bi:t/"
+        },
+        "pastParticiple": {
+            "value": "beaten",
+            "transcription": "/'bi:t(ə)n/"
+        },
         "hasRegular": false,
         "isDerived": false
     },
     {
-        "infinitive": "become",
-        "pastSimple": "became",
-        "pastParticiple": "become",
-        "hasRegular": false,
-        "isDerived": true
-    },
-    {
-        "infinitive": "beget",
-        "pastSimple": "begot",
-        "pastParticiple": "begotten",
-        "hasRegular": false,
-        "isDerived": true
-    },
-    {
-        "infinitive": "begin",
-        "pastSimple": "began",
-        "pastParticiple": "begun",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "bend",
-        "pastSimple": "bent",
-        "pastParticiple": "bent",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "bereave",
-        "pastSimple": "bereft",
-        "pastParticiple": "bereft",
-        "hasRegular": true,
-        "isDerived": false
-    },
-    {
-        "infinitive": "bet",
-        "pastSimple": "bet",
-        "pastParticiple": "bet",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "bid",
-        "pastSimple": "bid/bade",
-        "pastParticiple": "bid/bidden",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "bind",
-        "pastSimple": "bound",
-        "pastParticiple": "bound",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "bite",
-        "pastSimple": "bit",
-        "pastParticiple": "bitten",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "bleed",
-        "pastSimple": "bled",
-        "pastParticiple": "bled",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "bless",
-        "pastSimple": "blest",
-        "pastParticiple": "blest",
-        "hasRegular": true,
-        "isDerived": false
-    },
-    {
-        "infinitive": "blow",
-        "pastSimple": "blew",
-        "pastParticiple": "blown",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "break",
-        "pastSimple": "broke",
-        "pastParticiple": "broken",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "breed",
-        "pastSimple": "bred",
-        "pastParticiple": "bred",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "bring",
-        "pastSimple": "brought",
-        "pastParticiple": "brought",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "broadcast",
-        "pastSimple": "broadcast",
-        "pastParticiple": "broadcast",
-        "hasRegular": true,
-        "isDerived": true
-    },
-    {
-        "infinitive": "browbeat",
-        "pastSimple": "browbeat",
-        "pastParticiple": "browbeat",
+        "infinitive": {
+            "value": "become",
+            "transcription": "/bɪ'kʌm/"
+        },
+        "simplePast": {
+            "value": "became",
+            "transcription": "/bɪ'keɪm/"
+        },
+        "pastParticiple": {
+            "value": "become",
+            "transcription": "/bɪ'kʌm/"
+        },
         "hasRegular": false,
         "isDerived": true
     },
     {
-        "infinitive": "build",
-        "pastSimple": "built",
-        "pastParticiple": "built",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "burn",
-        "pastSimple": "burnt",
-        "pastParticiple": "burnt",
-        "hasRegular": true,
-        "isDerived": false
-    },
-    {
-        "infinitive": "burst",
-        "pastSimple": "burst",
-        "pastParticiple": "burst",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "bust",
-        "pastSimple": "bust",
-        "pastParticiple": "bust",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "buy",
-        "pastSimple": "bought",
-        "pastParticiple": "bought",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "can",
-        "pastSimple": "could",
-        "pastParticiple": "been able",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "cast",
-        "pastSimple": "cast",
-        "pastParticiple": "cast",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "catch",
-        "pastSimple": "caught",
-        "pastParticiple": "caught",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "chide",
-        "pastSimple": "chid",
-        "pastParticiple": "chidden",
-        "hasRegular": true,
-        "isDerived": false
-    },
-    {
-        "infinitive": "choose",
-        "pastSimple": "chose",
-        "pastParticiple": "chosen",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "clap",
-        "pastSimple": "clapt",
-        "pastParticiple": "clapt",
-        "hasRegular": true,
-        "isDerived": false
-    },
-    {
-        "infinitive": "cleave",
-        "pastSimple": "clove",
-        "pastParticiple": "cloven",
-        "hasRegular": true,
-        "isDerived": false
-    },
-    {
-        "infinitive": "cling",
-        "pastSimple": "clung",
-        "pastParticiple": "clung",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "clothe",
-        "pastSimple": "clad",
-        "pastParticiple": "clad",
-        "hasRegular": true,
-        "isDerived": false
-    },
-    {
-        "infinitive": "come",
-        "pastSimple": "came",
-        "pastParticiple": "come",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "cost",
-        "pastSimple": "cost",
-        "pastParticiple": "cost",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "creep",
-        "pastSimple": "crept",
-        "pastParticiple": "crept",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "crow",
-        "pastSimple": "crew",
-        "pastParticiple": "crowed",
-        "hasRegular": true,
-        "isDerived": false
-    },
-    {
-        "infinitive": "cut",
-        "pastSimple": "cut",
-        "pastParticiple": "cut",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "deal",
-        "pastSimple": "dealt",
-        "pastParticiple": "dealt",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "dig",
-        "pastSimple": "dug",
-        "pastParticiple": "dug",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "dive",
-        "pastSimple": "dove",
-        "pastParticiple": "dived",
-        "hasRegular": true,
-        "isDerived": false
-    },
-    {
-        "infinitive": "do",
-        "pastSimple": "did",
-        "pastParticiple": "done",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "draw",
-        "pastSimple": "drew",
-        "pastParticiple": "drawn",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "dream",
-        "pastSimple": "dreamt",
-        "pastParticiple": "dreamt",
-        "hasRegular": true,
-        "isDerived": false
-    },
-    {
-        "infinitive": "drink",
-        "pastSimple": "drank",
-        "pastParticiple": "drunk",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "drive",
-        "pastSimple": "drove",
-        "pastParticiple": "driven",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "dwell",
-        "pastSimple": "dwelt",
-        "pastParticiple": "dwelt",
-        "hasRegular": true,
-        "isDerived": false
-    },
-    {
-        "infinitive": "eat",
-        "pastSimple": "ate",
-        "pastParticiple": "eaten",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "fall",
-        "pastSimple": "fell",
-        "pastParticiple": "fallen",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "feed",
-        "pastSimple": "fed",
-        "pastParticiple": "fed",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "feel",
-        "pastSimple": "felt",
-        "pastParticiple": "felt",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "fight",
-        "pastSimple": "fought",
-        "pastParticiple": "fought",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "find",
-        "pastSimple": "found",
-        "pastParticiple": "found",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "fit",
-        "pastSimple": "fit",
-        "pastParticiple": "fit",
-        "hasRegular": true,
-        "isDerived": false
-    },
-    {
-        "infinitive": "flee",
-        "pastSimple": "fled",
-        "pastParticiple": "fled",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "fling",
-        "pastSimple": "flung",
-        "pastParticiple": "flung",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "fly",
-        "pastSimple": "flew",
-        "pastParticiple": "flown",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "forbid",
-        "pastSimple": "forbade",
-        "pastParticiple": "forbidden",
+        "infinitive": {
+            "value": "beget",
+            "transcription": "/bɪ'gɛt/"
+        },
+        "simplePast": {
+            "value": "begot",
+            "transcription": "/bɪ'gɒt/"
+        },
+        "pastParticiple": {
+            "value": "begotten",
+            "transcription": "/bɪ'gɒt(ə)n/"
+        },
         "hasRegular": false,
         "isDerived": true
     },
     {
-        "infinitive": "forecast",
-        "pastSimple": "forecast",
-        "pastParticiple": "forecast",
-        "hasRegular": true,
-        "isDerived": true
-    },
-    {
-        "infinitive": "forsee",
-        "pastSimple": "forsaw",
-        "pastParticiple": "forseen",
-        "hasRegular": false,
-        "isDerived": true
-    },
-    {
-        "infinitive": "foretell",
-        "pastSimple": "foretold",
-        "pastParticiple": "foretold",
-        "hasRegular": false,
-        "isDerived": true
-    },
-    {
-        "infinitive": "forget",
-        "pastSimple": "forgot",
-        "pastParticiple": "forgotten",
-        "hasRegular": false,
-        "isDerived": true
-    },
-    {
-        "infinitive": "forgive",
-        "pastSimple": "forgave",
-        "pastParticiple": "forgiven",
-        "hasRegular": false,
-        "isDerived": true
-    },
-    {
-        "infinitive": "forsake",
-        "pastSimple": "forsook",
-        "pastParticiple": "forsaken",
+        "infinitive": {
+            "value": "begin",
+            "transcription": "/bɪ'gɪn/"
+        },
+        "simplePast": {
+            "value": "began",
+            "transcription": "/bɪ'gæn/"
+        },
+        "pastParticiple": {
+            "value": "begun",
+            "transcription": "/bɪ'gʌn/"
+        },
         "hasRegular": false,
         "isDerived": false
     },
     {
-        "infinitive": "freeze",
-        "pastSimple": "froze",
-        "pastParticiple": "frozen",
-        "hasRegular": false,
-        "isDerived": true
-    },
-    {
-        "infinitive": "get",
-        "pastSimple": "got",
-        "pastParticiple": "got/gotten",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "give",
-        "pastSimple": "gave",
-        "pastParticiple": "given",
+        "infinitive": {
+            "value": "bend",
+            "transcription": "/bɛnd/"
+        },
+        "simplePast": {
+            "value": "bent",
+            "transcription": "/bɛnt/"
+        },
+        "pastParticiple": {
+            "value": "bent",
+            "transcription": "/bɛnt/"
+        },
         "hasRegular": false,
         "isDerived": false
     },
     {
-        "infinitive": "go",
-        "pastSimple": "went",
-        "pastParticiple": "gone",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "grind",
-        "pastSimple": "ground",
-        "pastParticiple": "ground",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "grow",
-        "pastSimple": "grew",
-        "pastParticiple": "grown",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "handwrite",
-        "pastSimple": "handwrote",
-        "pastParticiple": "handwritten",
-        "hasRegular": false,
-        "isDerived": true
-    },
-    {
-        "infinitive": "hang",
-        "pastSimple": "hung",
-        "pastParticiple": "hung",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "have",
-        "pastSimple": "had",
-        "pastParticiple": "had",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "hew",
-        "pastSimple": "hewed",
-        "pastParticiple": "hewn",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "hide",
-        "pastSimple": "hid",
-        "pastParticiple": "hidden",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "hit",
-        "pastSimple": "hit",
-        "pastParticiple": "hit",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "hold",
-        "pastSimple": "held",
-        "pastParticiple": "held",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "hurt",
-        "pastSimple": "hurt",
-        "pastParticiple": "hurt",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "inlay",
-        "pastSimple": "inlaid",
-        "pastParticiple": "inlaid",
-        "hasRegular": false,
-        "isDerived": true
-    },
-    {
-        "infinitive": "input",
-        "pastSimple": "input",
-        "pastParticiple": "input",
-        "hasRegular": true,
-        "isDerived": true
-    },
-    {
-        "infinitive": "interweave",
-        "pastSimple": "interwove",
-        "pastParticiple": "interwoven",
-        "hasRegular": false,
-        "isDerived": true
-    },
-    {
-        "infinitive": "keep",
-        "pastSimple": "kept",
-        "pastParticiple": "kept",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "kneel",
-        "pastSimple": "knelt",
-        "pastParticiple": "knelt",
+        "infinitive": {
+            "value": "bereave",
+            "transcription": "/bɪˈriːv/"
+        },
+        "simplePast": {
+            "value": "bereft",
+            "transcription": "/bɪˈrɛft/"
+        },
+        "pastParticiple": {
+            "value": "bereft",
+            "transcription": "/bɪˈrɛft/"
+        },
         "hasRegular": true,
         "isDerived": false
     },
     {
-        "infinitive": "knit",
-        "pastSimple": "knit",
-        "pastParticiple": "knit",
+        "infinitive": {
+            "value": "bet",
+            "transcription": "/bɛt/"
+        },
+        "simplePast": {
+            "value": "bet",
+            "transcription": "/bɛt/"
+        },
+        "pastParticiple": {
+            "value": "bet",
+            "transcription": "/bɛt/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "bid",
+            "transcription": "/bɪd/"
+        },
+        "simplePast": {
+            "value": "bid/bade",
+            "transcription": "/bɪd/, /beɪd/"
+        },
+        "pastParticiple": {
+            "value": "bid/bidden",
+            "transcription": "/bɪd/, /'bɪd(ə)n/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "bind",
+            "transcription": "/bʌɪnd/"
+        },
+        "simplePast": {
+            "value": "bound",
+            "transcription": "/baʊnd/"
+        },
+        "pastParticiple": {
+            "value": "bound",
+            "transcription": "/baʊnd/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "bite",
+            "transcription": "/bʌɪt/"
+        },
+        "simplePast": {
+            "value": "bit",
+            "transcription": "/bɪt/"
+        },
+        "pastParticiple": {
+            "value": "bitten",
+            "transcription": "/'bɪt(ə)n/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "bleed",
+            "transcription": "/bliːd/"
+        },
+        "simplePast": {
+            "value": "bled",
+            "transcription": "/blɛd/"
+        },
+        "pastParticiple": {
+            "value": "bled",
+            "transcription": "/blɛd/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "bless",
+            "transcription": "/blɛs/"
+        },
+        "simplePast": {
+            "value": "blest",
+            "transcription": "/blɛst/"
+        },
+        "pastParticiple": {
+            "value": "blest",
+            "transcription": "/blɛst/"
+        },
         "hasRegular": true,
         "isDerived": false
     },
     {
-        "infinitive": "know",
-        "pastSimple": "knew",
-        "pastParticiple": "known",
+        "infinitive": {
+            "value": "blow",
+            "transcription": "/bləʊ/"
+        },
+        "simplePast": {
+            "value": "blew",
+            "transcription": "/bluː/"
+        },
+        "pastParticiple": {
+            "value": "blown",
+            "transcription": "/bləʊn/"
+        },
         "hasRegular": false,
         "isDerived": false
     },
     {
-        "infinitive": "lay",
-        "pastSimple": "laid",
-        "pastParticiple": "laid",
+        "infinitive": {
+            "value": "break",
+            "transcription": "/breɪk/"
+        },
+        "simplePast": {
+            "value": "broke",
+            "transcription": "/brəʊk/"
+        },
+        "pastParticiple": {
+            "value": "broken",
+            "transcription": "/'brəʊkən/"
+        },
         "hasRegular": false,
         "isDerived": false
     },
     {
-        "infinitive": "lead",
-        "pastSimple": "led",
-        "pastParticiple": "led",
+        "infinitive": {
+            "value": "breed",
+            "transcription": "/briːd/"
+        },
+        "simplePast": {
+            "value": "bred",
+            "transcription": "/brɛd/"
+        },
+        "pastParticiple": {
+            "value": "bred",
+            "transcription": "/brɛd/"
+        },
         "hasRegular": false,
         "isDerived": false
     },
     {
-        "infinitive": "lean",
-        "pastSimple": "leant",
-        "pastParticiple": "leant",
+        "infinitive": {
+            "value": "bring",
+            "transcription": "/brɪŋ/"
+        },
+        "simplePast": {
+            "value": "brought",
+            "transcription": "/brɔːt/"
+        },
+        "pastParticiple": {
+            "value": "brought",
+            "transcription": "/brɔːt/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "broadcast",
+            "transcription": "/'brɔːdkɑːst/"
+        },
+        "simplePast": {
+            "value": "broadcast",
+            "transcription": "/'brɔːdkɑːst/"
+        },
+        "pastParticiple": {
+            "value": "broadcast",
+            "transcription": "/'brɔːdkɑːst/"
+        },
+        "hasRegular": true,
+        "isDerived": true
+    },
+    {
+        "infinitive": {
+            "value": "browbeat",
+            "transcription": "/'brəʊˌbiːt/"
+        },
+        "simplePast": {
+            "value": "browbeat",
+            "transcription": "/'brəʊˌbiːt/"
+        },
+        "pastParticiple": {
+            "value": "browbeat",
+            "transcription": "/'brəʊˌbiːt/"
+        },
+        "hasRegular": false,
+        "isDerived": true
+    },
+    {
+        "infinitive": {
+            "value": "build",
+            "transcription": "/bɪld/"
+        },
+        "simplePast": {
+            "value": "built",
+            "transcription": "/bɪlt/"
+        },
+        "pastParticiple": {
+            "value": "built",
+            "transcription": "/bɪlt/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "burn",
+            "transcription": "/bəː(r)n/"
+        },
+        "simplePast": {
+            "value": "burnt",
+            "transcription": "/bəː(r)nt/"
+        },
+        "pastParticiple": {
+            "value": "burnt",
+            "transcription": "/bəː(r)nt/"
+        },
         "hasRegular": true,
         "isDerived": false
     },
     {
-        "infinitive": "leap",
-        "pastSimple": "leapt",
-        "pastParticiple": "leapt",
+        "infinitive": {
+            "value": "burst",
+            "transcription": "/bəː(r)st/"
+        },
+        "simplePast": {
+            "value": "burst",
+            "transcription": "/bəː(r)st/"
+        },
+        "pastParticiple": {
+            "value": "burst",
+            "transcription": "/bəː(r)st/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "bust",
+            "transcription": "/bʌst/"
+        },
+        "simplePast": {
+            "value": "bust",
+            "transcription": "/bʌst/"
+        },
+        "pastParticiple": {
+            "value": "bust",
+            "transcription": "/bʌst/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "buy",
+            "transcription": "/bʌɪ/"
+        },
+        "simplePast": {
+            "value": "bought",
+            "transcription": "/bɔːt/"
+        },
+        "pastParticiple": {
+            "value": "bought",
+            "transcription": "/bɔːt/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "can",
+            "transcription": "/kæn/"
+        },
+        "simplePast": {
+            "value": "could",
+            "transcription": "/kʊd/"
+        },
+        "pastParticiple": {
+            "value": "been able",
+            "transcription": "/biːn 'eɪb(ə)l/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "cast",
+            "transcription": "/kɑːst/"
+        },
+        "simplePast": {
+            "value": "cast",
+            "transcription": "/kɑːst/"
+        },
+        "pastParticiple": {
+            "value": "cast",
+            "transcription": "/kɑːst/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "catch",
+            "transcription": "/kæʧ/"
+        },
+        "simplePast": {
+            "value": "caught",
+            "transcription": "/kɔːt/"
+        },
+        "pastParticiple": {
+            "value": "caught",
+            "transcription": "/kɔːt/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "chide",
+            "transcription": "/ʧʌɪd/"
+        },
+        "simplePast": {
+            "value": "chid",
+            "transcription": "/ʧɪd/"
+        },
+        "pastParticiple": {
+            "value": "chidden",
+            "transcription": "/'ʧɪd(ə)n/"
+        },
         "hasRegular": true,
         "isDerived": false
     },
     {
-        "infinitive": "learn",
-        "pastSimple": "learnt",
-        "pastParticiple": "learnt",
+        "infinitive": {
+            "value": "choose",
+            "transcription": "/ʧuːz/"
+        },
+        "simplePast": {
+            "value": "chose",
+            "transcription": "/ʧəʊz/"
+        },
+        "pastParticiple": {
+            "value": "chosen",
+            "transcription": "/'ʧəʊz(ə)n/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "clap",
+            "transcription": "/klæp/"
+        },
+        "simplePast": {
+            "value": "clapt",
+            "transcription": "/klæpt/"
+        },
+        "pastParticiple": {
+            "value": "clapt",
+            "transcription": "/klæpt/"
+        },
         "hasRegular": true,
         "isDerived": false
     },
     {
-        "infinitive": "leave",
-        "pastSimple": "left",
-        "pastParticiple": "left",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "lend",
-        "pastSimple": "lent",
-        "pastParticiple": "lent",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "let",
-        "pastSimple": "let",
-        "pastParticiple": "let",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "lie",
-        "pastSimple": "lay",
-        "pastParticiple": "lain",
-        "hasRegular": false,
-        "isDerived": false
-    },
-    {
-        "infinitive": "light",
-        "pastSimple": "lit",
-        "pastParticiple": "lit",
+        "infinitive": {
+            "value": "cleave",
+            "transcription": "/kliːv/"
+        },
+        "simplePast": {
+            "value": "clove",
+            "transcription": "/kləʊv/"
+        },
+        "pastParticiple": {
+            "value": "cloven",
+            "transcription": "/'kləʊv(ə)n/"
+        },
         "hasRegular": true,
         "isDerived": false
     },
     {
-        "infinitive": "lose",
-        "pastSimple": "lost",
-        "pastParticiple": "lost",
+        "infinitive": {
+            "value": "cling",
+            "transcription": "/klɪŋ/"
+        },
+        "simplePast": {
+            "value": "clung",
+            "transcription": "/klʌŋ/"
+        },
+        "pastParticiple": {
+            "value": "clung",
+            "transcription": "/klʌŋ/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "clothe",
+            "transcription": "/kləʊð/"
+        },
+        "simplePast": {
+            "value": "clad",
+            "transcription": "/klæd/"
+        },
+        "pastParticiple": {
+            "value": "clad",
+            "transcription": "/klæd/"
+        },
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "come",
+            "transcription": "/kʌm/"
+        },
+        "simplePast": {
+            "value": "came",
+            "transcription": "/keɪm/"
+        },
+        "pastParticiple": {
+            "value": "come",
+            "transcription": "/kʌm/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "cost",
+            "transcription": "/kɒst/"
+        },
+        "simplePast": {
+            "value": "cost",
+            "transcription": "/kɒst/"
+        },
+        "pastParticiple": {
+            "value": "cost",
+            "transcription": "/kɒst/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "creep",
+            "transcription": "/kriːp/"
+        },
+        "simplePast": {
+            "value": "crept",
+            "transcription": "/krɛpt/"
+        },
+        "pastParticiple": {
+            "value": "crept",
+            "transcription": "/krɛpt/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "crow",
+            "transcription": "/krəʊ/"
+        },
+        "simplePast": {
+            "value": "crew",
+            "transcription": "/kruː/"
+        },
+        "pastParticiple": {
+            "value": "crown",
+            "transcription": "/krəʊn/"
+        },
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "cut",
+            "transcription": "/kʌt/"
+        },
+        "simplePast": {
+            "value": "cut",
+            "transcription": "/kʌt/"
+        },
+        "pastParticiple": {
+            "value": "cut",
+            "transcription": "/kʌt/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "deal",
+            "transcription": "/diːl/"
+        },
+        "simplePast": {
+            "value": "dealt",
+            "transcription": "/dɛlt/"
+        },
+        "pastParticiple": {
+            "value": "dealt",
+            "transcription": "/dɛlt/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "dig",
+            "transcription": "/dɪg/"
+        },
+        "simplePast": {
+            "value": "dug",
+            "transcription": "/dʌg/"
+        },
+        "pastParticiple": {
+            "value": "dug",
+            "transcription": "/dʌg/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "dive",
+            "transcription": "/dʌɪv/"
+        },
+        "simplePast": {
+            "value": "dove",
+            "transcription": "/dəʊv/"
+        },
+        "pastParticiple": {
+            "value": "dived",
+            "transcription": "/dʌɪvd/"
+        },
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "do",
+            "transcription": "/duː/"
+        },
+        "simplePast": {
+            "value": "did",
+            "transcription": "/dɪd/"
+        },
+        "pastParticiple": {
+            "value": "done",
+            "transcription": "/dʌn/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "draw",
+            "transcription": "/drɔː/"
+        },
+        "simplePast": {
+            "value": "drew",
+            "transcription": "/druː/"
+        },
+        "pastParticiple": {
+            "value": "drawn",
+            "transcription": "/drɔnː/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "dream",
+            "transcription": "/driːm/"
+        },
+        "simplePast": {
+            "value": "dreamt",
+            "transcription": "/drɛmt/"
+        },
+        "pastParticiple": {
+            "value": "dreamt",
+            "transcription": "/drɛmt/"
+        },
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "drink",
+            "transcription": "/drɪŋk/"
+        },
+        "simplePast": {
+            "value": "drank",
+            "transcription": "/dræŋk/"
+        },
+        "pastParticiple": {
+            "value": "drunk",
+            "transcription": "/drʌŋk/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "drive",
+            "transcription": "/drʌɪv/"
+        },
+        "simplePast": {
+            "value": "drove",
+            "transcription": "/drəʊv/"
+        },
+        "pastParticiple": {
+            "value": "driven",
+            "transcription": "/'drɪv(ə)n/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "dwell",
+            "transcription": "/dwɛl/"
+        },
+        "simplePast": {
+            "value": "dwelt",
+            "transcription": "/dwɛlt/"
+        },
+        "pastParticiple": {
+            "value": "dwelt",
+            "transcription": "/dwɛlt/"
+        },
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "eat",
+            "transcription": "/iːt/"
+        },
+        "simplePast": {
+            "value": "ate",
+            "transcription": "/ɛt, eɪt/"
+        },
+        "pastParticiple": {
+            "value": "eaten",
+            "transcription": "/'iːt(ə)n/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "fall",
+            "transcription": "/fɔːl/"
+        },
+        "simplePast": {
+            "value": "fell",
+            "transcription": "/fɛl/"
+        },
+        "pastParticiple": {
+            "value": "fallen",
+            "transcription": "/'fɔːl(ə)n/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "feed",
+            "transcription": "/fiːd/"
+        },
+        "simplePast": {
+            "value": "fed",
+            "transcription": "/fɛd/"
+        },
+        "pastParticiple": {
+            "value": "fed",
+            "transcription": "/fɛd/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "feel",
+            "transcription": "/fiːl/"
+        },
+        "simplePast": {
+            "value": "felt",
+            "transcription": "/fɛlt/"
+        },
+        "pastParticiple": {
+            "value": "felt",
+            "transcription": "/fɛlt/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "fight",
+            "transcription": "/fʌɪt/"
+        },
+        "simplePast": {
+            "value": "fought",
+            "transcription": "/fɔːt/"
+        },
+        "pastParticiple": {
+            "value": "fought",
+            "transcription": "/fɔːt/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "find",
+            "transcription": "/fʌɪnd/"
+        },
+        "simplePast": {
+            "value": "found",
+            "transcription": "/faʊnd/"
+        },
+        "pastParticiple": {
+            "value": "found",
+            "transcription": "/faʊnd/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "fit",
+            "transcription": "/fɪt/"
+        },
+        "simplePast": {
+            "value": "fit",
+            "transcription": "/fɪt/"
+        },
+        "pastParticiple": {
+            "value": "fit",
+            "transcription": "/fɪt/"
+        },
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "flee",
+            "transcription": "/fliː/"
+        },
+        "simplePast": {
+            "value": "fled",
+            "transcription": "/flɛd/"
+        },
+        "pastParticiple": {
+            "value": "fled",
+            "transcription": "/flɛd/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "fling",
+            "transcription": "/flɪŋ/"
+        },
+        "simplePast": {
+            "value": "flung",
+            "transcription": "/flʌŋ/"
+        },
+        "pastParticiple": {
+            "value": "flung",
+            "transcription": "/flʌŋ/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "fly",
+            "transcription": "/flʌɪ/"
+        },
+        "simplePast": {
+            "value": "flew",
+            "transcription": "/fluː/"
+        },
+        "pastParticiple": {
+            "value": "flown",
+            "transcription": "/fləʊn/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "forbid",
+            "transcription": "/fə'bɪd/"
+        },
+        "simplePast": {
+            "value": "forbade",
+            "transcription": "/fə'bad, fə'beɪd/"
+        },
+        "pastParticiple": {
+            "value": "forbidden",
+            "transcription": "/fə'bɪd(ə)n/"
+        },
+        "hasRegular": false,
+        "isDerived": true
+    },
+    {
+        "infinitive": {
+            "value": "forecast",
+            "transcription": "/'fɔː(r)kɑːst/"
+        },
+        "simplePast": {
+            "value": "forecast",
+            "transcription": "/'fɔː(r)kɑːst/"
+        },
+        "pastParticiple": {
+            "value": "forecast",
+            "transcription": "/'fɔː(r)kɑːst/"
+        },
+        "hasRegular": true,
+        "isDerived": true
+    },
+    {
+        "infinitive": {
+            "value": "foresee",
+            "transcription": "/fɔː(r)'siː/"
+        },
+        "simplePast": {
+            "value": "foresaw",
+            "transcription": "/fɔː(r)'sɔː/"
+        },
+        "pastParticiple": {
+            "value": "foreseen",
+            "transcription": "/fɔː(r)'siːn/"
+        },
+        "hasRegular": false,
+        "isDerived": true
+    },
+    {
+        "infinitive": {
+            "value": "foretell",
+            "transcription": "/fɔː(r)'tɛl/"
+        },
+        "simplePast": {
+            "value": "foretold",
+            "transcription": "/fɔː(r)'təʊld/"
+        },
+        "pastParticiple": {
+            "value": "foretold",
+            "transcription": "/fɔː(r)'təʊld/"
+        },
+        "hasRegular": false,
+        "isDerived": true
+    },
+    {
+        "infinitive": {
+            "value": "forget",
+            "transcription": "/fə'gɛt/"
+        },
+        "simplePast": {
+            "value": "forgot",
+            "transcription": "/fə'gɒt/"
+        },
+        "pastParticiple": {
+            "value": "forgotten",
+            "transcription": "/fə'gɒt(ə)n/"
+        },
+        "hasRegular": false,
+        "isDerived": true
+    },
+    {
+        "infinitive": {
+            "value": "forgive",
+            "transcription": "/fə'gɪv/"
+        },
+        "simplePast": {
+            "value": "forgave",
+            "transcription": "/fə'geɪv/"
+        },
+        "pastParticiple": {
+            "value": "forgiven",
+            "transcription": "/fə'gɪv(ə)n/"
+        },
+        "hasRegular": false,
+        "isDerived": true
+    },
+    {
+        "infinitive": {
+            "value": "forsake",
+            "transcription": "/fə'seɪk/"
+        },
+        "simplePast": {
+            "value": "forsook",
+            "transcription": "/fə'sʊk/"
+        },
+        "pastParticiple": {
+            "value": "forsaken",
+            "transcription": "/fə'seɪk(ə)n/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "freeze",
+            "transcription": "/friːz/"
+        },
+        "simplePast": {
+            "value": "froze",
+            "transcription": "/frəʊz/"
+        },
+        "pastParticiple": {
+            "value": "frozen",
+            "transcription": "/'frəʊz(ə)n/"
+        },
+        "hasRegular": false,
+        "isDerived": true
+    },
+    {
+        "infinitive": {
+            "value": "get",
+            "transcription": "/gɛt/"
+        },
+        "simplePast": {
+            "value": "got",
+            "transcription": "/gɒt/"
+        },
+        "pastParticiple": {
+            "value": "got/gotten",
+            "transcription": "/gɒt, 'gɒt(ə)n/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "give",
+            "transcription": "/gɪv/"
+        },
+        "simplePast": {
+            "value": "gave",
+            "transcription": "/geɪv/"
+        },
+        "pastParticiple": {
+            "value": "given",
+            "transcription": "/'giv(ə)n/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "go",
+            "transcription": "/gəʊ/"
+        },
+        "simplePast": {
+            "value": "went",
+            "transcription": "/wɛnt/"
+        },
+        "pastParticiple": {
+            "value": "gone",
+            "transcription": "/gɒn/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "grind",
+            "transcription": "/grʌɪnd/"
+        },
+        "simplePast": {
+            "value": "ground",
+            "transcription": "/graʊnd/"
+        },
+        "pastParticiple": {
+            "value": "ground",
+            "transcription": "/graʊnd/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "grow",
+            "transcription": "/grəʊ/"
+        },
+        "simplePast": {
+            "value": "grew",
+            "transcription": "/gruː/"
+        },
+        "pastParticiple": {
+            "value": "grown",
+            "transcription": "/grəʊn/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "handwrite",
+            "transcription": "/'hændˌrʌɪt/"
+        },
+        "simplePast": {
+            "value": "handwrote",
+            "transcription": "/'hændˌrəʊt/"
+        },
+        "pastParticiple": {
+            "value": "handwritten",
+            "transcription": "/'hændˌrit(ə)n/"
+        },
+        "hasRegular": false,
+        "isDerived": true
+    },
+    {
+        "infinitive": {
+            "value": "hang",
+            "transcription": "/hæŋ/"
+        },
+        "simplePast": {
+            "value": "hung",
+            "transcription": "/hʌŋ/"
+        },
+        "pastParticiple": {
+            "value": "hung",
+            "transcription": "/hʌŋ/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "have",
+            "transcription": "/hæv/"
+        },
+        "simplePast": {
+            "value": "had",
+            "transcription": "/hæd/"
+        },
+        "pastParticiple": {
+            "value": "had",
+            "transcription": "/hæd/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "hear",
+            "transcription": "/hɪə(r)/"
+        },
+        "simplePast": {
+            "value": "heard",
+            "transcription": "/həː(r)d/"
+        },
+        "pastParticiple": {
+            "value": "heard",
+            "transcription": "/həː(r)d/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "hew",
+            "transcription": "/hjuː/"
+        },
+        "simplePast": {
+            "value": "hewed",
+            "transcription": "/hjuːd/"
+        },
+        "pastParticiple": {
+            "value": "hewn",
+            "transcription": "/hjuːn/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "hide",
+            "transcription": "/hʌɪd/"
+        },
+        "simplePast": {
+            "value": "hid",
+            "transcription": "/hɪd/"
+        },
+        "pastParticiple": {
+            "value": "hidden",
+            "transcription": "/'hɪd(ə)n/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "hit",
+            "transcription": "/hɪt/"
+        },
+        "simplePast": {
+            "value": "hit",
+            "transcription": "/hɪt/"
+        },
+        "pastParticiple": {
+            "value": "hit",
+            "transcription": "/hɪt/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "hold",
+            "transcription": "/həʊld/"
+        },
+        "simplePast": {
+            "value": "held",
+            "transcription": "/hɛld/"
+        },
+        "pastParticiple": {
+            "value": "held",
+            "transcription": "/hɛld/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "hurt",
+            "transcription": "/həː(r)t/"
+        },
+        "simplePast": {
+            "value": "hurt",
+            "transcription": "/həː(r)t/"
+        },
+        "pastParticiple": {
+            "value": "hurt",
+            "transcription": "/həː(r)t/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "inlay",
+            "transcription": "/ɪl'eɪ/"
+        },
+        "simplePast": {
+            "value": "inlaid",
+            "transcription": "/ɪl'eɪd/"
+        },
+        "pastParticiple": {
+            "value": "inlaid",
+            "transcription": "/ɪl'eɪd/"
+        },
+        "hasRegular": false,
+        "isDerived": true
+    },
+    {
+        "infinitive": {
+            "value": "input",
+            "transcription": "/'ɪnpʊt/"
+        },
+        "simplePast": {
+            "value": "input",
+            "transcription": "/'inpʊt/"
+        },
+        "pastParticiple": {
+            "value": "input",
+            "transcription": "/'inpʊt/"
+        },
+        "hasRegular": true,
+        "isDerived": true
+    },
+    {
+        "infinitive": {
+            "value": "interweave",
+            "transcription": "/'ɪntə(r)ˌwiːv/"
+        },
+        "simplePast": {
+            "value": "interwove",
+            "transcription": "/'ɪntə(r)ˌwəʊv/"
+        },
+        "pastParticiple": {
+            "value": "interwoven",
+            "transcription": "/'ɪntə(r)ˌwəʊvn/"
+        },
+        "hasRegular": false,
+        "isDerived": true
+    },
+    {
+        "infinitive": {
+            "value": "keep",
+            "transcription": "/kiːp/"
+        },
+        "simplePast": {
+            "value": "kept",
+            "transcription": "/kɛpt/"
+        },
+        "pastParticiple": {
+            "value": "kept",
+            "transcription": "/kɛpt/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "kneel",
+            "transcription": "/niːl/"
+        },
+        "simplePast": {
+            "value": "knelt",
+            "transcription": "/nɛlt/"
+        },
+        "pastParticiple": {
+            "value": "knelt",
+            "transcription": "/nɛlt/"
+        },
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "knit",
+            "transcription": "/nɪt/"
+        },
+        "simplePast": {
+            "value": "knit",
+            "transcription": "/nɪt/"
+        },
+        "pastParticiple": {
+            "value": "knit",
+            "transcription": "/nɪt/"
+        },
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "know",
+            "transcription": "/nəʊ/"
+        },
+        "simplePast": {
+            "value": "knew",
+            "transcription": "/njuː/"
+        },
+        "pastParticiple": {
+            "value": "known",
+            "transcription": "/nəʊn/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "lay",
+            "transcription": "/leɪ/"
+        },
+        "simplePast": {
+            "value": "laid",
+            "transcription": "/leɪd/"
+        },
+        "pastParticiple": {
+            "value": "laid",
+            "transcription": "/leɪd/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "lead",
+            "transcription": "/liːd/"
+        },
+        "simplePast": {
+            "value": "led",
+            "transcription": "/lɛd/"
+        },
+        "pastParticiple": {
+            "value": "led",
+            "transcription": "/lɛd/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "lean",
+            "transcription": "/liːn/"
+        },
+        "simplePast": {
+            "value": "leant",
+            "transcription": "/lɛnt/"
+        },
+        "pastParticiple": {
+            "value": "leant",
+            "transcription": "/lɛnt/"
+        },
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "leap",
+            "transcription": "/liːp/"
+        },
+        "simplePast": {
+            "value": "leapt",
+            "transcription": "/lɛpt/"
+        },
+        "pastParticiple": {
+            "value": "leapt",
+            "transcription": "/lɛpt/"
+        },
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "learn",
+            "transcription": "/ləː(r)n/"
+        },
+        "simplePast": {
+            "value": "learnt",
+            "transcription": "/ləː(r)nt/"
+        },
+        "pastParticiple": {
+            "value": "learnt",
+            "transcription": "/ləː(r)nt/"
+        },
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "leave",
+            "transcription": "/liːv/"
+        },
+        "simplePast": {
+            "value": "left",
+            "transcription": "/lɛft/"
+        },
+        "pastParticiple": {
+            "value": "left",
+            "transcription": "/lɛft/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "lend",
+            "transcription": "/lɛnd/"
+        },
+        "simplePast": {
+            "value": "lent",
+            "transcription": "/lɛnt/"
+        },
+        "pastParticiple": {
+            "value": "lent",
+            "transcription": "/lɛnt/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "let",
+            "transcription": "/lɛt/"
+        },
+        "simplePast": {
+            "value": "let",
+            "transcription": "/lɛt/"
+        },
+        "pastParticiple": {
+            "value": "let",
+            "transcription": "/lɛt/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "lie",
+            "transcription": "/lʌɪ/"
+        },
+        "simplePast": {
+            "value": "lay",
+            "transcription": "/leɪn/"
+        },
+        "pastParticiple": {
+            "value": "lain",
+            "transcription": "/leɪn/"
+        },
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "light",
+            "transcription": "/lʌɪt/"
+        },
+        "simplePast": {
+            "value": "lit",
+            "transcription": "/lɪt/"
+        },
+        "pastParticiple": {
+            "value": "lit",
+            "transcription": "/lɪt/"
+        },
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "lose",
+            "transcription": "/lu:z/"
+        },
+        "simplePast": {
+            "value": "lost",
+            "transcription": "/lɒst/"
+        },
+        "pastParticiple": {
+            "value": "lost",
+            "transcription": "/lɒst/"
+        },
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "make",
-        "pastSimple": "made",
+        "simplePast": "made",
         "pastParticiple": "made",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "may",
-        "pastSimple": "might",
+        "simplePast": "might",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "mean",
-        "pastSimple": "meant",
+        "simplePast": "meant",
         "pastParticiple": "meant",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "meet",
-        "pastSimple": "met",
+        "simplePast": "met",
         "pastParticiple": "met",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "melt",
-        "pastSimple": "melted",
+        "simplePast": "melted",
         "pastParticiple": "molten",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "miscast",
-        "pastSimple": "miscast",
+        "simplePast": "miscast",
         "pastParticiple": "miscast",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "misdeal",
-        "pastSimple": "misdealt",
+        "simplePast": "misdealt",
         "pastParticiple": "misdealt",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "misdo",
-        "pastSimple": "misdid",
+        "simplePast": "misdid",
         "pastParticiple": "misdone",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "misgive",
-        "pastSimple": "misgave",
+        "simplePast": "misgave",
         "pastParticiple": "misgiven",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "mishear",
-        "pastSimple": "misheard",
+        "simplePast": "misheard",
         "pastParticiple": "misheard",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "mishit",
-        "pastSimple": "mishit",
+        "simplePast": "mishit",
         "pastParticiple": "mishit",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "mislay",
-        "pastSimple": "misled",
+        "simplePast": "misled",
         "pastParticiple": "misled",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "mislead",
-        "pastSimple": "misled",
+        "simplePast": "misled",
         "pastParticiple": "misled",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "misread",
-        "pastSimple": "misread",
+        "simplePast": "misread",
         "pastParticiple": "misread",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "misspell",
-        "pastSimple": "misspelt",
+        "simplePast": "misspelt",
         "pastParticiple": "misspelt",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "misspend",
-        "pastSimple": "misspent",
+        "simplePast": "misspent",
         "pastParticiple": "misspent",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "mistake",
-        "pastSimple": "mistook",
+        "simplePast": "mistook",
         "pastParticiple": "mistaken",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "misunderstand",
-        "pastSimple": "misunderstood",
+        "simplePast": "misunderstood",
         "pastParticiple": "misunderstood",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "mow",
-        "pastSimple": "mowed",
+        "simplePast": "mowed",
         "pastParticiple": "mown",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "must",
-        "pastSimple": "had to",
+        "simplePast": "had to",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "offset",
-        "pastSimple": "offset",
+        "simplePast": "offset",
         "pastParticiple": "offset",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "overcome",
-        "pastSimple": "overcame",
+        "simplePast": "overcame",
         "pastParticiple": "overcome",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "overhear",
-        "pastSimple": "overheard",
+        "simplePast": "overheard",
         "pastParticiple": "overheard",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "overtake",
-        "pastSimple": "overtook",
+        "simplePast": "overtook",
         "pastParticiple": "overtaken",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "partake",
-        "pastSimple": "partook",
+        "simplePast": "partook",
         "pastParticiple": "partaken",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "pay",
-        "pastSimple": "paid",
+        "simplePast": "paid",
         "pastParticiple": "paid",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "plead",
-        "pastSimple": "pled",
+        "simplePast": "pled",
         "pastParticiple": "pled",
         "hasRegular": true,
         "isDerived": true
     },
     {
         "infinitive": "preset",
-        "pastSimple": "preset",
+        "simplePast": "preset",
         "pastParticiple": "preset",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "prove",
-        "pastSimple": "proved",
+        "simplePast": "proved",
         "pastParticiple": "proven",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "put",
-        "pastSimple": "put",
+        "simplePast": "put",
         "pastParticiple": "put",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "quit",
-        "pastSimple": "quit",
+        "simplePast": "quit",
         "pastParticiple": "quit",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "read",
-        "pastSimple": "read",
+        "simplePast": "read",
         "pastParticiple": "read",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "relay",
-        "pastSimple": "relaid",
+        "simplePast": "relaid",
         "pastParticiple": "relaid",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "rend",
-        "pastSimple": "rent",
+        "simplePast": "rent",
         "pastParticiple": "rent",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "rid",
-        "pastSimple": "rid",
+        "simplePast": "rid",
         "pastParticiple": "rid",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "ride",
-        "pastSimple": "rode",
+        "simplePast": "rode",
         "pastParticiple": "ridden",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "ring",
-        "pastSimple": "rang",
+        "simplePast": "rang",
         "pastParticiple": "rung",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "rise",
-        "pastSimple": "rose",
+        "simplePast": "rose",
         "pastParticiple": "risen",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "run",
-        "pastSimple": "ran",
+        "simplePast": "ran",
         "pastParticiple": "run",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "saw",
-        "pastSimple": "sawed",
+        "simplePast": "sawed",
         "pastParticiple": "sawn",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "say",
-        "pastSimple": "said",
+        "simplePast": "said",
         "pastParticiple": "said",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "see",
-        "pastSimple": "saw",
+        "simplePast": "saw",
         "pastParticiple": "seen",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "seek",
-        "pastSimple": "sought",
+        "simplePast": "sought",
         "pastParticiple": "sought",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "sell",
-        "pastSimple": "sold",
+        "simplePast": "sold",
         "pastParticiple": "sold",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "send",
-        "pastSimple": "sent",
+        "simplePast": "sent",
         "pastParticiple": "sent",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "set",
-        "pastSimple": "set",
+        "simplePast": "set",
         "pastParticiple": "set",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "sew",
-        "pastSimple": "sewed",
+        "simplePast": "sewed",
         "pastParticiple": "sewn",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "shake",
-        "pastSimple": "shook",
+        "simplePast": "shook",
         "pastParticiple": "shaken",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "shall",
-        "pastSimple": "should",
+        "simplePast": "should",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "shave",
-        "pastSimple": "shaved",
+        "simplePast": "shaved",
         "pastParticiple": "shaven",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "shear",
-        "pastSimple": "shore",
+        "simplePast": "shore",
         "pastParticiple": "shorn",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "shed",
-        "pastSimple": "shed",
+        "simplePast": "shed",
         "pastParticiple": "shed",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "shine",
-        "pastSimple": "shone",
+        "simplePast": "shone",
         "pastParticiple": "shone",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "shoe",
-        "pastSimple": "shod",
+        "simplePast": "shod",
         "pastParticiple": "shod",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "shoot",
-        "pastSimple": "shot",
+        "simplePast": "shot",
         "pastParticiple": "shot",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "show",
-        "pastSimple": "showed",
+        "simplePast": "showed",
         "pastParticiple": "shown",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "shrink",
-        "pastSimple": "shrank",
+        "simplePast": "shrank",
         "pastParticiple": "shrunk",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "shut",
-        "pastSimple": "shut",
+        "simplePast": "shut",
         "pastParticiple": "shut",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "sing",
-        "pastSimple": "sang",
+        "simplePast": "sang",
         "pastParticiple": "sung",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "sink",
-        "pastSimple": "sank/sunk",
+        "simplePast": "sank/sunk",
         "pastParticiple": "sunk/sunken",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "sit",
-        "pastSimple": "sat",
+        "simplePast": "sat",
         "pastParticiple": "sat",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "slay",
-        "pastSimple": "slew",
+        "simplePast": "slew",
         "pastParticiple": "slain",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "sleep",
-        "pastSimple": "slept",
+        "simplePast": "slept",
         "pastParticiple": "slept",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "slide",
-        "pastSimple": "slid",
+        "simplePast": "slid",
         "pastParticiple": "slid",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "sling",
-        "pastSimple": "slung",
+        "simplePast": "slung",
         "pastParticiple": "slung",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "slink",
-        "pastSimple": "slink",
+        "simplePast": "slink",
         "pastParticiple": "slink",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "slit",
-        "pastSimple": "slit",
+        "simplePast": "slit",
         "pastParticiple": "slit",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "smell",
-        "pastSimple": "smelt",
+        "simplePast": "smelt",
         "pastParticiple": "smelt",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "sneak",
-        "pastSimple": "snuck",
+        "simplePast": "snuck",
         "pastParticiple": "snuck",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "sow",
-        "pastSimple": "sowed",
+        "simplePast": "sowed",
         "pastParticiple": "sown",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "speak",
-        "pastSimple": "spoke",
+        "simplePast": "spoke",
         "pastParticiple": "spoken",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "speed",
-        "pastSimple": "sped",
+        "simplePast": "sped",
         "pastParticiple": "sped",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "spell",
-        "pastSimple": "spelt",
+        "simplePast": "spelt",
         "pastParticiple": "spelt",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "spend",
-        "pastSimple": "spent",
+        "simplePast": "spent",
         "pastParticiple": "spent",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "spill",
-        "pastSimple": "spilt",
+        "simplePast": "spilt",
         "pastParticiple": "spilt",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "spin",
-        "pastSimple": "spin",
+        "simplePast": "spin",
         "pastParticiple": "spin",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "spit",
-        "pastSimple": "spit/spat",
+        "simplePast": "spit/spat",
         "pastParticiple": "spit/spat",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "split",
-        "pastSimple": "split",
+        "simplePast": "split",
         "pastParticiple": "split",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "spoil",
-        "pastSimple": "spoilt",
+        "simplePast": "spoilt",
         "pastParticiple": "spoilt",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "spread",
-        "pastSimple": "spread",
+        "simplePast": "spread",
         "pastParticiple": "spread",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "spring",
-        "pastSimple": "sprang",
+        "simplePast": "sprang",
         "pastParticiple": "sprung",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "stand",
-        "pastSimple": "stood",
+        "simplePast": "stood",
         "pastParticiple": "stood",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "steal",
-        "pastSimple": "stole",
+        "simplePast": "stole",
         "pastParticiple": "stolen",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "stick",
-        "pastSimple": "stuck",
+        "simplePast": "stuck",
         "pastParticiple": "stuck",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "sting",
-        "pastSimple": "stung",
+        "simplePast": "stung",
         "pastParticiple": "stung",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "stink",
-        "pastSimple": "stank",
+        "simplePast": "stank",
         "pastParticiple": "stunk",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "strew",
-        "pastSimple": "strewed",
+        "simplePast": "strewed",
         "pastParticiple": "strewn",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "stride",
-        "pastSimple": "strode",
+        "simplePast": "strode",
         "pastParticiple": "stridden",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "strike",
-        "pastSimple": "struck",
+        "simplePast": "struck",
         "pastParticiple": "struck/stricken",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "string",
-        "pastSimple": "strung",
+        "simplePast": "strung",
         "pastParticiple": "strung",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "strive",
-        "pastSimple": "strove",
+        "simplePast": "strove",
         "pastParticiple": "striven",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "swear",
-        "pastSimple": "swore",
+        "simplePast": "swore",
         "pastParticiple": "sworn",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "sweat",
-        "pastSimple": "sweat",
+        "simplePast": "sweat",
         "pastParticiple": "sweat",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "sweep",
-        "pastSimple": "swept",
+        "simplePast": "swept",
         "pastParticiple": "swept",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "swell",
-        "pastSimple": "swelled",
+        "simplePast": "swelled",
         "pastParticiple": "swollen",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "swim",
-        "pastSimple": "swam",
+        "simplePast": "swam",
         "pastParticiple": "swum",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "swing",
-        "pastSimple": "swung",
+        "simplePast": "swung",
         "pastParticiple": "swung",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "take",
-        "pastSimple": "took",
+        "simplePast": "took",
         "pastParticiple": "taken",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "teach",
-        "pastSimple": "taught",
+        "simplePast": "taught",
         "pastParticiple": "taught",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "tear",
-        "pastSimple": "tore",
+        "simplePast": "tore",
         "pastParticiple": "torn",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "tell",
-        "pastSimple": "told",
+        "simplePast": "told",
         "pastParticiple": "told",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "think",
-        "pastSimple": "thought",
+        "simplePast": "thought",
         "pastParticiple": "thought",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "thrive",
-        "pastSimple": "throve",
+        "simplePast": "throve",
         "pastParticiple": "thriven",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "throw",
-        "pastSimple": "threw",
+        "simplePast": "threw",
         "pastParticiple": "thrown",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "thrust",
-        "pastSimple": "thrust",
+        "simplePast": "thrust",
         "pastParticiple": "thrust",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "tread",
-        "pastSimple": "trod",
+        "simplePast": "trod",
         "pastParticiple": "trodden",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "typeset",
-        "pastSimple": "typeset",
+        "simplePast": "typeset",
         "pastParticiple": "typeset",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "undergo",
-        "pastSimple": "underwent",
+        "simplePast": "underwent",
         "pastParticiple": "undergone",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "understand",
-        "pastSimple": "understood",
+        "simplePast": "understood",
         "pastParticiple": "understood",
         "hasRegular": true,
         "isDerived": true
     },
     {
         "infinitive": "undertake",
-        "pastSimple": "undertook",
+        "simplePast": "undertook",
         "pastParticiple": "undertaken",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "upset",
-        "pastSimple": "upset",
+        "simplePast": "upset",
         "pastParticiple": "upset",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "wake",
-        "pastSimple": "woke",
+        "simplePast": "woke",
         "pastParticiple": "woken",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "waylay",
-        "pastSimple": "waylaid",
+        "simplePast": "waylaid",
         "pastParticiple": "waylaid",
         "hasRegular": true,
         "isDerived": true
     },
     {
         "infinitive": "wear",
-        "pastSimple": "wore",
+        "simplePast": "wore",
         "pastParticiple": "worn",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "weave",
-        "pastSimple": "wove",
+        "simplePast": "wove",
         "pastParticiple": "woven",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "wed",
-        "pastSimple": "wed",
+        "simplePast": "wed",
         "pastParticiple": "wed",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "weep",
-        "pastSimple": "wept",
+        "simplePast": "wept",
         "pastParticiple": "wept",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "will",
-        "pastSimple": "would",
+        "simplePast": "would",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "wet",
-        "pastSimple": "wet",
+        "simplePast": "wet",
         "pastParticiple": "wet",
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": "win",
-        "pastSimple": "won",
+        "simplePast": "won",
         "pastParticiple": "won",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "wind",
-        "pastSimple": "wound",
+        "simplePast": "wound",
         "pastParticiple": "wound",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "withdraw",
-        "pastSimple": "withdrew",
+        "simplePast": "withdrew",
         "pastParticiple": "withdrawn",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "withhold",
-        "pastSimple": "withheld",
+        "simplePast": "withheld",
         "pastParticiple": "withheld",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "withstand",
-        "pastSimple": "withstood",
+        "simplePast": "withstood",
         "pastParticiple": "withstood",
         "hasRegular": false,
         "isDerived": true
     },
     {
         "infinitive": "wring",
-        "pastSimple": "wrung",
+        "simplePast": "wrung",
         "pastParticiple": "wrung",
         "hasRegular": false,
         "isDerived": false
     },
     {
         "infinitive": "write",
-        "pastSimple": "wrote",
+        "simplePast": "wrote",
         "pastParticiple": "written",
         "hasRegular": false,
         "isDerived": false

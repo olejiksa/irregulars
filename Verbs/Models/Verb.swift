@@ -10,24 +10,27 @@ import Foundation
 
 struct Verb: Decodable {
     
-    let infinitive: String
-    let pastSimple: String
-    let pastParticiple: String?
+    let infinitive: Word
+    let simplePast: Word
+    let pastParticiple: Word?
     let hasRegular: Bool
     let isDerived: Bool
     
-    var translation: String { infinitive.localized }
+    var translation: String { infinitive.value.localized }
     var url: URL? { URL(string: "verbs://\(infinitive)") }
     
-    var pastSimpleShortened: String {
-        guard let shortened = pastSimple.split(separator: "/").first else { return pastSimple }
+    var simplePastShortened: String {
+        guard
+            let shortened = simplePast.value.split(separator: "/").first
+        else { return simplePast.value }
+        
         return String(shortened)
     }
     
     var pastParticipleShortened: String? {
         guard
             let pastParticiple = pastParticiple,
-            let shortened = pastParticiple.split(separator: "/").first
+            let shortened = pastParticiple.value.split(separator: "/").first
         else { return nil }
         
         return String(shortened)
@@ -39,7 +42,7 @@ struct Verb: Decodable {
 extension Verb: Comparable {
     
     static func <(lhs: Verb, rhs: Verb) -> Bool {
-        lhs.infinitive < rhs.infinitive
+        lhs.infinitive.value < rhs.infinitive.value
     }
 }
 
@@ -48,6 +51,6 @@ extension Verb: Comparable {
 extension Verb: Hashable {
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(infinitive)
+        hasher.combine(infinitive.value)
     }
 }
