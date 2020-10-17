@@ -43,5 +43,9 @@ extension SwitchCell: CellProtocol {
         contentLabel.text = item.text
         isOn.isOn = item.isOn
         actionBlock = item.actionBlock
+        
+        isUserInteractionEnabled = item.isEnabled
+        contentLabel?.isEnabled = item.isEnabled
+        isOn?.isEnabled = item.isEnabled
     }
 }

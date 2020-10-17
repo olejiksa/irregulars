@@ -95,11 +95,11 @@ struct VerbsWidget: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             VerbsWidgetEntryView(entry: entry)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color(UIColor.systemFill))
+                .background(Color(UIColor.systemBackground))
         }
         .configurationDisplayName("Слово дня")
         .description("Запоминайте неправильные глаголы легко и просто каждый день")
-        .supportedFamilies([.systemSmall])
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 

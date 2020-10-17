@@ -29,7 +29,8 @@ private extension DetailCell {
     
     func setupPlayButton() {
         guard FeatureToggle.isPaid else {
-            playButton.isHidden = true
+            playButton.isUserInteractionEnabled = false
+            playButton.isEnabled = false
             transcriptionLabel.isHidden = true
             return
         }

@@ -9,9 +9,16 @@
 "Verbs" = "Verbes";
 "Settings" = "Réglages";
 "General" = "Général";
+"Links" = "Liens";
 "Regular verbs (-ed)" = "Verbes réguliers (-ed)";
 "Derived forms" = "Formes dérivées";
 "Translation" = "Traduction";
+"Language" = "Langue";
+"Contact us" = "Nous contacter";
+"Rate and review" = "Notez et évaluez";
+"Unlock all features" = "Déverrouiller toutes les fonctionnalités";
+"Buy full version" = "Acheter la version complète";
+"Restore a purchase" = "Restaurer un achat";
 "EmptyViewControllerLabel" = "Pour afficher des informations sur un verbe irrégulier, appuyer dessus sur le côté gauche de l'écran";
 
 // Irregular Verbs
@@ -19,7 +26,7 @@
 "abide" = "respecter, se conformer à";
 "arise" = "s'élever, survenir";
 "awake" = "se réveiller";
-"backslid" = "récidiver";
+"backslide" = "récidiver";
 "be" = "être";
 "bear" = "porter, supporter, naître";
 "beat" = "battre";

@@ -9,9 +9,16 @@
 "Verbs" = "Verbs";
 "Settings" = "Settings";
 "General" = "General";
+"Links" = "Ссылки";
 "Regular verbs (-ed)" = "Regular verbs (-ed)";
 "Derived forms" = "Derived forms";
 "Translation" = "Translation";
+"Language" = "Language";
+"Contact us" = "Contact us";
+"Rate and review" = "Rate and review";
+"Unlock all features" = "Unlock all features";
+"Buy full version" = "Buy full version";
+"Restore a purchase" = "Restore a purchase";
 "EmptyViewControllerLabel" = "To view info about an irregular verb, tap on it on the left side of the screen";
 
 // Irregular Verbs

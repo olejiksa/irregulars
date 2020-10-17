@@ -10,6 +10,7 @@ struct SwitchItem {
     
     let text: String
     var isOn: Bool
+    let isEnabled: Bool
     let actionBlock: ((Bool) -> ())
 }
 

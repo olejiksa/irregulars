@@ -68,8 +68,6 @@ private extension ListViewController {
     }
     
     func setupNavigationBarButtons() {
-        guard FeatureToggle.isPaid else { return }
-        
         let settings = UIBarButtonItem(image: SystemIcon.gear.image,
                                        style: .plain,
                                        target: presenter,
