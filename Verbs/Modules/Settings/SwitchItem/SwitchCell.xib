@@ -17,13 +17,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfA-t8-5rn">
-                        <rect key="frame" x="15" y="12" width="41.5" height="20"/>
+                        <rect key="frame" x="20" y="12" width="41.5" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="628-ET-EEV">
-                        <rect key="frame" x="256" y="6.5" width="51" height="31"/>
+                        <rect key="frame" x="251" y="6.5" width="51" height="31"/>
                         <connections>
                             <action selector="switchValueChanged" destination="KGk-i7-Jjw" eventType="valueChanged" id="noc-bZ-nUK"/>
                         </connections>
@@ -31,11 +31,11 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="628-ET-EEV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wfA-t8-5rn" secondAttribute="trailing" constant="20" id="Br8-QA-laX"/>
-                    <constraint firstItem="wfA-t8-5rn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="C3O-bZ-sEK"/>
+                    <constraint firstItem="wfA-t8-5rn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="C3O-bZ-sEK"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wfA-t8-5rn" secondAttribute="bottom" constant="12" id="Ggn-JN-iRr"/>
                     <constraint firstItem="628-ET-EEV" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="OmL-Wc-pzn"/>
                     <constraint firstItem="wfA-t8-5rn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="aAj-Nh-gWN"/>
-                    <constraint firstAttribute="trailing" secondItem="628-ET-EEV" secondAttribute="trailing" constant="15" id="qxS-D3-d0v"/>
+                    <constraint firstAttribute="trailing" secondItem="628-ET-EEV" secondAttribute="trailing" constant="20" id="qxS-D3-d0v"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

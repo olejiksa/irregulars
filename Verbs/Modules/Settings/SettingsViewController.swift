@@ -6,7 +6,6 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
-import StoreKit
 import UIKit
 
 final class SettingsViewController: UIViewController {

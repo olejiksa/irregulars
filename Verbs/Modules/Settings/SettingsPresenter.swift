@@ -64,7 +64,7 @@ private extension SettingsPresenter {
                                                    actionBlock: didDerivedFormsOptionChange)]),
                         Section(header: "Links".localized,
                                 items: [DisclosureItem(text: "Rate and review".localized,
-                                                       isEnabled: true,
+                                                       isEnabled: false,
                                                        actionBlock: willRate),
                                         DisclosureItem(text: "Contact us".localized,
                                                        isEnabled: mailService.isMailAvailable,
