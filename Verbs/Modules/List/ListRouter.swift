@@ -20,7 +20,10 @@ final class ListRouter {
     }
     
     func goToDetail(with verb: Verb) {
-        let vc = DetailViewController(verb: verb)
+        let presenter = DetailPresenter(audioService: .init(),
+                                        languageService: .init(),
+                                        verb: verb)
+        let vc = DetailViewController(presenter: presenter)
         navigationController?.push(vc, in: splitViewController)
     }
     

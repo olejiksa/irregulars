@@ -12,6 +12,10 @@
 		EB2F5E11251F5B26007DCF60 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2F5E0F251F5B26007DCF60 /* DetailCell.swift */; };
 		EB2F5E12251F5B26007DCF60 /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB2F5E10251F5B26007DCF60 /* DetailCell.xib */; };
 		EB2F5E16251F71DD007DCF60 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2F5E15251F71DD007DCF60 /* AudioService.swift */; };
+		EB450973253B5CB300D31858 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB450972253B5CB300D31858 /* Section.swift */; };
+		EB45097B253B630900D31858 /* SectionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB45097A253B630900D31858 /* SectionArray.swift */; };
+		EB450982253B65E800D31858 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB450981253B65E800D31858 /* DetailPresenter.swift */; };
+		EB45098A253B67FA00D31858 /* DetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB450989253B67FA00D31858 /* DetailAssembly.swift */; };
 		EB69A26925322AFA00DD1827 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB69A26825322AF900DD1827 /* Notification.swift */; };
 		EB717DBB252ED6B9007791AD /* SwitchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB717DBA252ED6B9007791AD /* SwitchItem.swift */; };
 		EB717DC3252ED9EB007791AD /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB717DC2252ED9EB007791AD /* UserDefaultsService.swift */; };
@@ -21,12 +25,12 @@
 		EB717DE42530C04A007791AD /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB717DE32530C04A007791AD /* ListPresenter.swift */; };
 		EB717DEE2530C5A4007791AD /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB717DED2530C5A4007791AD /* ListRouter.swift */; };
 		EB717DF42530D5B7007791AD /* ListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB717DF32530D5B7007791AD /* ListAssembly.swift */; };
-		EB7B85612537E4CA00542D3C /* SectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7B85602537E4CA00542D3C /* SectionProtocol.swift */; };
 		EB7B85652537FAE000542D3C /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7B85642537FAE000542D3C /* Word.swift */; };
 		EB7B85682537FB0C00542D3C /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7B85642537FAE000542D3C /* Word.swift */; };
 		EB7B856D253B0A9700542D3C /* DisclosureItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7B856C253B0A9700542D3C /* DisclosureItem.swift */; };
 		EB7B8579253B0D5900542D3C /* DisclosureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7B8578253B0D5900542D3C /* DisclosureCell.swift */; };
 		EB7B857D253B118F00542D3C /* DisclosureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB7B857C253B118F00542D3C /* DisclosureCell.xib */; };
+		EB7B8581253B30C600542D3C /* MailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7B8580253B30C600542D3C /* MailService.swift */; };
 		EB7DFF4E25236DA4000B711D /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7DFF4C25236DA4000B711D /* EmptyViewController.swift */; };
 		EB7DFF4F25236DA4000B711D /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB7DFF4D25236DA4000B711D /* EmptyView.xib */; };
 		EB7DFF5625244977000B711D /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7DFF5425244977000B711D /* SplitViewController.swift */; };
@@ -110,6 +114,10 @@
 		EB2F5E0F251F5B26007DCF60 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		EB2F5E10251F5B26007DCF60 /* DetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
 		EB2F5E15251F71DD007DCF60 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		EB450972253B5CB300D31858 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		EB45097A253B630900D31858 /* SectionArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionArray.swift; sourceTree = "<group>"; };
+		EB450981253B65E800D31858 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		EB450989253B67FA00D31858 /* DetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAssembly.swift; sourceTree = "<group>"; };
 		EB69A26825322AF900DD1827 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		EB717DBA252ED6B9007791AD /* SwitchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchItem.swift; sourceTree = "<group>"; };
 		EB717DC2252ED9EB007791AD /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
@@ -117,11 +125,11 @@
 		EB717DE32530C04A007791AD /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
 		EB717DED2530C5A4007791AD /* ListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
 		EB717DF32530D5B7007791AD /* ListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAssembly.swift; sourceTree = "<group>"; };
-		EB7B85602537E4CA00542D3C /* SectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionProtocol.swift; sourceTree = "<group>"; };
 		EB7B85642537FAE000542D3C /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		EB7B856C253B0A9700542D3C /* DisclosureItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureItem.swift; sourceTree = "<group>"; };
 		EB7B8578253B0D5900542D3C /* DisclosureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureCell.swift; sourceTree = "<group>"; };
 		EB7B857C253B118F00542D3C /* DisclosureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisclosureCell.xib; sourceTree = "<group>"; };
+		EB7B8580253B30C600542D3C /* MailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailService.swift; sourceTree = "<group>"; };
 		EB7DFF4C25236DA4000B711D /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		EB7DFF4D25236DA4000B711D /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		EB7DFF5425244977000B711D /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +232,8 @@
 			children = (
 				EBB01C102521828800BB646B /* DetailItem */,
 				EBB01C11252182AB00BB646B /* TranslationItem */,
+				EB450989253B67FA00D31858 /* DetailAssembly.swift */,
+				EB450981253B65E800D31858 /* DetailPresenter.swift */,
 				EB2F5E0B251F543A007DCF60 /* DetailViewController.swift */,
 				EB2F5E0C251F543A007DCF60 /* DetailView.xib */,
 			);
@@ -316,7 +326,6 @@
 				EBB01C1C2521897000BB646B /* CellProtocol.swift */,
 				EBB01C242521903A00BB646B /* Identifiable.swift */,
 				EBB01C1E25218BAB00BB646B /* ItemProtocol.swift */,
-				EB7B85602537E4CA00542D3C /* SectionProtocol.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -337,6 +346,7 @@
 				EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */,
 				EBB3BC0F251F3545006E0DC7 /* KeyboardService.swift */,
 				EBB95BFD25335C3E00376C3F /* LanguageService.swift */,
+				EB7B8580253B30C600542D3C /* MailService.swift */,
 				EB717DC2252ED9EB007791AD /* UserDefaultsService.swift */,
 				EBEB1D91251F15B40019972C /* VerbsService.swift */,
 			);
@@ -402,6 +412,8 @@
 			isa = PBXGroup;
 			children = (
 				EBB01C0825217F5400BB646B /* Language.swift */,
+				EB450972253B5CB300D31858 /* Section.swift */,
+				EB45097A253B630900D31858 /* SectionArray.swift */,
 				EB717DC6252EDA1C007791AD /* Settings.swift */,
 				EBF4A13E252EC9A3003E3A44 /* SystemIcon.swift */,
 				EBEB1D93251F15D30019972C /* Verb.swift */,
@@ -589,11 +601,12 @@
 				EBEB1D76251F11900019972C /* AppDelegate.swift in Sources */,
 				EBB01C252521903A00BB646B /* Identifiable.swift in Sources */,
 				EB717DE42530C04A007791AD /* ListPresenter.swift in Sources */,
+				EB450982253B65E800D31858 /* DetailPresenter.swift in Sources */,
 				EBB95BFE25335C3E00376C3F /* LanguageService.swift in Sources */,
 				EBF4A135252E9961003E3A44 /* ListItem.swift in Sources */,
+				EB450973253B5CB300D31858 /* Section.swift in Sources */,
 				EB717DC3252ED9EB007791AD /* UserDefaultsService.swift in Sources */,
 				EBB01C0C2521825000BB646B /* TranslationCell.swift in Sources */,
-				EB7B85612537E4CA00542D3C /* SectionProtocol.swift in Sources */,
 				EBB01C0925217F5400BB646B /* Language.swift in Sources */,
 				EBB3BC10251F3545006E0DC7 /* KeyboardService.swift in Sources */,
 				EBEB1D92251F15B40019972C /* VerbsService.swift in Sources */,
@@ -609,7 +622,10 @@
 				EB7B85652537FAE000542D3C /* Word.swift in Sources */,
 				EB2F5E0D251F543A007DCF60 /* DetailViewController.swift in Sources */,
 				EBB3BC09251F2ADB006E0DC7 /* String.swift in Sources */,
+				EB45098A253B67FA00D31858 /* DetailAssembly.swift in Sources */,
+				EB7B8581253B30C600542D3C /* MailService.swift in Sources */,
 				EBB01C192521870200BB646B /* DetailItem.swift in Sources */,
+				EB45097B253B630900D31858 /* SectionArray.swift in Sources */,
 				EBF4A13B252EA2F6003E3A44 /* FeatureToggle.swift in Sources */,
 				EBF4A126252E901A003E3A44 /* NavigationController.swift in Sources */,
 				EB7B8579253B0D5900542D3C /* DisclosureCell.swift in Sources */,

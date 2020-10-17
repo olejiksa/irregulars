@@ -10,21 +10,17 @@ import UIKit
 
 final class DetailViewController: UIViewController {
 
-    private let audioService = AudioService()
-    private let languageService = LanguageService()
-    private let verb: Verb
+    private let presenter: DetailPresenter
     private let isOpenedByDeeplink: Bool
-    private let sections = ["Infinitive, Simple Past, Past Participle",
-                            "Translation".localized]
-    private var items: [[ItemProtocol]] = []
     
     @IBOutlet private weak var tableView: UITableView!
     
-    init(verb: Verb, isOpenedByDeeplink: Bool = false) {
-        self.verb = verb
+    init(presenter: DetailPresenter,
+         isOpenedByDeeplink: Bool = false) {
+        self.presenter = presenter
         self.isOpenedByDeeplink = isOpenedByDeeplink
+        
         super.init(nibName: nil, bundle: nil)
-        setItems()
     }
     
     required init?(coder: NSCoder) {
@@ -45,61 +41,19 @@ final class DetailViewController: UIViewController {
 private extension DetailViewController {
     
     func setupNavigationBar() {
-        navigationItem.title = verb.infinitive.value
+        navigationItem.title = presenter.title
         navigationItem.largeTitleDisplayMode = .never
     }
     
     func setupTableView() {
+        tableView.dataSource = presenter
+        tableView.delegate = presenter
+        
         tableView.register(DetailCell.self, TranslationCell.self)
     }
     
     func setupDelegate() {
         navigationController?.delegate = self
-    }
-    
-    func setItems() {
-        items = [[DetailItem(word: verb.infinitive, actionBlock: play),
-                  DetailItem(word: verb.simplePast, actionBlock: play),
-                  DetailItem(word: verb.pastParticiple, actionBlock: play)].compactMap { $0 }]
-        if languageService.hasTranslation {
-            items += [[TranslationItem(header: "Translation".localized, text: verb.translation)]]
-        }
-    }
-    
-    func play(text: String) {
-        audioService.play(text: text)
-    }
-}
-
-// MARK: - UITableViewDataSource
-
-extension DetailViewController: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        items.count
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        items[section].count
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard section < sections.count else { return nil }
-        return sections[section]
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = items[indexPath.section][indexPath.row]
-        return tableView.dequeueReusableCell(for: item, at: indexPath)
-    }
-}
-
-// MARK: - UITableViewDelegate
-
-extension DetailViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

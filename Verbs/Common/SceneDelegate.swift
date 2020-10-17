@@ -16,7 +16,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private var splitViewController: UISplitViewController = {
         let svc = SplitViewController()
-        let masterVc = ListAssembly().viewController(with: svc)
+        let masterVc = ListAssembly().viewController(inside: svc)
         let detailVc = EmptyViewController()
         let detailNvc = UINavigationController(rootViewController: detailVc)
         svc.viewControllers = [masterVc.navigationController, detailNvc].compactMap { $0 }

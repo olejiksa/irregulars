@@ -6,7 +6,6 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
-import MessageUI
 import StoreKit
 import UIKit
 
@@ -17,9 +16,9 @@ final class SettingsViewController: UIViewController {
 
     @IBOutlet private weak var tableView: UITableView!
     
+    private let mailService = MailService()
     private let userDefaultsService = UserDefaultsService()
-    private var sectionNames = ["General".localized, "Links".localized]
-    private var items: [[ItemProtocol]] = []
+    private var sections: [Section] = []
     private var settings: Settings?
     
     override func viewDidLoad() {
@@ -27,6 +26,7 @@ final class SettingsViewController: UIViewController {
 
         setupNavigationBar()
         setupTableView()
+        setupSettings()
         setupItems()
     }
 }
@@ -34,8 +34,6 @@ final class SettingsViewController: UIViewController {
 // MARK: - Private
 
 private extension SettingsViewController {
-    
-    var isMailAvailable: Bool { MFMailComposeViewController.canSendMail() }
     
     func setupNavigationBar() {
         navigationItem.title = "Settings".localized
@@ -51,38 +49,37 @@ private extension SettingsViewController {
         tableView.register(SwitchCell.self, DisclosureCell.self)
     }
     
-    func setupItems() {
+    func setupSettings() {
         settings = userDefaultsService.load() ?? .init()
-        items = [[DisclosureItem(text: "Language".localized,
-                                 isEnabled: true,
-                                 actionBlock: willShowLanguageSettings),
-                  SwitchItem(text: "Regular verbs (-ed)".localized,
-                             isOn: settings?.shouldRegularVerbsBeShown ?? true,
-                             isEnabled: FeatureToggle.isPaid,
-                             actionBlock: didRegularVerbsOptionChange),
-                  SwitchItem(text: "Derived forms".localized,
-                             isOn: settings?.shouldDerivedFormsBeShown ?? true,
-                             isEnabled: FeatureToggle.isPaid,
-                             actionBlock: didDerivedFormsOptionChange)],
-                 [DisclosureItem(text: "Rate and review".localized,
-                                 isEnabled: true,
-                                 actionBlock: willRate),
-                  DisclosureItem(text: "Contact us".localized,
-                                 isEnabled: isMailAvailable,
-                                 actionBlock: willMail)]]
-        setupUnlockSection()
     }
     
-    func setupUnlockSection() {
-        guard !FeatureToggle.isPaid else { return }
-        sectionNames.insert("Unlock all features".localized, at: 0)
-        let nonPaidItems = [DisclosureItem(text: "Buy full version".localized,
-                                           isEnabled: true,
-                                           actionBlock: {}),
-                            DisclosureItem(text: "Restore a purchase".localized,
-                                           isEnabled: true,
-                                           actionBlock: {})]
-        items.insert(nonPaidItems, at: 0)
+    func setupItems() {
+        sections = [Section(header: "Unlock all features".localized,
+                            items: [DisclosureItem(text: "Buy full version".localized,
+                                                   isEnabled: true,
+                                                   actionBlock: {}),
+                                    DisclosureItem(text: "Restore a purchase".localized,
+                                                   isEnabled: true,
+                                                   actionBlock: {})].filter { _ in !FeatureToggle.isPaid }),
+                    Section(header: "General".localized,
+                            items: [DisclosureItem(text: "Language".localized,
+                                                   isEnabled: true,
+                                                   actionBlock: willShowLanguageSettings),
+                                    SwitchItem(text: "Regular verbs (-ed)".localized,
+                                               isOn: settings?.shouldRegularVerbsBeShown ?? true,
+                                               isEnabled: FeatureToggle.isPaid,
+                                               actionBlock: didRegularVerbsOptionChange),
+                                    SwitchItem(text: "Derived forms".localized,
+                                               isOn: settings?.shouldDerivedFormsBeShown ?? true,
+                                               isEnabled: FeatureToggle.isPaid,
+                                               actionBlock: didDerivedFormsOptionChange)]),
+                    Section(header: "Links".localized,
+                            items: [DisclosureItem(text: "Rate and review".localized,
+                                                   isEnabled: true,
+                                                   actionBlock: willRate),
+                                    DisclosureItem(text: "Contact us".localized,
+                                                   isEnabled: mailService.isMailAvailable,
+                                                   actionBlock: { [weak self] in self?.mailService.present(in: self) })])]
     }
     
     @objc func didCloseTap() {
@@ -115,19 +112,6 @@ private extension SettingsViewController {
         
         SKStoreReviewController.requestReview(in: scene)
     }
-    
-    func willMail() {
-        guard
-            let productName = Bundle.main.productName,
-            let version = Bundle.main.releaseVersionNumber
-        else { return }
-
-        let mailComposerVC = MFMailComposeViewController()
-        mailComposerVC.mailComposeDelegate = self
-        mailComposerVC.setToRecipients(["quillaur@outlook.com"])
-        mailComposerVC.setSubject("\(productName) \(version)")
-        present(mailComposerVC, animated: true)
-    }
 }
 
 // MARK: - UITableViewDataSource
@@ -135,20 +119,20 @@ private extension SettingsViewController {
 extension SettingsViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        items.count
+        sections.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        items[section].count
+        sections[section].items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = items[indexPath.section][indexPath.row]
+        let item = sections[indexPath.section].items[indexPath.row]
         return tableView.dequeueReusableCell(for: item, at: indexPath)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        sectionNames[section]
+        sections[section].header
     }
 }
 
@@ -159,7 +143,7 @@ extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let item = items[indexPath.section][indexPath.row]
+        let item = sections[indexPath.section].items[indexPath.row]
         switch item {
         case let disclosureItem as DisclosureItem:
             disclosureItem.actionBlock()
@@ -167,21 +151,4 @@ extension SettingsViewController: UITableViewDelegate {
             break
         }
     }
-}
-
-// MARK: - MFMailComposeViewControllerDelegate
-
-extension SettingsViewController: MFMailComposeViewControllerDelegate {
-    
-    func mailComposeController(_ controller: MFMailComposeViewController,
-                               didFinishWith result: MFMailComposeResult,
-                               error: Error?) {
-        dismiss(animated: true)
-    }
-}
-
-private extension Bundle {
-    
-    var productName: String? { infoDictionary?["CFBundleName"] as? String }
-    var releaseVersionNumber: String? { infoDictionary?["CFBundleShortVersionString"] as? String }
 }
