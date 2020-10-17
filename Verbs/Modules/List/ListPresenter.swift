@@ -10,6 +10,9 @@ import UIKit
 
 final class ListPresenter: NSObject {
     
+    weak var viewController: ListViewController?
+    var router: ListRouter?
+    
     private let verbsService: VerbsService
     private let userDefaultsService: UserDefaultsService
     private var isSearchActive = false
@@ -19,9 +22,6 @@ final class ListPresenter: NSObject {
             didSelectedItemSet()
         }
     }
-    
-    weak var viewController: ListViewController?
-    var router: ListRouter?
     
     init(verbsService: VerbsService,
          userDefaultsService: UserDefaultsService) {

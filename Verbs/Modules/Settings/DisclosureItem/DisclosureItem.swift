@@ -20,3 +20,6 @@ extension DisclosureItem: ItemProtocol {
     var identifier: String { DisclosureCell.identifier }
 }
 
+// MARK: - Actionable
+
+extension DisclosureItem: Actionable {}

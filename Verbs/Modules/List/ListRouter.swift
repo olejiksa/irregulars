@@ -29,10 +29,9 @@ final class ListRouter {
     
     func goToSettings(regularVerbsBlock shouldRegularVerbsBeShownBlock: @escaping ((Bool) -> ()),
                       derivedFormsBlock shouldDerivedFormsBeShownBlock: @escaping ((Bool) -> ())) {
-        let vc = SettingsViewController()
-        vc.shouldRegularVerbsBeShownBlock = shouldRegularVerbsBeShownBlock
-        vc.shouldDerivedFormsBeShownBlock = shouldDerivedFormsBeShownBlock
-        
+        let assembly = SettingsAssembly(shouldRegularVerbsBeShownBlock: shouldRegularVerbsBeShownBlock,
+                                        shouldDerivedFormsBeShownBlock: shouldDerivedFormsBeShownBlock)
+        let vc = assembly.viewController()
         let nvc = UINavigationController(rootViewController: vc)
         nvc.modalPresentationStyle = .formSheet
         navigationController?.present(nvc, animated: true)
