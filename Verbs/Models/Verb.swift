@@ -17,7 +17,7 @@ struct Verb: Decodable {
     let isDerived: Bool
     
     var translation: String { infinitive.value.localized }
-    var url: URL? { URL(string: "verbs://\(infinitive)") }
+    var url: URL? { URL(string: "verbs://\(infinitive.value)") }
     
     var simplePastShortened: String {
         guard
