@@ -25,7 +25,7 @@ extension ListCell: CellProtocol {
         guard let item = item as? ListItem else { return }
         
         infinitiveLabel.text = item.verb.infinitive.value
-        simplePastLabel.text = item.verb.simplePastShortened
-        pastParticipleLabel.text = item.verb.pastParticipleShortened ?? "—"
+        simplePastLabel.text = item.verb.simplePast.shortened
+        pastParticipleLabel.text = item.verb.pastParticiple?.shortened ?? "—"
     }
 }

@@ -61,7 +61,7 @@
             "transcription": "/ˈbækslɪd/, /ˈbækslɪd(ə)n/"
         },
         "hasRegular": false,
-        "isDerived": false
+        "isDerived": true
     },
     {
         "infinitive": {
@@ -1346,15 +1346,15 @@
     {
         "infinitive": {
             "value": "inlay",
-            "transcription": "/ɪl'eɪ/"
+            "transcription": "/ɪnl'eɪ/"
         },
         "simplePast": {
             "value": "inlaid",
-            "transcription": "/ɪl'eɪd/"
+            "transcription": "/ɪnl'eɪd/"
         },
         "pastParticiple": {
             "value": "inlaid",
-            "transcription": "/ɪl'eɪd/"
+            "transcription": "/ɪnl'eɪd/"
         },
         "hasRegular": false,
         "isDerived": true
@@ -1366,11 +1366,11 @@
         },
         "simplePast": {
             "value": "input",
-            "transcription": "/'inpʊt/"
+            "transcription": "/'ɪnpʊt/"
         },
         "pastParticiple": {
             "value": "input",
-            "transcription": "/'inpʊt/"
+            "transcription": "/'ɪnpʊt/"
         },
         "hasRegular": true,
         "isDerived": true
@@ -2053,7 +2053,7 @@
             "transcription": "/plɛd/"
         },
         "hasRegular": true,
-        "isDerived": true
+        "isDerived": false
     },
     {
         "infinitive": {

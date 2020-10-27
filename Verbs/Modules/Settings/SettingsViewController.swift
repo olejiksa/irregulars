@@ -11,7 +11,9 @@ import UIKit
 final class SettingsViewController: UIViewController {
     
     private let presenter: SettingsPresenter
+    private var keyboardService: KeyboardService?
 
+    @IBOutlet private weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
     @IBOutlet private weak var tableView: UITableView!
     
     init(presenter: SettingsPresenter) {
@@ -29,6 +31,11 @@ final class SettingsViewController: UIViewController {
 
         setupNavigationBar()
         setupTableView()
+        setupKeyboardService()
+    }
+    
+    func reloadData() {
+        tableView.reloadData()
     }
 }
 
@@ -49,7 +56,12 @@ private extension SettingsViewController {
     func setupTableView() {
         tableView.dataSource = presenter
         tableView.delegate = presenter
-        tableView.register(SwitchCell.self, DisclosureCell.self)
+        tableView.register(SwitchCell.self, DisclosureCell.self, RightDetailCell.self)
+    }
+    
+    func setupKeyboardService() {
+        guard UIDevice.current.userInterfaceIdiom != .pad else { return }
+        keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
     }
     
     @objc func didCloseTap() {

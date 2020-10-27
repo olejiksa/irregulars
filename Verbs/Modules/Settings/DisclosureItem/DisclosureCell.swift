@@ -8,10 +8,7 @@
 
 import UIKit
 
-final class DisclosureCell: UITableViewCell {
-    
-    
-}
+final class DisclosureCell: UITableViewCell {}
 
 // MARK: - CellProtocol
 

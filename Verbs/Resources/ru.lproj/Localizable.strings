@@ -6,12 +6,19 @@
   Copyright © 2020 Oleg Samoylov. All rights reserved.
 */
 
+"About" = "О программе";
+"Developer" = "Разработчик";
+"Oleg Samoylov" = "Олег Самойлов";
+"Version" = "Версия";
+"List shows" = "Список показывает";
+"WidgetConfigurationDisplayTitle" = "Слова на каждый день";
+"WidgetDescription" = "Запоминайте все три формы неправильных глаголов легко и просто, даже не заходя в приложение";
 "Verbs" = "Глаголы";
 "Settings" = "Настройки";
 "General" = "Основные";
 "Links" = "Ссылки";
 "Regular verbs (-ed)" = "Правильные глаголы (-ed)";
-"Derived forms" = "Производные формы";
+"Derivatives" = "Производные формы";
 "Translation" = "Перевод";
 "Language" = "Язык";
 "Contact us" = "Связаться с нами";
@@ -20,6 +27,9 @@
 "Buy full version" = "Купить полную версию";
 "Restore a purchase" = "Восстановить покупку";
 "EmptyViewControllerLabel" = "Чтобы посмотреть информацию о неправильном глаголе, нажмите на него в левой части экрана";
+"Done" = "Готово";
+"Cancel" = "Отмена";
+"Verb forms" = "Формы глагола";
 
 // Irregular Verbs
 

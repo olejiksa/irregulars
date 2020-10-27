@@ -13,6 +13,7 @@ final class ListPresenter: NSObject {
     weak var viewController: ListViewController?
     var router: ListRouter?
     
+    private let languageService: LanguageService
     private let verbsService: VerbsService
     private let userDefaultsService: UserDefaultsService
     private var isSearchActive = false
@@ -23,8 +24,10 @@ final class ListPresenter: NSObject {
         }
     }
     
-    init(verbsService: VerbsService,
+    init(languageService: LanguageService,
+         verbsService: VerbsService,
          userDefaultsService: UserDefaultsService) {
+        self.languageService = languageService
         self.verbsService = verbsService
         self.userDefaultsService = userDefaultsService
         
@@ -54,9 +57,18 @@ final class ListPresenter: NSObject {
             self.viewController?.reloadData()
             self.didSelectedItemSet()
         }
+        
+        let listViewBlock: ((Settings.ListView) -> ()) = { [weak self] in
+            guard let self = self else { return }
+            
+            self.verbsService.listView = $0
+            self.viewController?.reloadData()
+            self.didSelectedItemSet()
+        }
                                              
         router?.goToSettings(regularVerbsBlock: shouldRegularVerbsBeShownBlock,
-                             derivedFormsBlock: shouldDerivedFormsBeShownBlock)
+                             derivedFormsBlock: shouldDerivedFormsBeShownBlock,
+                             listViewBlock: listViewBlock)
     }
 }
 
@@ -65,8 +77,10 @@ final class ListPresenter: NSObject {
 private extension ListPresenter {
     
     func loadSettings() {
-        verbsService.shouldRegularVerbsBeShown = userDefaultsService.load()?.shouldRegularVerbsBeShown ?? true
-        verbsService.shouldDerivedFormsBeShown = userDefaultsService.load()?.shouldDerivedFormsBeShown ?? true
+        guard let settings = userDefaultsService.load() else { return }
+        verbsService.shouldRegularVerbsBeShown = settings.shouldRegularVerbsBeShown
+        verbsService.shouldDerivedFormsBeShown = settings.shouldDerivedFormsBeShown
+        verbsService.listView = settings.listView
     }
     
     func subscribe() {
@@ -116,7 +130,9 @@ extension ListPresenter: UITableViewDataSource {
         let verb = !isSearchActive
             ? verbsService.groupedItems[indexPath.section][indexPath.row]
             : verbsService.searchedItems[indexPath.row]
-        let item = ListItem(verb: verb)
+        let item: ItemProtocol = verbsService.listView == .forms || !languageService.hasTranslation ?
+            ListItem(verb: verb) :
+            SubtitleItem(title: verb.infinitive.value, subtitle: verb.translation)
         return tableView.dequeueReusableCell(for: item, at: indexPath)
     }
     

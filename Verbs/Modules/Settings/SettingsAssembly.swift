@@ -10,20 +10,25 @@ import UIKit
 
 final class SettingsAssembly {
     
-    private let shouldRegularVerbsBeShownBlock: ((Bool) -> ())
-    private let shouldDerivedFormsBeShownBlock: ((Bool) -> ())
+    private let shouldRegularVerbsBeShownBlock: (Bool) -> ()
+    private let shouldDerivedFormsBeShownBlock: (Bool) -> ()
+    private let listViewBlock: (Settings.ListView) -> ()
     
-    init(shouldRegularVerbsBeShownBlock: @escaping ((Bool) -> ()),
-         shouldDerivedFormsBeShownBlock: @escaping ((Bool) -> ())) {
+    init(shouldRegularVerbsBeShownBlock: @escaping (Bool) -> (),
+         shouldDerivedFormsBeShownBlock: @escaping (Bool) -> (),
+         listViewBlock: @escaping (Settings.ListView) -> ()) {
         self.shouldRegularVerbsBeShownBlock = shouldRegularVerbsBeShownBlock
         self.shouldDerivedFormsBeShownBlock = shouldDerivedFormsBeShownBlock
+        self.listViewBlock = listViewBlock
     }
     
     func viewController() -> SettingsViewController {
-        let presenter = SettingsPresenter(mailService: .init(),
+        let presenter = SettingsPresenter(languageService: .init(),
+                                          mailService: .init(),
                                           userDefaultsService: .init(),
                                           shouldRegularVerbsBeShownBlock: shouldRegularVerbsBeShownBlock,
-                                          shouldDerivedFormsBeShownBlock: shouldDerivedFormsBeShownBlock)
+                                          shouldDerivedFormsBeShownBlock: shouldDerivedFormsBeShownBlock,
+                                          listViewBlock: listViewBlock)
         let viewController =  SettingsViewController(presenter: presenter)
         presenter.viewController = viewController
         return viewController

@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="Verbs" customModuleProvider="target">
             <connections>
+                <outlet property="keyboardHeightLayoutConstraint" destination="nZA-Pg-QO0" id="krk-AR-tuK"/>
                 <outlet property="tableView" destination="gjz-Q3-OUj" id="XtE-v0-FbK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

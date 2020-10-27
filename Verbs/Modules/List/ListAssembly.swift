@@ -11,7 +11,8 @@ import UIKit
 final class ListAssembly {
     
     func viewController(inside splitViewController: UISplitViewController) -> ListViewController {
-        let presenter = ListPresenter(verbsService: .init(),
+        let presenter = ListPresenter(languageService: .init(),
+                                      verbsService: .init(),
                                       userDefaultsService: .init())
         let viewController = ListViewController(presenter: presenter)
         let navigationController = UINavigationController(rootViewController: viewController)

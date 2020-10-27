@@ -11,14 +11,22 @@ struct Word: Decodable {
     let value: String
     let transcription: String
     
+    var shortened: String {
+        guard
+            let shortened = value.split(separator: "/").first
+        else { return value }
+        
+        return String(shortened)
+    }
+    
     init() {
         value = ""
         transcription = ""
     }
     
-    init(value: String) {
+    init(value: String, transcription: String) {
         self.value = value
-        transcription = ""
+        self.transcription = transcription
     }
 }
 

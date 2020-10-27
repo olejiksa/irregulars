@@ -16,7 +16,7 @@ final class UserDefaultsService {
     
     private let defaults = UserDefaults.standard
     private let jsonEncoder = JSONEncoder()
-    private let jsonDecorder = JSONDecoder()
+    private let jsonDecoder = JSONDecoder()
     
     func save(_ settings: Settings?) {
         guard let settings = settings else { return }
@@ -29,6 +29,6 @@ final class UserDefaultsService {
             let data = defaults.object(forKey: Keys.settings.rawValue) as? Data
         else { return nil }
         
-        return try? jsonDecorder.decode(Settings.self, from: data)
+        return try? jsonDecoder.decode(Settings.self, from: data)
     }
 }

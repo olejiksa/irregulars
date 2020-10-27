@@ -6,12 +6,19 @@
   Copyright © 2020 Oleg Samoylov. All rights reserved.
 */
 
+"About" = "À propos du programme";
+"Developer" = "Développeur";
+"Oleg Samoylov" = "Oleg Samoylov";
+"Version" = "Version";
+"List shows" = "La liste montre";
+"WidgetConfigurationDisplayTitle" = "Mots pour tous les jours";
+"WidgetDescription" = "Mémoriser les trois formes de verbes irréguliers simplement et facilement";
 "Verbs" = "Verbes";
 "Settings" = "Réglages";
 "General" = "Général";
 "Links" = "Liens";
 "Regular verbs (-ed)" = "Verbes réguliers (-ed)";
-"Derived forms" = "Formes dérivées";
+"Derivatives" = "Formes dérivées";
 "Translation" = "Traduction";
 "Language" = "Langue";
 "Contact us" = "Nous contacter";
@@ -20,6 +27,9 @@
 "Buy full version" = "Acheter la version complète";
 "Restore a purchase" = "Restaurer un achat";
 "EmptyViewControllerLabel" = "Pour afficher des informations sur un verbe irrégulier, appuyer dessus sur le côté gauche de l'écran";
+"Done" = "Terminé";
+"Cancel" = "Annuler";
+"Verb forms" = "Formes verbales";
 
 // Irregular Verbs
 

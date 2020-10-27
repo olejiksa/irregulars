@@ -33,14 +33,19 @@ final class DetailPresenter: NSObject {
 private extension DetailPresenter {
     
     func setupSections() {
-        let verbItems = [DetailItem(word: verb.infinitive, actionBlock: play),
-                         DetailItem(word: verb.simplePast, actionBlock: play),
-                         DetailItem(word: verb.pastParticiple, actionBlock: play)]
-            .compactMap { $0 }
         let translationItems = [TranslationItem(text: verb.translation)]
             .filter { _ in languageService.hasTranslation }
-        sections.setup([Section(header: "Infinitive, Simple Past, Past Participle", items: verbItems),
-                        Section(header: "Translation".localized, items: translationItems)])
+        sections.setup([Section(header: "Infinitive",
+                                items: [DetailItem(word: verb.infinitive,
+                                                   actionBlock: play)].compactMap { $0 }),
+                        Section(header: "Simple Past",
+                                items: [DetailItem(word: verb.simplePast,
+                                                   actionBlock: play)].compactMap { $0 }),
+                        Section(header: "Past Participle",
+                                items: [DetailItem(word: verb.pastParticiple,
+                                                   actionBlock: play)].compactMap { $0 }),
+                        Section(header: "Translation".localized,
+                                items: translationItems)])
     }
     
     func play(text: String) {

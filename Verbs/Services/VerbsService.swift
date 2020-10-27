@@ -42,6 +42,12 @@ final class VerbsService {
         }
     }
     
+    var listView: Settings.ListView = .forms {
+        didSet {
+            setGroupedItems()
+        }
+    }
+    
     init() {
         setItems()
         setGroupedItems()

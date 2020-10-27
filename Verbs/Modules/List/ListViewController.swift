@@ -79,7 +79,7 @@ private extension ListViewController {
         tableView.dataSource = presenter
         tableView.delegate = presenter
         
-        tableView.register(ListCell.self)
+        tableView.register(ListCell.self, SubtitleCell.self)
     }
     
     func setupSearchController() {

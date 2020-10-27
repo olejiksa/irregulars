@@ -8,9 +8,8 @@
 
 import WidgetKit
 import SwiftUI
-import Intents
 
-struct Provider: IntentTimelineProvider {
+struct Provider: TimelineProvider {
     
     private let service = VerbsService()
     
@@ -20,35 +19,25 @@ struct Provider: IntentTimelineProvider {
                         pastParticiple: Word(),
                         hasRegular: false,
                         isDerived: false)
-        return .init(date: Date(),
-                     verb: verb,
-                     configuration: ConfigurationIntent())
+        return .init(date: Date(), verb: verb)
     }
 
-    func getSnapshot(for configuration: ConfigurationIntent,
-                     in context: Context,
-                     completion: @escaping (VerbEntry) -> ()) {
-        let verb = Verb(infinitive: Word(value: "arise"),
-                        simplePast: Word(value: "arose"),
-                        pastParticiple: Word(value: "arisen"),
+    func getSnapshot(in context: Context, completion: @escaping (VerbEntry) -> ()) {
+        let verb = Verb(infinitive: Word(value: "arise", transcription: "/əˈrʌɪz/"),
+                        simplePast: Word(value: "arose", transcription: "/əˈrəʊz/"),
+                        pastParticiple: Word(value: "arisen", transcription: "/əˈrɪz(ə)n/"),
                         hasRegular: false,
                         isDerived: true)
-        let entry = VerbEntry(date: Date(),
-                              verb: verb,
-                              configuration: configuration)
+        let entry = VerbEntry(date: Date(), verb: verb)
         completion(entry)
     }
 
-    func getTimeline(for configuration: ConfigurationIntent,
-                     in context: Context,
-                     completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [VerbEntry] = []
-        for _ in 1...4 {
+        for _ in 1...24*4 {
             guard let verb = service.randomItem else { continue }
             let date = Calendar.current.date(byAdding: .minute, value: 15, to: Date()) ?? Date()
-            let entry = VerbEntry(date: date,
-                                  verb: verb,
-                                  configuration: configuration)
+            let entry = VerbEntry(date: date, verb: verb)
             entries.append(entry)
         }
 
@@ -60,30 +49,80 @@ struct Provider: IntentTimelineProvider {
 struct VerbEntry: TimelineEntry {
     let date: Date
     let verb: Verb
-    let configuration: ConfigurationIntent
 }
 
-struct VerbsWidgetEntryView : View {
+struct VerbsWidgetEntryView: View {
     var entry: Provider.Entry
+    @Environment(\.widgetFamily) private var widgetFamily
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 5) {
-            Text("Infinitive")
-                .font(.caption)
-            Text(entry.verb.infinitive.value)
-                .bold()
-            Text("Simple Past")
-                .font(.caption)
-            Text(entry.verb.simplePastShortened)
-                .bold()
-            if let pastParticiple = entry.verb.pastParticipleShortened {
-                Text("Past Participle")
+        switch widgetFamily {
+        case .systemSmall:
+            VStack(alignment: .leading, spacing: 5) {
+                Text("Infinitive")
                     .font(.caption)
-                Text(pastParticiple)
+                Text(entry.verb.infinitive.value)
                     .bold()
                     .lineLimit(1)
+                Text("Simple Past")
+                    .font(.caption)
+                Text(entry.verb.simplePast.shortened)
+                    .bold()
+                    .lineLimit(1)
+                if let pastParticiple = entry.verb.pastParticiple {
+                    Text("Past Participle")
+                        .font(.caption)
+                    Text(pastParticiple.shortened)
+                        .bold()
+                        .lineLimit(1)
+                }
             }
-        }.widgetURL(entry.verb.url)
+            .widgetURL(entry.verb.url)
+            .padding(20)
+        case .systemMedium:
+            VStack(alignment: .center, spacing: 15) {
+                HStack(alignment: .center, spacing: 20) {
+                    VStack(alignment: .center, spacing: 10) {
+                        Text("Infinitive")
+                            .font(.caption)
+                        Text(entry.verb.infinitive.value)
+                            .bold()
+                            .lineLimit(1)
+                        Text(entry.verb.infinitive.transcription)
+                            .lineLimit(1)
+                    }
+                    VStack(alignment: .center, spacing: 10) {
+                        Text("Simple Past")
+                            .font(.caption)
+                        Text(entry.verb.simplePast.shortened)
+                            .bold()
+                            .lineLimit(1)
+                        Text(entry.verb.simplePast.transcription)
+                            .lineLimit(1)
+                    }
+                    if let pastParticiple = entry.verb.pastParticiple {
+                        VStack(alignment: .center, spacing: 10) {
+                            Text("Past Participle")
+                                .font(.caption)
+                            Text(pastParticiple.shortened)
+                                .bold()
+                                .lineLimit(1)
+                            Text(pastParticiple.transcription)
+                                .lineLimit(1)
+                        }
+                    }
+                }
+                if LanguageService().hasTranslation {
+                    Text(entry.verb.translation)
+                        .italic()
+                        .lineLimit(1)
+                }
+            }
+            .widgetURL(entry.verb.url)
+            .padding(20)
+        default:
+            Text("Not Supported")
+        }
     }
 }
 
@@ -92,27 +131,27 @@ struct VerbsWidget: Widget {
     let kind: String = "VerbsWidget"
 
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
             VerbsWidgetEntryView(entry: entry)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color(UIColor.systemBackground))
         }
-        .configurationDisplayName("Слово дня")
-        .description("Запоминайте неправильные глаголы легко и просто каждый день")
-        .supportedFamilies([.systemSmall, .systemMedium])
+        .configurationDisplayName("WidgetConfigurationDisplayTitle".localized)
+        .description("WidgetDescription".localized)
+        .supportedFamilies(FeatureToggle.isPaid ?
+                            [.systemSmall, .systemMedium] :
+                            [.systemSmall])
     }
 }
 
 struct VerbsWidget_Previews: PreviewProvider {
     static var previews: some View {
-        let verb = Verb(infinitive: Word(value: "arise"),
-                        simplePast: Word(value: "arose"),
-                        pastParticiple: Word(value: "arisen"),
+        let verb = Verb(infinitive: Word(value: "arisearise", transcription: "/əˈrʌɪz/"),
+                        simplePast: Word(value: "arosearisearise", transcription: "/əˈrəʊz/"),
+                        pastParticiple: Word(value: "arisenarisearise", transcription: "/əˈrɪz(ə)n/"),
                         hasRegular: false,
                         isDerived: true)
-        VerbsWidgetEntryView(entry: VerbEntry(date: Date(),
-                                              verb: verb,
-                                              configuration: ConfigurationIntent()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        VerbsWidgetEntryView(entry: VerbEntry(date: Date(), verb: verb))
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

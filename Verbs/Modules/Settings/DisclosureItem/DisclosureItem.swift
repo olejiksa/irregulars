@@ -10,7 +10,7 @@ struct DisclosureItem {
     
     let text: String
     let isEnabled: Bool
-    let actionBlock: (() -> ())
+    let actionBlock: ((ItemProtocol) -> ())?
 }
 
 // MARK: - ItemProtocol

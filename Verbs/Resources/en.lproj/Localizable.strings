@@ -6,12 +6,19 @@
   Copyright © 2020 Oleg Samoylov. All rights reserved.
 */
 
+"About" = "About";
+"Developer" = "Developer";
+"Oleg Samoylov" = "Oleg Samoylov";
+"Version" = "Version";
+"List shows" = "List shows";
+"WidgetConfigurationDisplayTitle" = "Words for every day";
+"WidgetDescription" = "Memorize all three forms of irregular verbs simply and easily";
 "Verbs" = "Verbs";
 "Settings" = "Settings";
 "General" = "General";
 "Links" = "Links";
 "Regular verbs (-ed)" = "Regular verbs (-ed)";
-"Derived forms" = "Derived forms";
+"Derivatives" = "Derivatives";
 "Translation" = "Translation";
 "Language" = "Language";
 "Contact us" = "Contact us";
@@ -20,6 +27,9 @@
 "Buy full version" = "Buy full version";
 "Restore a purchase" = "Restore a purchase";
 "EmptyViewControllerLabel" = "To view info about an irregular verb, tap on it on the left side of the screen";
+"Done" = "Done";
+"Cancel" = "Cancel";
+"Verb forms" = "Verb forms";
 
 // Irregular Verbs
 

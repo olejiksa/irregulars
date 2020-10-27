@@ -18,23 +18,6 @@ struct Verb: Decodable {
     
     var translation: String { infinitive.value.localized }
     var url: URL? { URL(string: "verbs://\(infinitive.value)") }
-    
-    var simplePastShortened: String {
-        guard
-            let shortened = simplePast.value.split(separator: "/").first
-        else { return simplePast.value }
-        
-        return String(shortened)
-    }
-    
-    var pastParticipleShortened: String? {
-        guard
-            let pastParticiple = pastParticiple,
-            let shortened = pastParticiple.value.split(separator: "/").first
-        else { return nil }
-        
-        return String(shortened)
-    }
 }
 
 // MARK: - Comparable
