@@ -60,7 +60,6 @@ private extension SettingsViewController {
     }
     
     func setupKeyboardService() {
-        guard UIDevice.current.userInterfaceIdiom != .pad else { return }
         keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
     }
     

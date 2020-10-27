@@ -18,8 +18,12 @@ final class KeyboardService {
         self.view = view
         
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillChangeFrame),
-                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               selector: #selector(adjust),
+                                               name: UIResponder.keyboardDidShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(adjust),
+                                               name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
     }
     
@@ -32,11 +36,15 @@ final class KeyboardService {
 
 private extension KeyboardService {
     
-    @objc func keyboardWillChangeFrame(notification: Notification) {
-        guard let userInfo = notification.userInfo else { return }
+    @objc func adjust(notification: Notification) {
+        guard let view = view,
+              let userInfo = notification.userInfo,
+              let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        else { return }
         
-        let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-        let endFrameY = endFrame?.origin.y ?? 0
+        let convertedFrame = view.convert(endFrame, from: nil)
+        let endFrameY = endFrame.origin.y
+        
         let duration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
         let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
         let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
@@ -45,13 +53,14 @@ private extension KeyboardService {
         if endFrameY >= UIScreen.main.bounds.size.height {
             keyboardHeightLayoutConstraint?.constant = 0
         } else {
-            keyboardHeightLayoutConstraint?.constant = endFrame?.size.height ?? 0
+            let newHeight = view.bounds.size.height - convertedFrame.origin.y
+            keyboardHeightLayoutConstraint?.constant = newHeight
         }
         
         UIView.animate(withDuration: duration,
                        delay: 0,
                        options: animationCurve,
-                       animations: { self.view?.layoutIfNeeded() },
+                       animations: { view.layoutIfNeeded() },
                        completion: nil)
     }
 }
