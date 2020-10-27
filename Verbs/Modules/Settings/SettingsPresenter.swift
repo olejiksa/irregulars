@@ -54,7 +54,7 @@ private extension SettingsPresenter {
         
         let options = Settings.ListView.allCases.map(\.description)
         let listShowsItem = languageService.hasTranslation ?
-            RightDetailItem(title: "List shows".localized,
+            RightDetailItem(title: "List".localized,
                             subtitle: settings.listView.description,
                             actionBlock: didListViewChange,
                             subitems: options,

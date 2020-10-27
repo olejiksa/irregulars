@@ -16,7 +16,7 @@ final class EmptyViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: animated)
-        resetSelectedItem(animated)
+        navigationController.map { navigationController($0, willShow: self, animated: animated) }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -28,16 +28,26 @@ final class EmptyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupDelegate()
+        setupView()
+    }
+    
+    func setupView() {
         contentLabel.text = "EmptyViewControllerLabel".localized
+    }
+    
+    func setupDelegate() {
+        navigationController?.delegate = self
     }
 }
 
-// MARK: - Private
+// MARK: - UINavigationControllerDelegate
 
-private extension EmptyViewController {
+extension EmptyViewController: UINavigationControllerDelegate {
     
-    func resetSelectedItem(_ animated: Bool) {
-        
+    func navigationController(_ navigationController: UINavigationController,
+                              willShow viewController: UIViewController,
+                              animated: Bool) {
         guard animated else { return }
         NotificationCenter.default.post(name: Notification.Name.infinitive,
                                         object: nil,

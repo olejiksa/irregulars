@@ -1756,14 +1756,14 @@
             "transcription": "/lɪt/"
         }, {
             "value": "lighted",
-            "transcription": "/lʌɪt(ə)d/"
+            "transcription": "/'lʌɪt(ə)d/"
         }],
         "pastParticiple": [{
             "value": "lit",
             "transcription": "/lɪt/"
         },{
             "value": "lighted",
-            "transcription": "/lʌɪt(ə)d/"
+            "transcription": "/'lʌɪt(ə)d/"
         }],
         "hasRegular": true,
         "isDerived": false
@@ -1882,7 +1882,7 @@
             "value": "miscasted",
             "transcription": "/ˌmɪs'kɑːstəd/"
         }],
-        "hasRegular": false,
+        "hasRegular": true,
         "isDerived": true
     },
     {
@@ -2003,11 +2003,11 @@
             "transcription": "/ˌmɪs'riːd/"
         },
         "simplePast": [{
-            "value": "misred",
+            "value": "misread",
             "transcription": "/ˌmɪs'rɛd/"
         }],
         "pastParticiple": [{
-            "value": "misred",
+            "value": "misread",
             "transcription": "/ˌmɪs'rɛd/"
         }],
         "hasRegular": false,
@@ -2021,10 +2021,16 @@
         "simplePast": [{
             "value": "misspelt",
             "transcription": "/ˌmɪs'spɛlt/"
+        }, {
+            "value": "misspelled",
+            "transcription": "/ˌmɪs'spɛld/"
         }],
         "pastParticiple": [{
             "value": "misspelt",
             "transcription": "/ˌmɪs'spɛlt/"
+        }, {
+            "value": "misspelled",
+            "transcription": "/ˌmɪs'spɛld/"
         }],
         "hasRegular": false,
         "isDerived": true
@@ -3589,7 +3595,7 @@
         }],
         "pastParticiple": [{
             "value": "trodden",
-            "transcription": "/'trɒdd(ə)n/"
+            "transcription": "/'trɒd(ə)n/"
         }],
         "hasRegular": false,
         "isDerived": false

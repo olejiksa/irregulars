@@ -37,6 +37,15 @@ final class ListViewController: UIViewController {
         setupSearchController()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        guard animated else { return }
+        NotificationCenter.default.post(name: Notification.Name.infinitive,
+                                        object: nil,
+                                        userInfo: ["infinitive": ""])
+    }
+    
     func reloadData() {
         tableView.reloadData()
     }
