@@ -39,11 +39,11 @@ private extension DetailPresenter {
                                 items: [DetailItem(word: verb.infinitive,
                                                    actionBlock: play)].compactMap { $0 }),
                         Section(header: "Simple Past",
-                                items: [DetailItem(word: verb.simplePast,
-                                                   actionBlock: play)].compactMap { $0 }),
+                                items: verb.simplePast.compactMap { DetailItem(word: $0,
+                                                                               actionBlock: play) }),
                         Section(header: "Past Participle",
-                                items: [DetailItem(word: verb.pastParticiple,
-                                                   actionBlock: play)].compactMap { $0 }),
+                                items: verb.pastParticiple?.compactMap { DetailItem(word: $0,
+                                                                                    actionBlock: play) } ?? []),
                         Section(header: "Translation".localized,
                                 items: translationItems)])
     }

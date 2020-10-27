@@ -15,8 +15,8 @@ struct Provider: TimelineProvider {
     
     func placeholder(in context: Context) -> VerbEntry {
         let verb = Verb(infinitive: Word(),
-                        simplePast: Word(),
-                        pastParticiple: Word(),
+                        simplePast: [Word()],
+                        pastParticiple: [Word()],
                         hasRegular: false,
                         isDerived: false)
         return .init(date: Date(), verb: verb)
@@ -24,8 +24,8 @@ struct Provider: TimelineProvider {
 
     func getSnapshot(in context: Context, completion: @escaping (VerbEntry) -> ()) {
         let verb = Verb(infinitive: Word(value: "arise", transcription: "/əˈrʌɪz/"),
-                        simplePast: Word(value: "arose", transcription: "/əˈrəʊz/"),
-                        pastParticiple: Word(value: "arisen", transcription: "/əˈrɪz(ə)n/"),
+                        simplePast: [Word(value: "arose", transcription: "/əˈrəʊz/")],
+                        pastParticiple: [Word(value: "arisen", transcription: "/əˈrɪz(ə)n/")],
                         hasRegular: false,
                         isDerived: true)
         let entry = VerbEntry(date: Date(), verb: verb)
@@ -66,10 +66,12 @@ struct VerbsWidgetEntryView: View {
                     .lineLimit(1)
                 Text("Simple Past")
                     .font(.caption)
-                Text(entry.verb.simplePast.shortened)
-                    .bold()
-                    .lineLimit(1)
-                if let pastParticiple = entry.verb.pastParticiple {
+                if let simplePast = entry.verb.simplePast.first {
+                    Text(simplePast.shortened)
+                        .bold()
+                        .lineLimit(1)
+                }
+                if let pastParticiple = entry.verb.pastParticiple?.first {
                     Text("Past Participle")
                         .font(.caption)
                     Text(pastParticiple.shortened)
@@ -91,16 +93,18 @@ struct VerbsWidgetEntryView: View {
                         Text(entry.verb.infinitive.transcription)
                             .lineLimit(1)
                     }
-                    VStack(alignment: .center, spacing: 10) {
-                        Text("Simple Past")
-                            .font(.caption)
-                        Text(entry.verb.simplePast.shortened)
-                            .bold()
-                            .lineLimit(1)
-                        Text(entry.verb.simplePast.transcription)
-                            .lineLimit(1)
+                    if let simplePast = entry.verb.simplePast.first {
+                        VStack(alignment: .center, spacing: 10) {
+                            Text("Simple Past")
+                                .font(.caption)
+                            Text(simplePast.shortened)
+                                .bold()
+                                .lineLimit(1)
+                            Text(simplePast.transcription)
+                                .lineLimit(1)
+                        }
                     }
-                    if let pastParticiple = entry.verb.pastParticiple {
+                    if let pastParticiple = entry.verb.pastParticiple?.first {
                         VStack(alignment: .center, spacing: 10) {
                             Text("Past Participle")
                                 .font(.caption)
@@ -147,8 +151,8 @@ struct VerbsWidget: Widget {
 struct VerbsWidget_Previews: PreviewProvider {
     static var previews: some View {
         let verb = Verb(infinitive: Word(value: "arisearise", transcription: "/əˈrʌɪz/"),
-                        simplePast: Word(value: "arosearisearise", transcription: "/əˈrəʊz/"),
-                        pastParticiple: Word(value: "arisenarisearise", transcription: "/əˈrɪz(ə)n/"),
+                        simplePast: [Word(value: "arosearisearise", transcription: "/əˈrəʊz/")],
+                        pastParticiple: [Word(value: "arisenarisearise", transcription: "/əˈrɪz(ə)n/")],
                         hasRegular: false,
                         isDerived: true)
         VerbsWidgetEntryView(entry: VerbEntry(date: Date(), verb: verb))

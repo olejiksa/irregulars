@@ -4,14 +4,20 @@
             "value": "abide",
             "transcription": "/əˈbʌɪd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "abode",
             "transcription": "/əˈbəʊd/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "abided",
+            "transcription": "/əˈbʌɪdɪd/"
+        }],
+        "pastParticiple": [{
             "value": "abode",
             "transcription": "/əˈbəʊd/"
-        },
+        }, {
+            "value": "abided",
+            "transcription": "/əˈbʌɪdɪd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -20,14 +26,14 @@
             "value": "arise",
             "transcription": "/əˈrʌɪz/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "arose",
             "transcription": "/əˈrəʊz/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "arisen",
             "transcription": "/əˈrɪz(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -36,14 +42,20 @@
             "value": "awake",
             "transcription": "/əˈweɪk/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "awoke",
             "transcription": "/əˈwəʊk/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "awaked",
+            "transcription": "/əˈweɪk(ə)d/"
+        }],
+        "pastParticiple": [{
             "value": "awoken",
             "transcription": "/əˈwəʊk(ə)n/"
-        },
+        }, {
+            "value": "awaken",
+            "transcription": "/əˈweɪk(ə)n/"
+        }],
         "hasRegular": true,
         "isDerived": true
     },
@@ -52,14 +64,17 @@
             "value": "backslide",
             "transcription": "/ˈbækslʌɪd/"
         },
-        "simplePast":  {
+        "simplePast": [{
             "value": "backslid",
             "transcription": "/ˈbækslɪd/"
-        },
-        "pastParticiple": {
-            "value": "backslid/backslidden",
-            "transcription": "/ˈbækslɪd/, /ˈbækslɪd(ə)n/"
-        },
+        }],
+        "pastParticiple": [{
+            "value": "backslid",
+            "transcription": "/ˈbækslɪd/"
+        }, {
+            "value": "backslidden",
+            "transcription": "/ˈbækslɪd(ə)n/"
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -68,14 +83,17 @@
             "value": "be",
             "transcription": "/biː/"
         },
-        "simplePast": {
-            "value": "was/were",
-            "transcription": "/wɒz/, /wəː(r)/"
-        },
-        "pastParticiple": {
+        "simplePast": [{
+            "value": "was",
+            "transcription": "/wɒz/"
+        }, {
+            "value": "were",
+            "transcription": "/wəː(r)/"
+        }],
+        "pastParticiple": [{
             "value": "been",
             "transcription": "/biːn/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -84,14 +102,17 @@
             "value": "bear",
             "transcription": "/bəː(r)/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "bore",
             "transcription": "/bɔː(r)/"
-        },
-        "pastParticiple": {
-            "value": "born/borne",
+        }],
+        "pastParticiple": [{
+            "value": "born",
             "transcription": "/bɔː(r)n/"
-        },
+        }, {
+            "value": "borne",
+            "transcription": "/bɔː(r)n/"
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -100,14 +121,14 @@
             "value": "beat",
             "transcription": "/bi:t/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "beat",
             "transcription": "/bi:t/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "beaten",
             "transcription": "/'bi:t(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -116,14 +137,14 @@
             "value": "become",
             "transcription": "/bɪ'kʌm/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "became",
             "transcription": "/bɪ'keɪm/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "become",
             "transcription": "/bɪ'kʌm/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -132,14 +153,14 @@
             "value": "beget",
             "transcription": "/bɪ'gɛt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "begot",
             "transcription": "/bɪ'gɒt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "begotten",
             "transcription": "/bɪ'gɒt(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -148,14 +169,14 @@
             "value": "begin",
             "transcription": "/bɪ'gɪn/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "began",
             "transcription": "/bɪ'gæn/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "begun",
             "transcription": "/bɪ'gʌn/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -164,14 +185,14 @@
             "value": "bend",
             "transcription": "/bɛnd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "bent",
             "transcription": "/bɛnt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "bent",
             "transcription": "/bɛnt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -180,14 +201,20 @@
             "value": "bereave",
             "transcription": "/bɪˈriːv/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "bereft",
             "transcription": "/bɪˈrɛft/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "bereaved",
+            "transcription": "/bɪˈriːv(ə)d/"
+        }],
+        "pastParticiple": [{
             "value": "bereft",
             "transcription": "/bɪˈrɛft/"
-        },
+        },{
+            "value": "bereaved",
+            "transcription": "/bɪˈriːv(ə)d/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -196,14 +223,14 @@
             "value": "bet",
             "transcription": "/bɛt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "bet",
             "transcription": "/bɛt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "bet",
             "transcription": "/bɛt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -212,14 +239,20 @@
             "value": "bid",
             "transcription": "/bɪd/"
         },
-        "simplePast": {
-            "value": "bid/bade",
-            "transcription": "/bɪd/, /beɪd/"
-        },
-        "pastParticiple": {
-            "value": "bid/bidden",
-            "transcription": "/bɪd/, /'bɪd(ə)n/"
-        },
+        "simplePast": [{
+            "value": "bid",
+            "transcription": "/bɪd/"
+        }, {
+            "value": "bade",
+            "transcription": "/beɪd/"
+        }],
+        "pastParticiple": [{
+            "value": "bid",
+            "transcription": "/bɪd/"
+        }, {
+            "value": "bidden",
+            "transcription": "/'bɪd(ə)n/"
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -228,14 +261,14 @@
             "value": "bind",
             "transcription": "/bʌɪnd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "bound",
             "transcription": "/baʊnd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "bound",
             "transcription": "/baʊnd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -244,14 +277,14 @@
             "value": "bite",
             "transcription": "/bʌɪt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "bit",
             "transcription": "/bɪt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "bitten",
             "transcription": "/'bɪt(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -260,14 +293,14 @@
             "value": "bleed",
             "transcription": "/bliːd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "bled",
             "transcription": "/blɛd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "bled",
             "transcription": "/blɛd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -276,14 +309,20 @@
             "value": "bless",
             "transcription": "/blɛs/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "blest",
             "transcription": "/blɛst/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "blessed",
+            "transcription": "/'blɛsɪd/"
+        }],
+        "pastParticiple": [{
             "value": "blest",
             "transcription": "/blɛst/"
-        },
+        }, {
+            "value": "blessed",
+            "transcription": "/'blɛsɪd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -292,14 +331,14 @@
             "value": "blow",
             "transcription": "/bləʊ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "blew",
             "transcription": "/bluː/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "blown",
             "transcription": "/bləʊn/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -308,14 +347,14 @@
             "value": "break",
             "transcription": "/breɪk/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "broke",
             "transcription": "/brəʊk/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "broken",
             "transcription": "/'brəʊkən/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -324,14 +363,14 @@
             "value": "breed",
             "transcription": "/briːd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "bred",
             "transcription": "/brɛd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "bred",
             "transcription": "/brɛd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -340,14 +379,14 @@
             "value": "bring",
             "transcription": "/brɪŋ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "brought",
             "transcription": "/brɔːt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "brought",
             "transcription": "/brɔːt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -356,14 +395,20 @@
             "value": "broadcast",
             "transcription": "/'brɔːdkɑːst/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "broadcast",
             "transcription": "/'brɔːdkɑːst/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "broadcasted",
+            "transcription": "/'brɔːdkɑːstəd/"
+        }],
+        "pastParticiple": [{
             "value": "broadcast",
             "transcription": "/'brɔːdkɑːst/"
-        },
+        }, {
+            "value": "broadcasted",
+            "transcription": "/'brɔːdkɑːstəd/"
+        }],
         "hasRegular": true,
         "isDerived": true
     },
@@ -372,14 +417,14 @@
             "value": "browbeat",
             "transcription": "/'brəʊˌbiːt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "browbeat",
             "transcription": "/'brəʊˌbiːt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "browbeat",
             "transcription": "/'brəʊˌbiːt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -388,14 +433,14 @@
             "value": "build",
             "transcription": "/bɪld/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "built",
             "transcription": "/bɪlt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "built",
             "transcription": "/bɪlt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -404,14 +449,20 @@
             "value": "burn",
             "transcription": "/bəː(r)n/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "burnt",
             "transcription": "/bəː(r)nt/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "burned",
+            "transcription": "/bəː(r)nd/"
+        }],
+        "pastParticiple": [{
             "value": "burnt",
             "transcription": "/bəː(r)nt/"
-        },
+        }, {
+            "value": "burned",
+            "transcription": "/bəː(r)nd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -420,14 +471,14 @@
             "value": "burst",
             "transcription": "/bəː(r)st/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "burst",
             "transcription": "/bəː(r)st/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "burst",
             "transcription": "/bəː(r)st/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -436,14 +487,14 @@
             "value": "bust",
             "transcription": "/bʌst/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "bust",
             "transcription": "/bʌst/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "bust",
             "transcription": "/bʌst/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -452,14 +503,14 @@
             "value": "buy",
             "transcription": "/bʌɪ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "bought",
             "transcription": "/bɔːt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "bought",
             "transcription": "/bɔːt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -468,14 +519,14 @@
             "value": "can",
             "transcription": "/kæn/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "could",
             "transcription": "/kʊd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "been able",
             "transcription": "/biːn 'eɪb(ə)l/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -484,14 +535,14 @@
             "value": "cast",
             "transcription": "/kɑːst/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "cast",
             "transcription": "/kɑːst/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "cast",
             "transcription": "/kɑːst/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -500,14 +551,14 @@
             "value": "catch",
             "transcription": "/kæʧ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "caught",
             "transcription": "/kɔːt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "caught",
             "transcription": "/kɔːt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -516,14 +567,20 @@
             "value": "chide",
             "transcription": "/ʧʌɪd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "chid",
             "transcription": "/ʧɪd/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "chided",
+            "transcription": "/'ʧʌɪdəd/"
+        }],
+        "pastParticiple": [{
             "value": "chidden",
             "transcription": "/'ʧɪd(ə)n/"
-        },
+        }, {
+            "value": "chided",
+            "transcription": "/'ʧʌɪdəd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -532,14 +589,14 @@
             "value": "choose",
             "transcription": "/ʧuːz/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "chose",
             "transcription": "/ʧəʊz/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "chosen",
             "transcription": "/'ʧəʊz(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -548,14 +605,20 @@
             "value": "clap",
             "transcription": "/klæp/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "clapt",
             "transcription": "/klæpt/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "clapped",
+            "transcription": "/klæpt/"
+        }],
+        "pastParticiple": [{
             "value": "clapt",
             "transcription": "/klæpt/"
-        },
+        }, {
+            "value": "clapped",
+            "transcription": "/klæpt/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -564,14 +627,20 @@
             "value": "cleave",
             "transcription": "/kliːv/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "clove",
             "transcription": "/kləʊv/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "cleaved",
+            "transcription": "/kliːvd/"
+        }],
+        "pastParticiple": [{
             "value": "cloven",
             "transcription": "/'kləʊv(ə)n/"
-        },
+        },{
+            "value": "cleaved",
+            "transcription": "/kliːvd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -580,14 +649,14 @@
             "value": "cling",
             "transcription": "/klɪŋ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "clung",
             "transcription": "/klʌŋ/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "clung",
             "transcription": "/klʌŋ/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -596,14 +665,20 @@
             "value": "clothe",
             "transcription": "/kləʊð/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "clad",
             "transcription": "/klæd/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "clothed",
+            "transcription": "/kləʊðd/"
+        }],
+        "pastParticiple": [{
             "value": "clad",
             "transcription": "/klæd/"
-        },
+        }, {
+            "value": "clothed",
+            "transcription": "/kləʊðd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -612,14 +687,14 @@
             "value": "come",
             "transcription": "/kʌm/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "came",
             "transcription": "/keɪm/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "come",
             "transcription": "/kʌm/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -628,14 +703,14 @@
             "value": "cost",
             "transcription": "/kɒst/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "cost",
             "transcription": "/kɒst/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "cost",
             "transcription": "/kɒst/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -644,14 +719,14 @@
             "value": "creep",
             "transcription": "/kriːp/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "crept",
             "transcription": "/krɛpt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "crept",
             "transcription": "/krɛpt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -660,14 +735,20 @@
             "value": "crow",
             "transcription": "/krəʊ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "crew",
             "transcription": "/kruː/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "crowed",
+            "transcription": "/krəʊd/"
+        }],
+        "pastParticiple": [{
             "value": "crown",
             "transcription": "/krəʊn/"
-        },
+        }, {
+            "value": "crowed",
+            "transcription": "/krəʊd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -676,14 +757,14 @@
             "value": "cut",
             "transcription": "/kʌt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "cut",
             "transcription": "/kʌt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "cut",
             "transcription": "/kʌt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -692,14 +773,14 @@
             "value": "deal",
             "transcription": "/diːl/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "dealt",
             "transcription": "/dɛlt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "dealt",
             "transcription": "/dɛlt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -708,14 +789,14 @@
             "value": "dig",
             "transcription": "/dɪg/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "dug",
             "transcription": "/dʌg/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "dug",
             "transcription": "/dʌg/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -724,14 +805,17 @@
             "value": "dive",
             "transcription": "/dʌɪv/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "dove",
             "transcription": "/dəʊv/"
-        },
-        "pastParticiple": {
+        }, {
             "value": "dived",
             "transcription": "/dʌɪvd/"
-        },
+        }],
+        "pastParticiple": [{
+            "value": "dived",
+            "transcription": "/dʌɪvd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -740,14 +824,14 @@
             "value": "do",
             "transcription": "/duː/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "did",
             "transcription": "/dɪd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "done",
             "transcription": "/dʌn/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -756,14 +840,14 @@
             "value": "draw",
             "transcription": "/drɔː/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "drew",
             "transcription": "/druː/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "drawn",
             "transcription": "/drɔnː/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -772,14 +856,20 @@
             "value": "dream",
             "transcription": "/driːm/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "dreamt",
             "transcription": "/drɛmt/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "dreamed",
+            "transcription": "/driːmd/"
+        }],
+        "pastParticiple": [{
             "value": "dreamt",
             "transcription": "/drɛmt/"
-        },
+        }, {
+            "value": "dreamed",
+            "transcription": "/driːmd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -788,14 +878,14 @@
             "value": "drink",
             "transcription": "/drɪŋk/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "drank",
             "transcription": "/dræŋk/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "drunk",
             "transcription": "/drʌŋk/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -804,14 +894,14 @@
             "value": "drive",
             "transcription": "/drʌɪv/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "drove",
             "transcription": "/drəʊv/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "driven",
             "transcription": "/'drɪv(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -820,14 +910,20 @@
             "value": "dwell",
             "transcription": "/dwɛl/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "dwelt",
             "transcription": "/dwɛlt/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "dwelled",
+            "transcription": "/dwɛld/"
+        }],
+        "pastParticiple": [{
             "value": "dwelt",
             "transcription": "/dwɛlt/"
-        },
+        }, {
+            "value": "dwelled",
+            "transcription": "/dwɛld/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -836,14 +932,14 @@
             "value": "eat",
             "transcription": "/iːt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "ate",
             "transcription": "/ɛt, eɪt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "eaten",
             "transcription": "/'iːt(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -852,14 +948,14 @@
             "value": "fall",
             "transcription": "/fɔːl/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "fell",
             "transcription": "/fɛl/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "fallen",
             "transcription": "/'fɔːl(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -868,14 +964,14 @@
             "value": "feed",
             "transcription": "/fiːd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "fed",
             "transcription": "/fɛd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "fed",
             "transcription": "/fɛd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -884,14 +980,14 @@
             "value": "feel",
             "transcription": "/fiːl/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "felt",
             "transcription": "/fɛlt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "felt",
             "transcription": "/fɛlt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -900,14 +996,14 @@
             "value": "fight",
             "transcription": "/fʌɪt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "fought",
             "transcription": "/fɔːt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "fought",
             "transcription": "/fɔːt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -916,14 +1012,14 @@
             "value": "find",
             "transcription": "/fʌɪnd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "found",
             "transcription": "/faʊnd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "found",
             "transcription": "/faʊnd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -932,14 +1028,20 @@
             "value": "fit",
             "transcription": "/fɪt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "fit",
             "transcription": "/fɪt/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "fitted",
+            "transcription": "/'fɪt(ə)d/"
+        }],
+        "pastParticiple": [{
             "value": "fit",
             "transcription": "/fɪt/"
-        },
+        }, {
+            "value": "fitted",
+            "transcription": "/'fɪt(ə)d/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -948,14 +1050,14 @@
             "value": "flee",
             "transcription": "/fliː/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "fled",
             "transcription": "/flɛd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "fled",
             "transcription": "/flɛd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -964,14 +1066,14 @@
             "value": "fling",
             "transcription": "/flɪŋ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "flung",
             "transcription": "/flʌŋ/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "flung",
             "transcription": "/flʌŋ/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -980,14 +1082,14 @@
             "value": "fly",
             "transcription": "/flʌɪ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "flew",
             "transcription": "/fluː/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "flown",
             "transcription": "/fləʊn/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -996,14 +1098,14 @@
             "value": "forbid",
             "transcription": "/fə'bɪd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "forbade",
             "transcription": "/fə'bad, fə'beɪd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "forbidden",
             "transcription": "/fə'bɪd(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1012,14 +1114,20 @@
             "value": "forecast",
             "transcription": "/'fɔː(r)kɑːst/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "forecast",
             "transcription": "/'fɔː(r)kɑːst/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "forecasted",
+            "transcription": "/'fɔː(r)kɑːstəd/"
+        }],
+        "pastParticiple": [{
             "value": "forecast",
             "transcription": "/'fɔː(r)kɑːst/"
-        },
+        }, {
+            "value": "forecasted",
+            "transcription": "/'fɔː(r)kɑːstəd/"
+        }],
         "hasRegular": true,
         "isDerived": true
     },
@@ -1028,14 +1136,14 @@
             "value": "foresee",
             "transcription": "/fɔː(r)'siː/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "foresaw",
             "transcription": "/fɔː(r)'sɔː/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "foreseen",
             "transcription": "/fɔː(r)'siːn/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1044,14 +1152,14 @@
             "value": "foretell",
             "transcription": "/fɔː(r)'tɛl/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "foretold",
             "transcription": "/fɔː(r)'təʊld/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "foretold",
             "transcription": "/fɔː(r)'təʊld/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1060,14 +1168,14 @@
             "value": "forget",
             "transcription": "/fə'gɛt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "forgot",
             "transcription": "/fə'gɒt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "forgotten",
             "transcription": "/fə'gɒt(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1076,14 +1184,14 @@
             "value": "forgive",
             "transcription": "/fə'gɪv/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "forgave",
             "transcription": "/fə'geɪv/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "forgiven",
             "transcription": "/fə'gɪv(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1092,14 +1200,14 @@
             "value": "forsake",
             "transcription": "/fə'seɪk/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "forsook",
             "transcription": "/fə'sʊk/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "forsaken",
             "transcription": "/fə'seɪk(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1108,14 +1216,14 @@
             "value": "freeze",
             "transcription": "/friːz/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "froze",
             "transcription": "/frəʊz/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "frozen",
             "transcription": "/'frəʊz(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1124,14 +1232,17 @@
             "value": "get",
             "transcription": "/gɛt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "got",
             "transcription": "/gɒt/"
-        },
-        "pastParticiple": {
-            "value": "got/gotten",
-            "transcription": "/gɒt, 'gɒt(ə)n/"
-        },
+        }],
+        "pastParticiple": [{
+            "value": "got",
+            "transcription": "/gɒt/"
+        }, {
+            "value": "gotten",
+            "transcription": "/'gɒt(ə)n/"
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1140,14 +1251,14 @@
             "value": "give",
             "transcription": "/gɪv/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "gave",
             "transcription": "/geɪv/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "given",
             "transcription": "/'giv(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1156,14 +1267,14 @@
             "value": "go",
             "transcription": "/gəʊ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "went",
             "transcription": "/wɛnt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "gone",
             "transcription": "/gɒn/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1172,14 +1283,14 @@
             "value": "grind",
             "transcription": "/grʌɪnd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "ground",
             "transcription": "/graʊnd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "ground",
             "transcription": "/graʊnd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1188,14 +1299,14 @@
             "value": "grow",
             "transcription": "/grəʊ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "grew",
             "transcription": "/gruː/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "grown",
             "transcription": "/grəʊn/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1204,14 +1315,14 @@
             "value": "handwrite",
             "transcription": "/'hændˌrʌɪt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "handwrote",
             "transcription": "/'hændˌrəʊt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "handwritten",
             "transcription": "/'hændˌrit(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1220,14 +1331,14 @@
             "value": "hang",
             "transcription": "/hæŋ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "hung",
             "transcription": "/hʌŋ/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "hung",
             "transcription": "/hʌŋ/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1236,14 +1347,14 @@
             "value": "have",
             "transcription": "/hæv/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "had",
             "transcription": "/hæd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "had",
             "transcription": "/hæd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1252,14 +1363,14 @@
             "value": "hear",
             "transcription": "/hɪə(r)/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "heard",
             "transcription": "/həː(r)d/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "heard",
             "transcription": "/həː(r)d/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1268,14 +1379,14 @@
             "value": "hew",
             "transcription": "/hjuː/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "hewed",
             "transcription": "/hjuːd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "hewn",
             "transcription": "/hjuːn/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1284,14 +1395,14 @@
             "value": "hide",
             "transcription": "/hʌɪd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "hid",
             "transcription": "/hɪd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "hidden",
             "transcription": "/'hɪd(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1300,14 +1411,14 @@
             "value": "hit",
             "transcription": "/hɪt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "hit",
             "transcription": "/hɪt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "hit",
             "transcription": "/hɪt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1316,14 +1427,14 @@
             "value": "hold",
             "transcription": "/həʊld/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "held",
             "transcription": "/hɛld/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "held",
             "transcription": "/hɛld/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1332,14 +1443,14 @@
             "value": "hurt",
             "transcription": "/həː(r)t/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "hurt",
             "transcription": "/həː(r)t/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "hurt",
             "transcription": "/həː(r)t/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1348,14 +1459,14 @@
             "value": "inlay",
             "transcription": "/ɪnl'eɪ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "inlaid",
             "transcription": "/ɪnl'eɪd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "inlaid",
             "transcription": "/ɪnl'eɪd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1364,14 +1475,20 @@
             "value": "input",
             "transcription": "/'ɪnpʊt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "input",
             "transcription": "/'ɪnpʊt/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "inputted",
+            "transcription": "/'ɪnpʊt(ə)d/"
+        }],
+        "pastParticiple": [{
             "value": "input",
             "transcription": "/'ɪnpʊt/"
-        },
+        }, {
+            "value": "inputted",
+            "transcription": "/'ɪnpʊt(ə)d/"
+        }],
         "hasRegular": true,
         "isDerived": true
     },
@@ -1380,14 +1497,14 @@
             "value": "interweave",
             "transcription": "/ˌɪntə(r)'wiːv/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "interwove",
             "transcription": "/ˌɪntə(r)'wəʊv/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "interwoven",
             "transcription": "/ˌɪntə(r)'wəʊv(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1396,14 +1513,14 @@
             "value": "keep",
             "transcription": "/kiːp/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "kept",
             "transcription": "/kɛpt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "kept",
             "transcription": "/kɛpt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1412,14 +1529,20 @@
             "value": "kneel",
             "transcription": "/niːl/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "knelt",
             "transcription": "/nɛlt/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "kneeled",
+            "transcription": "/niːld/"
+        }],
+        "pastParticiple": [{
             "value": "knelt",
             "transcription": "/nɛlt/"
-        },
+        }, {
+            "value": "kneeled",
+            "transcription": "/niːld/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -1428,14 +1551,20 @@
             "value": "knit",
             "transcription": "/nɪt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "knit",
             "transcription": "/nɪt/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "knitted",
+            "transcription": "/'nɪt(ə)d/"
+        }],
+        "pastParticiple": [{
             "value": "knit",
             "transcription": "/nɪt/"
-        },
+        }, {
+            "value": "knitted",
+            "transcription": "/'nɪt(ə)d/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -1444,14 +1573,14 @@
             "value": "know",
             "transcription": "/nəʊ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "knew",
             "transcription": "/njuː/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "known",
             "transcription": "/nəʊn/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1460,14 +1589,14 @@
             "value": "lay",
             "transcription": "/leɪ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "laid",
             "transcription": "/leɪd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "laid",
             "transcription": "/leɪd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1476,14 +1605,14 @@
             "value": "lead",
             "transcription": "/liːd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "led",
             "transcription": "/lɛd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "led",
             "transcription": "/lɛd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1492,14 +1621,20 @@
             "value": "lean",
             "transcription": "/liːn/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "leant",
             "transcription": "/lɛnt/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "leaned",
+            "transcription": "/liːnd/"
+        }],
+        "pastParticiple": [{
             "value": "leant",
             "transcription": "/lɛnt/"
-        },
+        }, {
+            "value": "leaned",
+            "transcription": "/liːnd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -1508,14 +1643,20 @@
             "value": "leap",
             "transcription": "/liːp/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "leapt",
             "transcription": "/lɛpt/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "leaped",
+            "transcription": "/liːpd/"
+        }],
+        "pastParticiple": [{
             "value": "leapt",
             "transcription": "/lɛpt/"
-        },
+        }, {
+            "value": "leaped",
+            "transcription": "/liːpd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -1524,14 +1665,20 @@
             "value": "learn",
             "transcription": "/ləː(r)n/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "learnt",
             "transcription": "/ləː(r)nt/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "learned",
+            "transcription": "/ləː(r)nd/"
+        }],
+        "pastParticiple": [{
             "value": "learnt",
             "transcription": "/ləː(r)nt/"
-        },
+        }, {
+            "value": "learned",
+            "transcription": "/ləː(r)nd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -1540,14 +1687,14 @@
             "value": "leave",
             "transcription": "/liːv/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "left",
             "transcription": "/lɛft/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "left",
             "transcription": "/lɛft/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1556,14 +1703,14 @@
             "value": "lend",
             "transcription": "/lɛnd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "lent",
             "transcription": "/lɛnt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "lent",
             "transcription": "/lɛnt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1572,14 +1719,14 @@
             "value": "let",
             "transcription": "/lɛt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "let",
             "transcription": "/lɛt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "let",
             "transcription": "/lɛt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1588,14 +1735,14 @@
             "value": "lie",
             "transcription": "/lʌɪ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "lay",
             "transcription": "/leɪn/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "lain",
             "transcription": "/leɪn/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1604,14 +1751,20 @@
             "value": "light",
             "transcription": "/lʌɪt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "lit",
             "transcription": "/lɪt/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "lighted",
+            "transcription": "/lʌɪt(ə)d/"
+        }],
+        "pastParticiple": [{
             "value": "lit",
             "transcription": "/lɪt/"
-        },
+        },{
+            "value": "lighted",
+            "transcription": "/lʌɪt(ə)d/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -1620,14 +1773,14 @@
             "value": "lose",
             "transcription": "/luːz/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "lost",
             "transcription": "/lɒst/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "lost",
             "transcription": "/lɒst/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1636,14 +1789,14 @@
             "value": "make",
             "transcription": "/meɪk/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "made",
             "transcription": "/meɪd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "made",
             "transcription": "/meɪd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1652,10 +1805,10 @@
             "value": "may",
             "transcription": "/meɪ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "might",
             "transcription": "/mʌɪt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1664,14 +1817,14 @@
             "value": "mean",
             "transcription": "/miːn/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "meant",
             "transcription": "/mɛnt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "meant",
             "transcription": "/mɛnt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1680,14 +1833,14 @@
             "value": "meet",
             "transcription": "/miːt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "met",
             "transcription": "/mɛt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "met",
             "transcription": "/mɛt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1696,14 +1849,17 @@
             "value": "melt",
             "transcription": "/mɛlt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "melted",
             "transcription": "/'mɛlt(ə)d/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "molt",
             "transcription": "/məʊlt/"
-        },
+        }, {
+            "value": "melted",
+            "transcription": "/'mɛlt(ə)d/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -1712,14 +1868,20 @@
             "value": "miscast",
             "transcription": "/ˌmɪs'kɑːst/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "miscast",
             "transcription": "/ˌmɪs'kɑːst/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "miscasted",
+            "transcription": "/ˌmɪs'kɑːstəd/"
+        }],
+        "pastParticiple": [{
             "value": "miscast",
             "transcription": "/ˌmɪs'kɑːst/"
-        },
+        }, {
+            "value": "miscasted",
+            "transcription": "/ˌmɪs'kɑːstəd/"
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1728,14 +1890,14 @@
             "value": "misdeal",
             "transcription": "/ˌmɪs'diːl/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "misdealt",
             "transcription": "/ˌmɪs'dɛlt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "misdealt",
             "transcription": "/ˌmɪs'dɛlt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1744,14 +1906,14 @@
             "value": "misdo",
             "transcription": "/ˌmɪs'duː/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "misdid",
             "transcription": "/ˌmɪs'dɪd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "misdone",
             "transcription": "/ˌmɪs'dʌn/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1760,14 +1922,14 @@
             "value": "misgive",
             "transcription": "/ˌmɪs'gɪv/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "misgave",
             "transcription": "/ˌmɪs'geɪv/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "misgiven",
             "transcription": "/ˌmɪs'gɪv(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1776,14 +1938,14 @@
             "value": "mishear",
             "transcription": "/ˌmɪs'hɪə(r)/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "misheard",
             "transcription": "/ˌmɪs'həː(r)d/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "misheard",
             "transcription": "/ˌmɪs'həː(r)d/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1792,14 +1954,14 @@
             "value": "mishit",
             "transcription": "/ˌmɪs'hɪt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "mishit",
             "transcription": "/ˌmɪs'hɪt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "mishit",
             "transcription": "/ˌmɪs'hɪt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1808,14 +1970,14 @@
             "value": "mislay",
             "transcription": "/ˌmɪs'leɪ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "mislaid",
             "transcription": "/ˌmɪs'leɪd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "mislaid",
             "transcription": "/ˌmɪs'leɪd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1824,14 +1986,14 @@
             "value": "mislead",
             "transcription": "/ˌmɪs'liːd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "misled",
             "transcription": "/ˌmɪs'lɛd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "misled",
             "transcription": "/ˌmɪs'lɛd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1840,14 +2002,14 @@
             "value": "misread",
             "transcription": "/ˌmɪs'riːd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "misred",
             "transcription": "/ˌmɪs'rɛd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "misred",
             "transcription": "/ˌmɪs'rɛd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1856,14 +2018,14 @@
             "value": "misspell",
             "transcription": "/ˌmɪs'spɛl/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "misspelt",
             "transcription": "/ˌmɪs'spɛlt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "misspelt",
             "transcription": "/ˌmɪs'spɛlt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1872,14 +2034,14 @@
             "value": "misspend",
             "transcription": "/ˌmɪs'spɛnd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "misspent",
             "transcription": "/ˌmɪs'spɛnt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "misspent",
             "transcription": "/ˌmɪs'spɛnt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1888,14 +2050,14 @@
             "value": "mistake",
             "transcription": "/ˌmɪs'teɪk/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "mistook",
             "transcription": "/ˌmɪs'tʊk/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "mistaken",
             "transcription": "/ˌmɪs'teɪk(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1904,14 +2066,14 @@
             "value": "misunderstand",
             "transcription": "/ˌmɪsʌndər'stænd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "misunderstood",
             "transcription": "/ˌmɪsʌndər'stʊd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "misunderstood",
             "transcription": "/ˌmɪsʌndər'stʊd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1920,14 +2082,17 @@
             "value": "mow",
             "transcription": "/məʊ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "mowed",
             "transcription": "/məʊd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "mown",
             "transcription": "/məʊn/"
-        },
+        }, {
+            "value": "mowed",
+            "transcription": "/məʊd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -1936,10 +2101,10 @@
             "value": "must",
             "transcription": "/mʌst/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "had to",
             "transcription": "/hæd tuː/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -1948,14 +2113,14 @@
             "value": "offset",
             "transcription": "/ˌɒf'sɛt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "offset",
             "transcription": "/ˌɒf'sɛt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "offset",
             "transcription": "/ˌɒf'sɛt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1964,14 +2129,14 @@
             "value": "overcome",
             "transcription": "/ˌəʊvə(r)ˈkʌm/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "overcame",
             "transcription": "/ˌəʊvə(r)ˈkeɪm/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "overcome",
             "transcription": "/ˌəʊvə(r)ˈkʌm/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1980,14 +2145,14 @@
             "value": "overhear",
             "transcription": "/ˌəʊvə(r)ˈhɪə(r)/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "overheard",
             "transcription": "/ˌəʊvə(r)ˈhəː(r)d/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "overheard",
             "transcription": "/ˌəʊvə(r)ˈhəː(r)d/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -1996,14 +2161,14 @@
             "value": "overtake",
             "transcription": "/ˌəʊvə(r)ˈteɪk/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "overtook",
             "transcription": "/ˌəʊvə(r)ˈtʊk/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "overtaken",
             "transcription": "/ˌəʊvə(r)'teɪk(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -2012,14 +2177,14 @@
             "value": "partake",
             "transcription": "/pɑː(r)ˈteɪk/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "partook",
             "transcription": "/pɑː(r)ˈtʊk/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "partaken",
             "transcription": "/pɑː(r)'teɪk(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -2028,14 +2193,14 @@
             "value": "pay",
             "transcription": "/peɪ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "paid",
             "transcription": "/peɪd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "paid",
             "transcription": "/peɪd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2044,14 +2209,20 @@
             "value": "plead",
             "transcription": "/pliːd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "pled",
             "transcription": "/plɛd/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "pleaded",
+            "transcription": "/'plɪdəd/"
+        }],
+        "pastParticiple": [{
             "value": "pled",
             "transcription": "/plɛd/"
-        },
+        }, {
+            "value": "pleaded",
+            "transcription": "/'plɪdəd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -2060,14 +2231,14 @@
             "value": "preset",
             "transcription": "/ˌpriːˈsɛt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "preset",
             "transcription": "/ˌpriːˈsɛt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "preset",
             "transcription": "/ˌpriːˈsɛt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -2076,14 +2247,17 @@
             "value": "prove",
             "transcription": "/pruːv/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "proved",
             "transcription": "/pruːvd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "proven",
             "transcription": "/'pruːv(ə)n/"
-        },
+        }, {
+            "value": "proved",
+            "transcription": "/pruːvd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -2092,14 +2266,14 @@
             "value": "put",
             "transcription": "/pʊt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "put",
             "transcription": "/pʊt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "put",
             "transcription": "/pʊt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2108,14 +2282,20 @@
             "value": "quit",
             "transcription": "/kwɪt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "quit",
             "transcription": "/kwɪt/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "quitted",
+            "transcription": "/'kwɪtəd/"
+        }],
+        "pastParticiple": [{
             "value": "quit",
             "transcription": "/kwɪt/"
-        },
+        }, {
+            "value": "quitted",
+            "transcription": "/'kwɪtəd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -2124,14 +2304,14 @@
             "value": "read",
             "transcription": "/riːd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "read",
             "transcription": "/rɛd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "read",
             "transcription": "/rɛd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2140,14 +2320,14 @@
             "value": "relay",
             "transcription": "/rɪˈleɪ, ˈriːleɪ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "relaid",
             "transcription": "/riːˈleɪd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "relaid",
             "transcription": "/riːˈleɪd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -2156,14 +2336,14 @@
             "value": "rend",
             "transcription": "/rɛnd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "rent",
             "transcription": "/rɛnt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "rent",
             "transcription": "/rɛnt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2172,14 +2352,20 @@
             "value": "rid",
             "transcription": "/rɪd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "rid",
             "transcription": "/rɪd/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "ridded",
+            "transcription": "/'rɪd(ə)d/"
+        }],
+        "pastParticiple": [{
             "value": "rid",
             "transcription": "/rɪd/"
-        },
+        }, {
+            "value": "ridded",
+            "transcription": "/'rɪd(ə)d/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -2188,14 +2374,14 @@
             "value": "ride",
             "transcription": "/rʌɪd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "rode",
             "transcription": "/rəʊd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "ridden",
             "transcription": "/'rɪd(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2204,14 +2390,14 @@
             "value": "ring",
             "transcription": "/rɪŋ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "rang",
             "transcription": "/ræŋ/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "rung",
             "transcription": "/rʌŋ/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2220,14 +2406,14 @@
             "value": "rise",
             "transcription": "/rʌɪz/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "rose",
             "transcription": "/rəʊz/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "risen",
             "transcription": "/'rɪz(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2236,14 +2422,14 @@
             "value": "run",
             "transcription": "/rʌn/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "ran",
             "transcription": "/ræn/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "run",
             "transcription": "/rʌn/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2252,14 +2438,17 @@
             "value": "saw",
             "transcription": "/sɔː/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "sawed",
-            "transcription": "/sɔː/"
-        },
-        "pastParticiple": {
+            "transcription": "/sɔːd/"
+        }],
+        "pastParticiple": [{
             "value": "sawn",
             "transcription": "/sɔːn/"
-        },
+        }, {
+            "value": "sawed",
+            "transcription": "/sɔːd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -2268,14 +2457,14 @@
             "value": "say",
             "transcription": "/seɪ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "said",
             "transcription": "/sɛd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "said",
             "transcription": "/sɛd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2284,14 +2473,14 @@
             "value": "see",
             "transcription": "/siː/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "saw",
             "transcription": "/sɔː/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "seen",
             "transcription": "/siːn/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2300,14 +2489,14 @@
             "value": "seek",
             "transcription": "/siːk/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "sought",
             "transcription": "/sɔːt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "sought",
             "transcription": "/sɔːt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2316,14 +2505,14 @@
             "value": "sell",
             "transcription": "/sɛl/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "sold",
             "transcription": "/səʊld/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "sold",
             "transcription": "/səʊld/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2332,14 +2521,14 @@
             "value": "send",
             "transcription": "/sɛnd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "sent",
             "transcription": "/sɛnt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "sent",
             "transcription": "/sɛnt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2348,14 +2537,14 @@
             "value": "set",
             "transcription": "/sɛt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "set",
             "transcription": "/sɛt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "set",
             "transcription": "/sɛt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2364,14 +2553,17 @@
             "value": "sew",
             "transcription": "/səʊ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "sewed",
             "transcription": "/səʊd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "sawn",
             "transcription": "/səʊn/"
-        },
+        }, {
+            "value": "sewed",
+            "transcription": "/səʊd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -2380,14 +2572,14 @@
             "value": "shake",
             "transcription": "/ʃeɪk/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "shook",
             "transcription": "/ʃʊk/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "shaken",
             "transcription": "/'ʃeɪk(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2396,10 +2588,10 @@
             "value": "shall",
             "transcription": "/ʃæl, ʃəl/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "should",
             "transcription": "/ʃʊd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2408,30 +2600,39 @@
             "value": "shave",
             "transcription": "/ʃeɪv/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "shaved",
             "transcription": "/ʃeɪvd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "shaven",
             "transcription": "/'ʃeɪv(ə)n/"
-        },
+        }, {
+            "value": "shaved",
+            "transcription": "/ʃeɪvd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
     {
         "infinitive": {
             "value": "shear",
-            "transcription": "/ʃɪə/"
+            "transcription": "/ʃɪə(r)/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "shore",
             "transcription": "/ʃɔː(r)/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "sheared",
+            "transcription": "/ʃɪə(r)d/"
+        }],
+        "pastParticiple": [{
             "value": "shorn",
             "transcription": "/ʃɔː(r)n/"
-        },
+        }, {
+            "value": "sheared",
+            "transcription": "/ʃɪə(r)d/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -2440,14 +2641,14 @@
             "value": "shed",
             "transcription": "/ʃɛd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "shed",
             "transcription": "/ʃɛd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "shed",
             "transcription": "/ʃɛd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2456,14 +2657,14 @@
             "value": "shine",
             "transcription": "/ʃʌɪn/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "shone",
             "transcription": "/ʃəʊn, ʃɒn/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "shone",
             "transcription": "/ʃəʊn, ʃɒn/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2472,14 +2673,14 @@
             "value": "shoe",
             "transcription": "/ʃuː/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "shod",
             "transcription": "/ʃɒd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "shod",
             "transcription": "/ʃɒd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2488,14 +2689,14 @@
             "value": "shoot",
             "transcription": "/ʃuːt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "shot",
             "transcription": "/ʃɒt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "shot",
             "transcription": "/ʃɒt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2504,14 +2705,14 @@
             "value": "show",
             "transcription": "/ʃəʊ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "showed",
             "transcription": "/əʊd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "shown",
             "transcription": "/əʊn/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2520,14 +2721,14 @@
             "value": "shrink",
             "transcription": "/ʃrɪŋk/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "shrank",
             "transcription": "/ʃræŋk/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "shrunk",
             "transcription": "/ʃrʌŋk/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2536,14 +2737,14 @@
             "value": "shut",
             "transcription": "/ʃʌt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "shut",
             "transcription": "/ʃʌt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "shut",
             "transcription": "/ʃʌt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2552,14 +2753,14 @@
             "value": "sing",
             "transcription": "/sɪŋ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "sang",
             "transcription": "/sæŋ/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "sung",
             "transcription": "/sʌŋ/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2568,14 +2769,20 @@
             "value": "sink",
             "transcription": "/sɪŋk/"
         },
-        "simplePast": {
-            "value": "sank/sunk",
-            "transcription": "/sæŋk/, /sʌŋk/"
-        },
-        "pastParticiple": {
-            "value": "sunk/sunken",
-            "transcription": "/sʌŋk/, /'sʌŋk(ə)n/"
-        },
+        "simplePast": [{
+            "value": "sank",
+            "transcription": "/sæŋk/"
+        }, {
+            "value": "sunk",
+            "transcription": "/sʌŋk/"
+        }],
+        "pastParticiple": [{
+            "value": "sunk",
+            "transcription": "/sʌŋk/"
+        }, {
+            "value": "sunken",
+            "transcription": "/'sʌŋk(ə)n/"
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2584,14 +2791,14 @@
             "value": "sit",
             "transcription": "/sɪt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "sat",
             "transcription": "/sæt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "sat",
             "transcription": "/sæt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2600,14 +2807,14 @@
             "value": "slay",
             "transcription": "/sleɪ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "slew",
             "transcription": "/sluː/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "slain",
             "transcription": "/sleɪŋ/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2616,14 +2823,14 @@
             "value": "sleep",
             "transcription": "/sli:p/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "slept",
             "transcription": "/slɛpt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "slept",
             "transcription": "/slɛpt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2632,14 +2839,14 @@
             "value": "slide",
             "transcription": "/slʌɪd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "slid",
             "transcription": "/slɪd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "slid",
             "transcription": "/slɪd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2648,14 +2855,14 @@
             "value": "sling",
             "transcription": "/slɪŋ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "slung",
             "transcription": "/slʌŋ/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "slung",
             "transcription": "/slʌŋ/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2664,14 +2871,20 @@
             "value": "slink",
             "transcription": "/slɪŋk/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "slunk",
             "transcription": "/slʌŋk/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "slinked",
+            "transcription": "/'slɪŋk(ə)d/"
+        }],
+        "pastParticiple": [{
             "value": "slunk",
             "transcription": "/slʌŋk/"
-        },
+        },{
+            "value": "slinked",
+            "transcription": "/'slɪŋk(ə)d/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -2680,14 +2893,14 @@
             "value": "slit",
             "transcription": "/slɪt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "slit",
             "transcription": "/slɪt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "slit",
             "transcription": "/slɪt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2696,14 +2909,20 @@
             "value": "smell",
             "transcription": "/smɛl/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "smelt",
             "transcription": "/smɛlt/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "smelled",
+            "transcription": "/smɛld/"
+        }],
+        "pastParticiple": [{
             "value": "smelt",
             "transcription": "/smɛlt/"
-        },
+        }, {
+            "value": "smelled",
+            "transcription": "/smɛld/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -2712,14 +2931,20 @@
             "value": "sneak",
             "transcription": "/sniːk/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "snuck",
             "transcription": "/snʌk/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "sneaked",
+            "transcription": "/sniːkd/"
+        }],
+        "pastParticiple": [{
             "value": "snuck",
             "transcription": "/snʌk/"
-        },
+        }, {
+            "value": "sneaked",
+            "transcription": "/sniːkd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -2728,14 +2953,17 @@
             "value": "sow",
             "transcription": "/səʊ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "sowed",
             "transcription": "/səʊd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "sown",
             "transcription": "/səʊn/"
-        },
+        }, {
+            "value": "sowed",
+            "transcription": "/səʊd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -2744,14 +2972,14 @@
             "value": "speak",
             "transcription": "/spiːk/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "spoke",
             "transcription": "/spəʊk/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "spoken",
             "transcription": "/'spəʊk(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2760,14 +2988,20 @@
             "value": "speed",
             "transcription": "/spiːd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "sped",
             "transcription": "/spɛd/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "speeded",
+            "transcription": "/'spiːdəd/"
+        }],
+        "pastParticiple": [{
             "value": "sped",
             "transcription": "/spɛd/"
-        },
+        }, {
+            "value": "speeded",
+            "transcription": "/'spiːdəd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -2776,14 +3010,20 @@
             "value": "spell",
             "transcription": "/spɛl/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "spelt",
             "transcription": "/spɛlt/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "spelled",
+            "transcription": "/spɛld/"
+        }],
+        "pastParticiple": [{
             "value": "spelt",
             "transcription": "/spɛlt/"
-        },
+        }, {
+            "value": "spelled",
+            "transcription": "/spɛld/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -2792,14 +3032,14 @@
             "value": "spend",
             "transcription": "/spɛnd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "spent",
             "transcription": "/spɛnt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "spent",
             "transcription": "/spɛnt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2808,14 +3048,20 @@
             "value": "spill",
             "transcription": "/spɪl/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "spilt",
             "transcription": "/spɪlt/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "spilled",
+            "transcription": "/spɪld/"
+        }],
+        "pastParticiple": [{
             "value": "spilt",
             "transcription": "/spɪlt/"
-        },
+        }, {
+            "value": "spilled",
+            "transcription": "/spɪld/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -2824,14 +3070,14 @@
             "value": "spin",
             "transcription": "/spɪn/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "spun",
             "transcription": "/spʌn/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "spun",
             "transcription": "/spʌn/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2840,14 +3086,20 @@
             "value": "spit",
             "transcription": "/spɪt/"
         },
-        "simplePast": {
-            "value": "spit/spat",
-            "transcription": "/spɪt, spæt/"
-        },
-        "pastParticiple": {
-            "value": "spit/spat",
-            "transcription": "/spɪt, spæt/"
-        },
+        "simplePast": [{
+            "value": "spit",
+            "transcription": "/spɪt/"
+        }, {
+            "value": "spat",
+            "transcription": "/spæt/"
+        }],
+        "pastParticiple": [{
+            "value": "spit",
+            "transcription": "/spɪt/"
+        }, {
+            "value": "spat",
+            "transcription": "/spæt/"
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2856,14 +3108,14 @@
             "value": "split",
             "transcription": "/splɪt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "split",
             "transcription": "/splɪt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "split",
             "transcription": "/splɪt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2872,14 +3124,20 @@
             "value": "spoil",
             "transcription": "/spɔɪl/"
         },
-        "simplePast": {
-            "value": "spolit",
+        "simplePast": [{
+            "value": "spoilt",
             "transcription": "/spɔɪlt/"
-        },
-        "pastParticiple": {
-            "value": "spolit",
+        }, {
+            "value": "spoiled",
+            "transcription": "/spɔɪld/"
+        }],
+        "pastParticiple": [{
+            "value": "spoilt",
             "transcription": "/spɔɪlt/"
-        },
+        }, {
+            "value": "spoiled",
+            "transcription": "/spɔɪld/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -2888,14 +3146,14 @@
             "value": "spread",
             "transcription": "/sprɛd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "spread",
             "transcription": "/sprɛd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "spread",
             "transcription": "/sprɛd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2904,14 +3162,14 @@
             "value": "spring",
             "transcription": "/sprɪŋ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "sprang",
             "transcription": "/spræŋ/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "sprung",
             "transcription": "/sprʌŋ/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2920,14 +3178,14 @@
             "value": "stand",
             "transcription": "/stænd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "stood",
             "transcription": "/stʊd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "stood",
             "transcription": "/stʊd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2936,14 +3194,14 @@
             "value": "steal",
             "transcription": "/stænd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "stole",
             "transcription": "/stəʊl/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "stolen",
             "transcription": "/'stəʊl(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2952,14 +3210,14 @@
             "value": "stick",
             "transcription": "/stɪk/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "stuck",
             "transcription": "/stʌk/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "stuck",
             "transcription": "/stʌk/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2968,14 +3226,14 @@
             "value": "sting",
             "transcription": "/stɪŋ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "stung",
             "transcription": "/stʌŋ/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "stung",
             "transcription": "/stʌŋ/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -2984,14 +3242,14 @@
             "value": "stink",
             "transcription": "/stɪŋk/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "stank",
             "transcription": "/stæŋk/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "stunk",
             "transcription": "/stʌŋk/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3000,14 +3258,17 @@
             "value": "strew",
             "transcription": "/struː/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "strewed",
             "transcription": "/struːd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "strewn",
             "transcription": "/struːn/"
-        },
+        }, {
+            "value": "strewed",
+            "transcription": "/struːd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -3016,14 +3277,14 @@
             "value": "stride",
             "transcription": "/strʌɪd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "strode",
             "transcription": "/strəʊd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "stridden",
             "transcription": "/'strɪd(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -3032,14 +3293,17 @@
             "value": "strike",
             "transcription": "/strʌɪk/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "struck",
             "transcription": "/strʌk/"
-        },
-        "pastParticiple": {
-            "value": "struck/stricken",
-            "transcription": "/strʌk/, /'strɪk(ə)n/"
-        },
+        }],
+        "pastParticiple": [{
+            "value": "struck",
+            "transcription": "/strʌk/"
+        }, {
+            "value": "stricken",
+            "transcription": "/'strɪk(ə)n/"
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3048,14 +3312,14 @@
             "value": "string",
             "transcription": "/strɪŋ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "strung",
             "transcription": "/strʌŋ/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "strung",
             "transcription": "/strʌŋ/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3064,14 +3328,14 @@
             "value": "strive",
             "transcription": "/strʌɪv/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "strove",
             "transcription": "/strəʊv/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "striven",
             "transcription": "/'strɪv(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3080,14 +3344,14 @@
             "value": "swear",
             "transcription": "/swəː(r)/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "swore",
             "transcription": "/swɔː(r)/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "sworn",
             "transcription": "/swɔː(r)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3096,14 +3360,20 @@
             "value": "sweat",
             "transcription": "/swɛt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "sweat",
             "transcription": "/swɛt/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "sweated",
+            "transcription": "/'swɛt(ə)d/"
+        }],
+        "pastParticiple": [{
             "value": "sweat",
             "transcription": "/swɛt/"
-        },
+        }, {
+            "value": "sweated",
+            "transcription": "/'swɛt(ə)d/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -3112,14 +3382,14 @@
             "value": "sweep",
             "transcription": "/swːp/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "swept",
             "transcription": "/swɛpt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "swept",
             "transcription": "/swɛpt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3128,14 +3398,17 @@
             "value": "swell",
             "transcription": "/swɛl/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "swelled",
             "transcription": "/swɛld/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "swollen",
             "transcription": "/'swəʊl(ə)n/"
-        },
+        }, {
+            "value": "swelled",
+            "transcription": "/swɛld/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -3144,14 +3417,14 @@
             "value": "swim",
             "transcription": "/swɪm/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "swam",
             "transcription": "/swæm/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "swum",
             "transcription": "/swʌm/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3160,14 +3433,14 @@
             "value": "swing",
             "transcription": "/swɪŋ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "swung",
             "transcription": "/swʌŋ/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "swung",
             "transcription": "/swʌŋ/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3176,14 +3449,14 @@
             "value": "take",
             "transcription": "/teɪk/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "took",
             "transcription": "/tʊk/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "taken",
             "transcription": "/'teɪk(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3192,14 +3465,14 @@
             "value": "teach",
             "transcription": "/tiːʧ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "taught",
             "transcription": "/tɔːt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "taught",
             "transcription": "/tɔːt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3208,14 +3481,14 @@
             "value": "tear",
             "transcription": "/teə(r)/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "tore",
             "transcription": "/tɔː(r)/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "torn",
             "transcription": "/tɔː(r)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3224,14 +3497,14 @@
             "value": "tell",
             "transcription": "/tɛl/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "told",
             "transcription": "/təʊld/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "told",
             "transcription": "/təʊld/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3240,14 +3513,14 @@
             "value": "think",
             "transcription": "/θɪŋk/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "thought",
             "transcription": "/θɔːt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "thought",
             "transcription": "/θɔːt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3256,14 +3529,20 @@
             "value": "thrive",
             "transcription": "/θrɪv/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "throve",
             "transcription": "/θrəʊv/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "thrived",
+            "transcription": "/θrɪvd/"
+        }],
+        "pastParticiple": [{
             "value": "thriven",
             "transcription": "/'θrɪv(ə)n/"
-        },
+        }, {
+            "value": "thrived",
+            "transcription": "/θrɪvd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -3272,14 +3551,14 @@
             "value": "throw",
             "transcription": "/θrəʊ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "threw",
             "transcription": "/θruː/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "thrown",
             "transcription": "/θrəʊn/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3288,14 +3567,14 @@
             "value": "thrust",
             "transcription": "/θrʌst/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "thrust",
             "transcription": "/θrʌst/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "thrust",
             "transcription": "/θrʌst/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3304,14 +3583,14 @@
             "value": "tread",
             "transcription": "/trɛd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "trod",
             "transcription": "/trɒd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "trodden",
             "transcription": "/'trɒdd(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3320,14 +3599,14 @@
             "value": "typeset",
             "transcription": "/ˌtaɪp'sɛt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "typeset",
             "transcription": "/ˌtaɪp'sɛt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "typeset",
             "transcription": "/ˌtaɪp'sɛt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -3336,14 +3615,14 @@
             "value": "undergo",
             "transcription": "/ʌndə(r)'gəʊ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "underwent",
             "transcription": "/ʌndə(r)'wɛnt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "undergone",
             "transcription": "/ʌndə(r)'gɒn/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -3352,14 +3631,14 @@
             "value": "understand",
             "transcription": "/ʌndə(r)'stænd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "understood",
             "transcription": "/ʌndə(r)'stʊd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "understood",
             "transcription": "/ʌndə(r)'stʊd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -3368,14 +3647,14 @@
             "value": "undertake",
             "transcription": "/ʌndə(r)'teɪk/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "undertook",
             "transcription": "/ʌndə(r)'tʊk/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "undertaken",
             "transcription": "/ʌndə(r)'teɪk(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -3384,14 +3663,14 @@
             "value": "upset",
             "transcription": "/ʌp'sɛt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "upset",
             "transcription": "/ʌp'sɛt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "upset",
             "transcription": "/ʌp'sɛt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -3400,14 +3679,20 @@
             "value": "wake",
             "transcription": "/weɪk/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "woke",
             "transcription": "/wəʊk/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "waked",
+            "transcription": "/weɪkd/"
+        }],
+        "pastParticiple": [{
             "value": "woken",
             "transcription": "/'wəʊk(ə)n/"
-        },
+        }, {
+            "value": "waked",
+            "transcription": "/weɪkd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -3416,14 +3701,14 @@
             "value": "waylay",
             "transcription": "/weɪ'leɪ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "waylaid",
             "transcription": "/weɪ'leɪd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "waylaid",
             "transcription": "/weɪ'leɪd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -3432,14 +3717,14 @@
             "value": "wear",
             "transcription": "/wəː(r)/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "wore",
             "transcription": "/wɔː(r)/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "worn",
             "transcription": "/wɔː(r)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3448,14 +3733,14 @@
             "value": "weave",
             "transcription": "/wiːv/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "wove",
             "transcription": "/wəʊv/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "woven",
             "transcription": "/'wəʊv(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3464,14 +3749,20 @@
             "value": "wed",
             "transcription": "/wɛd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "wed",
             "transcription": "/wɛd/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "wedded",
+            "transcription": "/'wɛdɪd/"
+        }],
+        "pastParticiple": [{
             "value": "wed",
             "transcription": "/wɛd/"
-        },
+        }, {
+            "value": "wedded",
+            "transcription": "/'wɛdɪd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -3480,14 +3771,14 @@
             "value": "weep",
             "transcription": "/wiːp/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "wept",
             "transcription": "/wɛpt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "wept",
             "transcription": "/wɛpt/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3496,10 +3787,10 @@
             "value": "will",
             "transcription": "/wil/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "would",
             "transcription": "/wʊd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3508,14 +3799,20 @@
             "value": "wet",
             "transcription": "/wɛt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "wet",
             "transcription": "/wɛt/"
-        },
-        "pastParticiple": {
+        }, {
+            "value": "wetted",
+            "transcription": "/'wɛtəd/"
+        }],
+        "pastParticiple": [{
             "value": "wet",
             "transcription": "/wɛt/"
-        },
+        }, {
+            "value": "wetted",
+            "transcription": "/'wɛtəd/"
+        }],
         "hasRegular": true,
         "isDerived": false
     },
@@ -3524,14 +3821,14 @@
             "value": "win",
             "transcription": "/wɪn/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "won",
             "transcription": "/wʌn/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "won",
             "transcription": "/wʌn/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3540,14 +3837,14 @@
             "value": "wind",
             "transcription": "/wʌɪnd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "wound",
             "transcription": "/waʊnd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "wound",
             "transcription": "/waʊnd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3556,14 +3853,14 @@
             "value": "withdraw",
             "transcription": "/wɪð'drɔː/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "withdrew",
             "transcription": "/wɪð'druː/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "withdrawn",
             "transcription": "/wɪð'drɔnː/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -3572,14 +3869,14 @@
             "value": "withhold",
             "transcription": "/wɪð'həʊld/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "withheld",
             "transcription": "/wɪð'hɛld/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "withheld",
             "transcription": "/wɪð'hɛld/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -3588,14 +3885,14 @@
             "value": "withstand",
             "transcription": "/wɪð'stænd/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "withstood",
             "transcription": "/wɪð'stʊd/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "withstood",
             "transcription": "/wɪð'stʊd/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": true
     },
@@ -3604,14 +3901,14 @@
             "value": "wring",
             "transcription": "/rɪŋ/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "wrung",
             "transcription": "/rʌŋ/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "wrung",
             "transcription": "/rʌŋ/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -3620,14 +3917,14 @@
             "value": "write",
             "transcription": "/rʌɪt/"
         },
-        "simplePast": {
+        "simplePast": [{
             "value": "wrote",
             "transcription": "/rəʊt/"
-        },
-        "pastParticiple": {
+        }],
+        "pastParticiple": [{
             "value": "written",
             "transcription": "/'rɪt(ə)n/"
-        },
+        }],
         "hasRegular": false,
         "isDerived": false
     }
