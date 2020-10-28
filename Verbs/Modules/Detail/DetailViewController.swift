@@ -34,6 +34,12 @@ final class DetailViewController: UIViewController {
         setupTableView()
         setupDelegate()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController.map { navigationController($0, willShow: self, animated: animated) }
+    }
 }
 
 // MARK: - Private

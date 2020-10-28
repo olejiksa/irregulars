@@ -15,11 +15,36 @@
             "value": "abode",
             "transcription": "/əˈbəʊd/"
         }, {
+            "value": "abidden",
+            "transcription": "/əˈbɪd(ə)n/"
+        }, {
             "value": "abided",
             "transcription": "/əˈbʌɪdɪd/"
         }],
-        "hasRegular": true,
+        "hasRegular": false,
         "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "alight",
+            "transcription": "/əˈlʌɪt/"
+        },
+        "simplePast": [{
+            "value": "alit",
+            "transcription": "/əˈlɪt/"
+        }, {
+            "value": "alighted",
+            "transcription": "/ə'lʌɪt(ə)d/"
+        }],
+        "pastParticiple": [{
+            "value": "alit",
+            "transcription": "/əˈlɪt/"
+        }, {
+            "value": "alighted",
+            "transcription": "/ə'lʌɪt(ə)d/"
+        }],
+        "hasRegular": true,
+        "isDerived": true
     },
     {
         "infinitive": {
@@ -1198,15 +1223,15 @@
     {
         "infinitive": {
             "value": "forsake",
-            "transcription": "/fə'seɪk/"
+            "transcription": "/fə(r)'seɪk/"
         },
         "simplePast": [{
             "value": "forsook",
-            "transcription": "/fə'sʊk/"
+            "transcription": "/fə(r)'sʊk/"
         }],
         "pastParticiple": [{
             "value": "forsaken",
-            "transcription": "/fə'seɪk(ə)n/"
+            "transcription": "/fə(r)'seɪk(ə)n/"
         }],
         "hasRegular": false,
         "isDerived": false
@@ -3760,14 +3785,14 @@
             "transcription": "/wɛd/"
         }, {
             "value": "wedded",
-            "transcription": "/'wɛdɪd/"
+            "transcription": "/'wɛdəd/"
         }],
         "pastParticiple": [{
             "value": "wed",
             "transcription": "/wɛd/"
         }, {
             "value": "wedded",
-            "transcription": "/'wɛdɪd/"
+            "transcription": "/'wɛdəd/"
         }],
         "hasRegular": true,
         "isDerived": false
@@ -3784,6 +3809,28 @@
         "pastParticiple": [{
             "value": "wept",
             "transcription": "/wɛpt/"
+        }],
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "wend",
+            "transcription": "/wɛnd/"
+        },
+        "simplePast": [{
+            "value": "went",
+            "transcription": "/wɛnt/"
+        }, {
+            "value": "wended",
+            "transcription": "/'wɛndəd/"
+        }],
+        "pastParticiple": [{
+            "value": "went",
+            "transcription": "/wɛnt/"
+        }, {
+            "value": "wended",
+            "transcription": "/'wɛndəd/"
         }],
         "hasRegular": false,
         "isDerived": false
@@ -3932,6 +3979,28 @@
             "transcription": "/'rɪt(ə)n/"
         }],
         "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "zinc",
+            "transcription": "/zɪŋk/"
+        },
+        "simplePast": [{
+            "value": "zinced",
+            "transcription": "/'zɪŋk(ə)d/"
+        }, {
+            "value": "zincked",
+            "transcription": "/'zɪŋk(ə)d/"
+        }],
+        "pastParticiple": [{
+            "value": "zinced",
+            "transcription": "/'zɪŋk(ə)d/"
+        }, {
+            "value": "zincked",
+            "transcription": "/'zɪŋk(ə)d/"
+        }],
+        "hasRegular": true,
         "isDerived": false
     }
 ]

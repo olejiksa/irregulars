@@ -34,6 +34,7 @@
 // Irregular Verbs
 
 "abide" = "abide";
+"alight" = "alight";
 "arise" = "arise";
 "awake" = "awake";
 "backslid" = "backslid";
@@ -252,6 +253,7 @@
 "weave" = "weave";
 "wed" = "wed";
 "weep" = "weep";
+"wend" = "wend";
 "wet" = "wet";
 "will" = "will";
 "win" = "win";
@@ -261,3 +263,4 @@
 "withstand" = "withstand";
 "wring" = "wring";
 "write" = "write";
+"zinc" = "zinc";

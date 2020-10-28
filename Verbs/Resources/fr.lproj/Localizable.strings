@@ -34,6 +34,7 @@
 // Irregular Verbs
 
 "abide" = "respecter, se conformer à";
+"alight" = "descendre";
 "arise" = "s'élever, survenir";
 "awake" = "se réveiller";
 "backslide" = "récidiver";
@@ -252,6 +253,7 @@
 "weave" = "tisser";
 "wed" = "marier";
 "weep" = "pleurer";
+"wend" = "aller";
 "wet" = "mouiller";
 "will" = "aller";
 "win" = "gagner";
@@ -261,3 +263,4 @@
 "withstand" = "résister à";
 "wring" = "tordre";
 "write" = "écrire";
+"zinc" = "au zinc";
