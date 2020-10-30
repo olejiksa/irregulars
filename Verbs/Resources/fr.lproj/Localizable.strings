@@ -6,6 +6,17 @@
   Copyright © 2020 Oleg Samoylov. All rights reserved.
 */
 
+"Thank you" = "Merci!";
+"Listen to pronunciation" = "Écouter la prononciation";
+"See a transcription" = "Voir une transcription";
+"Find words faster using search" = "Trouvez des mots plus rapidement en utilisant la recherche";
+"Find words faster using the alphabetical scrollbar" = "Trouvez des mots plus rapidement à l'aide de la barre de défilement alphabétique";
+"Use the medium-sized widget that has all three verb's forms, their transcriptions, and its translation" = "Utilisez le widget de taille moyenne qui a les trois formes verbales, leurs transcriptions et sa traduction";
+"Hide or show regular verbs (-ed)" = "Masquer ou afficher les verbes réguliers (-ed)";
+"Hide or show derivatives" = "Masquer ou afficher les dérivés";
+"View a translation without going to the verb page" = "Afficher une traduction sans accéder à la page des verbes";
+"Tests" = "Tests";
+"Activation" = "Activation";
 "About" = "À propos du programme";
 "Developer" = "Développeur";
 "Oleg Samoylov" = "Oleg Samoylov";
@@ -24,12 +35,15 @@
 "Contact us" = "Nous contacter";
 "Rate and review" = "Notez et évaluez";
 "Unlock all features" = "Déverrouiller toutes les fonctionnalités";
-"Buy full version" = "Acheter la version complète";
-"Restore a purchase" = "Restaurer un achat";
+"Buy" = "Acheter";
+"Restore purchases" = "Restaurer les achats";
 "EmptyViewControllerLabel" = "Pour afficher des informations sur un verbe irrégulier, appuyer dessus sur le côté gauche de l'écran";
 "Done" = "Terminé";
 "Cancel" = "Annuler";
 "Verb forms" = "Formes verbales";
+"Privacy policy" = "Politique de confidentialité";
+"Share the app" = "Partager l'appli";
+"Edition" = "Édition";
 
 // Irregular Verbs
 
@@ -43,9 +57,12 @@
 "beat" = "battre";
 "become" = "devenir";
 "beget" = "engendrer";
+"befall" = "advenir";
 "begin" = "commencer";
+"behold" = "apercevoir";
 "bend" = "plier, se courber";
 "bereave" = "déposséder, priver";
+"beseech" = "implorer, supplier";
 "bet" = "parier";
 "bid" = "offrir (un prix)";
 "bind" = "lier, relier";

@@ -41,6 +41,13 @@ final class ListPresenter: NSObject {
         unsubscribe()
     }
     
+    @objc func goToTests() {
+        let vc = TestsAssembly().viewController()
+        let nvc = UINavigationController(rootViewController: vc)
+        nvc.modalPresentationStyle = .formSheet
+        viewController?.present(nvc, animated: true)
+    }
+    
     @objc func goToSettings() {
         let shouldRegularVerbsBeShownBlock: ((Bool) -> ()) = { [weak self] in
             guard let self = self else { return }
@@ -88,11 +95,18 @@ private extension ListPresenter {
                                                selector: #selector(didSelectedItemUpdate),
                                                name: Notification.Name.infinitive,
                                                object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(didPay),
+                                               name: Notification.Name.paid,
+                                               object: nil)
     }
     
     func unsubscribe() {
         NotificationCenter.default.removeObserver(self,
                                                   name: Notification.Name.infinitive,
+                                                  object: nil)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: Notification.Name.paid,
                                                   object: nil)
     }
     
@@ -105,6 +119,10 @@ private extension ListPresenter {
     
     @objc func didSelectedItemUpdate(_ notification: Notification) {
         infinitive = notification.userInfo?[Notification.Name.infinitive] as? String ?? ""
+    }
+    
+    @objc func didPay(_ notification: Notification) {
+        viewController?.getPaid()
     }
 }
 

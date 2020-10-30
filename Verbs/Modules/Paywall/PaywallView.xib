@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaywallViewController" customModule="Verbs" customModuleProvider="target">
+            <connections>
+                <outlet property="buyButton" destination="FCR-cl-tUu" id="JTG-Dd-amz"/>
+                <outlet property="restoreButton" destination="eCn-Wh-KP8" id="glQ-hW-YFK"/>
+                <outlet property="tableView" destination="WcE-k7-fQk" id="qco-M7-cqp"/>
+                <outlet property="thanksLabel" destination="oGs-Ye-7HQ" id="svC-4o-cVc"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OwI-O6-twQ">
+                    <rect key="frame" x="20" y="593" width="335" height="54"/>
+                    <subviews>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCR-cl-tUu" customClass="BigButton" customModule="Verbs" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="54"/>
+                            <color key="backgroundColor" systemColor="systemBlueColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="54" id="wZG-vH-JmA"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                            <state key="normal" title="Buy"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimary" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="didUnlockTap" destination="-1" eventType="touchUpInside" id="w0N-ZY-eSI"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCn-Wh-KP8" customClass="BigButton" customModule="Verbs" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="54"/>
+                            <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="54" id="CqG-jf-Uac"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                            <state key="normal" title="Restore purchases">
+                                <color key="titleColor" systemColor="systemBlueColor"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimary" value="NO"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="didRestoreTap" destination="-1" eventType="touchUpInside" id="BZ4-mT-vGi"/>
+                                <action selector="didUnlockTap" destination="-1" eventType="touchUpInside" id="pdt-ej-KgO"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you, you're great!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGs-Ye-7HQ">
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="54"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="54" id="KPv-9l-xD0"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" systemColor="systemBlueColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WcE-k7-fQk" customClass="FadeTableView" customModule="Verbs" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="573"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OwI-O6-twQ" secondAttribute="trailing" constant="20" id="3Ri-hv-MhL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WcE-k7-fQk" secondAttribute="trailing" id="Fhy-Bf-3eP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="OwI-O6-twQ" secondAttribute="bottom" constant="20" id="H51-r6-52b"/>
+                <constraint firstItem="OwI-O6-twQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="MpG-8T-sCU"/>
+                <constraint firstItem="WcE-k7-fQk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="YkG-Nx-IH9"/>
+                <constraint firstItem="OwI-O6-twQ" firstAttribute="top" secondItem="WcE-k7-fQk" secondAttribute="bottom" constant="20" id="ZUv-af-rJH"/>
+                <constraint firstItem="WcE-k7-fQk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="thD-c1-DG5"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="56"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="secondarySystemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

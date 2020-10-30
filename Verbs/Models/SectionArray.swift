@@ -20,7 +20,7 @@ struct SectionArray {
         sections.filter { !$0.items.isEmpty }[indexPath.section].items[indexPath.row]
     }
     
-    func header(_ index: Int) -> String {
+    func header(_ index: Int) -> String? {
         sections.filter { !$0.items.isEmpty }[index].header
     }
     

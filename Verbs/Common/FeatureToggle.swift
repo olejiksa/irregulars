@@ -8,5 +8,5 @@
 
 struct FeatureToggle {
     
-    static var isPaid: Bool { true }
+    static var isPaid = true
 }

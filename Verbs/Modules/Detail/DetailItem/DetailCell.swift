@@ -28,13 +28,7 @@ final class DetailCell: UITableViewCell {
 private extension DetailCell {
     
     func setupPlayButton() {
-        guard FeatureToggle.isPaid else {
-            playButton.isUserInteractionEnabled = false
-            playButton.isEnabled = false
-            transcriptionLabel.isHidden = true
-            return
-        }
-        
+        transcriptionLabel.isHidden = !FeatureToggle.isPaid
         playButton.addTarget(self,
                              action: #selector(playButtonDidTap),
                              for: .touchUpInside)

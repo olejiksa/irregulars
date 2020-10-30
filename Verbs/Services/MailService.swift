@@ -11,9 +11,8 @@ import MessageUI
 final class MailService: NSObject {
     
     func present(in viewController: UIViewController?) {
-        guard
-            let productName = Bundle.main.productName,
-            let version = Bundle.main.releaseVersionNumber
+        guard let productName = Bundle.main.productName,
+              let version = Bundle.main.releaseVersionNumber
         else { return }
 
         let mailComposeViewController = MFMailComposeViewController()
@@ -36,10 +35,4 @@ extension MailService: MFMailComposeViewControllerDelegate {
                                error: Error?) {
         controller.dismiss(animated: true)
     }
-}
-
-private extension Bundle {
-    
-    var productName: String? { infoDictionary?["CFBundleName"] as? String }
-    var releaseVersionNumber: String? { infoDictionary?["CFBundleShortVersionString"] as? String }
 }

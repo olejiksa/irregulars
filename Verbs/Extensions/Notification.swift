@@ -11,4 +11,5 @@ import Foundation
 extension Notification.Name {
 
     static let infinitive = Notification.Name("infinitive")
+    static let paid = Notification.Name("paid")
 }

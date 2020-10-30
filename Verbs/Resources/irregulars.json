@@ -175,6 +175,22 @@
     },
     {
         "infinitive": {
+            "value": "befall",
+            "transcription": "/bɪ'fɔːl/"
+        },
+        "simplePast": [{
+            "value": "befell",
+            "transcription": "/bɪ'fɛl/"
+        }],
+        "pastParticiple": [{
+            "value": "befallen",
+            "transcription": "/bɪ'fɔːl(ə)n/"
+        }],
+        "hasRegular": false,
+        "isDerived": true
+    },
+    {
+        "infinitive": {
             "value": "beget",
             "transcription": "/bɪ'gɛt/"
         },
@@ -220,6 +236,38 @@
         }],
         "hasRegular": false,
         "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "behold",
+            "transcription": "/bɪˈhəʊld/"
+        },
+        "simplePast": [{
+            "value": "beheld",
+            "transcription": "/bɪˈhɛld/"
+        }],
+        "pastParticiple": [{
+            "value": "beheld",
+            "transcription": "/bɪˈhɛld/"
+        }],
+        "hasRegular": false,
+        "isDerived": true
+    },
+    {
+        "infinitive": {
+            "value": "beseech",
+            "transcription": "/bɪˈsiːʧ/"
+        },
+        "simplePast": [{
+            "value": "besought",
+            "transcription": "/bɪˈsɔːt/"
+        }],
+        "pastParticiple": [{
+            "value": "besought",
+            "transcription": "/bɪˈsɔːt/"
+        }],
+        "hasRegular": false,
+        "isDerived": true
     },
     {
         "infinitive": {
@@ -2738,11 +2786,11 @@
         },
         "simplePast": [{
             "value": "showed",
-            "transcription": "/əʊd/"
+            "transcription": "/ʃəʊd/"
         }],
         "pastParticiple": [{
             "value": "shown",
-            "transcription": "/əʊn/"
+            "transcription": "/ʃəʊn/"
         }],
         "hasRegular": false,
         "isDerived": false

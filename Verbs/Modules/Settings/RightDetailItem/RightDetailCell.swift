@@ -79,7 +79,7 @@ extension RightDetailCell: CellProtocol {
         
         textLabel?.text = item.title
         detailTextLabel?.text = item.subtitle
-        accessoryType = item.actionBlock != nil ? .disclosureIndicator : .none
+        accessoryType = item.hasDisclosureItem ? .disclosureIndicator : .none
         
         let index = item.subitems?.firstIndex { $0 == selectedValue } ?? 0
         picker.selectRow(index, inComponent: 0, animated: true)

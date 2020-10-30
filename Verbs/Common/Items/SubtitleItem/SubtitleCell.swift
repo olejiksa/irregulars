@@ -21,5 +21,6 @@ extension SubtitleCell: CellProtocol {
         
         textLabel?.text = item.title
         detailTextLabel?.text = item.subtitle
+        accessoryType = item.hasDisclosureIndicator ? .disclosureIndicator : .none
     }
 }

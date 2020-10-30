@@ -52,7 +52,7 @@ private extension DetailViewController {
     }
     
     func setupTableView() {
-        tableView.dataSource = presenter
+        tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         
         tableView.register(DetailCell.self, TranslationCell.self)

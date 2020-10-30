@@ -10,11 +10,16 @@ import Foundation
 
 final class LanguageService {
     
+    var current: Language? {
+        guard let currentLanguage = Locale.current.languageCode else { return nil }
+        return Language(rawValue: currentLanguage)
+    }
+    
     var hasTranslation: Bool {
         guard let currentLanguage = Locale.current.languageCode else { return false }
         let supportedLocalizations = Bundle.main.localizations
         let isLocalizedToCurrentLanguage = supportedLocalizations.contains(currentLanguage)
-        let isCurrentLanguageEnglish = Language(rawValue: currentLanguage) == .some(.english)
+        let isCurrentLanguageEnglish = Language(rawValue: currentLanguage) == .english
         return isLocalizedToCurrentLanguage && !isCurrentLanguageEnglish
     }
 }

@@ -8,6 +8,6 @@
 
 struct Section {
     
-    let header: String
+    let header: String?
     let items: [ItemProtocol]
 }

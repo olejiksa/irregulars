@@ -6,6 +6,17 @@
   Copyright © 2020 Oleg Samoylov. All rights reserved.
 */
 
+"Thank you" = "Thank you";
+"Listen to pronunciation" = "Listen to pronunciation";
+"See a transcription" = "See a transcription";
+"Find words faster using search" = "Find words faster using search";
+"Find words faster using the alphabetical scrollbar" = "Find words faster using the alphabetical scrollbar";
+"Use the medium-sized widget that has all three verb's forms, their transcriptions, and its translation" = "Use the medium-sized widget that has all three verb's forms with their transcriptions";
+"Hide or show regular verbs (-ed)" = "Hide or show regular verbs (-ed)";
+"Hide or show derivatives" = "Hide or show derivatives";
+"View a translation without going to the verb page" = "View a translation without going to the verb page";
+"Tests" = "Tests";
+"Activation" = "Activation";
 "About" = "About";
 "Developer" = "Developer";
 "Oleg Samoylov" = "Oleg Samoylov";
@@ -24,12 +35,15 @@
 "Contact us" = "Contact us";
 "Rate and review" = "Rate and review";
 "Unlock all features" = "Unlock all features";
-"Buy full version" = "Buy full version";
-"Restore a purchase" = "Restore a purchase";
+"Buy" = "Buy";
+"Restore purchases" = "Restore purchases";
 "EmptyViewControllerLabel" = "To view info about an irregular verb, tap on it on the left side of the screen";
 "Done" = "Done";
 "Cancel" = "Cancel";
 "Verb forms" = "Verb forms";
+"Privacy policy" = "Privacy policy";
+"Share the app" = "Share the app";
+"Edition" = "Edition";
 
 // Irregular Verbs
 
@@ -42,8 +56,11 @@
 "bear" = "bear";
 "beat" = "beat";
 "become" = "become";
+"befall" = "befall";
 "beget" = "beget";
 "begin" = "begin";
+"behold" = "behold";
+"beseech" = "beseech";
 "bend" = "bend";
 "bereave" = "bereave";
 "bet" = "bet";

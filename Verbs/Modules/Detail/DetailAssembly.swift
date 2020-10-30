@@ -14,7 +14,8 @@ final class DetailAssembly {
         let presenter = DetailPresenter(audioService: .init(),
                                         languageService: .init(),
                                         verb: verb)
-        return .init(presenter: presenter, isOpenedByDeeplink: isOpenedByDeeplink)
+        let viewConroller = DetailViewController(presenter: presenter, isOpenedByDeeplink: isOpenedByDeeplink)
+        presenter.viewController = viewConroller
+        return viewConroller
     }
 }
-

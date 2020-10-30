@@ -50,6 +50,11 @@ final class ListViewController: UIViewController {
         tableView.reloadData()
     }
     
+    func getPaid() {
+        tableView.reloadData()
+        setupSearchController()
+    }
+    
     func selectRow(at indexPath: IndexPath?) {
         guard let indexPath = indexPath else {
             if let indexPathForSelectedRow = tableView.indexPathForSelectedRow {
@@ -77,6 +82,12 @@ private extension ListViewController {
     }
     
     func setupNavigationBarButtons() {
+        let tests = UIBarButtonItem(title: "Tests".localized,
+                                    style: .plain,
+                                    target: presenter,
+                                    action: #selector(presenter.goToTests))
+        navigationItem.leftBarButtonItem = tests
+        
         let settings = UIBarButtonItem(image: SystemIcon.gear.image,
                                        style: .plain,
                                        target: presenter,

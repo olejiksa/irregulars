@@ -1,22 +1,20 @@
 //
-//  SettingsViewController.swift
+//  TestsViewController.swift
 //  Verbs
 //
-//  Created by Oleg Samoylov on 08.10.2020.
+//  Created by Oleg Samoylov on 29.10.2020.
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
 import UIKit
 
-final class SettingsViewController: UIViewController {
+final class TestsViewController: UIViewController {
     
-    private let presenter: SettingsPresenter
-    private var keyboardService: KeyboardService?
-
-    @IBOutlet private weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
+    private let presenter: TestsPresenter
+    
     @IBOutlet private weak var tableView: UITableView!
     
-    init(presenter: SettingsPresenter) {
+    init(presenter: TestsPresenter) {
         self.presenter = presenter
         
         super.init(nibName: nil, bundle: nil)
@@ -25,26 +23,21 @@ final class SettingsViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupNavigationBar()
         setupTableView()
-        setupKeyboardService()
-    }
-    
-    func reloadData() {
-        tableView.reloadData()
     }
 }
 
 // MARK: - Private
 
-private extension SettingsViewController {
+private extension TestsViewController {
     
     func setupNavigationBar() {
-        navigationItem.title = "Settings".localized
+        navigationItem.title = "Tests".localized
         navigationItem.largeTitleDisplayMode = .never
         
         let closeButton = UIBarButtonItem(barButtonSystemItem: .close,
@@ -56,11 +49,8 @@ private extension SettingsViewController {
     func setupTableView() {
         tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
-        tableView.register(SwitchCell.self, DisclosureCell.self, RightDetailCell.self)
-    }
-    
-    func setupKeyboardService() {
-        keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
+        
+        tableView.register(SubtitleCell.self)
     }
     
     @objc func didCloseTap() {
