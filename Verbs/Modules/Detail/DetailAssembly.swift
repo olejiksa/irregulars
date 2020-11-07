@@ -8,9 +8,19 @@
 
 import UIKit
 
-final class DetailAssembly {
+final class DetailAssembly: AssemblyProtocol {
     
-    func viewController(verb: Verb, isOpenedByDeeplink: Bool) -> DetailViewController {
+    typealias ViewController = DetailViewController
+    
+    private let verb: Verb
+    private let isOpenedByDeeplink: Bool
+    
+    init(verb: Verb, isOpenedByDeeplink: Bool) {
+        self.verb = verb
+        self.isOpenedByDeeplink = isOpenedByDeeplink
+    }
+    
+    func viewController() -> ViewController {
         let presenter = DetailPresenter(audioService: .init(),
                                         languageService: .init(),
                                         verb: verb)

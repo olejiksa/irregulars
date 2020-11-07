@@ -210,10 +210,10 @@ private extension SidebarViewController {
         
         switch sidebarItem.id {
         case RowIdentifier.all:
-            let vc = ListAssembly().viewController(inside: splitViewController)
+            let vc = ListAssembly(splitViewController: splitViewController).viewController()
             splitViewController.setViewController(vc.navigationController, for: .supplementary)
         case RowIdentifier.favorites:
-            let vc = ListAssembly().viewController(inside: splitViewController)
+            let vc = ListAssembly(splitViewController: splitViewController).viewController()
             splitViewController.setViewController(vc.navigationController, for: .supplementary)
         case RowIdentifier.settings:
             let vc = SettingsAssembly().viewController()

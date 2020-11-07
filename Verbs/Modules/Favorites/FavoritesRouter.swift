@@ -1,14 +1,14 @@
 //
-//  ListRouter.swift
+//  FavoritesRouter.swift
 //  Verbs
 //
-//  Created by Oleg Samoylov on 10.10.2020.
+//  Created by Oleg Samoylov on 08.11.2020.
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
 import UIKit
 
-final class ListRouter {
+final class FavoritesRouter {
     
     private weak var navigationController: UINavigationController?
     private weak var splitViewController: UISplitViewController?

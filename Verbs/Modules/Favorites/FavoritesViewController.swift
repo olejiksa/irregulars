@@ -1,22 +1,22 @@
 //
-//  ListViewController.swift
+//  FavoritesViewController.swift
 //  Verbs
 //
-//  Created by Oleg Samoylov on 26.09.2020.
+//  Created by Oleg Samoylov on 08.11.2020.
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
 import UIKit
 
-final class ListViewController: UIViewController {
+final class FavoritesViewController: UIViewController {
 
-    private let presenter: ListPresenter
+    private let presenter: FavoritesPresenter
     private let searchController = UISearchController(searchResultsController: nil)
     private var keyboardService: KeyboardService?
     private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     private var tableView: UITableView?
     
-    init(presenter: ListPresenter) {
+    init(presenter: FavoritesPresenter) {
         self.presenter = presenter
         
         super.init(nibName: nil, bundle: nil)
@@ -68,20 +68,15 @@ final class ListViewController: UIViewController {
 
 // MARK: - Private
 
-private extension ListViewController {
+private extension FavoritesViewController {
     
     func setupKeyboardService() {
         keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
     }
     
     func setupNavigationBar() {
-        if splitViewController?.isCollapsed == true {
-            navigationItem.title = "Verbs".localized
-            navigationController?.navigationBar.prefersLargeTitles = true
-        } else {
-            navigationItem.title = "All".localized
-            navigationItem.largeTitleDisplayMode = .never
-        }
+        navigationItem.title = "Favorites".localized
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func setupTableView() {
@@ -122,7 +117,7 @@ private extension ListViewController {
 
 // MARK: - Scrollable
 
-extension ListViewController: Scrollable {
+extension FavoritesViewController: Scrollable {
     
     func scrollToTop() {
         let indexPath = IndexPath(row: 0, section: 0)

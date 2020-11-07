@@ -15,9 +15,9 @@ final class TabBarBuilder {
     func build(in splitViewController: SplitViewController?) -> TabBarController? {
         guard let splitViewController = splitViewController else { return nil }
         
-        let firstVc = ListAssembly().viewController(inside: splitViewController).navigationController
+        let firstVc = ListAssembly(splitViewController: splitViewController).viewController().navigationController
         firstVc?.tabBarItem = .init(title: "Verbs".localized, image: SystemIcon.bookFill.image, tag: 0)
-        let secondVc = ListAssembly().viewController(inside: splitViewController).navigationController
+        let secondVc = ListAssembly(splitViewController: splitViewController).viewController().navigationController
         secondVc?.tabBarItem = .init(title: "Favorites".localized, image: SystemIcon.starFill.image, tag: 1)
         let thirdVc = SettingsAssembly().viewController().navigationController
         thirdVc?.tabBarItem = .init(title: "Settings".localized, image: SystemIcon.gear.image, tag: 2)

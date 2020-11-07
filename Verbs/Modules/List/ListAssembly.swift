@@ -10,7 +10,15 @@ import UIKit
 
 final class ListAssembly {
     
-    func viewController(inside splitViewController: UISplitViewController) -> ListViewController {
+    typealias ViewController = ListViewController
+    
+    private let splitViewController: UISplitViewController
+    
+    init(splitViewController: UISplitViewController) {
+        self.splitViewController = splitViewController
+    }
+    
+    func viewController() -> ViewController {
         let presenter = ListPresenter(languageService: .init(),
                                       verbsService: .init(),
                                       userDefaultsService: .init())

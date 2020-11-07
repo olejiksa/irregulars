@@ -15,7 +15,7 @@ final class DeeplinkService {
     func handle(_ host: String, in splitViewController: UISplitViewController) {
         guard let verb = verbsService.items.first(where: { host == $0.infinitive.value }) else { return }
         
-        let vc = DetailAssembly().viewController(verb: verb, isOpenedByDeeplink: true)
+        let vc = DetailAssembly(verb: verb, isOpenedByDeeplink: true).viewController()
         let nvc: UINavigationController?
         
         nvc = !splitViewController.isCollapsed

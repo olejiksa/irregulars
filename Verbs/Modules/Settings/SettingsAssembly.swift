@@ -8,9 +8,11 @@
 
 import UIKit
 
-final class SettingsAssembly {
+final class SettingsAssembly: AssemblyProtocol {
     
-    func viewController() -> SettingsViewController {
+    typealias ViewController = SettingsViewController
+    
+    func viewController() -> ViewController {
         let presenter = SettingsPresenter(languageService: .init(),
                                           mailService: .init(),
                                           userDefaultsService: .init())

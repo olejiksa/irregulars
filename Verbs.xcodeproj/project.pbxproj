@@ -68,6 +68,11 @@
 		EB7DFF8F252B1CED000B711D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3BC08251F2ADB006E0DC7 /* String.swift */; };
 		EB7DFF95252B25DD000B711D /* irregulars.json in Resources */ = {isa = PBXBuildFile; fileRef = EBB3BC14251F4BAA006E0DC7 /* irregulars.json */; };
 		EB83257F2556CF47005E02C1 /* TabBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83257E2556CF47005E02C1 /* TabBarDelegate.swift */; };
+		EB83258B2556EAEB005E02C1 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325892556EAEB005E02C1 /* FavoritesViewController.swift */; };
+		EB8325922556EB60005E02C1 /* FavoritesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325912556EB60005E02C1 /* FavoritesAssembly.swift */; };
+		EB8325982556EB6B005E02C1 /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325972556EB6B005E02C1 /* FavoritesPresenter.swift */; };
+		EB83259C2556EBE9005E02C1 /* FavoritesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83259B2556EBE9005E02C1 /* FavoritesRouter.swift */; };
+		EB8325A22556EC9F005E02C1 /* AssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325A12556EC9F005E02C1 /* AssemblyProtocol.swift */; };
 		EB9A4FBC252E8D9800443D47 /* DeeplinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */; };
 		EBB01C0925217F5400BB646B /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB01C0825217F5400BB646B /* Language.swift */; };
 		EBB01C0C2521825000BB646B /* TranslationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB01C0A2521825000BB646B /* TranslationCell.swift */; };
@@ -185,6 +190,11 @@
 		EB7DFF6B252451D4000B711D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB7DFF6D252451D4000B711D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB83257E2556CF47005E02C1 /* TabBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarDelegate.swift; sourceTree = "<group>"; };
+		EB8325892556EAEB005E02C1 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		EB8325912556EB60005E02C1 /* FavoritesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAssembly.swift; sourceTree = "<group>"; };
+		EB8325972556EB6B005E02C1 /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
+		EB83259B2556EBE9005E02C1 /* FavoritesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRouter.swift; sourceTree = "<group>"; };
+		EB8325A12556EC9F005E02C1 /* AssemblyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyProtocol.swift; sourceTree = "<group>"; };
 		EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkService.swift; sourceTree = "<group>"; };
 		EBB01C0825217F5400BB646B /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		EBB01C0A2521825000BB646B /* TranslationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationCell.swift; sourceTree = "<group>"; };
@@ -254,6 +264,7 @@
 		EB2F5E07251F5359007DCF60 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				EB8325882556EACF005E02C1 /* Favorites */,
 				EB2F5E0A251F5407007DCF60 /* Detail */,
 				EB7DFF5225244378000B711D /* Empty */,
 				EB2F5E09251F53FD007DCF60 /* List */,
@@ -306,6 +317,7 @@
 				EBEB1D77251F11900019972C /* SceneDelegate.swift */,
 				EBD476CF254BD0BF0033067B /* FadeTableView.swift */,
 				EBD476D5254BDF850033067B /* Bundle.swift */,
+				EB8325A12556EC9F005E02C1 /* AssemblyProtocol.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -413,6 +425,17 @@
 				EB7DFF6D252451D4000B711D /* Info.plist */,
 			);
 			path = VerbsWidget;
+			sourceTree = "<group>";
+		};
+		EB8325882556EACF005E02C1 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				EB8325912556EB60005E02C1 /* FavoritesAssembly.swift */,
+				EB8325972556EB6B005E02C1 /* FavoritesPresenter.swift */,
+				EB83259B2556EBE9005E02C1 /* FavoritesRouter.swift */,
+				EB8325892556EAEB005E02C1 /* FavoritesViewController.swift */,
+			);
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 		EBB01C102521828800BB646B /* DetailItem */ = {
@@ -757,6 +780,8 @@
 				EBD476D0254BD0BF0033067B /* FadeTableView.swift in Sources */,
 				EBEB1D8E251F13BA0019972C /* SubtitleCell.swift in Sources */,
 				EB69A26925322AFA00DD1827 /* Notification.swift in Sources */,
+				EB8325982556EB6B005E02C1 /* FavoritesPresenter.swift in Sources */,
+				EB83259C2556EBE9005E02C1 /* FavoritesRouter.swift in Sources */,
 				EB5547542553CB22001C5585 /* SidebarCell.swift in Sources */,
 				EBB01C1F25218BAB00BB646B /* ItemProtocol.swift in Sources */,
 				EBB3BC17251F4D60006E0DC7 /* JSONParser.swift in Sources */,
@@ -765,6 +790,8 @@
 				EB4509DB2541E68000D31858 /* RightDetailItem.swift in Sources */,
 				EB450A052549D27400D31858 /* PaywallViewController.swift in Sources */,
 				EBEB1D78251F11900019972C /* SceneDelegate.swift in Sources */,
+				EB83258B2556EAEB005E02C1 /* FavoritesViewController.swift in Sources */,
+				EB8325A22556EC9F005E02C1 /* AssemblyProtocol.swift in Sources */,
 				EB2F5E16251F71DD007DCF60 /* AudioService.swift in Sources */,
 				EBF4A147252ED2CA003E3A44 /* SettingsViewController.swift in Sources */,
 				EB7B85652537FAE000542D3C /* Word.swift in Sources */,
@@ -776,6 +803,7 @@
 				EBD476C5254BBE7A0033067B /* PaywallCell.swift in Sources */,
 				EBD476E32553AED70033067B /* SidebarViewController.swift in Sources */,
 				EBB01C192521870200BB646B /* DetailItem.swift in Sources */,
+				EB8325922556EB60005E02C1 /* FavoritesAssembly.swift in Sources */,
 				EB45097B253B630900D31858 /* SectionArray.swift in Sources */,
 				EBF4A13B252EA2F6003E3A44 /* FeatureToggle.swift in Sources */,
 				EB4509E22541E69400D31858 /* RightDetailCell.swift in Sources */,
@@ -839,7 +867,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.9;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -862,7 +890,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.9;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1002,7 +1030,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.9;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1023,7 +1051,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.9;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

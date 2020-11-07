@@ -8,9 +8,11 @@
 
 import UIKit
 
-final class TestsAssembly {
+final class TestsAssembly: AssemblyProtocol {
     
-    func viewController() -> TestsViewController {
+    typealias ViewController = TestsViewController
+    
+    func viewController() -> ViewController {
         let presenter = TestsPresenter()
         let viewConroller = TestsViewController(presenter: presenter)
         return viewConroller
