@@ -14,7 +14,7 @@ final class FavoritesPresenter: NSObject {
     var router: FavoritesRouter?
     
     private let languageService: LanguageService
-    private let verbsService: VerbsService
+    private let verbsService: FavoritesService
     private let userDefaultsService: UserDefaultsService
     private var isSearchActive = false
     
@@ -25,7 +25,7 @@ final class FavoritesPresenter: NSObject {
     }
     
     init(languageService: LanguageService,
-         verbsService: VerbsService,
+         verbsService: FavoritesService,
          userDefaultsService: UserDefaultsService) {
         self.languageService = languageService
         self.verbsService = verbsService
@@ -126,7 +126,7 @@ extension FavoritesPresenter: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         let count = !isSearchActive
-            ? verbsService.groupedItems.count
+            ? verbsService.items.count
             : (verbsService.searchedItems.count > 0 ? 1 : 0)
         tableView.separatorStyle = count > 0 ? .singleLine : .none
         return count
@@ -134,35 +134,18 @@ extension FavoritesPresenter: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         !isSearchActive
-            ? verbsService.groupedItems[section].count
+            ? verbsService.items.count
             : verbsService.searchedItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let verb = !isSearchActive
-            ? verbsService.groupedItems[indexPath.section][indexPath.row]
+            ? verbsService.items[indexPath.row]
             : verbsService.searchedItems[indexPath.row]
         let item: ItemProtocol = verbsService.listView == .forms || !languageService.hasTranslation ?
             ListItem(verb: verb) :
             SubtitleItem(title: verb.infinitive.value, subtitle: verb.translation)
         return tableView.dequeueReusableCell(for: item, at: indexPath)
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard !isSearchActive else { return nil }
-        let items = verbsService.groupedItems[section]
-        guard let letter = items.first?.infinitive.value.first else { return nil }
-        return letter.uppercased()
-    }
-    
-    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        guard !isSearchActive && FeatureToggle.isPaid else { return nil }
-        let set = Set(verbsService.items.compactMap { item -> String? in
-            guard let character = item.infinitive.value.first else { return nil }
-            return character.uppercased()
-        })
-        
-        return Array(set).sorted()
     }
 }
 
@@ -176,7 +159,7 @@ extension FavoritesPresenter: UITableViewDelegate {
         }
 
         let verb = !isSearchActive
-            ? verbsService.groupedItems[indexPath.section][indexPath.row]
+            ? verbsService.items[indexPath.row]
             : verbsService.searchedItems[indexPath.row]
         
         guard infinitive != verb.infinitive.value else { return }

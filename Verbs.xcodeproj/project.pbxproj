@@ -73,6 +73,7 @@
 		EB8325982556EB6B005E02C1 /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325972556EB6B005E02C1 /* FavoritesPresenter.swift */; };
 		EB83259C2556EBE9005E02C1 /* FavoritesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83259B2556EBE9005E02C1 /* FavoritesRouter.swift */; };
 		EB8325A22556EC9F005E02C1 /* AssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325A12556EC9F005E02C1 /* AssemblyProtocol.swift */; };
+		EB8325A62556EFF0005E02C1 /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325A52556EFF0005E02C1 /* FavoritesService.swift */; };
 		EB9A4FBC252E8D9800443D47 /* DeeplinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */; };
 		EBB01C0925217F5400BB646B /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB01C0825217F5400BB646B /* Language.swift */; };
 		EBB01C0C2521825000BB646B /* TranslationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB01C0A2521825000BB646B /* TranslationCell.swift */; };
@@ -195,6 +196,7 @@
 		EB8325972556EB6B005E02C1 /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
 		EB83259B2556EBE9005E02C1 /* FavoritesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRouter.swift; sourceTree = "<group>"; };
 		EB8325A12556EC9F005E02C1 /* AssemblyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyProtocol.swift; sourceTree = "<group>"; };
+		EB8325A52556EFF0005E02C1 /* FavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesService.swift; sourceTree = "<group>"; };
 		EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkService.swift; sourceTree = "<group>"; };
 		EBB01C0825217F5400BB646B /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		EBB01C0A2521825000BB646B /* TranslationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationCell.swift; sourceTree = "<group>"; };
@@ -473,6 +475,7 @@
 			children = (
 				EB2F5E15251F71DD007DCF60 /* AudioService.swift */,
 				EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */,
+				EB8325A52556EFF0005E02C1 /* FavoritesService.swift */,
 				EBB3BC0F251F3545006E0DC7 /* KeyboardService.swift */,
 				EBB95BFD25335C3E00376C3F /* LanguageService.swift */,
 				EB7B8580253B30C600542D3C /* MailService.swift */,
@@ -794,6 +797,7 @@
 				EB8325A22556EC9F005E02C1 /* AssemblyProtocol.swift in Sources */,
 				EB2F5E16251F71DD007DCF60 /* AudioService.swift in Sources */,
 				EBF4A147252ED2CA003E3A44 /* SettingsViewController.swift in Sources */,
+				EB8325A62556EFF0005E02C1 /* FavoritesService.swift in Sources */,
 				EB7B85652537FAE000542D3C /* Word.swift in Sources */,
 				EB2F5E0D251F543A007DCF60 /* DetailViewController.swift in Sources */,
 				EBB3BC09251F2ADB006E0DC7 /* String.swift in Sources */,

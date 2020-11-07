@@ -51,8 +51,8 @@ final class SidebarViewController: UIViewController {
         static let statistics = UUID()
     }
     
-    private var collectionView: UICollectionView!
-    private var dataSource: UICollectionViewDiffableDataSource<SidebarSection, SidebarItem>!
+    private var collectionView: UICollectionView?
+    private var dataSource: UICollectionViewDiffableDataSource<SidebarSection, SidebarItem>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,9 +61,9 @@ final class SidebarViewController: UIViewController {
         setupCollectionView()
         setupDataSource()
         applyInitialSnapshot()
-        collectionView.selectItem(at: IndexPath(row: 1, section: 0),
-                                  animated: false,
-                                  scrollPosition: UICollectionView.ScrollPosition.centeredVertically)
+        collectionView?.selectItem(at: IndexPath(row: 1, section: 0),
+                                   animated: false,
+                                   scrollPosition: UICollectionView.ScrollPosition.centeredVertically)
     }
 }
 
@@ -77,13 +77,16 @@ private extension SidebarViewController {
     }
     
     func setupCollectionView() {
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
+        let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.delegate = self
         view.addSubview(collectionView)
+        self.collectionView = collectionView
     }
     
     func setupDataSource() {
+        guard let collectionView = collectionView else { return }
+        
         let headerRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, SidebarItem> {
             (cell, indexPath, item) in
             
@@ -200,9 +203,9 @@ private extension SidebarViewController {
     }
     
     func applyInitialSnapshot() {
-        dataSource.apply(librarySnapshot(), to: .library, animatingDifferences: false)
+        dataSource?.apply(librarySnapshot(), to: .library, animatingDifferences: false)
         // dataSource.apply(testsSnapshot(), to: .tests, animatingDifferences: false)
-        dataSource.apply(collectionsSnapshot(), to: .collections, animatingDifferences: false)
+        dataSource?.apply(collectionsSnapshot(), to: .collections, animatingDifferences: false)
     }
     
     private func didSelectLibraryItem(_ sidebarItem: SidebarItem, at indexPath: IndexPath) {
@@ -213,7 +216,7 @@ private extension SidebarViewController {
             let vc = ListAssembly(splitViewController: splitViewController).viewController()
             splitViewController.setViewController(vc.navigationController, for: .supplementary)
         case RowIdentifier.favorites:
-            let vc = ListAssembly(splitViewController: splitViewController).viewController()
+            let vc = FavoritesAssembly(splitViewController: splitViewController).viewController()
             splitViewController.setViewController(vc.navigationController, for: .supplementary)
         case RowIdentifier.settings:
             let vc = SettingsAssembly().viewController()
@@ -230,7 +233,7 @@ private extension SidebarViewController {
 extension SidebarViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let sidebarItem = dataSource.itemIdentifier(for: indexPath) else { return }
+        guard let sidebarItem = dataSource?.itemIdentifier(for: indexPath) else { return }
         
         switch indexPath.section {
         case SidebarSection.library.rawValue:
