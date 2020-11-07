@@ -51,6 +51,6 @@ extension EmptyViewController: UINavigationControllerDelegate {
         guard animated else { return }
         NotificationCenter.default.post(name: Notification.Name.infinitive,
                                         object: nil,
-                                        userInfo: ["infinitive": ""])
+                                        userInfo: [Notification.Name.infinitive: ""])
     }
 }

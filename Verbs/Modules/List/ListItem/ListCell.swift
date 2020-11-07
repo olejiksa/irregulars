@@ -13,6 +13,23 @@ final class ListCell: UITableViewCell {
     @IBOutlet private weak var infinitiveLabel: UILabel!
     @IBOutlet private weak var simplePastLabel: UILabel!
     @IBOutlet private weak var pastParticipleLabel: UILabel!
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        let scene = UIApplication.shared.connectedScenes.first
+        let sd = scene?.delegate as! SceneDelegate
+        guard let splitVc = sd.window?.rootViewController as? UISplitViewController,
+              !splitVc.isCollapsed else { return }
+        
+        if selected {
+            contentView.backgroundColor = .systemBlue
+            [infinitiveLabel, simplePastLabel, pastParticipleLabel].forEach { $0.textColor = .white }
+        } else {
+            contentView.backgroundColor = nil
+            [infinitiveLabel, simplePastLabel, pastParticipleLabel].forEach { $0.textColor = nil }
+        }
+    }
 }
 
 // MARK: - CellProtocol

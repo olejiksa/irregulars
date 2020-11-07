@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,9 +29,9 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="QJJ-5J-33a" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Z78-fJ-RHp"/>
+                <constraint firstItem="QJJ-5J-33a" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Z78-fJ-RHp"/>
                 <constraint firstItem="QJJ-5J-33a" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="2:3" id="bcb-Aw-70C"/>
-                <constraint firstItem="QJJ-5J-33a" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="q0p-gO-lbU"/>
+                <constraint firstItem="QJJ-5J-33a" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="10.75" id="q0p-gO-lbU"/>
             </constraints>
             <point key="canvasLocation" x="139" y="87"/>
         </view>

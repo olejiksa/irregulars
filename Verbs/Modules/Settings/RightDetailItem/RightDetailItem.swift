@@ -6,7 +6,7 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
-class RightDetailItem {
+final class RightDetailItem {
     
     let title: String
     var subtitle: String

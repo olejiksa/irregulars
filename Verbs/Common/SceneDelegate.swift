@@ -15,12 +15,18 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private let deeplinkService = DeeplinkService()
     
     private var splitViewController: UISplitViewController = {
-        let svc = SplitViewController()
-        let masterVc = ListAssembly().viewController(inside: svc)
-        let detailVc = EmptyViewController()
-        let detailNvc = UINavigationController(rootViewController: detailVc)
-        svc.viewControllers = [masterVc.navigationController, detailNvc].compactMap { $0 }
-        return svc
+        let splitViewController = SplitViewController()
+        let sidebarViewController = SidebarViewController()
+        let sidebarNavigationController = UINavigationController(rootViewController: sidebarViewController)
+        let secondaryViewController = EmptyViewController()
+        let secondaryNavigationController = UINavigationController(rootViewController: secondaryViewController)
+        let supplementaryViewController = ListAssembly().viewController(inside: splitViewController)
+        let tabbarViewController = TabBarBuilder().build(in: splitViewController)
+        splitViewController.setViewController(sidebarNavigationController, for: .primary)
+        splitViewController.setViewController(secondaryNavigationController, for: .secondary)
+        splitViewController.setViewController(supplementaryViewController.navigationController, for: .supplementary)
+        splitViewController.setViewController(tabbarViewController, for: .compact)
+        return splitViewController
     }()
 
     func scene(_ scene: UIScene,

@@ -37,10 +37,6 @@ final class ListPresenter: NSObject {
         subscribe()
     }
     
-    deinit {
-        unsubscribe()
-    }
-    
     @objc func goToTests() {
         let vc = TestsAssembly().viewController()
         let nvc = UINavigationController(rootViewController: vc)
@@ -49,33 +45,7 @@ final class ListPresenter: NSObject {
     }
     
     @objc func goToSettings() {
-        let shouldRegularVerbsBeShownBlock: ((Bool) -> ()) = { [weak self] in
-            guard let self = self else { return }
-            
-            self.verbsService.shouldRegularVerbsBeShown = $0
-            self.viewController?.reloadData()
-            self.didSelectedItemSet()
-        }
-        
-        let shouldDerivedFormsBeShownBlock: ((Bool) -> ()) = { [weak self] in
-            guard let self = self else { return }
-            
-            self.verbsService.shouldDerivedFormsBeShown = $0
-            self.viewController?.reloadData()
-            self.didSelectedItemSet()
-        }
-        
-        let listViewBlock: ((Settings.ListView) -> ()) = { [weak self] in
-            guard let self = self else { return }
-            
-            self.verbsService.listView = $0
-            self.viewController?.reloadData()
-            self.didSelectedItemSet()
-        }
-                                             
-        router?.goToSettings(regularVerbsBlock: shouldRegularVerbsBeShownBlock,
-                             derivedFormsBlock: shouldDerivedFormsBeShownBlock,
-                             listViewBlock: listViewBlock)
+        router?.goToSettings()
     }
 }
 
@@ -99,15 +69,18 @@ private extension ListPresenter {
                                                selector: #selector(didPay),
                                                name: Notification.Name.paid,
                                                object: nil)
-    }
-    
-    func unsubscribe() {
-        NotificationCenter.default.removeObserver(self,
-                                                  name: Notification.Name.infinitive,
-                                                  object: nil)
-        NotificationCenter.default.removeObserver(self,
-                                                  name: Notification.Name.paid,
-                                                  object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(willUpdateRegulars),
+                                               name: Notification.Name.regulars,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(willUpdateDerivatives),
+                                               name: Notification.Name.derivatives,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(willUpdateList),
+                                               name: Notification.Name.list,
+                                               object: nil)
     }
     
     func didSelectedItemSet() {
@@ -123,6 +96,27 @@ private extension ListPresenter {
     
     @objc func didPay(_ notification: Notification) {
         viewController?.getPaid()
+    }
+    
+    @objc func willUpdateRegulars(_ notification: Notification) {
+        let value = notification.userInfo?[Notification.Name.regulars] as? Bool ?? false
+        verbsService.shouldRegularVerbsBeShown = value
+        viewController?.reloadData()
+        didSelectedItemSet()
+    }
+    
+    @objc func willUpdateDerivatives(_ notification: Notification) {
+        let value = notification.userInfo?[Notification.Name.derivatives] as? Bool ?? false
+        verbsService.shouldDerivedFormsBeShown = value
+        viewController?.reloadData()
+        didSelectedItemSet()
+    }
+    
+    @objc func willUpdateList(_ notification: Notification) {
+        let value = notification.userInfo?[Notification.Name.list] as? Settings.ListView ?? .forms
+        verbsService.listView = value
+        viewController?.reloadData()
+        didSelectedItemSet()
     }
 }
 

@@ -11,8 +11,9 @@ import UIKit
 final class SwitchCell: UITableViewCell {
 
     @IBOutlet private weak var contentLabel: UILabel!
-    @IBOutlet private weak var isOn: UISwitch!
+    @IBOutlet private weak var toggleSwitch: UISwitch!
     
+    private var item: SwitchItem?
     private var actionBlock: ((Bool) -> ())?
     
     override func awakeFromNib() {
@@ -27,7 +28,8 @@ final class SwitchCell: UITableViewCell {
 private extension SwitchCell {
     
     @IBAction func switchValueChanged() {
-        actionBlock?(isOn.isOn)
+        actionBlock?(toggleSwitch.isOn)
+        item?.isOn = toggleSwitch.isOn
     }
 }
 
@@ -39,13 +41,14 @@ extension SwitchCell: CellProtocol {
     
     func setup(with item: ItemProtocol) {
         guard let item = item as? SwitchItem else { return }
+        self.item = item
         
         contentLabel.text = item.text
-        isOn.isOn = item.isOn
+        toggleSwitch.isOn = item.isOn
         actionBlock = item.actionBlock
         
         isUserInteractionEnabled = item.isEnabled
         contentLabel?.isEnabled = item.isEnabled
-        isOn?.isEnabled = item.isEnabled
+        toggleSwitch?.isEnabled = item.isEnabled
     }
 }

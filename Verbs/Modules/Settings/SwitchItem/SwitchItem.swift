@@ -6,12 +6,22 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
-struct SwitchItem {
+final class SwitchItem {
     
     let text: String
     var isOn: Bool
     let isEnabled: Bool
     let actionBlock: ((Bool) -> ())
+    
+    init(text: String,
+         isOn: Bool,
+         isEnabled: Bool,
+         actionBlock: @escaping ((Bool) -> ())) {
+        self.text = text
+        self.isOn = isOn
+        self.isEnabled = isEnabled
+        self.actionBlock = actionBlock
+    }
 }
 
 // MARK: - ItemProtocol

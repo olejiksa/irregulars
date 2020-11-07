@@ -13,9 +13,8 @@ final class ListViewController: UIViewController {
     private let presenter: ListPresenter
     private let searchController = UISearchController(searchResultsController: nil)
     private var keyboardService: KeyboardService?
-    
-    @IBOutlet private weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var tableView: UITableView!
+    private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
+    private var tableView: UITableView?
     
     init(presenter: ListPresenter) {
         self.presenter = presenter
@@ -30,11 +29,10 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupKeyboardService()
         setupNavigationBar()
-        setupNavigationBarButtons()
         setupTableView()
         setupSearchController()
+        setupKeyboardService()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,28 +41,28 @@ final class ListViewController: UIViewController {
         guard animated else { return }
         NotificationCenter.default.post(name: Notification.Name.infinitive,
                                         object: nil,
-                                        userInfo: ["infinitive": ""])
+                                        userInfo: [Notification.Name.infinitive: ""])
     }
     
     func reloadData() {
-        tableView.reloadData()
+        tableView?.reloadData()
     }
     
     func getPaid() {
-        tableView.reloadData()
+        tableView?.reloadData()
         setupSearchController()
     }
     
     func selectRow(at indexPath: IndexPath?) {
         guard let indexPath = indexPath else {
-            if let indexPathForSelectedRow = tableView.indexPathForSelectedRow {
-                tableView.deselectRow(at: indexPathForSelectedRow, animated: true)
+            if let indexPathForSelectedRow = tableView?.indexPathForSelectedRow {
+                tableView?.deselectRow(at: indexPathForSelectedRow, animated: true)
             }
             
             return
         }
         
-        tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+        tableView?.selectRow(at: indexPath, animated: true, scrollPosition: .none)
     }
 }
 
@@ -77,29 +75,38 @@ private extension ListViewController {
     }
     
     func setupNavigationBar() {
-        navigationItem.title = "Verbs".localized
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
-    func setupNavigationBarButtons() {
-        let tests = UIBarButtonItem(title: "Tests".localized,
-                                    style: .plain,
-                                    target: presenter,
-                                    action: #selector(presenter.goToTests))
-        navigationItem.leftBarButtonItem = tests
-        
-        let settings = UIBarButtonItem(image: SystemIcon.gear.image,
-                                       style: .plain,
-                                       target: presenter,
-                                       action: #selector(presenter.goToSettings))
-        navigationItem.rightBarButtonItem = settings
+        if splitViewController?.isCollapsed == true {
+            navigationItem.title = "Verbs".localized
+            navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            navigationItem.title = "All".localized
+            navigationItem.largeTitleDisplayMode = .never
+        }
     }
     
     func setupTableView() {
+        let tableViewStyle: UITableView.Style = splitViewController?.isCollapsed == true ? .plain : .insetGrouped
+        let tableView = UITableView(frame: .zero, style: tableViewStyle)
+        
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+
+        let keyboardHeightLayoutConstraint = tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            keyboardHeightLayoutConstraint
+        ])
+        
         tableView.dataSource = presenter
         tableView.delegate = presenter
         
         tableView.register(ListCell.self, SubtitleCell.self)
+        
+        self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
+        self.tableView = tableView
     }
     
     func setupSearchController() {
@@ -110,5 +117,19 @@ private extension ListViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         
         navigationItem.searchController = searchController
+        
+        if splitViewController?.isCollapsed == false {
+            navigationItem.hidesSearchBarWhenScrolling = false
+        }
+    }
+}
+
+// MARK: - Scrollable
+
+extension ListViewController: Scrollable {
+    
+    func scrollToTop() {
+        let indexPath = IndexPath(row: 0, section: 0)
+        tableView?.scrollToRow(at: indexPath, at: .top, animated: true)
     }
 }

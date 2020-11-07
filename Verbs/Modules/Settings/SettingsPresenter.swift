@@ -19,23 +19,14 @@ final class SettingsPresenter: NSObject {
     private let mailService: MailService
     private let userDefaultsService: UserDefaultsService
     private var settings: Settings
-    private let shouldRegularVerbsBeShownBlock: (Bool) -> ()
-    private let shouldDerivedFormsBeShownBlock: (Bool) -> ()
-    private let listViewBlock: (Settings.ListView) -> ()
     
     init(languageService: LanguageService,
          mailService: MailService,
-         userDefaultsService: UserDefaultsService,
-         shouldRegularVerbsBeShownBlock: @escaping (Bool) -> (),
-         shouldDerivedFormsBeShownBlock: @escaping (Bool) -> (),
-         listViewBlock: @escaping (Settings.ListView) -> ()) {
+         userDefaultsService: UserDefaultsService) {
         self.languageService = languageService
         self.mailService = mailService
         self.userDefaultsService = userDefaultsService
         self.settings = userDefaultsService.load() ?? .init()
-        self.shouldRegularVerbsBeShownBlock = shouldRegularVerbsBeShownBlock
-        self.shouldDerivedFormsBeShownBlock = shouldDerivedFormsBeShownBlock
-        self.listViewBlock = listViewBlock
         super.init()
         setupItems()
     }
@@ -107,35 +98,41 @@ private extension SettingsPresenter {
     func didRegularVerbsOptionChange(_ value: Bool) {
         settings.shouldRegularVerbsBeShown = value
         userDefaultsService.save(settings)
-        shouldRegularVerbsBeShownBlock(value)
+        NotificationCenter.default.post(name: Notification.Name.regulars,
+                                        object: nil,
+                                        userInfo: [Notification.Name.regulars: value])
     }
     
     func didDerivedFormsOptionChange(_ value: Bool) {
         settings.shouldDerivedFormsBeShown = value
         userDefaultsService.save(settings)
-        shouldDerivedFormsBeShownBlock(value)
+        NotificationCenter.default.post(name: Notification.Name.derivatives,
+                                        object: nil,
+                                        userInfo: [Notification.Name.derivatives: value])
     }
     
     func didListViewChange(_ sender: ItemProtocol) {
         guard let item = sender as? RightDetailItem else { return }
         settings.listView = Settings.ListView(description: item.subtitle)
         userDefaultsService.save(settings)
-        listViewBlock(settings.listView)
+        NotificationCenter.default.post(name: Notification.Name.list,
+                                        object: nil,
+                                        userInfo: [Notification.Name.list: settings.listView])
         viewController?.reloadData()
     }
     
     func willShowLanguageSettings(_ sender: ItemProtocol) {
-        guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+        guard let url = URL(string: UIApplication.openSettingsURLString),
+              UIApplication.shared.canOpenURL(url) else { return }
         UIApplication.shared.open(url)
     }
     
     func willRate(_ sender: ItemProtocol) {
         guard let productURL = URL(string: "https://itunes.apple.com/app/id958625272") else { return }
         var components = URLComponents(url: productURL, resolvingAgainstBaseURL: false)
-        components?.queryItems = [ URLQueryItem(name: "action", value: "write-review") ]
+        components?.queryItems = [URLQueryItem(name: "action", value: "write-review")]
         guard let writeReviewURL = components?.url,
-              UIApplication.shared.canOpenURL(writeReviewURL)
-        else { return }
+              UIApplication.shared.canOpenURL(writeReviewURL) else { return }
         UIApplication.shared.open(writeReviewURL)
     }
     
@@ -150,6 +147,7 @@ private extension SettingsPresenter {
         let configuration = SFSafariViewController.Configuration()
         configuration.entersReaderIfAvailable = true
         let vc = SFSafariViewController(url: urlUnwrapped, configuration: configuration)
+        vc.modalPresentationStyle = .pageSheet
         viewController?.present(vc, animated: true)
     }
     

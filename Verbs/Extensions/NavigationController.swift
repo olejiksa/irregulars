@@ -20,6 +20,6 @@ extension UINavigationController {
             return
         }
         
-        splitViewController.showDetailViewController(viewController, sender: self)
+        (splitViewController.viewController(for: .secondary) as? UINavigationController)?.pushViewController(viewController, animated: true)
     }
 }

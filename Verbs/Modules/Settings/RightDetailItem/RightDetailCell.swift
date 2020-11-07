@@ -33,14 +33,14 @@ final class RightDetailCell: UITableViewCell {
         let doneButton = UIBarButtonItem(title: "Done".localized,
                                          style: .done,
                                          target: self,
-                                         action: #selector(doneTapped))
+                                         action: #selector(didDoneTap))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
                                           target: nil,
                                           action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel".localized,
                                            style: .plain,
                                            target: self,
-                                           action: #selector(cancelTapped))
+                                           action: #selector(didCancelTap))
         toolbar.items = [cancelButton, spaceButton, doneButton]
         return toolbar
     }
@@ -50,7 +50,7 @@ final class RightDetailCell: UITableViewCell {
 
 private extension RightDetailCell {
     
-    @objc func doneTapped() {
+    @objc func didDoneTap() {
         guard let subtitle = selectedValue else { return }
         self.item?.subtitle = subtitle
         guard let item = item else { return }
@@ -58,7 +58,7 @@ private extension RightDetailCell {
         resignFirstResponder()
     }
 
-    @objc func cancelTapped() {
+    @objc func didCancelTap() {
         selectedValue = item?.subtitle
         let index = item?.subitems?.firstIndex { $0 == selectedValue } ?? 0
         picker.selectRow(index, inComponent: 0, animated: true)

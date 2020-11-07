@@ -24,12 +24,8 @@ final class ListRouter {
         navigationController?.push(vc, in: splitViewController)
     }
     
-    func goToSettings(regularVerbsBlock shouldRegularVerbsBeShownBlock: @escaping (Bool) -> (),
-                      derivedFormsBlock shouldDerivedFormsBeShownBlock: @escaping (Bool) -> (),
-                      listViewBlock: @escaping (Settings.ListView) -> ()) {
-        let assembly = SettingsAssembly(shouldRegularVerbsBeShownBlock: shouldRegularVerbsBeShownBlock,
-                                        shouldDerivedFormsBeShownBlock: shouldDerivedFormsBeShownBlock,
-                                        listViewBlock: listViewBlock)
+    func goToSettings() {
+        let assembly = SettingsAssembly()
         let vc = assembly.viewController()
         let nvc = UINavigationController(rootViewController: vc)
         nvc.modalPresentationStyle = .formSheet

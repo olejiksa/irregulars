@@ -12,9 +12,8 @@ final class SettingsViewController: UIViewController {
     
     private let presenter: SettingsPresenter
     private var keyboardService: KeyboardService?
-
-    @IBOutlet private weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var tableView: UITableView!
+    private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
+    private var tableView: UITableView?
     
     init(presenter: SettingsPresenter) {
         self.presenter = presenter
@@ -35,7 +34,7 @@ final class SettingsViewController: UIViewController {
     }
     
     func reloadData() {
-        tableView.reloadData()
+        tableView?.reloadData()
     }
 }
 
@@ -46,17 +45,38 @@ private extension SettingsViewController {
     func setupNavigationBar() {
         navigationItem.title = "Settings".localized
         navigationItem.largeTitleDisplayMode = .never
-        
-        let closeButton = UIBarButtonItem(barButtonSystemItem: .close,
-                                          target: self,
-                                          action: #selector(didCloseTap))
-        navigationItem.rightBarButtonItem = closeButton
+
+        if splitViewController == nil {
+            let closeButton = UIBarButtonItem(barButtonSystemItem: .close,
+                                              target: self,
+                                              action: #selector(didCloseTap))
+            navigationItem.rightBarButtonItem = closeButton
+        }
     }
     
     func setupTableView() {
+        let tableViewStyle: UITableView.Style = splitViewController?.isCollapsed == true ? .grouped : .insetGrouped
+        let tableView = UITableView(frame: .zero, style: tableViewStyle)
+        
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+
+        let keyboardHeightLayoutConstraint = tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            keyboardHeightLayoutConstraint
+        ])
+        
         tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
+        
         tableView.register(SwitchCell.self, DisclosureCell.self, RightDetailCell.self)
+        
+        self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
+        self.tableView = tableView
     }
     
     func setupKeyboardService() {
@@ -65,5 +85,15 @@ private extension SettingsViewController {
     
     @objc func didCloseTap() {
         dismiss(animated: true)
+    }
+}
+
+// MARK: - Scrollable
+
+extension SettingsViewController: Scrollable {
+    
+    func scrollToTop() {
+        let indexPath = IndexPath(row: 0, section: 0)
+        tableView?.scrollToRow(at: indexPath, at: .top, animated: true)
     }
 }

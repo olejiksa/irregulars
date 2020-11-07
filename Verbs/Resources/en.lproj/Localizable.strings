@@ -6,7 +6,7 @@
   Copyright © 2020 Oleg Samoylov. All rights reserved.
 */
 
-"Thank you" = "Thank you";
+"Thank you" = "Thank you, you're great!";
 "Listen to pronunciation" = "Listen to pronunciation";
 "See a transcription" = "See a transcription";
 "Find words faster using search" = "Find words faster using search";
@@ -44,6 +44,15 @@
 "Privacy policy" = "Privacy policy";
 "Share the app" = "Share the app";
 "Edition" = "Edition";
+"All" = "All";
+"Favorites" = "Favorites";
+"Statistics" = "Statistics";
+"Three forms" = "Three forms";
+"Letters" = "Letters";
+"Sentences" = "Sentences";
+"Pronunciation" = "Pronunciation";
+"Upgrade to Pro" = "Upgrade to Pro";
+"More" = "More";
 
 // Irregular Verbs
 
@@ -264,6 +273,7 @@
 "understand" = "understand";
 "undertake" = "undertake";
 "upset" = "upset";
+"vex" = "vex";
 "wake" = "wake";
 "waylay" = "waylay";
 "wear" = "wear";

@@ -49,17 +49,43 @@ private extension DetailViewController {
     func setupNavigationBar() {
         navigationItem.title = presenter.title
         navigationItem.largeTitleDisplayMode = .never
+        
+        let favoriteButton = UIBarButtonItem(image: SystemIcon.star.image,
+                                             style: .plain,
+                                             target: self,
+                                             action: #selector(didFavoriteTap))
+        navigationItem.rightBarButtonItem = favoriteButton
     }
     
     func setupTableView() {
+        let tableViewStyle: UITableView.Style = splitViewController?.isCollapsed == true ? .grouped : .insetGrouped
+        let tableView = UITableView(frame: .zero, style: tableViewStyle)
+        tableView.allowsSelection = false
+        
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
         tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         
         tableView.register(DetailCell.self, TranslationCell.self)
+        
+        self.tableView = tableView
     }
     
     func setupDelegate() {
         navigationController?.delegate = self
+    }
+    
+    @objc func didFavoriteTap() {
+        
     }
 }
 
@@ -74,6 +100,6 @@ extension DetailViewController: UINavigationControllerDelegate {
         let title = viewController.navigationItem.title ?? ""
         NotificationCenter.default.post(name: Notification.Name.infinitive,
                                         object: nil,
-                                        userInfo: ["infinitive": title])
+                                        userInfo: [Notification.Name.infinitive: title])
     }
 }

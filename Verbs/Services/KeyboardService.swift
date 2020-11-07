@@ -26,10 +26,6 @@ final class KeyboardService {
                                                name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
     }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
 }
 
 // MARK: - Private
@@ -54,7 +50,7 @@ private extension KeyboardService {
             keyboardHeightLayoutConstraint?.constant = 0
         } else {
             let newHeight = view.bounds.size.height - convertedFrame.origin.y
-            keyboardHeightLayoutConstraint?.constant = newHeight
+            keyboardHeightLayoutConstraint?.constant = -newHeight
         }
         
         UIView.animate(withDuration: duration,

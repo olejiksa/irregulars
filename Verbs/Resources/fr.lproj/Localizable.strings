@@ -44,6 +44,15 @@
 "Privacy policy" = "Politique de confidentialité";
 "Share the app" = "Partager l'appli";
 "Edition" = "Édition";
+"All" = "Tout";
+"Favorites" = "Favoris";
+"Statistics" = "Statistiques";
+"Three forms" = "Trois formes";
+"Letters" = "Lettres";
+"Sentences" = "Phrases";
+"Pronunciation" = "Prononciation";
+"Upgrade to Pro" = "Passer à Pro";
+"More" = "Plus";
 
 // Irregular Verbs
 
@@ -259,11 +268,12 @@
 "throw" = "jeter";
 "thrust" = "enfoncer";
 "tread" = "piétiner quelque chose";
-"typeset" = "typeset";
+"typeset" = "composer";
 "undergo" = "subir";
 "understand" = "comprendre";
 "undertake" = "entreprendre";
 "upset" = "bouleverser, renverser";
+"vex" = "vexer";
 "wake" = "réveiller";
 "waylay" = "arrêter";
 "wear" = "porter (avoir sur soi)";

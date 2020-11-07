@@ -36,12 +36,10 @@ final class BigButton: UIButton {
         }
     }
     
-    
     // MARK: Private Properties
     
     private var originalButtonText: String?
     private var activityIndicator: UIActivityIndicatorView?
-    
     
     // MARK: Public
     
@@ -60,7 +58,6 @@ final class BigButton: UIButton {
         setTitle(originalButtonText, for: .normal)
         activityIndicator?.stopAnimating()
     }
-    
     
     // MARK: Private
     

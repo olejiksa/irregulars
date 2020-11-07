@@ -21,7 +21,7 @@
             "value": "abided",
             "transcription": "/əˈbʌɪdɪd/"
         }],
-        "hasRegular": false,
+        "hasRegular": true,
         "isDerived": false
     },
     {
@@ -919,7 +919,7 @@
         }],
         "pastParticiple": [{
             "value": "drawn",
-            "transcription": "/drɔnː/"
+            "transcription": "/drɔːn/"
         }],
         "hasRegular": false,
         "isDerived": false
@@ -1173,7 +1173,7 @@
         },
         "simplePast": [{
             "value": "forbade",
-            "transcription": "/fə'bad, fə'beɪd/"
+            "transcription": "/fə'bæd, fə'beɪd/"
         }],
         "pastParticiple": [{
             "value": "forbidden",
@@ -2105,7 +2105,7 @@
             "value": "misspelled",
             "transcription": "/ˌmɪs'spɛld/"
         }],
-        "hasRegular": false,
+        "hasRegular": true,
         "isDerived": true
     },
     {
@@ -3755,6 +3755,28 @@
     },
     {
         "infinitive": {
+            "value": "vex",
+            "transcription": "/vɛks/"
+        },
+        "simplePast": [{
+            "value": "vext",
+            "transcription": "/vɛkst/"
+        }, {
+            "value": "vexed",
+            "transcription": "/vɛkst/"
+        }],
+        "pastParticiple": [{
+            "value": "vext",
+            "transcription": "/vɛkst/"
+        }, {
+            "value": "vexed",
+            "transcription": "/vɛkst/"
+        }],
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
             "value": "wake",
             "transcription": "/weɪk/"
         },
@@ -3880,7 +3902,7 @@
             "value": "wended",
             "transcription": "/'wɛndəd/"
         }],
-        "hasRegular": false,
+        "hasRegular": true,
         "isDerived": false
     },
     {
@@ -3960,7 +3982,7 @@
         }],
         "pastParticiple": [{
             "value": "withdrawn",
-            "transcription": "/wɪð'drɔnː/"
+            "transcription": "/wɪð'drɔːn/"
         }],
         "hasRegular": false,
         "isDerived": true
@@ -4035,17 +4057,17 @@
             "transcription": "/zɪŋk/"
         },
         "simplePast": [{
-            "value": "zinced",
+            "value": "zincked",
             "transcription": "/'zɪŋk(ə)d/"
         }, {
-            "value": "zincked",
+            "value": "zinced",
             "transcription": "/'zɪŋk(ə)d/"
         }],
         "pastParticiple": [{
-            "value": "zinced",
+            "value": "zincked",
             "transcription": "/'zɪŋk(ə)d/"
         }, {
-            "value": "zincked",
+            "value": "zinced",
             "transcription": "/'zɪŋk(ə)d/"
         }],
         "hasRegular": true,

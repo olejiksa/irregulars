@@ -12,4 +12,7 @@ extension Notification.Name {
 
     static let infinitive = Notification.Name("infinitive")
     static let paid = Notification.Name("paid")
+    static let regulars = Notification.Name("regulars")
+    static let derivatives = Notification.Name("derivatives")
+    static let list = Notification.Name("list")
 }
