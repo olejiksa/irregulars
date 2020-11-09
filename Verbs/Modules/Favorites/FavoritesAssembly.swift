@@ -20,7 +20,7 @@ final class FavoritesAssembly: AssemblyProtocol {
     
     func viewController() -> ViewController {
         let presenter = FavoritesPresenter(languageService: .init(),
-                                           verbsService: .init(),
+                                           favoritesService: Locator.favoritesService,
                                            userDefaultsService: .init())
         let viewController = FavoritesViewController(presenter: presenter)
         let navigationController = UINavigationController(rootViewController: viewController)

@@ -67,6 +67,8 @@ final class VerbsService {
     }
 }
 
+// MARK: - Private
+
 private extension VerbsService {
     
     func setItems() {

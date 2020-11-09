@@ -16,4 +16,5 @@ extension Notification.Name {
     static let regulars = Notification.Name("regulars")
     static let derivatives = Notification.Name("derivatives")
     static let list = Notification.Name("list")
+    static let reloadData = Notification.Name("reloadData")
 }

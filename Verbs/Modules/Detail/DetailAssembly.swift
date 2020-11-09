@@ -24,7 +24,9 @@ final class DetailAssembly: AssemblyProtocol {
         let presenter = DetailPresenter(audioService: .init(),
                                         languageService: .init(),
                                         verb: verb)
-        let viewConroller = DetailViewController(presenter: presenter, isOpenedByDeeplink: isOpenedByDeeplink)
+        let viewConroller = DetailViewController(presenter: presenter,
+                                                 verb: verb,
+                                                 isOpenedByDeeplink: isOpenedByDeeplink)
         presenter.viewController = viewConroller
         return viewConroller
     }

@@ -11,16 +11,22 @@ import UIKit
 final class DetailViewController: UIViewController {
 
     private let presenter: DetailPresenter
+    private let verb: Verb
     private let isOpenedByDeeplink: Bool
-    
-    @IBOutlet private weak var tableView: UITableView!
+    private var favoriteButton: UIBarButtonItem?
+    private var favorites = Locator.favorites
+    private var tableView: UITableView?
     
     init(presenter: DetailPresenter,
+         verb: Verb,
          isOpenedByDeeplink: Bool = false) {
         self.presenter = presenter
+        self.verb = verb
         self.isOpenedByDeeplink = isOpenedByDeeplink
         
         super.init(nibName: nil, bundle: nil)
+        
+        hidesBottomBarWhenPushed = true
     }
     
     required init?(coder: NSCoder) {
@@ -50,10 +56,12 @@ private extension DetailViewController {
         navigationItem.title = presenter.title
         navigationItem.largeTitleDisplayMode = .never
         
-        let favoriteButton = UIBarButtonItem(image: SystemIcon.star.image,
-                                             style: .plain,
-                                             target: self,
-                                             action: #selector(didFavoriteTap))
+        let isFavorite = favorites.verbs.contains(verb)
+        let image = isFavorite ? SystemIcon.starFill.image : SystemIcon.star.image
+        favoriteButton = UIBarButtonItem(image: image,
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(didFavoriteTap))
         navigationItem.rightBarButtonItem = favoriteButton
     }
     
@@ -85,7 +93,22 @@ private extension DetailViewController {
     }
     
     @objc func didFavoriteTap() {
-        
+        switch favoriteButton?.image {
+        case SystemIcon.star.image:
+            favoriteButton?.image = SystemIcon.starFill.image
+            favorites.add(verb)
+            NotificationCenter.default.post(name: Notification.Name.reloadData,
+                                            object: nil,
+                                            userInfo: nil)
+        case SystemIcon.starFill.image:
+            favoriteButton?.image = SystemIcon.star.image
+            favorites.remove(verb)
+            NotificationCenter.default.post(name: Notification.Name.reloadData,
+                                            object: nil,
+                                            userInfo: nil)
+        default:
+            break
+        }
     }
 }
 

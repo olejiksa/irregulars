@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Verb: Decodable {
+struct Verb: Codable {
     
     let infinitive: Word
     let simplePast: [Word]

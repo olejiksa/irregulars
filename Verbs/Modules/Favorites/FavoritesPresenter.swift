@@ -14,7 +14,7 @@ final class FavoritesPresenter: NSObject {
     var router: FavoritesRouter?
     
     private let languageService: LanguageService
-    private let verbsService: FavoritesService
+    private let favoritesService: FavoritesService
     private let userDefaultsService: UserDefaultsService
     private var isSearchActive = false
     
@@ -25,10 +25,10 @@ final class FavoritesPresenter: NSObject {
     }
     
     init(languageService: LanguageService,
-         verbsService: FavoritesService,
+         favoritesService: FavoritesService,
          userDefaultsService: UserDefaultsService) {
         self.languageService = languageService
-        self.verbsService = verbsService
+        self.favoritesService = favoritesService
         self.userDefaultsService = userDefaultsService
         
         super.init()
@@ -55,9 +55,7 @@ private extension FavoritesPresenter {
     
     func loadSettings() {
         guard let settings = userDefaultsService.load() else { return }
-        verbsService.shouldRegularVerbsBeShown = settings.shouldRegularVerbsBeShown
-        verbsService.shouldDerivedFormsBeShown = settings.shouldDerivedFormsBeShown
-        verbsService.listView = settings.listView
+        favoritesService.listView = settings.listView
     }
     
     func subscribe() {
@@ -70,23 +68,19 @@ private extension FavoritesPresenter {
                                                name: Notification.Name.paid,
                                                object: nil)
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(willUpdateRegulars),
-                                               name: Notification.Name.regulars,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(willUpdateDerivatives),
-                                               name: Notification.Name.derivatives,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
                                                selector: #selector(willUpdateList),
                                                name: Notification.Name.list,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(willReloadData),
+                                               name: Notification.Name.reloadData,
                                                object: nil)
     }
     
     func didSelectedItemSet() {
         guard !isSearchActive else { return }
         
-        let indexPath = verbsService.indexPath(of: infinitive)
+        let indexPath = favoritesService.indexPath(of: infinitive)
         viewController?.selectRow(at: indexPath)
     }
     
@@ -98,23 +92,14 @@ private extension FavoritesPresenter {
         viewController?.getPaid()
     }
     
-    @objc func willUpdateRegulars(_ notification: Notification) {
-        let value = notification.userInfo?[Notification.Name.regulars] as? Bool ?? false
-        verbsService.shouldRegularVerbsBeShown = value
-        viewController?.reloadData()
-        didSelectedItemSet()
-    }
-    
-    @objc func willUpdateDerivatives(_ notification: Notification) {
-        let value = notification.userInfo?[Notification.Name.derivatives] as? Bool ?? false
-        verbsService.shouldDerivedFormsBeShown = value
-        viewController?.reloadData()
-        didSelectedItemSet()
-    }
-    
     @objc func willUpdateList(_ notification: Notification) {
         let value = notification.userInfo?[Notification.Name.list] as? Settings.ListView ?? .forms
-        verbsService.listView = value
+        favoritesService.listView = value
+        viewController?.reloadData()
+        didSelectedItemSet()
+    }
+    
+    @objc func willReloadData(_ notification: Notification) {
         viewController?.reloadData()
         didSelectedItemSet()
     }
@@ -126,26 +111,43 @@ extension FavoritesPresenter: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         let count = !isSearchActive
-            ? verbsService.items.count
-            : (verbsService.searchedItems.count > 0 ? 1 : 0)
+            ? favoritesService.groupedItems.count
+            : (favoritesService.searchedItems.count > 0 ? 1 : 0)
         tableView.separatorStyle = count > 0 ? .singleLine : .none
         return count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         !isSearchActive
-            ? verbsService.items.count
-            : verbsService.searchedItems.count
+            ? favoritesService.groupedItems[section].count
+            : favoritesService.searchedItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let verb = !isSearchActive
-            ? verbsService.items[indexPath.row]
-            : verbsService.searchedItems[indexPath.row]
-        let item: ItemProtocol = verbsService.listView == .forms || !languageService.hasTranslation ?
+            ? favoritesService.groupedItems[indexPath.section][indexPath.row]
+            : favoritesService.searchedItems[indexPath.row]
+        let item: ItemProtocol = favoritesService.listView == .forms || !languageService.hasTranslation ?
             ListItem(verb: verb) :
             SubtitleItem(title: verb.infinitive.value, subtitle: verb.translation)
         return tableView.dequeueReusableCell(for: item, at: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard !isSearchActive else { return nil }
+        let items = favoritesService.groupedItems[section]
+        guard let letter = items.first?.infinitive.value.first else { return nil }
+        return letter.uppercased()
+    }
+    
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        guard !isSearchActive && FeatureToggle.isPaid else { return nil }
+        let set = Set(favoritesService.items.compactMap { item -> String? in
+            guard let character = item.infinitive.value.first else { return nil }
+            return character.uppercased()
+        })
+        
+        return Array(set).sorted()
     }
 }
 
@@ -159,8 +161,8 @@ extension FavoritesPresenter: UITableViewDelegate {
         }
 
         let verb = !isSearchActive
-            ? verbsService.items[indexPath.row]
-            : verbsService.searchedItems[indexPath.row]
+            ? favoritesService.groupedItems[indexPath.section][indexPath.row]
+            : favoritesService.searchedItems[indexPath.row]
         
         guard infinitive != verb.infinitive.value else { return }
         router?.goToDetail(with: verb)
@@ -173,7 +175,7 @@ extension FavoritesPresenter: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else { return }
-        verbsService.searchText = searchText
+        favoritesService.searchText = searchText
         viewController?.reloadData()
     }
 }

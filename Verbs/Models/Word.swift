@@ -6,7 +6,7 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
-struct Word: Decodable {
+struct Word: Codable {
     
     let value: String
     let transcription: String

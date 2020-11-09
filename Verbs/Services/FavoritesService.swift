@@ -11,6 +11,7 @@ import Foundation
 final class FavoritesService {
     
     private let parser = JSONParser<Verb>()
+    private var favorites: Favorites?
     
     var searchText = ""
     
@@ -26,27 +27,19 @@ final class FavoritesService {
     var randomItem: Verb? { items.randomElement() }
 
     var items: [Verb] = []
-    
-    var shouldRegularVerbsBeShown: Bool = true {
-        didSet {
-            setItems()
-        }
-    }
-    
-    var shouldDerivedFormsBeShown: Bool = true {
-        didSet {
-            setItems()
-        }
-    }
+    var groupedItems: [[Verb]] = []
     
     var listView: Settings.ListView = .forms {
         didSet {
             setItems()
+            setGroupedItems()
         }
     }
     
     init() {
+        setupFavorites()
         setItems()
+        setGroupedItems()
     }
     
     func indexPath(of infinitive: String?) -> IndexPath? {
@@ -61,22 +54,37 @@ final class FavoritesService {
     }
 }
 
+// MARK: - Private
+
 private extension FavoritesService {
     
+    func setupFavorites() {
+        favorites = Locator.favorites
+        favorites?.didUpdateBlock = { [weak self] in
+            self?.setItems()
+            self?.setGroupedItems()
+        }
+    }
+    
     func setItems() {
-        var set: Set<Verb> = []
-       
-        if !shouldRegularVerbsBeShown {
-            let elements = set.filter { $0.hasRegular }
-            elements.forEach { set.remove($0) }
+        guard let favorites = favorites else { return }
+        let set = Set(parser.read(from: "irregulars"))
+        items = Array(set.intersection(favorites.verbs)).sorted(by: <)
+    }
+    
+    func setGroupedItems() {
+        var grouped = [[Verb]]()
+        var letter: Character?
+        var index = -1
+        for item in items {
+            if item.infinitive.value.first != letter {
+                letter = item.infinitive.value.first
+                grouped.append([Verb]())
+                index += 1
+            }
+            grouped[index].append(item)
         }
         
-        if !shouldDerivedFormsBeShown {
-            let elements = set.filter { $0.isDerived }
-            elements.forEach { set.remove($0) }
-        }
-        
-        items = Array(set).sorted(by: <)
+        groupedItems = grouped
     }
 }
-
