@@ -36,17 +36,6 @@ final class ListPresenter: NSObject {
         loadSettings()
         subscribe()
     }
-    
-    @objc func goToTests() {
-        let vc = TestsAssembly().viewController()
-        let nvc = UINavigationController(rootViewController: vc)
-        nvc.modalPresentationStyle = .formSheet
-        viewController?.present(nvc, animated: true)
-    }
-    
-    @objc func goToSettings() {
-        router?.goToSettings()
-    }
 }
 
 // MARK: - Private

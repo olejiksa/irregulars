@@ -8,6 +8,5 @@
 
 struct FeatureToggle {
     
-    static var isPaid = true
-    static var areTestsAvailable = false
+    static var isPaid = false
 }

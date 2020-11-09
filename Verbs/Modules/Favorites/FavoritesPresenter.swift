@@ -15,6 +15,7 @@ final class FavoritesPresenter: NSObject {
     
     private let languageService: LanguageService
     private let favoritesService: FavoritesService
+    private var favorites = Locator.favorites
     private let userDefaultsService: UserDefaultsService
     private var isSearchActive = false
     
@@ -36,22 +37,15 @@ final class FavoritesPresenter: NSObject {
         loadSettings()
         subscribe()
     }
-    
-    @objc func goToTests() {
-        let vc = TestsAssembly().viewController()
-        let nvc = UINavigationController(rootViewController: vc)
-        nvc.modalPresentationStyle = .formSheet
-        viewController?.present(nvc, animated: true)
-    }
-    
-    @objc func goToSettings() {
-        router?.goToSettings()
-    }
 }
 
 // MARK: - Private
 
 private extension FavoritesPresenter {
+    
+    var items: [Verb] {
+        !isSearchActive ? favoritesService.items : favoritesService.searchedItems
+    }
     
     func loadSettings() {
         guard let settings = userDefaultsService.load() else { return }
@@ -75,6 +69,11 @@ private extension FavoritesPresenter {
                                                selector: #selector(willReloadData),
                                                name: Notification.Name.reloadData,
                                                object: nil)
+    }
+    
+    func setState() {
+        let state: ListState = isSearchActive || items.count > 0 ? .data : .empty
+        viewController?.setState(state)
     }
     
     func didSelectedItemSet() {
@@ -110,44 +109,32 @@ private extension FavoritesPresenter {
 extension FavoritesPresenter: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        let count = !isSearchActive
-            ? favoritesService.groupedItems.count
-            : (favoritesService.searchedItems.count > 0 ? 1 : 0)
-        tableView.separatorStyle = count > 0 ? .singleLine : .none
-        return count
+        tableView.separatorStyle = items.count > 0 ? .singleLine : .none
+        setState()
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        !isSearchActive
-            ? favoritesService.groupedItems[section].count
-            : favoritesService.searchedItems.count
+        items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let verb = !isSearchActive
-            ? favoritesService.groupedItems[indexPath.section][indexPath.row]
-            : favoritesService.searchedItems[indexPath.row]
+        let verb = items[indexPath.row]
         let item: ItemProtocol = favoritesService.listView == .forms || !languageService.hasTranslation ?
             ListItem(verb: verb) :
             SubtitleItem(title: verb.infinitive.value, subtitle: verb.translation)
         return tableView.dequeueReusableCell(for: item, at: indexPath)
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard !isSearchActive else { return nil }
-        let items = favoritesService.groupedItems[section]
-        guard let letter = items.first?.infinitive.value.first else { return nil }
-        return letter.uppercased()
-    }
-    
-    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        guard !isSearchActive && FeatureToggle.isPaid else { return nil }
-        let set = Set(favoritesService.items.compactMap { item -> String? in
-            guard let character = item.infinitive.value.first else { return nil }
-            return character.uppercased()
-        })
-        
-        return Array(set).sorted()
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
+        guard !isSearchActive, editingStyle == .delete else { return }
+        tableView.beginUpdates()
+        let verb = favoritesService.items[indexPath.row]
+        favorites.remove(verb)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        tableView.endUpdates()
     }
 }
 
@@ -160,9 +147,7 @@ extension FavoritesPresenter: UITableViewDelegate {
             tableView.deselectRow(at: indexPath, animated: true)
         }
 
-        let verb = !isSearchActive
-            ? favoritesService.groupedItems[indexPath.section][indexPath.row]
-            : favoritesService.searchedItems[indexPath.row]
+        let verb = favoritesService.items[indexPath.row]
         
         guard infinitive != verb.infinitive.value else { return }
         router?.goToDetail(with: verb)

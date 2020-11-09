@@ -24,6 +24,7 @@ final class ListAssembly {
                                       userDefaultsService: .init())
         let viewController = ListViewController(presenter: presenter)
         let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.view.backgroundColor = .systemBackground
         let router = ListRouter(navigationController: navigationController,
                                 splitViewController: splitViewController)
         presenter.viewController = viewController

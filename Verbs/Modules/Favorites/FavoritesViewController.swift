@@ -15,6 +15,16 @@ final class FavoritesViewController: UIViewController {
     private var keyboardService: KeyboardService?
     private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     private var tableView: UITableView?
+    private var state: ListState = .empty
+    
+    private let noDataLabel: UILabel = {
+        let label = UILabel()
+        label.text = "EmptyFavorites".localized
+        label.textAlignment = .center
+        label.textColor = .secondaryLabel
+        label.numberOfLines = 0
+        return label
+    }()
     
     init(presenter: FavoritesPresenter) {
         self.presenter = presenter
@@ -32,6 +42,7 @@ final class FavoritesViewController: UIViewController {
         setupNavigationBar()
         setupTableView()
         setupSearchController()
+        setupNoDataLabel()
         setupKeyboardService()
     }
     
@@ -63,6 +74,21 @@ final class FavoritesViewController: UIViewController {
         }
         
         tableView?.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+    }
+    
+    func setState(_ state: ListState) {
+        guard state != self.state else { return }
+        
+        switch state {
+        case .data:
+            tableView?.isHidden = false
+            noDataLabel.isHidden = true
+        case .empty:
+            tableView?.isHidden = true
+            noDataLabel.isHidden = false
+        }
+        
+        self.state = state
     }
 }
 
@@ -102,6 +128,17 @@ private extension FavoritesViewController {
         
         self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.tableView = tableView
+    }
+    
+    func setupNoDataLabel() {
+        view.addSubview(noDataLabel)
+        noDataLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            noDataLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            noDataLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            noDataLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 2 / 3)
+        ])
     }
     
     func setupSearchController() {

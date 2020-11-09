@@ -34,10 +34,10 @@
 "Language" = "Langue";
 "Contact us" = "Nous contacter";
 "Rate and review" = "Notez et évaluez";
-"Unlock all features" = "Déverrouiller toutes les fonctionnalités";
 "Buy" = "Acheter";
 "Restore purchases" = "Restaurer les achats";
-"EmptyViewControllerLabel" = "Pour afficher des informations sur un verbe irrégulier, appuyer dessus sur le côté gauche de l'écran";
+"EmptyDetail" = "Pour afficher des informations sur un verbe irrégulier, appuyer dessus sur le côté gauche de l'écran";
+"EmptyFavorites" = "Pour ajouter un verbe irrégulier à vos favoris, ouvrez-le à partir de la liste de tous les verbes et appuyez sur le bouton étoile dans le coin supérieur droit de l'écran";
 "Done" = "Terminé";
 "Cancel" = "Annuler";
 "Verb forms" = "Formes verbales";

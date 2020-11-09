@@ -27,19 +27,16 @@ final class FavoritesService {
     var randomItem: Verb? { items.randomElement() }
 
     var items: [Verb] = []
-    var groupedItems: [[Verb]] = []
     
     var listView: Settings.ListView = .forms {
         didSet {
             setItems()
-            setGroupedItems()
         }
     }
     
     init() {
         setupFavorites()
         setItems()
-        setGroupedItems()
     }
     
     func indexPath(of infinitive: String?) -> IndexPath? {
@@ -60,31 +57,12 @@ private extension FavoritesService {
     
     func setupFavorites() {
         favorites = Locator.favorites
-        favorites?.didUpdateBlock = { [weak self] in
-            self?.setItems()
-            self?.setGroupedItems()
-        }
+        favorites?.didUpdateBlock = { [weak self] in self?.setItems() }
     }
     
     func setItems() {
         guard let favorites = favorites else { return }
         let set = Set(parser.read(from: "irregulars"))
         items = Array(set.intersection(favorites.verbs)).sorted(by: <)
-    }
-    
-    func setGroupedItems() {
-        var grouped = [[Verb]]()
-        var letter: Character?
-        var index = -1
-        for item in items {
-            if item.infinitive.value.first != letter {
-                letter = item.infinitive.value.first
-                grouped.append([Verb]())
-                index += 1
-            }
-            grouped[index].append(item)
-        }
-        
-        groupedItems = grouped
     }
 }

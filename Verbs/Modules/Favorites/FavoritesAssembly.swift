@@ -24,6 +24,7 @@ final class FavoritesAssembly: AssemblyProtocol {
                                            userDefaultsService: .init())
         let viewController = FavoritesViewController(presenter: presenter)
         let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.view.backgroundColor = .systemBackground
         let router = FavoritesRouter(navigationController: navigationController,
                                      splitViewController: splitViewController)
         presenter.viewController = viewController

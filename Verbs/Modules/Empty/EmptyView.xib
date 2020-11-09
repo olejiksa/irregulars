@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJJ-5J-33a">
-                    <rect key="frame" x="149.5" y="197" width="597" height="20.5"/>
+                    <rect key="frame" x="149.5" y="186.5" width="597" height="20.5"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                     <color key="textColor" systemColor="secondaryLabelColor"/>
                     <nil key="highlightedColor"/>
@@ -31,7 +31,7 @@
             <constraints>
                 <constraint firstItem="QJJ-5J-33a" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Z78-fJ-RHp"/>
                 <constraint firstItem="QJJ-5J-33a" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="2:3" id="bcb-Aw-70C"/>
-                <constraint firstItem="QJJ-5J-33a" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="10.75" id="q0p-gO-lbU"/>
+                <constraint firstItem="QJJ-5J-33a" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="q0p-gO-lbU"/>
             </constraints>
             <point key="canvasLocation" x="139" y="87"/>
         </view>

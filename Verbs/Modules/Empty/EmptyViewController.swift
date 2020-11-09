@@ -33,7 +33,7 @@ final class EmptyViewController: UIViewController {
     }
     
     func setupView() {
-        contentLabel.text = "EmptyViewControllerLabel".localized
+        contentLabel.text = "EmptyDetail".localized
     }
     
     func setupDelegate() {

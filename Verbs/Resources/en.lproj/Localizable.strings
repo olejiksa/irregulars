@@ -34,10 +34,10 @@
 "Language" = "Language";
 "Contact us" = "Contact us";
 "Rate and review" = "Rate and review";
-"Unlock all features" = "Unlock all features";
 "Buy" = "Buy";
 "Restore purchases" = "Restore purchases";
-"EmptyViewControllerLabel" = "To view info about an irregular verb, tap on it on the left side of the screen";
+"EmptyDetail" = "To view info about an irregular verb, tap on it on the left side of the screen";
+"EmptyFavorites" = "To add an irregular verb to your Favorites, open it from the all verbs list and tap on the star button in the upper right corner of the screen";
 "Done" = "Done";
 "Cancel" = "Cancel";
 "Verb forms" = "Verb forms";

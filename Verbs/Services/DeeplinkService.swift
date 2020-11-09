@@ -28,6 +28,8 @@ final class DeeplinkService {
     }
 }
 
+// MARK: - Private
+
 private extension DeeplinkService {
     
     func checkIfAlreadyOpened(by title: String, in navigationController: UINavigationController?) -> Bool {

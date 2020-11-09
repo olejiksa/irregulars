@@ -28,6 +28,7 @@ final class SettingsPresenter: NSObject {
         self.userDefaultsService = userDefaultsService
         self.settings = userDefaultsService.load() ?? .init()
         super.init()
+        subscribe()
         setupItems()
     }
 }
@@ -36,11 +37,18 @@ final class SettingsPresenter: NSObject {
 
 private extension SettingsPresenter {
     
+    func subscribe() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(didPay),
+                                               name: Notification.Name.paid,
+                                               object: nil)
+    }
+    
     func setupItems() {
         guard let version = Bundle.main.releaseVersionNumber,
               let name = Bundle.main.productName else { return }
         
-        let editionName = FeatureToggle.isPaid ? "\(name) Pro" : "\(name) Basic"
+        let editionName = FeatureToggle.isPaid ? "\(name) Pro" : "\(name) Standard"
         let mailActionBlock: ((ItemProtocol) -> ()) = { [weak self] _ in
             guard let self = self else { return }
             self.mailService.present(in: self.viewController)
@@ -55,7 +63,7 @@ private extension SettingsPresenter {
                             isEnabled: FeatureToggle.isPaid) : nil
         
         dataSource.setup([Section(header: "Activation".localized,
-                                  items: [DisclosureItem(text: "Unlock all features".localized,
+                                  items: [DisclosureItem(text: "Upgrade to Pro".localized,
                                                          isEnabled: true,
                                                          actionBlock: willBuy)].filter { _ in !FeatureToggle.isPaid }),
                           Section(header: "General".localized,
@@ -163,6 +171,11 @@ private extension SettingsPresenter {
         let nvc = UINavigationController(rootViewController: vc)
         nvc.modalPresentationStyle = .formSheet
         viewController?.present(nvc, animated: true)
+    }
+    
+    @objc func didPay(_ notification: Notification) {
+        setupItems()
+        viewController?.reloadData()
     }
 }
 

@@ -69,6 +69,7 @@ struct VerbsWidgetEntryView: View {
                 if let simplePast = entry.verb.simplePast.first {
                     Text(simplePast.shortened)
                         .bold()
+                        .truncationMode(.head)
                         .lineLimit(1)
                 }
                 if let pastParticiple = entry.verb.pastParticiple?.first {
@@ -76,6 +77,7 @@ struct VerbsWidgetEntryView: View {
                         .font(.caption)
                     Text(pastParticiple.shortened)
                         .bold()
+                        .truncationMode(.head)
                         .lineLimit(1)
                 }
             }
@@ -89,8 +91,10 @@ struct VerbsWidgetEntryView: View {
                             .font(.caption)
                         Text(entry.verb.infinitive.value)
                             .bold()
+                            .truncationMode(.head)
                             .lineLimit(1)
                         Text(entry.verb.infinitive.transcription)
+                            .truncationMode(.head)
                             .lineLimit(1)
                     }
                     if let simplePast = entry.verb.simplePast.first {
@@ -99,8 +103,10 @@ struct VerbsWidgetEntryView: View {
                                 .font(.caption)
                             Text(simplePast.shortened)
                                 .bold()
+                                .truncationMode(.head)
                                 .lineLimit(1)
                             Text(simplePast.transcription)
+                                .truncationMode(.head)
                                 .lineLimit(1)
                         }
                     }
@@ -110,8 +116,10 @@ struct VerbsWidgetEntryView: View {
                                 .font(.caption)
                             Text(pastParticiple.shortened)
                                 .bold()
+                                .truncationMode(.head)
                                 .lineLimit(1)
                             Text(pastParticiple.transcription)
+                                .truncationMode(.head)
                                 .lineLimit(1)
                         }
                     }
@@ -142,9 +150,7 @@ struct VerbsWidget: Widget {
         }
         .configurationDisplayName("WidgetConfigurationDisplayTitle".localized)
         .description("WidgetDescription".localized)
-        .supportedFamilies(FeatureToggle.isPaid ?
-                            [.systemSmall, .systemMedium] :
-                            [.systemSmall])
+        .supportedFamilies(FeatureToggle.isPaid ? [.systemSmall, .systemMedium] : [.systemSmall])
     }
 }
 
