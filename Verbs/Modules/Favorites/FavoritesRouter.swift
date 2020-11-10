@@ -20,7 +20,9 @@ final class FavoritesRouter {
     }
     
     func goToDetail(with verb: Verb) {
-        let vc = DetailAssembly(verb: verb, isOpenedByDeeplink: false).viewController()
+        let vc = DetailAssembly(verb: verb,
+                                isOpenedByDeeplink: false,
+                                navigationController: navigationController).viewController()
         navigationController?.push(vc, in: splitViewController)
     }
     

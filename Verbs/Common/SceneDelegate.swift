@@ -17,7 +17,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private lazy var splitViewController: UISplitViewController = {
         let splitViewController = SplitViewController()
-        let sidebarViewController = SidebarViewController()
+        let sidebarViewController = SidebarAssembly().viewController()
         let sidebarNavigationController = UINavigationController(rootViewController: sidebarViewController)
         let supplementaryViewController = ListAssembly(splitViewController: splitViewController).viewController()
         let secondaryViewController = EmptyViewController()

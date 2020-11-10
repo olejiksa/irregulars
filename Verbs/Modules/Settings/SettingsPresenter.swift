@@ -13,6 +13,7 @@ import SafariServices
 final class SettingsPresenter: NSObject {
     
     let dataSource = SectionDataSource()
+    var router: SettingsRouter?
     weak var viewController: SettingsViewController?
     
     private let languageService: LanguageService
@@ -151,18 +152,10 @@ private extension SettingsPresenter {
     }
     
     func willGoToPrivacyPolicy(_ sender: ItemProtocol) {
-        var url: URL?
-        if languageService.current == .russian {
-            url = URL(string: "https://github.com/olejiksa/legal/blob/master/privacy-ru.md")
-        } else {
-            url = URL(string: "https://github.com/olejiksa/legal/blob/master/privacy-en.md")
+        let code = languageService.current.rawValue
+        if let url = URL(string: "https://github.com/olejiksa/legal/blob/master/privacy-\(code).md") {
+            router?.goToURL(url)
         }
-        guard let urlUnwrapped = url else { return }
-        let configuration = SFSafariViewController.Configuration()
-        configuration.entersReaderIfAvailable = true
-        let vc = SFSafariViewController(url: urlUnwrapped, configuration: configuration)
-        vc.modalPresentationStyle = .pageSheet
-        viewController?.present(vc, animated: true)
     }
     
     func willShare(_ sender: ItemProtocol) {
@@ -173,10 +166,7 @@ private extension SettingsPresenter {
     }
     
     func willBuy(_ sender: ItemProtocol) {
-        let vc = PaywallViewController()
-        let nvc = UINavigationController(rootViewController: vc)
-        nvc.modalPresentationStyle = .formSheet
-        viewController?.present(nvc, animated: true)
+        router?.goToPaywall()
     }
     
     func willReset(_ sender: ItemProtocol) {

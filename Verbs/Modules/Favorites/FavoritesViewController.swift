@@ -43,6 +43,7 @@ final class FavoritesViewController: UIViewController {
         setupTableView()
         setupSearchController()
         setupNoDataLabel()
+        setupView()
         setupKeyboardService()
     }
     
@@ -139,6 +140,10 @@ private extension FavoritesViewController {
             noDataLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             noDataLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 2 / 3)
         ])
+    }
+    
+    func setupView() {
+        view.backgroundColor = .systemBackground
     }
     
     func setupSearchController() {

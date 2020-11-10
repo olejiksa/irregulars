@@ -10,9 +10,9 @@ import Foundation
 
 final class LanguageService {
     
-    var current: Language? {
-        guard let currentLanguage = Locale.current.languageCode else { return nil }
-        return Language(rawValue: currentLanguage)
+    var current: Language {
+        guard let currentLanguage = Locale.current.languageCode else { return .english }
+        return Language(rawValue: currentLanguage) ?? .english
     }
     
     var hasTranslation: Bool {

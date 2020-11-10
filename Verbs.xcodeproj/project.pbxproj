@@ -55,7 +55,6 @@
 		EB7B857D253B118F00542D3C /* DisclosureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB7B857C253B118F00542D3C /* DisclosureCell.xib */; };
 		EB7B8581253B30C600542D3C /* MailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7B8580253B30C600542D3C /* MailService.swift */; };
 		EB7DFF4E25236DA4000B711D /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7DFF4C25236DA4000B711D /* EmptyViewController.swift */; };
-		EB7DFF4F25236DA4000B711D /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB7DFF4D25236DA4000B711D /* EmptyView.xib */; };
 		EB7DFF5625244977000B711D /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7DFF5425244977000B711D /* SplitViewController.swift */; };
 		EB7DFF64252451D2000B711D /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7DFF63252451D1000B711D /* WidgetKit.framework */; };
 		EB7DFF66252451D2000B711D /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7DFF65252451D2000B711D /* SwiftUI.framework */; };
@@ -79,6 +78,11 @@
 		EBA644BB255A59CF0012B973 /* ActionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA644BA255A59CF0012B973 /* ActionItem.swift */; };
 		EBA644C0255A5A1A0012B973 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA644BE255A5A1A0012B973 /* ActionCell.swift */; };
 		EBA644C1255A5A1A0012B973 /* ActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBA644BF255A5A1A0012B973 /* ActionCell.xib */; };
+		EBA644C8255AD4F90012B973 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA644C7255AD4F90012B973 /* DetailRouter.swift */; };
+		EBA644CF255ADB3A0012B973 /* SidebarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA644CE255ADB390012B973 /* SidebarItem.swift */; };
+		EBA644D7255ADC800012B973 /* SidebarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA644D6255ADC800012B973 /* SidebarPresenter.swift */; };
+		EBA644DF255ADC910012B973 /* SidebarAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA644DE255ADC910012B973 /* SidebarAssembly.swift */; };
+		EBA644E7255AE25B0012B973 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA644E6255AE25B0012B973 /* SettingsRouter.swift */; };
 		EBB01C0925217F5400BB646B /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB01C0825217F5400BB646B /* Language.swift */; };
 		EBB01C0C2521825000BB646B /* TranslationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB01C0A2521825000BB646B /* TranslationCell.swift */; };
 		EBB01C0D2521825000BB646B /* TranslationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBB01C0B2521825000BB646B /* TranslationCell.xib */; };
@@ -188,7 +192,6 @@
 		EB7B857C253B118F00542D3C /* DisclosureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisclosureCell.xib; sourceTree = "<group>"; };
 		EB7B8580253B30C600542D3C /* MailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailService.swift; sourceTree = "<group>"; };
 		EB7DFF4C25236DA4000B711D /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
-		EB7DFF4D25236DA4000B711D /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		EB7DFF5425244977000B711D /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		EB7DFF61252451D1000B711D /* VerbsWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VerbsWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB7DFF63252451D1000B711D /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -209,6 +212,11 @@
 		EBA644BE255A5A1A0012B973 /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		EBA644BF255A5A1A0012B973 /* ActionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionCell.xib; sourceTree = "<group>"; };
 		EBA644C4255A5FD60012B973 /* VerbsWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VerbsWidgetExtension.entitlements; sourceTree = "<group>"; };
+		EBA644C7255AD4F90012B973 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		EBA644CE255ADB390012B973 /* SidebarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarItem.swift; sourceTree = "<group>"; };
+		EBA644D6255ADC800012B973 /* SidebarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarPresenter.swift; sourceTree = "<group>"; };
+		EBA644DE255ADC910012B973 /* SidebarAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarAssembly.swift; sourceTree = "<group>"; };
+		EBA644E6255AE25B0012B973 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		EBB01C0825217F5400BB646B /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		EBB01C0A2521825000BB646B /* TranslationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationCell.swift; sourceTree = "<group>"; };
 		EBB01C0B2521825000BB646B /* TranslationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TranslationCell.xib; sourceTree = "<group>"; };
@@ -312,6 +320,7 @@
 				EBB01C11252182AB00BB646B /* TranslationItem */,
 				EB450989253B67FA00D31858 /* DetailAssembly.swift */,
 				EB450981253B65E800D31858 /* DetailPresenter.swift */,
+				EBA644C7255AD4F90012B973 /* DetailRouter.swift */,
 				EB2F5E0B251F543A007DCF60 /* DetailViewController.swift */,
 			);
 			path = Detail;
@@ -411,7 +420,6 @@
 			isa = PBXGroup;
 			children = (
 				EB7DFF4C25236DA4000B711D /* EmptyViewController.swift */,
-				EB7DFF4D25236DA4000B711D /* EmptyView.xib */,
 			);
 			path = Empty;
 			sourceTree = "<group>";
@@ -462,6 +470,15 @@
 				EBA644BF255A5A1A0012B973 /* ActionCell.xib */,
 			);
 			path = ActionItem;
+			sourceTree = "<group>";
+		};
+		EBA644CD255ADB280012B973 /* SidebarItem */ = {
+			isa = PBXGroup;
+			children = (
+				EBA644CE255ADB390012B973 /* SidebarItem.swift */,
+				EB5547532553CB22001C5585 /* SidebarCell.swift */,
+			);
+			path = SidebarItem;
 			sourceTree = "<group>";
 		};
 		EBB01C102521828800BB646B /* DetailItem */ = {
@@ -542,7 +559,9 @@
 		EBD476DD2553ADA10033067B /* Sidebar */ = {
 			isa = PBXGroup;
 			children = (
-				EB5547532553CB22001C5585 /* SidebarCell.swift */,
+				EBA644CD255ADB280012B973 /* SidebarItem */,
+				EBA644DE255ADC910012B973 /* SidebarAssembly.swift */,
+				EBA644D6255ADC800012B973 /* SidebarPresenter.swift */,
 				EBD476E22553AED70033067B /* SidebarViewController.swift */,
 			);
 			path = Sidebar;
@@ -620,6 +639,7 @@
 				EBF4A153252ED5A7003E3A44 /* SwitchItem */,
 				EB45099B253B6C7D00D31858 /* SettingsAssembly.swift */,
 				EB450991253B6B4700D31858 /* SettingsPresenter.swift */,
+				EBA644E6255AE25B0012B973 /* SettingsRouter.swift */,
 				EBF4A145252ED2CA003E3A44 /* SettingsViewController.swift */,
 			);
 			path = Settings;
@@ -744,7 +764,6 @@
 				EB2F5E12251F5B26007DCF60 /* DetailCell.xib in Resources */,
 				EB450A4A254B1A2B00D31858 /* PlainCell.xib in Resources */,
 				EB4509E72541ED4A00D31858 /* SubtitleCell.xib in Resources */,
-				EB7DFF4F25236DA4000B711D /* EmptyView.xib in Resources */,
 				EBB3BC15251F4BAA006E0DC7 /* irregulars.json in Resources */,
 				EBA644C1255A5A1A0012B973 /* ActionCell.xib in Resources */,
 				EB4509E32541E69400D31858 /* RightDetailCell.xib in Resources */,
@@ -795,6 +814,7 @@
 				EB717DEE2530C5A4007791AD /* ListRouter.swift in Sources */,
 				EB7DFF4E25236DA4000B711D /* EmptyViewController.swift in Sources */,
 				EBEB1D76251F11900019972C /* AppDelegate.swift in Sources */,
+				EBA644CF255ADB3A0012B973 /* SidebarItem.swift in Sources */,
 				EBD476CA254BBEA60033067B /* PaywallItem.swift in Sources */,
 				EB450A27254A8D2900D31858 /* TestsPresenter.swift in Sources */,
 				EBB01C252521903A00BB646B /* Identifiable.swift in Sources */,
@@ -815,10 +835,13 @@
 				EBEB1D8E251F13BA0019972C /* SubtitleCell.swift in Sources */,
 				EBA644B4255988FC0012B973 /* ListState.swift in Sources */,
 				EB69A26925322AFA00DD1827 /* Notification.swift in Sources */,
+				EBA644DF255ADC910012B973 /* SidebarAssembly.swift in Sources */,
 				EB8325982556EB6B005E02C1 /* FavoritesPresenter.swift in Sources */,
 				EB83259C2556EBE9005E02C1 /* FavoritesRouter.swift in Sources */,
 				EB5547542553CB22001C5585 /* SidebarCell.swift in Sources */,
 				EBB01C1F25218BAB00BB646B /* ItemProtocol.swift in Sources */,
+				EBA644D7255ADC800012B973 /* SidebarPresenter.swift in Sources */,
+				EBA644E7255AE25B0012B973 /* SettingsRouter.swift in Sources */,
 				EBB3BC17251F4D60006E0DC7 /* JSONParser.swift in Sources */,
 				EBA644C0255A5A1A0012B973 /* ActionCell.swift in Sources */,
 				EB9A4FBC252E8D9800443D47 /* DeeplinkService.swift in Sources */,
@@ -842,6 +865,7 @@
 				EBB01C192521870200BB646B /* DetailItem.swift in Sources */,
 				EB8325922556EB60005E02C1 /* FavoritesAssembly.swift in Sources */,
 				EB45097B253B630900D31858 /* SectionArray.swift in Sources */,
+				EBA644C8255AD4F90012B973 /* DetailRouter.swift in Sources */,
 				EBF4A13B252EA2F6003E3A44 /* FeatureToggle.swift in Sources */,
 				EB4509E22541E69400D31858 /* RightDetailCell.swift in Sources */,
 				EB83257F2556CF47005E02C1 /* TabBarDelegate.swift in Sources */,

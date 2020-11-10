@@ -14,16 +14,20 @@ final class DetailAssembly: AssemblyProtocol {
     
     private let verb: Verb
     private let isOpenedByDeeplink: Bool
+    private let navigationController: UINavigationController?
     
-    init(verb: Verb, isOpenedByDeeplink: Bool) {
+    init(verb: Verb, isOpenedByDeeplink: Bool, navigationController: UINavigationController?) {
         self.verb = verb
         self.isOpenedByDeeplink = isOpenedByDeeplink
+        self.navigationController = navigationController
     }
     
     func viewController() -> ViewController {
         let presenter = DetailPresenter(audioService: .init(),
                                         languageService: .init(),
                                         verb: verb)
+        let router = DetailRouter(navigationController: navigationController)
+        presenter.router = router
         let viewConroller = DetailViewController(presenter: presenter,
                                                  verb: verb,
                                                  isOpenedByDeeplink: isOpenedByDeeplink)

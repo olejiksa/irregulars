@@ -11,6 +11,7 @@ import UIKit
 final class DetailPresenter: NSObject {
     
     let dataSource = SectionDataSource()
+    var router: DetailRouter?
     weak var viewController: DetailViewController?
     
     private let audioService: AudioService
@@ -52,10 +53,7 @@ private extension DetailPresenter {
     
     func play(text: String) {
         guard FeatureToggle.isPaid else {
-            let vc = PaywallViewController()
-            let nvc = UINavigationController(rootViewController: vc)
-            nvc.modalPresentationStyle = .formSheet
-            viewController?.present(nvc, animated: true)
+            router?.goToPaywall()
             return
         }
         

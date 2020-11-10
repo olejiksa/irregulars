@@ -10,7 +10,14 @@ import UIKit
 
 final class EmptyViewController: UIViewController {
     
-    @IBOutlet private weak var contentLabel: UILabel!
+    private let noDataLabel: UILabel = {
+        let label = UILabel()
+        label.text = "EmptyDetail".localized
+        label.textAlignment = .center
+        label.textColor = .secondaryLabel
+        label.numberOfLines = 0
+        return label
+    }()
    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -29,15 +36,27 @@ final class EmptyViewController: UIViewController {
         super.viewDidLoad()
         
         setupDelegate()
+        setupNoDataLabel()
         setupView()
-    }
-    
-    func setupView() {
-        contentLabel.text = "EmptyDetail".localized
     }
     
     func setupDelegate() {
         navigationController?.delegate = self
+    }
+    
+    func setupNoDataLabel() {
+        view.addSubview(noDataLabel)
+        noDataLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            noDataLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            noDataLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            noDataLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 2 / 3)
+        ])
+    }
+    
+    func setupView() {
+        view.backgroundColor = .systemBackground
     }
 }
 

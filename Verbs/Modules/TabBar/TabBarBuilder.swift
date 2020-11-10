@@ -12,19 +12,32 @@ final class TabBarBuilder {
     
     weak var scrollView: UIScrollView?
     
-    func build(in splitViewController: SplitViewController?) -> TabBarController? {
-        guard let splitViewController = splitViewController else { return nil }
+    func build(in svc: SplitViewController?) -> TabBarController? {
+        guard let svc = svc else { return nil }
         
-        let firstVc = ListAssembly(splitViewController: splitViewController).viewController().navigationController
-        firstVc?.tabBarItem = .init(title: "Verbs".localized, image: SystemIcon.bookFill.image, tag: 0)
-        let secondVc = FavoritesAssembly(splitViewController: splitViewController).viewController().navigationController
-        secondVc?.tabBarItem = .init(title: "Favorites".localized, image: SystemIcon.starFill.image, tag: 1)
-        let thirdVc = SettingsAssembly().viewController().navigationController
-        thirdVc?.tabBarItem = .init(title: "Settings".localized, image: SystemIcon.gear.image, tag: 2)
+        let listVc = ListAssembly(splitViewController: svc).viewController().navigationController
+        let favoritesVc = FavoritesAssembly(splitViewController: svc).viewController().navigationController
+        let settingsVc = SettingsAssembly().viewController().navigationController
+        
+        return compound(items: [(listVc, "Verbs".localized, .bookFill),
+                                (favoritesVc, "Favorites".localized, .starFill),
+                                (settingsVc, "Settings".localized, .gear)])
+    }
+}
+
+// MARK: - Private
+
+private extension TabBarBuilder {
+    
+    func compound(items: [(controller: UIViewController?,
+                           title: String,
+                           icon: SystemIcon)]) -> TabBarController {
+        items.enumerated().forEach {
+            $1.controller?.tabBarItem = .init(title: $1.title, image: $1.icon.image, tag: $0)
+        }
         
         let tabBarController = TabBarController()
-        tabBarController.viewControllers = [firstVc, secondVc, thirdVc].compactMap { $0 }
-        
+        tabBarController.viewControllers = items.map { $0.controller }.compactMap { $0 }
         return tabBarController
     }
 }
