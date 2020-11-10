@@ -16,19 +16,25 @@ final class DeeplinkService {
         guard let verb = verbsService.items.first(where: { host == $0.infinitive.value }) else { return }
         
         let vc = DetailAssembly(verb: verb, isOpenedByDeeplink: true).viewController()
+        var nvc: UINavigationController?
         
-        if splitViewController.isCollapsed {
+        switch splitViewController.traitCollection.horizontalSizeClass {
+        case .compact:
             let tvc = splitViewController.viewController(for: .compact) as? UITabBarController
             tvc?.selectedIndex = 0
-            let nvc = tvc?.selectedViewController as? UINavigationController
+            nvc = tvc?.selectedViewController as? UINavigationController
             guard !checkIfAlreadyOpened(by: host, in: nvc) else { return }
             splitViewController.dismiss(animated: true)
             nvc?.push(vc)
-        } else {
-            let nvc = splitViewController.viewControllers.last as? UINavigationController
+        case .regular:
+            nvc = splitViewController.viewControllers.last as? UINavigationController
             guard !checkIfAlreadyOpened(by: host, in: nvc) else { return }
             splitViewController.dismiss(animated: true)
             nvc?.push(vc)
+        case .unspecified:
+            break
+        @unknown default:
+            break
         }
     }
 }

@@ -14,6 +14,7 @@ final class SplitViewController: UISplitViewController {
     
     init() {
         super.init(style: .tripleColumn)
+        delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -38,5 +39,20 @@ final class SplitViewController: UISplitViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         updatePreferredBehavior(for: size.width)
         super.viewWillTransition(to: size, with: coordinator)
+    }
+}
+
+// MARK: - UISplitViewControllerDelegate
+
+extension SplitViewController: UISplitViewControllerDelegate {
+    
+    func splitViewController(_ svc: UISplitViewController, topColumnForCollapsingToProposedTopColumn: UISplitViewController.Column) -> UISplitViewController.Column {
+        print("topColumnForCollapsingToProposedTopColumn: \(topColumnForCollapsingToProposedTopColumn.rawValue)")
+        return topColumnForCollapsingToProposedTopColumn
+    }
+    
+    func splitViewController( _ svc: UISplitViewController, displayModeForExpandingToProposedDisplayMode proposedDisplayMode: UISplitViewController.DisplayMode) -> UISplitViewController.DisplayMode {
+        print("proposedDisplayMode: \(proposedDisplayMode.rawValue)")
+        return proposedDisplayMode
     }
 }

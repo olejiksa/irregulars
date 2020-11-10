@@ -77,11 +77,10 @@ private extension ListViewController {
     func setupNavigationBar() {
         if splitViewController?.isCollapsed == true {
             navigationItem.title = "Verbs".localized
-            navigationController?.navigationBar.prefersLargeTitles = true
         } else {
             navigationItem.title = "All".localized
-            navigationItem.largeTitleDisplayMode = .never
         }
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func setupTableView() {

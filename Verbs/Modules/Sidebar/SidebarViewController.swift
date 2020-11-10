@@ -53,6 +53,7 @@ final class SidebarViewController: UIViewController {
     
     private var collectionView: UICollectionView?
     private var dataSource: UICollectionViewDiffableDataSource<SidebarSection, SidebarItem>?
+    private var selectedIndexPath: IndexPath? = IndexPath(row: 1, section: 0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +62,7 @@ final class SidebarViewController: UIViewController {
         setupCollectionView()
         setupDataSource()
         applyInitialSnapshot()
-        collectionView?.selectItem(at: IndexPath(row: 1, section: 0),
+        collectionView?.selectItem(at: selectedIndexPath,
                                    animated: false,
                                    scrollPosition: UICollectionView.ScrollPosition.centeredVertically)
     }
@@ -186,15 +187,15 @@ private extension SidebarViewController {
         var snapshot = NSDiffableDataSourceSectionSnapshot<SidebarItem>()
         let header = SidebarItem.header(title: "More".localized)
         
-        var items: [SidebarItem] = [
+        let items: [SidebarItem] = [
 //            .row(title: "Statistics".localized, subtitle: nil, image: SystemIcon.chart.image, id: RowIdentifier.statistics),
             .row(title: "Settings".localized, subtitle: nil, image: SystemIcon.gear.image, id: RowIdentifier.settings)
 //            .row(title: "About".localized, subtitle: nil, image: SystemIcon.info.image, id: RowIdentifier.about)
         ]
         
-        if !FeatureToggle.isPaid {
-            items.append(.row(title: "Upgrade to Pro".localized, subtitle: nil, image: SystemIcon.upgrade.image, id: RowIdentifier.upgrade))
-        }
+//        if !FeatureToggle.isPaid {
+//            items.append(.row(title: "Upgrade to Pro".localized, subtitle: nil, image: SystemIcon.upgrade.image, id: RowIdentifier.upgrade))
+//        }
         
         snapshot.append([header])
         snapshot.expand([header])
@@ -213,15 +214,27 @@ private extension SidebarViewController {
         
         switch sidebarItem.id {
         case RowIdentifier.all:
+            selectedIndexPath = indexPath
             let vc = ListAssembly(splitViewController: splitViewController).viewController()
             splitViewController.setViewController(vc.navigationController, for: .supplementary)
         case RowIdentifier.favorites:
+            selectedIndexPath = indexPath
             let vc = FavoritesAssembly(splitViewController: splitViewController).viewController()
             splitViewController.setViewController(vc.navigationController, for: .supplementary)
         case RowIdentifier.settings:
             let vc = SettingsAssembly().viewController()
             vc.navigationController?.modalPresentationStyle = .formSheet
             vc.navigationController.map { splitViewController.present($0, animated: true) }
+            collectionView?.selectItem(at: selectedIndexPath,
+                                       animated: true,
+                                       scrollPosition: .centeredVertically)
+        case RowIdentifier.upgrade:
+            let vc = SettingsAssembly().viewController()
+            vc.navigationController?.modalPresentationStyle = .formSheet
+            vc.navigationController.map { splitViewController.present($0, animated: true) }
+            collectionView?.selectItem(at: selectedIndexPath,
+                                       animated: true,
+                                       scrollPosition: .centeredVertically)
         default:
             break
         }
@@ -233,7 +246,10 @@ private extension SidebarViewController {
 extension SidebarViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let sidebarItem = dataSource?.itemIdentifier(for: indexPath) else { return }
+        guard
+            let sidebarItem = dataSource?.itemIdentifier(for: indexPath),
+            indexPath != selectedIndexPath
+        else { return }
         
         switch indexPath.section {
         case SidebarSection.library.rawValue:
