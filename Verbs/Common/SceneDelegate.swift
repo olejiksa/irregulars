@@ -22,7 +22,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let supplementaryViewController = ListAssembly(splitViewController: splitViewController).viewController()
         let secondaryViewController = EmptyViewController()
         let secondaryNavigationController = UINavigationController(rootViewController: secondaryViewController)
-        let tabbarViewController = TabBarBuilder().build(in: splitViewController)
+        let tabbarViewController = TabBarController(splitViewController: splitViewController)
         splitViewController.setViewController(sidebarNavigationController, for: .primary)
         splitViewController.setViewController(supplementaryViewController.navigationController, for: .supplementary)
         splitViewController.setViewController(secondaryNavigationController, for: .secondary)

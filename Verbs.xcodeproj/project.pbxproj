@@ -38,7 +38,7 @@
 		EB450A4A254B1A2B00D31858 /* PlainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB450A48254B1A2B00D31858 /* PlainCell.xib */; };
 		EB450A59254BB3F800D31858 /* BigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB450A58254BB3F800D31858 /* BigButton.swift */; };
 		EB5547542553CB22001C5585 /* SidebarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5547532553CB22001C5585 /* SidebarCell.swift */; };
-		EB5547632554089F001C5585 /* TabBarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5547622554089F001C5585 /* TabBarBuilder.swift */; };
+		EB5547632554089F001C5585 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5547622554089F001C5585 /* TabBarController.swift */; };
 		EB69A26925322AFA00DD1827 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB69A26825322AF900DD1827 /* Notification.swift */; };
 		EB717DBB252ED6B9007791AD /* SwitchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB717DBA252ED6B9007791AD /* SwitchItem.swift */; };
 		EB717DC3252ED9EB007791AD /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB717DC2252ED9EB007791AD /* UserDefaultsService.swift */; };
@@ -66,7 +66,6 @@
 		EB7DFF8C252B1CE6000B711D /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3BC16251F4D60006E0DC7 /* JSONParser.swift */; };
 		EB7DFF8F252B1CED000B711D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3BC08251F2ADB006E0DC7 /* String.swift */; };
 		EB7DFF95252B25DD000B711D /* irregulars.json in Resources */ = {isa = PBXBuildFile; fileRef = EBB3BC14251F4BAA006E0DC7 /* irregulars.json */; };
-		EB83257F2556CF47005E02C1 /* TabBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83257E2556CF47005E02C1 /* TabBarDelegate.swift */; };
 		EB83258B2556EAEB005E02C1 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325892556EAEB005E02C1 /* FavoritesViewController.swift */; };
 		EB8325922556EB60005E02C1 /* FavoritesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325912556EB60005E02C1 /* FavoritesAssembly.swift */; };
 		EB8325982556EB6B005E02C1 /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325972556EB6B005E02C1 /* FavoritesPresenter.swift */; };
@@ -178,7 +177,7 @@
 		EB450A48254B1A2B00D31858 /* PlainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlainCell.xib; sourceTree = "<group>"; };
 		EB450A58254BB3F800D31858 /* BigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButton.swift; sourceTree = "<group>"; };
 		EB5547532553CB22001C5585 /* SidebarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarCell.swift; sourceTree = "<group>"; };
-		EB5547622554089F001C5585 /* TabBarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBuilder.swift; sourceTree = "<group>"; };
+		EB5547622554089F001C5585 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		EB69A26825322AF900DD1827 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		EB717DBA252ED6B9007791AD /* SwitchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchItem.swift; sourceTree = "<group>"; };
 		EB717DC2252ED9EB007791AD /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
@@ -199,7 +198,6 @@
 		EB7DFF68252451D2000B711D /* VerbsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbsWidget.swift; sourceTree = "<group>"; };
 		EB7DFF6B252451D4000B711D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB7DFF6D252451D4000B711D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EB83257E2556CF47005E02C1 /* TabBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarDelegate.swift; sourceTree = "<group>"; };
 		EB8325892556EAEB005E02C1 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		EB8325912556EB60005E02C1 /* FavoritesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAssembly.swift; sourceTree = "<group>"; };
 		EB8325972556EB6B005E02C1 /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
@@ -400,8 +398,7 @@
 		EB55475925540827001C5585 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				EB5547622554089F001C5585 /* TabBarBuilder.swift */,
-				EB83257E2556CF47005E02C1 /* TabBarDelegate.swift */,
+				EB5547622554089F001C5585 /* TabBarController.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -796,7 +793,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB5547632554089F001C5585 /* TabBarBuilder.swift in Sources */,
+				EB5547632554089F001C5585 /* TabBarController.swift in Sources */,
 				EB4509A4253B6EB600D31858 /* Actionable.swift in Sources */,
 				EBD476D6254BDF850033067B /* Bundle.swift in Sources */,
 				EBB01C2D25219E9A00BB646B /* SubtitleItem.swift in Sources */,
@@ -868,7 +865,6 @@
 				EBA644C8255AD4F90012B973 /* DetailRouter.swift in Sources */,
 				EBF4A13B252EA2F6003E3A44 /* FeatureToggle.swift in Sources */,
 				EB4509E22541E69400D31858 /* RightDetailCell.swift in Sources */,
-				EB83257F2556CF47005E02C1 /* TabBarDelegate.swift in Sources */,
 				EBF4A126252E901A003E3A44 /* NavigationController.swift in Sources */,
 				EB7B8579253B0D5900542D3C /* DisclosureCell.swift in Sources */,
 				EBB01C1B2521874E00BB646B /* TableView.swift in Sources */,
