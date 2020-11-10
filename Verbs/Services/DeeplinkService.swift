@@ -17,7 +17,7 @@ final class DeeplinkService {
         
         switch splitViewController.traitCollection.horizontalSizeClass {
         case .compact:
-            let tabBarController = splitViewController.viewController(for: .compact) as? UITabBarController
+            let tabBarController = splitViewController.compactViewController
             tabBarController?.selectedIndex = 0
             let navigationController = tabBarController?.selectedViewController as? UINavigationController
             handle(host: host,
@@ -56,6 +56,6 @@ private extension DeeplinkService {
         let vc = DetailAssembly(verb: verb,
                                 isOpenedByDeeplink: true,
                                 navigationController: navigationController).viewController()
-        navigationController?.push(vc)
+        navigationController?.push(vc, in: splitViewController)
     }
 }

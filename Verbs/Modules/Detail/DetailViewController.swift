@@ -96,10 +96,7 @@ private extension DetailViewController {
         switch favoriteButton?.image {
         case SystemIcon.star.image:
             guard !favorites.shouldPaywallBeShown else {
-                let vc = PaywallViewController()
-                let nvc = UINavigationController(rootViewController: vc)
-                nvc.modalPresentationStyle = .formSheet
-                present(nvc, animated: true)
+                presenter.router?.goToPaywall()
                 return
             }
             

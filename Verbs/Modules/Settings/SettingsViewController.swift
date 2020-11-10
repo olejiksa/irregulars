@@ -31,6 +31,7 @@ final class SettingsViewController: UIViewController {
         setupNavigationBar()
         setupTableView()
         setupKeyboardService()
+        setupDelegate()
     }
     
     func reloadData() {
@@ -45,13 +46,6 @@ private extension SettingsViewController {
     func setupNavigationBar() {
         navigationItem.title = "Settings".localized
         navigationItem.largeTitleDisplayMode = .never
-
-        if splitViewController == nil {
-            let closeButton = UIBarButtonItem(barButtonSystemItem: .close,
-                                              target: self,
-                                              action: #selector(didCloseTap))
-            navigationItem.rightBarButtonItem = closeButton
-        }
     }
     
     func setupTableView() {
@@ -86,8 +80,8 @@ private extension SettingsViewController {
         keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
     }
     
-    @objc func didCloseTap() {
-        dismiss(animated: true)
+    func setupDelegate() {
+        navigationController?.delegate = self
     }
 }
 
@@ -98,5 +92,18 @@ extension SettingsViewController: Scrollable {
     func scrollToTop() {
         let indexPath = IndexPath(row: 0, section: 0)
         tableView?.scrollToRow(at: indexPath, at: .top, animated: true)
+    }
+}
+
+// MARK: - UINavigationControllerDelegate
+
+extension SettingsViewController: UINavigationControllerDelegate {
+    
+    func navigationController(_ navigationController: UINavigationController,
+                              willShow viewController: UIViewController,
+                              animated: Bool) {
+        NotificationCenter.default.post(name: .infinitive,
+                                        object: nil,
+                                        userInfo: [Notification.Name.infinitive: ""])
     }
 }

@@ -146,10 +146,12 @@ private extension SidebarPresenter {
             let vc = FavoritesAssembly(splitViewController: splitViewController).viewController()
             splitViewController.setViewController(vc.navigationController, for: .supplementary)
         case RowIdentifier.settings:
-            let vc = SettingsAssembly().viewController()
-            vc.navigationController?.modalPresentationStyle = .formSheet
-            vc.navigationController.map { splitViewController.present($0, animated: true) }
             viewController?.select(at: selectedIndexPath)
+            let nvc = splitViewController.secondaryViewController
+            let vc = SettingsAssembly(navigationController: nvc).viewController()
+            guard !(nvc?.topViewController is SettingsViewController) else { return }
+            nvc?.popToRootViewController(animated: false)
+            nvc?.pushViewController(vc, animated: true)
         default:
             break
         }
@@ -164,7 +166,10 @@ extension SidebarPresenter: UICollectionViewDelegate {
         guard
             let sidebarItem = dataSource?.itemIdentifier(for: indexPath),
             indexPath != selectedIndexPath
-        else { return }
+        else {
+            viewController?.select(at: selectedIndexPath)
+            return
+        }
         
         switch indexPath.section {
         case SidebarSection.verbs.rawValue, SidebarSection.more.rawValue:

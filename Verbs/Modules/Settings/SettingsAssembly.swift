@@ -12,12 +12,18 @@ final class SettingsAssembly: AssemblyProtocol {
     
     typealias ViewController = SettingsViewController
     
+    private let navigationController: UINavigationController?
+    
+    init(navigationController: UINavigationController? = nil) {
+        self.navigationController = navigationController
+    }
+    
     func viewController() -> ViewController {
         let presenter = SettingsPresenter(languageService: .init(),
                                           mailService: .init(),
                                           userDefaultsService: .init())
         let viewController = SettingsViewController(presenter: presenter)
-        let nvc = UINavigationController(rootViewController: viewController)
+        let nvc = navigationController ?? UINavigationController(rootViewController: viewController)
         let router = SettingsRouter(navigationController: nvc)
         presenter.viewController = viewController
         presenter.router = router

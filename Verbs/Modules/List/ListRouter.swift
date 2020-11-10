@@ -25,12 +25,4 @@ final class ListRouter {
                                 navigationController: navigationController).viewController()
         navigationController?.push(vc, in: splitViewController)
     }
-    
-    func goToSettings() {
-        let assembly = SettingsAssembly()
-        let vc = assembly.viewController()
-        let nvc = UINavigationController(rootViewController: vc)
-        nvc.modalPresentationStyle = .formSheet
-        navigationController?.present(nvc, animated: true)
-    }
 }

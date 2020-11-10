@@ -20,6 +20,11 @@ extension UINavigationController {
             return
         }
         
-        (splitViewController.viewController(for: .secondary) as? UINavigationController)?.pushViewController(viewController, animated: true)
+        let secondaryVc = splitViewController.secondaryViewController
+        if secondaryVc?.topViewController is SettingsViewController {
+            secondaryVc?.popToRootViewController(animated: false)
+        }
+        
+        secondaryVc?.pushViewController(viewController, animated: true)
     }
 }
