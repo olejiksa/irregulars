@@ -50,7 +50,7 @@ final class FavoritesViewController: UIViewController {
         super.viewWillAppear(animated)
         
         guard animated else { return }
-        NotificationCenter.default.post(name: Notification.Name.infinitive,
+        NotificationCenter.default.post(name: .infinitive,
                                         object: nil,
                                         userInfo: [Notification.Name.infinitive: ""])
     }
@@ -142,7 +142,10 @@ private extension FavoritesViewController {
     }
     
     func setupSearchController() {
-        guard FeatureToggle.isPaid else { return }
+        guard FeatureToggle.isPaid else {
+            navigationItem.searchController = nil
+            return
+        }
         
         searchController.delegate = presenter
         searchController.searchResultsUpdater = presenter

@@ -6,9 +6,11 @@
   Copyright © 2020 Oleg Samoylov. All rights reserved.
 */
 
-"Thank you" = "Merci!";
+"Downgrade" = "Rétrograder";
+"Thank you" = "Merci d'être avec nous!";
 "Listen to pronunciation" = "Écouter la prononciation";
 "See a transcription" = "Voir une transcription";
+"Add unlimited items in Favorites" = "Ajouter des éléments illimités dans les favoris";
 "Find words faster using search" = "Trouvez des mots plus rapidement en utilisant la recherche";
 "Find words faster using the alphabetical scrollbar" = "Trouvez des mots plus rapidement à l'aide de la barre de défilement alphabétique";
 "Use the medium-sized widget that has all three verb's forms, their transcriptions, and its translation" = "Utilisez le widget de taille moyenne qui a les trois formes verbales, leurs transcriptions et sa traduction";
@@ -17,6 +19,8 @@
 "View a translation without going to the verb page" = "Afficher une traduction sans accéder à la page des verbes";
 "Tests" = "Tests";
 "Activation" = "Activation";
+"Activation" = "Activation";
+"Deactivation" = "Désactivation";
 "About" = "À propos du programme";
 "Developer" = "Développeur";
 "Oleg Samoylov" = "Oleg Samoylov";

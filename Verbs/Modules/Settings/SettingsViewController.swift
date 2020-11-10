@@ -73,7 +73,10 @@ private extension SettingsViewController {
         tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         
-        tableView.register(SwitchCell.self, DisclosureCell.self, RightDetailCell.self)
+        tableView.register(SwitchCell.self,
+                           DisclosureCell.self,
+                           RightDetailCell.self,
+                           ActionCell.self)
         
         self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.tableView = tableView

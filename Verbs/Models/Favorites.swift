@@ -15,12 +15,14 @@ final class Favorites {
     private(set) var verbs: Set<Verb>
     
     private let key = "favorites"
-    private let defaults = UserDefaults.standard
+    private let defaults = UserDefaults(suiteName: "group.olejiksa.verbs")
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
     
+    var shouldPaywallBeShown: Bool { verbs.count >= 10 && !FeatureToggle.isPaid }
+    
     init() {
-        guard let data = defaults.value(forKey: key) as? Data else {
+        guard let data = defaults?.value(forKey: key) as? Data else {
             verbs = []
             return
         }
@@ -42,6 +44,6 @@ final class Favorites {
     
     func save() {
         guard let encoded = try? encoder.encode(verbs) else { return }
-        defaults.set(encoded, forKey: key)
+        defaults?.set(encoded, forKey: key)
     }
 }

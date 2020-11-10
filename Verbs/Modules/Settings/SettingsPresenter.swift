@@ -48,7 +48,7 @@ private extension SettingsPresenter {
         guard let version = Bundle.main.releaseVersionNumber,
               let name = Bundle.main.productName else { return }
         
-        let editionName = FeatureToggle.isPaid ? "\(name) Pro" : "\(name) Standard"
+        let editionName = FeatureToggle.isPaid ? "\(name) Pro" : "\(name) Lite"
         let mailActionBlock: ((ItemProtocol) -> ()) = { [weak self] _ in
             guard let self = self else { return }
             self.mailService.present(in: self.viewController)
@@ -62,10 +62,16 @@ private extension SettingsPresenter {
                             subitems: options,
                             isEnabled: FeatureToggle.isPaid) : nil
         
-        dataSource.setup([Section(header: "Activation".localized,
-                                  items: [DisclosureItem(text: "Upgrade to Pro".localized,
-                                                         isEnabled: true,
-                                                         actionBlock: willBuy)].filter { _ in !FeatureToggle.isPaid }),
+        let upgradeItem = !FeatureToggle.isPaid ? ActionItem(text: "Upgrade to Pro".localized,
+                                                             style: .standard,
+                                                             actionBlock: willBuy) : nil
+        let resetItem = FeatureToggle.isPaid && FeatureToggle.isDebug ? ActionItem(text: "Downgrade".localized,
+                                                                                   style: .destructive,
+                                                                                   actionBlock: willReset) : nil
+        let header = FeatureToggle.isPaid ? "Deactivation".localized : "Activation".localized
+
+        dataSource.setup([Section(header: header,
+                                  items: [upgradeItem, resetItem].compactMap { $0 }),
                           Section(header: "General".localized,
                                   items: [DisclosureItem(text: "Language".localized,
                                                          isEnabled: true,
@@ -106,7 +112,7 @@ private extension SettingsPresenter {
     func didRegularVerbsOptionChange(_ value: Bool) {
         settings.shouldRegularVerbsBeShown = value
         userDefaultsService.save(settings)
-        NotificationCenter.default.post(name: Notification.Name.regulars,
+        NotificationCenter.default.post(name: .regulars,
                                         object: nil,
                                         userInfo: [Notification.Name.regulars: value])
     }
@@ -114,7 +120,7 @@ private extension SettingsPresenter {
     func didDerivedFormsOptionChange(_ value: Bool) {
         settings.shouldDerivedFormsBeShown = value
         userDefaultsService.save(settings)
-        NotificationCenter.default.post(name: Notification.Name.derivatives,
+        NotificationCenter.default.post(name: .derivatives,
                                         object: nil,
                                         userInfo: [Notification.Name.derivatives: value])
     }
@@ -123,7 +129,7 @@ private extension SettingsPresenter {
         guard let item = sender as? RightDetailItem else { return }
         settings.listView = Settings.ListView(description: item.subtitle)
         userDefaultsService.save(settings)
-        NotificationCenter.default.post(name: Notification.Name.list,
+        NotificationCenter.default.post(name: .list,
                                         object: nil,
                                         userInfo: [Notification.Name.list: settings.listView])
         viewController?.reloadData()
@@ -171,6 +177,12 @@ private extension SettingsPresenter {
         let nvc = UINavigationController(rootViewController: vc)
         nvc.modalPresentationStyle = .formSheet
         viewController?.present(nvc, animated: true)
+    }
+    
+    func willReset(_ sender: ItemProtocol) {
+        FeatureToggle.isPaid = false
+        userDefaultsService.save(false, by: .isPaid)
+        NotificationCenter.default.post(name: .paid, object: nil)
     }
     
     @objc func didPay(_ notification: Notification) {

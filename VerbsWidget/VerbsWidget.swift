@@ -91,10 +91,8 @@ struct VerbsWidgetEntryView: View {
                             .font(.caption)
                         Text(entry.verb.infinitive.value)
                             .bold()
-                            .truncationMode(.head)
                             .lineLimit(1)
                         Text(entry.verb.infinitive.transcription)
-                            .truncationMode(.head)
                             .lineLimit(1)
                     }
                     if let simplePast = entry.verb.simplePast.first {
@@ -140,6 +138,7 @@ struct VerbsWidgetEntryView: View {
 
 @main
 struct VerbsWidget: Widget {
+    private let userDefaultsService = UserDefaultsService()
     let kind: String = "VerbsWidget"
 
     var body: some WidgetConfiguration {
@@ -150,7 +149,7 @@ struct VerbsWidget: Widget {
         }
         .configurationDisplayName("WidgetConfigurationDisplayTitle".localized)
         .description("WidgetDescription".localized)
-        .supportedFamilies(FeatureToggle.isPaid ? [.systemSmall, .systemMedium] : [.systemSmall])
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 

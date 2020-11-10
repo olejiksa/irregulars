@@ -13,8 +13,9 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     private let deeplinkService = DeeplinkService()
+    private let userDefaultsService = UserDefaultsService()
     
-    private var splitViewController: UISplitViewController = {
+    private lazy var splitViewController: UISplitViewController = {
         let splitViewController = SplitViewController()
         let sidebarViewController = SidebarViewController()
         let sidebarNavigationController = UINavigationController(rootViewController: sidebarViewController)
@@ -34,6 +35,8 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
         
+        settingUp()
+        
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = splitViewController
         window?.makeKeyAndVisible()
@@ -48,5 +51,14 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         else { return }
         
         deeplinkService.handle(host, in: splitViewController)
+    }
+}
+
+// MARK: - Private
+
+private extension SceneDelegate {
+    
+    func settingUp() {
+        FeatureToggle.isPaid = userDefaultsService.load(by: .isPaid)
     }
 }

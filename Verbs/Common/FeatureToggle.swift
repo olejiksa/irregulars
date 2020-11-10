@@ -9,4 +9,5 @@
 struct FeatureToggle {
     
     static var isPaid = false
+    static var isDebug = true
 }

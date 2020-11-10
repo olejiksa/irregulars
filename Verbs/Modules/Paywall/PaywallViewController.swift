@@ -11,6 +11,7 @@ import UIKit
 final class PaywallViewController: UIViewController {
     
     private let dataSource = SectionDataSource()
+    private let userDefaultsService = UserDefaultsService()
 
     @IBOutlet private weak var thanksLabel: UILabel!
     @IBOutlet private weak var buyButton: BigButton!
@@ -63,30 +64,42 @@ private extension PaywallViewController {
         
         dataSource.setup([Section(header: nil,
                                   items: [
-                                    PaywallItem(text: "Listen to pronunciation".localized, icon: .speaker),
-                                    PaywallItem(text: "See a transcription".localized, icon: .transcription),
-                                    PaywallItem(text: "Find words faster using search".localized, icon: .search),
-                                    PaywallItem(text: "Find words faster using the alphabetical scrollbar".localized, icon: .alphabet),
-                                    PaywallItem(text: "Use the medium-sized widget that has all three verb's forms, their transcriptions, and its translation".localized, icon: .widget),
-                                    PaywallItem(text: "Hide or show regular verbs (-ed)".localized, icon: .toggle),
-                                    PaywallItem(text: "Hide or show derivatives".localized, icon: .toggle),
+                                    PaywallItem(text: "Listen to pronunciation".localized,
+                                                icon: .speaker),
+                                    PaywallItem(text: "See a transcription".localized,
+                                                icon: .transcription),
+                                    PaywallItem(text: "Add unlimited items in Favorites".localized,
+                                                icon: .listStar),
+                                    PaywallItem(text: "Find words faster using search".localized,
+                                                icon: .search),
+                                    PaywallItem(text: "Find words faster using the alphabetical scrollbar".localized,
+                                                icon: .alphabet),
+//                                    PaywallItem(text: "Use the medium-sized widget that has all three verb's forms, their transcriptions, and its translation".localized,
+//                                                icon: .widget),
+                                    PaywallItem(text: "Hide or show regular verbs (-ed)".localized,
+                                                icon: .toggle),
+                                    PaywallItem(text: "Hide or show derivatives".localized,
+                                                icon: .toggle),
                                     item
                                   ].compactMap { $0 })])
     }
     
     @IBAction func didUnlockTap() {
-        FeatureToggle.isPaid = true
-        view.window?.rootViewController?.dismiss(animated: true)
-        NotificationCenter.default.post(name: Notification.Name.paid, object: nil)
+        unlockAllFeatures()
     }
     
     @IBAction func didRestoreTap() {
-        FeatureToggle.isPaid = true
-        view.window?.rootViewController?.dismiss(animated: true)
-        NotificationCenter.default.post(name: Notification.Name.paid, object: nil)
+        unlockAllFeatures()
     }
     
     @objc func didCloseTap() {
         dismiss(animated: true)
+    }
+    
+    func unlockAllFeatures() {
+        FeatureToggle.isPaid = true
+        userDefaultsService.save(true, by: .isPaid)
+        view.window?.rootViewController?.dismiss(animated: true)
+        NotificationCenter.default.post(name: .paid, object: nil)
     }
 }

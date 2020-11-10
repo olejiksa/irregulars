@@ -95,15 +95,23 @@ private extension DetailViewController {
     @objc func didFavoriteTap() {
         switch favoriteButton?.image {
         case SystemIcon.star.image:
+            guard !favorites.shouldPaywallBeShown else {
+                let vc = PaywallViewController()
+                let nvc = UINavigationController(rootViewController: vc)
+                nvc.modalPresentationStyle = .formSheet
+                present(nvc, animated: true)
+                return
+            }
+            
             favoriteButton?.image = SystemIcon.starFill.image
             favorites.add(verb)
-            NotificationCenter.default.post(name: Notification.Name.reloadData,
+            NotificationCenter.default.post(name: .reloadData,
                                             object: nil,
                                             userInfo: nil)
         case SystemIcon.starFill.image:
             favoriteButton?.image = SystemIcon.star.image
             favorites.remove(verb)
-            NotificationCenter.default.post(name: Notification.Name.reloadData,
+            NotificationCenter.default.post(name: .reloadData,
                                             object: nil,
                                             userInfo: nil)
         default:
@@ -121,7 +129,7 @@ extension DetailViewController: UINavigationControllerDelegate {
                               animated: Bool) {
         guard animated || isOpenedByDeeplink else { return }
         let title = viewController.navigationItem.title ?? ""
-        NotificationCenter.default.post(name: Notification.Name.infinitive,
+        NotificationCenter.default.post(name: .infinitive,
                                         object: nil,
                                         userInfo: [Notification.Name.infinitive: title])
     }

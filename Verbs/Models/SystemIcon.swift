@@ -28,6 +28,7 @@ enum SystemIcon: String {
     case sentences = "rectangle.and.pencil.and.ellipsis"
     case pronunciation = "mouth"
     case chart = "chart.pie"
+    case listStar = "list.star"
     
     var image: UIImage? { UIImage(systemName: rawValue) }
 }

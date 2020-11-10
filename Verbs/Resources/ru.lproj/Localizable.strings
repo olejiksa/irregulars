@@ -6,9 +6,11 @@
   Copyright © 2020 Oleg Samoylov. All rights reserved.
 */
 
-"Thank you" = "Спасибо!";
+"Downgrade" = "Сброс";
+"Thank you" = "Спасибо за то, что Вы с нами!";
 "Listen to pronunciation" = "Слушайте произношение";
 "See a transcription" = "Смотрите транскрипцию";
+"Add unlimited items in Favorites" = "Храните неограниченное количество элементов в «Избранном»";
 "Find words faster using search" = "Находите слова быстрее через поиск";
 "Find words faster using the alphabetical scrollbar" = "Находите слова быстрее с помощью алфавитной полосы прокрутки";
 "Use the medium-sized widget that has all three verb's forms, their transcriptions, and its translation" = "Используйте виджет среднего размера, содержащий все три формы слова, их транскрипции, а также перевод";
@@ -17,6 +19,7 @@
 "View a translation without going to the verb page" = "Смотрите перевод без перехода на страницу глагола";
 "Tests" = "Тесты";
 "Activation" = "Активация";
+"Deactivation" = "Деактивация";
 "About" = "О программе";
 "Developer" = "Разработчик";
 "Oleg Samoylov" = "Олег Самойлов";
