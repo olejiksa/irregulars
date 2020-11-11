@@ -26,7 +26,6 @@ final class DeeplinkService {
                    splitViewController: splitViewController)
         case .regular:
             let navigationController = splitViewController.viewControllers.last as? UINavigationController
-            guard !checkIfAlreadyOpened(by: host, in: navigationController) else { return }
             handle(host: host,
                    verb: verb,
                    navigationController: navigationController,

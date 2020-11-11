@@ -18,11 +18,7 @@ final class ListPresenter: NSObject {
     private let userDefaultsService: UserDefaultsService
     private var isSearchActive = false
     
-    private var infinitive: String? {
-        didSet {
-            didSelectedItemSet()
-        }
-    }
+    private var infinitive: String?
     
     init(languageService: LanguageService,
          verbsService: VerbsService,
@@ -35,6 +31,13 @@ final class ListPresenter: NSObject {
         
         loadSettings()
         subscribe()
+    }
+    
+    func selectWhenRegular() {
+        guard viewController?.splitViewController?.isCollapsed == false else { return }
+        guard let title = viewController?.splitViewController?.secondaryViewController?.topViewController?.navigationItem.title else { return }
+        infinitive = title
+        didSelectedItemSet()
     }
 }
 
@@ -73,7 +76,8 @@ private extension ListPresenter {
     }
     
     func didSelectedItemSet() {
-        guard !isSearchActive else { return }
+        guard !isSearchActive,
+              viewController?.splitViewController?.isCollapsed == false else { return }
         
         let indexPath = verbsService.indexPath(of: infinitive)
         viewController?.selectRow(at: indexPath)
@@ -81,6 +85,7 @@ private extension ListPresenter {
     
     @objc func didSelectedItemUpdate(_ notification: Notification) {
         infinitive = notification.userInfo?[Notification.Name.infinitive] as? String ?? ""
+        didSelectedItemSet()
     }
     
     @objc func didPay(_ notification: Notification) {

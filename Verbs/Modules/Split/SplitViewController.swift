@@ -125,25 +125,21 @@ private extension SplitViewController {
 
         for i in 0...2 {
             let nvc = svc.compactViewController?.viewControllers?[i] as? UINavigationController
-            guard let vc = (nvc?.viewControllers.first {
-                $0 is ListViewController ||
-                $0 is FavoritesViewController ||
-                $0 is SettingsViewController
-            }) else { continue }
-            nvc?.popToViewController(vc, animated: false)
+            nvc?.popToRootViewController(animated: true)
             nvc?.isNavigationBarHidden = true
             nvc?.isNavigationBarHidden = false
         }
         
-        let nvc = svc.compactViewController?.viewControllers?[index] as? UINavigationController
-        
         switch secondaryVc {
         case let detailVc as DetailViewController:
             let newVc = DetailViewController(detailViewController: detailVc)
+            let nvc = svc.compactViewController?.viewControllers?[index] as? UINavigationController
             nvc?.pushViewController(newVc, animated: false)
         case let settingsVc as SettingsViewController:
             let newVc = SettingsViewController(settingsViewController: settingsVc)
-            nvc?.pushViewController(newVc, animated: false)
+            let nvc = UINavigationController(rootViewController: newVc)
+            nvc.tabBarItem = .init(title: "Settings".localized, image: SystemIcon.gear.image, tag: 2)
+            svc.compactViewController?.viewControllers?[index] = nvc
         default:
             break
         }

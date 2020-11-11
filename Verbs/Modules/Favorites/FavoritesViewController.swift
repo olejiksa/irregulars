@@ -51,6 +51,7 @@ final class FavoritesViewController: UIViewController {
         super.viewWillAppear(animated)
         
         deselectWhenCompact()
+        presenter.selectWhenRegular()
         guard animated else { return }
         NotificationCenter.default.post(name: .infinitive,
                                         object: nil,

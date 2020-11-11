@@ -33,6 +33,7 @@ final class ListViewController: UIViewController {
         setupTableView()
         setupSearchController()
         setupKeyboardService()
+        presenter.selectWhenRegular()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -20,9 +20,20 @@ final class ListRouter {
     }
     
     func goToDetail(with verb: Verb) {
+        guard !checkIfAlreadyOpened(by: verb.infinitive.value) else { return }
         let vc = DetailAssembly(verb: verb,
                                 isOpenedByDeeplink: false,
                                 navigationController: navigationController).viewController()
         navigationController?.push(vc, in: splitViewController)
+    }
+}
+
+// MARK: - Private
+
+private extension ListRouter {
+    
+    func checkIfAlreadyOpened(by title: String) -> Bool {
+        guard splitViewController?.isCollapsed == false else { return false }
+        return splitViewController?.secondaryViewController?.topViewController?.navigationItem.title == title
     }
 }

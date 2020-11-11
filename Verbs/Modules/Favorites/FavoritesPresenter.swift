@@ -19,11 +19,7 @@ final class FavoritesPresenter: NSObject {
     private let userDefaultsService: UserDefaultsService
     private var isSearchActive = false
     
-    private var infinitive: String? {
-        didSet {
-            didSelectedItemSet()
-        }
-    }
+    private var infinitive: String?
     
     init(languageService: LanguageService,
          favoritesService: FavoritesService,
@@ -36,6 +32,13 @@ final class FavoritesPresenter: NSObject {
         
         loadSettings()
         subscribe()
+    }
+    
+    func selectWhenRegular() {
+        guard viewController?.splitViewController?.isCollapsed == false else { return }
+        guard let title = viewController?.splitViewController?.secondaryViewController?.topViewController?.navigationItem.title else { return }
+        infinitive = title
+        didSelectedItemSet()
     }
 }
 
@@ -77,8 +80,8 @@ private extension FavoritesPresenter {
     }
     
     func didSelectedItemSet() {
-        guard viewController?.splitViewController?.isCollapsed == false else { return }
-        guard !isSearchActive else { return }
+        guard !isSearchActive,
+              viewController?.splitViewController?.isCollapsed == false else { return }
         
         let indexPath = favoritesService.indexPath(of: infinitive)
         viewController?.selectRow(at: indexPath)
@@ -86,6 +89,7 @@ private extension FavoritesPresenter {
     
     @objc func didSelectedItemUpdate(_ notification: Notification) {
         infinitive = notification.userInfo?[Notification.Name.infinitive] as? String ?? ""
+        didSelectedItemSet()
     }
     
     @objc func didPay(_ notification: Notification) {
@@ -120,6 +124,7 @@ extension FavoritesPresenter: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard indexPath.row < items.count else { return .init() }
         let verb = items[indexPath.row]
         let item: ItemProtocol = favoritesService.listView == .forms || !languageService.hasTranslation ?
             ListItem(verb: verb) :
