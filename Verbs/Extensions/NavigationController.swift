@@ -14,7 +14,7 @@ extension UINavigationController {
               in splitViewController: UISplitViewController? = nil) {
         guard
             let splitViewController = splitViewController,
-            !splitViewController.isCollapsed
+            splitViewController.traitCollection.horizontalSizeClass == .regular
         else {
             pushViewController(viewController, animated: true)
             return

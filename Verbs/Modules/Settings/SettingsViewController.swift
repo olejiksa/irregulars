@@ -21,6 +21,12 @@ final class SettingsViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    init(settingsViewController: SettingsViewController) {
+        self.presenter = settingsViewController.presenter
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

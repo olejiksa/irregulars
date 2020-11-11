@@ -36,6 +36,12 @@ final class SidebarViewController: UIViewController {
                                    animated: true,
                                    scrollPosition: .centeredVertically)
     }
+    
+    func restore(at indexPath: IndexPath) {
+        select(at: indexPath)
+        guard let collectionView = collectionView else { return }
+        collectionView.delegate?.collectionView?(collectionView, didSelectItemAt: indexPath)
+    }
 }
 
 // MARK: - Private

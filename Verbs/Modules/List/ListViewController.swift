@@ -38,6 +38,7 @@ final class ListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        deselectWhenCompact()
         guard animated else { return }
         NotificationCenter.default.post(name: .infinitive,
                                         object: nil,
@@ -63,6 +64,12 @@ final class ListViewController: UIViewController {
         }
         
         tableView?.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+    }
+    
+    func deselectWhenCompact() {
+        guard splitViewController?.isCollapsed == true,
+              let indexPath = tableView?.indexPathForSelectedRow else { return }
+        tableView?.deselectRow(at: indexPath, animated: true)
     }
 }
 

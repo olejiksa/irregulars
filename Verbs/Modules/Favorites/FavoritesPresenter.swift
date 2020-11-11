@@ -77,6 +77,7 @@ private extension FavoritesPresenter {
     }
     
     func didSelectedItemSet() {
+        guard viewController?.splitViewController?.isCollapsed == false else { return }
         guard !isSearchActive else { return }
         
         let indexPath = favoritesService.indexPath(of: infinitive)

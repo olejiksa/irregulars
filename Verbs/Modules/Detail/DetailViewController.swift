@@ -9,7 +9,7 @@
 import UIKit
 
 final class DetailViewController: UIViewController {
-
+    
     private let presenter: DetailPresenter
     private let verb: Verb
     private let isOpenedByDeeplink: Bool
@@ -23,6 +23,16 @@ final class DetailViewController: UIViewController {
         self.presenter = presenter
         self.verb = verb
         self.isOpenedByDeeplink = isOpenedByDeeplink
+        
+        super.init(nibName: nil, bundle: nil)
+        
+        hidesBottomBarWhenPushed = true
+    }
+    
+    init(detailViewController: DetailViewController) {
+        self.presenter = detailViewController.presenter
+        self.verb = detailViewController.verb
+        self.isOpenedByDeeplink = detailViewController.isOpenedByDeeplink
         
         super.init(nibName: nil, bundle: nil)
         

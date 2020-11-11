@@ -15,6 +15,8 @@ final class SplitViewController: UISplitViewController {
     init() {
         super.init(style: .tripleColumn)
         delegate = self
+        maximumSupplementaryColumnWidth = 2_000
+        preferredSupplementaryColumnWidthFraction = 0.5
     }
     
     required init?(coder: NSCoder) {
@@ -36,34 +38,68 @@ final class SplitViewController: UISplitViewController {
 
 extension SplitViewController: UISplitViewControllerDelegate {
     
-    func splitViewController(_ svc: UISplitViewController, topColumnForCollapsingToProposedTopColumn: UISplitViewController.Column) -> UISplitViewController.Column {
+    func splitViewControllerDidExpand(_ svc: UISplitViewController) {
+        guard let compactVc = svc.compactViewController,
+              let sidebarVc = svc.primaryViewController
+        else { return }
+        
+        switch (compactVc.selectedIndex) {
+        case 0:
+            let nvc = compactVc.viewControllers?[0] as? UINavigationController
+            let vc = nvc?.topViewController
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                sidebarVc.restore(at: IndexPath(row: 1, section: 0))
+                svc.secondaryViewController?.popToRootViewController(animated: false)
+                if let detailVc = vc as? DetailViewController {
+                    let newVc = DetailViewController(detailViewController: detailVc)
+                    svc.secondaryViewController?.pushViewController(newVc, animated: true)
+                }
+            }
+        case 1:
+            let nvc = compactVc.viewControllers?[1] as? UINavigationController
+            let vc = nvc?.topViewController
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                sidebarVc.restore(at: IndexPath(row: 2, section: 0))
+                svc.secondaryViewController?.popToRootViewController(animated: false)
+                if let detailVc = vc as? DetailViewController {
+                    let newVc = DetailViewController(detailViewController: detailVc)
+                    svc.secondaryViewController?.pushViewController(newVc, animated: true)
+                }
+            }
+        case 2:
+            let nvc = compactVc.viewControllers?[2] as? UINavigationController
+            let vc = nvc?.topViewController
+            svc.secondaryViewController?.popToRootViewController(animated: false)
+            if let detailVc = vc as? SettingsViewController {
+                let newVc = SettingsViewController(settingsViewController: detailVc)
+                svc.secondaryViewController?.pushViewController(newVc, animated: true)
+            }
+        default:
+            break
+        }
+    }
+    
+    func splitViewControllerDidCollapse(_ svc: UISplitViewController) {
         guard let supplementaryVc = svc.supplementaryViewController?.topViewController,
               let secondaryVc = svc.secondaryViewController?.topViewController
         else {
-            return topColumnForCollapsingToProposedTopColumn
+            return
         }
         
         switch (supplementaryVc, secondaryVc) {
         case (is ListViewController, is EmptyViewController):
-            showDetail(svc, nil, 0)
+            showDetail(svc, supplementaryVc, nil, 0)
         case (is ListViewController, is DetailViewController):
-            showDetail(svc, secondaryVc, 0)
+            showDetail(svc, supplementaryVc, secondaryVc, 0)
         case (is FavoritesViewController, is EmptyViewController):
-            showDetail(svc, nil, 1)
+            showDetail(svc, supplementaryVc, nil, 1)
         case (is FavoritesViewController, is DetailViewController):
-            showDetail(svc, secondaryVc, 1)
+            showDetail(svc, supplementaryVc, secondaryVc, 1)
         case (_, is SettingsViewController):
-            svc.compactViewController?.selectedIndex = 2
+            showDetail(svc, supplementaryVc, secondaryVc, 2)
         default:
             break
         }
-        
-        return topColumnForCollapsingToProposedTopColumn
-    }
-    
-    func splitViewController( _ svc: UISplitViewController, displayModeForExpandingToProposedDisplayMode proposedDisplayMode: UISplitViewController.DisplayMode) -> UISplitViewController.DisplayMode {
-        print("proposedDisplayMode: \(proposedDisplayMode.rawValue)")
-        return proposedDisplayMode
     }
 }
 
@@ -81,18 +117,35 @@ private extension SplitViewController {
         }
     }
     
-    func showDetail(_ svc: UISplitViewController, _ secondaryVc: UIViewController?, _ index: Int) {
+    func showDetail(_ svc: UISplitViewController,
+                    _ supplementaryVc: UIViewController?,
+                    _ secondaryVc: UIViewController?,
+                    _ index: Int) {
         svc.compactViewController?.selectedIndex = index
+
         for i in 0...2 {
             let nvc = svc.compactViewController?.viewControllers?[i] as? UINavigationController
-            nvc?.popToRootViewController(animated: false)
+            guard let vc = (nvc?.viewControllers.first {
+                $0 is ListViewController ||
+                $0 is FavoritesViewController ||
+                $0 is SettingsViewController
+            }) else { continue }
+            nvc?.popToViewController(vc, animated: false)
+            nvc?.isNavigationBarHidden = true
+            nvc?.isNavigationBarHidden = false
         }
-        if let secondaryVc = secondaryVc {
-            let nvc = svc.compactViewController?.viewControllers?[index] as? UINavigationController
-            nvc?.pushViewController(secondaryVc, animated: true)
-            NotificationCenter.default.post(name: .infinitive,
-                                            object: nil,
-                                            userInfo: [Notification.Name.infinitive: ""])
+        
+        let nvc = svc.compactViewController?.viewControllers?[index] as? UINavigationController
+        
+        switch secondaryVc {
+        case let detailVc as DetailViewController:
+            let newVc = DetailViewController(detailViewController: detailVc)
+            nvc?.pushViewController(newVc, animated: false)
+        case let settingsVc as SettingsViewController:
+            let newVc = SettingsViewController(settingsViewController: settingsVc)
+            nvc?.pushViewController(newVc, animated: false)
+        default:
+            break
         }
     }
 }

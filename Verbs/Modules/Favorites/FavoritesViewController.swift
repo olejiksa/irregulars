@@ -50,6 +50,7 @@ final class FavoritesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        deselectWhenCompact()
         guard animated else { return }
         NotificationCenter.default.post(name: .infinitive,
                                         object: nil,
@@ -90,6 +91,12 @@ final class FavoritesViewController: UIViewController {
         }
         
         self.state = state
+    }
+    
+    func deselectWhenCompact() {
+        guard splitViewController?.isCollapsed == true,
+              let indexPath = tableView?.indexPathForSelectedRow else { return }
+        tableView?.deselectRow(at: indexPath, animated: true)
     }
 }
 
