@@ -232,7 +232,6 @@
 		EBB95BE7253326CE00376C3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EBB95BEB253326F300376C3F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EBB95BFD25335C3E00376C3F /* LanguageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageService.swift; sourceTree = "<group>"; };
-		EBB95C05253362E400376C3F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EBD476C3254BBE7A0033067B /* PaywallCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallCell.swift; sourceTree = "<group>"; };
 		EBD476C4254BBE7A0033067B /* PaywallCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaywallCell.xib; sourceTree = "<group>"; };
 		EBD476C9254BBEA60033067B /* PaywallItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallItem.swift; sourceTree = "<group>"; };
@@ -719,7 +718,6 @@
 				en,
 				Base,
 				ru,
-				fr,
 			);
 			mainGroup = EBEB1D69251F11900019972C;
 			packageReferences = (
@@ -895,7 +893,6 @@
 			children = (
 				EBB95BE7253326CE00376C3F /* en */,
 				EBB95BEB253326F300376C3F /* ru */,
-				EBB95C05253362E400376C3F /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

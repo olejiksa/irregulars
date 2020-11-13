@@ -131,7 +131,7 @@
 "forget" = "forget";
 "forgive" = "forgive";
 "forsake" = "forsake";
-"forsee" = "forsee";
+"foresee" = "foresee";
 "freeze" = "freeze";
 "get" = "get";
 "give" = "give";
@@ -170,27 +170,12 @@
 "mean" = "mean";
 "meet" = "meet";
 "melt" = "melt";
-"miscast" = "miscast";
-"misdeal" = "misdeal";
-"misdo" = "misdo";
-"misgive" = "misgive";
-"mishear" = "mishear";
-"mishit" = "mishit";
-"mislay" = "mislay";
-"mislead" = "mislead";
-"misread" = "misread";
-"misspell" = "misspell";
-"misspend" = "misspend";
-"mistake" = "mistake";
-"misunderstand" = "misunderstand";
 "mow" = "mow";
 "must" = "must";
 "offset" = "offset";
-"overcome" = "overcome";
-"overhear" = "overhear";
-"overtake" = "overtake";
 "partake" = "partake";
 "pay" = "pay";
+"prepay" = "prepay";
 "plead" = "plead";
 "preset" = "preset";
 "prove" = "prove";
@@ -294,3 +279,50 @@
 "wring" = "wring";
 "write" = "write";
 "zinc" = "zinc";
+
+// Mis
+
+"miscast" = "miscast";
+"misdeal" = "misdeal";
+"misdo" = "misdo";
+"misgive" = "misgive";
+"mishear" = "mishear";
+"mishit" = "mishit";
+"mislay" = "mislay";
+"mislead" = "mislead";
+"misread" = "misread";
+"misspell" = "misspell";
+"misspend" = "misspend";
+"mistake" = "mistake";
+"misunderstand" = "misunderstand";
+
+// Out
+
+"outbid" = "outbid";
+"outdo" = "outdo";
+"outfight" = "outfight";
+"outgrow" = "outgrow";
+"output" = "output";
+"outrun" = "outrun";
+"outsell" = "outsell";
+"outshine" = "outshine";
+
+// Over
+
+"overbid" = "overbid";
+"overdo" = "overdo";
+"overcome" = "overcome";
+"overdraw" = "overdraw";
+"overeat" = "overeat";
+"overfly" = "overfly";
+"overhang" = "overhang";
+"overhear" = "overhear";
+"overlay" = "overlay";
+"overpay" = "overpay";
+"override" = "override";
+"overrun" = "overrun";
+"oversee" = "oversee";
+"overshoot" = "overshoot";
+"oversleep" = "oversleep";
+"overtake" = "overtake";
+"overthrow" = "overthrow";
