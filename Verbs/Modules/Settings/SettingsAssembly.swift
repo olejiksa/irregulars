@@ -10,15 +10,13 @@ import UIKit
 
 final class SettingsAssembly: AssemblyProtocol {
     
-    typealias ViewController = SettingsViewController
-    
     private let navigationController: UINavigationController?
     
     init(navigationController: UINavigationController? = nil) {
         self.navigationController = navigationController
     }
     
-    func viewController() -> ViewController {
+    func viewController() -> some SettingsViewController {
         let presenter = SettingsPresenter(languageService: .init(),
                                           mailService: .init(),
                                           userDefaultsService: .init())

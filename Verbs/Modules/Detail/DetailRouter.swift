@@ -17,7 +17,7 @@ final class DetailRouter {
     }
     
     func goToPaywall() {
-        let vc = PaywallViewController()
+        let vc = PaywallAssembly().viewController()
         let nvc = UINavigationController(rootViewController: vc)
         nvc.modalPresentationStyle = .formSheet
         navigationController?.present(nvc, animated: true)

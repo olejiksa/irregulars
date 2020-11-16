@@ -10,13 +10,27 @@ import UIKit
 
 final class PaywallViewController: UIViewController {
     
-    private let dataSource = SectionDataSource()
-    private let userDefaultsService = UserDefaultsService()
+    var router: PaywallRouter?
+    
+    private let presenter: PaywallPresenter
+    private let purchaseService: PurchaseService
 
     @IBOutlet private weak var thanksLabel: UILabel!
     @IBOutlet private weak var buyButton: BigButton!
     @IBOutlet private weak var restoreButton: BigButton!
     @IBOutlet private weak var tableView: FadeTableView!
+    
+    init(presenter: PaywallPresenter,
+         purchaseService: PurchaseService) {
+        self.presenter = presenter
+        self.purchaseService = purchaseService
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +38,6 @@ final class PaywallViewController: UIViewController {
         setupNavigationBar()
         setupTableView()
         setupView()
-        setupSections()
     }
 }
 
@@ -46,7 +59,7 @@ private extension PaywallViewController {
     
     func setupTableView() {
         tableView.contentInset = .init(top: 15, left: 0, bottom: 10, right: 0)
-        tableView.dataSource = dataSource
+        tableView.dataSource = presenter.dataSource
         tableView.register(PaywallCell.self)
     }
     
@@ -55,51 +68,51 @@ private extension PaywallViewController {
         restoreButton.setTitle("Restore purchases".localized, for: .normal)
         thanksLabel.text = "Thank you".localized
         thanksLabel.isHidden = !FeatureToggle.isPaid
-        buyButton.isHidden = FeatureToggle.isPaid
+        buyButton.isHidden = FeatureToggle.isPaid && purchaseService.canMakePayments
         restoreButton.isHidden = FeatureToggle.isPaid
     }
     
-    func setupSections() {
-        let item = LanguageService().hasTranslation ?  PaywallItem(text: "View a translation without going to the verb page".localized, icon: .dictionary) : nil
-        
-        dataSource.setup([Section(header: nil,
-                                  items: [
-                                    PaywallItem(text: "Listen to pronunciation".localized,
-                                                icon: .speaker),
-                                    PaywallItem(text: "See a transcription".localized,
-                                                icon: .transcription),
-                                    PaywallItem(text: "Add unlimited items in Favorites".localized,
-                                                icon: .listStar),
-                                    PaywallItem(text: "Find words faster using search".localized,
-                                                icon: .search),
-                                    PaywallItem(text: "Find words faster using the alphabetical scrollbar".localized,
-                                                icon: .alphabet),
-//                                    PaywallItem(text: "Use the medium-sized widget that has all three verb's forms, their transcriptions, and its translation".localized,
-//                                                icon: .widget),
-                                    PaywallItem(text: "Hide or show regular verbs (-ed)".localized,
-                                                icon: .toggle),
-                                    PaywallItem(text: "Hide or show derivatives".localized,
-                                                icon: .toggle),
-                                    item
-                                  ].compactMap { $0 })])
-    }
-    
-    @IBAction func didUnlockTap() {
-        unlockAllFeatures()
+    @IBAction func didBuyTap() {
+        buyButton.showLoading()
+        purchaseService.requestProducts(activationHandler: didActivate,
+                                        errorHandler: didBuy)
     }
     
     @IBAction func didRestoreTap() {
-        unlockAllFeatures()
+        purchaseService.requestProducts(activationHandler: didActivate,
+                                        errorHandler: didRestore)
     }
     
     @objc func didCloseTap() {
         dismiss(animated: true)
     }
     
-    func unlockAllFeatures() {
-        FeatureToggle.isPaid = true
-        userDefaultsService.save(true, by: .isPaid)
-        view.window?.rootViewController?.dismiss(animated: true)
-        NotificationCenter.default.post(name: .paid, object: nil)
+    func didActivate() {
+        DispatchQueue.main.async {
+            self.buyButton.hideLoading()
+            self.view.window?.rootViewController?.dismiss(animated: true)
+        }
+    }
+    
+    func didBuy(error: Error?) {
+        DispatchQueue.main.async {
+            if let error = error {
+                self.router?.show(error: error)
+                self.buyButton.hideLoading()
+            } else {
+                self.purchaseService.buy()
+            }
+        }
+    }
+    
+    func didRestore(error: Error?) {
+        DispatchQueue.main.async {
+            if let error = error {
+                self.router?.show(error: error)
+                self.buyButton.hideLoading()
+            } else {
+                self.purchaseService.restorePurchases()
+            }
+        }
     }
 }

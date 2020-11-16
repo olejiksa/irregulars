@@ -10,9 +10,7 @@ import UIKit
 
 final class SidebarAssembly: AssemblyProtocol {
     
-    typealias ViewController = SidebarViewController
-    
-    func viewController() -> ViewController {
+    func viewController() -> some SidebarViewController {
         let presenter = SidebarPresenter()
         let viewController = SidebarViewController(presenter: presenter)
         presenter.viewController = viewController

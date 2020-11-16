@@ -10,9 +10,7 @@ import UIKit
 
 final class TestsAssembly: AssemblyProtocol {
     
-    typealias ViewController = TestsViewController
-    
-    func viewController() -> ViewController {
+    func viewController() -> some TestsViewController {
         let presenter = TestsPresenter()
         let viewConroller = TestsViewController(presenter: presenter)
         return viewConroller

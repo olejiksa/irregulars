@@ -10,8 +10,6 @@ import UIKit
 
 final class DetailAssembly: AssemblyProtocol {
     
-    typealias ViewController = DetailViewController
-    
     private let verb: Verb
     private let isOpenedByDeeplink: Bool
     private let navigationController: UINavigationController?
@@ -22,7 +20,7 @@ final class DetailAssembly: AssemblyProtocol {
         self.navigationController = navigationController
     }
     
-    func viewController() -> ViewController {
+    func viewController() -> some DetailViewController {
         let presenter = DetailPresenter(audioService: .init(),
                                         languageService: .init(),
                                         verb: verb)

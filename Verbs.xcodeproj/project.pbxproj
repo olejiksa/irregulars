@@ -123,6 +123,11 @@
 		EBF4A150252ED5A4003E3A44 /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBF4A14E252ED5A4003E3A44 /* SwitchCell.xib */; };
 		EBF8A62F2559172100A6265C /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8A62E2559172100A6265C /* Favorites.swift */; };
 		EBF8A6522559225D00A6265C /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8A6512559225D00A6265C /* Locator.swift */; };
+		EBF97C8A25623503009FFFBA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF97C8925623503009FFFBA /* StoreKit.framework */; };
+		EBF97C8E256235AF009FFFBA /* PurchaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF97C8D256235AF009FFFBA /* PurchaseService.swift */; };
+		EBF97C95256254DC009FFFBA /* PaywallAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF97C94256254DC009FFFBA /* PaywallAssembly.swift */; };
+		EBF97C9D256259A4009FFFBA /* PaywallRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF97C9C256259A3009FFFBA /* PaywallRouter.swift */; };
+		EBF97CA5256270DB009FFFBA /* PaywallPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF97CA4256270DB009FFFBA /* PaywallPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +220,7 @@
 		EBA644D6255ADC800012B973 /* SidebarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarPresenter.swift; sourceTree = "<group>"; };
 		EBA644DE255ADC910012B973 /* SidebarAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarAssembly.swift; sourceTree = "<group>"; };
 		EBA644E6255AE25B0012B973 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		EBA644F8256173D30012B973 /* Verbs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Verbs.entitlements; sourceTree = "<group>"; };
 		EBB01C0825217F5400BB646B /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		EBB01C0A2521825000BB646B /* TranslationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationCell.swift; sourceTree = "<group>"; };
 		EBB01C0B2521825000BB646B /* TranslationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TranslationCell.xib; sourceTree = "<group>"; };
@@ -259,6 +265,11 @@
 		EBF4A14E252ED5A4003E3A44 /* SwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
 		EBF8A62E2559172100A6265C /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		EBF8A6512559225D00A6265C /* Locator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
+		EBF97C8925623503009FFFBA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		EBF97C8D256235AF009FFFBA /* PurchaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseService.swift; sourceTree = "<group>"; };
+		EBF97C94256254DC009FFFBA /* PaywallAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallAssembly.swift; sourceTree = "<group>"; };
+		EBF97C9C256259A3009FFFBA /* PaywallRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallRouter.swift; sourceTree = "<group>"; };
+		EBF97CA4256270DB009FFFBA /* PaywallPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +286,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBF97C8A25623503009FFFBA /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +370,9 @@
 			isa = PBXGroup;
 			children = (
 				EBD476C2254BBE0B0033067B /* PaywallItem */,
+				EBF97C94256254DC009FFFBA /* PaywallAssembly.swift */,
+				EBF97CA4256270DB009FFFBA /* PaywallPresenter.swift */,
+				EBF97C9C256259A3009FFFBA /* PaywallRouter.swift */,
 				EB450A032549D27300D31858 /* PaywallViewController.swift */,
 				EB450A042549D27300D31858 /* PaywallView.xib */,
 			);
@@ -431,6 +446,7 @@
 		EB7DFF62252451D1000B711D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EBF97C8925623503009FFFBA /* StoreKit.framework */,
 				EB7DFF63252451D1000B711D /* WidgetKit.framework */,
 				EB7DFF65252451D2000B711D /* SwiftUI.framework */,
 			);
@@ -440,6 +456,7 @@
 		EB7DFF67252451D2000B711D /* VerbsWidget */ = {
 			isa = PBXGroup;
 			children = (
+				EBA644C4255A5FD60012B973 /* VerbsWidgetExtension.entitlements */,
 				EB7DFF68252451D2000B711D /* VerbsWidget.swift */,
 				EB7DFF6B252451D4000B711D /* Assets.xcassets */,
 				EB7DFF6D252451D4000B711D /* Info.plist */,
@@ -516,6 +533,7 @@
 				EBB3BC0F251F3545006E0DC7 /* KeyboardService.swift */,
 				EBB95BFD25335C3E00376C3F /* LanguageService.swift */,
 				EB7B8580253B30C600542D3C /* MailService.swift */,
+				EBF97C8D256235AF009FFFBA /* PurchaseService.swift */,
 				EB717DC2252ED9EB007791AD /* UserDefaultsService.swift */,
 				EBEB1D91251F15B40019972C /* VerbsService.swift */,
 			);
@@ -566,7 +584,6 @@
 		EBEB1D69251F11900019972C = {
 			isa = PBXGroup;
 			children = (
-				EBA644C4255A5FD60012B973 /* VerbsWidgetExtension.entitlements */,
 				EBEB1D74251F11900019972C /* Verbs */,
 				EB7DFF67252451D2000B711D /* VerbsWidget */,
 				EB7DFF62252451D1000B711D /* Frameworks */,
@@ -586,6 +603,7 @@
 		EBEB1D74251F11900019972C /* Verbs */ = {
 			isa = PBXGroup;
 			children = (
+				EBA644F8256173D30012B973 /* Verbs.entitlements */,
 				EB2F5E17251F78F8007DCF60 /* Common */,
 				EBB3BC07251F2749006E0DC7 /* Extensions */,
 				EBEB1D95251F15FD0019972C /* Models */,
@@ -794,6 +812,7 @@
 				EB5547632554089F001C5585 /* TabBarController.swift in Sources */,
 				EB4509A4253B6EB600D31858 /* Actionable.swift in Sources */,
 				EBD476D6254BDF850033067B /* Bundle.swift in Sources */,
+				EBF97C9D256259A4009FFFBA /* PaywallRouter.swift in Sources */,
 				EBB01C2D25219E9A00BB646B /* SubtitleItem.swift in Sources */,
 				EBEB1D94251F15D30019972C /* Verb.swift in Sources */,
 				EB45099C253B6C7D00D31858 /* SettingsAssembly.swift in Sources */,
@@ -848,6 +867,7 @@
 				EB8325A22556EC9F005E02C1 /* AssemblyProtocol.swift in Sources */,
 				EB2F5E16251F71DD007DCF60 /* AudioService.swift in Sources */,
 				EBF4A147252ED2CA003E3A44 /* SettingsViewController.swift in Sources */,
+				EBF97C95256254DC009FFFBA /* PaywallAssembly.swift in Sources */,
 				EB8325A62556EFF0005E02C1 /* FavoritesService.swift in Sources */,
 				EB7B85652537FAE000542D3C /* Word.swift in Sources */,
 				EB2F5E0D251F543A007DCF60 /* DetailViewController.swift in Sources */,
@@ -871,6 +891,8 @@
 				EBF4A12E252E981F003E3A44 /* ListCell.swift in Sources */,
 				EBF4A14F252ED5A4003E3A44 /* SwitchCell.swift in Sources */,
 				EBA644BB255A59CF0012B973 /* ActionItem.swift in Sources */,
+				EBF97C8E256235AF009FFFBA /* PurchaseService.swift in Sources */,
+				EBF97CA5256270DB009FFFBA /* PaywallPresenter.swift in Sources */,
 				EBEB1D8B251F13570019972C /* ListViewController.swift in Sources */,
 				EB7DFF5625244977000B711D /* SplitViewController.swift in Sources */,
 				EB450992253B6B4700D31858 /* SettingsPresenter.swift in Sources */,
@@ -914,7 +936,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_ENTITLEMENTS = VerbsWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = VerbsWidget/VerbsWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
@@ -938,7 +960,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_ENTITLEMENTS = VerbsWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = VerbsWidget/VerbsWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
@@ -1079,6 +1101,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Verbs/Verbs.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
@@ -1090,6 +1114,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1100,6 +1125,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Verbs/Verbs.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
@@ -1111,6 +1138,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

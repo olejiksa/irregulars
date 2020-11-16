@@ -1,0 +1,149 @@
+//
+//  PurchaseService.swift
+//  Verbs
+//
+//  Created by Oleg Samoylov on 16.11.2020.
+//  Copyright © 2020 Oleg Samoylov. All rights reserved.
+//
+
+import StoreKit
+
+final class PurchaseService: NSObject {
+    
+    typealias ActivationHandler = () -> ()
+    typealias ErrorHandler = (Error?) -> ()
+    
+    private let proID = "com.olejiksa.Verbs.Pro"
+    private let userDefaultsService = UserDefaultsService()
+    
+    private var products: [SKProduct] = []
+    private var productsRequest: SKProductsRequest?
+    private var activationHandler: ActivationHandler?
+    private var errorHandler: ErrorHandler?
+    
+    var canMakePayments: Bool { SKPaymentQueue.canMakePayments() }
+    
+    override init() {
+        super.init()
+        SKPaymentQueue.default().add(self)
+    }
+    
+    func requestProducts(activationHandler: @escaping ActivationHandler,
+                         errorHandler: @escaping ErrorHandler) {
+        productsRequest?.cancel()
+        
+        self.activationHandler = activationHandler
+        self.errorHandler = errorHandler
+        
+        productsRequest = SKProductsRequest(productIdentifiers: [proID])
+        productsRequest?.delegate = self
+        productsRequest?.start()
+    }
+    
+    func buy() {
+        guard let product = products.first else { return }
+        print("Buying \(product.productIdentifier)...")
+        let payment = SKPayment(product: product)
+        SKPaymentQueue.default().add(payment)
+    }
+    
+    func restorePurchases() {
+        SKPaymentQueue.default().restoreCompletedTransactions()
+    }
+}
+
+// MARK: - Private
+
+private extension PurchaseService {
+    
+    func complete(transaction: SKPaymentTransaction) {
+        print("complete...")
+        deliverPurchaseNotification()
+        SKPaymentQueue.default().finishTransaction(transaction)
+        
+        activationHandler?()
+    }
+    
+    func restore(transaction: SKPaymentTransaction) {
+        guard let productIdentifier = transaction.original?.payment.productIdentifier else { return }
+        
+        print("restore... \(productIdentifier)")
+        deliverPurchaseNotification()
+        SKPaymentQueue.default().finishTransaction(transaction)
+        
+        activationHandler?()
+    }
+    
+    func fail(transaction: SKPaymentTransaction) {
+        print("fail...")
+        if let transactionError = transaction.error as NSError?,
+           let localizedDescription = transaction.error?.localizedDescription,
+           transactionError.code != SKError.paymentCancelled.rawValue {
+            print("Transaction Error: \(localizedDescription)")
+            errorHandler?(transaction.error)
+        }
+        
+        SKPaymentQueue.default().finishTransaction(transaction)
+    }
+    
+    func deliverPurchaseNotification() {
+        userDefaultsService.save(true, by: .isPaid)
+        FeatureToggle.isPaid = true
+        NotificationCenter.default.post(name: .paid, object: nil)
+    }
+    
+    func clearRequest() {
+        productsRequest = nil
+    }
+}
+
+// MARK: - SKPaymentTransactionObserver
+
+extension PurchaseService: SKPaymentTransactionObserver {
+    
+    func paymentQueue(_ queue: SKPaymentQueue,
+                      updatedTransactions transactions: [SKPaymentTransaction]) {
+        for transaction in transactions {
+            switch transaction.transactionState {
+            case .purchased:
+                complete(transaction: transaction)
+                break
+            case .failed:
+                fail(transaction: transaction)
+                break
+            case .restored:
+                restore(transaction: transaction)
+                break
+            case .deferred:
+                break
+            case .purchasing:
+                break
+            @unknown default:
+                break
+            }
+        }
+    }
+}
+
+// MARK: - SKProductsRequestDelegate
+
+extension PurchaseService: SKProductsRequestDelegate {
+    
+    func productsRequest(_ request: SKProductsRequest,
+                         didReceive response: SKProductsResponse) {
+        products = response.products
+        errorHandler?(nil)
+        clearRequest()
+        
+        for p in products {
+            print("Found product: \(p.productIdentifier) \(p.localizedTitle) \(p.price.floatValue)")
+        }
+    }
+    
+    func request(_ request: SKRequest, didFailWithError error: Error) {
+        print("Failed to load list of products.")
+        print("Error: \(error.localizedDescription)")
+        errorHandler?(error)
+        clearRequest()
+    }
+}
