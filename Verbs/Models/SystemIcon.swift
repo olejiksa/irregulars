@@ -9,14 +9,16 @@
 import UIKit
 
 enum SystemIcon: String {
+    case puzzle = "puzzlepiece.fill"
+    case shuffle
     case gear
     case star
+    case note = "note.text"
     case starFill = "star.fill"
     case speaker = "speaker.wave.3.fill"
     case transcription = "textformat.abc.dottedunderline"
     case search = "magnifyingglass"
     case alphabet = "list.triangle"
-    case widget = "note.text"
     case toggle = "switch.2"
     case dictionary = "a.book.closed.fill"
     case book = "book"
@@ -29,6 +31,7 @@ enum SystemIcon: String {
     case pronunciation = "mouth"
     case chart = "chart.pie"
     case listStar = "list.star"
+    case question = "questionmark.circle"
     
     var image: UIImage? { UIImage(systemName: rawValue) }
 }

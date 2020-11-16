@@ -13,6 +13,8 @@ final class TestsAssembly: AssemblyProtocol {
     func viewController() -> some TestsViewController {
         let presenter = TestsPresenter()
         let viewConroller = TestsViewController(presenter: presenter)
+        presenter.viewController = viewConroller
+        _ = UINavigationController(rootViewController: viewConroller)
         return viewConroller
     }
 }
