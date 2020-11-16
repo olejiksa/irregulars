@@ -16,6 +16,7 @@ final class SettingsPresenter: NSObject {
     var router: SettingsRouter?
     weak var viewController: SettingsViewController?
     
+    private let productURL = URL(string: "https://apps.apple.com/app/id1540487254")
     private let languageService: LanguageService
     private let mailService: MailService
     private let userDefaultsService: UserDefaultsService
@@ -74,9 +75,10 @@ private extension SettingsPresenter {
         dataSource.setup([Section(header: header,
                                   items: [upgradeItem, resetItem].compactMap { $0 }),
                           Section(header: "General".localized,
-                                  items: [DisclosureItem(text: "Language".localized,
-                                                         isEnabled: true,
-                                                         actionBlock: willShowLanguageSettings),
+                                  items: [RightDetailItem(title: "Language".localized,
+                                                          subtitle: languageService.current.description,
+                                                          actionBlock: willShowLanguageSettings,
+                                                          hasDisclosureItem: true),
                                           SwitchItem(text: "Regular verbs (-ed)".localized,
                                                      isOn: settings.shouldRegularVerbsBeShown,
                                                      isEnabled: FeatureToggle.isPaid,
@@ -137,32 +139,28 @@ private extension SettingsPresenter {
     }
     
     func willShowLanguageSettings(_ sender: ItemProtocol) {
-        guard let url = URL(string: UIApplication.openSettingsURLString),
-              UIApplication.shared.canOpenURL(url) else { return }
-        UIApplication.shared.open(url)
+        guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+        router?.open(url)
     }
     
     func willRate(_ sender: ItemProtocol) {
-        guard let productURL = URL(string: "https://itunes.apple.com/app/id958625272") else { return }
+        guard let productURL = productURL else { return }
         var components = URLComponents(url: productURL, resolvingAgainstBaseURL: false)
         components?.queryItems = [URLQueryItem(name: "action", value: "write-review")]
-        guard let writeReviewURL = components?.url,
-              UIApplication.shared.canOpenURL(writeReviewURL) else { return }
-        UIApplication.shared.open(writeReviewURL)
+        guard let writeReviewURL = components?.url else { return }
+        router?.open(writeReviewURL)
     }
     
     func willGoToPrivacyPolicy(_ sender: ItemProtocol) {
         let code = languageService.current.rawValue
-        if let url = URL(string: "https://github.com/olejiksa/legal/blob/master/privacy-\(code).md") {
-            router?.goToURL(url)
-        }
+        guard let url = URL(string: "https://github.com/olejiksa/legal/blob/master/privacy-\(code).md")
+        else { return }
+        router?.goToURL(url)
     }
     
     func willShare(_ sender: ItemProtocol) {
-        guard let productURL = URL(string: "https://itunes.apple.com/app/id958625272") else { return }
-        let activityViewController = UIActivityViewController(activityItems: [productURL], applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = viewController?.view
-        viewController?.present(activityViewController, animated: true, completion: nil)
+        guard let productURL = productURL, let view = viewController?.view else { return }
+        router?.share(productURL, in: view)
     }
     
     func willBuy(_ sender: ItemProtocol) {

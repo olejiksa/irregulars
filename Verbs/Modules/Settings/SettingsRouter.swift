@@ -11,10 +11,10 @@ import UIKit
 
 final class SettingsRouter {
     
-    private weak var navigationController: UINavigationController?
+    private weak var viewController: UIViewController?
     
-    init(navigationController: UINavigationController?) {
-        self.navigationController = navigationController
+    init(viewController: UIViewController?) {
+        self.viewController = viewController
     }
     
     func goToURL(_ url: URL) {
@@ -22,13 +22,25 @@ final class SettingsRouter {
         configuration.entersReaderIfAvailable = true
         let vc = SFSafariViewController(url: url, configuration: configuration)
         vc.modalPresentationStyle = .pageSheet
-        navigationController?.present(vc, animated: true)
+        viewController?.present(vc, animated: true)
+    }
+    
+    func open(_ url: URL) {
+        guard UIApplication.shared.canOpenURL(url) else { return }
+        UIApplication.shared.open(url)
     }
     
     func goToPaywall() {
         let vc = PaywallAssembly().viewController()
         let nvc = UINavigationController(rootViewController: vc)
         nvc.modalPresentationStyle = .formSheet
-        navigationController?.present(nvc, animated: true)
+        viewController?.present(nvc, animated: true)
+    }
+    
+    func share(_ url: URL, in view: UIView) {
+        let activityViewController = UIActivityViewController(activityItems: [url],
+                                                              applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = view
+        viewController?.present(activityViewController, animated: true)
     }
 }

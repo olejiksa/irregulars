@@ -21,8 +21,8 @@ final class SettingsAssembly: AssemblyProtocol {
                                           mailService: .init(),
                                           userDefaultsService: .init())
         let viewController = SettingsViewController(presenter: presenter)
-        let nvc = navigationController ?? UINavigationController(rootViewController: viewController)
-        let router = SettingsRouter(navigationController: nvc)
+        _ = navigationController ?? UINavigationController(rootViewController: viewController)
+        let router = SettingsRouter(viewController: viewController)
         presenter.viewController = viewController
         presenter.router = router
         return viewController
