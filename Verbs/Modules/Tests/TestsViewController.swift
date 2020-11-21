@@ -28,6 +28,7 @@ final class TestsViewController: UIViewController {
 
         setupNavigationBar()
         setupTableView()
+        setupView()
     }
 }
 
@@ -41,7 +42,7 @@ private extension TestsViewController {
     }
     
     func setupTableView() {
-        let tableViewStyle: UITableView.Style = splitViewController?.isCollapsed == true ? .grouped : .insetGrouped
+        let tableViewStyle: UITableView.Style = splitViewController?.isCollapsed == true ? .plain : .insetGrouped
         let tableView = UITableView(frame: .zero, style: tableViewStyle)
         
         view.addSubview(tableView)
@@ -60,5 +61,9 @@ private extension TestsViewController {
         tableView.register(SubtitleCell.self)
         
         self.tableView = tableView
+    }
+    
+    func setupView() {
+        view.backgroundColor = .systemBackground
     }
 }

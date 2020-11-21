@@ -32,6 +32,16 @@ final class TestDetailViewController: UIViewController {
         setupTableView()
         setupKeyboardService()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        view.endEditing(true)
+    }
+    
+    func reloadData() {
+        tableView?.reloadData()
+    }
 }
 
 // MARK: - Private

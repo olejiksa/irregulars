@@ -62,7 +62,7 @@ private extension FavoritesService {
     
     func setItems() {
         guard let favorites = favorites else { return }
-        let set = Set(parser.read(from: "irregulars"))
+        let set = Set(parser.read(from: .irregulars))
         items = Array(set.intersection(favorites.verbs)).sorted(by: <)
     }
 }

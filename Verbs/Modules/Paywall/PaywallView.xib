@@ -45,7 +45,7 @@
                         </button>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCn-Wh-KP8" customClass="BigButton" customModule="Verbs" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="335" height="54"/>
-                            <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
+                            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="54" id="CqG-jf-Uac"/>
                             </constraints>
@@ -94,8 +94,8 @@
         </view>
     </objects>
     <resources>
-        <systemColor name="secondarySystemFillColor">
-            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

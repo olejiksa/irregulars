@@ -65,6 +65,10 @@ final class VerbsService {
         
         return indexPath
     }
+    
+    func verb(of infinitive: String?) -> Verb? {
+        items.first { $0.infinitive.value == infinitive }
+    }
 }
 
 // MARK: - Private
@@ -72,7 +76,7 @@ final class VerbsService {
 private extension VerbsService {
     
     func setItems() {
-        var set = Set(parser.read(from: "irregulars"))
+        var set = Set(parser.read(from: .irregulars))
        
         if !shouldRegularVerbsBeShown {
             let elements = set.filter { $0.hasRegular }

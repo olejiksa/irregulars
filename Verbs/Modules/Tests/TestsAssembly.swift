@@ -14,7 +14,8 @@ final class TestsAssembly: AssemblyProtocol {
         let presenter = TestsPresenter()
         let viewConroller = TestsViewController(presenter: presenter)
         presenter.viewController = viewConroller
-        _ = UINavigationController(rootViewController: viewConroller)
+        let navigationController = UINavigationController(rootViewController: viewConroller)
+        navigationController.view.backgroundColor = .systemBackground
         return viewConroller
     }
 }

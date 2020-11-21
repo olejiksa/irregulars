@@ -39,6 +39,7 @@
 		EB5547542553CB22001C5585 /* SidebarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5547532553CB22001C5585 /* SidebarCell.swift */; };
 		EB5547632554089F001C5585 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5547622554089F001C5585 /* TabBarController.swift */; };
 		EB69A26925322AFA00DD1827 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB69A26825322AF900DD1827 /* Notification.swift */; };
+		EB69F8A92569D42B00759BAA /* VerbForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB69F8A82569D42B00759BAA /* VerbForm.swift */; };
 		EB717DBB252ED6B9007791AD /* SwitchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB717DBA252ED6B9007791AD /* SwitchItem.swift */; };
 		EB717DC3252ED9EB007791AD /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB717DC2252ED9EB007791AD /* UserDefaultsService.swift */; };
 		EB717DC7252EDA1C007791AD /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB717DC6252EDA1C007791AD /* Settings.swift */; };
@@ -111,6 +112,7 @@
 		EBDF009C2562EED70041F458 /* InputItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF009B2562EED70041F458 /* InputItem.swift */; };
 		EBDF00A22562EF090041F458 /* InputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBDF00A12562EF090041F458 /* InputCell.xib */; };
 		EBDF00A62562F1160041F458 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF00A52562F1160041F458 /* FormTextField.swift */; };
+		EBDF00AC256764490041F458 /* TestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF00AB256764490041F458 /* TestService.swift */; };
 		EBEB1D76251F11900019972C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB1D75251F11900019972C /* AppDelegate.swift */; };
 		EBEB1D78251F11900019972C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB1D77251F11900019972C /* SceneDelegate.swift */; };
 		EBEB1D7F251F11910019972C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBEB1D7E251F11910019972C /* Assets.xcassets */; };
@@ -190,6 +192,7 @@
 		EB5547532553CB22001C5585 /* SidebarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarCell.swift; sourceTree = "<group>"; };
 		EB5547622554089F001C5585 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		EB69A26825322AF900DD1827 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		EB69F8A82569D42B00759BAA /* VerbForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbForm.swift; sourceTree = "<group>"; };
 		EB717DBA252ED6B9007791AD /* SwitchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchItem.swift; sourceTree = "<group>"; };
 		EB717DC2252ED9EB007791AD /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		EB717DC6252EDA1C007791AD /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -258,6 +261,7 @@
 		EBDF009B2562EED70041F458 /* InputItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputItem.swift; sourceTree = "<group>"; };
 		EBDF00A12562EF090041F458 /* InputCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputCell.xib; sourceTree = "<group>"; };
 		EBDF00A52562F1160041F458 /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
+		EBDF00AB256764490041F458 /* TestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestService.swift; sourceTree = "<group>"; };
 		EBEB1D72251F11900019972C /* Verbs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Verbs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBEB1D75251F11900019972C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBEB1D77251F11900019972C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -548,6 +552,7 @@
 				EBB95BFD25335C3E00376C3F /* LanguageService.swift */,
 				EB7B8580253B30C600542D3C /* MailService.swift */,
 				EBF97C8D256235AF009FFFBA /* PurchaseService.swift */,
+				EBDF00AB256764490041F458 /* TestService.swift */,
 				EB717DC2252ED9EB007791AD /* UserDefaultsService.swift */,
 				EBEB1D91251F15B40019972C /* VerbsService.swift */,
 			);
@@ -599,7 +604,7 @@
 		EBDF00752562DD620041F458 /* TestDetail */ = {
 			isa = PBXGroup;
 			children = (
-				EBDF00942562EE230041F458 /* TestInputItem */,
+				EBDF00942562EE230041F458 /* InputItem */,
 				EBDF00882562E8A30041F458 /* TestDetailAssembly.swift */,
 				EBDF008C2562E9210041F458 /* TestDetailPresenter.swift */,
 				EBDF00762562DD850041F458 /* TestDetailViewController.swift */,
@@ -607,7 +612,7 @@
 			path = TestDetail;
 			sourceTree = "<group>";
 		};
-		EBDF00942562EE230041F458 /* TestInputItem */ = {
+		EBDF00942562EE230041F458 /* InputItem */ = {
 			isa = PBXGroup;
 			children = (
 				EBDF00A52562F1160041F458 /* FormTextField.swift */,
@@ -615,7 +620,7 @@
 				EBDF00952562EEB40041F458 /* InputCell.swift */,
 				EBDF00A12562EF090041F458 /* InputCell.xib */,
 			);
-			path = TestInputItem;
+			path = InputItem;
 			sourceTree = "<group>";
 		};
 		EBEB1D69251F11900019972C = {
@@ -666,6 +671,7 @@
 				EB717DC6252EDA1C007791AD /* Settings.swift */,
 				EBF4A13E252EC9A3003E3A44 /* SystemIcon.swift */,
 				EBEB1D93251F15D30019972C /* Verb.swift */,
+				EB69F8A82569D42B00759BAA /* VerbForm.swift */,
 				EB7B85642537FAE000542D3C /* Word.swift */,
 			);
 			path = Models;
@@ -882,6 +888,7 @@
 				EB450973253B5CB300D31858 /* Section.swift in Sources */,
 				EB717DC3252ED9EB007791AD /* UserDefaultsService.swift in Sources */,
 				EBDF00A62562F1160041F458 /* FormTextField.swift in Sources */,
+				EBDF00AC256764490041F458 /* TestService.swift in Sources */,
 				EBB01C0C2521825000BB646B /* TranslationCell.swift in Sources */,
 				EBB01C0925217F5400BB646B /* Language.swift in Sources */,
 				EB450A49254B1A2B00D31858 /* PlainCell.swift in Sources */,
@@ -929,6 +936,7 @@
 				EBF4A126252E901A003E3A44 /* NavigationController.swift in Sources */,
 				EB7B8579253B0D5900542D3C /* DisclosureCell.swift in Sources */,
 				EBB01C1B2521874E00BB646B /* TableView.swift in Sources */,
+				EB69F8A92569D42B00759BAA /* VerbForm.swift in Sources */,
 				EB717DBB252ED6B9007791AD /* SwitchItem.swift in Sources */,
 				EBB01C0F2521828400BB646B /* TranslationItem.swift in Sources */,
 				EBF4A12E252E981F003E3A44 /* ListCell.swift in Sources */,

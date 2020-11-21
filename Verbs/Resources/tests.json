@@ -1,10 +1,10 @@
-{
+[
     ["go", "see", "sing", "get", "take"],
     ["drink", "sleep", "choose", "meet", "fly", "forget", "hang", "catch", "blow"],
-    [fall, draw, begin, freeze, give, throw, rise, forgive, shine, hold, bite, bring],
-    [swim, grow, teach, tear, understand, wake, write, think, read, ring, run, leave, seek, sell],
-    [dig, drive, hide, make, send, shake, shoot, speak, tell, win, beat, bend, cost, have, be],
-    [burn, become, eat, fight, hear, hit, keep, light, mean, ride, say, swing, show, wear, lay]
-    [bet, break, build, cut, deal, do, feed, feel, find, hurt, know, lead, lend, let, lie, set],
-    [put, sweep, strike, stick, steal, stand, spend, sit, sink, shut, pay, come, lose, buy],
-}
+    ["fall", "draw", "begin", "freeze", "give", "throw", "rise", "forgive", "shine", "hold", "bite", "bring"],
+    ["swim", "grow", "teach", "tear", "understand", "wake", "write", "think", "read", "ring", "run", "leave", "seek", "sell"],
+    ["dig", "drive", "hide", "make", "send", "shake", "shoot", "speak", "tell", "win", "beat", "bend", "cost", "have", "be"],
+    ["burn", "become", "eat", "fight", "hear", "hit", "keep", "light", "mean", "ride", "say", "swing", "show", "wear", "lay"],
+    ["bet", "break", "build", "cut", "deal", "do", "feed", "feel", "find", "hurt", "know", "lead", "lend", "let", "lie", "set"],
+    ["put", "sweep", "strike", "stick", "steal", "stand", "spend", "sit", "sink", "shut", "pay", "come", "lose", "buy"]
+]

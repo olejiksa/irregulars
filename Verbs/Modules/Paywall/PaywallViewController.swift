@@ -79,6 +79,7 @@ private extension PaywallViewController {
     }
     
     @IBAction func didRestoreTap() {
+        restoreButton.showLoading()
         purchaseService.requestProducts(activationHandler: didActivate,
                                         errorHandler: didRestore)
     }
@@ -109,7 +110,7 @@ private extension PaywallViewController {
         DispatchQueue.main.async {
             if let error = error {
                 self.router?.show(error: error)
-                self.buyButton.hideLoading()
+                self.restoreButton.hideLoading()
             } else {
                 self.purchaseService.restorePurchases()
             }

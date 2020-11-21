@@ -14,13 +14,7 @@ final class BigButton: UIButton {
         set { layer.cornerRadius = newValue }
     }
     
-    @IBInspectable var isPrimary: Bool {
-        get { backgroundColor == .systemBlue }
-        set {
-            backgroundColor = newValue ? .systemBlue : .secondarySystemBackground
-            titleLabel?.textColor = newValue ? .white : .systemBlue
-        }
-    }
+    @IBInspectable var isPrimary: Bool = false
     
     override var isHighlighted: Bool {
         didSet {
@@ -64,7 +58,7 @@ final class BigButton: UIButton {
     private func createActivityIndicator() -> UIActivityIndicatorView {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.hidesWhenStopped = true
-        activityIndicator.color = .white
+        activityIndicator.color = isPrimary ? .white : .systemBlue
         return activityIndicator
     }
 

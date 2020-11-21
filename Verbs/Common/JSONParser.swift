@@ -10,8 +10,13 @@ import Foundation
 
 final class JSONParser<T: Decodable> {
     
-    func read(from file: String) -> [T] {
-        guard let fileUrl = Bundle.main.url(forResource: file, withExtension: "json") else { return [] }
+    enum File: String {
+        case irregulars
+        case tests
+    }
+    
+    func read(from file: File) -> [T] {
+        guard let fileUrl = Bundle.main.url(forResource: file.rawValue, withExtension: "json") else { return [] }
         
         do {
             let data = try Data(contentsOf: fileUrl, options: .mappedIfSafe)

@@ -15,14 +15,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m47-xU-kFD" customClass="FormTextField" customModule="Verbs" customModuleProvider="target">
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m47-xU-kFD" customClass="FormTextField" customModule="Verbs" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
-                                <real key="value" value="20"/>
-                            </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="heightInset">
                                 <real key="value" value="15"/>
                             </userDefinedRuntimeAttribute>
@@ -39,12 +36,15 @@
                     <constraint firstAttribute="bottom" secondItem="m47-xU-kFD" secondAttribute="bottom" id="lee-NP-kSB"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="textField" destination="m47-xU-kFD" id="SXN-hD-01C"/>
+            </connections>
             <point key="canvasLocation" x="-30" y="-33"/>
         </tableViewCell>
     </objects>
     <designables>
         <designable name="m47-xU-kFD">
-            <size key="intrinsicContentSize" width="45" height="51"/>
+            <size key="intrinsicContentSize" width="118.5" height="51"/>
         </designable>
     </designables>
 </document>

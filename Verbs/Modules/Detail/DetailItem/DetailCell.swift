@@ -29,6 +29,7 @@ private extension DetailCell {
     
     func setupPlayButton() {
         transcriptionLabel.isHidden = !FeatureToggle.isPaid
+        playButton.isHidden = actionBlock == nil
         playButton.addTarget(self,
                              action: #selector(playButtonDidTap),
                              for: .touchUpInside)

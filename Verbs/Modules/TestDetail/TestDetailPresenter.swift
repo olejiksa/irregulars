@@ -14,10 +14,14 @@ final class TestDetailPresenter: NSObject {
     var router: DetailRouter?
     weak var viewController: TestDetailViewController?
     
+    private let items: [String]
     private let audioService: AudioService
+    private let verbsService: VerbsService
     
-    init(audioService: AudioService) {
+    init(items: [String], audioService: AudioService, verbsService: VerbsService) {
+        self.items = items
         self.audioService = audioService
+        self.verbsService = verbsService
         super.init()
         setupSections()
     }
@@ -28,26 +32,48 @@ final class TestDetailPresenter: NSObject {
 private extension TestDetailPresenter {
     
     func setupSections() {
-        dataSource.setup([Section(header: "Infinitive",
-                                  items: [DetailItem(word: Word(value: "go",
-                                                                transcription: ""),
-                                                     actionBlock: play)].compactMap { $0 }),
-                          Section(header: "Simple Past",
-                                  items: [DetailItem(word: Word(value: "went",
-                                                                transcription: ""),
-                                                     actionBlock: play)].compactMap { $0 }),
-                          Section(header: "Past Participle",
-                                  items: [InputItem(word: Word(value: "gone",
-                                                               transcription: ""))].compactMap { $0 })])
+        configureRandomComposition()
     }
     
-    func play(text: String) {
-        guard FeatureToggle.isPaid else {
-            router?.goToPaywall()
-            return
-        }
+    func configureRandomComposition() {
+        guard let verb = verbsService.verb(of: items.randomElement()),
+              let simplePast = verb.simplePast.first,
+              let pastParticiple = verb.pastParticiple?.first
+        else { return }
         
-        audioService.play(text: text)
+        let randomVerbForm = VerbForm.allCases.randomElement() ?? .infinitive
+        
+        switch randomVerbForm {
+        case .infinitive:
+            dataSource.setup([Section(header: randomVerbForm.rawValue,
+                                      items: [InputItem(word: verb.infinitive,
+                                                        successActionBlock: didEndEntering)].compactMap { $0 }),
+                              Section(header: "Simple Past",
+                                      items: [DetailItem(word: simplePast)].compactMap { $0 }),
+                              Section(header: "Past Participle",
+                                      items: [DetailItem(word: pastParticiple)].compactMap { $0 })])
+        case .simplePast:
+            dataSource.setup([Section(header: "Infinitive",
+                                      items: [DetailItem(word: verb.infinitive)].compactMap { $0 }),
+                              Section(header: randomVerbForm.rawValue,
+                                      items: [InputItem(word: simplePast,
+                                                        successActionBlock: didEndEntering)].compactMap { $0 }),
+                              Section(header: "Past Participle",
+                                      items: [DetailItem(word: pastParticiple)].compactMap { $0 })])
+        case .pastParticiple:
+            dataSource.setup([Section(header: "Infinitive",
+                                      items: [DetailItem(word: verb.infinitive)].compactMap { $0 }),
+                              Section(header: "Simple Past",
+                                      items: [DetailItem(word: simplePast)].compactMap { $0 }),
+                              Section(header: randomVerbForm.rawValue,
+                                      items: [InputItem(word: pastParticiple,
+                                                        successActionBlock: didEndEntering)].compactMap { $0 })])
+        }
+    }
+    
+    func didEndEntering() {
+        configureRandomComposition()
+        viewController?.reloadData()
     }
 }
 
@@ -59,5 +85,3 @@ extension TestDetailPresenter: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
-
-
