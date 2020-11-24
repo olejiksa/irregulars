@@ -52,12 +52,12 @@ private extension TabBarController {
         
         let listVc = ListAssembly(splitViewController: svc).viewController().navigationController
         let favoritesVc = FavoritesAssembly(splitViewController: svc).viewController().navigationController
-        let testsVc = TestsAssembly().viewController().navigationController
+        let testsVc = TestsAssembly(splitViewController: svc).viewController().navigationController
         let settingsVc = SettingsAssembly().viewController().navigationController
         
         compound(items: [(listVc, "Verbs".localized, .bookFill),
                          (favoritesVc, "Favorites".localized, .starFill),
-                         (testsVc, "Tests".localized, .puzzle),
+                         (testsVc, "Tests".localized, .puzzleFill),
                          (settingsVc, "Settings".localized, .gear)])
     }
     

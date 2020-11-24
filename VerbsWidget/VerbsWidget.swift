@@ -67,7 +67,7 @@ struct VerbsWidgetEntryView: View {
                 Text("Simple Past")
                     .font(.caption)
                 if let simplePast = entry.verb.simplePast.first {
-                    Text(simplePast.shortened)
+                    Text(simplePast.value)
                         .bold()
                         .truncationMode(.head)
                         .lineLimit(1)
@@ -75,7 +75,7 @@ struct VerbsWidgetEntryView: View {
                 if let pastParticiple = entry.verb.pastParticiple?.first {
                     Text("Past Participle")
                         .font(.caption)
-                    Text(pastParticiple.shortened)
+                    Text(pastParticiple.value)
                         .bold()
                         .truncationMode(.head)
                         .lineLimit(1)
@@ -99,7 +99,7 @@ struct VerbsWidgetEntryView: View {
                         VStack(alignment: .center, spacing: 10) {
                             Text("Simple Past")
                                 .font(.caption)
-                            Text(simplePast.shortened)
+                            Text(simplePast.value)
                                 .bold()
                                 .truncationMode(.head)
                                 .lineLimit(1)
@@ -112,7 +112,7 @@ struct VerbsWidgetEntryView: View {
                         VStack(alignment: .center, spacing: 10) {
                             Text("Past Participle")
                                 .font(.caption)
-                            Text(pastParticiple.shortened)
+                            Text(pastParticiple.value)
                                 .bold()
                                 .truncationMode(.head)
                                 .lineLimit(1)

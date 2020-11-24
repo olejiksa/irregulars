@@ -18,6 +18,7 @@ final class SidebarPresenter: NSObject {
     private struct RowIdentifier {
         static let all = UUID()
         static let favorites = UUID()
+        static let tests = UUID()
         static let settings = UUID()
     }
     
@@ -95,7 +96,11 @@ private extension SidebarPresenter {
             .row(title: "Favorites".localized,
                  subtitle: nil,
                  image: SystemIcon.star.image,
-                 id: RowIdentifier.favorites)
+                 id: RowIdentifier.favorites),
+            .row(title: "Tests".localized,
+                 subtitle: nil,
+                 image: SystemIcon.puzzle.image,
+                 id: RowIdentifier.tests)
         ]
         
         snapshot.append([header])
@@ -144,6 +149,10 @@ private extension SidebarPresenter {
         case RowIdentifier.favorites:
             selectedIndexPath = indexPath
             let vc = FavoritesAssembly(splitViewController: splitViewController).viewController()
+            splitViewController.setViewController(vc.navigationController, for: .supplementary)
+        case RowIdentifier.tests:
+            selectedIndexPath = indexPath
+            let vc = TestsAssembly(splitViewController: splitViewController).viewController()
             splitViewController.setViewController(vc.navigationController, for: .supplementary)
         case RowIdentifier.settings:
             viewController?.select(at: selectedIndexPath)

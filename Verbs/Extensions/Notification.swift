@@ -11,7 +11,7 @@ import Foundation
 extension Notification.Name {
 
     static let infinitive = Notification.Name("infinitive")
-    static let infinitiveSelected = Notification.Name("infinitiveSelected")
+    static let test = Notification.Name("test")
     static let paid = Notification.Name("paid")
     static let regulars = Notification.Name("regulars")
     static let derivatives = Notification.Name("derivatives")

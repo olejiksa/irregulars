@@ -19,7 +19,7 @@ final class KeyboardService {
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(adjust),
-                                               name: UIResponder.keyboardDidShowNotification,
+                                               name: UIResponder.keyboardWillShowNotification,
                                                object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(adjust),

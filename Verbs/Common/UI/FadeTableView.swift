@@ -10,10 +10,10 @@ import UIKit
 
 final class FadeTableView: UITableView, UIScrollViewDelegate {
 
-    let fadePercentage = 0.3
-    let gradientLayer = CAGradientLayer()
-    let transparentColor = UIColor.clear.cgColor
-    let opaqueColor = UIColor.black.cgColor
+    private let fadePercentage = 0.3
+    private let gradientLayer = CAGradientLayer()
+    private let transparentColor = UIColor.clear.cgColor
+    private let opaqueColor = UIColor.black.cgColor
 
     var topOpacity: CGColor {
         let scrollViewHeight = frame.size.height

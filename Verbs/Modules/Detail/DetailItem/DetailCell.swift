@@ -11,7 +11,7 @@ import UIKit
 final class DetailCell: UITableViewCell {
         
     @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var transcriptionLabel: UILabel!
+    @IBOutlet private weak var transcriptionLabel: UILabel?
     @IBOutlet private weak var playButton: UIButton!
     
     private var actionBlock: ((String) -> ())?
@@ -28,8 +28,6 @@ final class DetailCell: UITableViewCell {
 private extension DetailCell {
     
     func setupPlayButton() {
-        transcriptionLabel.isHidden = !FeatureToggle.isPaid
-        playButton.isHidden = actionBlock == nil
         playButton.addTarget(self,
                              action: #selector(playButtonDidTap),
                              for: .touchUpInside)
@@ -51,7 +49,13 @@ extension DetailCell: CellProtocol {
         guard let item = item as? DetailItem else { return }
         
         titleLabel.text = item.word.value
-        transcriptionLabel.text = item.word.transcription
+        transcriptionLabel?.text = item.word.transcription
         actionBlock = item.actionBlock
+        
+        playButton.isHidden = actionBlock == nil
+        
+        if !FeatureToggle.isPaid {
+            transcriptionLabel?.removeFromSuperview()
+        }
     }
 }

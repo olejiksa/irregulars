@@ -10,12 +10,15 @@ import UIKit
 
 final class TestDetailViewController: UIViewController {
     
+    let index: Int
     private let presenter: TestDetailPresenter
     private var tableView: UITableView?
     private var keyboardService: KeyboardService?
     private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     
-    init(presenter: TestDetailPresenter) {
+    init(index: Int,
+         presenter: TestDetailPresenter) {
+        self.index = index
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
         hidesBottomBarWhenPushed = true
@@ -31,6 +34,7 @@ final class TestDetailViewController: UIViewController {
         setupNavigationBar()
         setupTableView()
         setupKeyboardService()
+        setupDelegate()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -49,11 +53,14 @@ final class TestDetailViewController: UIViewController {
 private extension TestDetailViewController {
     
     func setupNavigationBar() {
+        navigationItem.title = "\("Level".localized) \(index + 1)"
         navigationItem.largeTitleDisplayMode = .never
         
-        let item0 = UIBarButtonItem(image: SystemIcon.chart.image, style: .plain, target: nil, action: nil)
-        let item1 = UIBarButtonItem(image: SystemIcon.question.image, style: .plain, target: nil, action: nil)
-        navigationItem.rightBarButtonItems = [item1, item0]
+        let hintItem = UIBarButtonItem(image: SystemIcon.question.image,
+                                       style: .plain,
+                                       target: presenter,
+                                       action: #selector(presenter.showHint))
+        navigationItem.rightBarButtonItem = hintItem
     }
     
     func setupTableView() {
@@ -75,7 +82,7 @@ private extension TestDetailViewController {
         tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         
-        tableView.register(DetailCell.self, InputCell.self)
+        tableView.register(PlainDetailCell.self, InputCell.self)
         
         self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.tableView = tableView
@@ -83,5 +90,25 @@ private extension TestDetailViewController {
     
     func setupKeyboardService() {
         keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
+    }
+    
+    func setupDelegate() {
+        navigationController?.delegate = self
+    }
+}
+
+// MARK: - UINavigationControllerDelegate
+
+extension TestDetailViewController: UINavigationControllerDelegate {
+    
+    func navigationController(_ navigationController: UINavigationController,
+                              willShow viewController: UIViewController,
+                              animated: Bool) {
+        guard animated else { return }
+        if let vc = viewController as? TestDetailViewController {
+            NotificationCenter.default.post(name: .test,
+                                            object: nil,
+                                            userInfo: [Notification.Name.test: vc.index])
+        }
     }
 }

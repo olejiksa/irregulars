@@ -10,11 +10,14 @@ import UIKit
 
 final class TestDetailAssembly: AssemblyProtocol {
     
+    private let index: Int
     private let items: [String]
     private let navigationController: UINavigationController?
 
-    init(items: [String],
+    init(index: Int,
+         items: [String],
          navigationController: UINavigationController?) {
+        self.index = index
         self.items = items
         self.navigationController = navigationController
     }
@@ -22,11 +25,12 @@ final class TestDetailAssembly: AssemblyProtocol {
     func viewController() -> some TestDetailViewController {
         let presenter = TestDetailPresenter(items: items,
                                             audioService: .init(),
-                                            verbsService: .init())
-        let router = DetailRouter(navigationController: navigationController)
-        let viewConroller = TestDetailViewController(presenter: presenter)
-        presenter.viewController = viewConroller
+                                            verbsService: .init(),
+                                            rateService: .init())
+        let viewController = TestDetailViewController(index: index, presenter: presenter)
+        let router = TestDetailRouter(viewController: viewController)
+        presenter.viewController = viewController
         presenter.router = router
-        return viewConroller
+        return viewController
     }
 }

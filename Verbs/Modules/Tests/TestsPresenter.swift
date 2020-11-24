@@ -10,17 +10,32 @@ import UIKit
 
 final class TestsPresenter: NSObject {
     
-    weak var viewController: UIViewController?
+    var router: TestsRouter?
+    weak var viewController: TestsViewController?
     
     let dataSource = SectionDataSource()
     
     private let testService = TestService()
     private let items: [[String]]
     
+    private var selectedIndex: Int?
+    
     override init() {
         self.items = testService.items
         super.init()
-        setupSections()
+        subscribe()
+    }
+    
+    func setupSections() {
+        let levels = items.enumerated().map { item -> SubtitleItem in
+            let isAvailable = item.offset < 2 || FeatureToggle.isPaid
+            let hasDisclosureIndicator = isAvailable && viewController?.splitViewController?.isCollapsed == true
+            return SubtitleItem(title: "\("Level".localized) \(item.offset + 1)",
+                                subtitle: item.element.joined(separator: ", "),
+                                hasDisclosureIndicator: hasDisclosureIndicator)
+        }
+        
+        dataSource.setup([Section(header: "Levels".localized, items: levels)])
     }
 }
 
@@ -28,13 +43,16 @@ final class TestsPresenter: NSObject {
 
 private extension TestsPresenter {
     
-    func setupSections() {
-        let subtitleItems = items.enumerated().map {
-            SubtitleItem(title: "Level \($0.offset + 1)",
-                         subtitle: $0.element.joined(separator: ", "), hasDisclosureIndicator: true)
-        }
-        
-        dataSource.setup([Section(header: nil, items: subtitleItems)])
+    func subscribe() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(didSelectedItemUpdate),
+                                               name: Notification.Name.test,
+                                               object: nil)
+    }
+    
+    @objc func didSelectedItemUpdate(_ notification: Notification) {
+        selectedIndex = notification.userInfo?[Notification.Name.test] as? Int ?? -1
+        viewController?.selectSection(at: selectedIndex)
     }
 }
 
@@ -43,11 +61,20 @@ private extension TestsPresenter {
 extension TestsPresenter: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        guard indexPath.row != selectedIndex, indexPath.row < items.count else { return }
+        guard indexPath.row < 2 || FeatureToggle.isPaid else {
+            if let selectedIndex = selectedIndex {
+                tableView.selectRow(at: .init(row: selectedIndex, section: 0),
+                                    animated: true,
+                                    scrollPosition: .none)
+            } else {
+                tableView.deselectRow(at: indexPath, animated: true)
+            }
+            router?.goToPaywall()
+            return
+        }
         
-        guard indexPath.row < items.count else { return }
-        let vc = TestDetailAssembly(items: items[indexPath.row],
-                                    navigationController: viewController?.navigationController).viewController()
-        viewController?.navigationController?.push(vc)
+        router?.goToDetail(index: indexPath.row, items: items[indexPath.row])
+        selectedIndex = indexPath.row
     }
 }

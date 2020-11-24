@@ -45,13 +45,13 @@ final class FavoritesViewController: UIViewController {
         setupNoDataLabel()
         setupView()
         setupKeyboardService()
+        presenter.selectWhenRegular()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         deselectWhenCompact()
-        presenter.selectWhenRegular()
         guard animated else { return }
         NotificationCenter.default.post(name: .infinitive,
                                         object: nil,

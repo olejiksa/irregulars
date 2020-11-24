@@ -10,12 +10,20 @@ import UIKit
 
 final class TestsAssembly: AssemblyProtocol {
     
+    private let splitViewController: UISplitViewController
+    
+    init(splitViewController: UISplitViewController) {
+        self.splitViewController = splitViewController
+    }
+    
     func viewController() -> some TestsViewController {
         let presenter = TestsPresenter()
         let viewConroller = TestsViewController(presenter: presenter)
-        presenter.viewController = viewConroller
         let navigationController = UINavigationController(rootViewController: viewConroller)
         navigationController.view.backgroundColor = .systemBackground
+        let router = TestsRouter(viewController: viewConroller, splitViewController: splitViewController)
+        presenter.viewController = viewConroller
+        presenter.router = router
         return viewConroller
     }
 }

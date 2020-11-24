@@ -58,7 +58,7 @@ private extension SettingsPresenter {
         
         let options = Settings.ListView.allCases.map(\.description)
         let listShowsItem = languageService.hasTranslation ?
-            RightDetailItem(title: "List".localized,
+            RightDetailItem(title: "View".localized,
                             subtitle: settings.listView.description,
                             actionBlock: didListViewChange,
                             subitems: options,
@@ -79,15 +79,20 @@ private extension SettingsPresenter {
                                                           subtitle: languageService.current.description,
                                                           actionBlock: willShowLanguageSettings,
                                                           hasDisclosureItem: true),
-                                          SwitchItem(text: "Regular verbs (-ed)".localized,
+                                          RightDetailItem(title: "Accent color".localized,
+                                                          subtitle: "Blue".localized,
+                                                          actionBlock: nil,
+                                                          hasDisclosureItem: true,
+                                                          isEnabled: false)]),
+                          Section(header: "List".localized,
+                                  items: [SwitchItem(text: "Regular verbs (-ed)".localized,
                                                      isOn: settings.shouldRegularVerbsBeShown,
                                                      isEnabled: FeatureToggle.isPaid,
                                                      actionBlock: didRegularVerbsOptionChange),
                                           SwitchItem(text: "Derivatives".localized,
                                                      isOn: settings.shouldDerivedFormsBeShown,
                                                      isEnabled: FeatureToggle.isPaid,
-                                                     actionBlock: didDerivedFormsOptionChange)] +
-                                    [listShowsItem].compactMap { $0 }),
+                                                     actionBlock: didDerivedFormsOptionChange)] + [listShowsItem].compactMap { $0 }),
                           Section(header: "Links".localized,
                                   items: [DisclosureItem(text: "Rate and review".localized,
                                                          isEnabled: true,
@@ -190,7 +195,7 @@ extension SettingsPresenter: UITableViewDelegate {
            let item = dataSource.sectionArray.item(indexPath) as? RightDetailItem,
            item.actionBlock != nil,
            !cell.isFirstResponder {
-            if item.title == "List".localized {
+            if item.title == "View".localized {
                 _ = cell.becomeFirstResponder()
             } else {
                 item.actionBlock?(item)

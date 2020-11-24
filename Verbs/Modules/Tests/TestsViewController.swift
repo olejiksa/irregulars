@@ -29,6 +29,35 @@ final class TestsViewController: UIViewController {
         setupNavigationBar()
         setupTableView()
         setupView()
+        setupSections()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        deselectWhenCompact()
+        guard animated else { return }
+        NotificationCenter.default.post(name: .test,
+                                        object: nil,
+                                        userInfo: nil)
+    }
+    
+    func selectSection(at index: Int?) {
+        guard let index = index else {
+            if let indexPath = tableView?.indexPathForSelectedRow {
+                tableView?.deselectRow(at: indexPath, animated: true)
+            }
+            
+            return
+        }
+        
+        tableView?.selectRow(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .none)
+    }
+    
+    func deselectWhenCompact() {
+        guard splitViewController?.isCollapsed == true,
+              let indexPath = tableView?.indexPathForSelectedRow else { return }
+        tableView?.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -38,11 +67,15 @@ private extension TestsViewController {
     
     func setupNavigationBar() {
         navigationItem.title = "Tests".localized
-        navigationController?.navigationBar.prefersLargeTitles = true
+        if splitViewController?.isCollapsed == true {
+            navigationItem.largeTitleDisplayMode = .never
+        } else {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        }
     }
     
     func setupTableView() {
-        let tableViewStyle: UITableView.Style = splitViewController?.isCollapsed == true ? .plain : .insetGrouped
+        let tableViewStyle: UITableView.Style = splitViewController?.isCollapsed == true ? .grouped : .insetGrouped
         let tableView = UITableView(frame: .zero, style: tableViewStyle)
         
         view.addSubview(tableView)
@@ -65,5 +98,9 @@ private extension TestsViewController {
     
     func setupView() {
         view.backgroundColor = .systemBackground
+    }
+    
+    func setupSections() {
+        presenter.setupSections()
     }
 }

@@ -9,8 +9,8 @@
 import UIKit
 
 enum SystemIcon: String {
-    case puzzle = "puzzlepiece.fill"
-    case shuffle
+    case puzzle = "puzzlepiece"
+    case puzzleFill = "puzzlepiece.fill"
     case gear
     case star
     case note = "note.text"
@@ -32,6 +32,7 @@ enum SystemIcon: String {
     case chart = "chart.pie"
     case listStar = "list.star"
     case question = "questionmark.circle"
+    case play = "play.circle"
     
     var image: UIImage? { UIImage(systemName: rawValue) }
 }

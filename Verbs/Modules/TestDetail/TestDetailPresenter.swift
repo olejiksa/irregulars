@@ -11,19 +11,30 @@ import UIKit
 final class TestDetailPresenter: NSObject {
     
     let dataSource = SectionDataSource()
-    var router: DetailRouter?
+    var router: TestDetailRouter?
     weak var viewController: TestDetailViewController?
     
-    private let items: [String]
+    private var items: [String]
     private let audioService: AudioService
     private let verbsService: VerbsService
+    private let rateService: RateService
+    private var hint: String?
     
-    init(items: [String], audioService: AudioService, verbsService: VerbsService) {
+    init(items: [String],
+         audioService: AudioService,
+         verbsService: VerbsService,
+         rateService: RateService) {
         self.items = items
         self.audioService = audioService
         self.verbsService = verbsService
+        self.rateService = rateService
         super.init()
         setupSections()
+    }
+    
+    @objc func showHint() {
+        guard let hint = hint else { return }
+        router?.show(hint: hint)
     }
 }
 
@@ -36,35 +47,47 @@ private extension TestDetailPresenter {
     }
     
     func configureRandomComposition() {
+        guard !items.isEmpty else {
+            rateService.requestReviewIfAppropriate()
+            router?.goBack()
+            return
+        }
+        
         guard let verb = verbsService.verb(of: items.randomElement()),
+              let index = items.firstIndex(of: verb.infinitive.value),
               let simplePast = verb.simplePast.first,
               let pastParticiple = verb.pastParticiple?.first
         else { return }
+        
+        items.remove(at: index)
         
         let randomVerbForm = VerbForm.allCases.randomElement() ?? .infinitive
         
         switch randomVerbForm {
         case .infinitive:
+            hint = verb.infinitive.value
             dataSource.setup([Section(header: randomVerbForm.rawValue,
                                       items: [InputItem(word: verb.infinitive,
                                                         successActionBlock: didEndEntering)].compactMap { $0 }),
                               Section(header: "Simple Past",
-                                      items: [DetailItem(word: simplePast)].compactMap { $0 }),
+                                      items: [PlainDetailItem(word: simplePast)].compactMap { $0 }),
                               Section(header: "Past Participle",
-                                      items: [DetailItem(word: pastParticiple)].compactMap { $0 })])
+                                      items: [PlainDetailItem(word: pastParticiple)].compactMap { $0 })])
         case .simplePast:
+            hint = simplePast.value
             dataSource.setup([Section(header: "Infinitive",
-                                      items: [DetailItem(word: verb.infinitive)].compactMap { $0 }),
+                                      items: [PlainDetailItem(word: verb.infinitive)].compactMap { $0 }),
                               Section(header: randomVerbForm.rawValue,
                                       items: [InputItem(word: simplePast,
                                                         successActionBlock: didEndEntering)].compactMap { $0 }),
                               Section(header: "Past Participle",
-                                      items: [DetailItem(word: pastParticiple)].compactMap { $0 })])
+                                      items: [PlainDetailItem(word: pastParticiple)].compactMap { $0 })])
         case .pastParticiple:
+            hint = pastParticiple.value
             dataSource.setup([Section(header: "Infinitive",
-                                      items: [DetailItem(word: verb.infinitive)].compactMap { $0 }),
+                                      items: [PlainDetailItem(word: verb.infinitive)].compactMap { $0 }),
                               Section(header: "Simple Past",
-                                      items: [DetailItem(word: simplePast)].compactMap { $0 }),
+                                      items: [PlainDetailItem(word: simplePast)].compactMap { $0 }),
                               Section(header: randomVerbForm.rawValue,
                                       items: [InputItem(word: pastParticiple,
                                                         successActionBlock: didEndEntering)].compactMap { $0 })])

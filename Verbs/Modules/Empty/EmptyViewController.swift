@@ -39,6 +39,11 @@ final class EmptyViewController: UIViewController {
         setupNoDataLabel()
         setupView()
     }
+}
+
+// MARK: - Private
+
+private extension EmptyViewController {
     
     func setupDelegate() {
         navigationController?.delegate = self
@@ -68,8 +73,9 @@ extension EmptyViewController: UINavigationControllerDelegate {
                               willShow viewController: UIViewController,
                               animated: Bool) {
         guard animated else { return }
-        NotificationCenter.default.post(name: .infinitive,
-                                        object: nil,
-                                        userInfo: [Notification.Name.infinitive: ""])
+        NotificationCenter.default.post(name: .infinitive, object: nil, userInfo: [Notification.Name.infinitive: ""])
+        if viewController is EmptyViewController {
+            NotificationCenter.default.post(name: .test, object: nil, userInfo: nil)
+        }
     }
 }

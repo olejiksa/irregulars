@@ -52,17 +52,20 @@ final class BigButton: UIButton {
         setTitle(originalButtonText, for: .normal)
         activityIndicator?.stopAnimating()
     }
+}
     
-    // MARK: Private
+// MARK: - Private
+
+private extension BigButton {
     
-    private func createActivityIndicator() -> UIActivityIndicatorView {
+    func createActivityIndicator() -> UIActivityIndicatorView {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.hidesWhenStopped = true
         activityIndicator.color = isPrimary ? .white : .systemBlue
         return activityIndicator
     }
 
-    private func showSpinning() {
+    func showSpinning() {
         guard let activityIndicator = activityIndicator else { return }
         
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
@@ -71,7 +74,7 @@ final class BigButton: UIButton {
         activityIndicator.startAnimating()
     }
 
-    private func centerActivityIndicatorInButton() {
+    func centerActivityIndicatorInButton() {
         let xCenterConstraint = NSLayoutConstraint(item: self,
                                                    attribute: .centerX,
                                                    relatedBy: .equal,

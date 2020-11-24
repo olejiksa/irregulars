@@ -111,5 +111,8 @@ extension SettingsViewController: UINavigationControllerDelegate {
         NotificationCenter.default.post(name: .infinitive,
                                         object: nil,
                                         userInfo: [Notification.Name.infinitive: ""])
+        NotificationCenter.default.post(name: .test,
+                                        object: nil,
+                                        userInfo: nil)
     }
 }

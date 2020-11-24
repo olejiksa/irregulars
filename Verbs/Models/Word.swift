@@ -11,14 +11,6 @@ struct Word: Codable {
     let value: String
     let transcription: String
     
-    var shortened: String {
-        guard
-            let shortened = value.split(separator: "/").first
-        else { return value }
-        
-        return String(shortened)
-    }
-    
     init() {
         value = ""
         transcription = ""
