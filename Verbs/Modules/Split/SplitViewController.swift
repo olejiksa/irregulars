@@ -26,7 +26,8 @@ final class SplitViewController: UISplitViewController {
         updatePreferredBehavior(for: view.bounds.size.width)
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(to size: CGSize,
+                                     with coordinator: UIViewControllerTransitionCoordinator) {
         updatePreferredBehavior(for: size.width)
         super.viewWillTransition(to: size, with: coordinator)
     }
@@ -64,6 +65,17 @@ extension SplitViewController: UISplitViewControllerDelegate {
                     svc.secondaryViewController?.pushViewController(newVc, animated: true)
                 }
             }
+        case 2:
+            let nvc = compactVc.viewControllers?[2] as? UINavigationController
+            let vc = nvc?.topViewController
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                sidebarVc.restore(at: IndexPath(row: 3, section: 0))
+                svc.secondaryViewController?.popToRootViewController(animated: false)
+                if let detailVc = vc as? TestDetailViewController {
+                    let newVc = TestDetailViewController(copy: detailVc)
+                    svc.secondaryViewController?.pushViewController(newVc, animated: true)
+                }
+            }
         case 3:
             let nvc = compactVc.viewControllers?[3] as? UINavigationController
             let vc = nvc?.topViewController
@@ -93,6 +105,10 @@ extension SplitViewController: UISplitViewControllerDelegate {
             showDetail(svc, supplementaryVc, nil, 1)
         case (is FavoritesViewController, is DetailViewController):
             showDetail(svc, supplementaryVc, secondaryVc, 1)
+        case (is TestsViewController, is EmptyViewController):
+            showDetail(svc, supplementaryVc, nil, 2)
+        case (is TestsViewController, is TestDetailViewController):
+            showDetail(svc, supplementaryVc, secondaryVc, 2)
         case (_, is SettingsViewController):
             showDetail(svc, supplementaryVc, secondaryVc, 3)
         default:
@@ -131,6 +147,10 @@ private extension SplitViewController {
         switch secondaryVc {
         case let detailVc as DetailViewController:
             let newVc = DetailViewController(detailViewController: detailVc)
+            let nvc = svc.compactViewController?.viewControllers?[index] as? UINavigationController
+            nvc?.pushViewController(newVc, animated: false)
+        case let detailVc as TestDetailViewController:
+            let newVc = TestDetailViewController(copy: detailVc)
             let nvc = svc.compactViewController?.viewControllers?[index] as? UINavigationController
             nvc?.pushViewController(newVc, animated: false)
         case let settingsVc as SettingsViewController:

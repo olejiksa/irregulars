@@ -24,6 +24,15 @@ final class TestDetailViewController: UIViewController {
         hidesBottomBarWhenPushed = true
     }
     
+    init(copy: TestDetailViewController) {
+        self.index = copy.index
+        self.presenter = copy.presenter
+        
+        super.init(nibName: nil, bundle: nil)
+        
+        hidesBottomBarWhenPushed = true
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
