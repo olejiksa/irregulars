@@ -13,6 +13,7 @@ enum SystemIcon: String {
     case puzzleFill = "puzzlepiece.fill"
     case gear
     case star
+    case folder
     case note = "note.text"
     case starFill = "star.fill"
     case speaker = "speaker.wave.3.fill"

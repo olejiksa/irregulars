@@ -48,6 +48,7 @@ private extension TestDetailPresenter {
     
     func configureRandomComposition() {
         guard !items.isEmpty else {
+            UserDefaults.standard.set((viewController?.index ?? 0) + 1, for: .passed)
             rateService.requestReviewIfAppropriate()
             router?.goBack()
             return

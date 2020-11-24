@@ -18,8 +18,7 @@ final class ListAssembly {
     
     func viewController() -> some ListViewController {
         let presenter = ListPresenter(languageService: .init(),
-                                      verbsService: .init(),
-                                      userDefaultsService: .init())
+                                      verbsService: .init())
         let viewController = ListViewController(presenter: presenter)
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.view.backgroundColor = .systemBackground

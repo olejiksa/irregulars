@@ -12,7 +12,7 @@ import UIKit
 final class SidebarPresenter: NSObject {
     
     private enum SidebarSection: Int {
-        case verbs, more
+        case verbs, tests, more
     }
     
     private struct RowIdentifier {
@@ -37,19 +37,7 @@ final class SidebarPresenter: NSObject {
             contentConfiguration.text = item.title
             
             cell.contentConfiguration = contentConfiguration
-            cell.tintColor = .systemBlue
-        }
-        
-        let expandableRowRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, SidebarItem> {
-            (cell, indexPath, item) in
-            
-            var contentConfiguration = UIListContentConfiguration.sidebarSubtitleCell()
-            contentConfiguration.text = item.title
-            contentConfiguration.secondaryText = item.subtitle
-            contentConfiguration.image = item.image
-            
-            cell.contentConfiguration = contentConfiguration
-            cell.accessories = [.outlineDisclosure()]
+            cell.accessories = item.isExpandable ? [.outlineDisclosure()] : []
             cell.tintColor = .systemBlue
         }
         
@@ -62,6 +50,7 @@ final class SidebarPresenter: NSObject {
             contentConfiguration.image = item.image
             
             cell.contentConfiguration = contentConfiguration
+            cell.accessories = item.isExpandable ? [.outlineDisclosure()] : []
             cell.tintColor = .systemBlue
         }
         
@@ -69,8 +58,6 @@ final class SidebarPresenter: NSObject {
             switch $2.type {
             case .header:
                 return $0.dequeueConfiguredReusableCell(using: headerRegistration, for: $1, item: $2)
-            case .expandableRow:
-                return $0.dequeueConfiguredReusableCell(using: expandableRowRegistration, for: $1, item: $2)
             default:
                 return $0.dequeueConfiguredReusableCell(using: rowRegistration, for: $1, item: $2)
             }
@@ -90,11 +77,9 @@ private extension SidebarPresenter {
         
         let items: [SidebarItem] = [
             .row(title: "All".localized,
-                 subtitle: nil,
                  image: SystemIcon.book.image,
                  id: RowIdentifier.all),
             .row(title: "Favorites".localized,
-                 subtitle: nil,
                  image: SystemIcon.star.image,
                  id: RowIdentifier.favorites),
             .row(title: "Tests".localized,
@@ -109,25 +94,61 @@ private extension SidebarPresenter {
         return snapshot
     }
     
+    func testsSnapshot() -> NSDiffableDataSourceSectionSnapshot<SidebarItem> {
+        var snapshot = NSDiffableDataSourceSectionSnapshot<SidebarItem>()
+        let header = SidebarItem.header(title: "Tests".localized, isExpandable: true)
+        
+        let items: [SidebarItem] = [
+            .row(title: "Test 1".localized,
+                 image: SystemIcon.folder.image,
+                 id: RowIdentifier.tests),
+            .row(title: "Test 2".localized,
+                 image: SystemIcon.folder.image,
+                 id: RowIdentifier.tests),
+            .row(title: "Test 3".localized,
+                 image: SystemIcon.folder.image,
+                 id: RowIdentifier.tests),
+            .row(title: "Test 4".localized,
+                 image: SystemIcon.folder.image,
+                 id: RowIdentifier.tests),
+            .row(title: "Test 5".localized,
+                 image: SystemIcon.folder.image,
+                 id: RowIdentifier.tests),
+            .row(title: "Test 6".localized,
+                 image: SystemIcon.folder.image,
+                 id: RowIdentifier.tests),
+            .row(title: "Test 7".localized,
+                 image: SystemIcon.folder.image,
+                 id: RowIdentifier.tests),
+            .row(title: "Test 8".localized,
+                 image: SystemIcon.folder.image,
+                 id: RowIdentifier.tests)
+        ]
+        
+        snapshot.append([header])
+        snapshot.append(items, to: header)
+        return snapshot
+    }
+    
     func moreSnapshot() -> NSDiffableDataSourceSectionSnapshot<SidebarItem> {
         var snapshot = NSDiffableDataSourceSectionSnapshot<SidebarItem>()
         let header = SidebarItem.header(title: "More".localized)
         
         let items: [SidebarItem] = [
             .row(title: "Settings".localized,
-                 subtitle: nil,
                  image: SystemIcon.gear.image,
                  id: RowIdentifier.settings)
         ]
         
         snapshot.append([header])
         snapshot.expand([header])
-        snapshot.append(items, to: header)
+        snapshot.append(items)
         return snapshot
     }
     
     func applyInitialSnapshot() {
         dataSource?.apply(verbsSnapshot(), to: .verbs, animatingDifferences: false)
+        // dataSource?.apply(testsSnapshot(), to: .tests, animatingDifferences: false)
         dataSource?.apply(moreSnapshot(), to: .more, animatingDifferences: false)
         
         viewController?.select(at: selectedIndexPath)
@@ -181,7 +202,7 @@ extension SidebarPresenter: UICollectionViewDelegate {
         }
         
         switch indexPath.section {
-        case SidebarSection.verbs.rawValue, SidebarSection.more.rawValue:
+        case SidebarSection.verbs.rawValue, SidebarSection.tests.rawValue, SidebarSection.more.rawValue:
             didSelectLibraryItem(sidebarItem, at: indexPath)
         default:
             collectionView.deselectItem(at: indexPath, animated: true)

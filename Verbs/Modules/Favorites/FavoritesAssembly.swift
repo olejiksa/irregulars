@@ -18,8 +18,7 @@ final class FavoritesAssembly: AssemblyProtocol {
     
     func viewController() -> some FavoritesViewController {
         let presenter = FavoritesPresenter(languageService: .init(),
-                                           favoritesService: Locator.favoritesService,
-                                           userDefaultsService: .init())
+                                           favoritesService: Locator.favoritesService)
         let viewController = FavoritesViewController(presenter: presenter)
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.view.backgroundColor = .systemBackground

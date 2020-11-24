@@ -42,7 +42,7 @@ final class VerbsService {
         }
     }
     
-    var listView: Settings.ListView = .forms {
+    var shouldTranslationBeShown: Bool = false {
         didSet {
             setGroupedItems()
         }

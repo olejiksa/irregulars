@@ -14,7 +14,6 @@ final class PurchaseService: NSObject {
     typealias ErrorHandler = (Error?) -> ()
     
     private let proID = "com.olejiksa.Verbs.Pro"
-    private let userDefaultsService = UserDefaultsService()
     
     private var products: [SKProduct] = []
     private var productsRequest: SKProductsRequest?
@@ -87,9 +86,7 @@ private extension PurchaseService {
     }
     
     func deliverPurchaseNotification() {
-        userDefaultsService.save(true, by: .isPaid)
         FeatureToggle.isPaid = true
-        NotificationCenter.default.post(name: .paid, object: nil)
     }
     
     func clearRequest() {

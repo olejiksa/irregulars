@@ -27,15 +27,12 @@ final class TestsPresenter: NSObject {
     }
     
     func setupSections() {
-        let levels = items.enumerated().map { item -> SubtitleItem in
-            let isAvailable = item.offset < 2 || FeatureToggle.isPaid
-            let hasDisclosureIndicator = isAvailable && viewController?.splitViewController?.isCollapsed == true
-            return SubtitleItem(title: "\("Level".localized) \(item.offset + 1)",
-                                subtitle: item.element.joined(separator: ", "),
-                                hasDisclosureIndicator: hasDisclosureIndicator)
-        }
+        let passedLevelsCount = UserDefaults.standard.integer(for: .passed)
+        let levels = items.enumerated().filter { $0.offset >= passedLevelsCount }.map(item)
+        let passedLevels = items.enumerated().filter { $0.offset < passedLevelsCount }.map(item)
         
-        dataSource.setup([Section(header: "Levels".localized, items: levels)])
+        dataSource.setup([Section(header: "Levels".localized, items: levels),
+                          Section(header: "Passed".localized, items: passedLevels)])
     }
 }
 
@@ -48,6 +45,17 @@ private extension TestsPresenter {
                                                selector: #selector(didSelectedItemUpdate),
                                                name: Notification.Name.test,
                                                object: nil)
+    }
+    
+    func item(for level: (offset: Int, element: [String])) -> ItemProtocol {
+        let title = "\("Level".localized) \(level.offset + 1)"
+        let isAvailable = level.offset < 2 || FeatureToggle.isPaid
+        let isCollapsed = viewController?.splitViewController?.isCollapsed == true
+        return !isCollapsed ?
+            PlainItem(title: title) :
+            SubtitleItem(title: title,
+                         subtitle: level.element.joined(separator: ", "),
+                         hasDisclosureIndicator: isAvailable && isCollapsed)
     }
     
     @objc func didSelectedItemUpdate(_ notification: Notification) {

@@ -6,8 +6,8 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
-import WidgetKit
 import SwiftUI
+import WidgetKit
 
 struct Provider: TimelineProvider {
     
@@ -138,7 +138,6 @@ struct VerbsWidgetEntryView: View {
 
 @main
 struct VerbsWidget: Widget {
-    private let userDefaultsService = UserDefaultsService()
     let kind: String = "VerbsWidget"
 
     var body: some WidgetConfiguration {

@@ -15,8 +15,6 @@ final class SplitViewController: UISplitViewController {
     init() {
         super.init(style: .tripleColumn)
         delegate = self
-        maximumSupplementaryColumnWidth = 2_000
-        preferredSupplementaryColumnWidthFraction = 0.5
     }
     
     required init?(coder: NSCoder) {

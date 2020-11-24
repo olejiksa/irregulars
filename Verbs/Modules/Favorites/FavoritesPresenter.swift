@@ -16,17 +16,14 @@ final class FavoritesPresenter: NSObject {
     private let languageService: LanguageService
     private let favoritesService: FavoritesService
     private var favorites = Locator.favorites
-    private let userDefaultsService: UserDefaultsService
     private var isSearchActive = false
     
     private var infinitive: String?
     
     init(languageService: LanguageService,
-         favoritesService: FavoritesService,
-         userDefaultsService: UserDefaultsService) {
+         favoritesService: FavoritesService) {
         self.languageService = languageService
         self.favoritesService = favoritesService
-        self.userDefaultsService = userDefaultsService
         
         super.init()
         
@@ -51,8 +48,7 @@ private extension FavoritesPresenter {
     }
     
     func loadSettings() {
-        guard let settings = userDefaultsService.load() else { return }
-        favoritesService.listView = settings.listView
+        favoritesService.shouldTranslationBeShown = UserDefaults.standard.bool(for: .shouldTranslationBeShown)
     }
     
     func subscribe() {
@@ -97,8 +93,8 @@ private extension FavoritesPresenter {
     }
     
     @objc func willUpdateList(_ notification: Notification) {
-        let value = notification.userInfo?[Notification.Name.list] as? Settings.ListView ?? .forms
-        favoritesService.listView = value
+        let value = notification.userInfo?[Notification.Name.list] as? Bool ?? false
+        favoritesService.shouldTranslationBeShown = value
         viewController?.reloadData()
         didSelectedItemSet()
     }
@@ -126,7 +122,7 @@ extension FavoritesPresenter: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard indexPath.row < items.count else { return .init() }
         let verb = items[indexPath.row]
-        let item: ItemProtocol = favoritesService.listView == .forms || !languageService.hasTranslation ?
+        let item: ItemProtocol = !favoritesService.shouldTranslationBeShown || !languageService.hasTranslation ?
             ListItem(verb: verb) :
             SubtitleItem(title: verb.infinitive.value, subtitle: verb.translation)
         return tableView.dequeueReusableCell(for: item, at: indexPath)

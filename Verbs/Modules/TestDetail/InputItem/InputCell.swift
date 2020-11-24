@@ -19,6 +19,7 @@ final class InputCell: UITableViewCell {
         super.awakeFromNib()
         
         textField.becomeFirstResponder()
+        textField.placeholder = "Enter here".localized
         textField.delegate = self
         
         selectionStyle = .none

@@ -19,16 +19,11 @@ final class SettingsPresenter: NSObject {
     private let productURL = URL(string: "https://apps.apple.com/app/id1540487254")
     private let languageService: LanguageService
     private let mailService: MailService
-    private let userDefaultsService: UserDefaultsService
-    private var settings: Settings
     
     init(languageService: LanguageService,
-         mailService: MailService,
-         userDefaultsService: UserDefaultsService) {
+         mailService: MailService) {
         self.languageService = languageService
         self.mailService = mailService
-        self.userDefaultsService = userDefaultsService
-        self.settings = userDefaultsService.load() ?? .init()
         super.init()
         subscribe()
         setupItems()
@@ -51,34 +46,12 @@ private extension SettingsPresenter {
               let name = Bundle.main.productName else { return }
         
         let editionName = FeatureToggle.isPaid ? "\(name) Pro" : "\(name) Lite"
-        let mailActionBlock: ((ItemProtocol) -> ()) = { [weak self] _ in
-            guard let self = self else { return }
-            self.mailService.present(in: self.viewController)
-        }
-        
-        let options = Settings.ListView.allCases.map(\.description)
-        let listShowsItem = languageService.hasTranslation ?
-            RightDetailItem(title: "View".localized,
-                            subtitle: settings.listView.description,
-                            actionBlock: didListViewChange,
-                            subitems: options,
-                            isEnabled: FeatureToggle.isPaid) : nil
-        
-        let upgradeItem = !FeatureToggle.isPaid ? ActionItem(text: "Upgrade to Pro".localized,
-                                                             style: .standard,
-                                                             actionBlock: willBuy) : nil
-        let resetItem = FeatureToggle.isPaid && FeatureToggle.isDebug ? ActionItem(text: "Downgrade".localized,
-                                                                                   style: .destructive,
-                                                                                   actionBlock: willReset) : nil
-        let header = FeatureToggle.isPaid ? "Deactivation".localized : "Activation".localized
 
-        dataSource.setup([Section(header: header,
-                                  items: [upgradeItem, resetItem].compactMap { $0 }),
+        dataSource.setup([setupActivationSection(),
                           Section(header: "General".localized,
                                   items: [RightDetailItem(title: "Language".localized,
                                                           subtitle: languageService.current.description,
-                                                          actionBlock: willShowLanguageSettings,
-                                                          hasDisclosureItem: true),
+                                                          actionBlock: willShowLanguageSettings),
                                           RightDetailItem(title: "Accent color".localized,
                                                           subtitle: "Blue".localized,
                                                           actionBlock: nil,
@@ -86,25 +59,23 @@ private extension SettingsPresenter {
                                                           isEnabled: false)]),
                           Section(header: "List".localized,
                                   items: [SwitchItem(text: "Regular verbs (-ed)".localized,
-                                                     isOn: settings.shouldRegularVerbsBeShown,
+                                                     isOn: UserDefaults.standard.bool(for: .shouldRegularVerbsBeShown),
                                                      isEnabled: FeatureToggle.isPaid,
                                                      actionBlock: didRegularVerbsOptionChange),
                                           SwitchItem(text: "Derivatives".localized,
-                                                     isOn: settings.shouldDerivedFormsBeShown,
+                                                     isOn: UserDefaults.standard.bool(for: .shouldDerivedFormsBeShown),
                                                      isEnabled: FeatureToggle.isPaid,
-                                                     actionBlock: didDerivedFormsOptionChange)] + [listShowsItem].compactMap { $0 }),
+                                                     actionBlock: didDerivedFormsOptionChange)] +
+                                          [setupPickableItem()].compactMap { $0 }),
                           Section(header: "Links".localized,
                                   items: [DisclosureItem(text: "Rate and review".localized,
-                                                         isEnabled: true,
                                                          actionBlock: willRate),
                                           DisclosureItem(text: "Privacy policy".localized,
-                                                         isEnabled: true,
                                                          actionBlock: willGoToPrivacyPolicy),
                                           DisclosureItem(text: "Contact us".localized,
                                                          isEnabled: mailService.isMailAvailable,
-                                                         actionBlock: mailActionBlock),
+                                                         actionBlock: willGoToMail),
                                           DisclosureItem(text: "Share the app".localized,
-                                                         isEnabled: true,
                                                          actionBlock: willShare)]),
                           Section(header: "About".localized,
                                   items: [RightDetailItem(title: "Developer".localized,
@@ -117,29 +88,50 @@ private extension SettingsPresenter {
                                                           subtitle: version),])])
     }
     
+    func setupActivationSection() -> Section {
+        let upgradeItem = !FeatureToggle.isPaid ? ActionItem(text: "Upgrade to Pro".localized,
+                                                             style: .standard,
+                                                             actionBlock: willBuy) : nil
+        let resetItem = FeatureToggle.isPaid && FeatureToggle.isDebug ? ActionItem(text: "Downgrade".localized,
+                                                                                   style: .destructive,
+                                                                                   actionBlock: willReset) : nil
+        let header = FeatureToggle.isPaid ? "Deactivation".localized : "Activation".localized
+        return Section(header: header, items: [upgradeItem, resetItem].compactMap { $0 })
+    }
+    
+    func setupPickableItem() -> PickableItem? {
+        let options = ["Verb forms".localized, "Translation".localized]
+        let currentOption = !UserDefaults.standard.bool(for: .shouldTranslationBeShown)
+            ? options.first
+            : options.last
+        return languageService.hasTranslation ? .init(title: "View".localized,
+                                                      subtitle: currentOption ?? "",
+                                                      actionBlock: didListViewChange,
+                                                      options: options,
+                                                      isEnabled: FeatureToggle.isPaid) : nil
+    }
+    
     func didRegularVerbsOptionChange(_ value: Bool) {
-        settings.shouldRegularVerbsBeShown = value
-        userDefaultsService.save(settings)
+        UserDefaults.standard.set(value, for: .shouldRegularVerbsBeShown)
         NotificationCenter.default.post(name: .regulars,
                                         object: nil,
                                         userInfo: [Notification.Name.regulars: value])
     }
     
     func didDerivedFormsOptionChange(_ value: Bool) {
-        settings.shouldDerivedFormsBeShown = value
-        userDefaultsService.save(settings)
+        UserDefaults.standard.set(value, for: .shouldDerivedFormsBeShown)
         NotificationCenter.default.post(name: .derivatives,
                                         object: nil,
                                         userInfo: [Notification.Name.derivatives: value])
     }
     
     func didListViewChange(_ sender: ItemProtocol) {
-        guard let item = sender as? RightDetailItem else { return }
-        settings.listView = Settings.ListView(description: item.subtitle)
-        userDefaultsService.save(settings)
+        guard let item = sender as? PickableItem else { return }
+        let value = item.subtitle == "Translation".localized
+        UserDefaults.standard.set(value, for: .shouldTranslationBeShown)
         NotificationCenter.default.post(name: .list,
                                         object: nil,
-                                        userInfo: [Notification.Name.list: settings.listView])
+                                        userInfo: [Notification.Name.list: value])
         viewController?.reloadData()
     }
     
@@ -154,6 +146,10 @@ private extension SettingsPresenter {
         components?.queryItems = [URLQueryItem(name: "action", value: "write-review")]
         guard let writeReviewURL = components?.url else { return }
         router?.open(writeReviewURL)
+    }
+    
+    func willGoToMail(_ sender: ItemProtocol) {
+        mailService.present(in: viewController)
     }
     
     func willGoToPrivacyPolicy(_ sender: ItemProtocol) {
@@ -174,7 +170,6 @@ private extension SettingsPresenter {
     
     func willReset(_ sender: ItemProtocol) {
         FeatureToggle.isPaid = false
-        userDefaultsService.save(false, by: .isPaid)
         NotificationCenter.default.post(name: .paid, object: nil)
     }
     
@@ -191,17 +186,12 @@ extension SettingsPresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if let cell = tableView.cellForRow(at: indexPath) as? RightDetailCell,
-           let item = dataSource.sectionArray.item(indexPath) as? RightDetailItem,
-           item.actionBlock != nil,
-           !cell.isFirstResponder {
-            if item.title == "View".localized {
-                _ = cell.becomeFirstResponder()
-            } else {
-                item.actionBlock?(item)
-            }
-        } else if let actionableItem = dataSource.sectionArray.item(indexPath) as? Actionable,
-                  let item = actionableItem as? ItemProtocol {
+        if let cell = tableView.cellForRow(at: indexPath), !cell.isFirstResponder {
+            cell.becomeFirstResponder()
+        }
+        
+        if let actionableItem = dataSource.item(at: indexPath) as? Actionable,
+           let item = actionableItem as? ItemProtocol {
             actionableItem.actionBlock?(item)
         }
     }

@@ -91,7 +91,7 @@ private extension TestsViewController {
         tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         
-        tableView.register(SubtitleCell.self)
+        tableView.register(PlainCell.self, SubtitleCell.self)
         
         self.tableView = tableView
     }

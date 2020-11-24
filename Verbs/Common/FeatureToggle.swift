@@ -6,8 +6,19 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
+import Foundation
+
 struct FeatureToggle {
     
-    static var isPaid = false
+    static var isPaid: Bool {
+        get {
+            UserDefaults.standard.bool(for: .isPaid)
+        }
+        set {
+            UserDefaults.standard.set(newValue, for: .isPaid)
+            NotificationCenter.default.post(name: .paid, object: nil)
+        }
+    }
+    
     static var isDebug = false
 }

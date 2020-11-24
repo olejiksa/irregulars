@@ -11,10 +11,14 @@ import UIKit
 
 final class SectionDataSource: NSObject {
     
-    var sectionArray = SectionArray()
+    private var sectionArray = SectionArray()
     
     func setup(_ array: [Section]) {
         sectionArray.setup(array)
+    }
+    
+    func item(at indexPath: IndexPath) -> ItemProtocol {
+        sectionArray.item(indexPath)
     }
 }
 

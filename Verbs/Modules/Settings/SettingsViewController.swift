@@ -76,6 +76,7 @@ private extension SettingsViewController {
         tableView.register(SwitchCell.self,
                            DisclosureCell.self,
                            RightDetailCell.self,
+                           PickableCell.self,
                            ActionCell.self)
         
         self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint

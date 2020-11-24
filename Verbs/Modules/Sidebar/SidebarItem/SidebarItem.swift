@@ -15,20 +15,23 @@ struct SidebarItem: Hashable, Swift.Identifiable {
     let title: String
     let subtitle: String?
     let image: UIImage?
+    let isExpandable: Bool
     
-    static func header(title: String, id: UUID = UUID()) -> Self {
-        .init(id: id, type: .header, title: title, subtitle: nil, image: nil)
+    static func header(title: String,
+                       isExpandable: Bool = false,
+                       id: UUID = UUID()) -> Self {
+        .init(id: id, type: .header, title: title, subtitle: nil, image: nil, isExpandable: isExpandable)
     }
     
-    static func expandableRow(title: String, subtitle: String?, image: UIImage?, id: UUID = UUID()) -> Self {
-        .init(id: id, type: .expandableRow, title: title, subtitle: subtitle, image: image)
-    }
-    
-    static func row(title: String, subtitle: String?, image: UIImage?, id: UUID = UUID()) -> Self {
-        .init(id: id, type: .row, title: title, subtitle: subtitle, image: image)
+    static func row(title: String,
+                    subtitle: String? = nil,
+                    image: UIImage? = nil,
+                    isExpandable: Bool = false,
+                    id: UUID = UUID()) -> Self {
+        .init(id: id, type: .row, title: title, subtitle: subtitle, image: image, isExpandable: isExpandable)
     }
 }
 
 enum SidebarItemType: Int {
-    case header, row, expandableRow
+    case header, row
 }

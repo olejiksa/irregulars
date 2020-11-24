@@ -18,8 +18,7 @@ final class SettingsAssembly: AssemblyProtocol {
     
     func viewController() -> some SettingsViewController {
         let presenter = SettingsPresenter(languageService: .init(),
-                                          mailService: .init(),
-                                          userDefaultsService: .init())
+                                          mailService: .init())
         let viewController = SettingsViewController(presenter: presenter)
         _ = navigationController ?? UINavigationController(rootViewController: viewController)
         let router = SettingsRouter(viewController: viewController)

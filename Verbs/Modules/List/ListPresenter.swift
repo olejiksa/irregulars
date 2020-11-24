@@ -15,17 +15,14 @@ final class ListPresenter: NSObject {
     
     private let languageService: LanguageService
     private let verbsService: VerbsService
-    private let userDefaultsService: UserDefaultsService
     private var isSearchActive = false
     
     private var infinitive: String?
     
     init(languageService: LanguageService,
-         verbsService: VerbsService,
-         userDefaultsService: UserDefaultsService) {
+         verbsService: VerbsService) {
         self.languageService = languageService
         self.verbsService = verbsService
-        self.userDefaultsService = userDefaultsService
         
         super.init()
         
@@ -46,10 +43,9 @@ final class ListPresenter: NSObject {
 private extension ListPresenter {
     
     func loadSettings() {
-        guard let settings = userDefaultsService.load() else { return }
-        verbsService.shouldRegularVerbsBeShown = settings.shouldRegularVerbsBeShown
-        verbsService.shouldDerivedFormsBeShown = settings.shouldDerivedFormsBeShown
-        verbsService.listView = settings.listView
+        verbsService.shouldRegularVerbsBeShown = UserDefaults.standard.bool(for: .shouldRegularVerbsBeShown)
+        verbsService.shouldDerivedFormsBeShown = UserDefaults.standard.bool(for: .shouldDerivedFormsBeShown)
+        verbsService.shouldTranslationBeShown = UserDefaults.standard.bool(for: .shouldTranslationBeShown)
     }
     
     func subscribe() {
@@ -107,8 +103,8 @@ private extension ListPresenter {
     }
     
     @objc func willUpdateList(_ notification: Notification) {
-        let value = notification.userInfo?[Notification.Name.list] as? Settings.ListView ?? .forms
-        verbsService.listView = value
+        let value = notification.userInfo?[Notification.Name.list] as? Bool ?? false
+        verbsService.shouldTranslationBeShown = value
         viewController?.reloadData()
         didSelectedItemSet()
     }
@@ -136,7 +132,7 @@ extension ListPresenter: UITableViewDataSource {
         let verb = !isSearchActive
             ? verbsService.groupedItems[indexPath.section][indexPath.row]
             : verbsService.searchedItems[indexPath.row]
-        let item: ItemProtocol = verbsService.listView == .forms || !languageService.hasTranslation ?
+        let item: ItemProtocol = !verbsService.shouldTranslationBeShown || !languageService.hasTranslation ?
             ListItem(verb: verb) :
             SubtitleItem(title: verb.infinitive.value, subtitle: verb.translation)
         return tableView.dequeueReusableCell(for: item, at: indexPath)

@@ -28,7 +28,7 @@ final class FavoritesService {
 
     var items: [Verb] = []
     
-    var listView: Settings.ListView = .forms {
+    var shouldTranslationBeShown: Bool = false {
         didSet {
             setItems()
         }
