@@ -14,9 +14,7 @@ protocol Scrollable {
 }
 
 final class TabBarController: UITabBarController {
-    
-    private weak var previousController: UIViewController?
-    
+        
     init(splitViewController: UISplitViewController?) {
         super.init(nibName: nil, bundle: nil)
         build(in: splitViewController)
@@ -39,6 +37,7 @@ extension TabBarController: UITabBarControllerDelegate {
               navigationController.viewControllers.count <= 1,
               let handler = navigationController.viewControllers.first as? Scrollable else { return true }
         handler.scrollToTop()
+        
         return true
     }
 }
@@ -50,15 +49,15 @@ private extension TabBarController {
     func build(in splitViewController: UISplitViewController?) {
         guard let svc = splitViewController else { return }
         
-        let listVc = ListAssembly(splitViewController: svc).viewController().navigationController
-        let favoritesVc = FavoritesAssembly(splitViewController: svc).viewController().navigationController
-        let testsVc = TestsAssembly(splitViewController: svc).viewController().navigationController
-        let settingsVc = SettingsAssembly().viewController().navigationController
+        let listViewController = ListAssembly(splitViewController: svc).viewController().navigationController
+        let favoritesViewController = FavoritesAssembly(splitViewController: svc).viewController().navigationController
+        let testsViewController = TestsAssembly(splitViewController: svc).viewController().navigationController
+        let settingsViewController = SettingsAssembly().viewController().navigationController
         
-        compound(items: [(listVc, "Verbs".localized, .bookFill),
-                         (favoritesVc, "Favorites".localized, .starFill),
-                         (testsVc, "Tests".localized, .puzzleFill),
-                         (settingsVc, "Settings".localized, .gear)])
+        compound(items: [(listViewController, "Verbs".localized, .bookFill),
+                         (favoritesViewController, "Favorites".localized, .starFill),
+                         (testsViewController, "Tests".localized, .puzzleFill),
+                         (settingsViewController, "Settings".localized, .gear)])
     }
     
     func compound(items: [(controller: UIViewController?,

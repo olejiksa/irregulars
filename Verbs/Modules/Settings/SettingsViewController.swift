@@ -21,12 +21,6 @@ final class SettingsViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    init(settingsViewController: SettingsViewController) {
-        self.presenter = settingsViewController.presenter
-        
-        super.init(nibName: nil, bundle: nil)
-    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -99,6 +93,18 @@ extension SettingsViewController: Scrollable {
     func scrollToTop() {
         let indexPath = IndexPath(row: 0, section: 0)
         tableView?.scrollToRow(at: indexPath, at: .top, animated: true)
+    }
+}
+
+// MARK: - Restorable
+
+extension SettingsViewController: Restorable {
+    
+    func restore() {
+        tableView?.removeFromSuperview()
+        tableView = nil
+        setupTableView()
+        setupKeyboardService()
     }
 }
 

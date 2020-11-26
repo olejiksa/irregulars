@@ -29,16 +29,6 @@ final class DetailViewController: UIViewController {
         hidesBottomBarWhenPushed = true
     }
     
-    init(detailViewController: DetailViewController) {
-        self.presenter = detailViewController.presenter
-        self.verb = detailViewController.verb
-        self.isOpenedByDeeplink = detailViewController.isOpenedByDeeplink
-        
-        super.init(nibName: nil, bundle: nil)
-        
-        hidesBottomBarWhenPushed = true
-    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -103,8 +93,7 @@ private extension DetailViewController {
     }
     
     @objc func didFavoriteTap() {
-        switch favoriteButton?.image {
-        case SystemIcon.star.image:
+        if !favorites.verbs.contains(verb) {
             guard !favorites.shouldPaywallBeShown else {
                 presenter.router?.goToPaywall()
                 return
@@ -115,15 +104,24 @@ private extension DetailViewController {
             NotificationCenter.default.post(name: .reloadData,
                                             object: nil,
                                             userInfo: nil)
-        case SystemIcon.starFill.image:
+        } else {
             favoriteButton?.image = SystemIcon.star.image
             favorites.remove(verb)
             NotificationCenter.default.post(name: .reloadData,
                                             object: nil,
                                             userInfo: nil)
-        default:
-            break
         }
+    }
+}
+
+// MARK: - Restorable
+
+extension DetailViewController: Restorable {
+    
+    func restore() {
+        tableView?.removeFromSuperview()
+        tableView = nil
+        setupTableView()
     }
 }
 

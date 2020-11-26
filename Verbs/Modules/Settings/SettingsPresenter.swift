@@ -72,6 +72,8 @@ private extension SettingsPresenter {
                                                          actionBlock: willRate),
                                           DisclosureItem(text: "Privacy policy".localized,
                                                          actionBlock: willGoToPrivacyPolicy),
+                                          DisclosureItem(text: "Terms of use".localized,
+                                                         actionBlock: willGoToTermsOfUse),
                                           DisclosureItem(text: "Contact us".localized,
                                                          isEnabled: mailService.isMailAvailable,
                                                          actionBlock: willGoToMail),
@@ -159,6 +161,13 @@ private extension SettingsPresenter {
         router?.goToURL(url)
     }
     
+    func willGoToTermsOfUse(_ sender: ItemProtocol) {
+        let code = languageService.current.rawValue
+        guard let url = URL(string: "https://github.com/olejiksa/legal/blob/master/privacy-\(code).md")
+        else { return }
+        router?.goToURL(url)
+    }
+    
     func willShare(_ sender: ItemProtocol) {
         guard let productURL = productURL, let view = viewController?.view else { return }
         router?.share(productURL, in: view)
@@ -186,12 +195,14 @@ extension SettingsPresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if let cell = tableView.cellForRow(at: indexPath), !cell.isFirstResponder {
-            cell.becomeFirstResponder()
-        }
+        let item = dataSource.item(at: indexPath)
         
-        if let actionableItem = dataSource.item(at: indexPath) as? Actionable,
-           let item = actionableItem as? ItemProtocol {
+        if item is PickableItem,
+           let cell = tableView.cellForRow(at: indexPath),
+           !cell.isFirstResponder {
+            cell.becomeFirstResponder()
+        } else if let actionableItem = dataSource.item(at: indexPath) as? Actionable,
+                  let item = actionableItem as? ItemProtocol {
             actionableItem.actionBlock?(item)
         }
     }

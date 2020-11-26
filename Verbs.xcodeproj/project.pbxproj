@@ -17,6 +17,7 @@
 		EB269988256D3FB9007CCF2E /* PickableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269986256D3FB8007CCF2E /* PickableCell.swift */; };
 		EB269989256D3FB9007CCF2E /* PickableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB269987256D3FB8007CCF2E /* PickableCell.xib */; };
 		EB26998C256D40DD007CCF2E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB69A26825322AF900DD1827 /* Notification.swift */; };
+		EB269992256E29DA007CCF2E /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269991256E29DA007CCF2E /* TabBarItem.swift */; };
 		EB2F5E0D251F543A007DCF60 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2F5E0B251F543A007DCF60 /* DetailViewController.swift */; };
 		EB2F5E11251F5B26007DCF60 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2F5E0F251F5B26007DCF60 /* DetailCell.swift */; };
 		EB2F5E12251F5B26007DCF60 /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB2F5E10251F5B26007DCF60 /* DetailCell.xib */; };
@@ -90,6 +91,8 @@
 		EBA644D7255ADC800012B973 /* SidebarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA644D6255ADC800012B973 /* SidebarPresenter.swift */; };
 		EBA644DF255ADC910012B973 /* SidebarAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA644DE255ADC910012B973 /* SidebarAssembly.swift */; };
 		EBA644E7255AE25B0012B973 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA644E6255AE25B0012B973 /* SettingsRouter.swift */; };
+		EBA732AE25702FB7001B69EF /* Restorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA732AD25702FB7001B69EF /* Restorable.swift */; };
+		EBA732B425704AF7001B69EF /* SplitStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA732B325704AF7001B69EF /* SplitStateManager.swift */; };
 		EBB01C0925217F5400BB646B /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB01C0825217F5400BB646B /* Language.swift */; };
 		EBB01C0C2521825000BB646B /* TranslationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB01C0A2521825000BB646B /* TranslationCell.swift */; };
 		EBB01C0D2521825000BB646B /* TranslationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBB01C0B2521825000BB646B /* TranslationCell.xib */; };
@@ -180,6 +183,7 @@
 		EB269982256D3F9F007CCF2E /* PickableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickableItem.swift; sourceTree = "<group>"; };
 		EB269986256D3FB8007CCF2E /* PickableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickableCell.swift; sourceTree = "<group>"; };
 		EB269987256D3FB8007CCF2E /* PickableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickableCell.xib; sourceTree = "<group>"; };
+		EB269991256E29DA007CCF2E /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		EB2F5E0B251F543A007DCF60 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EB2F5E0F251F5B26007DCF60 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		EB2F5E10251F5B26007DCF60 /* DetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
@@ -239,13 +243,13 @@
 		EBA644BA255A59CF0012B973 /* ActionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionItem.swift; sourceTree = "<group>"; };
 		EBA644BE255A5A1A0012B973 /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		EBA644BF255A5A1A0012B973 /* ActionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionCell.xib; sourceTree = "<group>"; };
-		EBA644C4255A5FD60012B973 /* VerbsWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VerbsWidgetExtension.entitlements; sourceTree = "<group>"; };
 		EBA644C7255AD4F90012B973 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
 		EBA644CE255ADB390012B973 /* SidebarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarItem.swift; sourceTree = "<group>"; };
 		EBA644D6255ADC800012B973 /* SidebarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarPresenter.swift; sourceTree = "<group>"; };
 		EBA644DE255ADC910012B973 /* SidebarAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarAssembly.swift; sourceTree = "<group>"; };
 		EBA644E6255AE25B0012B973 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
-		EBA644F8256173D30012B973 /* Verbs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Verbs.entitlements; sourceTree = "<group>"; };
+		EBA732AD25702FB7001B69EF /* Restorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restorable.swift; sourceTree = "<group>"; };
+		EBA732B325704AF7001B69EF /* SplitStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitStateManager.swift; sourceTree = "<group>"; };
 		EBB01C0825217F5400BB646B /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		EBB01C0A2521825000BB646B /* TranslationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationCell.swift; sourceTree = "<group>"; };
 		EBB01C0B2521825000BB646B /* TranslationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TranslationCell.xib; sourceTree = "<group>"; };
@@ -393,17 +397,14 @@
 		EB2F5E17251F78F8007DCF60 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				EBA732AC25702F73001B69EF /* Protocols */,
 				EB69F8BA2569E33800759BAA /* UI */,
 				EB450A4F254BB3B700D31858 /* Items */,
-				EB4509A3253B6EB600D31858 /* Actionable.swift */,
 				EBEB1D75251F11900019972C /* AppDelegate.swift */,
 				EBB01C1C2521897000BB646B /* CellProtocol.swift */,
 				EBF4A13A252EA2F6003E3A44 /* FeatureToggle.swift */,
-				EBB01C242521903A00BB646B /* Identifiable.swift */,
-				EBB01C1E25218BAB00BB646B /* ItemProtocol.swift */,
 				EBB3BC16251F4D60006E0DC7 /* JSONParser.swift */,
 				EBEB1D77251F11900019972C /* SceneDelegate.swift */,
-				EB8325A12556EC9F005E02C1 /* AssemblyProtocol.swift */,
 				EBF8A6512559225D00A6265C /* Locator.swift */,
 			);
 			path = Common;
@@ -501,6 +502,7 @@
 		EB7DFF592524497A000B711D /* Split */ = {
 			isa = PBXGroup;
 			children = (
+				EBA732B325704AF7001B69EF /* SplitStateManager.swift */,
 				EB7DFF5425244977000B711D /* SplitViewController.swift */,
 			);
 			path = Split;
@@ -519,7 +521,6 @@
 		EB7DFF67252451D2000B711D /* VerbsWidget */ = {
 			isa = PBXGroup;
 			children = (
-				EBA644C4255A5FD60012B973 /* VerbsWidgetExtension.entitlements */,
 				EB7DFF68252451D2000B711D /* VerbsWidget.swift */,
 				EB7DFF6B252451D4000B711D /* Assets.xcassets */,
 				EB7DFF6D252451D4000B711D /* Info.plist */,
@@ -555,6 +556,18 @@
 				EB5547532553CB22001C5585 /* SidebarCell.swift */,
 			);
 			path = SidebarItem;
+			sourceTree = "<group>";
+		};
+		EBA732AC25702F73001B69EF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EB4509A3253B6EB600D31858 /* Actionable.swift */,
+				EB8325A12556EC9F005E02C1 /* AssemblyProtocol.swift */,
+				EBB01C242521903A00BB646B /* Identifiable.swift */,
+				EBB01C1E25218BAB00BB646B /* ItemProtocol.swift */,
+				EBA732AD25702FB7001B69EF /* Restorable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		EBB01C102521828800BB646B /* DetailItem */ = {
@@ -693,7 +706,6 @@
 		EBEB1D74251F11900019972C /* Verbs */ = {
 			isa = PBXGroup;
 			children = (
-				EBA644F8256173D30012B973 /* Verbs.entitlements */,
 				EB2F5E17251F78F8007DCF60 /* Common */,
 				EBB3BC07251F2749006E0DC7 /* Extensions */,
 				EBEB1D95251F15FD0019972C /* Models */,
@@ -717,6 +729,7 @@
 				EB45097A253B630900D31858 /* SectionArray.swift */,
 				EB450A32254B157A00D31858 /* SectionDataSource.swift */,
 				EBF4A13E252EC9A3003E3A44 /* SystemIcon.swift */,
+				EB269991256E29DA007CCF2E /* TabBarItem.swift */,
 				EBEB1D93251F15D30019972C /* Verb.swift */,
 				EB69F8A82569D42B00759BAA /* VerbForm.swift */,
 				EB7B85642537FAE000542D3C /* Word.swift */,
@@ -915,6 +928,7 @@
 				EBB01C1D2521897000BB646B /* CellProtocol.swift in Sources */,
 				EB717DF42530D5B7007791AD /* ListAssembly.swift in Sources */,
 				EB450A20254A8BE600D31858 /* TestsViewController.swift in Sources */,
+				EBA732AE25702FB7001B69EF /* Restorable.swift in Sources */,
 				EBDF00782562DD850041F458 /* TestDetailViewController.swift in Sources */,
 				EB450A59254BB3F800D31858 /* BigButton.swift in Sources */,
 				EB2F5E11251F5B26007DCF60 /* DetailCell.swift in Sources */,
@@ -945,6 +959,7 @@
 				EBB01C0C2521825000BB646B /* TranslationCell.swift in Sources */,
 				EB69F8AF2569D7AA00759BAA /* TestDetailRouter.swift in Sources */,
 				EBB01C0925217F5400BB646B /* Language.swift in Sources */,
+				EB269992256E29DA007CCF2E /* TabBarItem.swift in Sources */,
 				EB450A49254B1A2B00D31858 /* PlainCell.swift in Sources */,
 				EBB3BC10251F3545006E0DC7 /* KeyboardService.swift in Sources */,
 				EBEB1D92251F15B40019972C /* VerbsService.swift in Sources */,
@@ -959,6 +974,7 @@
 				EB5547542553CB22001C5585 /* SidebarCell.swift in Sources */,
 				EBB01C1F25218BAB00BB646B /* ItemProtocol.swift in Sources */,
 				EBA644D7255ADC800012B973 /* SidebarPresenter.swift in Sources */,
+				EBA732B425704AF7001B69EF /* SplitStateManager.swift in Sources */,
 				EBA644E7255AE25B0012B973 /* SettingsRouter.swift in Sources */,
 				EBB3BC17251F4D60006E0DC7 /* JSONParser.swift in Sources */,
 				EBA644C0255A5A1A0012B973 /* ActionCell.swift in Sources */,
@@ -1044,8 +1060,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_ENTITLEMENTS = VerbsWidget/VerbsWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1053,7 +1069,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1068,8 +1084,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_ENTITLEMENTS = VerbsWidget/VerbsWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1077,7 +1093,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1209,9 +1225,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Verbs/Verbs.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1219,7 +1235,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1233,9 +1249,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Verbs/Verbs.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1243,7 +1259,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

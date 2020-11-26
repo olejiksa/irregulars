@@ -27,12 +27,17 @@ final class TestsPresenter: NSObject {
     }
     
     func setupSections() {
-        let passedLevelsCount = UserDefaults.standard.integer(for: .passed)
-        let levels = items.enumerated().filter { $0.offset >= passedLevelsCount }.map(item)
-        let passedLevels = items.enumerated().filter { $0.offset < passedLevelsCount }.map(item)
+        // let passedLevelsCount = UserDefaults.standard.integer(for: .passed)
+        let levels = items.enumerated().map(item)
+        // let passedLevels = items.enumerated().filter { $0.offset < passedLevelsCount }.map(item)
         
-        dataSource.setup([Section(header: "Levels".localized, items: levels),
-                          Section(header: "Passed".localized, items: passedLevels)])
+        dataSource.setup([Section(header: "Levels".localized, items: levels)])
+    }
+    
+    func selectWhenRegular() {
+        guard viewController?.splitViewController?.isCollapsed == false else { return }
+        guard let vc = viewController?.splitViewController?.secondaryViewController?.topViewController as? TestDetailViewController else { return }
+        viewController?.selectSection(at: vc.index)
     }
 }
 

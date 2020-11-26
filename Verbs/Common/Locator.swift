@@ -6,6 +6,8 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
+import UIKit
+
 struct Locator {
     
     static let favorites = Favorites()

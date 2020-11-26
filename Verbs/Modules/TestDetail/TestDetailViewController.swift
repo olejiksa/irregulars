@@ -24,15 +24,6 @@ final class TestDetailViewController: UIViewController {
         hidesBottomBarWhenPushed = true
     }
     
-    init(copy: TestDetailViewController) {
-        self.index = copy.index
-        self.presenter = copy.presenter
-        
-        super.init(nibName: nil, bundle: nil)
-        
-        hidesBottomBarWhenPushed = true
-    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -103,6 +94,18 @@ private extension TestDetailViewController {
     
     func setupDelegate() {
         navigationController?.delegate = self
+    }
+}
+
+// MARK: - Restorable
+
+extension TestDetailViewController: Restorable {
+    
+    func restore() {
+        tableView?.removeFromSuperview()
+        tableView = nil
+        setupTableView()
+        setupKeyboardService()
     }
 }
 

@@ -10,11 +10,11 @@ import UIKit
 
 final class SplitViewController: UISplitViewController {
     
-    private var viewDidLoadCalled = false
+    private let splitStateManager = SplitStateManager()
     
     init() {
         super.init(style: .tripleColumn)
-        delegate = self
+        delegate = splitStateManager
     }
     
     required init?(coder: NSCoder) {
@@ -33,87 +33,24 @@ final class SplitViewController: UISplitViewController {
     }
 }
 
-// MARK: - UISplitViewControllerDelegate
+// MARK: - Internal
 
-extension SplitViewController: UISplitViewControllerDelegate {
+extension UISplitViewController {
     
-    func splitViewControllerDidExpand(_ svc: UISplitViewController) {
-        guard let compactVc = svc.compactViewController,
-              let sidebarVc = svc.primaryViewController
-        else { return }
-        
-        switch (compactVc.selectedIndex) {
-        case 0:
-            let nvc = compactVc.viewControllers?[0] as? UINavigationController
-            let vc = nvc?.topViewController
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                sidebarVc.restore(at: IndexPath(row: 1, section: 0))
-                svc.secondaryViewController?.popToRootViewController(animated: false)
-                if let detailVc = vc as? DetailViewController {
-                    let newVc = DetailViewController(detailViewController: detailVc)
-                    svc.secondaryViewController?.pushViewController(newVc, animated: true)
-                }
-            }
-        case 1:
-            let nvc = compactVc.viewControllers?[1] as? UINavigationController
-            let vc = nvc?.topViewController
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                sidebarVc.restore(at: IndexPath(row: 2, section: 0))
-                svc.secondaryViewController?.popToRootViewController(animated: false)
-                if let detailVc = vc as? DetailViewController {
-                    let newVc = DetailViewController(detailViewController: detailVc)
-                    svc.secondaryViewController?.pushViewController(newVc, animated: true)
-                }
-            }
-        case 2:
-            let nvc = compactVc.viewControllers?[2] as? UINavigationController
-            let vc = nvc?.topViewController
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                sidebarVc.restore(at: IndexPath(row: 3, section: 0))
-                svc.secondaryViewController?.popToRootViewController(animated: false)
-                if let detailVc = vc as? TestDetailViewController {
-                    let newVc = TestDetailViewController(copy: detailVc)
-                    svc.secondaryViewController?.pushViewController(newVc, animated: true)
-                }
-            }
-        case 3:
-            let nvc = compactVc.viewControllers?[3] as? UINavigationController
-            let vc = nvc?.topViewController
-            svc.secondaryViewController?.popToRootViewController(animated: false)
-            if let detailVc = vc as? SettingsViewController {
-                let newVc = SettingsViewController(settingsViewController: detailVc)
-                svc.secondaryViewController?.pushViewController(newVc, animated: true)
-            }
-        default:
-            break
-        }
+    var compactViewController: UITabBarController? {
+        viewController(for: .compact) as? UITabBarController
     }
     
-    func splitViewControllerDidCollapse(_ svc: UISplitViewController) {
-        guard let supplementaryVc = svc.supplementaryViewController?.topViewController,
-              let secondaryVc = svc.secondaryViewController?.topViewController
-        else {
-            return
-        }
-        
-        switch (supplementaryVc, secondaryVc) {
-        case (is ListViewController, is EmptyViewController):
-            showDetail(svc, supplementaryVc, nil, 0)
-        case (is ListViewController, is DetailViewController):
-            showDetail(svc, supplementaryVc, secondaryVc, 0)
-        case (is FavoritesViewController, is EmptyViewController):
-            showDetail(svc, supplementaryVc, nil, 1)
-        case (is FavoritesViewController, is DetailViewController):
-            showDetail(svc, supplementaryVc, secondaryVc, 1)
-        case (is TestsViewController, is EmptyViewController):
-            showDetail(svc, supplementaryVc, nil, 2)
-        case (is TestsViewController, is TestDetailViewController):
-            showDetail(svc, supplementaryVc, secondaryVc, 2)
-        case (_, is SettingsViewController):
-            showDetail(svc, supplementaryVc, secondaryVc, 3)
-        default:
-            break
-        }
+    var sidebarViewController: SidebarViewController? {
+        (viewController(for: .primary) as? UINavigationController)?.topViewController as? SidebarViewController
+    }
+    
+    var secondaryViewController: UINavigationController? {
+        viewController(for: .secondary) as? UINavigationController
+    }
+    
+    var supplementaryViewController: UIViewController? {
+        (viewController(for: .supplementary) as? UINavigationController)?.topViewController
     }
 }
 
@@ -129,56 +66,5 @@ private extension SplitViewController {
             preferredDisplayMode = .oneBesideSecondary
             preferredSplitBehavior = .displace
         }
-    }
-    
-    func showDetail(_ svc: UISplitViewController,
-                    _ supplementaryVc: UIViewController?,
-                    _ secondaryVc: UIViewController?,
-                    _ index: Int) {
-        svc.compactViewController?.selectedIndex = index
-
-        for i in 0...3 {
-            let nvc = svc.compactViewController?.viewControllers?[i] as? UINavigationController
-            nvc?.popToRootViewController(animated: true)
-            nvc?.isNavigationBarHidden = true
-            nvc?.isNavigationBarHidden = false
-        }
-        
-        switch secondaryVc {
-        case let detailVc as DetailViewController:
-            let newVc = DetailViewController(detailViewController: detailVc)
-            let nvc = svc.compactViewController?.viewControllers?[index] as? UINavigationController
-            nvc?.pushViewController(newVc, animated: false)
-        case let detailVc as TestDetailViewController:
-            let newVc = TestDetailViewController(copy: detailVc)
-            let nvc = svc.compactViewController?.viewControllers?[index] as? UINavigationController
-            nvc?.pushViewController(newVc, animated: false)
-        case let settingsVc as SettingsViewController:
-            let newVc = SettingsViewController(settingsViewController: settingsVc)
-            let nvc = UINavigationController(rootViewController: newVc)
-            nvc.tabBarItem = .init(title: "Settings".localized, image: SystemIcon.gear.image, tag: 3)
-            svc.compactViewController?.viewControllers?[index] = nvc
-        default:
-            break
-        }
-    }
-}
-
-extension UISplitViewController {
-    
-    var compactViewController: UITabBarController? {
-        viewController(for: .compact) as? UITabBarController
-    }
-    
-    var primaryViewController: SidebarViewController? {
-        (viewController(for: .primary) as? UINavigationController)?.topViewController as? SidebarViewController
-    }
-    
-    var secondaryViewController: UINavigationController? {
-        viewController(for: .secondary) as? UINavigationController
-    }
-    
-    var supplementaryViewController: UINavigationController? {
-        viewController(for: .supplementary) as? UINavigationController
     }
 }
