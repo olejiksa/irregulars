@@ -111,6 +111,7 @@ private extension FavoritesViewController {
     
     func setupNavigationBar() {
         navigationItem.title = "Favorites".localized
+        navigationItem.hidesSearchBarWhenScrolling = false
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     

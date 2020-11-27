@@ -34,7 +34,8 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
         
-        FeatureToggle.isPaid = true
+        UserDefaults.standard.register(true, for: .shouldRegularVerbsBeShown)
+        UserDefaults.standard.register(true, for: .shouldDerivedFormsBeShown)
         
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = splitViewController

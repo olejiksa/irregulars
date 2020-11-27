@@ -18,6 +18,7 @@
 		EB269989256D3FB9007CCF2E /* PickableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB269987256D3FB8007CCF2E /* PickableCell.xib */; };
 		EB26998C256D40DD007CCF2E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB69A26825322AF900DD1827 /* Notification.swift */; };
 		EB269992256E29DA007CCF2E /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269991256E29DA007CCF2E /* TabBarItem.swift */; };
+		EB2E4B1725717A3E005B343A /* PurchaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4B1625717A3E005B343A /* PurchaseError.swift */; };
 		EB2F5E0D251F543A007DCF60 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2F5E0B251F543A007DCF60 /* DetailViewController.swift */; };
 		EB2F5E11251F5B26007DCF60 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2F5E0F251F5B26007DCF60 /* DetailCell.swift */; };
 		EB2F5E12251F5B26007DCF60 /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB2F5E10251F5B26007DCF60 /* DetailCell.xib */; };
@@ -184,6 +185,7 @@
 		EB269986256D3FB8007CCF2E /* PickableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickableCell.swift; sourceTree = "<group>"; };
 		EB269987256D3FB8007CCF2E /* PickableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickableCell.xib; sourceTree = "<group>"; };
 		EB269991256E29DA007CCF2E /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		EB2E4B1625717A3E005B343A /* PurchaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseError.swift; sourceTree = "<group>"; };
 		EB2F5E0B251F543A007DCF60 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EB2F5E0F251F5B26007DCF60 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		EB2F5E10251F5B26007DCF60 /* DetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
@@ -725,6 +727,7 @@
 				EBF8A62E2559172100A6265C /* Favorites.swift */,
 				EBB01C0825217F5400BB646B /* Language.swift */,
 				EBA644B3255988FC0012B973 /* ListState.swift */,
+				EB2E4B1625717A3E005B343A /* PurchaseError.swift */,
 				EB450972253B5CB300D31858 /* Section.swift */,
 				EB45097A253B630900D31858 /* SectionArray.swift */,
 				EB450A32254B157A00D31858 /* SectionDataSource.swift */,
@@ -994,6 +997,7 @@
 				EB2F5E0D251F543A007DCF60 /* DetailViewController.swift in Sources */,
 				EBB3BC09251F2ADB006E0DC7 /* String.swift in Sources */,
 				EB450A33254B157B00D31858 /* SectionDataSource.swift in Sources */,
+				EB2E4B1725717A3E005B343A /* PurchaseError.swift in Sources */,
 				EB45098A253B67FA00D31858 /* DetailAssembly.swift in Sources */,
 				EB7B8581253B30C600542D3C /* MailService.swift in Sources */,
 				EBD476C5254BBE7A0033067B /* PaywallCell.swift in Sources */,

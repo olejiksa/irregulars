@@ -23,4 +23,5 @@ extension UserDefaults {
     func string(for key: Key) -> String? { string(forKey: key.rawValue) }
     
     func set(_ value: Any?, for key: Key) { setValue(value, forKey: key.rawValue) }
+    func register(_ value: Any, for key: Key) { register(defaults: [key.rawValue: value]) }
 }

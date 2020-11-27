@@ -54,7 +54,13 @@ private extension TestsPresenter {
     
     func item(for level: (offset: Int, element: [String])) -> ItemProtocol {
         let title = "\("Level".localized) \(level.offset + 1)"
-        return PlainItem(title: title)
+        let isAvailable = level.offset < 2 || FeatureToggle.isPaid
+        let isCollapsed = viewController?.splitViewController?.isCollapsed == true
+        return !isCollapsed ?
+            PlainItem(title: title) :
+            SubtitleItem(title: title,
+                         subtitle: level.element.joined(separator: ", "),
+                         hasDisclosureIndicator: isAvailable && isCollapsed)
     }
     
     @objc func didSelectedItemUpdate(_ notification: Notification) {

@@ -83,6 +83,7 @@ private extension ListViewController {
     }
     
     func setupNavigationBar() {
+        navigationItem.hidesSearchBarWhenScrolling = false
         if splitViewController?.isCollapsed == true {
             navigationItem.title = "Verbs".localized
         } else {

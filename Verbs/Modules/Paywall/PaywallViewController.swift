@@ -97,7 +97,9 @@ private extension PaywallViewController {
     
     func didBuy(error: Error?) {
         DispatchQueue.main.async {
-            if let error = error {
+            if (error as? PurchaseError) != nil {
+                self.buyButton.hideLoading()
+            } else if let error = error {
                 self.router?.show(error: error)
                 self.buyButton.hideLoading()
             } else {

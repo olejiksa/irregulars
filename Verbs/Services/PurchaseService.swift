@@ -75,10 +75,18 @@ private extension PurchaseService {
     
     func fail(transaction: SKPaymentTransaction) {
         print("fail...")
-        if let transactionError = transaction.error as NSError?,
-           let localizedDescription = transaction.error?.localizedDescription,
-           transactionError.code != SKError.paymentCancelled.rawValue {
-            print("Transaction Error: \(localizedDescription)")
+        
+        guard let nsError = transaction.error as NSError? else {
+            errorHandler?(transaction.error)
+            return
+        }
+        
+        let error = SKError(_nsError: nsError)
+        switch error {
+        case SKError.paymentCancelled:
+            let paymentCancelled = PurchaseError.paymentCancelled
+            errorHandler?(paymentCancelled)
+        default:
             errorHandler?(transaction.error)
         }
         
