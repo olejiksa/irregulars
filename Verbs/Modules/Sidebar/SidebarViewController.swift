@@ -12,6 +12,8 @@ final class SidebarViewController: UIViewController {
     
     private let presenter: SidebarPresenter
     private var collectionView: UICollectionView?
+    private var keyboardService: KeyboardService?
+    private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     
     init(presenter: SidebarPresenter) {
         self.presenter = presenter
@@ -29,6 +31,7 @@ final class SidebarViewController: UIViewController {
         setupNavigationBar()
         setupCollectionView()
         setupDataSource()
+        setupKeyboardService()
     }
     
     func select(at selectedIndexPath: IndexPath?) {
@@ -55,9 +58,22 @@ private extension SidebarViewController {
     
     func setupCollectionView() {
         let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
-        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        collectionView.delegate = presenter
+        
         view.addSubview(collectionView)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let keyboardHeightLayoutConstraint = collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            keyboardHeightLayoutConstraint
+        ])
+        
+        collectionView.delegate = presenter
+        
+        self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.collectionView = collectionView
     }
     
@@ -72,5 +88,9 @@ private extension SidebarViewController {
     
     func setupDataSource() {
         presenter.setupDataSource(for: collectionView)
+    }
+    
+    func setupKeyboardService() {
+        keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
     }
 }

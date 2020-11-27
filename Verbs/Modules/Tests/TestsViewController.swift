@@ -12,6 +12,8 @@ final class TestsViewController: UIViewController {
     
     private let presenter: TestsPresenter
     private var tableView: UITableView?
+    private var keyboardService: KeyboardService?
+    private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     
     init(presenter: TestsPresenter) {
         self.presenter = presenter
@@ -30,6 +32,7 @@ final class TestsViewController: UIViewController {
         setupTableView()
         setupView()
         setupSections()
+        setupKeyboardService()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,25 +70,23 @@ private extension TestsViewController {
     
     func setupNavigationBar() {
         navigationItem.title = "Tests".localized
-        if splitViewController?.isCollapsed == true {
-            navigationItem.largeTitleDisplayMode = .never
-        } else {
-            navigationController?.navigationBar.prefersLargeTitles = true
-        }
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func setupTableView() {
-        let tableViewStyle: UITableView.Style = splitViewController?.isCollapsed == true ? .grouped : .insetGrouped
+        let tableViewStyle: UITableView.Style = splitViewController?.isCollapsed == true ? .plain : .insetGrouped
         let tableView = UITableView(frame: .zero, style: tableViewStyle)
         
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+
+        let keyboardHeightLayoutConstraint = tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            keyboardHeightLayoutConstraint
         ])
         
         tableView.dataSource = presenter.dataSource
@@ -93,6 +94,7 @@ private extension TestsViewController {
         
         tableView.register(PlainCell.self, SubtitleCell.self)
         
+        self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.tableView = tableView
     }
     
@@ -102,5 +104,9 @@ private extension TestsViewController {
     
     func setupSections() {
         presenter.setupSections()
+    }
+    
+    func setupKeyboardService() {
+        keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
     }
 }
