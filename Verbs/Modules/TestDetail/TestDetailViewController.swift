@@ -106,6 +106,9 @@ extension TestDetailViewController: Restorable {
         tableView = nil
         setupTableView()
         setupKeyboardService()
+        NotificationCenter.default.post(name: .test,
+                                        object: nil,
+                                        userInfo: [Notification.Name.test: index])
     }
 }
 
@@ -117,10 +120,18 @@ extension TestDetailViewController: UINavigationControllerDelegate {
                               willShow viewController: UIViewController,
                               animated: Bool) {
         guard animated else { return }
-        if let vc = viewController as? TestDetailViewController {
+        
+        switch viewController {
+        case let vc as TestDetailViewController:
             NotificationCenter.default.post(name: .test,
                                             object: nil,
                                             userInfo: [Notification.Name.test: vc.index])
+        case is EmptyViewController:
+            NotificationCenter.default.post(name: .test,
+                                            object: nil,
+                                            userInfo: [:])
+        default:
+            break
         }
     }
 }

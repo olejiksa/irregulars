@@ -74,8 +74,6 @@ extension EmptyViewController: UINavigationControllerDelegate {
                               animated: Bool) {
         guard animated else { return }
         NotificationCenter.default.post(name: .infinitive, object: nil, userInfo: [Notification.Name.infinitive: ""])
-        if viewController is EmptyViewController {
-            NotificationCenter.default.post(name: .test, object: nil, userInfo: nil)
-        }
+        NotificationCenter.default.post(name: .test, object: nil, userInfo: nil)
     }
 }

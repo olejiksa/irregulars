@@ -52,7 +52,7 @@ final class SplitStateManager: UISplitViewControllerDelegate {
             svc.compactViewController?.viewControllers?[tabBarItem.rawValue] = navigationController
         case is Restorable:
             let nvc = svc.compactViewController?.selectedViewController as? UINavigationController
-            nvc?.pushViewController(secondaryViewController, animated: false)
+            nvc?.pushViewController(secondaryViewController, animated: true)
         default:
             break
         }

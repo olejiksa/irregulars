@@ -38,11 +38,8 @@ final class TestsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        presenter.selectWhenRegular()
         deselectWhenCompact()
-        guard animated else { return }
-        NotificationCenter.default.post(name: .test,
-                                        object: nil,
-                                        userInfo: nil)
     }
     
     func selectSection(at index: Int?) {
@@ -58,9 +55,8 @@ final class TestsViewController: UIViewController {
     }
     
     func deselectWhenCompact() {
-        guard splitViewController?.isCollapsed == true,
-              let indexPath = tableView?.indexPathForSelectedRow else { return }
-        tableView?.deselectRow(at: indexPath, animated: true)
+        guard splitViewController?.isCollapsed == true else { return }
+        tableView?.selectRow(at: nil, animated: true, scrollPosition: .none)
     }
 }
 
