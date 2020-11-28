@@ -37,6 +37,11 @@ final class SettingsRouter {
         viewController?.present(nvc, animated: true)
     }
     
+    func goToAccentColor() {
+        let vc = AccentColorAssembly().viewController()
+        viewController?.navigationController?.push(vc)
+    }
+    
     func share(_ url: URL, in view: UIView) {
         let activityViewController = UIActivityViewController(activityItems: [url],
                                                               applicationActivities: nil)

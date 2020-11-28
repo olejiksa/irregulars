@@ -20,7 +20,9 @@ final class SettingsAssembly: AssemblyProtocol {
         let presenter = SettingsPresenter(languageService: .init(),
                                           mailService: .init())
         let viewController = SettingsViewController(presenter: presenter)
-        _ = navigationController ?? UINavigationController(rootViewController: viewController)
+        let navigationController = self.navigationController ??
+            UINavigationController(rootViewController: viewController)
+        navigationController.view.backgroundColor = .systemBackground
         let router = SettingsRouter(viewController: viewController)
         presenter.viewController = viewController
         presenter.router = router

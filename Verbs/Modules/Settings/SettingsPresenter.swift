@@ -52,11 +52,11 @@ private extension SettingsPresenter {
                                   items: [RightDetailItem(title: "Language".localized,
                                                           subtitle: languageService.current.description,
                                                           actionBlock: willShowLanguageSettings),
-//                                          RightDetailItem(title: "Accent color".localized,
-//                                                          subtitle: "Blue".localized,
-//                                                          actionBlock: nil,
-//                                                          hasDisclosureItem: true,
-//                                                          isEnabled: false)
+                                          RightDetailItem(title: "Accent color".localized,
+                                                          subtitle: "Blue".localized,
+                                                          actionBlock: willGoToAccentColor,
+                                                          hasDisclosureItem: true,
+                                                          isEnabled: FeatureToggle.isPaid)
                                   ]),
                           Section(header: "List".localized,
                                   items: [SwitchItem(text: "Regular verbs (-ed)".localized,
@@ -73,8 +73,8 @@ private extension SettingsPresenter {
                                                          actionBlock: willRate),
                                           DisclosureItem(text: "Privacy policy".localized,
                                                          actionBlock: willGoToPrivacyPolicy),
-//                                          DisclosureItem(text: "Terms of use".localized,
-//                                                         actionBlock: willGoToTermsOfUse),
+                                          DisclosureItem(text: "Terms of use".localized,
+                                                         actionBlock: willGoToTermsOfUse),
                                           DisclosureItem(text: "Contact us".localized,
                                                          isEnabled: mailService.isMailAvailable,
                                                          actionBlock: willGoToMail),
@@ -167,6 +167,10 @@ private extension SettingsPresenter {
         guard let url = URL(string: "https://github.com/olejiksa/legal/blob/master/privacy-\(code).md")
         else { return }
         router?.goToURL(url)
+    }
+    
+    func willGoToAccentColor(_ sender: ItemProtocol) {
+        router?.goToAccentColor()
     }
     
     func willShare(_ sender: ItemProtocol) {

@@ -14,13 +14,14 @@ enum SystemIcon: String {
     case gear
     case star
     case folder
+    case eye
+    case paintpalette
     case note = "note.text"
     case starFill = "star.fill"
     case speaker = "speaker.wave.3.fill"
     case transcription = "textformat.abc.dottedunderline"
     case search = "magnifyingglass"
     case alphabet = "list.triangle"
-    case toggle = "switch.2"
     case dictionary = "a.book.closed.fill"
     case book = "book"
     case bookFill = "book.fill"
@@ -31,7 +32,6 @@ enum SystemIcon: String {
     case sentences = "rectangle.and.pencil.and.ellipsis"
     case pronunciation = "mouth"
     case chart = "chart.pie"
-    case listStar = "list.star"
     case question = "questionmark.circle"
     case play = "play.circle"
     

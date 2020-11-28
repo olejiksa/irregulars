@@ -19,6 +19,15 @@
 		EB26998C256D40DD007CCF2E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB69A26825322AF900DD1827 /* Notification.swift */; };
 		EB269992256E29DA007CCF2E /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269991256E29DA007CCF2E /* TabBarItem.swift */; };
 		EB2E4B1725717A3E005B343A /* PurchaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4B1625717A3E005B343A /* PurchaseError.swift */; };
+		EB2E4B29257293C5005B343A /* AccentColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4B27257293C5005B343A /* AccentColorViewController.swift */; };
+		EB2E4B2A257293C5005B343A /* AccentColorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB2E4B28257293C5005B343A /* AccentColorView.xib */; };
+		EB2E4B2E2572963D005B343A /* AccentColorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4B2D2572963D005B343A /* AccentColorAssembly.swift */; };
+		EB2E4B34257297F4005B343A /* AccentColorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4B33257297F4005B343A /* AccentColorPresenter.swift */; };
+		EB2E4B3B25729E2E005B343A /* AccentColorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4B3A25729E2E005B343A /* AccentColorItem.swift */; };
+		EB2E4B4125729EBE005B343A /* AccentColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4B4025729EBE005B343A /* AccentColor.swift */; };
+		EB2E4B482572A09F005B343A /* AccentColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4B462572A09F005B343A /* AccentColorCell.swift */; };
+		EB2E4B492572A09F005B343A /* AccentColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB2E4B472572A09F005B343A /* AccentColorCell.xib */; };
+		EB2E4B4D2572A456005B343A /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4B4C2572A456005B343A /* CircleView.swift */; };
 		EB2F5E0D251F543A007DCF60 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2F5E0B251F543A007DCF60 /* DetailViewController.swift */; };
 		EB2F5E11251F5B26007DCF60 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2F5E0F251F5B26007DCF60 /* DetailCell.swift */; };
 		EB2F5E12251F5B26007DCF60 /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB2F5E10251F5B26007DCF60 /* DetailCell.xib */; };
@@ -186,6 +195,15 @@
 		EB269987256D3FB8007CCF2E /* PickableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickableCell.xib; sourceTree = "<group>"; };
 		EB269991256E29DA007CCF2E /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		EB2E4B1625717A3E005B343A /* PurchaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseError.swift; sourceTree = "<group>"; };
+		EB2E4B27257293C5005B343A /* AccentColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorViewController.swift; sourceTree = "<group>"; };
+		EB2E4B28257293C5005B343A /* AccentColorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccentColorView.xib; sourceTree = "<group>"; };
+		EB2E4B2D2572963D005B343A /* AccentColorAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorAssembly.swift; sourceTree = "<group>"; };
+		EB2E4B33257297F4005B343A /* AccentColorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorPresenter.swift; sourceTree = "<group>"; };
+		EB2E4B3A25729E2E005B343A /* AccentColorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorItem.swift; sourceTree = "<group>"; };
+		EB2E4B4025729EBE005B343A /* AccentColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColor.swift; sourceTree = "<group>"; };
+		EB2E4B462572A09F005B343A /* AccentColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorCell.swift; sourceTree = "<group>"; };
+		EB2E4B472572A09F005B343A /* AccentColorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccentColorCell.xib; sourceTree = "<group>"; };
+		EB2E4B4C2572A456005B343A /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		EB2F5E0B251F543A007DCF60 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EB2F5E0F251F5B26007DCF60 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		EB2F5E10251F5B26007DCF60 /* DetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
@@ -353,9 +371,32 @@
 			path = PickableCell;
 			sourceTree = "<group>";
 		};
+		EB2E4B1E257258CA005B343A /* AccentColor */ = {
+			isa = PBXGroup;
+			children = (
+				EB2E4B3925729E1A005B343A /* AccentColorItem */,
+				EB2E4B2D2572963D005B343A /* AccentColorAssembly.swift */,
+				EB2E4B33257297F4005B343A /* AccentColorPresenter.swift */,
+				EB2E4B27257293C5005B343A /* AccentColorViewController.swift */,
+				EB2E4B28257293C5005B343A /* AccentColorView.xib */,
+			);
+			path = AccentColor;
+			sourceTree = "<group>";
+		};
+		EB2E4B3925729E1A005B343A /* AccentColorItem */ = {
+			isa = PBXGroup;
+			children = (
+				EB2E4B3A25729E2E005B343A /* AccentColorItem.swift */,
+				EB2E4B462572A09F005B343A /* AccentColorCell.swift */,
+				EB2E4B472572A09F005B343A /* AccentColorCell.xib */,
+			);
+			path = AccentColorItem;
+			sourceTree = "<group>";
+		};
 		EB2F5E07251F5359007DCF60 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				EB2E4B1E257258CA005B343A /* AccentColor */,
 				EB2F5E0A251F5407007DCF60 /* Detail */,
 				EB7DFF5225244378000B711D /* Empty */,
 				EB8325882556EACF005E02C1 /* Favorites */,
@@ -479,6 +520,7 @@
 				EB450A58254BB3F800D31858 /* BigButton.swift */,
 				EBD476CF254BD0BF0033067B /* FadeTableView.swift */,
 				EBDF00A52562F1160041F458 /* FormTextField.swift */,
+				EB2E4B4C2572A456005B343A /* CircleView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -724,6 +766,7 @@
 		EBEB1D95251F15FD0019972C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EB2E4B4025729EBE005B343A /* AccentColor.swift */,
 				EBF8A62E2559172100A6265C /* Favorites.swift */,
 				EBB01C0825217F5400BB646B /* Language.swift */,
 				EBA644B3255988FC0012B973 /* ListState.swift */,
@@ -882,8 +925,10 @@
 				EB269968256CF10C007CCF2E /* PlainDetailCell.xib in Resources */,
 				EBEB1D7F251F11910019972C /* Assets.xcassets in Resources */,
 				EBF4A150252ED5A4003E3A44 /* SwitchCell.xib in Resources */,
+				EB2E4B2A257293C5005B343A /* AccentColorView.xib in Resources */,
 				EB2F5E12251F5B26007DCF60 /* DetailCell.xib in Resources */,
 				EB450A4A254B1A2B00D31858 /* PlainCell.xib in Resources */,
+				EB2E4B492572A09F005B343A /* AccentColorCell.xib in Resources */,
 				EB4509E72541ED4A00D31858 /* SubtitleCell.xib in Resources */,
 				EBB3BC15251F4BAA006E0DC7 /* irregulars.json in Resources */,
 				EB269989256D3FB9007CCF2E /* PickableCell.xib in Resources */,
@@ -923,6 +968,7 @@
 				EB4509A4253B6EB600D31858 /* Actionable.swift in Sources */,
 				EBD476D6254BDF850033067B /* Bundle.swift in Sources */,
 				EBF97C9D256259A4009FFFBA /* PaywallRouter.swift in Sources */,
+				EB2E4B29257293C5005B343A /* AccentColorViewController.swift in Sources */,
 				EBB01C2D25219E9A00BB646B /* SubtitleItem.swift in Sources */,
 				EBDF009C2562EED70041F458 /* InputItem.swift in Sources */,
 				EBDF008D2562E9210041F458 /* TestDetailPresenter.swift in Sources */,
@@ -933,6 +979,8 @@
 				EB450A20254A8BE600D31858 /* TestsViewController.swift in Sources */,
 				EBA732AE25702FB7001B69EF /* Restorable.swift in Sources */,
 				EBDF00782562DD850041F458 /* TestDetailViewController.swift in Sources */,
+				EB2E4B2E2572963D005B343A /* AccentColorAssembly.swift in Sources */,
+				EB2E4B3B25729E2E005B343A /* AccentColorItem.swift in Sources */,
 				EB450A59254BB3F800D31858 /* BigButton.swift in Sources */,
 				EB2F5E11251F5B26007DCF60 /* DetailCell.swift in Sources */,
 				EBF8A6522559225D00A6265C /* Locator.swift in Sources */,
@@ -969,6 +1017,7 @@
 				EBD476D0254BD0BF0033067B /* FadeTableView.swift in Sources */,
 				EBF8A62F2559172100A6265C /* Favorites.swift in Sources */,
 				EBEB1D8E251F13BA0019972C /* SubtitleCell.swift in Sources */,
+				EB2E4B482572A09F005B343A /* AccentColorCell.swift in Sources */,
 				EBA644B4255988FC0012B973 /* ListState.swift in Sources */,
 				EB69A26925322AFA00DD1827 /* Notification.swift in Sources */,
 				EBA644DF255ADC910012B973 /* SidebarAssembly.swift in Sources */,
@@ -977,6 +1026,7 @@
 				EB5547542553CB22001C5585 /* SidebarCell.swift in Sources */,
 				EBB01C1F25218BAB00BB646B /* ItemProtocol.swift in Sources */,
 				EBA644D7255ADC800012B973 /* SidebarPresenter.swift in Sources */,
+				EB2E4B4125729EBE005B343A /* AccentColor.swift in Sources */,
 				EBA732B425704AF7001B69EF /* SplitStateManager.swift in Sources */,
 				EBA644E7255AE25B0012B973 /* SettingsRouter.swift in Sources */,
 				EBB3BC17251F4D60006E0DC7 /* JSONParser.swift in Sources */,
@@ -1007,6 +1057,7 @@
 				EB45097B253B630900D31858 /* SectionArray.swift in Sources */,
 				EBA644C8255AD4F90012B973 /* DetailRouter.swift in Sources */,
 				EBF4A13B252EA2F6003E3A44 /* FeatureToggle.swift in Sources */,
+				EB2E4B34257297F4005B343A /* AccentColorPresenter.swift in Sources */,
 				EB4509E22541E69400D31858 /* RightDetailCell.swift in Sources */,
 				EBF4A126252E901A003E3A44 /* NavigationController.swift in Sources */,
 				EB7B8579253B0D5900542D3C /* DisclosureCell.swift in Sources */,
@@ -1017,6 +1068,7 @@
 				EBB01C0F2521828400BB646B /* TranslationItem.swift in Sources */,
 				EBF4A12E252E981F003E3A44 /* ListCell.swift in Sources */,
 				EBDF00962562EEB40041F458 /* InputCell.swift in Sources */,
+				EB2E4B4D2572A456005B343A /* CircleView.swift in Sources */,
 				EBF4A14F252ED5A4003E3A44 /* SwitchCell.swift in Sources */,
 				EBA644BB255A59CF0012B973 /* ActionItem.swift in Sources */,
 				EBF97C8E256235AF009FFFBA /* PurchaseService.swift in Sources */,
@@ -1065,7 +1117,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1073,7 +1125,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1089,7 +1141,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1097,7 +1149,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1231,7 +1283,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1239,7 +1291,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1255,7 +1307,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1263,7 +1315,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

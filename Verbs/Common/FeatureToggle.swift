@@ -20,5 +20,5 @@ struct FeatureToggle {
         }
     }
     
-    static var isDebug = false
+    static var isDebug = true
 }

@@ -75,9 +75,10 @@ private extension TestsPresenter {
 extension TestsPresenter: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard indexPath.row != selectedIndex, indexPath.row < items.count else { return }
+        let isCollapsed = viewController?.splitViewController?.isCollapsed ?? false
+        guard indexPath.row != selectedIndex || isCollapsed, indexPath.row < items.count else { return }
         guard indexPath.row < 2 || FeatureToggle.isPaid else {
-            if let selectedIndex = selectedIndex {
+            if let selectedIndex = selectedIndex, !isCollapsed {
                 tableView.selectRow(at: .init(row: selectedIndex, section: 0),
                                     animated: true,
                                     scrollPosition: .none)

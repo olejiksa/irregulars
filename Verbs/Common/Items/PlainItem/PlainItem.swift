@@ -24,4 +24,3 @@ extension PlainItem: ItemProtocol {
     
     var identifier: String { PlainCell.identifier }
 }
-

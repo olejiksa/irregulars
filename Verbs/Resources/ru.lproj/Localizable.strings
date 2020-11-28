@@ -13,7 +13,6 @@
 "Add unlimited items in Favorites" = "Храните неограниченное количество элементов в «Избранном»";
 "Find words faster using search" = "Находите слова быстрее через поиск";
 "Find words faster using the alphabetical scrollbar" = "Находите слова быстрее с помощью алфавитной полосы прокрутки";
-"Use the medium-sized widget that has all three verb's forms, their transcriptions, and its translation" = "Используйте виджет среднего размера, содержащий все три формы слова, их транскрипции, а также перевод";
 "Hide or show regular verbs (-ed)" = "Скройте или отобразите правильные глаголы (-ed)";
 "Hide or show derivatives" = "Скройте или отобразите производные формы";
 "View a translation without going to the verb page" = "Смотрите перевод без перехода на страницу глагола";
@@ -62,11 +61,21 @@
 "Accent color" = "Акцентный цвет";
 "View" = "Вид";
 "Blue" = "Синий";
+"Green" = "Зеленый";
+"Indigo" = "Индиго";
+"Orange" = "Оранжевый";
+"Pink" = "Розовый";
+"Purple" = "Пурпурный";
+"Red" = "Красный";
+"Teal" = "Бирюзовый";
+"Yellow" = "Желтый";
+"Match app icon with accent color" = "Сопоставить иконку с цветом";
 "Level" = "Уровень";
 "Levels" = "Уровни";
 "Passed" = "Пройденные уровни";
 "Enter here" = "Введите здесь";
 "Terms of use" = "Условия использования";
+"Personalize the app: pick an accent color to your liking" = "Персонализируйте приложение: выберите акцентный цвет по своему вкусу";
 
 // Irregular Verbs
 
