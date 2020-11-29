@@ -13,12 +13,13 @@ final class AccentColorPresenter: NSObject {
     let dataSource = SelectableSectionDataSource()
     weak var viewController: AccentColorViewController?
     
+    private let appIconService: AppIconService
     private let accentColors = AccentColor.allCases.sorted { $0.rawValue < $1.rawValue }
     private var selectedIndexPath: IndexPath?
     
-    override init() {
+    init(appIconService: AppIconService) {
+        self.appIconService = appIconService
         super.init()
-        
         setupSections()
     }
 }
@@ -46,14 +47,22 @@ private extension AccentColorPresenter {
 extension AccentColorPresenter: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard indexPath.section == 0 else {
+            appIconService.setIcon(for: AccentColor.current)
+            return
+        }
+        
         dataSource.selectedIndexPath = indexPath
         AccentColor.current = accentColors[indexPath.row]
         NotificationCenter.default.post(name: .paid, object: nil)
-        tableView.deselectRow(at: indexPath, animated: true)
         tableView.reloadSections(IndexSet(integer: 1), with: .none)
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        guard indexPath.section == 0 else { return indexPath }
+        
         if let oldIndex = dataSource.selectedIndexPath {
             tableView.cellForRow(at: oldIndex)?.accessoryType = .none
         }

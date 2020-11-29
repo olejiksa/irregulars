@@ -31,7 +31,7 @@ final class TestsPresenter: NSObject {
         let levels = items.enumerated().map(item)
         // let passedLevels = items.enumerated().filter { $0.offset < passedLevelsCount }.map(item)
         
-        dataSource.setup([Section(header: "Levels".localized, items: levels)])
+        dataSource.setup([Section(header: nil, items: levels)])
     }
     
     func selectWhenRegular() {
