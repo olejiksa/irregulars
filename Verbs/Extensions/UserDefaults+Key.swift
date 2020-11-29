@@ -16,6 +16,7 @@ extension UserDefaults {
         case shouldDerivedFormsBeShown
         case shouldTranslationBeShown
         case passed
+        case accentColor
     }
     
     func bool(for key: Key) -> Bool { bool(forKey: key.rawValue) }

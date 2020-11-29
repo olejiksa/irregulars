@@ -17,13 +17,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6E2-uk-47w">
-                        <rect key="frame" x="64" y="11.5" width="236" height="21"/>
+                        <rect key="frame" x="65" y="11.5" width="235" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgx-tK-CKb" customClass="CircleView" customModule="Verbs" customModuleProvider="target">
-                        <rect key="frame" x="15" y="0.0" width="44" height="44"/>
+                        <rect key="frame" x="16" y="0.0" width="44" height="44"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="tgx-tK-CKb" secondAttribute="height" multiplier="1:1" id="cBU-KM-ePi"/>
@@ -36,7 +36,7 @@
                     <constraint firstAttribute="bottom" secondItem="tgx-tK-CKb" secondAttribute="bottom" id="3H0-eF-zko"/>
                     <constraint firstItem="tgx-tK-CKb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="aKB-tq-xKX"/>
                     <constraint firstAttribute="trailing" secondItem="6E2-uk-47w" secondAttribute="trailing" constant="20" id="kSE-uT-Tkj"/>
-                    <constraint firstItem="tgx-tK-CKb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="n1z-FZ-iko"/>
+                    <constraint firstItem="tgx-tK-CKb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="n1z-FZ-iko"/>
                     <constraint firstItem="6E2-uk-47w" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="su1-EZ-POi"/>
                 </constraints>
             </tableViewCellContentView>

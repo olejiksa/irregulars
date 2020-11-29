@@ -50,5 +50,7 @@ extension SwitchCell: CellProtocol {
         isUserInteractionEnabled = item.isEnabled
         contentLabel?.isEnabled = item.isEnabled
         toggleSwitch?.isEnabled = item.isEnabled
+        
+        toggleSwitch.onTintColor = AccentColor.current.color
     }
 }

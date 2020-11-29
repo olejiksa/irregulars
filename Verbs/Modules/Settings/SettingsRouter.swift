@@ -21,6 +21,7 @@ final class SettingsRouter {
         let configuration = SFSafariViewController.Configuration()
         configuration.entersReaderIfAvailable = true
         let vc = SFSafariViewController(url: url, configuration: configuration)
+        vc.preferredControlTintColor = AccentColor.current.color
         vc.modalPresentationStyle = .pageSheet
         viewController?.present(vc, animated: true)
     }

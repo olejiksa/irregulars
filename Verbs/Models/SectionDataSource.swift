@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-final class SectionDataSource: NSObject {
+class SectionDataSource: NSObject {
     
     private var sectionArray = SectionArray()
     

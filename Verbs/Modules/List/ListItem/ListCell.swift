@@ -23,7 +23,7 @@ final class ListCell: UITableViewCell {
               !splitVc.isCollapsed else { return }
         
         if selected {
-            contentView.backgroundColor = .systemBlue
+            contentView.backgroundColor = AccentColor.current.color
             [infinitiveLabel, simplePastLabel, pastParticipleLabel].forEach { $0.textColor = .white }
         } else {
             contentView.backgroundColor = nil

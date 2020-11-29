@@ -30,10 +30,6 @@ final class AccentColorViewController: UIViewController {
         setupTableView()
         setupView()
     }
-    
-    func reloadData() {
-        tableView?.reloadData()
-    }
 }
 
 // MARK: - Private

@@ -61,7 +61,7 @@ private extension BigButton {
     func createActivityIndicator() -> UIActivityIndicatorView {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.hidesWhenStopped = true
-        activityIndicator.color = isPrimary ? .white : .systemBlue
+        activityIndicator.color = isPrimary ? .white : AccentColor.current.color
         return activityIndicator
     }
 

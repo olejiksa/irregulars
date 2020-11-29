@@ -46,6 +46,7 @@ private extension SettingsPresenter {
               let name = Bundle.main.productName else { return }
         
         let editionName = FeatureToggle.isPaid ? "\(name) Pro" : "\(name) Lite"
+        let accentColor = AccentColor.current.rawValue.capitalized.localized
 
         dataSource.setup([setupActivationSection(),
                           Section(header: "General".localized,
@@ -53,7 +54,7 @@ private extension SettingsPresenter {
                                                           subtitle: languageService.current.description,
                                                           actionBlock: willShowLanguageSettings),
                                           RightDetailItem(title: "Accent color".localized,
-                                                          subtitle: "Blue".localized,
+                                                          subtitle: accentColor,
                                                           actionBlock: willGoToAccentColor,
                                                           hasDisclosureItem: true,
                                                           isEnabled: FeatureToggle.isPaid)

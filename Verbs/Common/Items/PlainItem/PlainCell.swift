@@ -19,7 +19,7 @@ final class PlainCell: UITableViewCell {
               !splitVc.isCollapsed else { return }
         
         if selected {
-            contentView.backgroundColor = .systemBlue
+            contentView.backgroundColor = AccentColor.current.color
             [textLabel].forEach { $0?.textColor = .white }
         } else {
             contentView.backgroundColor = nil

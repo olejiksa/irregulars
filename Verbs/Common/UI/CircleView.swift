@@ -10,7 +10,7 @@ import UIKit
 
 final class CircleView: UIView {
     
-    var color: UIColor = .systemBlue {
+    var color: UIColor = AccentColor.current.color {
         didSet {
             setNeedsDisplay()
         }

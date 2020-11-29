@@ -38,7 +38,7 @@ final class SidebarPresenter: NSObject {
             
             cell.contentConfiguration = contentConfiguration
             cell.accessories = item.isExpandable ? [.outlineDisclosure()] : []
-            cell.tintColor = .systemBlue
+            cell.tintColor = AccentColor.current.color
         }
         
         let rowRegistration = UICollectionView.CellRegistration<SidebarCell, SidebarItem> {
@@ -51,7 +51,7 @@ final class SidebarPresenter: NSObject {
             
             cell.contentConfiguration = contentConfiguration
             cell.accessories = item.isExpandable ? [.outlineDisclosure()] : []
-            cell.tintColor = .systemBlue
+            cell.tintColor = AccentColor.current.color
         }
         
         dataSource = .init(collectionView: collectionView) {

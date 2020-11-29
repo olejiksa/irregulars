@@ -10,11 +10,15 @@ import UIKit
 
 final class AccentColorPresenter: NSObject {
     
-    let dataSource = SectionDataSource()
+    let dataSource = SelectableSectionDataSource()
     weak var viewController: AccentColorViewController?
+    
+    private let accentColors = AccentColor.allCases.sorted { $0.rawValue < $1.rawValue }
+    private var selectedIndexPath: IndexPath?
     
     override init() {
         super.init()
+        
         setupSections()
     }
 }
@@ -24,8 +28,9 @@ final class AccentColorPresenter: NSObject {
 private extension AccentColorPresenter {
     
     func setupSections() {
-        let accentColors = AccentColor.allCases.sorted { $0.rawValue < $1.rawValue }
         let accentColorItems = accentColors.map(AccentColorItem.init)
+        let index = accentColors.firstIndex { $0 == AccentColor.current } ?? 0
+        dataSource.selectedIndexPath = IndexPath(row: index, section: 0)
         
         dataSource.setup([Section(header: nil,
                                   items: accentColorItems),
@@ -41,15 +46,19 @@ private extension AccentColorPresenter {
 extension AccentColorPresenter: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        dataSource.selectedIndexPath = indexPath
+        AccentColor.current = accentColors[indexPath.row]
+        NotificationCenter.default.post(name: .paid, object: nil)
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        let item = dataSource.item(at: indexPath)
-        switch item {
-        case let accentColorItem as AccentColorItem:
-            accentColorItem.isSelected = true
-            viewController?.reloadData()
-        default:
-            break
+        tableView.reloadSections(IndexSet(integer: 1), with: .none)
+    }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if let oldIndex = dataSource.selectedIndexPath {
+            tableView.cellForRow(at: oldIndex)?.accessoryType = .none
         }
+        
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        return indexPath
     }
 }

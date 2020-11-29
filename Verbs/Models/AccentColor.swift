@@ -19,6 +19,21 @@ enum AccentColor: String, CaseIterable {
     case teal
     case yellow
     
+    static var current: AccentColor {
+        get {
+            guard let string = UserDefaults.standard.string(for: .accentColor),
+                  let color = AccentColor(rawValue: string) else { return .blue }
+            return color
+        }
+        set {
+            UserDefaults.standard.set(newValue.rawValue, for: .accentColor)
+            let scene = UIApplication.shared.connectedScenes.first
+            let sd = scene?.delegate as? SceneDelegate
+            sd?.window?.tintColor = newValue.color
+            // NotificationCenter.default.post(name: .paid, object: nil)
+        }
+    }
+    
     var color: UIColor {
         switch self {
         case .blue: return .systemBlue

@@ -23,7 +23,7 @@ extension ActionCell: CellProtocol {
         
         switch item.style {
         case .standard:
-            textLabel?.textColor = .systemBlue
+            textLabel?.textColor = AccentColor.current.color
         case .destructive:
             textLabel?.textColor = .systemRed
         }

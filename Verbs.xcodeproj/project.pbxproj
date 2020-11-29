@@ -28,6 +28,7 @@
 		EB2E4B482572A09F005B343A /* AccentColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4B462572A09F005B343A /* AccentColorCell.swift */; };
 		EB2E4B492572A09F005B343A /* AccentColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB2E4B472572A09F005B343A /* AccentColorCell.xib */; };
 		EB2E4B4D2572A456005B343A /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4B4C2572A456005B343A /* CircleView.swift */; };
+		EB2E4B532573D8A7005B343A /* SelectableSectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4B522573D8A7005B343A /* SelectableSectionDataSource.swift */; };
 		EB2F5E0D251F543A007DCF60 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2F5E0B251F543A007DCF60 /* DetailViewController.swift */; };
 		EB2F5E11251F5B26007DCF60 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2F5E0F251F5B26007DCF60 /* DetailCell.swift */; };
 		EB2F5E12251F5B26007DCF60 /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB2F5E10251F5B26007DCF60 /* DetailCell.xib */; };
@@ -204,6 +205,7 @@
 		EB2E4B462572A09F005B343A /* AccentColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorCell.swift; sourceTree = "<group>"; };
 		EB2E4B472572A09F005B343A /* AccentColorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccentColorCell.xib; sourceTree = "<group>"; };
 		EB2E4B4C2572A456005B343A /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		EB2E4B522573D8A7005B343A /* SelectableSectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableSectionDataSource.swift; sourceTree = "<group>"; };
 		EB2F5E0B251F543A007DCF60 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EB2F5E0F251F5B26007DCF60 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		EB2F5E10251F5B26007DCF60 /* DetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
@@ -774,6 +776,7 @@
 				EB450972253B5CB300D31858 /* Section.swift */,
 				EB45097A253B630900D31858 /* SectionArray.swift */,
 				EB450A32254B157A00D31858 /* SectionDataSource.swift */,
+				EB2E4B522573D8A7005B343A /* SelectableSectionDataSource.swift */,
 				EBF4A13E252EC9A3003E3A44 /* SystemIcon.swift */,
 				EB269991256E29DA007CCF2E /* TabBarItem.swift */,
 				EBEB1D93251F15D30019972C /* Verb.swift */,
@@ -1003,6 +1006,7 @@
 				EB269962256CF0EF007CCF2E /* PlainDetailItem.swift in Sources */,
 				EBF4A135252E9961003E3A44 /* ListItem.swift in Sources */,
 				EBDF00892562E8A30041F458 /* TestDetailAssembly.swift in Sources */,
+				EB2E4B532573D8A7005B343A /* SelectableSectionDataSource.swift in Sources */,
 				EB450973253B5CB300D31858 /* Section.swift in Sources */,
 				EBDF00A62562F1160041F458 /* FormTextField.swift in Sources */,
 				EB26996C256CFAC7007CCF2E /* RateService.swift in Sources */,

@@ -65,8 +65,14 @@ private extension PaywallViewController {
     
     func setupView() {
         buyButton.setTitle("Buy".localized, for: .normal)
+        buyButton.backgroundColor = AccentColor.current.color
+        
         restoreButton.setTitle("Restore purchases".localized, for: .normal)
+        restoreButton.setTitleColor(AccentColor.current.color, for: .normal)
+        
         thanksLabel.text = "Thank you".localized
+        thanksLabel.textColor = AccentColor.current.color
+        
         thanksLabel.isHidden = !FeatureToggle.isPaid
         buyButton.isHidden = FeatureToggle.isPaid && purchaseService.canMakePayments
         restoreButton.isHidden = FeatureToggle.isPaid

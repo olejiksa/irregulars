@@ -39,6 +39,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = splitViewController
+        window?.tintColor = AccentColor.current.color
         window?.makeKeyAndVisible()
         
         self.scene(scene, openURLContexts: connectionOptions.urlContexts)

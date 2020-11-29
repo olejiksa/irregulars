@@ -33,6 +33,7 @@ final class PickableCell: UITableViewCell {
                                          style: .done,
                                          target: self,
                                          action: #selector(didDoneTap))
+        doneButton.tintColor = AccentColor.current.color
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
                                           target: nil,
                                           action: nil)
@@ -40,6 +41,7 @@ final class PickableCell: UITableViewCell {
                                            style: .plain,
                                            target: self,
                                            action: #selector(didCancelTap))
+        cancelButton.tintColor = AccentColor.current.color
         toolbar.items = [cancelButton, spaceButton, doneButton]
         return toolbar
     }
