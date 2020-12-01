@@ -19,6 +19,7 @@ final class TestDetailPresenter: NSObject {
     private let verbsService: VerbsService
     private let rateService: RateService
     private var hint: String?
+    private var hintTranslation: String?
     
     init(items: [String],
          audioService: AudioService,
@@ -33,8 +34,8 @@ final class TestDetailPresenter: NSObject {
     }
     
     @objc func showHint() {
-        guard let hint = hint else { return }
-        router?.show(hint: hint)
+        guard let hint = hint, let hintTranslation = hintTranslation else { return }
+        router?.show(hint: (hint, hintTranslation))
     }
 }
 
@@ -48,8 +49,6 @@ private extension TestDetailPresenter {
     
     func configureRandomComposition() {
         guard !items.isEmpty else {
-            UserDefaults.standard.set((viewController?.index ?? 0) + 1, for: .passed)
-            rateService.requestReviewIfAppropriate()
             router?.goBack()
             return
         }
@@ -64,6 +63,8 @@ private extension TestDetailPresenter {
         
         let randomVerbForm = VerbForm.allCases.randomElement() ?? .infinitive
         
+        hintTranslation = verb.translation
+
         switch randomVerbForm {
         case .infinitive:
             hint = verb.infinitive.value

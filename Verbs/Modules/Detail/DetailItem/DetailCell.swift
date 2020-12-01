@@ -14,7 +14,7 @@ final class DetailCell: UITableViewCell {
     @IBOutlet private weak var transcriptionLabel: UILabel?
     @IBOutlet private weak var playButton: UIButton!
     
-    private var actionBlock: ((String) -> ())?
+    private var actionBlock: ((String, @escaping () -> Void, @escaping () -> Void) -> ())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,7 +35,15 @@ private extension DetailCell {
     
     @objc func playButtonDidTap() {
         guard let text = titleLabel.text else { return }
-        actionBlock?(text)
+        actionBlock?(text, play, stop)
+    }
+    
+    func play() {
+        playButton.setImage(UIImage(systemName: "stop.circle"), for: .normal)
+    }
+    
+    func stop() {
+        playButton.setImage(UIImage(systemName: "play.circle"), for: .normal)
     }
 }
 

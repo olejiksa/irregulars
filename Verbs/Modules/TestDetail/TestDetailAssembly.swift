@@ -10,14 +10,14 @@ import UIKit
 
 final class TestDetailAssembly: AssemblyProtocol {
     
-    private let index: Int
+    private let test: Test
     private let items: [String]
     private let navigationController: UINavigationController?
 
-    init(index: Int,
+    init(test: Test,
          items: [String],
          navigationController: UINavigationController?) {
-        self.index = index
+        self.test = test
         self.items = items
         self.navigationController = navigationController
     }
@@ -27,7 +27,7 @@ final class TestDetailAssembly: AssemblyProtocol {
                                             audioService: .init(),
                                             verbsService: .init(),
                                             rateService: .init())
-        let viewController = TestDetailViewController(index: index, presenter: presenter)
+        let viewController = TestDetailViewController(test: test, presenter: presenter)
         let router = TestDetailRouter(viewController: viewController)
         presenter.viewController = viewController
         presenter.router = router

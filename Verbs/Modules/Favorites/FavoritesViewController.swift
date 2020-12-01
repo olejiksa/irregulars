@@ -156,11 +156,6 @@ private extension FavoritesViewController {
     }
     
     func setupSearchController() {
-        guard FeatureToggle.isPaid else {
-            navigationItem.searchController = nil
-            return
-        }
-        
         searchController.delegate = presenter
         searchController.searchResultsUpdater = presenter
         searchController.obscuresBackgroundDuringPresentation = false

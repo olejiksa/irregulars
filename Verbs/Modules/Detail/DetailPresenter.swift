@@ -51,13 +51,15 @@ private extension DetailPresenter {
                                   items: translationItems)])
     }
     
-    func play(text: String) {
+    func play(text: String, playHandler: @escaping () -> Void, stopHandler: @escaping () -> Void) {
         guard FeatureToggle.isPaid else {
             router?.goToPaywall()
             return
         }
         
-        audioService.play(text: text)
+        audioService.play(text: text,
+                          playHandler: playHandler,
+                          stopHandler: stopHandler)
     }
 }
 

@@ -17,6 +17,7 @@ extension UserDefaults {
         case shouldTranslationBeShown
         case passed
         case accentColor
+        case voice
     }
     
     func bool(for key: Key) -> Bool { bool(forKey: key.rawValue) }

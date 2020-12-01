@@ -6,5 +6,7 @@
     ["dig", "drive", "hide", "make", "send", "shake", "shoot", "speak", "tell", "win", "beat", "bend", "cost", "have", "be"],
     ["burn", "become", "eat", "fight", "hear", "hit", "keep", "light", "mean", "ride", "say", "swing", "show", "wear", "lay"],
     ["bet", "break", "build", "cut", "deal", "do", "feed", "feel", "find", "hurt", "know", "lead", "lend", "let", "lie", "set"],
-    ["put", "sweep", "strike", "stick", "steal", "stand", "spend", "sit", "sink", "shut", "pay", "come", "lose", "buy"]
+    ["put", "sweep", "strike", "stick", "steal", "stand", "spend", "sit", "sink", "shut", "pay", "come", "lose", "buy"],
+    ["abide", "bear", "bereave", "bid", "bind", "bleed", "burst", "bust", "cast", "chide", "clap", "cleave"],
+    ["zinc", "strip", "dare", "geld", "gnaw", "grip", "heave", "pen", "rive", "shred", "smite", "vex"]
 ]

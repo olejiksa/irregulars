@@ -16,10 +16,10 @@ final class VerbsService {
     
     var searchedItems: [Verb] {
         items.filter {
-            $0.infinitive.value.containsIgnoringCase(searchText) ||
-            $0.simplePast.contains { $0.value.containsIgnoringCase(searchText) } ||
-            $0.pastParticiple?.contains { $0.value.containsIgnoringCase(searchText) } ?? false ||
-            $0.translation.containsIgnoringCase(searchText)
+            $0.infinitive.value.hasPrefixIgnoringCase(searchText) ||
+            $0.simplePast.contains { $0.value.hasPrefixIgnoringCase(searchText) } ||
+            $0.pastParticiple?.contains { $0.value.hasPrefixIgnoringCase(searchText) } ?? false ||
+            $0.translation.hasPrefixIgnoringCase(searchText)
         }
     }
     

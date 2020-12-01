@@ -57,7 +57,8 @@ private extension SettingsPresenter {
                                                           subtitle: accentColor,
                                                           actionBlock: willGoToAccentColor,
                                                           hasDisclosureItem: true,
-                                                          isEnabled: FeatureToggle.isPaid)
+                                                          isEnabled: FeatureToggle.isPaid),
+                                          
                                   ]),
                           Section(header: "List".localized,
                                   items: [SwitchItem(text: "Regular verbs (-ed)".localized,
@@ -74,8 +75,8 @@ private extension SettingsPresenter {
                                                          actionBlock: willRate),
                                           DisclosureItem(text: "Privacy policy".localized,
                                                          actionBlock: willGoToPrivacyPolicy),
-                                          DisclosureItem(text: "Terms of use".localized,
-                                                         actionBlock: willGoToTermsOfUse),
+//                                          DisclosureItem(text: "Terms of use".localized,
+//                                                         actionBlock: willGoToTermsOfUse),
                                           DisclosureItem(text: "Contact us".localized,
                                                          isEnabled: mailService.isMailAvailable,
                                                          actionBlock: willGoToMail),
@@ -83,13 +84,15 @@ private extension SettingsPresenter {
                                                          actionBlock: willShare)]),
                           Section(header: "About".localized,
                                   items: [RightDetailItem(title: "Developer".localized,
-                                                          subtitle: "Oleg Samoylov".localized),
+                                                          subtitle: "Oleg Samoylov".localized,
+                                                          isEnabled: false),
                                           RightDetailItem(title: "Edition".localized,
                                                           subtitle: editionName,
                                                           actionBlock: willBuy,
                                                           hasDisclosureItem: false),
                                           RightDetailItem(title: "Version".localized,
-                                                          subtitle: version),])])
+                                                          subtitle: version,
+                                                          isEnabled: false)])])
     }
     
     func setupActivationSection() -> Section {
@@ -185,7 +188,7 @@ private extension SettingsPresenter {
     
     func willReset(_ sender: ItemProtocol) {
         FeatureToggle.isPaid = false
-        NotificationCenter.default.post(name: .paid, object: nil)
+        viewController?.reloadData()
     }
     
     @objc func didPay(_ notification: Notification) {

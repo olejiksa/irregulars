@@ -34,6 +34,7 @@ enum SystemIcon: String {
     case chart = "chart.pie"
     case question = "questionmark.circle"
     case play = "play.circle"
+    case stop = "stop.circle"
     
     var image: UIImage? { UIImage(systemName: rawValue) }
 }

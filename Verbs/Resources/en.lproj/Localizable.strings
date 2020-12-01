@@ -76,6 +76,7 @@
 "Enter here" = "Enter here";
 "Terms of use" = "Terms of use";
 "Personalize the app: pick an accent color to your liking" = "Personalize the app: pick an accent color to your liking";
+"EmptyFavoritesError" = "Empty Favorites";
 
 // Irregular Verbs
 
@@ -299,6 +300,17 @@
 "wring" = "wring";
 "write" = "write";
 "zinc" = "zinc";
+"strip" = "strip";
+"dare" = "dare";
+"geld" = "geld";
+"gild" = "gild";
+"gnaw" = "gnaw";
+"grip" = "grip";
+"heave" = "heave";
+"pen" = "pen";
+"rive" = "rive";
+"shred" = "shred";
+"smite" = "smite";
 
 // Mis
 

@@ -24,7 +24,7 @@ extension RightDetailCell: CellProtocol {
         accessoryType = item.hasDisclosureItem ? .disclosureIndicator : .none
         
         isUserInteractionEnabled = item.isEnabled
-        textLabel?.isEnabled = item.isEnabled
-        detailTextLabel?.isEnabled = item.isEnabled
+        textLabel?.isEnabled = item.isEnabled || !item.hasDisclosureItem
+        detailTextLabel?.isEnabled = item.isEnabled || !item.hasDisclosureItem
     }
 }

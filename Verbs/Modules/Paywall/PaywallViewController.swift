@@ -79,12 +79,24 @@ private extension PaywallViewController {
     }
     
     @IBAction func didBuyTap() {
+        guard !FeatureToggle.isDebug else {
+            FeatureToggle.isPaid = true
+            didCloseTap()
+            return
+        }
+        
         buyButton.showLoading()
         purchaseService.requestProducts(activationHandler: didActivate,
                                         errorHandler: didBuy)
     }
     
     @IBAction func didRestoreTap() {
+        guard !FeatureToggle.isDebug else {
+            FeatureToggle.isPaid = true
+            didCloseTap()
+            return
+        }
+        
         restoreButton.showLoading()
         purchaseService.requestProducts(activationHandler: didActivate,
                                         errorHandler: didRestore)

@@ -30,7 +30,6 @@ enum AccentColor: String, CaseIterable {
             let scene = UIApplication.shared.connectedScenes.first
             let sd = scene?.delegate as? SceneDelegate
             sd?.window?.tintColor = newValue.color
-            // NotificationCenter.default.post(name: .paid, object: nil)
         }
     }
     

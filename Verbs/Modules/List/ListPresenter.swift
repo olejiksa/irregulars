@@ -146,7 +146,7 @@ extension ListPresenter: UITableViewDataSource {
     }
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        guard !isSearchActive && FeatureToggle.isPaid else { return nil }
+        guard !isSearchActive else { return nil }
         let set = Set(verbsService.items.compactMap { item -> String? in
             guard let character = item.infinitive.value.first else { return nil }
             return character.uppercased()

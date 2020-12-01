@@ -3802,6 +3802,233 @@
     },
     {
         "infinitive": {
+            "value": "strip",
+            "transcription": "/strɪp/"
+        },
+        "simplePast": [{
+            "value": "stript",
+            "transcription": "/strɪpt/"
+        }, {
+            "value": "stripped",
+            "transcription": "/strɪpt/"
+        }],
+        "pastParticiple": [{
+            "value": "stript",
+            "transcription": "/strɪpt/"
+        }, {
+            "value": "stripped",
+            "transcription": "/strɪpt/"
+        }],
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "smite",
+            "transcription": "/smʌɪt/"
+        },
+        "simplePast": [{
+            "value": "smote",
+            "transcription": "/sməʊt/"
+        }],
+        "pastParticiple": [{
+            "value": "smitten",
+            "transcription": "/ˈsmɪt(ə)n/"
+        }],
+        "hasRegular": false,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "shred",
+            "transcription": "/ʃrɛd/"
+        },
+        "simplePast": [{
+            "value": "shred",
+            "transcription": "/ʃrɛd/"
+        }, {
+            "value": "shredded",
+            "transcription": "/ˈʃrɛdɪd/"
+        }],
+        "pastParticiple": [{
+            "value": "shred",
+            "transcription": "/ʃrɛd/"
+        }, {
+            "value": "shredded",
+            "transcription": "/ˈʃrɛdɪd/"
+        }],
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "rive",
+            "transcription": "/rʌɪv/"
+        },
+        "simplePast": [{
+            "value": "rived",
+            "transcription": "/rʌɪvd/"
+        }],
+        "pastParticiple": [{
+            "value": "riven",
+            "transcription": "/ˈrɪv(ə)n/"
+        }, {
+            "value": "rived",
+            "transcription": "/rʌɪvd/"
+        }],
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "pen",
+            "transcription": "/pɛn/"
+        },
+        "simplePast": [{
+            "value": "pent",
+            "transcription": "/pɛnt/"
+        }, {
+            "value": "penned",
+            "transcription": "/pɛnd/"
+        }],
+        "pastParticiple": [{
+            "value": "pent",
+            "transcription": "/pɛnt/"
+        }, {
+            "value": "penned",
+            "transcription": "/pɛnd/"
+        }],
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "heave",
+            "transcription": "/hiːv/"
+        },
+        "simplePast": [{
+            "value": "hove",
+            "transcription": "/həʊv/"
+        }, {
+            "value": "heaved",
+            "transcription": "/hiːvd/"
+        }],
+        "pastParticiple": [{
+            "value": "hove",
+            "transcription": "/həʊv/"
+        }, {
+            "value": "heaved",
+            "transcription": "/hiːvd/"
+        }],
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "grip",
+            "transcription": "/ɡrɪp/"
+        },
+        "simplePast": [{
+            "value": "gript",
+            "transcription": "/ɡrɪpt/"
+        }, {
+            "value": "gripped",
+            "transcription": "/ɡrɪpt/"
+        }],
+        "pastParticiple": [{
+            "value": "gript",
+            "transcription": "/ɡrɪpt/"
+        }, {
+            "value": "gripped",
+            "transcription": "/ɡrɪpt/"
+        }],
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "gnaw",
+            "transcription": "/nɔː/"
+        },
+        "simplePast": [{
+            "value": "gnawed",
+            "transcription": "/nɔːd/"
+        }],
+        "pastParticiple": [{
+            "value": "gnawn",
+            "transcription": "/nɔːn/"
+        }, {
+            "value": "gnawed",
+            "transcription": "/nɔːd/"
+        }],
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "gild",
+            "transcription": "/gɪld/"
+        },
+        "simplePast": [{
+            "value": "gilt",
+            "transcription": "/gɪlt/"
+        }, {
+            "value": "gilded",
+            "transcription": "/gɪldɪd/"
+        }],
+        "pastParticiple": [{
+            "value": "gilt",
+            "transcription": "/gɪlt/"
+        }, {
+            "value": "gilded",
+            "transcription": "/gɪldɪd/"
+        }],
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "geld",
+            "transcription": "/gɛld/"
+        },
+        "simplePast": [{
+            "value": "gelt",
+            "transcription": "/gɛlt/"
+        }, {
+            "value": "gelded",
+            "transcription": "/gɛldɪd/"
+        }],
+        "pastParticiple": [{
+            "value": "gelt",
+            "transcription": "/gɛlt/"
+        }, {
+            "value": "gelded",
+            "transcription": "/gɛldɪd/"
+        }],
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
+            "value": "dare",
+            "transcription": "/deə/"
+        },
+        "simplePast": [{
+            "value": "durst",
+            "transcription": "/dɜː(r)st/"
+        }, {
+            "value": "dared",
+            "transcription": "/deəd/"
+        }],
+        "pastParticiple": [{
+            "value": "dared",
+            "transcription": "/deəd/"
+        }],
+        "hasRegular": true,
+        "isDerived": false
+    },
+    {
+        "infinitive": {
             "value": "strive",
             "transcription": "/strʌɪv/"
         },
@@ -4117,7 +4344,7 @@
             "transcription": "/ʌndə(r)ˈstʊd/"
         }],
         "hasRegular": false,
-        "isDerived": true
+        "isDerived": false
     },
     {
         "infinitive": {

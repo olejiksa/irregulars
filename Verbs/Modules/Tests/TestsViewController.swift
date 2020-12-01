@@ -42,8 +42,8 @@ final class TestsViewController: UIViewController {
         deselectWhenCompact()
     }
     
-    func selectSection(at index: Int?) {
-        guard let index = index else {
+    func selectSection(at indexPath: IndexPath?) {
+        guard let indexPath = indexPath else {
             if let indexPath = tableView?.indexPathForSelectedRow {
                 tableView?.deselectRow(at: indexPath, animated: true)
             }
@@ -51,7 +51,7 @@ final class TestsViewController: UIViewController {
             return
         }
         
-        tableView?.selectRow(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .none)
+        tableView?.selectRow(at: indexPath, animated: true, scrollPosition: .none)
     }
     
     func deselectWhenCompact() {

@@ -32,6 +32,17 @@ final class AccentColorViewController: UIViewController {
     }
 }
 
+// MARK: - Restorable
+
+extension AccentColorViewController: Restorable {
+    
+    func restore() {
+        tableView?.removeFromSuperview()
+        tableView = nil
+        setupTableView()
+    }
+}
+
 // MARK: - Private
 
 private extension AccentColorViewController {

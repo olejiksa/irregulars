@@ -19,6 +19,7 @@ final class DeeplinkService {
         case .compact:
             let tabBarController = splitViewController.compactViewController
             tabBarController?.selectedIndex = 0
+            clearTabBarNavigationStack(in: splitViewController)
             let navigationController = tabBarController?.selectedViewController as? UINavigationController
             handle(host: host,
                    verb: verb,
@@ -56,5 +57,15 @@ private extension DeeplinkService {
                                 isOpenedByDeeplink: true,
                                 navigationController: navigationController).viewController()
         navigationController?.push(vc, in: splitViewController)
+    }
+    
+    func clearTabBarNavigationStack(in svc: UISplitViewController) {
+        guard let viewControllers = svc.compactViewController?.viewControllers else { return }
+        
+        for case let navigationController as UINavigationController in viewControllers {
+            navigationController.isNavigationBarHidden = true
+            navigationController.popToRootViewController(animated: true)
+            navigationController.isNavigationBarHidden = false
+        }
     }
 }

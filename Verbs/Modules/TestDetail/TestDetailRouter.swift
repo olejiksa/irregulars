@@ -20,9 +20,9 @@ final class TestDetailRouter {
         viewController?.navigationController?.popViewController(animated: true)
     }
     
-    func show(hint: String) {
+    func show(hint: (String, String)) {
         let alertController = UIAlertController(title: "Hint".localized,
-                                                message: hint,
+                                                message: hint.0,
                                                 preferredStyle: .alert)
         alertController.addAction(.init(title: "OK", style: .default))
         viewController?.present(alertController, animated: true)
