@@ -33,10 +33,8 @@ private extension AccentColorPresenter {
         let index = accentColors.firstIndex { $0 == AccentColor.current } ?? 0
         dataSource.selectedIndexPath = IndexPath(row: index, section: 0)
         
-        dataSource.setup([Section(header: nil,
-                                  items: accentColorItems),
-                          Section(header: nil,
-                                  items: [ActionItem(text: "Match app icon with accent color".localized,
+        dataSource.setup([Section(items: accentColorItems),
+                          Section(items: [ActionItem(text: "Match app icon with accent color".localized,
                                                      style: .standard,
                                                      actionBlock: nil)])])
     }
@@ -56,7 +54,7 @@ extension AccentColorPresenter: UITableViewDelegate {
         
         dataSource.selectedIndexPath = indexPath
         AccentColor.current = accentColors[indexPath.row]
-        NotificationCenter.default.post(name: .paid, object: nil)
+        NotificationCenter.default.post(name: .reload, object: nil)
         tableView.reloadSections(IndexSet(integer: 1), with: .none)
     }
     

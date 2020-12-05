@@ -27,6 +27,7 @@ final class DetailPresenter: NSObject {
         self.languageService = languageService
         self.verb = verb
         super.init()
+        subscribe()
         setupSections()
     }
 }
@@ -34,6 +35,13 @@ final class DetailPresenter: NSObject {
 // MARK: - Private
 
 private extension DetailPresenter {
+    
+    func subscribe() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(didPay),
+                                               name: Notification.Name.reload,
+                                               object: nil)
+    }
     
     func setupSections() {
         let translationItems = [TranslationItem(text: verb.translation)]
@@ -60,6 +68,10 @@ private extension DetailPresenter {
         audioService.play(text: text,
                           playHandler: playHandler,
                           stopHandler: stopHandler)
+    }
+    
+    @objc func didPay(_ notification: Notification) {
+        viewController?.getPaid()
     }
 }
 

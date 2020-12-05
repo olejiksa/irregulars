@@ -45,6 +45,10 @@ final class SidebarViewController: UIViewController {
         guard let collectionView = collectionView else { return }
         collectionView.delegate?.collectionView?(collectionView, didSelectItemAt: indexPath)
     }
+    
+    func getPaid() {
+        collectionView?.reloadData()
+    }
 }
 
 // MARK: - Private

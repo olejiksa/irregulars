@@ -112,6 +112,10 @@ private extension ListViewController {
         tableView.delegate = presenter
         
         tableView.register(ListCell.self, SubtitleCell.self)
+        tableView.tableFooterView = UIView()
+        DispatchQueue.main.async {
+            self.navigationController?.navigationBar.sizeToFit()
+        }
         
         self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.tableView = tableView

@@ -62,8 +62,6 @@ extension DetailCell: CellProtocol {
         
         playButton.isHidden = actionBlock == nil
         
-        if !FeatureToggle.isPaid {
-            transcriptionLabel?.removeFromSuperview()
-        }
+        transcriptionLabel?.isHidden = !FeatureToggle.isPaid
     }
 }

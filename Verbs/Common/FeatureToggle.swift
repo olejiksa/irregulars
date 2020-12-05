@@ -16,7 +16,7 @@ struct FeatureToggle {
         }
         set {
             UserDefaults.standard.set(newValue, for: .isPaid)
-            NotificationCenter.default.post(name: .paid, object: nil)
+            NotificationCenter.default.post(name: .reload, object: nil)
         }
     }
     

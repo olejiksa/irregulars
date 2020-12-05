@@ -21,11 +21,10 @@ final class TestDetailPresenter: NSObject {
     private var hint: String?
     private var hintTranslation: String?
     
-    init(items: [String],
-         audioService: AudioService,
+    init(audioService: AudioService,
          verbsService: VerbsService,
          rateService: RateService) {
-        self.items = items
+        self.items = verbsService.items.map { $0.infinitive.value }
         self.audioService = audioService
         self.verbsService = verbsService
         self.rateService = rateService

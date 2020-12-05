@@ -10,15 +10,12 @@ import UIKit
 
 final class TestDetailViewController: UIViewController {
     
-    let test: Test
     private let presenter: TestDetailPresenter
     private var tableView: UITableView?
     private var keyboardService: KeyboardService?
     private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     
-    init(test: Test,
-         presenter: TestDetailPresenter) {
-        self.test = test
+    init(presenter: TestDetailPresenter) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
         hidesBottomBarWhenPushed = true
@@ -53,12 +50,7 @@ final class TestDetailViewController: UIViewController {
 private extension TestDetailViewController {
     
     func setupNavigationBar() {
-        switch test {
-        case .level(let index):
-            navigationItem.title = "\("Level".localized) \(index + 1)"
-        case .favorites:
-            navigationItem.title = "Favorites".localized
-        }
+        navigationItem.title = "ThreeFormsTitle".localized
         navigationItem.largeTitleDisplayMode = .never
         
         let hintItem = UIBarButtonItem(image: SystemIcon.question.image,
@@ -113,7 +105,7 @@ extension TestDetailViewController: Restorable {
         setupKeyboardService()
         NotificationCenter.default.post(name: .test,
                                         object: nil,
-                                        userInfo: [Notification.Name.test: test])
+                                        userInfo: [:])
     }
 }
 
@@ -127,10 +119,10 @@ extension TestDetailViewController: UINavigationControllerDelegate {
         guard animated else { return }
         
         switch viewController {
-        case let vc as TestDetailViewController:
+        case is TestDetailViewController:
             NotificationCenter.default.post(name: .test,
                                             object: nil,
-                                            userInfo: [Notification.Name.test: vc.test])
+                                            userInfo: [:])
         case is EmptyViewController:
             NotificationCenter.default.post(name: .test,
                                             object: nil,

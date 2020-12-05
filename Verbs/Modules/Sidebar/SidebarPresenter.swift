@@ -27,6 +27,11 @@ final class SidebarPresenter: NSObject {
     private var dataSource: UICollectionViewDiffableDataSource<SidebarSection, SidebarItem>?
     private var selectedIndexPath: IndexPath? = IndexPath(row: 1, section: 0)
     
+    override init() {
+        super.init()
+        subscribe()
+    }
+    
     func setupDataSource(for collectionView: UICollectionView?) {
         guard let collectionView = collectionView else { return }
         
@@ -70,6 +75,13 @@ final class SidebarPresenter: NSObject {
 // MARK: - Private
 
 private extension SidebarPresenter {
+    
+    func subscribe() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(didPay),
+                                               name: Notification.Name.reload,
+                                               object: nil)
+    }
     
     func verbsSnapshot() -> NSDiffableDataSourceSectionSnapshot<SidebarItem> {
         var snapshot = NSDiffableDataSourceSectionSnapshot<SidebarItem>()
@@ -185,6 +197,11 @@ private extension SidebarPresenter {
         default:
             break
         }
+    }
+    
+    @objc func didPay() {
+        viewController?.getPaid()
+        viewController?.select(at: selectedIndexPath)
     }
 }
 

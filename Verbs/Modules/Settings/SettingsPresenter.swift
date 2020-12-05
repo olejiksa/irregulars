@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import StoreKit
-import SafariServices
 
 final class SettingsPresenter: NSObject {
     
@@ -37,7 +35,7 @@ private extension SettingsPresenter {
     func subscribe() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(didPay),
-                                               name: Notification.Name.paid,
+                                               name: Notification.Name.reload,
                                                object: nil)
     }
     
@@ -75,8 +73,8 @@ private extension SettingsPresenter {
                                                          actionBlock: willRate),
                                           DisclosureItem(text: "Privacy policy".localized,
                                                          actionBlock: willGoToPrivacyPolicy),
-//                                          DisclosureItem(text: "Terms of use".localized,
-//                                                         actionBlock: willGoToTermsOfUse),
+                                          DisclosureItem(text: "Terms of use".localized,
+                                                         actionBlock: willGoToTermsOfUse),
                                           DisclosureItem(text: "Contact us".localized,
                                                          isEnabled: mailService.isMailAvailable,
                                                          actionBlock: willGoToMail),
@@ -168,7 +166,7 @@ private extension SettingsPresenter {
     
     func willGoToTermsOfUse(_ sender: ItemProtocol) {
         let code = languageService.current.rawValue
-        guard let url = URL(string: "https://github.com/olejiksa/legal/blob/master/privacy-\(code).md")
+        guard let url = URL(string: "https://github.com/olejiksa/legal/blob/master/terms-\(code).md")
         else { return }
         router?.goToURL(url)
     }

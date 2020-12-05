@@ -136,6 +136,11 @@ private extension FavoritesViewController {
         
         tableView.register(ListCell.self, SubtitleCell.self)
         
+        tableView.tableFooterView = UIView()
+        DispatchQueue.main.async {
+            self.navigationController?.navigationBar.sizeToFit()
+        }
+        
         self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.tableView = tableView
     }

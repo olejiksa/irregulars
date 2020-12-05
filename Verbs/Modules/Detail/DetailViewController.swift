@@ -46,6 +46,10 @@ final class DetailViewController: UIViewController {
         
         navigationController.map { navigationController($0, willShow: self, animated: animated) }
     }
+    
+    func getPaid() {
+        tableView?.reloadData()
+    }
 }
 
 // MARK: - Private
@@ -83,7 +87,7 @@ private extension DetailViewController {
         tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         
-        tableView.register(DetailCell.self, TranslationCell.self)
+        tableView.register(DetailCell.self, TranslationCell.self, SubtitleCell.self)
         
         self.tableView = tableView
     }

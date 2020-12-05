@@ -10,4 +10,9 @@ struct Section {
     
     let header: String?
     let items: [ItemProtocol]
+    
+    init(header: String? = nil, items: [ItemProtocol]) {
+        self.header = header
+        self.items = items
+    }
 }

@@ -15,10 +15,12 @@ enum SystemIcon: String {
     case star
     case folder
     case eye
+    case ear
     case paintpalette
     case note = "note.text"
     case starFill = "star.fill"
     case speaker = "speaker.wave.3.fill"
+    case mic = "mic.fill"
     case transcription = "textformat.abc.dottedunderline"
     case search = "magnifyingglass"
     case alphabet = "list.triangle"
@@ -30,8 +32,8 @@ enum SystemIcon: String {
     case forms = "textformat.123"
     case letters = "textformat.abc"
     case sentences = "rectangle.and.pencil.and.ellipsis"
-    case pronunciation = "mouth"
-    case chart = "chart.pie"
+    case mouth
+    case chart = "chart.bar.xaxis"
     case question = "questionmark.circle"
     case play = "play.circle"
     case stop = "stop.circle"

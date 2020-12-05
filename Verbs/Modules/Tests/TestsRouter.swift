@@ -26,22 +26,21 @@ final class TestsRouter {
         viewController?.present(nvc, animated: true)
     }
     
-    func goToDetail(test: Test, items: [String]) {
+    func goToThreeForms() {
         let nvc = viewController?.navigationController
-        let vc = TestDetailAssembly(test: test,
-                                    items: items,
-                                    navigationController: nvc).viewController()
+        let vc = TestDetailAssembly().viewController()
         if splitViewController?.secondaryViewController?.topViewController is DetailViewController {
             splitViewController?.secondaryViewController?.popToRootViewController(animated: false)
         }
         nvc?.push(vc, in: splitViewController)
     }
     
-    func showErrorAlert() {
-        let alertController = UIAlertController(title: "EmptyFavoritesError".localized,
-                                                message: "EmptyFavorites".localized,
-                                                preferredStyle: .alert)
-        alertController.addAction(.init(title: "OK", style: .default))
-        viewController?.present(alertController, animated: true)
+    func goToSentence() {
+        let nvc = viewController?.navigationController
+        let vc = SentenceAssembly().viewController()
+        if splitViewController?.secondaryViewController?.topViewController is DetailViewController {
+            splitViewController?.secondaryViewController?.popToRootViewController(animated: false)
+        }
+        nvc?.push(vc, in: splitViewController)
     }
 }

@@ -18,12 +18,12 @@ final class PaywallPresenter {
                           icon: .dictionary)
             : nil
         
-        let items = [PaywallItem(text: "Listen to pronunciation".localized,
+        let items = [PaywallItem(text: "Get access to tests".localized,
+                                 icon: .note),
+                     PaywallItem(text: "Listen to pronunciation".localized,
                                  icon: .speaker),
                      PaywallItem(text: "See a transcription".localized,
                                  icon: .transcription),
-                     PaywallItem(text: "Get access to all tests".localized,
-                                 icon: .note),
                      PaywallItem(text: "Add unlimited items in Favorites".localized,
                                  icon: .starFill),
                      PaywallItem(text: "Personalize the app: pick an accent color to your liking".localized,
@@ -34,6 +34,6 @@ final class PaywallPresenter {
                                  icon: .eye),
                      item]
         
-        dataSource.setup([Section(header: nil, items: items.compactMap { $0 })])
+        dataSource.setup([Section(items: items.compactMap { $0 })])
     }
 }

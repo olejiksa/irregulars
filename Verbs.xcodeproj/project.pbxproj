@@ -147,14 +147,12 @@
 		EBD476D6254BDF850033067B /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD476D5254BDF850033067B /* Bundle.swift */; };
 		EBD476E32553AED70033067B /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD476E22553AED70033067B /* SidebarViewController.swift */; };
 		EBDF00782562DD850041F458 /* TestDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF00762562DD850041F458 /* TestDetailViewController.swift */; };
-		EBDF007F2562E1120041F458 /* tests.json in Resources */ = {isa = PBXBuildFile; fileRef = EBDF007E2562E1120041F458 /* tests.json */; };
 		EBDF00892562E8A30041F458 /* TestDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF00882562E8A30041F458 /* TestDetailAssembly.swift */; };
 		EBDF008D2562E9210041F458 /* TestDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF008C2562E9210041F458 /* TestDetailPresenter.swift */; };
 		EBDF00962562EEB40041F458 /* InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF00952562EEB40041F458 /* InputCell.swift */; };
 		EBDF009C2562EED70041F458 /* InputItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF009B2562EED70041F458 /* InputItem.swift */; };
 		EBDF00A22562EF090041F458 /* InputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBDF00A12562EF090041F458 /* InputCell.xib */; };
 		EBDF00A62562F1160041F458 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF00A52562F1160041F458 /* FormTextField.swift */; };
-		EBDF00AC256764490041F458 /* TestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF00AB256764490041F458 /* TestService.swift */; };
 		EBEB1D76251F11900019972C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB1D75251F11900019972C /* AppDelegate.swift */; };
 		EBEB1D78251F11900019972C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB1D77251F11900019972C /* SceneDelegate.swift */; };
 		EBEB1D7F251F11910019972C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBEB1D7E251F11910019972C /* Assets.xcassets */; };
@@ -163,6 +161,13 @@
 		EBEB1D8E251F13BA0019972C /* SubtitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB1D8D251F13BA0019972C /* SubtitleCell.swift */; };
 		EBEB1D92251F15B40019972C /* VerbsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB1D91251F15B40019972C /* VerbsService.swift */; };
 		EBEB1D94251F15D30019972C /* Verb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB1D93251F15D30019972C /* Verb.swift */; };
+		EBF00FAE257BB55A002FA49B /* TestItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF00FAD257BB55A002FA49B /* TestItem.swift */; };
+		EBF00FB3257BB5B0002FA49B /* TestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF00FB1257BB5B0002FA49B /* TestCell.swift */; };
+		EBF00FB4257BB5B0002FA49B /* TestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBF00FB2257BB5B0002FA49B /* TestCell.xib */; };
+		EBF00FBE257BD324002FA49B /* SentenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF00FBC257BD323002FA49B /* SentenceViewController.swift */; };
+		EBF00FBF257BD324002FA49B /* SentenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBF00FBD257BD323002FA49B /* SentenceView.xib */; };
+		EBF00FC5257BD3D5002FA49B /* SentenceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF00FC4257BD3D5002FA49B /* SentenceAssembly.swift */; };
+		EBF00FC9257BD41C002FA49B /* SentencePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF00FC8257BD41C002FA49B /* SentencePresenter.swift */; };
 		EBF4A126252E901A003E3A44 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4A125252E901A003E3A44 /* NavigationController.swift */; };
 		EBF4A12E252E981F003E3A44 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4A12C252E981F003E3A44 /* ListCell.swift */; };
 		EBF4A12F252E981F003E3A44 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBF4A12D252E981F003E3A44 /* ListCell.xib */; };
@@ -339,14 +344,12 @@
 		EBD476D5254BDF850033067B /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		EBD476E22553AED70033067B /* SidebarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewController.swift; sourceTree = "<group>"; };
 		EBDF00762562DD850041F458 /* TestDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDetailViewController.swift; sourceTree = "<group>"; };
-		EBDF007E2562E1120041F458 /* tests.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tests.json; sourceTree = "<group>"; };
 		EBDF00882562E8A30041F458 /* TestDetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDetailAssembly.swift; sourceTree = "<group>"; };
 		EBDF008C2562E9210041F458 /* TestDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDetailPresenter.swift; sourceTree = "<group>"; };
 		EBDF00952562EEB40041F458 /* InputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
 		EBDF009B2562EED70041F458 /* InputItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputItem.swift; sourceTree = "<group>"; };
 		EBDF00A12562EF090041F458 /* InputCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputCell.xib; sourceTree = "<group>"; };
 		EBDF00A52562F1160041F458 /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
-		EBDF00AB256764490041F458 /* TestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestService.swift; sourceTree = "<group>"; };
 		EBEB1D72251F11900019972C /* Verbs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Verbs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBEB1D75251F11900019972C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBEB1D77251F11900019972C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -357,6 +360,13 @@
 		EBEB1D8D251F13BA0019972C /* SubtitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleCell.swift; sourceTree = "<group>"; };
 		EBEB1D91251F15B40019972C /* VerbsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbsService.swift; sourceTree = "<group>"; };
 		EBEB1D93251F15D30019972C /* Verb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verb.swift; sourceTree = "<group>"; };
+		EBF00FAD257BB55A002FA49B /* TestItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestItem.swift; sourceTree = "<group>"; };
+		EBF00FB1257BB5B0002FA49B /* TestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCell.swift; sourceTree = "<group>"; };
+		EBF00FB2257BB5B0002FA49B /* TestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCell.xib; sourceTree = "<group>"; };
+		EBF00FBC257BD323002FA49B /* SentenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceViewController.swift; sourceTree = "<group>"; };
+		EBF00FBD257BD323002FA49B /* SentenceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SentenceView.xib; sourceTree = "<group>"; };
+		EBF00FC4257BD3D5002FA49B /* SentenceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceAssembly.swift; sourceTree = "<group>"; };
+		EBF00FC8257BD41C002FA49B /* SentencePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentencePresenter.swift; sourceTree = "<group>"; };
 		EBF4A125252E901A003E3A44 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		EBF4A12C252E981F003E3A44 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		EBF4A12D252E981F003E3A44 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
@@ -461,6 +471,18 @@
 			path = Icons;
 			sourceTree = "<group>";
 		};
+		EB2E4BF7257A0A7A005B343A /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				EBF00FAC257BB53F002FA49B /* TestItem */,
+				EB450A2C254A8D3300D31858 /* TestsAssembly.swift */,
+				EB450A26254A8D2900D31858 /* TestsPresenter.swift */,
+				EB69F8B42569DB6800759BAA /* TestsRouter.swift */,
+				EB450A1E254A8BE600D31858 /* TestsViewController.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		EB2F5E07251F5359007DCF60 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -470,12 +492,13 @@
 				EB8325882556EACF005E02C1 /* Favorites */,
 				EB2F5E09251F53FD007DCF60 /* List */,
 				EB450A022549D1DE00D31858 /* Paywall */,
+				EBF00FBB257BD2A7002FA49B /* Sentence */,
 				EBF4A144252ED2B8003E3A44 /* Settings */,
 				EBD476DD2553ADA10033067B /* Sidebar */,
 				EB7DFF592524497A000B711D /* Split */,
 				EB55475925540827001C5585 /* TabBar */,
+				EB2E4BF7257A0A7A005B343A /* Tests */,
 				EBDF00752562DD620041F458 /* TestDetail */,
-				EB450A0D254A843600D31858 /* Tests */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -542,17 +565,6 @@
 				EB450A042549D27300D31858 /* PaywallView.xib */,
 			);
 			path = Paywall;
-			sourceTree = "<group>";
-		};
-		EB450A0D254A843600D31858 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				EB450A2C254A8D3300D31858 /* TestsAssembly.swift */,
-				EB450A26254A8D2900D31858 /* TestsPresenter.swift */,
-				EB69F8B42569DB6800759BAA /* TestsRouter.swift */,
-				EB450A1E254A8BE600D31858 /* TestsViewController.swift */,
-			);
-			path = Tests;
 			sourceTree = "<group>";
 		};
 		EB450A38254B19BA00D31858 /* PlainItem */ = {
@@ -723,7 +735,6 @@
 				EBB95BFD25335C3E00376C3F /* LanguageService.swift */,
 				EB7B8580253B30C600542D3C /* MailService.swift */,
 				EBF97C8D256235AF009FFFBA /* PurchaseService.swift */,
-				EBDF00AB256764490041F458 /* TestService.swift */,
 				EBEB1D91251F15B40019972C /* VerbsService.swift */,
 				EB26996B256CFAC7007CCF2E /* RateService.swift */,
 			);
@@ -749,7 +760,6 @@
 			children = (
 				EB2E4B5825741603005B343A /* Icons */,
 				EBB3BC14251F4BAA006E0DC7 /* irregulars.json */,
-				EBDF007E2562E1120041F458 /* tests.json */,
 				EBB95BE8253326CE00376C3F /* Localizable.strings */,
 			);
 			path = Resources;
@@ -855,6 +865,27 @@
 				EB2E4BCA2576B59F005B343A /* Test.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		EBF00FAC257BB53F002FA49B /* TestItem */ = {
+			isa = PBXGroup;
+			children = (
+				EBF00FAD257BB55A002FA49B /* TestItem.swift */,
+				EBF00FB1257BB5B0002FA49B /* TestCell.swift */,
+				EBF00FB2257BB5B0002FA49B /* TestCell.xib */,
+			);
+			path = TestItem;
+			sourceTree = "<group>";
+		};
+		EBF00FBB257BD2A7002FA49B /* Sentence */ = {
+			isa = PBXGroup;
+			children = (
+				EBF00FC4257BD3D5002FA49B /* SentenceAssembly.swift */,
+				EBF00FC8257BD41C002FA49B /* SentencePresenter.swift */,
+				EBF00FBC257BD323002FA49B /* SentenceViewController.swift */,
+				EBF00FBD257BD323002FA49B /* SentenceView.xib */,
+			);
+			path = Sentence;
 			sourceTree = "<group>";
 		};
 		EBF4A12B252E9804003E3A44 /* ListItem */ = {
@@ -993,13 +1024,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB2E4B9A25741832005B343A /* orange@3x.png in Resources */,
-				EBDF007F2562E1120041F458 /* tests.json in Resources */,
 				EBEB1D82251F11910019972C /* LaunchScreen.storyboard in Resources */,
 				EB2E4B9825741832005B343A /* teal@3x.png in Resources */,
 				EB2E4B9325741832005B343A /* purple@2x.png in Resources */,
 				EBB95BE6253326CE00376C3F /* Localizable.strings in Resources */,
 				EB2E4B9125741832005B343A /* yellow@3x.png in Resources */,
 				EBF4A12F252E981F003E3A44 /* ListCell.xib in Resources */,
+				EBF00FBF257BD324002FA49B /* SentenceView.xib in Resources */,
 				EB2E4B9525741832005B343A /* green@2x.png in Resources */,
 				EB450A062549D27400D31858 /* PaywallView.xib in Resources */,
 				EBB01C0D2521825000BB646B /* TranslationCell.xib in Resources */,
@@ -1014,6 +1045,7 @@
 				EB2E4B9925741832005B343A /* indigo@2x.png in Resources */,
 				EBEB1D7F251F11910019972C /* Assets.xcassets in Resources */,
 				EB2E4B9025741832005B343A /* green@3x.png in Resources */,
+				EBF00FB4257BB5B0002FA49B /* TestCell.xib in Resources */,
 				EBF4A150252ED5A4003E3A44 /* SwitchCell.xib in Resources */,
 				EB2E4B2A257293C5005B343A /* AccentColorView.xib in Resources */,
 				EB2F5E12251F5B26007DCF60 /* DetailCell.xib in Resources */,
@@ -1073,8 +1105,10 @@
 				EBA732AE25702FB7001B69EF /* Restorable.swift in Sources */,
 				EBDF00782562DD850041F458 /* TestDetailViewController.swift in Sources */,
 				EB2E4B2E2572963D005B343A /* AccentColorAssembly.swift in Sources */,
+				EBF00FB3257BB5B0002FA49B /* TestCell.swift in Sources */,
 				EB2E4B3B25729E2E005B343A /* AccentColorItem.swift in Sources */,
 				EB450A59254BB3F800D31858 /* BigButton.swift in Sources */,
+				EBF00FC9257BD41C002FA49B /* SentencePresenter.swift in Sources */,
 				EB2F5E11251F5B26007DCF60 /* DetailCell.swift in Sources */,
 				EBF8A6522559225D00A6265C /* Locator.swift in Sources */,
 				EB2E4BC52576A8DC005B343A /* Array+Safe.swift in Sources */,
@@ -1092,6 +1126,7 @@
 				EB450A27254A8D2900D31858 /* TestsPresenter.swift in Sources */,
 				EBB01C252521903A00BB646B /* Identifiable.swift in Sources */,
 				EB717DE42530C04A007791AD /* ListPresenter.swift in Sources */,
+				EBF00FC5257BD3D5002FA49B /* SentenceAssembly.swift in Sources */,
 				EB450982253B65E800D31858 /* DetailPresenter.swift in Sources */,
 				EB450A3A254B19CB00D31858 /* PlainItem.swift in Sources */,
 				EBB95BFE25335C3E00376C3F /* LanguageService.swift in Sources */,
@@ -1102,7 +1137,6 @@
 				EB450973253B5CB300D31858 /* Section.swift in Sources */,
 				EBDF00A62562F1160041F458 /* FormTextField.swift in Sources */,
 				EB26996C256CFAC7007CCF2E /* RateService.swift in Sources */,
-				EBDF00AC256764490041F458 /* TestService.swift in Sources */,
 				EBB01C0C2521825000BB646B /* TranslationCell.swift in Sources */,
 				EB69F8AF2569D7AA00759BAA /* TestDetailRouter.swift in Sources */,
 				EBB01C0925217F5400BB646B /* Language.swift in Sources */,
@@ -1122,6 +1156,7 @@
 				EB5547542553CB22001C5585 /* SidebarCell.swift in Sources */,
 				EBB01C1F25218BAB00BB646B /* ItemProtocol.swift in Sources */,
 				EBA644D7255ADC800012B973 /* SidebarPresenter.swift in Sources */,
+				EBF00FAE257BB55A002FA49B /* TestItem.swift in Sources */,
 				EB2E4B4125729EBE005B343A /* AccentColor.swift in Sources */,
 				EBA732B425704AF7001B69EF /* SplitStateManager.swift in Sources */,
 				EBA644E7255AE25B0012B973 /* SettingsRouter.swift in Sources */,
@@ -1138,6 +1173,7 @@
 				EB2F5E16251F71DD007DCF60 /* AudioService.swift in Sources */,
 				EBF4A147252ED2CA003E3A44 /* SettingsViewController.swift in Sources */,
 				EBF97C95256254DC009FFFBA /* PaywallAssembly.swift in Sources */,
+				EBF00FBE257BD324002FA49B /* SentenceViewController.swift in Sources */,
 				EB8325A62556EFF0005E02C1 /* FavoritesService.swift in Sources */,
 				EB2E4BA025741880005B343A /* AppIcon.swift in Sources */,
 				EB7B85652537FAE000542D3C /* Word.swift in Sources */,
@@ -1218,7 +1254,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1226,7 +1262,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1242,7 +1278,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1250,7 +1286,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1384,7 +1420,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1392,7 +1428,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1408,7 +1444,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1416,7 +1452,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -55,7 +55,7 @@ private extension ListPresenter {
                                                object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(didPay),
-                                               name: Notification.Name.paid,
+                                               name: Notification.Name.reload,
                                                object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(willUpdateRegulars),

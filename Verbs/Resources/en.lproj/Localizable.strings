@@ -48,16 +48,11 @@
 "Edition" = "Edition";
 "All" = "All";
 "Favorites" = "Favorites";
-"Statistics" = "Statistics";
-"Three forms" = "Three forms";
-"Letters" = "Letters";
-"Sentences" = "Sentences";
-"Pronunciation" = "Pronunciation";
 "Upgrade to Pro" = "Upgrade to Pro";
 "More" = "More";
 "Error" = "Error";
 "Hint" = "Hint";
-"Get access to all tests" = "Get access to all tests";
+"Get access to tests" = "Get access to tests";
 "Accent color" = "Accent color";
 "View" = "View";
 "Blue" = "Blue";
@@ -76,7 +71,11 @@
 "Enter here" = "Enter here";
 "Terms of use" = "Terms of use";
 "Personalize the app: pick an accent color to your liking" = "Personalize the app: pick an accent color to your liking";
-"EmptyFavoritesError" = "Empty Favorites";
+"Examples" = "Examples";
+"ThreeFormsTitle" = "Any of the three forms";
+"SentenceTitle" = "Sentences";
+"ThreeFormsSubtitle" = "How well do you know a random irregular verb?";
+"SentenceSubtitle" = "Is it easy for you to find the correct form of an irregular verb in context?";
 
 // Irregular Verbs
 

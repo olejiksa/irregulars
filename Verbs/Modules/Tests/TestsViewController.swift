@@ -58,6 +58,20 @@ final class TestsViewController: UIViewController {
         guard splitViewController?.isCollapsed == true else { return }
         tableView?.selectRow(at: nil, animated: true, scrollPosition: .none)
     }
+    
+    func reloadData() {
+        tableView?.reloadData()
+    }
+}
+
+// MARK: - Scrollable
+
+extension TestsViewController: Scrollable {
+    
+    func scrollToTop() {
+        let indexPath = IndexPath(row: 0, section: 0)
+        tableView?.scrollToRow(at: indexPath, at: .top, animated: true)
+    }
 }
 
 // MARK: - Private
@@ -88,7 +102,9 @@ private extension TestsViewController {
         tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         
-        tableView.register(PlainCell.self, SubtitleCell.self)
+        tableView.register(TestCell.self)
+        
+        tableView.tableFooterView = UIView()
         
         self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.tableView = tableView
