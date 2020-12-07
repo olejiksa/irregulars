@@ -72,10 +72,13 @@
 "Terms of use" = "Условия использования";
 "Personalize the app: pick an accent color to your liking" = "Персонализируйте приложение: выберите акцентный цвет по своему вкусу";
 "Examples" = "Примеры";
-"ThreeFormsTitle" = "По любой из трех форм";
+"ThreeFormsTitle" = "Любая из трех форм";
 "SentenceTitle" = "По предложениям";
 "ThreeFormsSubtitle" = "Насколько хорошо Вы знаете случайно взятую форму неправильного глагола?";
 "SentenceSubtitle" = "Легко ли Вам подобрать правильную форму неправильного глагола по контексту?";
+"Notifications" = "Уведомления";
+"Sentence" = "Предложение";
+"Choose a word from offered" = "Выберите слово из предложенных";
 
 // Irregular Verbs
 

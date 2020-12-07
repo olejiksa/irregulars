@@ -76,6 +76,9 @@
 "SentenceTitle" = "Sentences";
 "ThreeFormsSubtitle" = "How well do you know a random irregular verb?";
 "SentenceSubtitle" = "Is it easy for you to find the correct form of an irregular verb in context?";
+"Notifications" = "Notifications";
+"Sentence" = "Sentence";
+"Choose a word from offered" = "Choose a word from offered";
 
 // Irregular Verbs
 

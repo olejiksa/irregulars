@@ -14,7 +14,7 @@ final class SwitchCell: UITableViewCell {
     @IBOutlet private weak var toggleSwitch: UISwitch!
     
     private var item: SwitchItem?
-    private var actionBlock: ((Bool) -> ())?
+    private var actionBlock: BoolBlock?
     
     override func awakeFromNib() {
         super.awakeFromNib()

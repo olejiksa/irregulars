@@ -10,11 +10,11 @@ struct DisclosureItem {
     
     let text: String
     let isEnabled: Bool
-    let actionBlock: ((ItemProtocol) -> ())?
+    let actionBlock: ItemBlock?
     
     init(text: String,
          isEnabled: Bool = true,
-         actionBlock: ((ItemProtocol) -> ())? = nil) {
+         actionBlock: ItemBlock? = nil) {
         self.text = text
         self.isEnabled = isEnabled
         self.actionBlock = actionBlock

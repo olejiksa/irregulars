@@ -10,7 +10,7 @@ import Foundation
 
 final class Favorites {
     
-    var didUpdateBlock: (() -> ())?
+    var didUpdateBlock: Block?
     
     private(set) var verbs: Set<Verb>
     

@@ -9,7 +9,7 @@
 struct InputItem {
     
     let word: Word
-    let successActionBlock: (() -> ())?
+    let successActionBlock: Block?
 }
 
 // MARK: - ItemProtocol

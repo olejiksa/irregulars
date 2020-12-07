@@ -11,12 +11,12 @@ final class SwitchItem {
     let text: String
     var isOn: Bool
     let isEnabled: Bool
-    let actionBlock: ((Bool) -> ())
+    let actionBlock: BoolBlock
     
     init(text: String,
          isOn: Bool,
          isEnabled: Bool,
-         actionBlock: @escaping ((Bool) -> ())) {
+         actionBlock: @escaping BoolBlock) {
         self.text = text
         self.isOn = isOn
         self.isEnabled = isEnabled

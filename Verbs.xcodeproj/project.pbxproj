@@ -140,6 +140,8 @@
 		EBB3BC17251F4D60006E0DC7 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3BC16251F4D60006E0DC7 /* JSONParser.swift */; };
 		EBB95BE6253326CE00376C3F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBB95BE8253326CE00376C3F /* Localizable.strings */; };
 		EBB95BFE25335C3E00376C3F /* LanguageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB95BFD25335C3E00376C3F /* LanguageService.swift */; };
+		EBD2C4E5257E8ACA0023AED4 /* SettingsItemsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD2C4E4257E8ACA0023AED4 /* SettingsItemsFactory.swift */; };
+		EBD2C4E9257E95AE0023AED4 /* Blocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD2C4E8257E95AE0023AED4 /* Blocks.swift */; };
 		EBD476C5254BBE7A0033067B /* PaywallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD476C3254BBE7A0033067B /* PaywallCell.swift */; };
 		EBD476C6254BBE7A0033067B /* PaywallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBD476C4254BBE7A0033067B /* PaywallCell.xib */; };
 		EBD476CA254BBEA60033067B /* PaywallItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD476C9254BBEA60033067B /* PaywallItem.swift */; };
@@ -337,6 +339,8 @@
 		EBB95BE7253326CE00376C3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EBB95BEB253326F300376C3F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EBB95BFD25335C3E00376C3F /* LanguageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageService.swift; sourceTree = "<group>"; };
+		EBD2C4E4257E8ACA0023AED4 /* SettingsItemsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemsFactory.swift; sourceTree = "<group>"; };
+		EBD2C4E8257E95AE0023AED4 /* Blocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blocks.swift; sourceTree = "<group>"; };
 		EBD476C3254BBE7A0033067B /* PaywallCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallCell.swift; sourceTree = "<group>"; };
 		EBD476C4254BBE7A0033067B /* PaywallCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaywallCell.xib; sourceTree = "<group>"; };
 		EBD476C9254BBEA60033067B /* PaywallItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallItem.swift; sourceTree = "<group>"; };
@@ -535,6 +539,7 @@
 				EB69F8BA2569E33800759BAA /* UI */,
 				EB450A4F254BB3B700D31858 /* Items */,
 				EBEB1D75251F11900019972C /* AppDelegate.swift */,
+				EBD2C4E8257E95AE0023AED4 /* Blocks.swift */,
 				EBB01C1C2521897000BB646B /* CellProtocol.swift */,
 				EBF4A13A252EA2F6003E3A44 /* FeatureToggle.swift */,
 				EBB3BC16251F4D60006E0DC7 /* JSONParser.swift */,
@@ -907,6 +912,7 @@
 				EB4509D72541E61700D31858 /* RightDetailItem */,
 				EBF4A153252ED5A7003E3A44 /* SwitchItem */,
 				EB45099B253B6C7D00D31858 /* SettingsAssembly.swift */,
+				EBD2C4E4257E8ACA0023AED4 /* SettingsItemsFactory.swift */,
 				EB450991253B6B4700D31858 /* SettingsPresenter.swift */,
 				EBA644E6255AE25B0012B973 /* SettingsRouter.swift */,
 				EBF4A145252ED2CA003E3A44 /* SettingsViewController.swift */,
@@ -1101,6 +1107,7 @@
 				EB45099C253B6C7D00D31858 /* SettingsAssembly.swift in Sources */,
 				EBB01C1D2521897000BB646B /* CellProtocol.swift in Sources */,
 				EB717DF42530D5B7007791AD /* ListAssembly.swift in Sources */,
+				EBD2C4E9257E95AE0023AED4 /* Blocks.swift in Sources */,
 				EB450A20254A8BE600D31858 /* TestsViewController.swift in Sources */,
 				EBA732AE25702FB7001B69EF /* Restorable.swift in Sources */,
 				EBDF00782562DD850041F458 /* TestDetailViewController.swift in Sources */,
@@ -1173,6 +1180,7 @@
 				EB2F5E16251F71DD007DCF60 /* AudioService.swift in Sources */,
 				EBF4A147252ED2CA003E3A44 /* SettingsViewController.swift in Sources */,
 				EBF97C95256254DC009FFFBA /* PaywallAssembly.swift in Sources */,
+				EBD2C4E5257E8ACA0023AED4 /* SettingsItemsFactory.swift in Sources */,
 				EBF00FBE257BD324002FA49B /* SentenceViewController.swift in Sources */,
 				EB8325A62556EFF0005E02C1 /* FavoritesService.swift in Sources */,
 				EB2E4BA025741880005B343A /* AppIcon.swift in Sources */,

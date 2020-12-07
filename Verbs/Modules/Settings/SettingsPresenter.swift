@@ -17,11 +17,14 @@ final class SettingsPresenter: NSObject {
     private let productURL = URL(string: "https://apps.apple.com/app/id1540487254")
     private let languageService: LanguageService
     private let mailService: MailService
+    private let itemsFactory: SettingsItemsFactory
     
     init(languageService: LanguageService,
-         mailService: MailService) {
+         mailService: MailService,
+         itemsFactory: SettingsItemsFactory) {
         self.languageService = languageService
         self.mailService = mailService
+        self.itemsFactory = itemsFactory
         super.init()
         subscribe()
         setupItems()
@@ -40,80 +43,22 @@ private extension SettingsPresenter {
     }
     
     func setupItems() {
-        guard let version = Bundle.main.releaseVersionNumber,
-              let name = Bundle.main.productName else { return }
-        
-        let editionName = FeatureToggle.isPaid ? "\(name) Pro" : "\(name) Lite"
-        let accentColor = AccentColor.current.rawValue.capitalized.localized
-
-        dataSource.setup([setupActivationSection(),
-                          Section(header: "General".localized,
-                                  items: [RightDetailItem(title: "Language".localized,
-                                                          subtitle: languageService.current.description,
-                                                          actionBlock: willShowLanguageSettings),
-                                          RightDetailItem(title: "Accent color".localized,
-                                                          subtitle: accentColor,
-                                                          actionBlock: willGoToAccentColor,
-                                                          hasDisclosureItem: true,
-                                                          isEnabled: FeatureToggle.isPaid),
-                                          
-                                  ]),
-                          Section(header: "List".localized,
-                                  items: [SwitchItem(text: "Regular verbs (-ed)".localized,
-                                                     isOn: UserDefaults.standard.bool(for: .shouldRegularVerbsBeShown),
-                                                     isEnabled: FeatureToggle.isPaid,
-                                                     actionBlock: didRegularVerbsOptionChange),
-                                          SwitchItem(text: "Derivatives".localized,
-                                                     isOn: UserDefaults.standard.bool(for: .shouldDerivedFormsBeShown),
-                                                     isEnabled: FeatureToggle.isPaid,
-                                                     actionBlock: didDerivedFormsOptionChange)] +
-                                          [setupPickableItem()].compactMap { $0 }),
-                          Section(header: "Links".localized,
-                                  items: [DisclosureItem(text: "Rate and review".localized,
-                                                         actionBlock: willRate),
-                                          DisclosureItem(text: "Privacy policy".localized,
-                                                         actionBlock: willGoToPrivacyPolicy),
-                                          DisclosureItem(text: "Terms of use".localized,
-                                                         actionBlock: willGoToTermsOfUse),
-                                          DisclosureItem(text: "Contact us".localized,
-                                                         isEnabled: mailService.isMailAvailable,
-                                                         actionBlock: willGoToMail),
-                                          DisclosureItem(text: "Share the app".localized,
-                                                         actionBlock: willShare)]),
-                          Section(header: "About".localized,
-                                  items: [RightDetailItem(title: "Developer".localized,
-                                                          subtitle: "Oleg Samoylov".localized,
-                                                          isEnabled: false),
-                                          RightDetailItem(title: "Edition".localized,
-                                                          subtitle: editionName,
-                                                          actionBlock: willBuy,
-                                                          hasDisclosureItem: false),
-                                          RightDetailItem(title: "Version".localized,
-                                                          subtitle: version,
-                                                          isEnabled: false)])])
-    }
-    
-    func setupActivationSection() -> Section {
-        let upgradeItem = !FeatureToggle.isPaid ? ActionItem(text: "Upgrade to Pro".localized,
-                                                             style: .standard,
-                                                             actionBlock: willBuy) : nil
-        let resetItem = FeatureToggle.isPaid && FeatureToggle.isDebug ? ActionItem(text: "Downgrade".localized,
-                                                                                   style: .destructive,
-                                                                                   actionBlock: willReset) : nil
-        let header = FeatureToggle.isPaid ? "Deactivation".localized : "Activation".localized
-        return Section(header: header, items: [upgradeItem, resetItem].compactMap { $0 })
-    }
-    
-    func setupPickableItem() -> PickableItem? {
-        let options = ["Verb forms".localized, "Translation".localized]
-        let currentOption = !UserDefaults.standard.bool(for: .shouldTranslationBeShown)
-            ? options.first
-            : options.last
-        return languageService.hasTranslation ? .init(title: "View".localized,
-                                                      subtitle: currentOption ?? "",
-                                                      actionBlock: didListViewChange,
-                                                      options: options,
-                                                      isEnabled: FeatureToggle.isPaid) : nil
+        dataSource.setup([
+            itemsFactory.setupActivationSection(upgradeBlock: willBuy,
+                                                resetBlock: willReset),
+            itemsFactory.setupGeneralSection(languageBlock: willShowLanguageSettings,
+                                             accentColorBlock: willGoToAccentColor,
+                                             notificationsBlock: didDerivedFormsOptionChange),
+            itemsFactory.setupListSection(regularVerbsBlock: didRegularVerbsOptionChange,
+                                          derivativesBlock: didDerivedFormsOptionChange,
+                                          listViewModeBlock: didListViewChange),
+            itemsFactory.setupLinksSection(rateBlock: willRate,
+                                           privacyBlock: willGoToPrivacyPolicy,
+                                           termsBlock: willGoToTermsOfUse,
+                                           mailBlock: willGoToMail,
+                                           shareBlock: willShare),
+            itemsFactory.setupAboutSection(upgradeBlock: willBuy)
+        ])
     }
     
     func didRegularVerbsOptionChange(_ value: Bool) {

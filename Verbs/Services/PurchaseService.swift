@@ -10,14 +10,13 @@ import StoreKit
 
 final class PurchaseService: NSObject {
     
-    typealias ActivationHandler = () -> ()
     typealias ErrorHandler = (Error?) -> ()
     
     private let proID = "com.olejiksa.Verbs.Pro"
     
     private var products: [SKProduct] = []
     private var productsRequest: SKProductsRequest?
-    private var activationHandler: ActivationHandler?
+    private var activationHandler: Block?
     private var errorHandler: ErrorHandler?
     
     var canMakePayments: Bool { SKPaymentQueue.canMakePayments() }
@@ -27,7 +26,7 @@ final class PurchaseService: NSObject {
         SKPaymentQueue.default().add(self)
     }
     
-    func requestProducts(activationHandler: @escaping ActivationHandler,
+    func requestProducts(activationHandler: @escaping Block,
                          errorHandler: @escaping ErrorHandler) {
         productsRequest?.cancel()
         

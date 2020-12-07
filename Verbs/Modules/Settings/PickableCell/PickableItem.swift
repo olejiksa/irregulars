@@ -10,14 +10,14 @@ final class PickableItem {
     
     let title: String
     var subtitle: String
-    let actionBlock: ((ItemProtocol) -> ())?
+    let actionBlock: ItemBlock?
     let hasDisclosureItem: Bool
     let options: [String]
     let isEnabled: Bool
     
     init(title: String,
          subtitle: String,
-         actionBlock: ((ItemProtocol) -> ())? = nil,
+         actionBlock: ItemBlock? = nil,
          hasDisclosureItem: Bool? = nil,
          options: [String],
          isEnabled: Bool = true) {

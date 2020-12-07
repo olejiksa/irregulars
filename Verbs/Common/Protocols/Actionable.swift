@@ -8,5 +8,5 @@
 
 protocol Actionable {
     
-    var actionBlock: ((ItemProtocol) -> ())? { get }
+    var actionBlock: ItemBlock? { get }
 }

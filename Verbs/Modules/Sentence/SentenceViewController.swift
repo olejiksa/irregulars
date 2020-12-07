@@ -11,6 +11,7 @@ import UIKit
 final class SentenceViewController: UIViewController {
     
     private let presenter: SentencePresenter
+    private var tableView: UITableView?
 
     init(presenter: SentencePresenter) {
         self.presenter = presenter
@@ -26,6 +27,7 @@ final class SentenceViewController: UIViewController {
         super.viewDidLoad()
         
         setupNavigationBar()
+        setupTableView()
     }
 }
 
@@ -42,5 +44,38 @@ private extension SentenceViewController {
                                        target: presenter,
                                        action: #selector(presenter.showHint))
         navigationItem.rightBarButtonItem = hintItem
+    }
+    
+    func setupTableView() {
+        let tableViewStyle: UITableView.Style = splitViewController?.isCollapsed == true ? .grouped : .insetGrouped
+        let tableView = UITableView(frame: .zero, style: tableViewStyle)
+        
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        tableView.dataSource = presenter.dataSource
+        tableView.delegate = presenter
+        
+        tableView.register(PlainCell.self)
+        
+        self.tableView = tableView
+    }
+}
+
+// MARK: - Restorable
+
+extension SentenceViewController: Restorable {
+    
+    func restore() {
+        tableView?.removeFromSuperview()
+        tableView = nil
+        setupTableView()
     }
 }

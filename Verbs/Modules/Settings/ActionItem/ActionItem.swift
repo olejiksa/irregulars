@@ -15,7 +15,7 @@ struct ActionItem {
     
     let text: String
     let style: Style
-    let actionBlock: ((ItemProtocol) -> ())?
+    let actionBlock: ItemBlock?
 }
 
 // MARK: - ItemProtocol
