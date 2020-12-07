@@ -20,6 +20,10 @@ class SectionDataSource: NSObject {
     func item(at indexPath: IndexPath) -> ItemProtocol {
         sectionArray.item(indexPath)
     }
+    
+    func items<T>(of type: T.Type) -> [ItemProtocol] where T: ItemProtocol {
+        sectionArray.items(of: type)
+    }
 }
 
 // MARK: - UITableViewDataSource

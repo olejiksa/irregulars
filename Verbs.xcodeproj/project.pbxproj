@@ -142,6 +142,7 @@
 		EBB95BFE25335C3E00376C3F /* LanguageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB95BFD25335C3E00376C3F /* LanguageService.swift */; };
 		EBD2C4E5257E8ACA0023AED4 /* SettingsItemsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD2C4E4257E8ACA0023AED4 /* SettingsItemsFactory.swift */; };
 		EBD2C4E9257E95AE0023AED4 /* Blocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD2C4E8257E95AE0023AED4 /* Blocks.swift */; };
+		EBD2C4EF257E9DBB0023AED4 /* TestKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD2C4EE257E9DBB0023AED4 /* TestKind.swift */; };
 		EBD476C5254BBE7A0033067B /* PaywallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD476C3254BBE7A0033067B /* PaywallCell.swift */; };
 		EBD476C6254BBE7A0033067B /* PaywallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBD476C4254BBE7A0033067B /* PaywallCell.xib */; };
 		EBD476CA254BBEA60033067B /* PaywallItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD476C9254BBEA60033067B /* PaywallItem.swift */; };
@@ -341,6 +342,7 @@
 		EBB95BFD25335C3E00376C3F /* LanguageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageService.swift; sourceTree = "<group>"; };
 		EBD2C4E4257E8ACA0023AED4 /* SettingsItemsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemsFactory.swift; sourceTree = "<group>"; };
 		EBD2C4E8257E95AE0023AED4 /* Blocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blocks.swift; sourceTree = "<group>"; };
+		EBD2C4EE257E9DBB0023AED4 /* TestKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKind.swift; sourceTree = "<group>"; };
 		EBD476C3254BBE7A0033067B /* PaywallCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallCell.swift; sourceTree = "<group>"; };
 		EBD476C4254BBE7A0033067B /* PaywallCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaywallCell.xib; sourceTree = "<group>"; };
 		EBD476C9254BBEA60033067B /* PaywallItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallItem.swift; sourceTree = "<group>"; };
@@ -868,6 +870,7 @@
 				EB69F8A82569D42B00759BAA /* VerbForm.swift */,
 				EB7B85642537FAE000542D3C /* Word.swift */,
 				EB2E4BCA2576B59F005B343A /* Test.swift */,
+				EBD2C4EE257E9DBB0023AED4 /* TestKind.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1190,6 +1193,7 @@
 				EB450A33254B157B00D31858 /* SectionDataSource.swift in Sources */,
 				EB2E4B1725717A3E005B343A /* PurchaseError.swift in Sources */,
 				EB45098A253B67FA00D31858 /* DetailAssembly.swift in Sources */,
+				EBD2C4EF257E9DBB0023AED4 /* TestKind.swift in Sources */,
 				EB7B8581253B30C600542D3C /* MailService.swift in Sources */,
 				EBD476C5254BBE7A0033067B /* PaywallCell.swift in Sources */,
 				EBD476E32553AED70033067B /* SidebarViewController.swift in Sources */,

@@ -14,7 +14,7 @@ final class DetailCell: UITableViewCell {
     @IBOutlet private weak var transcriptionLabel: UILabel?
     @IBOutlet private weak var playButton: UIButton!
     
-    private var actionBlock: ((String, @escaping () -> Void, @escaping () -> Void) -> ())?
+    private var actionBlock: ((String, @escaping Block, @escaping Block) -> ())?
     
     override func awakeFromNib() {
         super.awakeFromNib()

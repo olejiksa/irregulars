@@ -27,6 +27,7 @@ enum AccentColor: String, CaseIterable {
         }
         set {
             UserDefaults.standard.set(newValue.rawValue, for: .accentColor)
+            NotificationCenter.default.post(name: .reload, object: nil)
             let scene = UIApplication.shared.connectedScenes.first
             let sd = scene?.delegate as? SceneDelegate
             sd?.window?.tintColor = newValue.color

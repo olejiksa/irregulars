@@ -6,6 +6,6 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
-typealias Block = () -> ()
+typealias Block = () -> Void
 typealias BoolBlock = (Bool) -> Void
 typealias ItemBlock = (ItemProtocol) -> Void

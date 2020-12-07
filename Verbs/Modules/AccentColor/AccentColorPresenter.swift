@@ -54,7 +54,6 @@ extension AccentColorPresenter: UITableViewDelegate {
         
         dataSource.selectedIndexPath = indexPath
         AccentColor.current = accentColors[indexPath.row]
-        NotificationCenter.default.post(name: .reload, object: nil)
         tableView.reloadSections(IndexSet(integer: 1), with: .none)
     }
     

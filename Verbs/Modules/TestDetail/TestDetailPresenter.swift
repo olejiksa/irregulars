@@ -18,8 +18,7 @@ final class TestDetailPresenter: NSObject {
     private let audioService: AudioService
     private let verbsService: VerbsService
     private let rateService: RateService
-    private var hint: String?
-    private var hintTranslation: String?
+    private var currentTestKind: TestKind?
     
     init(audioService: AudioService,
          verbsService: VerbsService,
@@ -30,11 +29,6 @@ final class TestDetailPresenter: NSObject {
         self.rateService = rateService
         super.init()
         setupSections()
-    }
-    
-    @objc func showHint() {
-        guard let hint = hint, let hintTranslation = hintTranslation else { return }
-        router?.show(hint: (hint, hintTranslation))
     }
 }
 
@@ -60,44 +54,75 @@ private extension TestDetailPresenter {
         
         items.remove(at: index)
         
-        let randomVerbForm = VerbForm.allCases.randomElement() ?? .infinitive
+        currentTestKind = TestKind.allCases.randomElement()
         
-        hintTranslation = verb.translation
-
-        switch randomVerbForm {
-        case .infinitive:
-            hint = verb.infinitive.value
-            dataSource.setup([Section(header: randomVerbForm.rawValue,
+        switch currentTestKind {
+        case .translation:
+            dataSource.setup([Section(header: "Translation".localized,
+                                      items: [PlainItem(title: verb.infinitive.value.localized)]),
+                              Section(header: "Infinitive",
                                       items: [InputItem(word: verb.infinitive,
-                                                        successActionBlock: didEndEntering)].compactMap { $0 }),
+                                                        playActionBlock: play,
+                                                        successActionBlock: didEndEntering,
+                                                        hintActionBlock: hint)].compactMap { $0 }),
                               Section(header: "Simple Past",
-                                      items: [PlainDetailItem(word: simplePast)].compactMap { $0 }),
-                              Section(header: "Past Participle",
-                                      items: [PlainDetailItem(word: pastParticiple)].compactMap { $0 })])
-        case .simplePast:
-            hint = simplePast.value
-            dataSource.setup([Section(header: "Infinitive",
-                                      items: [PlainDetailItem(word: verb.infinitive)].compactMap { $0 }),
-                              Section(header: randomVerbForm.rawValue,
                                       items: [InputItem(word: simplePast,
-                                                        successActionBlock: didEndEntering)].compactMap { $0 }),
+                                                        playActionBlock: play,
+                                                        successActionBlock: didEndEntering,
+                                                        hintActionBlock: hint)].compactMap { $0 }),
                               Section(header: "Past Participle",
-                                      items: [PlainDetailItem(word: pastParticiple)].compactMap { $0 })])
-        case .pastParticiple:
-            hint = pastParticiple.value
-            dataSource.setup([Section(header: "Infinitive",
-                                      items: [PlainDetailItem(word: verb.infinitive)].compactMap { $0 }),
-                              Section(header: "Simple Past",
-                                      items: [PlainDetailItem(word: simplePast)].compactMap { $0 }),
-                              Section(header: randomVerbForm.rawValue,
                                       items: [InputItem(word: pastParticiple,
-                                                        successActionBlock: didEndEntering)].compactMap { $0 })])
+                                                        playActionBlock: play,
+                                                        successActionBlock: didEndEntering,
+                                                        hintActionBlock: hint)].compactMap { $0 })])
+        case .retranslation:
+            dataSource.setup([Section(header: "Translation".localized,
+                                      items: [PlainItem(title: verb.infinitive.value.localized)].compactMap { $0 }),
+                              Section(header: "Infinitive",
+                                      items: [InputItem(word: verb.infinitive,
+                                                        playActionBlock: play,
+                                                        successActionBlock: didEndEntering,
+                                                        hintActionBlock: hint)].compactMap { $0 })])
+        case .listening:
+            dataSource.setup([Section(header: "Infinitive",
+                                      items: [InputItem(word: verb.infinitive,
+                                                        playActionBlock: play,
+                                                        successActionBlock: didEndEntering,
+                                                        hintActionBlock: hint,
+                                                        isAudio: true)].compactMap { $0 }),
+                              Section(header: "Simple Past",
+                                      items: [InputItem(word: simplePast,
+                                                        playActionBlock: play,
+                                                        successActionBlock: didEndEntering,
+                                                        hintActionBlock: hint,
+                                                        isAudio: true)].compactMap { $0 }),
+                              Section(header: "Past Participle",
+                                      items: [InputItem(word: pastParticiple,
+                                                        playActionBlock: play,
+                                                        successActionBlock: didEndEntering,
+                                                        hintActionBlock: hint,
+                                                        isAudio: true)].compactMap { $0 })])
+        default:
+            break
         }
     }
     
     func didEndEntering() {
+        guard let items = dataSource.items(of: InputItem.self) as? [InputItem],
+              items.allSatisfy({ $0.isFilled }) else { return }
+        
         configureRandomComposition()
         viewController?.reloadData()
+    }
+    
+    func play(text: String, playHandler: @escaping Block, stopHandler: @escaping Block) {
+        audioService.play(text: text,
+                          playHandler: playHandler,
+                          stopHandler: stopHandler)
+    }
+    
+    func hint(text: String) {
+        router?.show(hint: text)
     }
 }
 

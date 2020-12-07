@@ -28,6 +28,11 @@ struct SectionArray {
         sections.filter { !$0.items.isEmpty }[index].items.count
     }
     
+    func items<T>(of type: T.Type) -> [ItemProtocol] where T: ItemProtocol {
+        let items = sections.flatMap { $0.items }
+        return items.filter { $0 is T }
+    }
+    
     mutating func setup(_ sections: [Section]) {
         self.sections = sections
     }

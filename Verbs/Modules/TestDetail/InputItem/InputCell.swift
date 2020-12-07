@@ -11,14 +11,14 @@ import UIKit
 final class InputCell: UITableViewCell {
     
     @IBOutlet private weak var textField: UITextField!
+    @IBOutlet private weak var playButton: UIButton!
     
+    private var item: InputItem?
     private var expectedValue: String?
-    private var successActionBlock: Block?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        textField.becomeFirstResponder()
         textField.placeholder = "Enter here".localized
         textField.delegate = self
         
@@ -30,7 +30,15 @@ final class InputCell: UITableViewCell {
 
 private extension InputCell {
     
+    @IBAction func didHintTap() {
+        guard let text = expectedValue else { return }
+        item?.hintActionBlock(text)
+    }
     
+    @IBAction func didPlayTap() {
+        guard let text = expectedValue else { return }
+        item?.playActionBlock(text, play, stop)
+    }
 }
 
 // MARK: - CellProtocol
@@ -41,11 +49,26 @@ extension InputCell: CellProtocol {
     
     func setup(with item: ItemProtocol) {
         guard let item = item as? InputItem else { return }
+        self.item = item
         
         textField.text = ""
         
         expectedValue = item.word.value
-        successActionBlock = item.successActionBlock
+        
+        playButton.isHidden = !item.isAudio
+    }
+}
+
+// MARK: - Private
+
+private extension InputCell {
+    
+    func play() {
+        playButton.setImage(UIImage(systemName: "stop.circle"), for: .normal)
+    }
+    
+    func stop() {
+        playButton.setImage(UIImage(systemName: "play.circle"), for: .normal)
     }
 }
 
@@ -57,7 +80,10 @@ extension InputCell: UITextFieldDelegate {
                    shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool {
         if textField.text?.appending(string) == expectedValue {
-            successActionBlock?()
+            item?.isFilled = true
+            item?.successActionBlock()
+        } else {
+            item?.isFilled = false
         }
         
         return true

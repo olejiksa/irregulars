@@ -52,12 +52,6 @@ private extension TestDetailViewController {
     func setupNavigationBar() {
         navigationItem.title = "ThreeFormsTitle".localized
         navigationItem.largeTitleDisplayMode = .never
-        
-        let hintItem = UIBarButtonItem(image: SystemIcon.question.image,
-                                       style: .plain,
-                                       target: presenter,
-                                       action: #selector(presenter.showHint))
-        navigationItem.rightBarButtonItem = hintItem
     }
     
     func setupTableView() {
@@ -79,7 +73,7 @@ private extension TestDetailViewController {
         tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         
-        tableView.register(PlainDetailCell.self, InputCell.self)
+        tableView.register(PlainCell.self, InputCell.self)
         
         self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.tableView = tableView

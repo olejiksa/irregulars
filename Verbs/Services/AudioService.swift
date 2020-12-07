@@ -12,15 +12,15 @@ final class AudioService: NSObject {
     
     private let synthesizer = AVSpeechSynthesizer()
     private var text: String?
-    private var playHandler: (() -> Void)?
-    private var stopHandler: (() -> Void)?
+    private var playHandler: Block?
+    private var stopHandler: Block?
     
     override init() {
         super.init()
         synthesizer.delegate = self
     }
     
-    func play(text: String, playHandler: @escaping () -> Void, stopHandler: @escaping () -> Void) {
+    func play(text: String, playHandler: @escaping Block, stopHandler: @escaping Block) {
         self.stopHandler?()
         
         self.playHandler = playHandler

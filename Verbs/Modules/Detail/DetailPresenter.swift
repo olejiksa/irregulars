@@ -59,7 +59,7 @@ private extension DetailPresenter {
                                   items: translationItems)])
     }
     
-    func play(text: String, playHandler: @escaping () -> Void, stopHandler: @escaping () -> Void) {
+    func play(text: String, playHandler: @escaping Block, stopHandler: @escaping Block) {
         guard FeatureToggle.isPaid else {
             router?.goToPaywall()
             return
