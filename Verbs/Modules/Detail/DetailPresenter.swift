@@ -16,15 +16,18 @@ final class DetailPresenter: NSObject {
     
     private let audioService: AudioService
     private let languageService: LanguageService
+    private let sentencesService: SentencesService
     private let verb: Verb
     
     var title: String { verb.infinitive.value }
     
     init(audioService: AudioService,
          languageService: LanguageService,
+         sentencesService: SentencesService,
          verb: Verb) {
         self.audioService = audioService
         self.languageService = languageService
+        self.sentencesService = sentencesService
         self.verb = verb
         super.init()
         subscribe()
@@ -46,6 +49,10 @@ private extension DetailPresenter {
     func setupSections() {
         let translationItems = [TranslationItem(text: verb.translation)]
             .filter { _ in languageService.hasTranslation }
+        let sentences = sentencesService.items
+            .filter { $0.word == verb.infinitive.value }
+            .flatMap { $0.sentences }
+        let examples = sentences.map { TranslationItem(text: $0) }
         dataSource.setup([Section(header: "Infinitive",
                                   items: [DetailItem(word: verb.infinitive,
                                                      actionBlock: play)].compactMap { $0 }),
@@ -55,8 +62,8 @@ private extension DetailPresenter {
                           Section(header: "Past Participle",
                                   items: verb.pastParticiple?.compactMap { DetailItem(word: $0,
                                                                                       actionBlock: play) } ?? []),
-                          Section(header: "Translation".localized,
-                                  items: translationItems)])
+                          Section(header: "Translation".localized, items: translationItems),
+                          Section(header: "Examples".localized, items: examples)])
     }
     
     func play(text: String, playHandler: @escaping Block, stopHandler: @escaping Block) {

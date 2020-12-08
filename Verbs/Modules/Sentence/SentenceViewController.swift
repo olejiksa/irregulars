@@ -28,6 +28,11 @@ final class SentenceViewController: UIViewController {
         
         setupNavigationBar()
         setupTableView()
+        setupDelegate()
+    }
+    
+    func reloadData() {
+        tableView?.reloadData()
     }
 }
 
@@ -38,12 +43,6 @@ private extension SentenceViewController {
     func setupNavigationBar() {
         navigationItem.title = "SentenceTitle".localized
         navigationItem.largeTitleDisplayMode = .never
-        
-        let hintItem = UIBarButtonItem(image: SystemIcon.question.image,
-                                       style: .plain,
-                                       target: presenter,
-                                       action: #selector(presenter.showHint))
-        navigationItem.rightBarButtonItem = hintItem
     }
     
     func setupTableView() {
@@ -63,9 +62,13 @@ private extension SentenceViewController {
         tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         
-        tableView.register(PlainCell.self)
+        tableView.register(InputCell.self, PlainDetailCell.self)
         
         self.tableView = tableView
+    }
+    
+    func setupDelegate() {
+        navigationController?.delegate = self
     }
 }
 
@@ -77,5 +80,22 @@ extension SentenceViewController: Restorable {
         tableView?.removeFromSuperview()
         tableView = nil
         setupTableView()
+    }
+}
+
+// MARK: - UINavigationControllerDelegate
+
+extension SentenceViewController: UINavigationControllerDelegate {
+    
+    func navigationController(_ navigationController: UINavigationController,
+                              willShow viewController: UIViewController,
+                              animated: Bool) {
+        guard animated else { return }
+        
+        if viewController is EmptyViewController {
+            NotificationCenter.default.post(name: .test,
+                                            object: nil,
+                                            userInfo: [:])
+        }
     }
 }

@@ -49,9 +49,11 @@ private extension SettingsPresenter {
             itemsFactory.setupGeneralSection(languageBlock: willShowLanguageSettings,
                                              accentColorBlock: willGoToAccentColor,
                                              notificationsBlock: didDerivedFormsOptionChange),
-            itemsFactory.setupListSection(regularVerbsBlock: didRegularVerbsOptionChange,
-                                          derivativesBlock: didDerivedFormsOptionChange,
-                                          listViewModeBlock: didListViewChange),
+            itemsFactory.setupVocabularySection(regularVerbsBlock: didRegularVerbsOptionChange,
+                                                derivativesBlock: didDerivedFormsOptionChange),
+            itemsFactory.setupListSection(listViewModeBlock: didListViewChange),
+            itemsFactory.setupTestsSection(listViewModeBlock: didListViewChange,
+                                           listeningBlock: didListeningChange),
             itemsFactory.setupLinksSection(rateBlock: willRate,
                                            privacyBlock: willGoToPrivacyPolicy,
                                            termsBlock: willGoToTermsOfUse,
@@ -73,6 +75,10 @@ private extension SettingsPresenter {
         NotificationCenter.default.post(name: .derivatives,
                                         object: nil,
                                         userInfo: [Notification.Name.derivatives: value])
+    }
+    
+    func didListeningChange(_ value: Bool) {
+        UserDefaults.standard.set(value, for: .listening)
     }
     
     func didListViewChange(_ sender: ItemProtocol) {

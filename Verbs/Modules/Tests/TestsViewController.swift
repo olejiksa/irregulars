@@ -38,25 +38,9 @@ final class TestsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        presenter.selectWhenRegular()
-        deselectWhenCompact()
-    }
-    
-    func selectSection(at indexPath: IndexPath?) {
-        guard let indexPath = indexPath else {
-            if let indexPath = tableView?.indexPathForSelectedRow {
-                tableView?.deselectRow(at: indexPath, animated: true)
-            }
-            
-            return
-        }
-        
-        tableView?.selectRow(at: indexPath, animated: true, scrollPosition: .none)
-    }
-    
-    func deselectWhenCompact() {
-        guard splitViewController?.isCollapsed == true else { return }
-        tableView?.selectRow(at: nil, animated: true, scrollPosition: .none)
+        NotificationCenter.default.post(name: .test,
+                                        object: nil,
+                                        userInfo: [:])
     }
     
     func reloadData() {

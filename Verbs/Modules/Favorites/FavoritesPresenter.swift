@@ -158,10 +158,9 @@ extension FavoritesPresenter: UITableViewDataSource {
               editingStyle == .delete,
               let verb = favoritesService.groupedItems[safe: indexPath.section]?[indexPath.row]
         else { return }
-        tableView.beginUpdates()
+        
         favorites.remove(verb)
-        tableView.deleteRows(at: [indexPath], with: .fade)
-        tableView.endUpdates()
+        tableView.reloadData()
     }
 }
 

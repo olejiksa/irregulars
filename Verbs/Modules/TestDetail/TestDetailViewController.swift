@@ -73,7 +73,7 @@ private extension TestDetailViewController {
         tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         
-        tableView.register(PlainCell.self, InputCell.self)
+        tableView.register(PlainDetailCell.self, InputCell.self)
         
         self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.tableView = tableView
@@ -97,9 +97,6 @@ extension TestDetailViewController: Restorable {
         tableView = nil
         setupTableView()
         setupKeyboardService()
-        NotificationCenter.default.post(name: .test,
-                                        object: nil,
-                                        userInfo: [:])
     }
 }
 
@@ -112,17 +109,10 @@ extension TestDetailViewController: UINavigationControllerDelegate {
                               animated: Bool) {
         guard animated else { return }
         
-        switch viewController {
-        case is TestDetailViewController:
+        if viewController is EmptyViewController {
             NotificationCenter.default.post(name: .test,
                                             object: nil,
                                             userInfo: [:])
-        case is EmptyViewController:
-            NotificationCenter.default.post(name: .test,
-                                            object: nil,
-                                            userInfo: [:])
-        default:
-            break
         }
     }
 }

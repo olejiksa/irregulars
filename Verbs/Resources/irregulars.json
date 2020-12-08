@@ -611,10 +611,6 @@
             "value": "could",
             "transcription": "/kʊd/"
         }],
-        "pastParticiple": [{
-            "value": "been able",
-            "transcription": "/biːn ˈeɪb(ə)l/"
-        }],
         "hasRegular": false,
         "isDerived": false
     },
@@ -4344,7 +4340,7 @@
             "transcription": "/ʌndə(r)ˈstʊd/"
         }],
         "hasRegular": false,
-        "isDerived": false
+        "isDerived": true
     },
     {
         "infinitive": {

@@ -16,6 +16,8 @@ enum SystemIcon: String {
     case folder
     case eye
     case ear
+    case studentdesk
+    case graduationcap = "graduationcap.fill"
     case paintpalette
     case note = "note.text"
     case starFill = "star.fill"
@@ -32,8 +34,8 @@ enum SystemIcon: String {
     case forms = "textformat.123"
     case letters = "textformat.abc"
     case sentences = "rectangle.and.pencil.and.ellipsis"
-    case mouth
-    case chart = "chart.bar.xaxis"
+    case mouth = "mouth.fill"
+    case chart = "chart.pie.fill"
     case question = "questionmark.circle"
     case play = "play.circle"
     case stop = "stop.circle"

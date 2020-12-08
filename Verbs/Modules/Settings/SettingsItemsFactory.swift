@@ -44,16 +44,16 @@ final class SettingsItemsFactory {
                                              actionBlock: accentColorBlock,
                                              hasDisclosureItem: true,
                                              isEnabled: FeatureToggle.isPaid),
-                             SwitchItem(text: "Notifications".localized,
-                                        isOn: false,
-                                        isEnabled: false,
-                                        actionBlock: notificationsBlock)])
+//                             SwitchItem(text: "Notifications".localized,
+//                                        isOn: false,
+//                                        isEnabled: false,
+//                                        actionBlock: notificationsBlock)
+                     ])
     }
     
-    func setupListSection(regularVerbsBlock: @escaping BoolBlock,
-                          derivativesBlock: @escaping BoolBlock,
-                          listViewModeBlock: @escaping ItemBlock) -> Section {
-        .init(header: "List".localized,
+    func setupVocabularySection(regularVerbsBlock: @escaping BoolBlock,
+                                derivativesBlock: @escaping BoolBlock) -> Section {
+        .init(header: "Vocabulary".localized,
               items: [SwitchItem(text: "Regular verbs (-ed)".localized,
                                  isOn: UserDefaults.standard.bool(for: .shouldRegularVerbsBeShown),
                                  isEnabled: FeatureToggle.isPaid,
@@ -61,8 +61,24 @@ final class SettingsItemsFactory {
                       SwitchItem(text: "Derivatives".localized,
                                  isOn: UserDefaults.standard.bool(for: .shouldDerivedFormsBeShown),
                                  isEnabled: FeatureToggle.isPaid,
-                                 actionBlock: derivativesBlock)] +
-                [setupListViewModeItem(listViewModeBlock: listViewModeBlock)].compactMap { $0 })
+                                 actionBlock: derivativesBlock)])
+    }
+    
+    func setupListSection(listViewModeBlock: @escaping ItemBlock) -> Section {
+        .init(header: "List".localized,
+              items: [setupListViewModeItem(listViewModeBlock: listViewModeBlock)].compactMap { $0 })
+    }
+    
+    func setupTestsSection(listViewModeBlock: @escaping ItemBlock,
+                           listeningBlock: @escaping BoolBlock) -> Section {
+        .init(header: "Tests".localized,
+              items: [
+//                setupTestVerbsItem(listViewModeBlock: listViewModeBlock),
+//                      setupTestInputModeItem(listViewModeBlock: listViewModeBlock),
+                      SwitchItem(text: "Listening".localized,
+                                 isOn: UserDefaults.standard.bool(for: .shouldDerivedFormsBeShown),
+                                 isEnabled: FeatureToggle.isPaid,
+                                 actionBlock: listeningBlock)].compactMap { $0 })
     }
     
     func setupLinksSection(rateBlock: @escaping ItemBlock,
@@ -117,5 +133,25 @@ private extension SettingsItemsFactory {
                                                       actionBlock: listViewModeBlock,
                                                       options: options,
                                                       isEnabled: FeatureToggle.isPaid) : nil
+    }
+    
+    func setupTestVerbsItem(listViewModeBlock: @escaping ItemBlock) -> ItemProtocol? {
+        let options = ["All".localized, "Favorites".localized]
+        let currentOption = options.first
+        return PickableItem(title: "Verbs".localized,
+                            subtitle: currentOption ?? "",
+                            actionBlock: listViewModeBlock,
+                            options: options,
+                            isEnabled: false)
+    }
+    
+    func setupTestInputModeItem(listViewModeBlock: @escaping ItemBlock) -> ItemProtocol? {
+        let options = ["Answer options".localized, "Keyboard".localized]
+        let currentOption = options.last
+        return PickableItem(title: "Input mode".localized,
+                            subtitle: currentOption ?? "",
+                            actionBlock: listViewModeBlock,
+                            options: options,
+                            isEnabled: false)
     }
 }

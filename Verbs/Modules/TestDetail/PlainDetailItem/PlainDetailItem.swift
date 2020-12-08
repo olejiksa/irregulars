@@ -8,11 +8,10 @@
 
 struct PlainDetailItem {
     
-    let word: Word
+    let text: String
     
-    init?(word: Word?) {
-        guard let word = word else { return nil }
-        self.word = word
+    init(text: String) {
+        self.text = text
     }
 }
 

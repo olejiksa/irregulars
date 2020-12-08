@@ -9,6 +9,8 @@
 "Downgrade" = "Сброс";
 "Thank you" = "Спасибо за то, что Вы с нами!";
 "Listen to pronunciation" = "Слушайте произношение";
+"Pronunciation" = "Произношение";
+"Statistics" = "Статистика";
 "See a transcription" = "Смотрите транскрипцию";
 "Add unlimited items in Favorites" = "Храните неограниченное количество элементов в «Избранном»";
 "Find words faster using search" = "Находите слова быстрее через поиск";
@@ -72,13 +74,20 @@
 "Terms of use" = "Условия использования";
 "Personalize the app: pick an accent color to your liking" = "Персонализируйте приложение: выберите акцентный цвет по своему вкусу";
 "Examples" = "Примеры";
-"ThreeFormsTitle" = "Любая из трех форм";
-"SentenceTitle" = "По предложениям";
-"ThreeFormsSubtitle" = "Насколько хорошо Вы знаете случайно взятую форму неправильного глагола?";
-"SentenceSubtitle" = "Легко ли Вам подобрать правильную форму неправильного глагола по контексту?";
+"ThreeFormsTitle" = "Базовые";
+"SentenceTitle" = "Продвинутые";
+"ThreeFormsSubtitle" = "Проверьте свои знания всех трех форм и перевода неправильных глаголов, а также их понимание на слух";
+"SentenceSubtitle" = "Насколько хорошо Вы понимаете неправильные глаголы из контекста?";
 "Notifications" = "Уведомления";
 "Sentence" = "Предложение";
 "Choose a word from offered" = "Выберите слово из предложенных";
+"Vocabulary" = "Лексика";
+"Input mode" = "Режим ввода";
+"Answer options" = "Варианты ответа";
+"Keyboard" = "Клавиатура";
+"Listening" = "Аудирование";
+"Demo" = "Демонстрационные";
+"Missed word" = "Пропущенное слово";
 
 // Irregular Verbs
 

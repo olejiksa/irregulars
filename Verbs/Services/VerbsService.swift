@@ -25,8 +25,8 @@ final class VerbsService {
     
     var randomItem: Verb? { items.randomElement() }
 
-    var items: [Verb] = []
-    var groupedItems: [[Verb]] = []
+    private(set) var items: [Verb] = []
+    private(set) var groupedItems: [[Verb]] = []
     
     var shouldRegularVerbsBeShown: Bool = true {
         didSet {

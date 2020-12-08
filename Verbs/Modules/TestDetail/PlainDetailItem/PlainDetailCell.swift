@@ -22,6 +22,6 @@ extension PlainDetailCell: CellProtocol {
     func setup(with item: ItemProtocol) {
         guard let item = item as? PlainDetailItem else { return }
         
-        titleLabel.text = item.word.value
+        titleLabel.text = item.text
     }
 }

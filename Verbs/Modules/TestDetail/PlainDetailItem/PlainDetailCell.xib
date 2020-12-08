@@ -16,30 +16,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fb4-MN-WpJ">
-                        <rect key="frame" x="20" y="21.5" width="280" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fb4-MN-WpJ">
+                        <rect key="frame" x="20" y="17" width="280" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NgO-Ti-8bH">
-                        <rect key="frame" x="251" y="0.0" width="69" height="63"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <inset key="contentEdgeInsets" minX="20" minY="12" maxX="20" maxY="12"/>
-                        <inset key="imageEdgeInsets" minX="-20" minY="0.0" maxX="-20" maxY="0.0"/>
-                        <state key="normal" image="play.circle" catalog="system">
-                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
-                        </state>
-                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Fb4-MN-WpJ" secondAttribute="trailing" constant="20" id="55u-AO-h4d"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Fb4-MN-WpJ" secondAttribute="bottom" constant="17" id="BG8-Rd-m1R"/>
                     <constraint firstItem="Fb4-MN-WpJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="JdJ-ey-h84"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NgO-Ti-8bH" secondAttribute="bottom" id="Kyn-dd-7It"/>
-                    <constraint firstAttribute="trailing" secondItem="NgO-Ti-8bH" secondAttribute="trailing" id="SUC-E5-jYL"/>
-                    <constraint firstItem="NgO-Ti-8bH" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="gR1-iI-zhJ"/>
-                    <constraint firstItem="NgO-Ti-8bH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="l9u-id-mFz"/>
-                    <constraint firstItem="Fb4-MN-WpJ" firstAttribute="centerY" secondItem="NgO-Ti-8bH" secondAttribute="centerY" id="uhJ-D0-fId"/>
+                    <constraint firstItem="Fb4-MN-WpJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="bux-ag-32s"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -49,7 +37,4 @@
             <point key="canvasLocation" x="155.07246376811597" y="90.066964285714278"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="play.circle" catalog="system" width="128" height="121"/>
-    </resources>
 </document>

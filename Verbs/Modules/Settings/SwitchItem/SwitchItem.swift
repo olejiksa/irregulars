@@ -15,7 +15,7 @@ final class SwitchItem {
     
     init(text: String,
          isOn: Bool,
-         isEnabled: Bool,
+         isEnabled: Bool = true,
          actionBlock: @escaping BoolBlock) {
         self.text = text
         self.isOn = isOn

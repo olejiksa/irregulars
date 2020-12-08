@@ -16,10 +16,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="mnj-SY-Djw">
-                        <rect key="frame" x="0.0" y="0.0" width="453" height="74.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="463" height="76"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m47-xU-kFD" customClass="FormTextField" customModule="Verbs" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="304" height="74.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="311" height="76"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                 <userDefinedRuntimeAttributes>
@@ -32,7 +32,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ymp-yC-3fQ">
-                                <rect key="frame" x="304" y="0.0" width="74.5" height="74.5"/>
+                                <rect key="frame" x="311" y="0.0" width="76" height="76"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ymp-yC-3fQ" secondAttribute="height" multiplier="1:1" id="AwO-8o-UGI"/>
                                 </constraints>
@@ -45,12 +45,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24G-bR-9bO">
-                                <rect key="frame" x="378.5" y="0.0" width="74.5" height="74.5"/>
+                                <rect key="frame" x="387" y="0.0" width="76" height="76"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="3bg-Bd-aC2"/>
                                     <constraint firstAttribute="width" secondItem="24G-bR-9bO" secondAttribute="height" multiplier="1:1" id="caX-PM-3j9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                 <state key="normal" image="play.circle" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
                                 </state>
@@ -70,7 +71,7 @@
                     <constraint firstItem="mnj-SY-Djw" firstAttribute="top" secondItem="b8d-hi-M9m" secondAttribute="top" id="7yd-oz-3Uc"/>
                     <constraint firstItem="mnj-SY-Djw" firstAttribute="leading" secondItem="b8d-hi-M9m" secondAttribute="leading" id="DVI-dE-npP"/>
                     <constraint firstAttribute="bottom" secondItem="mnj-SY-Djw" secondAttribute="bottom" id="qJC-XC-ZWt"/>
-                    <constraint firstAttribute="trailing" secondItem="mnj-SY-Djw" secondAttribute="trailing" constant="10" id="wJH-2F-076"/>
+                    <constraint firstAttribute="trailing" secondItem="mnj-SY-Djw" secondAttribute="trailing" id="wJH-2F-076"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

@@ -23,20 +23,20 @@ final class TestsPresenter: NSObject {
     }
     
     func setupSections() {
-        let items = [TestItem(icon: .letters,
+        let items = [TestItem(icon: .studentdesk,
                               title: "ThreeFormsTitle".localized,
                               subtitle: "ThreeFormsSubtitle".localized),
-                     TestItem(icon: .sentences,
+                     TestItem(icon: .graduationcap,
                               title: "SentenceTitle".localized,
-                              subtitle: "SentenceSubtitle".localized)
+                              subtitle: "SentenceSubtitle".localized),
+//                     TestItem(icon: .mouth,
+//                              title: "Pronunciation".localized,
+//                              subtitle: "SentenceSubtitle".localized),
+//                     TestItem(icon: .chart,
+//                              title: "Statistics".localized,
+//                              subtitle: "SentenceSubtitle".localized)
         ]
         dataSource.setup([Section(items: items)])
-    }
-    
-    func selectWhenRegular() {
-        guard viewController?.splitViewController?.isCollapsed == false else { return }
-        guard viewController?.splitViewController?.secondaryViewController?.topViewController as? TestDetailViewController != nil else { return }
-        viewController?.selectSection(at: nil)
     }
 }
 
@@ -46,16 +46,13 @@ private extension TestsPresenter {
     
     func subscribe() {
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(didSelectedItemUpdate),
+                                               selector: #selector(didSelectedItemReset),
                                                name: Notification.Name.test,
                                                object: nil)
     }
     
-    @objc func didSelectedItemUpdate(_ notification: Notification) {
-        guard viewController?.splitViewController?.isCollapsed == false else { return }
-        let test = notification.userInfo?[Notification.Name.test] as? Test
-        selectedIndex = test?.indexPath
-        viewController?.selectSection(at: selectedIndex)
+    @objc func didSelectedItemReset(_ notification: Notification) {
+        selectedIndex = nil
     }
 }
 
@@ -65,6 +62,8 @@ extension TestsPresenter: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard indexPath != selectedIndex else { return }
         
         guard FeatureToggle.isPaid else {
             router?.goToPaywall()
@@ -77,6 +76,6 @@ extension TestsPresenter: UITableViewDelegate {
         default: break
         }
         
-        viewController?.selectSection(at: selectedIndex)
+        selectedIndex = indexPath
     }
 }

@@ -17,17 +17,18 @@ final class TestDetailPresenter: NSObject {
     private var items: [String]
     private let audioService: AudioService
     private let verbsService: VerbsService
-    private let rateService: RateService
+    private let languageService: LanguageService
     private var currentTestKind: TestKind?
     
     init(audioService: AudioService,
          verbsService: VerbsService,
-         rateService: RateService) {
+         languageService: LanguageService) {
         self.items = verbsService.items.map { $0.infinitive.value }
         self.audioService = audioService
         self.verbsService = verbsService
-        self.rateService = rateService
+        self.languageService = languageService
         super.init()
+        loadSettings()
         setupSections()
     }
 }
@@ -35,6 +36,12 @@ final class TestDetailPresenter: NSObject {
 // MARK: - Private
 
 private extension TestDetailPresenter {
+    
+    func loadSettings() {
+        verbsService.shouldRegularVerbsBeShown = UserDefaults.standard.bool(for: .shouldRegularVerbsBeShown)
+        verbsService.shouldDerivedFormsBeShown = UserDefaults.standard.bool(for: .shouldDerivedFormsBeShown)
+        verbsService.shouldTranslationBeShown = UserDefaults.standard.bool(for: .shouldTranslationBeShown)
+    }
     
     func setupSections() {
         configureRandomComposition()
@@ -48,56 +55,76 @@ private extension TestDetailPresenter {
         
         guard let verb = verbsService.verb(of: items.randomElement()),
               let index = items.firstIndex(of: verb.infinitive.value),
-              let simplePast = verb.simplePast.first,
-              let pastParticiple = verb.pastParticiple?.first
-        else { return }
+              let pastParticiple = verb.pastParticiple
+        else {
+            configureRandomComposition()
+            viewController?.reloadData()
+            return
+        }
         
         items.remove(at: index)
         
         currentTestKind = TestKind.allCases.randomElement()
         
+        let translation = languageService.hasTranslation ? "Translation".localized : "Infinitive".localized
+        
         switch currentTestKind {
         case .translation:
-            dataSource.setup([Section(header: "Translation".localized,
-                                      items: [PlainItem(title: verb.infinitive.value.localized)]),
+            let infinitiveItem = languageService.hasTranslation
+                ? InputItem(words: [verb.infinitive],
+                            playActionBlock: play,
+                            successActionBlock: didEndEntering,
+                            hintActionBlock: hint)
+                : nil
+            dataSource.setup([Section(header: translation,
+                                      items: [PlainDetailItem(text: verb.infinitive.value.localized)]),
                               Section(header: "Infinitive",
-                                      items: [InputItem(word: verb.infinitive,
-                                                        playActionBlock: play,
-                                                        successActionBlock: didEndEntering,
-                                                        hintActionBlock: hint)].compactMap { $0 }),
+                                      items: [infinitiveItem].compactMap { $0 }),
                               Section(header: "Simple Past",
-                                      items: [InputItem(word: simplePast,
+                                      items: [InputItem(words: verb.simplePast,
                                                         playActionBlock: play,
                                                         successActionBlock: didEndEntering,
                                                         hintActionBlock: hint)].compactMap { $0 }),
                               Section(header: "Past Participle",
-                                      items: [InputItem(word: pastParticiple,
+                                      items: [InputItem(words: pastParticiple,
                                                         playActionBlock: play,
                                                         successActionBlock: didEndEntering,
                                                         hintActionBlock: hint)].compactMap { $0 })])
         case .retranslation:
-            dataSource.setup([Section(header: "Translation".localized,
-                                      items: [PlainItem(title: verb.infinitive.value.localized)].compactMap { $0 }),
+            guard languageService.hasTranslation else {
+                configureRandomComposition()
+                viewController?.reloadData()
+                return
+            }
+            
+            dataSource.setup([Section(header: translation,
+                                      items: [PlainDetailItem(text: verb.infinitive.value.localized)].compactMap { $0 }),
                               Section(header: "Infinitive",
-                                      items: [InputItem(word: verb.infinitive,
+                                      items: [InputItem(words: [verb.infinitive],
                                                         playActionBlock: play,
                                                         successActionBlock: didEndEntering,
                                                         hintActionBlock: hint)].compactMap { $0 })])
         case .listening:
+            guard UserDefaults.standard.bool(for: .listening) else {
+                configureRandomComposition()
+                viewController?.reloadData()
+                return
+            }
+                    
             dataSource.setup([Section(header: "Infinitive",
-                                      items: [InputItem(word: verb.infinitive,
+                                      items: [InputItem(words: [verb.infinitive],
                                                         playActionBlock: play,
                                                         successActionBlock: didEndEntering,
                                                         hintActionBlock: hint,
                                                         isAudio: true)].compactMap { $0 }),
                               Section(header: "Simple Past",
-                                      items: [InputItem(word: simplePast,
+                                      items: [InputItem(words: verb.simplePast,
                                                         playActionBlock: play,
                                                         successActionBlock: didEndEntering,
                                                         hintActionBlock: hint,
                                                         isAudio: true)].compactMap { $0 }),
                               Section(header: "Past Participle",
-                                      items: [InputItem(word: pastParticiple,
+                                      items: [InputItem(words: pastParticiple,
                                                         playActionBlock: play,
                                                         successActionBlock: didEndEntering,
                                                         hintActionBlock: hint,

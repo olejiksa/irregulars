@@ -23,6 +23,7 @@ final class DetailAssembly: AssemblyProtocol {
     func viewController() -> some DetailViewController {
         let presenter = DetailPresenter(audioService: .init(),
                                         languageService: .init(),
+                                        sentencesService: .init(),
                                         verb: verb)
         let router = DetailRouter(navigationController: navigationController)
         presenter.router = router

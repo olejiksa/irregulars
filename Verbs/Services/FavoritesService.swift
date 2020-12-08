@@ -26,8 +26,8 @@ final class FavoritesService {
     
     var randomItem: Verb? { items.randomElement() }
 
-    var items: [Verb] = []
-    var groupedItems: [[Verb]] = []
+    private(set) var items: [Verb] = []
+    private(set) var groupedItems: [[Verb]] = []
     
     var shouldTranslationBeShown: Bool = false {
         didSet {
@@ -44,9 +44,11 @@ final class FavoritesService {
     
     func indexPath(of infinitive: String?) -> IndexPath? {
         var indexPath: IndexPath?
-        for index in 0..<items.count {
-            if items[index].infinitive.value == infinitive {
-                indexPath = IndexPath(row: index, section: 0)
+        for index in 0..<groupedItems.count {
+            for subindex in 0..<groupedItems[index].count {
+                if groupedItems[index][subindex].infinitive.value == infinitive {
+                    indexPath = IndexPath(row: subindex, section: index)
+                }
             }
         }
         

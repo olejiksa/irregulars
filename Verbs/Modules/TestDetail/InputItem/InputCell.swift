@@ -14,7 +14,7 @@ final class InputCell: UITableViewCell {
     @IBOutlet private weak var playButton: UIButton!
     
     private var item: InputItem?
-    private var expectedValue: String?
+    private var expectedValues: [String]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,13 +31,13 @@ final class InputCell: UITableViewCell {
 private extension InputCell {
     
     @IBAction func didHintTap() {
-        guard let text = expectedValue else { return }
+        guard let text = expectedValues?.first else { return }
         item?.hintActionBlock(text)
     }
     
     @IBAction func didPlayTap() {
-        guard let text = expectedValue else { return }
-        item?.playActionBlock(text, play, stop)
+        guard let text = expectedValues?.first else { return }
+        item?.playActionBlock?(text, play, stop)
     }
 }
 
@@ -53,7 +53,7 @@ extension InputCell: CellProtocol {
         
         textField.text = ""
         
-        expectedValue = item.word.value
+        expectedValues = item.words.map { $0.value }
         
         playButton.isHidden = !item.isAudio
     }
@@ -79,7 +79,8 @@ extension InputCell: UITextFieldDelegate {
     func textField(_ textField: UITextField,
                    shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool {
-        if textField.text?.appending(string) == expectedValue {
+        guard let text = textField.text?.appending(string) else { return true }
+        if expectedValues?.contains(text) == true {
             item?.isFilled = true
             item?.successActionBlock()
         } else {

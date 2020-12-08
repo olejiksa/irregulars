@@ -8,19 +8,19 @@
 
 final class InputItem {
     
-    let word: Word
+    let words: [Word]
     let successActionBlock: Block
-    let playActionBlock: ((String, @escaping Block, @escaping Block) -> ())
+    let playActionBlock: ((String, @escaping Block, @escaping Block) -> ())?
     let hintActionBlock: ((String) -> ())
     let isAudio: Bool
     var isFilled: Bool = false
     
-    init(word: Word,
-         playActionBlock: @escaping ((String, @escaping Block, @escaping Block) -> ()),
+    init(words: [Word],
+         playActionBlock: ((String, @escaping Block, @escaping Block) -> ())? = nil,
          successActionBlock: @escaping Block,
          hintActionBlock: @escaping ((String) -> ()),
          isAudio: Bool = false) {
-        self.word = word
+        self.words = words
         self.playActionBlock = playActionBlock
         self.successActionBlock = successActionBlock
         self.hintActionBlock = hintActionBlock
