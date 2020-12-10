@@ -112,6 +112,10 @@
 		EB8325A22556EC9F005E02C1 /* AssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325A12556EC9F005E02C1 /* AssemblyProtocol.swift */; };
 		EB8325A62556EFF0005E02C1 /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325A52556EFF0005E02C1 /* FavoritesService.swift */; };
 		EB9A4FBC252E8D9800443D47 /* DeeplinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */; };
+		EB9C5B9B258295C70086A3D5 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9C5B99258295C70086A3D5 /* SliderCell.swift */; };
+		EB9C5B9C258295C70086A3D5 /* SliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB9C5B9A258295C70086A3D5 /* SliderCell.xib */; };
+		EB9C5BA2258296EC0086A3D5 /* SliderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9C5BA1258296EC0086A3D5 /* SliderItem.swift */; };
+		EB9C5BA82582A3F00086A3D5 /* PlaybackSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9C5BA72582A3F00086A3D5 /* PlaybackSpeed.swift */; };
 		EBA644B4255988FC0012B973 /* ListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA644B3255988FC0012B973 /* ListState.swift */; };
 		EBA644BB255A59CF0012B973 /* ActionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA644BA255A59CF0012B973 /* ActionItem.swift */; };
 		EBA644C0255A5A1A0012B973 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA644BE255A5A1A0012B973 /* ActionCell.swift */; };
@@ -309,6 +313,10 @@
 		EB8325A12556EC9F005E02C1 /* AssemblyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyProtocol.swift; sourceTree = "<group>"; };
 		EB8325A52556EFF0005E02C1 /* FavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesService.swift; sourceTree = "<group>"; };
 		EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkService.swift; sourceTree = "<group>"; };
+		EB9C5B99258295C70086A3D5 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
+		EB9C5B9A258295C70086A3D5 /* SliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
+		EB9C5BA1258296EC0086A3D5 /* SliderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderItem.swift; sourceTree = "<group>"; };
+		EB9C5BA72582A3F00086A3D5 /* PlaybackSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackSpeed.swift; sourceTree = "<group>"; };
 		EBA644B3255988FC0012B973 /* ListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListState.swift; sourceTree = "<group>"; };
 		EBA644BA255A59CF0012B973 /* ActionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionItem.swift; sourceTree = "<group>"; };
 		EBA644BE255A5A1A0012B973 /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
@@ -421,14 +429,14 @@
 			path = PlainDetailItem;
 			sourceTree = "<group>";
 		};
-		EB269981256D3F8D007CCF2E /* PickableCell */ = {
+		EB269981256D3F8D007CCF2E /* PickableItem */ = {
 			isa = PBXGroup;
 			children = (
 				EB269982256D3F9F007CCF2E /* PickableItem.swift */,
 				EB269986256D3FB8007CCF2E /* PickableCell.swift */,
 				EB269987256D3FB8007CCF2E /* PickableCell.xib */,
 			);
-			path = PickableCell;
+			path = PickableItem;
 			sourceTree = "<group>";
 		};
 		EB2E4B1E257258CA005B343A /* AccentColor */ = {
@@ -668,6 +676,16 @@
 			path = Favorites;
 			sourceTree = "<group>";
 		};
+		EB9C5B98258295620086A3D5 /* SliderItem */ = {
+			isa = PBXGroup;
+			children = (
+				EB9C5BA1258296EC0086A3D5 /* SliderItem.swift */,
+				EB9C5B99258295C70086A3D5 /* SliderCell.swift */,
+				EB9C5B9A258295C70086A3D5 /* SliderCell.xib */,
+			);
+			path = SliderItem;
+			sourceTree = "<group>";
+		};
 		EBA644B9255A599B0012B973 /* ActionItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -872,6 +890,7 @@
 				EB2E4BCA2576B59F005B343A /* Test.swift */,
 				EBD2C4EE257E9DBB0023AED4 /* TestKind.swift */,
 				EBD2C508257FDC780023AED4 /* Sentence.swift */,
+				EB9C5BA72582A3F00086A3D5 /* PlaybackSpeed.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -909,7 +928,8 @@
 		EBF4A144252ED2B8003E3A44 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				EB269981256D3F8D007CCF2E /* PickableCell */,
+				EB9C5B98258295620086A3D5 /* SliderItem */,
+				EB269981256D3F8D007CCF2E /* PickableItem */,
 				EBA644B9255A599B0012B973 /* ActionItem */,
 				EB7B856B253B0A7D00542D3C /* DisclosureItem */,
 				EB4509D72541E61700D31858 /* RightDetailItem */,
@@ -1061,6 +1081,7 @@
 				EBB3BC15251F4BAA006E0DC7 /* irregulars.json in Resources */,
 				EB269989256D3FB9007CCF2E /* PickableCell.xib in Resources */,
 				EB2E4B9725741832005B343A /* pink@2x.png in Resources */,
+				EB9C5B9C258295C70086A3D5 /* SliderCell.xib in Resources */,
 				EBA644C1255A5A1A0012B973 /* ActionCell.xib in Resources */,
 				EB4509E32541E69400D31858 /* RightDetailCell.xib in Resources */,
 				EB7B857D253B118F00542D3C /* DisclosureCell.xib in Resources */,
@@ -1148,6 +1169,7 @@
 				EBB01C0925217F5400BB646B /* Language.swift in Sources */,
 				EB269992256E29DA007CCF2E /* TabBarItem.swift in Sources */,
 				EB450A49254B1A2B00D31858 /* PlainCell.swift in Sources */,
+				EB9C5B9B258295C70086A3D5 /* SliderCell.swift in Sources */,
 				EBB3BC10251F3545006E0DC7 /* KeyboardService.swift in Sources */,
 				EBEB1D92251F15B40019972C /* VerbsService.swift in Sources */,
 				EBD476D0254BD0BF0033067B /* FadeTableView.swift in Sources */,
@@ -1180,12 +1202,14 @@
 				EB8325A22556EC9F005E02C1 /* AssemblyProtocol.swift in Sources */,
 				EB2F5E16251F71DD007DCF60 /* AudioService.swift in Sources */,
 				EBF4A147252ED2CA003E3A44 /* SettingsViewController.swift in Sources */,
+				EB9C5BA82582A3F00086A3D5 /* PlaybackSpeed.swift in Sources */,
 				EBF97C95256254DC009FFFBA /* PaywallAssembly.swift in Sources */,
 				EBD2C4E5257E8ACA0023AED4 /* SettingsItemsFactory.swift in Sources */,
 				EBF00FBE257BD324002FA49B /* SentenceViewController.swift in Sources */,
 				EB8325A62556EFF0005E02C1 /* FavoritesService.swift in Sources */,
 				EB2E4BA025741880005B343A /* AppIcon.swift in Sources */,
 				EB7B85652537FAE000542D3C /* Word.swift in Sources */,
+				EB9C5BA2258296EC0086A3D5 /* SliderItem.swift in Sources */,
 				EB2F5E0D251F543A007DCF60 /* DetailViewController.swift in Sources */,
 				EBB3BC09251F2ADB006E0DC7 /* String.swift in Sources */,
 				EB450A33254B157B00D31858 /* SectionDataSource.swift in Sources */,
@@ -1261,7 +1285,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1269,7 +1293,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1285,7 +1309,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1293,7 +1317,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1427,7 +1451,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1435,7 +1459,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1451,7 +1475,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1459,7 +1483,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

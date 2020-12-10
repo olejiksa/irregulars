@@ -8,4 +8,5 @@
 
 typealias Block = () -> Void
 typealias BoolBlock = (Bool) -> Void
+typealias IntBlock = (Int) -> Void
 typealias ItemBlock = (ItemProtocol) -> Void

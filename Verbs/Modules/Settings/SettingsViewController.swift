@@ -71,7 +71,8 @@ private extension SettingsViewController {
                            DisclosureCell.self,
                            RightDetailCell.self,
                            PickableCell.self,
-                           ActionCell.self)
+                           ActionCell.self,
+                           SliderCell.self)
         
         self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.tableView = tableView

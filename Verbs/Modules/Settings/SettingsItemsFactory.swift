@@ -33,8 +33,7 @@ final class SettingsItemsFactory {
     
     func setupGeneralSection(languageBlock: @escaping ItemBlock,
                              accentColorBlock: @escaping ItemBlock,
-                             notificationsBlock: @escaping BoolBlock,
-                             playbackSpeedBlock: @escaping ItemBlock) -> Section {
+                             notificationsBlock: @escaping BoolBlock) -> Section {
         let accentColor = AccentColor.current.rawValue.capitalized.localized
         let items: [ItemProtocol] =  [RightDetailItem(title: "Language".localized,
                                                       subtitle: languageService.current.description,
@@ -43,9 +42,18 @@ final class SettingsItemsFactory {
                                                       subtitle: accentColor,
                                                       actionBlock: accentColorBlock,
                                                       hasDisclosureItem: true,
-                                                      isEnabled: FeatureToggle.isPaid),
-                                      setupPlaybackSpeedItem(playbackSpeedBlock: playbackSpeedBlock)].compactMap { $0 }
+                                                      isEnabled: FeatureToggle.isPaid)].compactMap { $0 }
         return .init(header: "General".localized, items: items)
+    }
+    
+    func setupPlaybackSpeedSection(playbackSpeedBlock: @escaping IntBlock) -> Section {
+        let index = UserDefaults.standard.integer(for: .playbackSpeed)
+        return .init(header: "Playback speed".localized,
+                     items: [SliderItem(leadingIcon: .tortoise,
+                                        trailingIcon: .hare,
+                                        steps: 5,
+                                        index: index,
+                                        playbackSpeedBlock: playbackSpeedBlock)])
     }
     
     func setupVocabularySections(regularVerbsBlock: @escaping BoolBlock,
@@ -152,17 +160,5 @@ private extension SettingsItemsFactory {
                             actionBlock: listViewModeBlock,
                             options: options,
                             isEnabled: false)
-    }
-    
-    func setupPlaybackSpeedItem(playbackSpeedBlock: @escaping ItemBlock) -> ItemProtocol? {
-        let options = ["Fast".localized, "Slow".localized]
-        let currentOption = !UserDefaults.standard.bool(for: .shouldPlaybackSpeedBeSlowedDown)
-            ? options.first
-            : options.last
-        return PickableItem(title: "Playback speed".localized,
-                            subtitle: currentOption ?? "",
-                            actionBlock: playbackSpeedBlock,
-                            options: options,
-                            isEnabled: FeatureToggle.isPaid)
     }
 }

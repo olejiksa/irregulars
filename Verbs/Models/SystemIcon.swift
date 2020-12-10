@@ -16,6 +16,8 @@ enum SystemIcon: String {
     case folder
     case eye
     case ear
+    case tortoise = "tortoise.fill"
+    case hare = "hare.fill"
     case studentdesk
     case graduationcap = "graduationcap.fill"
     case paintpalette

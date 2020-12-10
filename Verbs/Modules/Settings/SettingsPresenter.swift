@@ -48,8 +48,8 @@ private extension SettingsPresenter {
                                                  resetBlock: willReset),
              itemsFactory.setupGeneralSection(languageBlock: willShowLanguageSettings,
                                               accentColorBlock: willGoToAccentColor,
-                                              notificationsBlock: didDerivedFormsOptionChange,
-                                              playbackSpeedBlock: didPlaybackSpeedChange)] +
+                                              notificationsBlock: didDerivedFormsOptionChange),
+             itemsFactory.setupPlaybackSpeedSection(playbackSpeedBlock: didPlaybackSpeedChange)] +
                 itemsFactory.setupVocabularySections(regularVerbsBlock: didRegularVerbsOptionChange,
                                                      derivativesBlock: didDerivedFormsOptionChange) +
                 [itemsFactory.setupListSection(listViewModeBlock: didListViewChange),
@@ -92,14 +92,8 @@ private extension SettingsPresenter {
         viewController?.reloadData()
     }
     
-    func didPlaybackSpeedChange(_ sender: ItemProtocol) {
-        guard let item = sender as? PickableItem else { return }
-        let value = item.subtitle == "Slow".localized
-        UserDefaults.standard.set(value, for: .shouldPlaybackSpeedBeSlowedDown)
-        NotificationCenter.default.post(name: .list,
-                                        object: nil,
-                                        userInfo: [Notification.Name.list: value])
-        viewController?.reloadData()
+    func didPlaybackSpeedChange(_ value: Int) {
+        UserDefaults.standard.set(value, for: .playbackSpeed)
     }
     
     func willShowLanguageSettings(_ sender: ItemProtocol) {
