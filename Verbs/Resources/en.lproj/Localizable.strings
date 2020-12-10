@@ -88,6 +88,15 @@
 "Listening" = "Listening";
 "Demo" = "Demo";
 "Missed word" = "Missed word";
+"Infinitive" = "Infinitive";
+"Simple Past" = "Simple Past";
+"Past Participle" = "Past Participle";
+"RegularVerbsFooter" = "Determines the display of verbs with both regular and irregular forms";
+"DerivativesFooter" = "Determines the display of irregular verbs with the prefixes be-, for (e) -, in-, inter-, mis-, off-, out-, over-, pre-, under-, with- and others";
+"Listen and write" = "Listen and write";
+"Playback speed" = "Playback speed";
+"Fast" = "Fast";
+"Slow" = "Slow";
 
 // Irregular Verbs
 

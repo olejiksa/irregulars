@@ -1309,7 +1309,7 @@
             "transcription": "/ˈfrəʊz(ə)n/"
         }],
         "hasRegular": false,
-        "isDerived": true
+        "isDerived": false
     },
     {
         "infinitive": {
@@ -2191,10 +2191,6 @@
             "value": "must",
             "transcription": "/mʌst/"
         },
-        "simplePast": [{
-            "value": "had to",
-            "transcription": "/hæd tuː/"
-        }],
         "hasRegular": false,
         "isDerived": false
     },

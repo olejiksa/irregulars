@@ -66,7 +66,7 @@ struct VerbsWidgetEntryView: View {
                     .lineLimit(1)
                 Text("Simple Past")
                     .font(.caption)
-                if let simplePast = entry.verb.simplePast.first {
+                if let simplePast = entry.verb.simplePast?.first {
                     Text(simplePast.value)
                         .bold()
                         .truncationMode(.head)
@@ -95,7 +95,7 @@ struct VerbsWidgetEntryView: View {
                         Text(entry.verb.infinitive.transcription)
                             .lineLimit(1)
                     }
-                    if let simplePast = entry.verb.simplePast.first {
+                    if let simplePast = entry.verb.simplePast?.first {
                         VStack(alignment: .center, spacing: 10) {
                             Text("Simple Past")
                                 .font(.caption)

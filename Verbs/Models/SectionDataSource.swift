@@ -46,4 +46,8 @@ extension SectionDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         sectionArray.header(section)
     }
+    
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        sectionArray.footer(section)
+    }
 }

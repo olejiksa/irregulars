@@ -7,6 +7,7 @@
 //
 
 enum TestKind: CaseIterable {
+    case threeForms
     case translation
     case retranslation
     case listening

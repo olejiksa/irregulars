@@ -10,9 +10,11 @@ struct Section {
     
     let header: String?
     let items: [ItemProtocol]
+    let footer: String?
     
-    init(header: String? = nil, items: [ItemProtocol]) {
+    init(header: String? = nil, items: [ItemProtocol], footer: String? = nil) {
         self.header = header
         self.items = items
+        self.footer = footer
     }
 }

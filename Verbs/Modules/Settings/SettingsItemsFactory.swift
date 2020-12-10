@@ -33,35 +33,34 @@ final class SettingsItemsFactory {
     
     func setupGeneralSection(languageBlock: @escaping ItemBlock,
                              accentColorBlock: @escaping ItemBlock,
-                             notificationsBlock: @escaping BoolBlock) -> Section {
+                             notificationsBlock: @escaping BoolBlock,
+                             playbackSpeedBlock: @escaping ItemBlock) -> Section {
         let accentColor = AccentColor.current.rawValue.capitalized.localized
-        return .init(header: "General".localized,
-                     items: [RightDetailItem(title: "Language".localized,
-                                             subtitle: languageService.current.description,
-                                             actionBlock: languageBlock),
-                             RightDetailItem(title: "Accent color".localized,
-                                             subtitle: accentColor,
-                                             actionBlock: accentColorBlock,
-                                             hasDisclosureItem: true,
-                                             isEnabled: FeatureToggle.isPaid),
-//                             SwitchItem(text: "Notifications".localized,
-//                                        isOn: false,
-//                                        isEnabled: false,
-//                                        actionBlock: notificationsBlock)
-                     ])
+        let items: [ItemProtocol] =  [RightDetailItem(title: "Language".localized,
+                                                      subtitle: languageService.current.description,
+                                                      actionBlock: languageBlock),
+                                      RightDetailItem(title: "Accent color".localized,
+                                                      subtitle: accentColor,
+                                                      actionBlock: accentColorBlock,
+                                                      hasDisclosureItem: true,
+                                                      isEnabled: FeatureToggle.isPaid),
+                                      setupPlaybackSpeedItem(playbackSpeedBlock: playbackSpeedBlock)].compactMap { $0 }
+        return .init(header: "General".localized, items: items)
     }
     
-    func setupVocabularySection(regularVerbsBlock: @escaping BoolBlock,
-                                derivativesBlock: @escaping BoolBlock) -> Section {
-        .init(header: "Vocabulary".localized,
-              items: [SwitchItem(text: "Regular verbs (-ed)".localized,
-                                 isOn: UserDefaults.standard.bool(for: .shouldRegularVerbsBeShown),
-                                 isEnabled: FeatureToggle.isPaid,
-                                 actionBlock: regularVerbsBlock),
-                      SwitchItem(text: "Derivatives".localized,
-                                 isOn: UserDefaults.standard.bool(for: .shouldDerivedFormsBeShown),
-                                 isEnabled: FeatureToggle.isPaid,
-                                 actionBlock: derivativesBlock)])
+    func setupVocabularySections(regularVerbsBlock: @escaping BoolBlock,
+                                 derivativesBlock: @escaping BoolBlock) -> [Section] {
+        [.init(header: "Vocabulary".localized,
+               items: [SwitchItem(text: "Regular verbs (-ed)".localized,
+                                  isOn: UserDefaults.standard.bool(for: .shouldRegularVerbsBeShown),
+                                  isEnabled: FeatureToggle.isPaid,
+                                  actionBlock: regularVerbsBlock)],
+               footer: "RegularVerbsFooter".localized),
+         .init(items: [SwitchItem(text: "Derivatives".localized,
+                                  isOn: UserDefaults.standard.bool(for: .shouldDerivedFormsBeShown),
+                                  isEnabled: FeatureToggle.isPaid,
+                                  actionBlock: derivativesBlock)],
+               footer: "DerivativesFooter".localized)]
     }
     
     func setupListSection(listViewModeBlock: @escaping ItemBlock) -> Section {
@@ -76,7 +75,7 @@ final class SettingsItemsFactory {
 //                setupTestVerbsItem(listViewModeBlock: listViewModeBlock),
 //                      setupTestInputModeItem(listViewModeBlock: listViewModeBlock),
                       SwitchItem(text: "Listening".localized,
-                                 isOn: UserDefaults.standard.bool(for: .shouldDerivedFormsBeShown),
+                                 isOn: UserDefaults.standard.bool(for: .listening),
                                  isEnabled: FeatureToggle.isPaid,
                                  actionBlock: listeningBlock)].compactMap { $0 })
     }
@@ -153,5 +152,17 @@ private extension SettingsItemsFactory {
                             actionBlock: listViewModeBlock,
                             options: options,
                             isEnabled: false)
+    }
+    
+    func setupPlaybackSpeedItem(playbackSpeedBlock: @escaping ItemBlock) -> ItemProtocol? {
+        let options = ["Fast".localized, "Slow".localized]
+        let currentOption = !UserDefaults.standard.bool(for: .shouldPlaybackSpeedBeSlowedDown)
+            ? options.first
+            : options.last
+        return PickableItem(title: "Playback speed".localized,
+                            subtitle: currentOption ?? "",
+                            actionBlock: playbackSpeedBlock,
+                            options: options,
+                            isEnabled: FeatureToggle.isPaid)
     }
 }

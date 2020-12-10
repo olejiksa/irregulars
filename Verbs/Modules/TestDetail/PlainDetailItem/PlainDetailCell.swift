@@ -11,6 +11,12 @@ import UIKit
 final class PlainDetailCell: UITableViewCell {
         
     @IBOutlet private weak var titleLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        selectionStyle = .none
+    }
 }
 
 // MARK: - CellProtocol

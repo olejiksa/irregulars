@@ -55,6 +55,7 @@ private extension TestDetailPresenter {
         
         guard let verb = verbsService.verb(of: items.randomElement()),
               let index = items.firstIndex(of: verb.infinitive.value),
+              let simplePast = verb.simplePast,
               let pastParticiple = verb.pastParticiple
         else {
             configureRandomComposition()
@@ -66,26 +67,40 @@ private extension TestDetailPresenter {
         
         currentTestKind = TestKind.allCases.randomElement()
         
-        let translation = languageService.hasTranslation ? "Translation".localized : "Infinitive".localized
-        
         switch currentTestKind {
-        case .translation:
-            let infinitiveItem = languageService.hasTranslation
-                ? InputItem(words: [verb.infinitive],
-                            playActionBlock: play,
-                            successActionBlock: didEndEntering,
-                            hintActionBlock: hint)
-                : nil
-            dataSource.setup([Section(header: translation,
-                                      items: [PlainDetailItem(text: verb.infinitive.value.localized)]),
-                              Section(header: "Infinitive",
-                                      items: [infinitiveItem].compactMap { $0 }),
-                              Section(header: "Simple Past",
-                                      items: [InputItem(words: verb.simplePast,
+        case .threeForms:
+            dataSource.setup([Section(header: "Infinitive".localized,
+                                      items: [PlainDetailItem(text: verb.infinitive.value)]),
+                              Section(header: "Simple Past".localized,
+                                      items: [InputItem(words: simplePast,
                                                         playActionBlock: play,
                                                         successActionBlock: didEndEntering,
                                                         hintActionBlock: hint)].compactMap { $0 }),
-                              Section(header: "Past Participle",
+                              Section(header: "Past Participle".localized,
+                                      items: [InputItem(words: pastParticiple,
+                                                        playActionBlock: play,
+                                                        successActionBlock: didEndEntering,
+                                                        hintActionBlock: hint)].compactMap { $0 })])
+        case .translation:
+            guard languageService.hasTranslation else {
+                configureRandomComposition()
+                viewController?.reloadData()
+                return
+            }
+            
+            dataSource.setup([Section(header: "Translation".localized,
+                                      items: [PlainDetailItem(text: verb.infinitive.value.localized)]),
+                              Section(header: "Infinitive".localized,
+                                      items: [InputItem(words: [verb.infinitive],
+                                                        playActionBlock: play,
+                                                        successActionBlock: didEndEntering,
+                                                        hintActionBlock: hint)].compactMap { $0 }),
+                              Section(header: "Simple Past".localized,
+                                      items: [InputItem(words: simplePast,
+                                                        playActionBlock: play,
+                                                        successActionBlock: didEndEntering,
+                                                        hintActionBlock: hint)].compactMap { $0 }),
+                              Section(header: "Past Participle".localized,
                                       items: [InputItem(words: pastParticiple,
                                                         playActionBlock: play,
                                                         successActionBlock: didEndEntering,
@@ -97,9 +112,9 @@ private extension TestDetailPresenter {
                 return
             }
             
-            dataSource.setup([Section(header: translation,
+            dataSource.setup([Section(header: "Translation".localized,
                                       items: [PlainDetailItem(text: verb.infinitive.value.localized)].compactMap { $0 }),
-                              Section(header: "Infinitive",
+                              Section(header: "Infinitive".localized,
                                       items: [InputItem(words: [verb.infinitive],
                                                         playActionBlock: play,
                                                         successActionBlock: didEndEntering,
@@ -111,19 +126,20 @@ private extension TestDetailPresenter {
                 return
             }
                     
-            dataSource.setup([Section(header: "Infinitive",
+            dataSource.setup([Section(items: [PlainDetailItem(text: "Listen and write".localized)].compactMap { $0 }),
+                              Section(header: "Infinitive".localized,
                                       items: [InputItem(words: [verb.infinitive],
                                                         playActionBlock: play,
                                                         successActionBlock: didEndEntering,
                                                         hintActionBlock: hint,
                                                         isAudio: true)].compactMap { $0 }),
-                              Section(header: "Simple Past",
-                                      items: [InputItem(words: verb.simplePast,
+                              Section(header: "Simple Past".localized,
+                                      items: [InputItem(words: simplePast,
                                                         playActionBlock: play,
                                                         successActionBlock: didEndEntering,
                                                         hintActionBlock: hint,
                                                         isAudio: true)].compactMap { $0 }),
-                              Section(header: "Past Participle",
+                              Section(header: "Past Participle".localized,
                                       items: [InputItem(words: pastParticiple,
                                                         playActionBlock: play,
                                                         successActionBlock: didEndEntering,

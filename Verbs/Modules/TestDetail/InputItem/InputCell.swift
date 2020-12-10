@@ -80,7 +80,7 @@ extension InputCell: UITextFieldDelegate {
                    shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool {
         guard let text = textField.text?.appending(string) else { return true }
-        if expectedValues?.contains(text) == true {
+        if expectedValues?.contains(where: { $0.lowercased() == text.lowercased() }) == true {
             item?.isFilled = true
             item?.successActionBlock()
         } else {

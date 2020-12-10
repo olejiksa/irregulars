@@ -43,24 +43,25 @@ private extension SettingsPresenter {
     }
     
     func setupItems() {
-        dataSource.setup([
-            itemsFactory.setupActivationSection(upgradeBlock: willBuy,
-                                                resetBlock: willReset),
-            itemsFactory.setupGeneralSection(languageBlock: willShowLanguageSettings,
-                                             accentColorBlock: willGoToAccentColor,
-                                             notificationsBlock: didDerivedFormsOptionChange),
-            itemsFactory.setupVocabularySection(regularVerbsBlock: didRegularVerbsOptionChange,
-                                                derivativesBlock: didDerivedFormsOptionChange),
-            itemsFactory.setupListSection(listViewModeBlock: didListViewChange),
-            itemsFactory.setupTestsSection(listViewModeBlock: didListViewChange,
-                                           listeningBlock: didListeningChange),
-            itemsFactory.setupLinksSection(rateBlock: willRate,
-                                           privacyBlock: willGoToPrivacyPolicy,
-                                           termsBlock: willGoToTermsOfUse,
-                                           mailBlock: willGoToMail,
-                                           shareBlock: willShare),
-            itemsFactory.setupAboutSection(upgradeBlock: willBuy)
-        ])
+        dataSource.setup(
+            [itemsFactory.setupActivationSection(upgradeBlock: willBuy,
+                                                 resetBlock: willReset),
+             itemsFactory.setupGeneralSection(languageBlock: willShowLanguageSettings,
+                                              accentColorBlock: willGoToAccentColor,
+                                              notificationsBlock: didDerivedFormsOptionChange,
+                                              playbackSpeedBlock: didPlaybackSpeedChange)] +
+                itemsFactory.setupVocabularySections(regularVerbsBlock: didRegularVerbsOptionChange,
+                                                     derivativesBlock: didDerivedFormsOptionChange) +
+                [itemsFactory.setupListSection(listViewModeBlock: didListViewChange),
+                 itemsFactory.setupTestsSection(listViewModeBlock: didListViewChange,
+                                                listeningBlock: didListeningChange),
+                 itemsFactory.setupLinksSection(rateBlock: willRate,
+                                                privacyBlock: willGoToPrivacyPolicy,
+                                                termsBlock: willGoToTermsOfUse,
+                                                mailBlock: willGoToMail,
+                                                shareBlock: willShare),
+                 itemsFactory.setupAboutSection(upgradeBlock: willBuy)]
+        )
     }
     
     func didRegularVerbsOptionChange(_ value: Bool) {
@@ -85,6 +86,16 @@ private extension SettingsPresenter {
         guard let item = sender as? PickableItem else { return }
         let value = item.subtitle == "Translation".localized
         UserDefaults.standard.set(value, for: .shouldTranslationBeShown)
+        NotificationCenter.default.post(name: .list,
+                                        object: nil,
+                                        userInfo: [Notification.Name.list: value])
+        viewController?.reloadData()
+    }
+    
+    func didPlaybackSpeedChange(_ sender: ItemProtocol) {
+        guard let item = sender as? PickableItem else { return }
+        let value = item.subtitle == "Slow".localized
+        UserDefaults.standard.set(value, for: .shouldPlaybackSpeedBeSlowedDown)
         NotificationCenter.default.post(name: .list,
                                         object: nil,
                                         userInfo: [Notification.Name.list: value])

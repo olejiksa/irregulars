@@ -24,6 +24,10 @@ struct SectionArray {
         sections.filter { !$0.items.isEmpty }[index].header
     }
     
+    func footer(_ index: Int) -> String? {
+        sections.filter { !$0.items.isEmpty }[index].footer
+    }
+    
     func count(_ index: Int) -> Int {
         sections.filter { !$0.items.isEmpty }[index].items.count
     }

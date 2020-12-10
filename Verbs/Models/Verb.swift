@@ -11,7 +11,7 @@ import Foundation
 struct Verb: Codable {
     
     let infinitive: Word
-    let simplePast: [Word]
+    let simplePast: [Word]?
     let pastParticiple: [Word]?
     let hasRegular: Bool
     let isDerived: Bool

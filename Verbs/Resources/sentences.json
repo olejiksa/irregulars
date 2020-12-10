@@ -1,154 +1,1078 @@
 [
-	{
-		"word": "rise",
-		"sentences": ["Babylonia had risen into supreme importance for Jewish life at about the time when the Mishnah was completed", "Her temper rose with her voice"]
-	},
-	{
-		"word": "go",
-		"sentences": ["She went to the hospital yesterday", "Once the fire of passion was gone, it was embarrassing"]
-	},
-	{
-		"word": "abide",
-		"sentences": ["Everyone should abide by our social norms", "She abode at New York", "He has always abided by his promises"]
-	},
-	{
-		"word": "alight",
-		"sentences": ["Do not alight while the train is still in motion ", "His mind alighted on several possible answers", "Also crossed two stations, nearby her two passengers alit"]
-	},
-	{
-		"word": "arise",
-		"sentences": ["How did the quarrel arise?", "The topic arose naturally in the conversation", "A number of problems have arisen"]
-	},
-	{
-		"word": "awake",
-		"sentences": ["I lay awake all night", "The noise awoke me from my sleep", "She was awoken by the noise"]
-	},
-	{
-		"word": "backslide",
-		"sentences": ["Many of the patients backslide into drug and alcohol abuse", "So, Christians who have backslid away from God are really doing so because they want to", "Mr Jack was once active in the church, but he has backslidden"]
-	},
-	{
-		"word": "be",
-		"sentences": ["Love can neither be bought nor sold", "Rome was not built in a day", "He's been working hard all day"]
-	},
-	{
-		"word": "bear",
-		"sentences": ["Different trees bear different fruits", "The queen bore him four fine sons", "There's one born every minute"]
-	},
-	{
-		"word": "beat",
-		"sentences": ["The storms beat on the ship", "The policemen had to beat the door in", "Glaze the pie with beaten egg"]
-	},
-	{
-		"word": "become",
-		"sentences": ["The boy decided not to become a sailor", "The victory became part of sporting folklore", "His dream has become a reality"]
-	},
-	{
-		"word": "befall",
-		"sentences": ["He fears bad luck may befall", "I know not wherefore it befell", "An accident has befallen him"]
-	},
-	{
-		"word": "beget",
-		"sentences": ["One trade barrier can beget another", "He begot three children", "In due course she bore the son begotten on her by Thyestes"]
-	},
-	{
-		"word": "begin",
-		"sentences": ["Good to begin well, better to end well", "A light rain began to fall", "Well begun is half done"]
-	},
-	{
-		"word": "behold",
-		"sentences": ["His garden was a sight to behold", "She looked into his eyes and beheld madness", "When Crass beheld this being, he touched his cap respectfully"]
-	},
-	{
-		"word": "bend",
-		"sentences": ["It's hard to bend an iron bar", "The tree must be bent while it is young", "She has a bent for music"]
-	},
-	{
-		"word": "bereave",
-		"sentences": ["Nothing can bereave us of such sweet memories", "Anger bereft him of words", "The place seemed to be utterly bereft of human life"]
-	},
-	{
-		"word": "beseech",
-		"sentences": ["I beseech you to forgive me", "He besought her help", "They besought him to speak the truth"]
-	},
-	{
-		"word": "bet",
-		"sentences": ["I offered to bet with him", "For horse race betted is foolish", "We betted who could lean further out of the window"]
-	},
-	{
-		"word": "bid",
-		"sentences": ["Do as I bid you", "We bade him farewell", "I was bidden to enter"]
-	},
-	{
-		"word": "bind",
-		"sentences": ["Many things bind them together", "His sister had been bound to secrecy", "Your work is bound to be successful"]
-	},
-	{
-		"word": "bite",
-		"sentences": ["Don't let the bedbugs bite", "He took the apple and bit down", "She was bitten by the family dog"]
-	},
-	{
-		"word": "bleed",
-		"sentences": ["Doctors used to bleed people when they were ill", "Tragically, she bled to death ", "So he bit his lip until it bled"]
-	},
-	{
-		"word": "bless",
-		"sentences": ["Bless the name of the Lord!", "I am blest if I know", "How blest were I if thou wouldn't prove me"]
-	},
-	{
-		"word": "blow",
-		"sentences": ["The clouds will soon blow over", "He blew his nose in his handkerchief", "The storm has blown over"]
-	},
-	{
-		"word": "break",
-		"sentences": ["You will only break my heart", "She fell and broke her leg", "Oh dear, I've broken the lamp"]
-	},
-	{
-		"word": "breed",
-		"sentences": ["The new breed is under observation", "I'm a countryman born and bred", "The bear bred two cubs"]
-	},
-	{
-		"word": "bring",
-		"sentences": ["Care and diligence bring luck", "We brought home two bags of rice", "He brought a new book with him"]
-	},	
-	{
-		"word": "broadcast",
-		"sentences": ["Most of the programmes are broadcast in English", "The interview was broadcast on radio and television", "The concert will be broadcast in stereo"]
-	},
-	{
-		"word": "browbeat",
-		"sentences": ["The only way was to browbeat them", "He browbeat her into agreeing", "The police could not browbeat him confessing"]
-	},
-	{
-		"word": "build",
-		"sentences": ["He planned to build on a shed", "The school is built of brick", "They built a raft of logs"]
-	},
-	{
-		"word": "burn",
-		"sentences": ["Green wood does not burn well", "Her hair was burnt off", " I'm afraid I've burnt the pizza"]
-	},
-	{
-		"word": "burst",
-		"sentences": ["He burst out laughing", "The truth burst upon me", "The sticks burst into flames"]
-	},
-	{
-		"word": "bust",
-		"sentences": ["I bust my watch this morning", "The lights are busted", "He busted up the place"]
-	},
-	{
-		"word": "buy",
-		"sentences": ["Gold will not buy anything", "I bought it at the store", "He bought me a bag of toffees"]
-	},
-	{
-		"word": "can",
-		"sentences": ["Don't try to run before you can walk", "He would help you if he could"]
-	},
-	{
-		"word": "cast",
-		"sentences": ["He cast himself on the sofa", "Never cast your pearls before swine", "Don't cast out the foul water till you bring in the clean"]
-	},
-	{
-		"word": "catch",
-		"sentences": ["Tall trees catch much wind", "The little boy caught a fish", "I think I've caught a bug"]
-	}
+    {
+        "word": "abide",
+        "sentences": ["Everyone should abide by our social norms", "She abode at New York", "He has always abided by his promises"]
+    },
+    {
+        "word": "alight",
+        "sentences": ["Do not alight while the train is still in motion ", "His mind alighted on several possible answers", "Also crossed two stations, nearby her two passengers alit"]
+    },
+    {
+        "word": "arise",
+        "sentences": ["How did the quarrel arise?", "The topic arose naturally in the conversation", "A number of problems have arisen"]
+    },
+    {
+        "word": "awake",
+        "sentences": ["I lay awake all night", "The noise awoke me from my sleep", "She was awoken by the noise"]
+    },
+    {
+        "word": "backslide",
+        "sentences": ["Many of the patients backslide into drug and alcohol abuse", "So, Christians who have backslid away from God are really doing so because they want to", "Mr Jack was once active in the church, but he has backslidden"]
+    },
+    {
+        "word": "be",
+        "sentences": ["Love can neither be bought nor sold", "Rome was not built in a day", "He's been working hard all day"]
+    },
+    {
+        "word": "bear",
+        "sentences": ["Different trees bear different fruits", "The queen bore him four fine sons", "There's one born every minute"]
+    },
+    {
+        "word": "beat",
+        "sentences": ["The storms beat on the ship", "The policemen had to beat the door in", "Glaze the pie with beaten egg"]
+    },
+    {
+        "word": "become",
+        "sentences": ["The boy decided not to become a sailor", "The victory became part of sporting folklore", "His dream has become a reality"]
+    },
+    {
+        "word": "befall",
+        "sentences": ["He fears bad luck may befall", "I know not wherefore it befell", "An accident has befallen him"]
+    },
+    {
+        "word": "beget",
+        "sentences": ["One trade barrier can beget another", "He begot three children", "In due course she bore the son begotten on her by Thyestes"]
+    },
+    {
+        "word": "begin",
+        "sentences": ["Good to begin well, better to end well", "A light rain began to fall", "Well begun is half done"]
+    },
+    {
+        "word": "behold",
+        "sentences": ["His garden was a sight to behold", "She looked into his eyes and beheld madness", "When Crass beheld this being, he touched his cap respectfully"]
+    },
+    {
+        "word": "bend",
+        "sentences": ["It's hard to bend an iron bar", "The tree must be bent while it is young", "She has a bent for music"]
+    },
+    {
+        "word": "bereave",
+        "sentences": ["Nothing can bereave us of such sweet memories", "Anger bereft him of words", "The place seemed to be utterly bereft of human life"]
+    },
+    {
+        "word": "beseech",
+        "sentences": ["I beseech you to forgive me", "He besought her help", "They besought him to speak the truth"]
+    },
+    {
+        "word": "bet",
+        "sentences": ["I offered to bet with him", "For horse race betted is foolish", "We betted who could lean further out of the window"]
+    },
+    {
+        "word": "bid",
+        "sentences": ["Do as I bid you", "We bade him farewell", "I was bidden to enter"]
+    },
+    {
+        "word": "bind",
+        "sentences": ["Many things bind them together", "His sister had been bound to secrecy", "Your work is bound to be successful"]
+    },
+    {
+        "word": "bite",
+        "sentences": ["Don't let the bedbugs bite", "He took the apple and bit down", "She was bitten by the family dog"]
+    },
+    {
+        "word": "bleed",
+        "sentences": ["Doctors used to bleed people when they were ill", "Tragically, she bled to death ", "So he bit his lip until it bled"]
+    },
+    {
+        "word": "bless",
+        "sentences": ["Bless the name of the Lord!", "I am blest if I know", "How blest were I if thou wouldn't prove me"]
+    },
+    {
+        "word": "blow",
+        "sentences": ["The clouds will soon blow over", "He blew his nose in his handkerchief", "The storm has blown over"]
+    },
+    {
+        "word": "break",
+        "sentences": ["You will only break my heart", "She fell and broke her leg", "Oh dear, I've broken the lamp"]
+    },
+    {
+        "word": "breed",
+        "sentences": ["The new breed is under observation", "I'm a countryman born and bred", "The bear bred two cubs"]
+    },
+    {
+        "word": "bring",
+        "sentences": ["Care and diligence bring luck", "We brought home two bags of rice", "He brought a new book with him"]
+    },
+    {
+        "word": "broadcast",
+        "sentences": ["Most of the programmes are broadcast in English", "The interview was broadcast on radio and television", "The concert will be broadcast in stereo"]
+    },
+    {
+        "word": "browbeat",
+        "sentences": ["The only way was to browbeat them", "He browbeat her into agreeing", "The police could not browbeat him confessing"]
+    },
+    {
+        "word": "build",
+        "sentences": ["He planned to build on a shed", "The school is built of brick", "They built a raft of logs"]
+    },
+    {
+        "word": "burn",
+        "sentences": ["Green wood does not burn well", "Her hair was burnt off", "I'm afraid I've burnt the pizza"]
+    },
+    {
+        "word": "burst",
+        "sentences": ["He burst out laughing", "The truth burst upon me", "The sticks burst into flames"]
+    },
+    {
+        "word": "bust",
+        "sentences": ["I bust my watch this morning", "The lights are busted", "He busted up the place"]
+    },
+    {
+        "word": "buy",
+        "sentences": ["Gold will not buy anything", "I bought it at the store", "He bought me a bag of toffees"]
+    },
+    {
+        "word": "can",
+        "sentences": ["Don't try to run before you can walk", "He would help you if he could", "-"]
+    },
+    {
+        "word": "cast",
+        "sentences": ["He cast himself on the sofa", "Never cast your pearls before swine", "Don't cast out the foul water till you bring in the clean"]
+    },
+    {
+        "word": "catch",
+        "sentences": ["Tall trees catch much wind", "The little boy caught a fish", "I think I've caught a bug"]
+    },
+    {
+        "word": "chide",
+        "sentences": ["Have we got any business to chide it?", "The nurse chid the little girl for soiling her dress", "She chided him for his bad manners"]
+    },
+    {
+        "word": "choose",
+        "sentences": ["Choose medium to large tomatoes", "I chose a book from the bookcase", "Who's been chosen, do you know?"]
+    },
+    {
+        "word": "clap",
+        "sentences": ["Here, clap hold of this!", "They clapped their hands to welcome him", "He clapped his hands for silence"]
+    },
+    {
+        "word": "cleave",
+        "sentences": ["They just cleave the stone along the cracks", "He still clove to this ideal", "He finally betrayed his cloven foot"]
+    },
+    {
+        "word": "cling",
+        "sentences": ["I still cling to the hope that he's alive", "He wailed and clung to his mother", "She clung on to her baby"]
+    },
+    {
+        "word": "clothe",
+        "sentences": ["We clothe our thoughts in words", "She was clad in blue velvet", "He clothed himself in his best clothes"]
+    },
+    {
+        "word": "come",
+        "sentences": ["At open doors dogs come in", "A light breeze came off the sea", "Let's cross the bridge when we come to it"]
+    },
+    {
+        "word": "cost",
+        "sentences": ["It must cost a good deal to live here", "It will cost you 1000 yuan at most", "It'll cost you to have your roof mended"]
+    },
+    {
+        "word": "creep",
+        "sentences": ["Learn to creep before you leap", "She crept silently out of the room", "He crept stealthily along the corridor"]
+    },
+    {
+        "word": "crow",
+        "sentences": ["The cock started to crow", "A cock crowed in the distance", "The cock crowed at dawn"]
+    },
+    {
+        "word": "cut",
+        "sentences": ["Cut your coat to suit your cloth", "Do not cut down the tree that gives you shade", "She cut the meat into small pieces"]
+    },
+    {
+        "word": "dare",
+        "sentences": ["He didn't dare to speak to her", "She said it as loudly as she dared", "I will do it if I am dared"]
+    },
+    {
+        "word": "deal",
+        "sentences": ["He is difficult to deal with", "She dealt me four cards", "The bonus must be dealt out fairly"]
+    },
+    {
+        "word": "dig",
+        "sentences": ["I'm going to dig down this wall", "They dug worms for bait", "They dug out the weeds"]
+    },
+    {
+        "word": "dive",
+        "sentences": ["The submarine began to dive", "He filled his lungs and dove", "The mercury dived to five below zero"]
+    },
+    {
+        "word": "do",
+        "sentences": ["Do well is better than say well", "Her eyelids fluttered but did not open", "No sooner said than done"]
+    },
+    {
+        "word": "draw",
+        "sentences": ["Draw a line with a ruler", "The police drew round the house", "The truth was drawn from her by degrees"]
+    },
+    {
+        "word": "dream",
+        "sentences": ["Do you dream a lot?", "I dreamt of her last night", "I dreamt I got the job"]
+    },
+    {
+        "word": "drink",
+        "sentences": ["Dilute the juice before you drink it", "She drank a whole cup of milk", "He was drunk last night"]
+    },
+    {
+        "word": "drive",
+        "sentences": ["Shall we drive or go by train?", "That driver drove the car up the ramp", "The tape was driven by a clockwork motor"]
+    },
+    {
+        "word": "dwell",
+        "sentences": ["I'd rather not dwell on the past", "They dwelt in the middle of the forest", "They still dwelt in poverty"]
+    },
+    {
+        "word": "eat",
+        "sentences": ["You are what you eat", "I ate two slices of toast", "These fish are often eaten raw"]
+    },
+    {
+        "word": "fall",
+        "sentences": ["Pride will have a fall", "The dish fell to the floor and broke", "The road was blocked by fallen logs"]
+    },
+    {
+        "word": "feed",
+        "sentences": ["Will you feed the dog?", "Have you fed the cat?", "I fed the birds yesterday"]
+    },
+    {
+        "word": "feel",
+        "sentences": ["I feel bad about the mistake", "She felt she was snubbed here", "I felt frozen to the marrow"]
+    },
+    {
+        "word": "fight",
+        "sentences": ["Councils of war never fight", "They fought for control of the islands", "We fought for the honour of our country"]
+    },
+    {
+        "word": "find",
+        "sentences": ["Love will find out the way", "Water was found at a depth of 30 ft", "I have found the lost book"]
+    },
+    {
+        "word": "fit",
+        "sentences": ["The shoes are a perfect fit", "The weather is not fit to go out", "Do as you see fit!"]
+    },
+    {
+        "word": "flee",
+        "sentences": ["They were forced to flee the country", "The cat fled from the dog", "She fled the room in tears"]
+    },
+    {
+        "word": "fling",
+        "sentences": ["Tell him not to fling to the door", "I was flung forward by the impact", "Someone had flung a brick through the window"]
+    },
+    {
+        "word": "fly",
+        "sentences": ["Pleasant hours fly fast", "The baby flew into his mother's arm", "The bird has flown away"]
+    },
+    {
+        "word": "forbid",
+        "sentences": ["College statutes forbid drinking on campus", "Her father forbade their marriage", "He was expressly forbidden to speak to the girl"]
+    },
+    {
+        "word": "forecast",
+        "sentences": ["The forecast says there will be storms", "Now scientists can forecast the weather accurately", "The weather forecast is for sun, with intermittent showers"]
+    },
+    {
+        "word": "foresee",
+        "sentences": ["He did not foresee any problems", "He foresaw the world war", "The disaster could not have been foreseen"]
+    },
+    {
+        "word": "foretell",
+        "sentences": ["It could not foretell the future", "He foretold the world war", "She foretold that he would fail"]
+    },
+    {
+        "word": "forget",
+        "sentences": ["Don't forget to bolt the door", "I forgot to set the burglar alarm", "Old love will not be forgotten"]
+    },
+    {
+        "word": "forgive",
+        "sentences": ["I'm sorry, please forgive me", "She never forgave Remi for it", "He prayed to be forgiven"]
+    },
+    {
+        "word": "forsake",
+        "sentences": ["Do not forsake me!", "She forsook her notebook for new technology", "She has forsaken her boyfriend"]
+    },
+    {
+        "word": "freeze",
+        "sentences": ["Why did you freeze me out?", "The smile froze on her face", "The lake had frozen overnight"]
+    },
+    {
+        "word": "geld",
+        "sentences": ["In general, it is best to geld a colt before he is one-year old", "In the process, the people often gelded themselves", "The vet gelded the young horse"]
+    },
+    {
+        "word": "get",
+        "sentences": ["If you pay peanuts, you get monkeys", "We've got a mouse in the house", "I got a job at the sawmill"]
+    },
+    {
+        "word": "gild",
+        "sentences": ["Carve the names and gild them", "The autumn sun gilded the lake", "It has a fine gilded carving on the high altar"]
+    },
+    {
+        "word": "give",
+        "sentences": ["It's better to give than to receive", "She gave him a punch on the nose", "He was given a general anesthetic"]
+    },
+    {
+        "word": "gnaw",
+        "sentences": ["Babies like to gnaw hard objects when they're teething", "Rats have gnawed a hole", "Fear gnawed at her soul"]
+    },
+    {
+        "word": "go",
+        "sentences": ["Never go to bed on an argument", "She went to the hospital yesterday", "Once the fire of passion was gone, it was embarrassing"]
+    },
+    {
+        "word": "grind",
+        "sentences": ["The rice will grind down into flour", "I always ground my arguments on facts", "The flour was ground from barley"]
+    },
+    {
+        "word": "grip",
+        "sentences": ["The brake doesn't grip properly", "She gripped the hand rail in the lift", "She gripped her mother's hand in fear"]
+    },
+    {
+        "word": "grow",
+        "sentences": ["Money does not grow on tree", "I grew chilly when the fire went out", "Jane has grown on me"]
+    },
+    {
+        "word": "handwrite",
+        "sentences": ["Handwrite more letters or cards", "Letters of application must be handwritten"]
+    },
+    {
+        "word": "hang",
+        "sentences": ["Hang off the rope, let's start our boat", "I hung my coat on a hook", "She hung up on me"]
+    },
+    {
+        "word": "have",
+        "sentences": ["A wilful man will have his way", "You can not lose what you never had", "It's the worst food I've ever had"]
+    },
+    {
+        "word": "hear",
+        "sentences": ["Hear much, speak little", "I think I heard something", "I heard of his story last week"]
+    },
+    {
+        "word": "heave",
+        "sentences": ["Heave at my hand, I lift you up", "A ship hove into sight", "We hove the vessel to"]
+    },
+    {
+        "word": "hew",
+        "sentences": ["You must hew to the rules of the game, or it wouldn't be named game", "He hewed a canoe out of a tree trunk", "The walls were hewn from local stone"]
+    },
+    {
+        "word": "hide",
+        "sentences": ["Poverty and love are hard to hide", "The little girl hid away in the cellar", "That old temple is hidden among trees"]
+    },
+    {
+        "word": "hit",
+        "sentences": ["He hit at the bull's-eye in one shot", "She hit the nail with a sledgehammer", "He hit out at me before I did"]
+    },
+    {
+        "word": "hold",
+        "sentences": ["Hold fast when you have it", "I held the mouse by its tail", "She held the child to her bosom"]
+    },
+    {
+        "word": "hurt",
+        "sentences": ["I really love the people that I really hurt", "She was very hurt by his unkind words", "Don't cry out before you are hurt"]
+    },
+    {
+        "word": "inlay",
+        "sentences": ["I think they were inlaid with real pearls", "Three horizontal lines are inlaid with rose cut diamonds", "Silver shot glass, which was inlaid with precious stones"]
+    },
+    {
+        "word": "input",
+        "sentences": ["Her specialist input to the discussions has been very useful", "Her job is to input data as soon as possible", "It's allowed to input data of different origin"]
+    },
+    {
+        "word": "interweave",
+        "sentences": ["How about if you only interweave a quarter?", "I'll let the voice interweave with the story of the Chinese parasols", "Your destiny is interwoven with mine"]
+    },
+    {
+        "word": "keep",
+        "sentences": ["Little boats must keep the shores", "He kept his finger on the trigger", "She always kept her room neat"]
+    },
+    {
+        "word": "kneel",
+        "sentences": ["Let us kneel in prayer", "She knelt and prayed silently", "He knelt to his mother"]
+    },
+    {
+        "word": "knit",
+        "sentences": ["She could knit up a baby's coat in an afternoon", "A broken bone can knit", "The doctor knit the two broken bones in his arm"]
+    },
+    {
+        "word": "know",
+        "sentences": ["Every man is best know to himself", "She knew how to adapt herself", "A man is known by his friends"]
+    },
+    {
+        "word": "lay",
+        "sentences": ["She dusted off her bed and lay down", "The horse laid back its ears", "He laid his coat over a chair"]
+    },
+    {
+        "word": "lead",
+        "sentences": ["All roads lead to Rome", "He led a life of virtue", "She led the horse back into the stable"]
+    },
+    {
+        "word": "lean",
+        "sentences": ["Lean on me if you feel dizzy", "She leant towards him and listened", "The old man leant upon his stick"]
+    },
+    {
+        "word": "leap",
+        "sentences": ["Look before you leap", "She leapt over the fence", "The tiger leapt at the hunter"]
+    },
+    {
+        "word": "learn",
+        "sentences": ["An old dog will learn no new tricks", "Have you learnt your lessons?", "I learnt that I had passed the test"]
+    },
+    {
+        "word": "leave",
+        "sentences": ["I leave not the least food", "He was left alone in the house", "I left my bicycle out in the rain"]
+    },
+    {
+        "word": "lend",
+        "sentences": ["Can you lend me your car this evening?", "I lent him the books", "She very kindly lent me her bicycle"]
+    },
+    {
+        "word": "let",
+        "sentences": ["Let it snow!", "A word spoken is an arrow let fly", "Never let the sun go down on your anger"]
+    },
+    {
+        "word": "lie",
+        "sentences": ["Children and fools can not lie", "She lay stiff and still beside him", "The church has lain empty and unused since 1994"]
+    },
+    {
+        "word": "light",
+        "sentences": ["The office was light and airy", "The street is poorly lit", "The church was lit up by floodlights"]
+    },
+    {
+        "word": "lose",
+        "sentences": ["There is no time to lose", "A kind word is never lost", "All is not lost that is in danger"]
+    },
+    {
+        "word": "make",
+        "sentences": ["Ale will make a cat speak", "New scientific discoveries are being made every day", "The regiment made an advance on the enemy lines"]
+    },
+    {
+        "word": "may",
+        "sentences": ["A cat may look at a king", "He might be useful to us"]
+    },
+    {
+        "word": "mean",
+        "sentences": ["He didn't mean to harm you", "I meant nothing by it at all", "It was meant to be"]
+    },
+    {
+        "word": "meet",
+        "sentences": ["Don't meet troubles half-way", "I met an old school friend today", "We met up at the bus terminal"]
+    },
+    {
+        "word": "melt",
+        "sentences": ["Ice needs heat to melt", "The ice melted when the sun shone on it", "They molt candy"]
+    },
+    {
+        "word": "miscast",
+        "sentences": ["The play was miscast", "The film is miscast", "Unfortunately for him, and the company, he was badly miscast"]
+    },
+    {
+        "word": "misdeal",
+        "sentences": ["I've got 14 cards; it's a misdeal!", "I have misdealt a few cards", "I misdealt at that time, but now I'm fine"]
+    },
+    {
+        "word": "misdo",
+        "sentences": ["I misdo my homework", "He misdid with you", "They misdone law"]
+    },
+    {
+        "word": "misgive",
+        "sentences": ["My mind misgives me", "Her mind misgave her about her friend", "Sometimes all of our thoughts are misgiven"]
+    },
+    {
+        "word": "mishear",
+        "sentences": ["You misheard me, Frank", "I misheard the word \"sick\" as \"thick\", I never said that! You must have misheard me"]
+    },
+    {
+        "word": "mishit",
+        "sentences": ["He completely mishit his shot", "We will explain why you mishit and help you to rid your game of these destructive shots", "Wilson had a good chance to level after six minutes but completely mishit his kick"]
+    },
+    {
+        "word": "mislay",
+        "sentences": ["Did you often mislay these farm chemicals?", "I have mislaid the new magazine", "I seem to have mislaid my keys"]
+    },
+    {
+        "word": "mislead",
+        "sentences": ["They are seeking to mislead us", "I think you've been misled", "It's easy to be misled by externals"]
+    },
+    {
+        "word": "misread",
+        "sentences": ["She had misread a date in the Tour Book", "I think she misread the situation", "I misread \"Mrs\" as \"Mr\""]
+    },
+    {
+        "word": "misspell",
+        "sentences": ["Rule out a misspell word", "Ring round the words which you think are misspelt", "Test yourself with the following passage, which contains misspelt words taken from examination scripts"]
+    },
+    {
+        "word": "misspend",
+        "sentences": ["I get the feeling that he considers the great part of his own life misspend", "Much of the money was grossly misspent", "Trying to make up for his misspent youth"]
+    },
+    {
+        "word": "mistake",
+        "sentences": ["I think, I was mistake", "I'm sorry, he had mistook", "I think you're mistaken business with pleasure"]
+    },
+    {
+        "word": "misunderstand",
+        "sentences": ["They pretended to misunderstand me", "The cost of capital is widely misunderstood", "I misunderstood her meaning"]
+    },
+    {
+        "word": "mow",
+        "sentences": ["I mow the lawn every week in summer", "Men mowed the wide lawns and seeded them", "She was mown down on a pedestrian crossing"]
+    },
+    {
+        "word": "must",
+        "sentences": ["He that will thrive must rise at five"]
+    },
+    {
+        "word": "offset",
+        "sentences": ["His blonde hair offset a deep tan", "The money will help offset big medical bills", "The gains offset the losses"]
+    },
+    {
+        "word": "outbid",
+        "sentences": ["She outbid me for the vase", "He outbid his rivals at the auction", "He shut the opposition outbid of five spades"]
+    },
+    {
+        "word": "outdo",
+        "sentences": ["He tried to outdo his opponents", "Kwan outdid Bobek to win the finals", "Not to be outdone, she tried again"]
+    },
+    {
+        "word": "outfight",
+        "sentences": ["They could outfight the police any day", "We were outmanoeuvred and outfought throughout the winter campaign", "The former heavyweight champion was outwitted and outfought"]
+    },
+    {
+        "word": "outgrow",
+        "sentences": ["They outgrow their clothes so quickly", "Harry outgrew his cot when he was about two", "He's outgrown his clothes"]
+    },
+    {
+        "word": "output",
+        "sentences": ["The total output is double that of last year", "Industrial output has reached record levels", "Output has been drastically reduced"]
+    },
+    {
+        "word": "outrun",
+        "sentences": ["He couldn't outrun his pursuers", "The track star outran all of his competitors", "I bet him he could not outrun me"]
+    },
+    {
+        "word": "outsell",
+        "sentences": ["It may outsell his previous novels", "This year the newspaper has outsold its main rival", "It outsold Stephenie Meyer's Twilight series"]
+    },
+    {
+        "word": "outshine",
+        "sentences": ["Jesse has begun to outshine me in sports", "He far outshone the rest of the class", "Lisbon outshone Venice as a mart for oriental spices"]
+    },
+    {
+        "word": "overbid",
+        "sentences": ["They were overbid by a Japanese firm", "In San Francisco, prices are still rising even as frenzied overbid ding quiets", "Peddleries usually overbid to gain more profits"]
+    },
+    {
+        "word": "overcome",
+        "sentences": ["He that endures is not overcome", "He overcame a strong temptation to run away", "He has been overcome with sympathy"]
+    },
+    {
+        "word": "overdo",
+        "sentences": ["Don't overdo the salt in the food", "She really overdid the sympathy", "The comic scenes in the play were overdone"]
+    },
+    {
+        "word": "overdraw",
+        "sentences": ["What if I overdraw?", "I overdrew my account by £20", "His current account was seriously overdrawn"]
+    },
+    {
+        "word": "overeat",
+        "sentences": ["Generally , you shouldn't overeat yourself before sleeping", "I overate at the party last night and got violent indigestion", "He had also overeaten, so that when he relaxed, he dozed off to sleep"]
+    },
+    {
+        "word": "overfly",
+        "sentences": ["We all overfly the border at regular intervals", "We overflew the war zone, taking photographs", "Several farms were overflown"]
+    },
+    {
+        "word": "overhang",
+        "sentences": ["A sharp overhang of rock gave them cover", "His big fat belly overhung his belt", "The road was overhung with a pretty dense canopy"]
+    },
+    {
+        "word": "overhear",
+        "sentences": ["Pay attention to overhear our talk!", "I overheard some cruel remarks about my husband", "I just overheard it"]
+    },
+    {
+        "word": "overlay",
+        "sentences": ["All the veins were visible, like an anatomical diagram with a celluloid overlay", "The plate is overlaid with glittering gold", "The floor was overlaid with rugs of oriental design"]
+    },
+    {
+        "word": "overpay",
+        "sentences": ["We overpay the invoice by $ 245", "I overpaid him for his service", "We overpaid our taxes this year"]
+    },
+    {
+        "word": "override",
+        "sentences": ["Considerations of safety override all other concerns", "As a matter of fact his remarks overrode your motion", "BuildXSD is the abstract method that must be overriden in each concrete descendent"]
+    },
+    {
+        "word": "overrun",
+        "sentences": ["The house was overrun with mice", "Rebel soldiers overran the embassy last night", "The tiny village was overrun by tourists"]
+    },
+    {
+        "word": "oversee",
+        "sentences": ["Call in an architect or surveyor to oversee the work", "He oversaw someone take a newspaper away without paying", "The transition to independence was overseen by the United Nations"]
+    },
+    {
+        "word": "overshoot",
+        "sentences": ["The department may overshoot its cash limit this year", "The missile overshot its target", "I overshot your house yesterday afternoon"]
+    },
+    {
+        "word": "oversleep",
+        "sentences": ["I shall probably oversleep as I am not used to getting up so early", "I overslept and missed the bus", "I overslept myself this morning"]
+    },
+    {
+        "word": "overtake",
+        "sentences": ["He pulled out to overtake a truck", "The car overtook with a toot", "He was overtaken on the final laps"]
+    },
+    {
+        "word": "overthrow",
+        "sentences": ["They'd conspired to overthrow the government", "They overthrew their King", "The tyrant was overthrown"]
+    },
+    {
+        "word": "partake",
+        "sentences": ["They invited us to partake of their simple meal", "Twelve children partook in the performance", "I am delighted to have partaken of your success"]
+    },
+    {
+        "word": "pay",
+        "sentences": ["Pay somebody back in his own coin", "Love is never paid but with true love", "They paid him a high compliment"]
+    },
+    {
+        "word": "pen",
+        "sentences": ["He needs an outlet for his pent - up anger", "Her pent - up anger was released in a torrent of words"]
+    },
+    {
+        "word": "plead",
+        "sentences": ["I was forced to plead for my child's life", "Henderson pled guilty to burglary", "Prokopi pled guilty to fraud in December"]
+    },
+    {
+        "word": "prepay",
+        "sentences": ["What are the treatments prepay?", "The shipping charges are prepaid", "The telegram was sent reply prepaid"]
+    },
+    {
+        "word": "preset",
+        "sentences": ["He preset the video recorder at the desired time", "You can preset the radiators to come on when you need them to", "The agenda for the meeting has been preset"]
+    },
+    {
+        "word": "prove",
+        "sentences": ["What are you trying to prove?", "Fortunately my suspicions proved groundless", "She is a woman of proven ability"]
+    },
+    {
+        "word": "put",
+        "sentences": ["Don't put all your eggs in one basket", "Put your shoulder to the wheel", "Be prepared to put one's hand in one's pocket"]
+    },
+    {
+        "word": "quit",
+        "sentences": ["Winners never quit, quitters never win", "No, thanks I quit smoking", "You really ought to quit smoking"]
+    },
+    {
+        "word": "read",
+        "sentences": ["Your writing is hard to read", "I read about it in the paper", "He could barely read and write"]
+    },
+    {
+        "word": "relay",
+        "sentences": ["They will relay your message", "The carpet will have to be relaid", "The main line was relaid and run round facilities installed"]
+    },
+    {
+        "word": "rend",
+        "sentences": ["Wolves will rend a lamb to pieces", "The tiger rent its prey to pieces", "Can I rent the equipment?"]
+    },
+    {
+        "word": "rid",
+        "sentences": ["I thought I got rid of you", "Try to get rid of your nasty cold", "I can't get rid of the idea"]
+    },
+    {
+        "word": "ride",
+        "sentences": ["If wishes were horses, beggars would ride", "He got on his bike and rode off", "Lee had never ridden a horse before"]
+    },
+    {
+        "word": "ring",
+        "sentences": ["They ring out at 5 pm every day", "The bells rang a joyous peal", "She'd rung up to discuss the divorce"]
+    },
+    {
+        "word": "rise",
+        "sentences": ["He that will thrive must rise at five", "Babylonia had risen into supreme importance for Jewish life at about the time when the Mishnah was completed", "Her temper rose with her voice"]
+    },
+    {
+        "word": "rive",
+        "sentences": ["Double charge will rive a connon", "He rived a branch away from the tree", "The bark was riven off from the trunk"]
+    },
+    {
+        "word": "run",
+        "sentences": ["Still waters run deep", "They ran straight across the road ", "They have run out of ideas"]
+    },
+    {
+        "word": "saw",
+        "sentences": ["We saw this tree", "He sawed through the pipe", "The tree had to be sawn down"]
+    },
+    {
+        "word": "say",
+        "sentences": ["Do as I say, not as I do", "The least said the better", "He proposed to me and I said yes"]
+    },
+    {
+        "word": "see",
+        "sentences": ["We see not what is in the wallet behind", "Where they saw chance, we see law", "The moon is not seen where the sun shines"]
+    },
+    {
+        "word": "seek",
+        "sentences": ["Gentlemen seek harmony but not uniformity", "He sought vainly for the answer", "Love sought is good, but give unsought is better"]
+    },
+    {
+        "word": "sell",
+        "sentences": ["You cannot sell the cow and sup the milk", "I sold my car to James for ￡800", "The milk is sold in grades"]
+    },
+    {
+        "word": "send",
+        "sentences": ["Send these shirts to be laundered", "The boss has sent for me", "The young lady at reception sent me up here"]
+    },
+    {
+        "word": "set",
+        "sentences": ["A match will set fire to a large building", "The rainy season has set in", "Set my case over the shelves"]
+    },
+    {
+        "word": "sew",
+        "sentences": ["Sew the split seams of the shirt", "She sewed patches on the elbows of jacket", "One quality of this kind of timber is that it can be sawn easily"]
+    },
+    {
+        "word": "shake",
+        "sentences": ["Shake the bottle well before use", "He shook me so hard that my teeth rattled", "The experience left her deeply shaken"]
+    },
+    {
+        "word": "shall",
+        "sentences": ["As the tree falls, so shall it lie", "Law makers should not be law breakers"]
+    },
+    {
+        "word": "shave",
+        "sentences": ["John has to shave twice a day", "He shaved his beard with a new", "They all had shaven heads"]
+    },
+    {
+        "word": "shear",
+        "sentences": ["The farmer taught her how to shear sheep", "The ship was anchored off shore", "It was time for the sheep to be shorn"]
+    },
+    {
+        "word": "shed",
+        "sentences": ["He planned to build on a shed", "The lorry had shed its load", "David built us a shed in the back yard"]
+    },
+    {
+        "word": "shine",
+        "sentences": ["One day i will shine", "He buffed the wood until it shone", "The dark polished wood shone like glass"]
+    },
+    {
+        "word": "shoe",
+        "sentences": ["Keep still while I fasten shoe", "The children were well shod and happy", "She turned on her elegantly shod heel"]
+    },
+    {
+        "word": "shoot",
+        "sentences": ["Don't shoot the messenger", "Lisa shot him a venomous glance", "He was shot by a lone gunman"]
+    },
+    {
+        "word": "show",
+        "sentences": ["Straws show which way the wind blows", "Polls showed a switch to Labour", "The final episode will be shown tonight"]
+    },
+    {
+        "word": "shred",
+        "sentences": ["Could you shred me a piece of bread?", "Mice will shred things such as newspapers", "Shred the lettuce leaves finely"]
+    },
+    {
+        "word": "shrink",
+        "sentences": ["Will this shirt shrink in the wash?", "The dress shrank when I washed it", "The suit has shrunk out of shape"]
+    },
+    {
+        "word": "shut",
+        "sentences": ["A book that remains shut is but a block", "Keep your mouth shut and your ears open", "Please will you shut the door?"]
+    },
+    {
+        "word": "sing",
+        "sentences": ["Nightingales will not sing in a cage", "The bird sang high and clearly in the tree", "She has sung soprano in many major operas"]
+    },
+    {
+        "word": "sink",
+        "sentences": ["Many sands will sink a ship", "The ship sank with great loss of life", "He remained sunk in gloom for several days"]
+    },
+    {
+        "word": "sit",
+        "sentences": ["The students sit in a circle on the floor", "He went and sat beside her", "He took off his coat and sat down"]
+    },
+    {
+        "word": "slay",
+        "sentences": ["You'd slay them you would!", "St George slew the dragon", "The city was slain by the volcanicity"]
+    },
+    {
+        "word": "sleep",
+        "sentences": ["Now I shall go to sleep", "The children slept on mattresses on the floor", "He slept solidly for ten hours"]
+    },
+    {
+        "word": "slide",
+        "sentences": ["The drawers slide in and out easily", "He slid a coin into her hand", "She slid a coin into the drawer"]
+    },
+    {
+        "word": "sling",
+        "sentences": ["Sling me an apple, will you?", "He slung the bag over his shoulder", "She slung barbs at me"]
+    },
+    {
+        "word": "slink",
+        "sentences": ["Edward was hoping to slink past unnoticed", "The thief slunk down the dark alley", "The dog howled and slunk away"]
+    },
+    {
+        "word": "slit",
+        "sentences": ["He slit open the envelope with a knife", "Guy slit open the envelope", "I slit open the letter with a knife"]
+    },
+    {
+        "word": "smell",
+        "sentences": ["Fish and visitors smell three days", "The house smelt of cedar wood and fresh polish", "The phone box smelt of sick"]
+    },
+    {
+        "word": "smite",
+        "sentences": ["She waited for realisation, for pain to smite her", "He smote the ball into the grandstand", "As soon as he saw her, he was smitten"]
+    },
+    {
+        "word": "sneak",
+        "sentences": ["How did you sneak out of the meeting?", "I snuck her a note", "The result: more coins snuck into circulation, driving up the prices of goods"]
+    },
+    {
+        "word": "sow",
+        "sentences": ["You reap what you sow", "He sowed all his wild oats before he married", "You must reap what you have sown"]
+    },
+    {
+        "word": "speak",
+        "sentences": ["First think, and then speak", "He spoke with a pronounced stutter", "A word spoken is past recalling"]
+    },
+    {
+        "word": "speed",
+        "sentences": ["He speed his car through the street", "The bus sped down the long hill", "We sped down the ski slopes"]
+    },
+    {
+        "word": "spell",
+        "sentences": ["How do you spell your name?", "How is the word spelt?", "My name was wrongly spelt"]
+    },
+    {
+        "word": "spend",
+        "sentences": ["To gain teaches how to spend", "I spent the whole day cleaning", "Lily spent years caring for her sick uncle"]
+    },
+    {
+        "word": "spill",
+        "sentences": ["Don't pour too much;it might spill over", "Is is no use crying over spilt milk", "I spilt coffee on my silk shirts"]
+    },
+    {
+        "word": "spin",
+        "sentences": ["The wheel can now spin freely", "She got up and spun a little turn", "We spun out a whole hour waiting for a taxi"]
+    },
+    {
+        "word": "spit",
+        "sentences": ["Sam is the dead spit of his dad", "Come on Jean, spit it out!", "Roast the lamb on a spit"]
+    },
+    {
+        "word": "split",
+        "sentences": ["The companies split the profits fifty-fifty", "Only a skilled workman can split slate into layers", "Sew the split seams of the shirt"]
+    },
+    {
+        "word": "spoil",
+        "sentences": ["Spare the rod and spoil the child", "The spoilt child sat there pouting", "Stop acting like a spoilt child"]
+    },
+    {
+        "word": "spread",
+        "sentences": ["He spread out his arms and shrugged his shoulders", "He spread some strawberry jam on his toast", "The flames grew larger as the fire spread"]
+    },
+    {
+        "word": "spring",
+        "sentences": ["I was spring with a ball", "He sprang up from the sofa", "A breeze has sprung up"]
+    },
+    {
+        "word": "stand",
+        "sentences": ["Truth will stand without a prop", "Martin stood erect on the platform", "He stood to inherit property worth ￡5 million"]
+    },
+    {
+        "word": "steal",
+        "sentences": ["He that will lie will steal", "It has been alleged that Jack stole the money", "Under cover of the dark, the dog was stolen"]
+    },
+    {
+        "word": "stick",
+        "sentences": ["Can't you stick up for yourself sometimes?", "He got stuck in a revolving door", "I forgot where I had stuck my pen on"]
+    },
+    {
+        "word": "sting",
+        "sentences": ["Pleasure has a sting in its tail", "The nettles stung their legs", "I was stung on the arm by a wasp"]
+    },
+    {
+        "word": "stink",
+        "sentences": ["Fish always stink from the head down", "The place stank of decayed fish", "The meat has stunk"]
+    },
+    {
+        "word": "strew",
+        "sentences": ["Crises will strew his path to test his mettle", "Papers strewed the floor", "The shores are strewn with wrecks"]
+    },
+    {
+        "word": "stride",
+        "sentences": ["The fence is so low that even a ten - year - old boy can stride it", "He strode angrily into the classroom", "If I dare to imagining, the I had stridden the first step"]
+    },
+    {
+        "word": "strike",
+        "sentences": ["They were ordered to strike back", "She struck him on the nose", "He was struck down three times on the ring"]
+    },
+    {
+        "word": "string",
+        "sentences": ["", "He strung his gun up on the wall", "The parade strung out for miles"]
+    },
+    {
+        "word": "strip",
+        "sentences": ["The runway is simply a strip of grass", "Mia stript the cargo down to essentials"]
+    },
+    {
+        "word": "strive",
+        "sentences": ["We have to strive for what we want", "He strove very hard to remain calm", "And with what had might he had striven for tenure!"]
+    },
+    {
+        "word": "swear",
+        "sentences": ["He that will swear, will lie", "They swore before the memorial", "The next witness was sworn in"]
+    },
+    {
+        "word": "sweat",
+        "sentences": ["Don't sweat the small stuff", "I always sweat at night", "Sweat dribbled down Hart's face"]
+    },
+    {
+        "word": "sweep",
+        "sentences": ["Don't forget to sweep under the beds", "The wind swept the leaves away", "The wave swept over the deck"]
+    },
+    {
+        "word": "swell",
+        "sentences": ["The breasts swell during pregnancy", "The rain swelled the rivers", "He gently rubbed his swollen nose"]
+    },
+    {
+        "word": "swim",
+        "sentences": ["The best fish swim near the bottom", "We swam in the chilly water", "The meat is being swum in gravy"]
+    },
+    {
+        "word": "swing",
+        "sentences": ["Let your arms swing as you walk", "He swung the hammer with all his strength", "He swung himself into the saddle and rode off"]
+    },
+    {
+        "word": "take",
+        "sentences": ["Take the world as it is", "Would you mind if I took you out?", "A maid that laughs is half taken"]
+    },
+    {
+        "word": "teach",
+        "sentences": ["You can't teach an old dog new tricks", "He needs to be taught some manners", "My mother taught me how to sew"]
+    },
+    {
+        "word": "tear",
+        "sentences": ["She could tear a character to pieces in three minutes with her sharp tongue", "He tore the curtain apart and looked out", "His clothes were torn and bloody"]
+    },
+    {
+        "word": "tell",
+        "sentences": ["Never tell tales out of school", "I was told to limit the expense to", "All truths are not to be told"]
+    },
+    {
+        "word": "think",
+        "sentences": ["In every beginning think of the end", "The wish is father to the thought", "He thought for a moment before replying"]
+    },
+    {
+        "word": "thrive",
+        "sentences": ["She seems to thrive on stress", "Still the outlaw band throve in Sherwood, and hunted the deer in its glades", "Fortune had smiled upon me to that degree , and I had thriven so much"]
+    },
+    {
+        "word": "throw",
+        "sentences": ["Don't throw pearls to swine", "He threw down the book and went out", "Chance had thrown us together at a skiing resort"]
+    },
+    {
+        "word": "thrust",
+        "sentences": ["She thrust a letter into my hand", "They thrust themselves into the house", "He thrust at me with a knife"]
+    },
+    {
+        "word": "tread",
+        "sentences": ["Sorry, did I tread on your foot?", "She trod lightly so as not to wake the baby", "Cattle had trodden a path to the pond"]
+    },
+    {
+        "word": "typeset",
+        "sentences": ["Pages can now be typeset on-screen", "Typeset and saving material", "My book will be typeset nicely"]
+    },
+    {
+        "word": "undergo",
+        "sentences": ["The planes have to undergo rigorous safety checks", "Fans may undergo body searches by security guards", "Police drivers have to undergo intensive training"]
+    },
+    {
+        "word": "understand",
+        "sentences": ["I hope you understand what I told you", "I can't make myself understood", "He strove to make himself understood"]
+    },
+    {
+        "word": "undertake",
+        "sentences": ["I want you to undertake all the responsibility", "I undertook to teach the children English", "A study was undertaken in co-operation with oil companies"]
+    },
+    {
+        "word": "upset",
+        "sentences": ["Don't upset the apple-cart", "I upset the soup all over the table", "A large wave upset the boat"]
+    },
+    {
+        "word": "vex",
+        "sentences": ["His silly chatter would vex a saint", "She is vexed by many cares", "He was vexed at his failure"]
+    },
+    {
+        "word": "wake",
+        "sentences": ["I wake at seven every morning", "I woke up and got out of bed", "She had woken even earlier than usual"]
+    },
+    {
+        "word": "waylay",
+        "sentences": ["She might just waylay him and hit him with something heavy!", "The patrol was waylaid by bandits", "He waylaid me with a request for a loan"]
+    },
+    {
+        "word": "wear",
+        "sentences": ["Better wear out shoes than sheets", "She wore a green dress", "She had been worn down by poverty and illness"]
+    },
+    {
+        "word": "weave",
+        "sentences": ["Only a few of the women still weave", "The author wove three plots into one story", "The fabric is woven on these machines"]
+    },
+    {
+        "word": "wed",
+        "sentences": ["Better be half hanged than ill wed", "She will wed her daughter to a rich man", "He will wed that waitress next month"]
+    },
+    {
+        "word": "weep",
+        "sentences": ["The sight made me want to weep", "She turned aside and wept", "He wept over his sad fate"]
+    },
+    {
+        "word": "wend",
+        "sentences": ["As I wend to the shores I know not", "She went aside for a few moments", "We went on a day trip to the seaside"]
+    },
+    {
+        "word": "wet",
+        "sentences": ["The grass was wet with dew", "My shirt was wet through", "He wetted a cloth and tried to rub the mark away"]
+    },
+    {
+        "word": "will",
+        "sentences": ["He that will thrive must rise at five", "He that would command must serve"]
+    },
+    {
+        "word": "win",
+        "sentences": ["Patient men win the day", "A good name is easier lost than won", "She won first prize in the 100 metres race"]
+    },
+    {
+        "word": "wind",
+        "sentences": ["Wind up your watch every day", "Blood was pouring from the wound", "He has got a superficial wound"]
+    },
+    {
+        "word": "withdraw",
+        "sentences": ["I need to withdraw", "She hastily withdrew her hand from his", "She became withdrawn and pensive, hardly speaking to anyone"]
+    },
+    {
+        "word": "withhold",
+        "sentences": ["The dam can withhold the pressure of the water", "I withheld payment until they had fulfilled the contract", "He withheld his consent to the marriage"]
+    },
+    {
+        "word": "withstand",
+        "sentences": ["This fabric can withstand steam and high temperatures", "She withstood several challenges to her leadership", "Jason withstood the fearful creatures as a great rock in the sea withstands the waves"]
+    },
+    {
+        "word": "wring",
+        "sentences": ["Please wring all the water from the soaking-wet shirt", "She wrung the wet clothes", "He wrung my hand warmly"]
+    },
+    {
+        "word": "write",
+        "sentences": ["By writing you learn to write", "I wrote him a cheque for £50", "He was written off as a has-been"]
+    },
+    {
+        "word": "zinc",
+        "sentences": ["Brass is a metallic alloy of copper and zinc", "We zincked this box", "They zincked our bag"]
+    }
 ]
