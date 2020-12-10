@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class VerbsService {
+final class VerbsService: VerbsServiceProtocol {
     
     private let parser = JSONParser<Verb>()
     

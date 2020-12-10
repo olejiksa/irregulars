@@ -15,6 +15,7 @@ extension UserDefaults {
         case shouldRegularVerbsBeShown
         case shouldDerivedFormsBeShown
         case shouldTranslationBeShown
+        case favoritesOnly
         case playbackSpeed
         case accentColor
         case listening

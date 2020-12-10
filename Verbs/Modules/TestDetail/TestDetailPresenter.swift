@@ -17,17 +17,23 @@ final class TestDetailPresenter: NSObject {
     private var items: [String]
     private let audioService: AudioService
     private let verbsService: VerbsService
+    private let favoritesService: FavoritesService
     private let languageService: LanguageService
     private var currentTestKind: TestKind?
     
     init(audioService: AudioService,
          verbsService: VerbsService,
+         favoritesService: FavoritesService,
          languageService: LanguageService) {
-        self.items = verbsService.items.map { $0.infinitive.value }
-        self.audioService = audioService
         self.verbsService = verbsService
+        self.favoritesService = favoritesService
+        self.items = UserDefaults.standard.bool(for: .favoritesOnly)
+            ? favoritesService.items.map { $0.infinitive.value }
+            : verbsService.items.map { $0.infinitive.value }
+        self.audioService = audioService
         self.languageService = languageService
         super.init()
+        
         loadSettings()
         setupSections()
     }
@@ -40,7 +46,6 @@ private extension TestDetailPresenter {
     func loadSettings() {
         verbsService.shouldRegularVerbsBeShown = UserDefaults.standard.bool(for: .shouldRegularVerbsBeShown)
         verbsService.shouldDerivedFormsBeShown = UserDefaults.standard.bool(for: .shouldDerivedFormsBeShown)
-        verbsService.shouldTranslationBeShown = UserDefaults.standard.bool(for: .shouldTranslationBeShown)
     }
     
     func setupSections() {
@@ -53,7 +58,11 @@ private extension TestDetailPresenter {
             return
         }
         
-        guard let verb = verbsService.verb(of: items.randomElement()),
+        let verbWrapped = UserDefaults.standard.bool(for: .favoritesOnly)
+            ? favoritesService.verb(of: items.randomElement())
+            : verbsService.verb(of: items.randomElement())
+        
+        guard let verb = verbWrapped,
               let index = items.firstIndex(of: verb.infinitive.value),
               let simplePast = verb.simplePast,
               let pastParticiple = verb.pastParticiple

@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class FavoritesService {
+final class FavoritesService: VerbsServiceProtocol {
     
     private let parser = JSONParser<Verb>()
     private var favorites: Favorites?
@@ -53,6 +53,10 @@ final class FavoritesService {
         }
         
         return indexPath
+    }
+    
+    func verb(of infinitive: String?) -> Verb? {
+        items.first { $0.infinitive.value == infinitive }
     }
 }
 

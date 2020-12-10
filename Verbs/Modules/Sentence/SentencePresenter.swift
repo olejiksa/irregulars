@@ -11,6 +11,7 @@ import UIKit
 final class SentencePresenter: NSObject {
     
     private let verbsService: VerbsService
+    private let favoritesService: FavoritesService
     private let sentencesService: SentencesService
     private var items: [String] = []
     
@@ -19,10 +20,14 @@ final class SentencePresenter: NSObject {
     let dataSource = SectionDataSource()
     
     init(verbsService: VerbsService,
+         favoritesService: FavoritesService,
          sentencesService: SentencesService) {
         self.verbsService = verbsService
+        self.favoritesService = favoritesService
         self.sentencesService = sentencesService
-        self.items = verbsService.items.map { $0.infinitive.value }
+        self.items = UserDefaults.standard.bool(for: .favoritesOnly)
+            ? favoritesService.items.map { $0.infinitive.value }
+            : verbsService.items.map { $0.infinitive.value }
         super.init()
         loadSettings()
         setupSections()
@@ -36,7 +41,6 @@ private extension SentencePresenter {
     func loadSettings() {
         verbsService.shouldRegularVerbsBeShown = UserDefaults.standard.bool(for: .shouldRegularVerbsBeShown)
         verbsService.shouldDerivedFormsBeShown = UserDefaults.standard.bool(for: .shouldDerivedFormsBeShown)
-        verbsService.shouldTranslationBeShown = UserDefaults.standard.bool(for: .shouldTranslationBeShown)
     }
     
     func setupSections() {
@@ -49,7 +53,11 @@ private extension SentencePresenter {
             return
         }
         
-        guard let verb = verbsService.verb(of: items.randomElement()),
+        let verbWrapped = UserDefaults.standard.bool(for: .favoritesOnly)
+            ? favoritesService.verb(of: items.randomElement())
+            : verbsService.verb(of: items.randomElement())
+        
+        guard let verb = verbWrapped,
               let index = items.firstIndex(of: verb.infinitive.value)
         else {
             configureRandomComposition()

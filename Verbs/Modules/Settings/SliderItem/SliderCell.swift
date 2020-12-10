@@ -49,7 +49,10 @@ extension SliderCell: CellProtocol {
         slider.maximumValue = Float(item.steps - 1)
         slider.minimumValue = 0
         slider.value = Float(item.index)
+        slider.isEnabled = item.isEnabled
         
+        isUserInteractionEnabled = item.isEnabled
+
         playbackSpeedBlock = item.playbackSpeedBlock
     }
 }

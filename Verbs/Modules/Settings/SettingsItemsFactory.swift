@@ -53,7 +53,8 @@ final class SettingsItemsFactory {
                                         trailingIcon: .hare,
                                         steps: 5,
                                         index: index,
-                                        playbackSpeedBlock: playbackSpeedBlock)])
+                                        playbackSpeedBlock: playbackSpeedBlock,
+                                        isEnabled: FeatureToggle.isPaid)])
     }
     
     func setupVocabularySections(regularVerbsBlock: @escaping BoolBlock,
@@ -76,16 +77,16 @@ final class SettingsItemsFactory {
               items: [setupListViewModeItem(listViewModeBlock: listViewModeBlock)].compactMap { $0 })
     }
     
-    func setupTestsSection(listViewModeBlock: @escaping ItemBlock,
+    func setupTestsSection(testVerbsBlock: @escaping ItemBlock,
                            listeningBlock: @escaping BoolBlock) -> Section {
         .init(header: "Tests".localized,
               items: [
-//                setupTestVerbsItem(listViewModeBlock: listViewModeBlock),
-//                      setupTestInputModeItem(listViewModeBlock: listViewModeBlock),
-                      SwitchItem(text: "Listening".localized,
-                                 isOn: UserDefaults.standard.bool(for: .listening),
-                                 isEnabled: FeatureToggle.isPaid,
-                                 actionBlock: listeningBlock)].compactMap { $0 })
+                setupTestVerbsItem(testVerbsBlock: testVerbsBlock),
+                // setupTestInputModeItem(listViewModeBlock: listViewModeBlock),
+                SwitchItem(text: "Listening".localized,
+                           isOn: UserDefaults.standard.bool(for: .listening),
+                           isEnabled: FeatureToggle.isPaid,
+                           actionBlock: listeningBlock)].compactMap { $0 })
     }
     
     func setupLinksSection(rateBlock: @escaping ItemBlock,
@@ -142,14 +143,16 @@ private extension SettingsItemsFactory {
                                                       isEnabled: FeatureToggle.isPaid) : nil
     }
     
-    func setupTestVerbsItem(listViewModeBlock: @escaping ItemBlock) -> ItemProtocol? {
+    func setupTestVerbsItem(testVerbsBlock: @escaping ItemBlock) -> ItemProtocol? {
         let options = ["All".localized, "Favorites".localized]
-        let currentOption = options.first
+        let currentOption = !UserDefaults.standard.bool(for: .favoritesOnly)
+            ? options.first
+            : options.last
         return PickableItem(title: "Verbs".localized,
                             subtitle: currentOption ?? "",
-                            actionBlock: listViewModeBlock,
+                            actionBlock: testVerbsBlock,
                             options: options,
-                            isEnabled: false)
+                            isEnabled: FeatureToggle.isPaid)
     }
     
     func setupTestInputModeItem(listViewModeBlock: @escaping ItemBlock) -> ItemProtocol? {

@@ -53,7 +53,7 @@ private extension SettingsPresenter {
                 itemsFactory.setupVocabularySections(regularVerbsBlock: didRegularVerbsOptionChange,
                                                      derivativesBlock: didDerivedFormsOptionChange) +
                 [itemsFactory.setupListSection(listViewModeBlock: didListViewChange),
-                 itemsFactory.setupTestsSection(listViewModeBlock: didListViewChange,
+                 itemsFactory.setupTestsSection(testVerbsBlock: didTestVerbsChange,
                                                 listeningBlock: didListeningChange),
                  itemsFactory.setupLinksSection(rateBlock: willRate,
                                                 privacyBlock: willGoToPrivacyPolicy,
@@ -86,6 +86,16 @@ private extension SettingsPresenter {
         guard let item = sender as? PickableItem else { return }
         let value = item.subtitle == "Translation".localized
         UserDefaults.standard.set(value, for: .shouldTranslationBeShown)
+        NotificationCenter.default.post(name: .list,
+                                        object: nil,
+                                        userInfo: [Notification.Name.list: value])
+        viewController?.reloadData()
+    }
+    
+    func didTestVerbsChange(_ sender: ItemProtocol) {
+        guard let item = sender as? PickableItem else { return }
+        let value = item.subtitle == "Favorites".localized
+        UserDefaults.standard.set(value, for: .favoritesOnly)
         NotificationCenter.default.post(name: .list,
                                         object: nil,
                                         userInfo: [Notification.Name.list: value])

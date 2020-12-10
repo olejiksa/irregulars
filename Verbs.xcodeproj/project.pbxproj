@@ -162,6 +162,8 @@
 		EBDF009C2562EED70041F458 /* InputItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF009B2562EED70041F458 /* InputItem.swift */; };
 		EBDF00A22562EF090041F458 /* InputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBDF00A12562EF090041F458 /* InputCell.xib */; };
 		EBDF00A62562F1160041F458 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF00A52562F1160041F458 /* FormTextField.swift */; };
+		EBE4AD072582AF34001E9E4A /* VerbsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4AD062582AF33001E9E4A /* VerbsServiceProtocol.swift */; };
+		EBE4AD0F2582AF7E001E9E4A /* VerbsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4AD062582AF33001E9E4A /* VerbsServiceProtocol.swift */; };
 		EBEB1D76251F11900019972C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB1D75251F11900019972C /* AppDelegate.swift */; };
 		EBEB1D78251F11900019972C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB1D77251F11900019972C /* SceneDelegate.swift */; };
 		EBEB1D7F251F11910019972C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBEB1D7E251F11910019972C /* Assets.xcassets */; };
@@ -364,6 +366,7 @@
 		EBDF009B2562EED70041F458 /* InputItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputItem.swift; sourceTree = "<group>"; };
 		EBDF00A12562EF090041F458 /* InputCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputCell.xib; sourceTree = "<group>"; };
 		EBDF00A52562F1160041F458 /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
+		EBE4AD062582AF33001E9E4A /* VerbsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbsServiceProtocol.swift; sourceTree = "<group>"; };
 		EBEB1D72251F11900019972C /* Verbs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Verbs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBEB1D75251F11900019972C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBEB1D77251F11900019972C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -750,6 +753,7 @@
 		EBB3BC01251F23D0006E0DC7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EBE4AD052582AF1F001E9E4A /* Protocols */,
 				EB2E4BA525741970005B343A /* AppIconService.swift */,
 				EB2F5E15251F71DD007DCF60 /* AudioService.swift */,
 				EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */,
@@ -832,6 +836,14 @@
 				EBDF00A12562EF090041F458 /* InputCell.xib */,
 			);
 			path = InputItem;
+			sourceTree = "<group>";
+		};
+		EBE4AD052582AF1F001E9E4A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EBE4AD062582AF33001E9E4A /* VerbsServiceProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		EBEB1D69251F11900019972C = {
@@ -1099,6 +1111,7 @@
 			files = (
 				EB7DFF69252451D2000B711D /* VerbsWidget.swift in Sources */,
 				EB4509D12541703700D31858 /* Language.swift in Sources */,
+				EBE4AD0F2582AF7E001E9E4A /* VerbsServiceProtocol.swift in Sources */,
 				EB4509D42541798900D31858 /* FeatureToggle.swift in Sources */,
 				EB7DFF89252B1CD7000B711D /* Verb.swift in Sources */,
 				EB7B85682537FB0C00542D3C /* Word.swift in Sources */,
@@ -1239,6 +1252,7 @@
 				EBF4A14F252ED5A4003E3A44 /* SwitchCell.swift in Sources */,
 				EB2E4BCB2576B59F005B343A /* Test.swift in Sources */,
 				EBA644BB255A59CF0012B973 /* ActionItem.swift in Sources */,
+				EBE4AD072582AF34001E9E4A /* VerbsServiceProtocol.swift in Sources */,
 				EBF97C8E256235AF009FFFBA /* PurchaseService.swift in Sources */,
 				EBF97CA5256270DB009FFFBA /* PaywallPresenter.swift in Sources */,
 				EBEB1D8B251F13570019972C /* ListViewController.swift in Sources */,
@@ -1293,7 +1307,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.4;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1317,7 +1331,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.4;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1459,7 +1473,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.4;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1483,7 +1497,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.4;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -10,6 +10,7 @@ final class SentenceAssembly: AssemblyProtocol {
     
     func viewController() -> some SentenceViewController {
         let presenter = SentencePresenter(verbsService: .init(),
+                                          favoritesService: Locator.favoritesService,
                                           sentencesService: .init())
         let viewController = SentenceViewController(presenter: presenter)
         let router = TestDetailRouter(viewController: viewController)
