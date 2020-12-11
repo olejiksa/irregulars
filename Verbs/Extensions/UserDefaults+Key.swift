@@ -17,6 +17,8 @@ extension UserDefaults {
         case shouldTranslationBeShown
         case favoritesOnly
         case playbackSpeed
+        case answeredCorrectlyBasic
+        case answeredCorrectlyAdvanced
         case accentColor
         case listening
     }

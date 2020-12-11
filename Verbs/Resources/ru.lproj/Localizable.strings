@@ -6,7 +6,11 @@
   Copyright © 2020 Oleg Samoylov. All rights reserved.
 */
 
-"Downgrade" = "Сброс";
+"Basic tests" = "Базовые тесты";
+"Advanced tests" = "Продвинутые тесты";
+"Answered correctly" = "Отвечено верно";
+"Reset statistics" = "Сбросить статистику";
+"Downgrade" = "Вернуться к Irregulars Lite";
 "Thank you" = "Спасибо за то, что Вы с нами!";
 "Listen to pronunciation" = "Слушайте произношение";
 "Pronunciation" = "Произношение";

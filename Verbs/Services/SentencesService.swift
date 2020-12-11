@@ -19,13 +19,13 @@ final class SentencesService {
     }
     
     func ejectAppropriateVerbForms(for sentence: String, from verb: Verb) -> [String]? {
-        if contains(in: verb.infinitive.value, sentence: sentence) {
+        if contains(verb.infinitive.value, in: sentence) {
             return [verb.infinitive.value]
         } else {
-            let isSimplePast = verb.simplePast?.contains { contains(in: $0.value, sentence: sentence) } ?? false
+            let isSimplePast = verb.simplePast?.contains { contains($0.value, in: sentence) } ?? false
             if isSimplePast { return verb.simplePast?.map { $0.value } }
             
-            let isPastParticiple = verb.pastParticiple?.contains { contains(in: $0.value, sentence: sentence) } ?? false
+            let isPastParticiple = verb.pastParticiple?.contains { contains($0.value, in: sentence) } ?? false
             if isPastParticiple { return verb.pastParticiple?.map { $0.value } }
             
             return nil
@@ -34,22 +34,24 @@ final class SentencesService {
     
     func replaceSentence(_ sentence: String, using verb: Verb) -> String {
         let spacer = "..."
-        if contains(in: verb.infinitive.value, sentence: sentence) {
-            return sentence.replacingOccurrences(of: verb.infinitive.value, with: spacer)
+        if contains(verb.infinitive.value, in: sentence) {
+            return sentence.replacingOccurrences(of: verb.infinitive.value,
+                                                 with: spacer,
+                                                 options: .caseInsensitive)
+        } else if let simplePast = verb.simplePast?.first(where: { contains($0.value, in: sentence) })?.value {
+            return sentence.replacingOccurrences(of: simplePast,
+                                                 with: spacer,
+                                                 options: .caseInsensitive)
+        } else if let pastParticiple = verb.pastParticiple?.first(where: { contains($0.value, in: sentence) })?.value {
+            return sentence.replacingOccurrences(of: pastParticiple,
+                                                 with: spacer,
+                                                 options: .caseInsensitive)
         } else {
-            if let simplePast = verb.simplePast?.first(where: { contains(in: $0.value, sentence: sentence) })?.value {
-                return sentence.replacingOccurrences(of: simplePast, with: spacer)
-            }
-            
-            if let pastParticiple = verb.pastParticiple?.first(where: { contains(in: $0.value, sentence: sentence) })?.value {
-                return sentence.replacingOccurrences(of: pastParticiple, with: spacer)
-            }
-            
             return sentence
         }
     }
     
-    func contains(in string: String, sentence: String) -> Bool {
+    func contains(_ string: String, in sentence: String) -> Bool {
         let pattern = "\\b\(string)\\b"
         return sentence.range(of: pattern, options: [.regularExpression, .caseInsensitive]) != nil
     }

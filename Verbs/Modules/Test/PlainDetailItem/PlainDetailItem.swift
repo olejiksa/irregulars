@@ -8,10 +8,17 @@
 
 struct PlainDetailItem {
     
-    let text: String
+    enum TextStyle {
+        case standard
+        case caption
+    }
     
-    init(text: String) {
+    let text: String
+    let textStyle: TextStyle
+    
+    init(text: String, textStyle: TextStyle = .standard) {
         self.text = text
+        self.textStyle = textStyle
     }
 }
 

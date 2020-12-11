@@ -6,6 +6,10 @@
   Copyright © 2020 Oleg Samoylov. All rights reserved.
 */
 
+"Basic tests" = "Basic tests";
+"Advanced tests" = "Advanced tests";
+"Answered correctly" = "Answered correctly";
+"Reset statistics" = "Reset statistics";
 "Downgrade" = "Downgrade";
 "Thank you" = "Thank you for being with us!";
 "Listen to pronunciation" = "Listen to pronunciation";

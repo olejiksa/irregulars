@@ -29,5 +29,12 @@ extension PlainDetailCell: CellProtocol {
         guard let item = item as? PlainDetailItem else { return }
         
         titleLabel.text = item.text
+        
+        switch item.textStyle {
+        case .caption:
+            titleLabel.textColor = .secondaryLabel
+        case .standard:
+            titleLabel.textColor = .label
+        }
     }
 }

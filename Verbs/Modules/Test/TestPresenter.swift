@@ -97,6 +97,15 @@ private extension TestPresenter {
         guard let items = dataSource.items(of: InputItem.self) as? [InputItem],
               items.allSatisfy({ $0.isFilled }) else { return }
         
+        switch test {
+        case .basic:
+            let answeredCorrectlyCount = UserDefaults.standard.integer(for: .answeredCorrectlyBasic)
+            UserDefaults.standard.set(answeredCorrectlyCount + 1, for: .answeredCorrectlyBasic)
+        case .advanced:
+            let answeredCorrectlyCount = UserDefaults.standard.integer(for: .answeredCorrectlyAdvanced)
+            UserDefaults.standard.set(answeredCorrectlyCount + 1, for: .answeredCorrectlyAdvanced)
+        }
+        
         configureRandomComposition()
         viewController?.reloadData()
     }

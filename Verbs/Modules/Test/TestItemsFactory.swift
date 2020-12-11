@@ -76,7 +76,8 @@ final class TestItemsFactory {
         case .listening:
             guard UserDefaults.standard.bool(for: .listening) else { return [] }
             
-            return [Section(items: [PlainDetailItem(text: "Listen and write".localized)].compactMap { $0 }),
+            return [Section(items: [PlainDetailItem(text: "Listen and write".localized,
+                                                    textStyle: .caption)].compactMap { $0 }),
                     Section(header: "Infinitive".localized,
                             items: [InputItem(words: [verb.infinitive],
                                               playActionBlock: play,

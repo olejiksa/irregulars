@@ -44,6 +44,7 @@ final class TestViewController: UIViewController {
     
     func reloadData() {
         tableView?.reloadData()
+        tableView?.scrollToRow(at: .init(row: 0, section: 0), at: .top, animated: true)
     }
 }
 
