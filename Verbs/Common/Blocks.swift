@@ -7,6 +7,9 @@
 //
 
 typealias Block = () -> Void
+
+typealias AudioBlock = (String, @escaping Block, @escaping Block) -> Void
 typealias BoolBlock = (Bool) -> Void
 typealias IntBlock = (Int) -> Void
 typealias ItemBlock = (ItemProtocol) -> Void
+typealias StringBlock = (String) -> Void

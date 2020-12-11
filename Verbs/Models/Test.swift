@@ -6,27 +6,34 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
-import Foundation
-
-enum Test: Equatable {
-    case level(Int)
-    case favorites
+enum Test {
     
-    var indexPath: IndexPath {
+    enum Kind {
+        case threeForms
+        case translation
+        case retranslation
+        case listening
+        case sentences
+    }
+    
+    case basic
+    case advanced
+    
+    var kinds: [Kind] {
         switch self {
-        case .level(let index):
-            return .init(row: index, section: 1)
-        case .favorites:
-            return .init(row: 0, section: 0)
+        case .basic:
+            return [.threeForms, .translation, .retranslation, .listening]
+        case .advanced:
+            return [.sentences]
         }
     }
     
     var title: String {
         switch self {
-        case .level(let index):
-            return "\("Level".localized) \(index + 1)"
-        case .favorites:
-            return "Favorites".localized
+        case .basic:
+            return "ThreeFormsTitle".localized
+        case .advanced:
+            return "SentenceTitle".localized
         }
     }
 }

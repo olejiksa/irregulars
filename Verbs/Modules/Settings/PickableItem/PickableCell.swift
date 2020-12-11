@@ -11,7 +11,7 @@ import UIKit
 final class PickableCell: UITableViewCell {
     
     private let picker = UIPickerView()
-    private var item: PickableItem?
+    private weak var item: PickableItem?
     private var selectedValue: String?
     
     override func awakeFromNib() {

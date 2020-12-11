@@ -13,22 +13,36 @@ final class SwitchCell: UITableViewCell {
     @IBOutlet private weak var contentLabel: UILabel!
     @IBOutlet private weak var toggleSwitch: UISwitch!
     
-    private var item: SwitchItem?
-    private var actionBlock: BoolBlock?
+    private weak var item: SwitchItem?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         selectionStyle = .none
     }
+    
+    override func tintColorDidChange() {
+        super.tintColorDidChange()
+        
+        applyColor()
+    }
 }
 
-// MARK: - CellProtocol
+// MARK: - Private
 
 private extension SwitchCell {
     
+    func applyColor() {
+        switch tintAdjustmentMode {
+        case .dimmed:
+            toggleSwitch.onTintColor = .systemGray
+        default:
+            toggleSwitch.onTintColor = AccentColor.current.color
+        }
+    }
+    
     @IBAction func switchValueChanged() {
-        actionBlock?(toggleSwitch.isOn)
+        item?.actionBlock(toggleSwitch.isOn)
         item?.isOn = toggleSwitch.isOn
     }
 }
@@ -45,12 +59,11 @@ extension SwitchCell: CellProtocol {
         
         contentLabel.text = item.text
         toggleSwitch.isOn = item.isOn
-        actionBlock = item.actionBlock
         
         isUserInteractionEnabled = item.isEnabled
         contentLabel?.isEnabled = item.isEnabled
         toggleSwitch?.isEnabled = item.isEnabled
         
-        toggleSwitch.onTintColor = AccentColor.current.color
+        applyColor()
     }
 }

@@ -21,11 +21,29 @@ final class ListCell: UITableViewCell {
         let sd = scene?.delegate as? SceneDelegate
         guard let splitVc = sd?.window?.rootViewController as? UISplitViewController,
               !splitVc.isCollapsed else { return }
+        applyColor()
+    }
+    
+    override func tintColorDidChange() {
+        super.tintColorDidChange()
         
-        if selected {
+        applyColor()
+    }
+}
+
+// MARK: - Private
+
+private extension ListCell {
+    
+    func applyColor() {
+        switch (isSelected, tintAdjustmentMode) {
+        case (true, .normal):
             contentView.backgroundColor = AccentColor.current.color
             [infinitiveLabel, simplePastLabel, pastParticipleLabel].forEach { $0.textColor = .white }
-        } else {
+        case (true, _):
+            contentView.backgroundColor = .systemGray
+            [infinitiveLabel, simplePastLabel, pastParticipleLabel].forEach { $0.textColor = .white }
+        case (false, _):
             contentView.backgroundColor = nil
             [infinitiveLabel, simplePastLabel, pastParticipleLabel].forEach { $0.textColor = nil }
         }

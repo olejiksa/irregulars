@@ -17,11 +17,29 @@ final class SubtitleCell: UITableViewCell {
         let sd = scene?.delegate as? SceneDelegate
         guard let splitVc = sd?.window?.rootViewController as? UISplitViewController,
               !splitVc.isCollapsed else { return }
+        applyColor()
+    }
+    
+    override func tintColorDidChange() {
+        super.tintColorDidChange()
         
-        if selected {
+        applyColor()
+    }
+}
+
+// MARK: - Private
+
+private extension SubtitleCell {
+    
+    func applyColor() {
+        switch (isSelected, tintAdjustmentMode) {
+        case (true, .normal):
             contentView.backgroundColor = AccentColor.current.color
             [textLabel, detailTextLabel].forEach { $0?.textColor = .white }
-        } else {
+        case (true, _):
+            contentView.backgroundColor = .systemGray
+            [textLabel, detailTextLabel].forEach { $0?.textColor = .white }
+        case (false, _):
             contentView.backgroundColor = nil
             [textLabel, detailTextLabel].forEach { $0?.textColor = nil }
         }

@@ -82,7 +82,6 @@ final class SettingsItemsFactory {
         .init(header: "Tests".localized,
               items: [
                 setupTestVerbsItem(testVerbsBlock: testVerbsBlock),
-                // setupTestInputModeItem(listViewModeBlock: listViewModeBlock),
                 SwitchItem(text: "Listening".localized,
                            isOn: UserDefaults.standard.bool(for: .listening),
                            isEnabled: FeatureToggle.isPaid,
@@ -153,15 +152,5 @@ private extension SettingsItemsFactory {
                             actionBlock: testVerbsBlock,
                             options: options,
                             isEnabled: FeatureToggle.isPaid)
-    }
-    
-    func setupTestInputModeItem(listViewModeBlock: @escaping ItemBlock) -> ItemProtocol? {
-        let options = ["Answer options".localized, "Keyboard".localized]
-        let currentOption = options.last
-        return PickableItem(title: "Input mode".localized,
-                            subtitle: currentOption ?? "",
-                            actionBlock: listViewModeBlock,
-                            options: options,
-                            isEnabled: false)
     }
 }

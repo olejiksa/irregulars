@@ -11,23 +11,9 @@ final class SliderItem {
     let leadingIcon: SystemIcon
     let trailingIcon: SystemIcon
     let steps: Int
+    var index: Int
     let playbackSpeedBlock: IntBlock
     let isEnabled: Bool
-    
-    var index: Int {
-        didSet {
-            switch oldValue {
-            case (0..<steps):
-                self.index = oldValue
-            case (..<0):
-                self.index = 0
-            case (steps...):
-                self.index = steps
-            default:
-                self.index = 0
-            }
-        }
-    }
     
     init(leadingIcon: SystemIcon,
          trailingIcon: SystemIcon,
@@ -37,7 +23,7 @@ final class SliderItem {
          isEnabled: Bool) {
         self.leadingIcon = leadingIcon
         self.trailingIcon = trailingIcon
-        self.steps = steps >= 0 ? steps : 0
+        self.steps = steps
         self.index = index
         self.playbackSpeedBlock = playbackSpeedBlock
         self.isEnabled = isEnabled

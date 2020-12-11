@@ -32,9 +32,9 @@ final class TestsPresenter: NSObject {
 //                     TestItem(icon: .mouth,
 //                              title: "Pronunciation".localized,
 //                              subtitle: "SentenceSubtitle".localized),
-//                     TestItem(icon: .chart,
-//                              title: "Statistics".localized,
-//                              subtitle: "SentenceSubtitle".localized)
+                     TestItem(icon: .chart,
+                              title: "Statistics".localized,
+                              subtitle: "Track your progress in learning irregular verbs".localized)
         ]
         dataSource.setup([Section(items: items)])
     }
@@ -71,8 +71,9 @@ extension TestsPresenter: UITableViewDelegate {
         }
         
         switch indexPath.row {
-        case 0: router?.goToThreeForms()
-        case 1: router?.goToSentence()
+        case 0: router?.goTo(test: .basic)
+        case 1: router?.goTo(test: .advanced)
+        case 2: router?.goToStatistics()
         default: break
         }
         

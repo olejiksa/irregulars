@@ -8,7 +8,36 @@
 
 import UIKit
 
-final class ActionCell: UITableViewCell {}
+final class ActionCell: UITableViewCell {
+    
+    private var style: ActionItem.Style = .standard {
+        didSet {
+            applyStyle()
+        }
+    }
+    
+    override func tintColorDidChange() {
+        super.tintColorDidChange()
+        
+        applyStyle()
+    }
+}
+
+// MARK: - Private
+
+private extension ActionCell {
+    
+    func applyStyle() {
+        switch (style, tintAdjustmentMode) {
+        case (.standard, .normal):
+            textLabel?.textColor = AccentColor.current.color
+        case (.destructive, .normal):
+            textLabel?.textColor = .systemRed
+        case (_, _):
+            textLabel?.textColor = .systemGray
+        }
+    }
+}
 
 // MARK: - CellProtocol
 
@@ -20,12 +49,6 @@ extension ActionCell: CellProtocol {
         guard let item = item as? ActionItem else { return }
         
         textLabel?.text = item.text
-        
-        switch item.style {
-        case .standard:
-            textLabel?.textColor = AccentColor.current.color
-        case .destructive:
-            textLabel?.textColor = .systemRed
-        }
+        style = item.style
     }
 }

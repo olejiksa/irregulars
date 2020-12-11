@@ -49,18 +49,18 @@ private extension SettingsPresenter {
              itemsFactory.setupGeneralSection(languageBlock: willShowLanguageSettings,
                                               accentColorBlock: willGoToAccentColor,
                                               notificationsBlock: didDerivedFormsOptionChange),
-             itemsFactory.setupPlaybackSpeedSection(playbackSpeedBlock: didPlaybackSpeedChange)] +
-                itemsFactory.setupVocabularySections(regularVerbsBlock: didRegularVerbsOptionChange,
-                                                     derivativesBlock: didDerivedFormsOptionChange) +
-                [itemsFactory.setupListSection(listViewModeBlock: didListViewChange),
-                 itemsFactory.setupTestsSection(testVerbsBlock: didTestVerbsChange,
-                                                listeningBlock: didListeningChange),
-                 itemsFactory.setupLinksSection(rateBlock: willRate,
-                                                privacyBlock: willGoToPrivacyPolicy,
-                                                termsBlock: willGoToTermsOfUse,
-                                                mailBlock: willGoToMail,
-                                                shareBlock: willShare),
-                 itemsFactory.setupAboutSection(upgradeBlock: willBuy)]
+             itemsFactory.setupPlaybackSpeedSection(playbackSpeedBlock: didPlaybackSpeedChange)]
+                + itemsFactory.setupVocabularySections(regularVerbsBlock: didRegularVerbsOptionChange,
+                                                       derivativesBlock: didDerivedFormsOptionChange)
+                + [itemsFactory.setupListSection(listViewModeBlock: didListViewChange),
+                   itemsFactory.setupTestsSection(testVerbsBlock: didTestVerbsChange,
+                                                  listeningBlock: didListeningChange),
+                   itemsFactory.setupLinksSection(rateBlock: willRate,
+                                                  privacyBlock: willGoToPrivacyPolicy,
+                                                  termsBlock: willGoToTermsOfUse,
+                                                  mailBlock: willGoToMail,
+                                                  shareBlock: willShare),
+                   itemsFactory.setupAboutSection(upgradeBlock: willBuy)]
         )
     }
     

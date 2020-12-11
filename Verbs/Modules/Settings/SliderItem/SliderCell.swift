@@ -14,7 +14,7 @@ final class SliderCell: UITableViewCell {
     @IBOutlet private weak var leadingIconView: UIImageView!
     @IBOutlet private weak var trailingIconView: UIImageView!
     
-    private var playbackSpeedBlock: IntBlock?
+    private weak var item: SliderItem?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,7 +30,8 @@ private extension SliderCell {
     @IBAction func didSliderValueChange(_ sender: UISlider) {
         let roundedValue = Int(sender.value.rounded())
         sender.setValue(Float(roundedValue), animated: true)
-        playbackSpeedBlock?(roundedValue)
+        item?.index = roundedValue
+        item?.playbackSpeedBlock(roundedValue)
     }
 }
 
@@ -43,6 +44,8 @@ extension SliderCell: CellProtocol {
     func setup(with item: ItemProtocol) {
         guard let item = item as? SliderItem else { return }
         
+        self.item = item
+        
         leadingIconView.image = item.leadingIcon.image
         trailingIconView.image = item.trailingIcon.image
         
@@ -52,7 +55,5 @@ extension SliderCell: CellProtocol {
         slider.isEnabled = item.isEnabled
         
         isUserInteractionEnabled = item.isEnabled
-
-        playbackSpeedBlock = item.playbackSpeedBlock
     }
 }

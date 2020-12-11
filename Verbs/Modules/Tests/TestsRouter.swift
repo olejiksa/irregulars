@@ -26,30 +26,36 @@ final class TestsRouter {
         viewController?.present(nvc, animated: true)
     }
     
-    func goToThreeForms() {
+    func goTo(test: Test) {
         showEmptyFavoritesIfNeeded()
         
         let nvc = viewController?.navigationController
-        let vc = TestDetailAssembly().viewController()
-        if splitViewController?.secondaryViewController?.topViewController is DetailViewController {
+        let vc = TestAssembly(test: test).viewController()
+        if splitViewController?.secondaryViewController?.topViewController is DetailViewController ||
+           splitViewController?.secondaryViewController?.topViewController is StatisticsViewController {
             splitViewController?.secondaryViewController?.popToRootViewController(animated: false)
         }
         nvc?.push(vc, in: splitViewController)
     }
     
-    func goToSentence() {
-        showEmptyFavoritesIfNeeded()
-        
+    func goToStatistics() {
         let nvc = viewController?.navigationController
-        let vc = SentenceAssembly().viewController()
-        if splitViewController?.secondaryViewController?.topViewController is DetailViewController {
+        let vc = StatisticsAssembly().viewController()
+        if splitViewController?.secondaryViewController?.topViewController is DetailViewController ||
+           splitViewController?.secondaryViewController?.topViewController is TestViewController {
             splitViewController?.secondaryViewController?.popToRootViewController(animated: false)
         }
         nvc?.push(vc, in: splitViewController)
     }
+}
+
+// MARK: - Private
+
+private extension TestsRouter {
     
     func showEmptyFavoritesIfNeeded() {
-        guard Locator.favorites.verbs.isEmpty else { return }
+        guard UserDefaults.standard.bool(for: .favoritesOnly),
+              Locator.favorites.verbs.isEmpty else { return }
         
         let alertController = UIAlertController(title: "EmptyFavoritesTitle".localized,
                                                 message: "EmptyFavorites".localized,

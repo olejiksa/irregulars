@@ -37,6 +37,12 @@ final class SettingsViewController: UIViewController {
     func reloadData() {
         tableView?.reloadData()
     }
+    
+    func reload(at indexPath: IndexPath) {
+        tableView?.beginUpdates()
+        tableView?.reloadRows(at: [indexPath], with: .automatic)
+        tableView?.endUpdates()
+    }
 }
 
 // MARK: - Private

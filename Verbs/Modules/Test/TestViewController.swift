@@ -1,21 +1,25 @@
 //
-//  SentenceViewController.swift
+//  TestViewController.swift
 //  Verbs
 //
-//  Created by Oleg Samoylov on 06.12.2020.
+//  Created by Oleg Samoylov on 17.11.2020.
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
 import UIKit
 
-final class SentenceViewController: UIViewController {
+final class TestViewController: UIViewController {
     
-    private let presenter: SentencePresenter
+    private let presenter: TestPresenter
+    
     private var tableView: UITableView?
-
-    init(presenter: SentencePresenter) {
+    private var keyboardService: KeyboardService?
+    private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
+    
+    init(presenter: TestPresenter, title: String) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
+        self.title = title
         hidesBottomBarWhenPushed = true
     }
     
@@ -25,10 +29,17 @@ final class SentenceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupNavigationBar()
         setupTableView()
+        setupKeyboardService()
         setupDelegate()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        view.endEditing(true)
     }
     
     func reloadData() {
@@ -38,10 +49,10 @@ final class SentenceViewController: UIViewController {
 
 // MARK: - Private
 
-private extension SentenceViewController {
+private extension TestViewController {
     
     func setupNavigationBar() {
-        navigationItem.title = "SentenceTitle".localized
+        navigationItem.title = title
         navigationItem.largeTitleDisplayMode = .never
     }
     
@@ -51,20 +62,27 @@ private extension SentenceViewController {
         
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+
+        let keyboardHeightLayoutConstraint = tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            keyboardHeightLayoutConstraint
         ])
         
         tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         
-        tableView.register(InputCell.self, PlainDetailCell.self)
+        tableView.register(PlainDetailCell.self, InputCell.self)
         
+        self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.tableView = tableView
+    }
+    
+    func setupKeyboardService() {
+        keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
     }
     
     func setupDelegate() {
@@ -74,18 +92,19 @@ private extension SentenceViewController {
 
 // MARK: - Restorable
 
-extension SentenceViewController: Restorable {
+extension TestViewController: Restorable {
     
     func restore() {
         tableView?.removeFromSuperview()
         tableView = nil
         setupTableView()
+        setupKeyboardService()
     }
 }
 
 // MARK: - UINavigationControllerDelegate
 
-extension SentenceViewController: UINavigationControllerDelegate {
+extension TestViewController: UINavigationControllerDelegate {
     
     func navigationController(_ navigationController: UINavigationController,
                               willShow viewController: UIViewController,

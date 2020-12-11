@@ -1,5 +1,5 @@
 //
-//  TestDetailRouter.swift
+//  TestRouter.swift
 //  Verbs
 //
 //  Created by Oleg Samoylov on 22.11.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class TestDetailRouter {
+final class TestRouter {
     
     private weak var viewController: UIViewController?
     

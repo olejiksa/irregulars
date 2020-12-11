@@ -22,9 +22,9 @@ extension UINavigationController {
         
         let secondaryVc = splitViewController.secondaryViewController
         if secondaryVc?.topViewController is SettingsViewController ||
-            secondaryVc?.topViewController is TestDetailViewController ||
-            secondaryVc?.topViewController is AccentColorViewController ||
-            secondaryVc?.topViewController is SentenceViewController {
+            secondaryVc?.topViewController is TestViewController ||
+            secondaryVc?.topViewController is StatisticsViewController ||
+            secondaryVc?.topViewController is AccentColorViewController {
             secondaryVc?.popToRootViewController(animated: false)
         }
         

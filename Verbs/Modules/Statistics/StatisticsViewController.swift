@@ -1,21 +1,22 @@
 //
-//  TestDetailViewController.swift
+//  StatisticsViewController.swift
 //  Verbs
 //
-//  Created by Oleg Samoylov on 17.11.2020.
+//  Created by Oleg Samoylov on 11.12.2020.
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
 import UIKit
 
-final class TestDetailViewController: UIViewController {
+final class StatisticsViewController: UIViewController {
     
-    private let presenter: TestDetailPresenter
+    private let presenter: StatisticsPresenter
+    
     private var tableView: UITableView?
     private var keyboardService: KeyboardService?
     private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     
-    init(presenter: TestDetailPresenter) {
+    init(presenter: StatisticsPresenter) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
         hidesBottomBarWhenPushed = true
@@ -47,10 +48,10 @@ final class TestDetailViewController: UIViewController {
 
 // MARK: - Private
 
-private extension TestDetailViewController {
+private extension StatisticsViewController {
     
     func setupNavigationBar() {
-        navigationItem.title = "ThreeFormsTitle".localized
+        navigationItem.title = "Statistics".localized
         navigationItem.largeTitleDisplayMode = .never
     }
     
@@ -90,7 +91,7 @@ private extension TestDetailViewController {
 
 // MARK: - Restorable
 
-extension TestDetailViewController: Restorable {
+extension StatisticsViewController: Restorable {
     
     func restore() {
         tableView?.removeFromSuperview()
@@ -102,7 +103,7 @@ extension TestDetailViewController: Restorable {
 
 // MARK: - UINavigationControllerDelegate
 
-extension TestDetailViewController: UINavigationControllerDelegate {
+extension StatisticsViewController: UINavigationControllerDelegate {
     
     func navigationController(_ navigationController: UINavigationController,
                               willShow viewController: UIViewController,

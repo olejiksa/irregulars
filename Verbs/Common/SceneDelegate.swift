@@ -37,6 +37,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UserDefaults.standard.register(true, for: .shouldRegularVerbsBeShown)
         UserDefaults.standard.register(true, for: .shouldDerivedFormsBeShown)
         UserDefaults.standard.register(true, for: .listening)
+        UserDefaults.standard.register(2, for: .playbackSpeed)
         
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = splitViewController

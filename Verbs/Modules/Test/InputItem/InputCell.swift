@@ -13,7 +13,7 @@ final class InputCell: UITableViewCell {
     @IBOutlet private weak var textField: UITextField!
     @IBOutlet private weak var playButton: UIButton!
     
-    private var item: InputItem?
+    private weak var item: InputItem?
     private var expectedValues: [String]?
     
     override func awakeFromNib() {

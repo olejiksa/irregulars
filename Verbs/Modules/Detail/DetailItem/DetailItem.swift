@@ -9,10 +9,10 @@
 struct DetailItem {
     
     let word: Word
-    let actionBlock: ((String, @escaping Block, @escaping Block) -> ())
+    let actionBlock: AudioBlock
     
     init?(word: Word?,
-          actionBlock: @escaping ((String, @escaping Block, @escaping Block) -> ())) {
+          actionBlock: @escaping AudioBlock) {
         guard let word = word else { return nil }
         self.word = word
         self.actionBlock = actionBlock
