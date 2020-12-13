@@ -17,7 +17,9 @@ final class TestAssembly: AssemblyProtocol {
     }
     
     func viewController() -> some TestViewController {
-        let itemsFactory = TestItemsFactory(languageService: .init(), sentencesService: .init())
+        let itemsFactory = TestItemsFactory(languageService: .init(),
+                                            sentencesService: .init(),
+                                            verbsService: .init())
         let presenter = TestPresenter(audioService: .init(),
                                       verbsService: .init(),
                                       favoritesService: Locator.favoritesService,

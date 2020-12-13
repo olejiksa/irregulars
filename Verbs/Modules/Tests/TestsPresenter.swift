@@ -65,6 +65,13 @@ extension TestsPresenter: UITableViewDelegate {
         
         guard indexPath != selectedIndex else { return }
         
+        if UserDefaults.standard.bool(for: .favoritesOnly),
+           Locator.favorites.verbs.isEmpty,
+           0...1 ~= indexPath.row {
+            router?.showEmptyFavorites()
+            return
+        }
+        
         guard FeatureToggle.isPaid else {
             router?.goToPaywall()
             return

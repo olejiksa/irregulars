@@ -18,15 +18,15 @@ final class SentencesService {
         setItems()
     }
     
-    func ejectAppropriateVerbForms(for sentence: String, from verb: Verb) -> [String]? {
+    func ejectAppropriateVerbForms(for sentence: String, from verb: Verb) -> (Verb.Form, [String])? {
         if contains(verb.infinitive.value, in: sentence) {
-            return [verb.infinitive.value]
+            return (.infinitive, [verb.infinitive.value])
         } else {
             let isSimplePast = verb.simplePast?.contains { contains($0.value, in: sentence) } ?? false
-            if isSimplePast { return verb.simplePast?.map { $0.value } }
+            if isSimplePast { return (.simplePast, verb.simplePast?.map { $0.value } ?? []) }
             
             let isPastParticiple = verb.pastParticiple?.contains { contains($0.value, in: sentence) } ?? false
-            if isPastParticiple { return verb.pastParticiple?.map { $0.value } }
+            if isPastParticiple { return (.pastParticiple, verb.pastParticiple?.map { $0.value } ?? []) }
             
             return nil
         }

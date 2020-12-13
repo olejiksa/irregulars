@@ -96,11 +96,12 @@
 "Simple Past" = "Simple Past";
 "Past Participle" = "Past Participle";
 "RegularVerbsFooter" = "Determines the display of verbs with both regular and irregular forms";
-"DerivativesFooter" = "Determines the display of irregular verbs with the prefixes be-, for (e) -, in-, inter-, mis-, off-, out-, over-, pre-, under-, with- and others";
-"Listen and write" = "Listen and write";
+"DerivativesFooter" = "Determines the display of irregular verbs with the prefixes be-, for(e)-, in-, inter-, mis-, off-, out-, over-, pre-, under-, with- and others";
+"Listen and write" = "Listen and write below";
 "Playback speed" = "Playback speed";
 "EmptyFavoritesTitle" = "Empty Favorites";
 "Track your progress in learning irregular verbs" = "Track your progress in learning irregular verbs";
+"Using hints gives you no points" = "Only answers entered or selected correctly on the first try and without using hints are taken into account";
 
 // Irregular Verbs
 

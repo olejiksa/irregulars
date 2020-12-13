@@ -9,14 +9,14 @@
 struct PlainDetailItem {
     
     enum TextStyle {
-        case standard
-        case caption
+        case primary
+        case secondary
     }
     
     let text: String
     let textStyle: TextStyle
     
-    init(text: String, textStyle: TextStyle = .standard) {
+    init(text: String, textStyle: TextStyle = .primary) {
         self.text = text
         self.textStyle = textStyle
     }

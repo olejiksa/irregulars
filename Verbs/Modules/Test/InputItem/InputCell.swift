@@ -49,12 +49,13 @@ extension InputCell: CellProtocol {
     
     func setup(with item: ItemProtocol) {
         guard let item = item as? InputItem else { return }
+        
         self.item = item
         
         textField.text = ""
-        
+        textField.tag = item.tag
+        textField.returnKeyType = item.returnKeyType
         expectedValues = item.words.map { $0.value }
-        
         playButton.isHidden = !item.isAudio
     }
 }
@@ -80,6 +81,7 @@ extension InputCell: UITextFieldDelegate {
                    shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool {
         guard let text = textField.text?.appending(string) else { return true }
+        
         if expectedValues?.contains(where: { $0.lowercased() == text.lowercased() }) == true {
             item?.isFilled = true
             item?.successActionBlock()
@@ -91,7 +93,13 @@ extension InputCell: UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+        let hostView = contentView.superview?.superview
+        if let nextTextField = hostView?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        
+        return false
     }
 }

@@ -6,6 +6,8 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
+import UIKit
+
 final class InputItem {
     
     let words: [Word]
@@ -14,17 +16,23 @@ final class InputItem {
     let hintActionBlock: ((String) -> ())
     let isAudio: Bool
     var isFilled: Bool = false
+    let tag: Int
+    let returnKeyType: UIReturnKeyType
     
     init(words: [Word],
          playActionBlock: AudioBlock? = nil,
          successActionBlock: @escaping Block,
          hintActionBlock: @escaping ((String) -> ()),
-         isAudio: Bool = false) {
+         isAudio: Bool = false,
+         tag: Int,
+         returnKeyType: UIReturnKeyType = .next) {
         self.words = words
         self.playActionBlock = playActionBlock
         self.successActionBlock = successActionBlock
         self.hintActionBlock = hintActionBlock
         self.isAudio = isAudio
+        self.tag = tag
+        self.returnKeyType = returnKeyType
     }
 }
 

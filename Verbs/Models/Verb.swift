@@ -10,6 +10,12 @@ import Foundation
 
 struct Verb: Codable {
     
+    enum Form: CaseIterable {
+        case infinitive
+        case simplePast
+        case pastParticiple
+    }
+    
     let infinitive: Word
     let simplePast: [Word]?
     let pastParticiple: [Word]?

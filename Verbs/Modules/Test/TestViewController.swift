@@ -46,6 +46,10 @@ final class TestViewController: UIViewController {
         tableView?.reloadData()
         tableView?.scrollToRow(at: .init(row: 0, section: 0), at: .top, animated: true)
     }
+    
+    func endEditing() {
+        view.endEditing(true)
+    }
 }
 
 // MARK: - Private
@@ -76,7 +80,7 @@ private extension TestViewController {
         tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         
-        tableView.register(PlainDetailCell.self, InputCell.self)
+        tableView.register(PlainDetailCell.self, InputCell.self, AnswerCell.self)
         
         self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.tableView = tableView

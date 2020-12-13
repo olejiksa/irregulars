@@ -17,10 +17,6 @@ final class ListCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        let scene = UIApplication.shared.connectedScenes.first
-        let sd = scene?.delegate as? SceneDelegate
-        guard let splitVc = sd?.window?.rootViewController as? UISplitViewController,
-              !splitVc.isCollapsed else { return }
         applyColor()
     }
     
@@ -36,6 +32,11 @@ final class ListCell: UITableViewCell {
 private extension ListCell {
     
     func applyColor() {
+        let scene = UIApplication.shared.connectedScenes.first
+        let sd = scene?.delegate as? SceneDelegate
+        let splitVc = sd?.window?.rootViewController as? UISplitViewController
+        let isSelected = self.isSelected && splitVc?.isCollapsed == false
+        
         switch (isSelected, tintAdjustmentMode) {
         case (true, .normal):
             contentView.backgroundColor = AccentColor.current.color

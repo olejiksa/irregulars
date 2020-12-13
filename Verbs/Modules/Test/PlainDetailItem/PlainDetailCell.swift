@@ -31,9 +31,9 @@ extension PlainDetailCell: CellProtocol {
         titleLabel.text = item.text
         
         switch item.textStyle {
-        case .caption:
+        case .secondary:
             titleLabel.textColor = .secondaryLabel
-        case .standard:
+        case .primary:
             titleLabel.textColor = .label
         }
     }

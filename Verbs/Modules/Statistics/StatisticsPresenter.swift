@@ -33,7 +33,8 @@ private extension StatisticsPresenter {
                                              answeredCorrectlyTotal)
         
         dataSource.setup([Section(items: [StatisticsHeaderItem(title: String(answeredCorrectlyTotal),
-                                                               subtitle: answeredCorrectlyString)]),
+                                                               subtitle: answeredCorrectlyString)],
+                                  footer: "Using hints gives you no points".localized),
                           Section(header: "Basic tests".localized,
                                   items: [RightDetailItem(title: "Answered correctly".localized,
                                                           subtitle: String(answeredCorrectlyBasic),

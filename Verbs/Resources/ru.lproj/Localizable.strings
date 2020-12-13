@@ -97,12 +97,13 @@
 "Infinitive" = "Неопределенная форма глагола";
 "Simple Past" = "Простое прошедшее";
 "Past Participle" = "Причастие прошедшего времени";
-"Listen and write" = "Прослушайте и напишите";
+"Listen and write" = "Прослушайте и напишите ниже";
 "Playback speed" = "Скорость воспроизведения";
 "Fast" = "Быстро";
 "Slow" = "Медленно";
 "EmptyFavoritesTitle" = "Нет «Избранного»";
 "Track your progress in learning irregular verbs" = "Отслеживайте свой прогресс в изучении неправильных глаголов";
+"Using hints gives you no points" = "Учитываются только ответы, введенные или выбранные правильно с первой попытки и без использования подсказок";
 
 // Irregular Verbs
 

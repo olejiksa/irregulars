@@ -21,7 +21,7 @@ final class TestPresenter: NSObject {
     private let itemsFactory: TestItemsFactory
     private let test: Test
     
-    private var currentTestKind: Test.Kind?
+    private var wasHintUsed = false
     
     init(audioService: AudioService,
          verbsService: VerbsService,
@@ -37,7 +37,6 @@ final class TestPresenter: NSObject {
         self.itemsFactory = itemsFactory
         self.test = test
         super.init()
-        
         loadSettings()
         setupSections()
     }
@@ -72,6 +71,7 @@ private extension TestPresenter {
                 Test.basic.kinds.randomElement() :
                 Test.advanced.kinds.randomElement()
         else {
+            wasHintUsed = false
             configureRandomComposition()
             viewController?.reloadData()
             return
@@ -82,9 +82,11 @@ private extension TestPresenter {
         let sections = itemsFactory.build(with: currentTestKind,
                                           verb: verb,
                                           hint: hint, didEndEntering: didEndEntering,
-                                          play: play)
+                                          play: play,
+                                          answerActionBlock: didAnswerTap)
         
         guard !sections.isEmpty else {
+            wasHintUsed = false
             configureRandomComposition()
             viewController?.reloadData()
             return
@@ -97,15 +99,23 @@ private extension TestPresenter {
         guard let items = dataSource.items(of: InputItem.self) as? [InputItem],
               items.allSatisfy({ $0.isFilled }) else { return }
         
-        switch test {
-        case .basic:
-            let answeredCorrectlyCount = UserDefaults.standard.integer(for: .answeredCorrectlyBasic)
-            UserDefaults.standard.set(answeredCorrectlyCount + 1, for: .answeredCorrectlyBasic)
-        case .advanced:
-            let answeredCorrectlyCount = UserDefaults.standard.integer(for: .answeredCorrectlyAdvanced)
-            UserDefaults.standard.set(answeredCorrectlyCount + 1, for: .answeredCorrectlyAdvanced)
+        viewController?.endEditing()
+        finishTask()
+    }
+    
+    func finishTask() {
+        if !wasHintUsed {
+            switch test {
+            case .basic:
+                let answeredCorrectlyCount = UserDefaults.standard.integer(for: .answeredCorrectlyBasic)
+                UserDefaults.standard.set(answeredCorrectlyCount + 1, for: .answeredCorrectlyBasic)
+            case .advanced:
+                let answeredCorrectlyCount = UserDefaults.standard.integer(for: .answeredCorrectlyAdvanced)
+                UserDefaults.standard.set(answeredCorrectlyCount + 1, for: .answeredCorrectlyAdvanced)
+            }
         }
         
+        wasHintUsed = false
         configureRandomComposition()
         viewController?.reloadData()
     }
@@ -117,7 +127,20 @@ private extension TestPresenter {
     }
     
     func hint(text: String) {
+        wasHintUsed = true
         router?.show(hint: text)
+    }
+    
+    func didAnswerTap(_ item: ItemProtocol) {
+        guard let answerItem = item as? AnswerItem else { return }
+        
+        if answerItem.isCorrect {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.finishTask()
+            }
+        } else {
+            wasHintUsed = true
+        }
     }
 }
 
@@ -127,5 +150,10 @@ extension TestPresenter: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let actionableItem = dataSource.item(at: indexPath) as? Actionable,
+           let item = actionableItem as? ItemProtocol {
+            actionableItem.actionBlock?(item)
+        }
     }
 }
