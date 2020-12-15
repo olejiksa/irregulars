@@ -11,9 +11,15 @@ import UIKit
 final class TranslationCell: UITableViewCell {
     
     @IBOutlet private weak var contentLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        selectionStyle = .none
+    }
 }
 
-// MARK: - TranslationCell
+// MARK: - CellProtocol
 
 extension TranslationCell: CellProtocol {
     
@@ -23,6 +29,5 @@ extension TranslationCell: CellProtocol {
         guard let item = item as? TranslationItem else { return }
         
         contentLabel.text = item.text
-        selectionStyle = item.isTrulyTranslation ? .none : .default
     }
 }

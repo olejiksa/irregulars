@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="hFW-qc-HTP" customClass="ExampleCell" customModule="Verbs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hFW-qc-HTP" id="yTv-MO-ccD">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyN-px-ISO">
+                        <rect key="frame" x="20" y="12" width="280" height="20.5"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="eyN-px-ISO" firstAttribute="leading" secondItem="yTv-MO-ccD" secondAttribute="leading" constant="20" id="CTW-ut-zwH"/>
+                    <constraint firstItem="eyN-px-ISO" firstAttribute="top" secondItem="yTv-MO-ccD" secondAttribute="top" constant="12" id="ESa-jj-yIb"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="eyN-px-ISO" secondAttribute="bottom" constant="12" id="Pvd-T4-NA6"/>
+                    <constraint firstAttribute="trailing" secondItem="eyN-px-ISO" secondAttribute="trailing" constant="20" id="aG1-Pl-Jfj"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="oRJ-BO-Shb"/>
+            <connections>
+                <outlet property="contentLabel" destination="eyN-px-ISO" id="hQ8-pZ-ToD"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="78.348214285714278"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -52,7 +52,7 @@ private extension DetailPresenter {
         let sentences = sentencesService.items
             .filter { $0.word == verb.infinitive.value }
             .flatMap { $0.sentences }
-        let examples = sentences.map { TranslationItem(text: $0, isTrulyTranslation: false) }
+        let examples = sentences.map { ExampleItem(sentence: $0, verb: verb) }
         dataSource.setup([Section(header: "InfinitiveValue".localized,
                                   items: [DetailItem(word: verb.infinitive,
                                                      actionBlock: play)].compactMap { $0 }),
@@ -91,8 +91,7 @@ extension DetailPresenter: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
-        let item = dataSource.item(at: indexPath)
-        return (item as? TranslationItem)?.isTrulyTranslation == false
+        dataSource.item(at: indexPath) is ExampleItem
     }
     
     func tableView(_ tableView: UITableView,
@@ -106,7 +105,7 @@ extension DetailPresenter: UITableViewDelegate {
                    performAction action: Selector,
                    forRowAt indexPath: IndexPath,
                    withSender sender: Any?) {
-        let item = dataSource.item(at: indexPath)
-        UIPasteboard.general.string = (item as? TranslationItem)?.text
+        let item = dataSource.item(at: indexPath) as? ExampleItem
+        UIPasteboard.general.string = item?.sentence
     }
 }

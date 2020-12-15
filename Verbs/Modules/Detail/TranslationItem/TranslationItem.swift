@@ -9,11 +9,9 @@
 struct TranslationItem {
     
     let text: String
-    let isTrulyTranslation: Bool
     
-    init(text: String, isTrulyTranslation: Bool = true) {
+    init(text: String) {
         self.text = text
-        self.isTrulyTranslation = isTrulyTranslation
     }
 }
 

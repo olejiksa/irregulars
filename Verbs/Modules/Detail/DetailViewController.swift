@@ -86,7 +86,7 @@ private extension DetailViewController {
         tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         
-        tableView.register(DetailCell.self, TranslationCell.self)
+        tableView.register(DetailCell.self, TranslationCell.self, ExampleCell.self)
         
         self.tableView = tableView
     }

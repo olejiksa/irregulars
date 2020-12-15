@@ -20,7 +20,7 @@ final class DetailCell: UITableViewCell {
         super.awakeFromNib()
         
         selectionStyle = .none
-        setupPlayButton()
+        playButton.addTarget(self, action: #selector(playButtonDidTap), for: .touchUpInside)
     }
 }
 
@@ -28,23 +28,17 @@ final class DetailCell: UITableViewCell {
 
 private extension DetailCell {
     
-    func setupPlayButton() {
-        playButton.addTarget(self,
-                             action: #selector(playButtonDidTap),
-                             for: .touchUpInside)
-    }
-    
     @objc func playButtonDidTap() {
         guard let text = titleLabel.text else { return }
         actionBlock?(text, play, stop)
     }
     
     func play() {
-        playButton.setImage(UIImage(systemName: "stop.circle"), for: .normal)
+        playButton.setImage(SystemIcon.stop.image, for: .normal)
     }
     
     func stop() {
-        playButton.setImage(UIImage(systemName: "play.circle"), for: .normal)
+        playButton.setImage(SystemIcon.play.image, for: .normal)
     }
 }
 
