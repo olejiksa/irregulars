@@ -106,6 +106,7 @@
 "Are you sure that you want to reset statistics?" = "Are you sure that you want to reset statistics?";
 "Yes" = "Yes";
 "ProSuggestionStatistics" = "Among other benefits, Pro expands the count of available irregular verbs in tests from %d to %d";
+"No data to display" = "No data to display";
 
 // Irregular Verbs
 

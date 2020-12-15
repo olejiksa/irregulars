@@ -108,6 +108,7 @@
 "Are you sure that you want to reset statistics?" = "Вы действительно хотите сбросить статистику?";
 "Yes" = "Да";
 "ProSuggestionStatistics" = "Кроме других преимуществ, в Pro-версии увеличено количество неправильных глаголов, доступных для закрепления в тестах: с %d до %d";
+"No data to display" = "Нет данных для показа";
 
 // Irregular Verbs
 

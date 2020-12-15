@@ -8,8 +8,9 @@
 
 import SwiftUI
 import WidgetKit
+import Intents
 
-struct Provider: TimelineProvider {
+struct Provider: IntentTimelineProvider {
     
     private var service: VerbsService = {
         let service = VerbsService()
@@ -19,39 +20,50 @@ struct Provider: TimelineProvider {
     }()
     
     func placeholder(in context: Context) -> VerbEntry {
-        let verb = Verb(infinitive: Word(),
-                        simplePast: [Word()],
-                        pastParticiple: [Word()],
-                        hasRegular: false,
-                        isDerived: false)
-        return .init(date: Date(), verb: verb)
+        .init(date: Date(), state: .empty)
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (VerbEntry) -> ()) {
+    func getSnapshot(for configuration: VerbsIntentIntent,
+                     in context: Context,
+                     completion: @escaping (VerbEntry) -> ()) {
         let verb = Verb(infinitive: Word(value: "arise", transcription: "/əˈrʌɪz/"),
                         simplePast: [Word(value: "arose", transcription: "/əˈrəʊz/")],
                         pastParticiple: [Word(value: "arisen", transcription: "/əˈrɪz(ə)n/")],
                         hasRegular: false,
                         isDerived: true)
-        let entry = VerbEntry(date: Date(), verb: verb)
+        let entry = VerbEntry(date: Date(), state: .data(verb))
         completion(entry)
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(for configuration: VerbsIntentIntent,
+                     in context: Context,
+                     completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [VerbEntry] = []
-        for _ in 1...24*4 {
-            if Locator.favorites.verbs.isEmpty {
+        switch configuration.displayOption {
+        case .unknown, .all:
+            for _ in 1...8 {
                 guard let verb = service.randomItem else { continue }
                 let date = Calendar.current.date(byAdding: .minute, value: 15, to: Date()) ?? Date()
-                let entry = VerbEntry(date: date, verb: verb)
+                let entry = VerbEntry(date: date, state: .data(verb))
                 entries.append(entry)
-            } else {
+            }
+        case .favorites:
+            guard !Locator.favorites.verbs.isEmpty else {
+                let entry = VerbEntry(date: Date(), state: .empty)
+                entries.append(entry)
+                let timeline = Timeline(entries: entries, policy: .atEnd)
+                completion(timeline)
+                return
+            }
+            
+            for _ in 1...8 {
                 guard let verb = Locator.favorites.verbs.randomElement() else { continue }
                 let date = Calendar.current.date(byAdding: .minute, value: 15, to: Date()) ?? Date()
-                let entry = VerbEntry(date: date, verb: verb)
+                let entry = VerbEntry(date: date, state: .data(verb))
                 entries.append(entry)
             }
         }
+        
 
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
@@ -59,8 +71,14 @@ struct Provider: TimelineProvider {
 }
 
 struct VerbEntry: TimelineEntry {
+    
+    enum State {
+        case data(Verb)
+        case empty
+    }
+    
     let date: Date
-    let verb: Verb
+    let state: State
 }
 
 struct VerbsWidgetEntryView: View {
@@ -68,82 +86,85 @@ struct VerbsWidgetEntryView: View {
     @Environment(\.widgetFamily) private var widgetFamily
 
     var body: some View {
-        switch widgetFamily {
-        case .systemSmall:
+        switch (widgetFamily, entry.state) {
+        case (.systemSmall, .data(let verb)):
             VStack(alignment: .leading, spacing: 5) {
                 Text("Infinitive")
                     .font(.caption)
-                Text(entry.verb.infinitive.value)
+                Text(verbatim: verb.infinitive.value)
                     .bold()
                     .lineLimit(1)
                 Text("Simple Past")
                     .font(.caption)
-                if let simplePast = entry.verb.simplePast?.first {
-                    Text(simplePast.value)
+                if let simplePast = verb.simplePast?.first {
+                    Text(verbatim: simplePast.value)
                         .bold()
                         .truncationMode(.head)
                         .lineLimit(1)
                 }
-                if let pastParticiple = entry.verb.pastParticiple?.first {
+                if let pastParticiple = verb.pastParticiple?.first {
                     Text("Past Participle")
                         .font(.caption)
-                    Text(pastParticiple.value)
+                    Text(verbatim: pastParticiple.value)
                         .bold()
                         .truncationMode(.head)
                         .lineLimit(1)
                 }
             }
-            .widgetURL(entry.verb.url)
+            .widgetURL(verb.url)
             .padding(20)
-        case .systemMedium:
+        case (.systemMedium, .data(let verb)):
             VStack(alignment: .center, spacing: 15) {
                 HStack(alignment: .center, spacing: 20) {
                     VStack(alignment: .center, spacing: 10) {
                         Text("Infinitive")
                             .font(.caption)
-                        Text(entry.verb.infinitive.value)
+                        Text(verbatim: verb.infinitive.value)
                             .bold()
                             .lineLimit(1)
-                        Text(entry.verb.infinitive.transcription)
+                        Text(verbatim: verb.infinitive.transcription)
                             .lineLimit(1)
                     }
-                    if let simplePast = entry.verb.simplePast?.first {
+                    if let simplePast = verb.simplePast?.first {
                         VStack(alignment: .center, spacing: 10) {
                             Text("Simple Past")
                                 .font(.caption)
-                            Text(simplePast.value)
+                            Text(verbatim: simplePast.value)
                                 .bold()
                                 .truncationMode(.head)
                                 .lineLimit(1)
-                            Text(simplePast.transcription)
+                            Text(verbatim: simplePast.transcription)
                                 .truncationMode(.head)
                                 .lineLimit(1)
                         }
                     }
-                    if let pastParticiple = entry.verb.pastParticiple?.first {
+                    if let pastParticiple = verb.pastParticiple?.first {
                         VStack(alignment: .center, spacing: 10) {
                             Text("Past Participle")
                                 .font(.caption)
-                            Text(pastParticiple.value)
+                            Text(verbatim: pastParticiple.value)
                                 .bold()
                                 .truncationMode(.head)
                                 .lineLimit(1)
-                            Text(pastParticiple.transcription)
+                            Text(verbatim: pastParticiple.transcription)
                                 .truncationMode(.head)
                                 .lineLimit(1)
                         }
                     }
                 }
                 if LanguageService().hasTranslation {
-                    Text(entry.verb.translation)
+                    Text(verbatim: verb.translation)
                         .italic()
                         .lineLimit(1)
                 }
             }
-            .widgetURL(entry.verb.url)
+            .widgetURL(verb.url)
             .padding(20)
         default:
-            Text("Not Supported")
+            Text("No data to display")
+                .multilineTextAlignment(.center)
+                .font(.caption)
+                .padding(20)
         }
     }
 }
@@ -153,7 +174,7 @@ struct VerbsWidget: Widget {
     let kind: String = "VerbsWidget"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+        IntentConfiguration(kind: kind, intent: VerbsIntentIntent.self, provider: Provider()) { entry in
             VerbsWidgetEntryView(entry: entry)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color(UIColor.systemBackground))
@@ -171,7 +192,7 @@ struct VerbsWidget_Previews: PreviewProvider {
                         pastParticiple: [Word(value: "arisenarisearise", transcription: "/əˈrɪz(ə)n/")],
                         hasRegular: false,
                         isDerived: true)
-        VerbsWidgetEntryView(entry: VerbEntry(date: Date(), verb: verb))
+        VerbsWidgetEntryView(entry: VerbEntry(date: Date(), state: .data(verb)))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

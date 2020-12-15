@@ -202,6 +202,10 @@
 		EBF593E0258869B90091FCE0 /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325A52556EFF0005E02C1 /* FavoritesService.swift */; };
 		EBF593E3258869C00091FCE0 /* Blocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD2C4E8257E95AE0023AED4 /* Blocks.swift */; };
 		EBF593E625886A220091FCE0 /* ItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB01C1E25218BAB00BB646B /* ItemProtocol.swift */; };
+		EBF593F4258870420091FCE0 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF593F3258870420091FCE0 /* IntentHandler.swift */; };
+		EBF59409258870420091FCE0 /* VerbsWidgetIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EBF593F1258870420091FCE0 /* VerbsWidgetIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EBF59445258879770091FCE0 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = EBF59448258879770091FCE0 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
+		EBF59446258879770091FCE0 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = EBF59448258879770091FCE0 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
 		EBF8A62F2559172100A6265C /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8A62E2559172100A6265C /* Favorites.swift */; };
 		EBF8A6522559225D00A6265C /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8A6512559225D00A6265C /* Locator.swift */; };
 		EBF97C8A25623503009FFFBA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF97C8925623503009FFFBA /* StoreKit.framework */; };
@@ -219,6 +223,13 @@
 			remoteGlobalIDString = EB7DFF60252451D1000B711D;
 			remoteInfo = VerbsWidgetExtension;
 		};
+		EBF59407258870420091FCE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBEB1D6A251F11900019972C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBF593F0258870420091FCE0;
+			remoteInfo = VerbsWidgetIntent;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -229,6 +240,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				EB7DFF72252451D4000B711D /* VerbsWidgetExtension.appex in Embed App Extensions */,
+				EBF59409258870420091FCE0 /* VerbsWidgetIntent.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +432,13 @@
 		EBF593CE258865680091FCE0 /* MenuAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAction.swift; sourceTree = "<group>"; };
 		EBF593D22588679F0091FCE0 /* Verbs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Verbs.entitlements; sourceTree = "<group>"; };
 		EBF593D5258867D00091FCE0 /* VerbsWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VerbsWidgetExtension.entitlements; sourceTree = "<group>"; };
+		EBF593F1258870420091FCE0 /* VerbsWidgetIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VerbsWidgetIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBF593F3258870420091FCE0 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		EBF593F5258870420091FCE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBF593FB258870420091FCE0 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		EBF59447258879770091FCE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/Intents.intentdefinition; sourceTree = "<group>"; };
+		EBF5944A2588797B0091FCE0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Intents.strings; sourceTree = "<group>"; };
+		EBF5944C2588797E0091FCE0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Intents.strings; sourceTree = "<group>"; };
 		EBF8A62E2559172100A6265C /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		EBF8A6512559225D00A6265C /* Locator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
 		EBF97C8925623503009FFFBA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -444,6 +463,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBF97C8A25623503009FFFBA /* StoreKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBF593EE258870420091FCE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,6 +706,7 @@
 				EBF97C8925623503009FFFBA /* StoreKit.framework */,
 				EB7DFF63252451D1000B711D /* WidgetKit.framework */,
 				EB7DFF65252451D2000B711D /* SwiftUI.framework */,
+				EBF593FB258870420091FCE0 /* IntentsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -691,6 +718,7 @@
 				EB7DFF6B252451D4000B711D /* Assets.xcassets */,
 				EB7DFF6D252451D4000B711D /* Info.plist */,
 				EBF593D5258867D00091FCE0 /* VerbsWidgetExtension.entitlements */,
+				EBF59448258879770091FCE0 /* Intents.intentdefinition */,
 			);
 			path = VerbsWidget;
 			sourceTree = "<group>";
@@ -884,6 +912,7 @@
 			children = (
 				EBEB1D74251F11900019972C /* Verbs */,
 				EB7DFF67252451D2000B711D /* VerbsWidget */,
+				EBF593F2258870420091FCE0 /* VerbsWidgetIntent */,
 				EB7DFF62252451D1000B711D /* Frameworks */,
 				EBEB1D73251F11900019972C /* Products */,
 			);
@@ -894,6 +923,7 @@
 			children = (
 				EBEB1D72251F11900019972C /* Verbs.app */,
 				EB7DFF61252451D1000B711D /* VerbsWidgetExtension.appex */,
+				EBF593F1258870420091FCE0 /* VerbsWidgetIntent.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1021,6 +1051,15 @@
 			path = AnswerItem;
 			sourceTree = "<group>";
 		};
+		EBF593F2258870420091FCE0 /* VerbsWidgetIntent */ = {
+			isa = PBXGroup;
+			children = (
+				EBF593F3258870420091FCE0 /* IntentHandler.swift */,
+				EBF593F5258870420091FCE0 /* Info.plist */,
+			);
+			path = VerbsWidgetIntent;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1054,6 +1093,7 @@
 			);
 			dependencies = (
 				EB7DFF71252451D4000B711D /* PBXTargetDependency */,
+				EBF59408258870420091FCE0 /* PBXTargetDependency */,
 			);
 			name = Verbs;
 			packageProductDependencies = (
@@ -1062,13 +1102,30 @@
 			productReference = EBEB1D72251F11900019972C /* Verbs.app */;
 			productType = "com.apple.product-type.application";
 		};
+		EBF593F0258870420091FCE0 /* VerbsWidgetIntent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBF5940D258870420091FCE0 /* Build configuration list for PBXNativeTarget "VerbsWidgetIntent" */;
+			buildPhases = (
+				EBF593ED258870420091FCE0 /* Sources */,
+				EBF593EE258870420091FCE0 /* Frameworks */,
+				EBF593EF258870420091FCE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VerbsWidgetIntent;
+			productName = VerbsWidgetIntent;
+			productReference = EBF593F1258870420091FCE0 /* VerbsWidgetIntent.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		EBEB1D6A251F11900019972C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1210;
 				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = "Oleg Samoylov";
 				TargetAttributes = {
@@ -1077,6 +1134,9 @@
 					};
 					EBEB1D71251F11900019972C = {
 						CreatedOnToolsVersion = 11.7;
+					};
+					EBF593F0258870420091FCE0 = {
+						CreatedOnToolsVersion = 12.1;
 					};
 				};
 			};
@@ -1098,6 +1158,7 @@
 			targets = (
 				EBEB1D71251F11900019972C /* Verbs */,
 				EB7DFF60252451D1000B711D /* VerbsWidgetExtension */,
+				EBF593F0258870420091FCE0 /* VerbsWidgetIntent */,
 			);
 		};
 /* End PBXProject section */
@@ -1162,6 +1223,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EBF593EF258870420091FCE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1181,6 +1249,7 @@
 				EB7DFF8C252B1CE6000B711D /* JSONParser.swift in Sources */,
 				EB26997E256D1BF1007CCF2E /* UserDefaults+Key.swift in Sources */,
 				EB7DFF83252B1CB8000B711D /* VerbsService.swift in Sources */,
+				EBF59446258879770091FCE0 /* Intents.intentdefinition in Sources */,
 				EBF593DA258869AE0091FCE0 /* Locator.swift in Sources */,
 				EB26998C256D40DD007CCF2E /* Notification.swift in Sources */,
 				EBF593DD258869B20091FCE0 /* Favorites.swift in Sources */,
@@ -1308,6 +1377,7 @@
 				EBF4A13B252EA2F6003E3A44 /* FeatureToggle.swift in Sources */,
 				EB2E4B34257297F4005B343A /* AccentColorPresenter.swift in Sources */,
 				EB4509E22541E69400D31858 /* RightDetailCell.swift in Sources */,
+				EBF59445258879770091FCE0 /* Intents.intentdefinition in Sources */,
 				EBF4A126252E901A003E3A44 /* NavigationController.swift in Sources */,
 				EB7B8579253B0D5900542D3C /* DisclosureCell.swift in Sources */,
 				EBB01C1B2521874E00BB646B /* TableView.swift in Sources */,
@@ -1332,6 +1402,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EBF593ED258870420091FCE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBF593F4258870420091FCE0 /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1339,6 +1417,11 @@
 			isa = PBXTargetDependency;
 			target = EB7DFF60252451D1000B711D /* VerbsWidgetExtension */;
 			targetProxy = EB7DFF70252451D4000B711D /* PBXContainerItemProxy */;
+		};
+		EBF59408258870420091FCE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBF593F0258870420091FCE0 /* VerbsWidgetIntent */;
+			targetProxy = EBF59407258870420091FCE0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1367,6 +1450,16 @@
 				EBF593882583CC5A0091FCE0 /* en */,
 			);
 			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
+		EBF59448258879770091FCE0 /* Intents.intentdefinition */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBF59447258879770091FCE0 /* Base */,
+				EBF5944A2588797B0091FCE0 /* en */,
+				EBF5944C2588797E0091FCE0 /* ru */,
+			);
+			name = Intents.intentdefinition;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1590,6 +1683,52 @@
 			};
 			name = Release;
 		};
+		EBF5940E258870420091FCE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
+				DEVELOPMENT_TEAM = B2FMGUSH44;
+				INFOPLIST_FILE = VerbsWidgetIntent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2.7;
+				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidgetIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EBF5940F258870420091FCE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
+				DEVELOPMENT_TEAM = B2FMGUSH44;
+				INFOPLIST_FILE = VerbsWidgetIntent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2.7;
+				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidgetIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1616,6 +1755,15 @@
 			buildConfigurations = (
 				EBEB1D87251F11910019972C /* Debug */,
 				EBEB1D88251F11910019972C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBF5940D258870420091FCE0 /* Build configuration list for PBXNativeTarget "VerbsWidgetIntent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBF5940E258870420091FCE0 /* Debug */,
+				EBF5940F258870420091FCE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
