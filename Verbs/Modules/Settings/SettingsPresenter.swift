@@ -96,9 +96,6 @@ private extension SettingsPresenter {
         guard let item = sender as? PickableItem else { return }
         let value = item.subtitle == "Favorites".localized
         UserDefaults.shared.set(value, for: .favoritesOnly)
-        NotificationCenter.default.post(name: .list,
-                                        object: nil,
-                                        userInfo: [Notification.Name.list: value])
         viewController?.reloadData()
     }
     

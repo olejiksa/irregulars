@@ -12,6 +12,33 @@ final class AccentColorCell: UITableViewCell {
 
     @IBOutlet private weak var circleView: CircleView!
     @IBOutlet private weak var colorNameLabel: UILabel!
+    
+    private weak var item: AccentColorItem?
+    
+    override func tintColorDidChange() {
+        super.tintColorDidChange()
+        
+        applyColor()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        circleView.color = .systemGray
+    }
+}
+
+// MARK: - Private
+
+private extension AccentColorCell {
+    
+    func applyColor() {
+        if tintAdjustmentMode != .dimmed {
+            circleView.color = item?.color.color ?? .systemGray
+        } else {
+            circleView.color = .systemGray
+        }
+    }
 }
 
 // MARK: - CellProtocol
@@ -22,9 +49,9 @@ extension AccentColorCell: CellProtocol {
     
     func setup(with item: ItemProtocol) {
         guard let item = item as? AccentColorItem else { return }
-        
-        circleView.color = item.color.color
+        self.item = item
         colorNameLabel?.text = item.color.rawValue.capitalized.localized
         accessoryType = item.isSelected ? .checkmark : .none
+        applyColor()
     }
 }

@@ -601,7 +601,7 @@
     },
     {
         "word": "overpay",
-        "sentences": ["We overpay the invoice by $ 245", "I overpaid him for his service", "We overpaid our taxes this year"]
+        "sentences": ["We overpay the invoice by $245", "I overpaid him for his service", "We overpaid our taxes this year"]
     },
     {
         "word": "override",
