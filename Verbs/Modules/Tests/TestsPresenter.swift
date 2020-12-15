@@ -65,7 +65,7 @@ extension TestsPresenter: UITableViewDelegate {
         
         guard indexPath != selectedIndex else { return }
         
-        if UserDefaults.standard.bool(for: .favoritesOnly),
+        if UserDefaults.shared.bool(for: .favoritesOnly),
            Locator.favorites.verbs.isEmpty,
            0...1 ~= indexPath.row {
             router?.showEmptyFavorites()

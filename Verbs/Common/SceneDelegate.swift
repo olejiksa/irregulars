@@ -34,10 +34,10 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
         
-        UserDefaults.standard.register(true, for: .shouldRegularVerbsBeShown)
-        UserDefaults.standard.register(true, for: .shouldDerivedFormsBeShown)
-        UserDefaults.standard.register(true, for: .listening)
-        UserDefaults.standard.register(2, for: .playbackSpeed)
+        UserDefaults.shared.register(true, for: .shouldRegularVerbsBeShown)
+        UserDefaults.shared.register(true, for: .shouldDerivedFormsBeShown)
+        UserDefaults.shared.register(true, for: .listening)
+        UserDefaults.shared.register(2, for: .playbackSpeed)
         
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = splitViewController

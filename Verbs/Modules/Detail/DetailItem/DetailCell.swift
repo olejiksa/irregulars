@@ -19,6 +19,7 @@ final class DetailCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        selectionStyle = .none
         setupPlayButton()
     }
 }

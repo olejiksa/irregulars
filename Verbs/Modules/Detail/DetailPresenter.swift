@@ -52,14 +52,14 @@ private extension DetailPresenter {
         let sentences = sentencesService.items
             .filter { $0.word == verb.infinitive.value }
             .flatMap { $0.sentences }
-        let examples = sentences.map { TranslationItem(text: $0) }
-        dataSource.setup([Section(header: "Infinitive".localized,
+        let examples = sentences.map { TranslationItem(text: $0, isTrulyTranslation: false) }
+        dataSource.setup([Section(header: "InfinitiveValue".localized,
                                   items: [DetailItem(word: verb.infinitive,
                                                      actionBlock: play)].compactMap { $0 }),
-                          Section(header: "Simple Past".localized,
+                          Section(header: "SimplePastValue".localized,
                                   items: verb.simplePast?.compactMap { DetailItem(word: $0,
                                                                                   actionBlock: play) } ?? []),
-                          Section(header: "Past Participle".localized,
+                          Section(header: "PastParticipleValue".localized,
                                   items: verb.pastParticiple?.compactMap { DetailItem(word: $0,
                                                                                       actionBlock: play) } ?? []),
                           Section(header: "Translation".localized, items: translationItems),
@@ -88,5 +88,25 @@ extension DetailPresenter: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
+        let item = dataSource.item(at: indexPath)
+        return (item as? TranslationItem)?.isTrulyTranslation == false
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   canPerformAction action: Selector,
+                   forRowAt indexPath: IndexPath,
+                   withSender sender: Any?) -> Bool {
+        action == #selector(MenuAction.copy(_:))
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   performAction action: Selector,
+                   forRowAt indexPath: IndexPath,
+                   withSender sender: Any?) {
+        let item = dataSource.item(at: indexPath)
+        UIPasteboard.general.string = (item as? TranslationItem)?.text
     }
 }

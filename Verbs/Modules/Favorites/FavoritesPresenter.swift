@@ -48,7 +48,7 @@ private extension FavoritesPresenter {
     }
     
     func loadSettings() {
-        favoritesService.shouldTranslationBeShown = UserDefaults.standard.bool(for: .shouldTranslationBeShown)
+        favoritesService.shouldTranslationBeShown = UserDefaults.shared.bool(for: .shouldTranslationBeShown)
     }
     
     func subscribe() {

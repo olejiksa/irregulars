@@ -11,7 +11,12 @@ import WidgetKit
 
 struct Provider: TimelineProvider {
     
-    private let service = VerbsService()
+    private var service: VerbsService = {
+        let service = VerbsService()
+        service.shouldDerivedFormsBeShown = UserDefaults.shared.bool(for: .shouldDerivedFormsBeShown)
+        service.shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .shouldRegularVerbsBeShown)
+        return service
+    }()
     
     func placeholder(in context: Context) -> VerbEntry {
         let verb = Verb(infinitive: Word(),
@@ -35,10 +40,17 @@ struct Provider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [VerbEntry] = []
         for _ in 1...24*4 {
-            guard let verb = service.randomItem else { continue }
-            let date = Calendar.current.date(byAdding: .minute, value: 15, to: Date()) ?? Date()
-            let entry = VerbEntry(date: date, verb: verb)
-            entries.append(entry)
+            if Locator.favorites.verbs.isEmpty {
+                guard let verb = service.randomItem else { continue }
+                let date = Calendar.current.date(byAdding: .minute, value: 15, to: Date()) ?? Date()
+                let entry = VerbEntry(date: date, verb: verb)
+                entries.append(entry)
+            } else {
+                guard let verb = Locator.favorites.verbs.randomElement() else { continue }
+                let date = Calendar.current.date(byAdding: .minute, value: 15, to: Date()) ?? Date()
+                let entry = VerbEntry(date: date, verb: verb)
+                entries.append(entry)
+            }
         }
 
         let timeline = Timeline(entries: entries, policy: .atEnd)

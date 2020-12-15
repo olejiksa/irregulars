@@ -43,9 +43,9 @@ final class ListPresenter: NSObject {
 private extension ListPresenter {
     
     func loadSettings() {
-        verbsService.shouldRegularVerbsBeShown = UserDefaults.standard.bool(for: .shouldRegularVerbsBeShown)
-        verbsService.shouldDerivedFormsBeShown = UserDefaults.standard.bool(for: .shouldDerivedFormsBeShown)
-        verbsService.shouldTranslationBeShown = UserDefaults.standard.bool(for: .shouldTranslationBeShown)
+        verbsService.shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .shouldRegularVerbsBeShown)
+        verbsService.shouldDerivedFormsBeShown = UserDefaults.shared.bool(for: .shouldDerivedFormsBeShown)
+        verbsService.shouldTranslationBeShown = UserDefaults.shared.bool(for: .shouldTranslationBeShown)
     }
     
     func subscribe() {

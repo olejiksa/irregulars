@@ -23,5 +23,6 @@ extension TranslationCell: CellProtocol {
         guard let item = item as? TranslationItem else { return }
         
         contentLabel.text = item.text
+        selectionStyle = item.isTrulyTranslation ? .none : .default
     }
 }

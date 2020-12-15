@@ -21,12 +21,12 @@ enum AccentColor: String, CaseIterable {
     
     static var current: AccentColor {
         get {
-            guard let string = UserDefaults.standard.string(for: .accentColor),
+            guard let string = UserDefaults.shared.string(for: .accentColor),
                   let color = AccentColor(rawValue: string) else { return .blue }
             return color
         }
         set {
-            UserDefaults.standard.set(newValue.rawValue, for: .accentColor)
+            UserDefaults.shared.set(newValue.rawValue, for: .accentColor)
             NotificationCenter.default.post(name: .reload, object: nil)
             let scene = UIApplication.shared.connectedScenes.first
             let sd = scene?.delegate as? SceneDelegate

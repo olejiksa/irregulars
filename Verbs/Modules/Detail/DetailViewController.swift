@@ -72,7 +72,6 @@ private extension DetailViewController {
     func setupTableView() {
         let tableViewStyle: UITableView.Style = splitViewController?.isCollapsed == true ? .grouped : .insetGrouped
         let tableView = UITableView(frame: .zero, style: tableViewStyle)
-        tableView.allowsSelection = false
         
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false

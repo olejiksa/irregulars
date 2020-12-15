@@ -33,8 +33,8 @@ final class TestPresenter: NSObject {
         self.verbsService = verbsService
         self.favoritesService = favoritesService
         self.demoService = demoService
-        switch (UserDefaults.standard.bool(for: .favoritesOnly),
-                !UserDefaults.standard.bool(for: .isPaid)) {
+        switch (UserDefaults.shared.bool(for: .favoritesOnly),
+                !UserDefaults.shared.bool(for: .isPaid)) {
         case (_, true):
             self.items = verbsService.items.map { $0.infinitive.value }.filter(demoService.items.contains)
         case (true, false):
@@ -56,8 +56,8 @@ final class TestPresenter: NSObject {
 private extension TestPresenter {
     
     func loadSettings() {
-        verbsService.shouldRegularVerbsBeShown = UserDefaults.standard.bool(for: .shouldRegularVerbsBeShown)
-        verbsService.shouldDerivedFormsBeShown = UserDefaults.standard.bool(for: .shouldDerivedFormsBeShown)
+        verbsService.shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .shouldRegularVerbsBeShown)
+        verbsService.shouldDerivedFormsBeShown = UserDefaults.shared.bool(for: .shouldDerivedFormsBeShown)
     }
     
     func setupSections() {
@@ -70,7 +70,7 @@ private extension TestPresenter {
             return
         }
         
-        let verbWrapped = UserDefaults.standard.bool(for: .favoritesOnly)
+        let verbWrapped = UserDefaults.shared.bool(for: .favoritesOnly)
             ? favoritesService.verb(of: items.randomElement())
             : verbsService.verb(of: items.randomElement())
         
@@ -116,11 +116,11 @@ private extension TestPresenter {
         if !wasHintUsed {
             switch test {
             case .basic:
-                let answeredCorrectlyCount = UserDefaults.standard.integer(for: .answeredCorrectlyBasic)
-                UserDefaults.standard.set(answeredCorrectlyCount + 1, for: .answeredCorrectlyBasic)
+                let answeredCorrectlyCount = UserDefaults.shared.integer(for: .answeredCorrectlyBasic)
+                UserDefaults.shared.set(answeredCorrectlyCount + 1, for: .answeredCorrectlyBasic)
             case .advanced:
-                let answeredCorrectlyCount = UserDefaults.standard.integer(for: .answeredCorrectlyAdvanced)
-                UserDefaults.standard.set(answeredCorrectlyCount + 1, for: .answeredCorrectlyAdvanced)
+                let answeredCorrectlyCount = UserDefaults.shared.integer(for: .answeredCorrectlyAdvanced)
+                UserDefaults.shared.set(answeredCorrectlyCount + 1, for: .answeredCorrectlyAdvanced)
             }
         }
         

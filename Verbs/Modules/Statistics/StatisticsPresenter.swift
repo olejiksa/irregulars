@@ -35,8 +35,8 @@ private extension StatisticsPresenter {
     }
     
     func setupSections() {
-        let answeredCorrectlyBasic = UserDefaults.standard.integer(for: .answeredCorrectlyBasic)
-        let answeredCorrectlyAdvanced = UserDefaults.standard.integer(for: .answeredCorrectlyAdvanced)
+        let answeredCorrectlyBasic = UserDefaults.shared.integer(for: .answeredCorrectlyBasic)
+        let answeredCorrectlyAdvanced = UserDefaults.shared.integer(for: .answeredCorrectlyAdvanced)
         let answeredCorrectlyTotal = answeredCorrectlyBasic + answeredCorrectlyAdvanced
         let answeredCorrectlyString = String(format: "answeredCorrectlyCount".localized,
                                              answeredCorrectlyTotal)
@@ -77,8 +77,8 @@ private extension StatisticsPresenter {
         router?.reset() { [weak self] in
             guard let self = self else { return }
             
-            UserDefaults.standard.set(0, for: .answeredCorrectlyBasic)
-            UserDefaults.standard.set(0, for: .answeredCorrectlyAdvanced)
+            UserDefaults.shared.set(0, for: .answeredCorrectlyBasic)
+            UserDefaults.shared.set(0, for: .answeredCorrectlyAdvanced)
             self.setupSections()
             self.viewController?.reloadData()
         }

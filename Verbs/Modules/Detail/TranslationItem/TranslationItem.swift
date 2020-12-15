@@ -9,6 +9,12 @@
 struct TranslationItem {
     
     let text: String
+    let isTrulyTranslation: Bool
+    
+    init(text: String, isTrulyTranslation: Bool = true) {
+        self.text = text
+        self.isTrulyTranslation = isTrulyTranslation
+    }
 }
 
 // MARK: - ItemProtocol

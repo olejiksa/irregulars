@@ -65,27 +65,27 @@ private extension SettingsPresenter {
     }
     
     func didRegularVerbsOptionChange(_ value: Bool) {
-        UserDefaults.standard.set(value, for: .shouldRegularVerbsBeShown)
+        UserDefaults.shared.set(value, for: .shouldRegularVerbsBeShown)
         NotificationCenter.default.post(name: .regulars,
                                         object: nil,
                                         userInfo: [Notification.Name.regulars: value])
     }
     
     func didDerivedFormsOptionChange(_ value: Bool) {
-        UserDefaults.standard.set(value, for: .shouldDerivedFormsBeShown)
+        UserDefaults.shared.set(value, for: .shouldDerivedFormsBeShown)
         NotificationCenter.default.post(name: .derivatives,
                                         object: nil,
                                         userInfo: [Notification.Name.derivatives: value])
     }
     
     func didListeningChange(_ value: Bool) {
-        UserDefaults.standard.set(value, for: .listening)
+        UserDefaults.shared.set(value, for: .listening)
     }
     
     func didListViewChange(_ sender: ItemProtocol) {
         guard let item = sender as? PickableItem else { return }
         let value = item.subtitle == "Translation".localized
-        UserDefaults.standard.set(value, for: .shouldTranslationBeShown)
+        UserDefaults.shared.set(value, for: .shouldTranslationBeShown)
         NotificationCenter.default.post(name: .list,
                                         object: nil,
                                         userInfo: [Notification.Name.list: value])
@@ -95,7 +95,7 @@ private extension SettingsPresenter {
     func didTestVerbsChange(_ sender: ItemProtocol) {
         guard let item = sender as? PickableItem else { return }
         let value = item.subtitle == "Favorites".localized
-        UserDefaults.standard.set(value, for: .favoritesOnly)
+        UserDefaults.shared.set(value, for: .favoritesOnly)
         NotificationCenter.default.post(name: .list,
                                         object: nil,
                                         userInfo: [Notification.Name.list: value])
@@ -103,7 +103,7 @@ private extension SettingsPresenter {
     }
     
     func didPlaybackSpeedChange(_ value: Int) {
-        UserDefaults.standard.set(value, for: .playbackSpeed)
+        UserDefaults.shared.set(value, for: .playbackSpeed)
     }
     
     func willShowLanguageSettings(_ sender: ItemProtocol) {

@@ -38,15 +38,15 @@ final class TestItemsFactory {
         
         switch testKind {
         case .threeForms:
-            return [Section(header: "Infinitive".localized,
+            return [Section(header: "InfinitiveValue".localized,
                             items: [PlainDetailItem(text: verb.infinitive.value)]),
-                    Section(header: "Simple Past".localized,
+                    Section(header: "SimplePastValue".localized,
                             items: [InputItem(words: simplePast,
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
                                               hintActionBlock: hint,
                                               tag: 0)].compactMap { $0 }),
-                    Section(header: "Past Participle".localized,
+                    Section(header: "PastParticipleValue".localized,
                             items: [InputItem(words: pastParticiple,
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
@@ -58,19 +58,19 @@ final class TestItemsFactory {
             
             return [Section(header: "Translation".localized,
                             items: [PlainDetailItem(text: verb.infinitive.value.localized)]),
-                    Section(header: "Infinitive".localized,
+                    Section(header: "InfinitiveValue".localized,
                             items: [InputItem(words: [verb.infinitive],
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
                                               hintActionBlock: hint,
                                               tag: 0)].compactMap { $0 }),
-                    Section(header: "Simple Past".localized,
+                    Section(header: "SimplePastValue".localized,
                             items: [InputItem(words: simplePast,
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
                                               hintActionBlock: hint,
                                               tag: 1)].compactMap { $0 }),
-                    Section(header: "Past Participle".localized,
+                    Section(header: "PastParticipleValue".localized,
                             items: [InputItem(words: pastParticiple,
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
@@ -82,7 +82,7 @@ final class TestItemsFactory {
             
             return [Section(header: "Translation".localized,
                             items: [PlainDetailItem(text: verb.infinitive.value.localized)].compactMap { $0 }),
-                    Section(header: "Infinitive".localized,
+                    Section(header: "InfinitiveValue".localized,
                             items: [InputItem(words: [verb.infinitive],
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
@@ -90,25 +90,25 @@ final class TestItemsFactory {
                                               tag: 0,
                                               returnKeyType: .done)].compactMap { $0 })]
         case .listening:
-            guard UserDefaults.standard.bool(for: .listening) else { return [] }
+            guard UserDefaults.shared.bool(for: .listening) else { return [] }
             
             return [Section(items: [PlainDetailItem(text: "Listen and write".localized,
                                                     textStyle: .secondary)].compactMap { $0 }),
-                    Section(header: "Infinitive".localized,
+                    Section(header: "InfinitiveValue".localized,
                             items: [InputItem(words: [verb.infinitive],
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
                                               hintActionBlock: hint,
                                               isAudio: true,
                                               tag: 0)].compactMap { $0 }),
-                    Section(header: "Simple Past".localized,
+                    Section(header: "SimplePastValue".localized,
                             items: [InputItem(words: simplePast,
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
                                               hintActionBlock: hint,
                                               isAudio: true,
                                               tag: 1)].compactMap { $0 }),
-                    Section(header: "Past Participle".localized,
+                    Section(header: "PastParticipleValue".localized,
                             items: [InputItem(words: pastParticiple,
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
@@ -140,8 +140,8 @@ final class TestItemsFactory {
 private extension TestItemsFactory {
     
     func loadSettings() {
-        verbsService.shouldRegularVerbsBeShown = UserDefaults.standard.bool(for: .shouldRegularVerbsBeShown)
-        verbsService.shouldDerivedFormsBeShown = UserDefaults.standard.bool(for: .shouldDerivedFormsBeShown)
+        verbsService.shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .shouldRegularVerbsBeShown)
+        verbsService.shouldDerivedFormsBeShown = UserDefaults.shared.bool(for: .shouldDerivedFormsBeShown)
     }
     
     func generateAnswerItems(count: Int,

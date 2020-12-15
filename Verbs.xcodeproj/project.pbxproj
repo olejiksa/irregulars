@@ -196,6 +196,12 @@
 		EBF593B9258732F00091FCE0 /* StatisticsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF593B8258732F00091FCE0 /* StatisticsRouter.swift */; };
 		EBF593BF258851CD0091FCE0 /* demo.json in Resources */ = {isa = PBXBuildFile; fileRef = EBF593BE258851CD0091FCE0 /* demo.json */; };
 		EBF593C92588526E0091FCE0 /* DemoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF593C82588526E0091FCE0 /* DemoService.swift */; };
+		EBF593CF258865680091FCE0 /* MenuAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF593CE258865680091FCE0 /* MenuAction.swift */; };
+		EBF593DA258869AE0091FCE0 /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8A6512559225D00A6265C /* Locator.swift */; };
+		EBF593DD258869B20091FCE0 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8A62E2559172100A6265C /* Favorites.swift */; };
+		EBF593E0258869B90091FCE0 /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325A52556EFF0005E02C1 /* FavoritesService.swift */; };
+		EBF593E3258869C00091FCE0 /* Blocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD2C4E8257E95AE0023AED4 /* Blocks.swift */; };
+		EBF593E625886A220091FCE0 /* ItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB01C1E25218BAB00BB646B /* ItemProtocol.swift */; };
 		EBF8A62F2559172100A6265C /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8A62E2559172100A6265C /* Favorites.swift */; };
 		EBF8A6522559225D00A6265C /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8A6512559225D00A6265C /* Locator.swift */; };
 		EBF97C8A25623503009FFFBA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF97C8925623503009FFFBA /* StoreKit.framework */; };
@@ -411,6 +417,9 @@
 		EBF593B8258732F00091FCE0 /* StatisticsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsRouter.swift; sourceTree = "<group>"; };
 		EBF593BE258851CD0091FCE0 /* demo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = demo.json; sourceTree = "<group>"; };
 		EBF593C82588526E0091FCE0 /* DemoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoService.swift; sourceTree = "<group>"; };
+		EBF593CE258865680091FCE0 /* MenuAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAction.swift; sourceTree = "<group>"; };
+		EBF593D22588679F0091FCE0 /* Verbs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Verbs.entitlements; sourceTree = "<group>"; };
+		EBF593D5258867D00091FCE0 /* VerbsWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VerbsWidgetExtension.entitlements; sourceTree = "<group>"; };
 		EBF8A62E2559172100A6265C /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		EBF8A6512559225D00A6265C /* Locator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
 		EBF97C8925623503009FFFBA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -681,6 +690,7 @@
 				EB7DFF68252451D2000B711D /* VerbsWidget.swift */,
 				EB7DFF6B252451D4000B711D /* Assets.xcassets */,
 				EB7DFF6D252451D4000B711D /* Info.plist */,
+				EBF593D5258867D00091FCE0 /* VerbsWidgetExtension.entitlements */,
 			);
 			path = VerbsWidget;
 			sourceTree = "<group>";
@@ -900,6 +910,7 @@
 				EBEB1D7E251F11910019972C /* Assets.xcassets */,
 				EBEB1D80251F11910019972C /* LaunchScreen.storyboard */,
 				EBEB1D83251F11910019972C /* Info.plist */,
+				EBF593D22588679F0091FCE0 /* Verbs.entitlements */,
 			);
 			path = Verbs;
 			sourceTree = "<group>";
@@ -925,6 +936,7 @@
 				EB2E4BCA2576B59F005B343A /* Test.swift */,
 				EBEB1D93251F15D30019972C /* Verb.swift */,
 				EB7B85642537FAE000542D3C /* Word.swift */,
+				EBF593CE258865680091FCE0 /* MenuAction.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1157,16 +1169,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBF593E0258869B90091FCE0 /* FavoritesService.swift in Sources */,
 				EB7DFF69252451D2000B711D /* VerbsWidget.swift in Sources */,
 				EB4509D12541703700D31858 /* Language.swift in Sources */,
 				EBE4AD0F2582AF7E001E9E4A /* VerbsServiceProtocol.swift in Sources */,
 				EB4509D42541798900D31858 /* FeatureToggle.swift in Sources */,
+				EBF593E3258869C00091FCE0 /* Blocks.swift in Sources */,
 				EB7DFF89252B1CD7000B711D /* Verb.swift in Sources */,
 				EB7B85682537FB0C00542D3C /* Word.swift in Sources */,
+				EBF593E625886A220091FCE0 /* ItemProtocol.swift in Sources */,
 				EB7DFF8C252B1CE6000B711D /* JSONParser.swift in Sources */,
 				EB26997E256D1BF1007CCF2E /* UserDefaults+Key.swift in Sources */,
 				EB7DFF83252B1CB8000B711D /* VerbsService.swift in Sources */,
+				EBF593DA258869AE0091FCE0 /* Locator.swift in Sources */,
 				EB26998C256D40DD007CCF2E /* Notification.swift in Sources */,
+				EBF593DD258869B20091FCE0 /* Favorites.swift in Sources */,
 				EB7DFF8F252B1CED000B711D /* String.swift in Sources */,
 				EB4509CE2541700A00D31858 /* LanguageService.swift in Sources */,
 			);
@@ -1262,6 +1279,7 @@
 				EBEB1D78251F11900019972C /* SceneDelegate.swift in Sources */,
 				EB83258B2556EAEB005E02C1 /* FavoritesViewController.swift in Sources */,
 				EBD2C509257FDC780023AED4 /* Sentence.swift in Sources */,
+				EBF593CF258865680091FCE0 /* MenuAction.swift in Sources */,
 				EB8325A22556EC9F005E02C1 /* AssemblyProtocol.swift in Sources */,
 				EB2F5E16251F71DD007DCF60 /* AudioService.swift in Sources */,
 				EBF4A147252ED2CA003E3A44 /* SettingsViewController.swift in Sources */,
@@ -1360,6 +1378,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = VerbsWidget/VerbsWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
@@ -1384,6 +1403,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = VerbsWidget/VerbsWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
@@ -1525,6 +1545,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Verbs/Verbs.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;
@@ -1549,6 +1570,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Verbs/Verbs.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;

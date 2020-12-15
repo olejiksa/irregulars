@@ -49,7 +49,7 @@ final class SettingsItemsFactory {
     }
     
     func setupPlaybackSpeedSection(playbackSpeedBlock: @escaping IntBlock) -> Section {
-        let index = UserDefaults.standard.integer(for: .playbackSpeed)
+        let index = UserDefaults.shared.integer(for: .playbackSpeed)
         return .init(header: "Playback speed".localized,
                      items: [SliderItem(leadingIcon: .tortoise,
                                         trailingIcon: .hare,
@@ -63,12 +63,12 @@ final class SettingsItemsFactory {
                                  derivativesBlock: @escaping BoolBlock) -> [Section] {
         [.init(header: "Vocabulary".localized,
                items: [SwitchItem(text: "Regular verbs (-ed)".localized,
-                                  isOn: UserDefaults.standard.bool(for: .shouldRegularVerbsBeShown),
+                                  isOn: UserDefaults.shared.bool(for: .shouldRegularVerbsBeShown),
                                   isEnabled: FeatureToggle.isPaid,
                                   actionBlock: regularVerbsBlock)],
                footer: "RegularVerbsFooter".localized),
          .init(items: [SwitchItem(text: "Derivatives".localized,
-                                  isOn: UserDefaults.standard.bool(for: .shouldDerivedFormsBeShown),
+                                  isOn: UserDefaults.shared.bool(for: .shouldDerivedFormsBeShown),
                                   isEnabled: FeatureToggle.isPaid,
                                   actionBlock: derivativesBlock)],
                footer: "DerivativesFooter".localized)]
@@ -85,7 +85,7 @@ final class SettingsItemsFactory {
               items: [
                 setupTestVerbsItem(testVerbsBlock: testVerbsBlock),
                 SwitchItem(text: "Listening".localized,
-                           isOn: UserDefaults.standard.bool(for: .listening),
+                           isOn: UserDefaults.shared.bool(for: .listening),
                            actionBlock: listeningBlock)].compactMap { $0 })
     }
     
@@ -133,7 +133,7 @@ private extension SettingsItemsFactory {
     
     func setupListViewModeItem(listViewModeBlock: @escaping ItemBlock) -> PickableItem? {
         let options = ["Verb forms".localized, "Translation".localized]
-        let currentOption = !UserDefaults.standard.bool(for: .shouldTranslationBeShown)
+        let currentOption = !UserDefaults.shared.bool(for: .shouldTranslationBeShown)
             ? options.first
             : options.last
         return languageService.hasTranslation ? .init(title: "View".localized,
@@ -146,7 +146,7 @@ private extension SettingsItemsFactory {
     func setupTestVerbsItem(testVerbsBlock: @escaping ItemBlock) -> ItemProtocol? {
         let options = ["All".localized, "Favorites".localized]
         let currentOption: String?
-        switch (FeatureToggle.isPaid, UserDefaults.standard.bool(for: .favoritesOnly)) {
+        switch (FeatureToggle.isPaid, UserDefaults.shared.bool(for: .favoritesOnly)) {
         case (true, true):
             currentOption = options.last
         case (true, false):
