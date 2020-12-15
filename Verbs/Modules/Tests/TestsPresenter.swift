@@ -72,11 +72,6 @@ extension TestsPresenter: UITableViewDelegate {
             return
         }
         
-        guard FeatureToggle.isPaid else {
-            router?.goToPaywall()
-            return
-        }
-        
         switch indexPath.row {
         case 0: router?.goTo(test: .basic)
         case 1: router?.goTo(test: .advanced)

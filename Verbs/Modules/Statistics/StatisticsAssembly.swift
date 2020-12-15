@@ -13,9 +13,11 @@ final class StatisticsAssembly: AssemblyProtocol {
     func viewController() -> some StatisticsViewController {
         let presenter = StatisticsPresenter()
         let viewConroller = StatisticsViewController(presenter: presenter)
+        let router = StatisticsRouter(viewController: viewConroller)
         let navigationController = UINavigationController(rootViewController: viewConroller)
         navigationController.view.backgroundColor = .systemBackground
         presenter.viewController = viewConroller
+        presenter.router = router
         return viewConroller
     }
 }

@@ -10,7 +10,7 @@
 "Advanced tests" = "Продвинутые тесты";
 "Answered correctly" = "Отвечено верно";
 "Reset statistics" = "Сбросить статистику";
-"Downgrade" = "Вернуться к Irregulars Lite";
+"Downgrade to" = "Вернуться к %@ Lite";
 "Thank you" = "Спасибо за то, что Вы с нами!";
 "Listen to pronunciation" = "Слушайте произношение";
 "Pronunciation" = "Произношение";
@@ -60,7 +60,7 @@
 "More" = "Еще";
 "Error" = "Ошибка";
 "Hint" = "Подсказка";
-"Get access to tests" = "Получите доступ к тестам";
+"Unlock all verbs in tests" = "Разблокируйте все глаголы в тестах";
 "Accent color" = "Акцентный цвет";
 "View" = "Вид";
 "Blue" = "Синий";
@@ -104,6 +104,10 @@
 "EmptyFavoritesTitle" = "Нет «Избранного»";
 "Track your progress in learning irregular verbs" = "Отслеживайте свой прогресс в изучении неправильных глаголов";
 "Using hints gives you no points" = "Учитываются только ответы, введенные или выбранные правильно с первой попытки и без использования подсказок";
+"Attention" = "Внимание";
+"Are you sure that you want to reset statistics?" = "Вы действительно хотите сбросить статистику?";
+"Yes" = "Да";
+"ProSuggestionStatistics" = "Кроме других преимуществ, в Pro-версии увеличено количество неправильных глаголов, доступных для закрепления в тестах: с %d до %d";
 
 // Irregular Verbs
 

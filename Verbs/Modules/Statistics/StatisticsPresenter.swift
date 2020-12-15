@@ -11,6 +11,7 @@ import UIKit
 final class StatisticsPresenter: NSObject {
     
     let dataSource = SectionDataSource()
+    var router: StatisticsRouter?
     weak var viewController: StatisticsViewController?
     
     private var items: [String] = []
@@ -18,12 +19,20 @@ final class StatisticsPresenter: NSObject {
     override init() {
         super.init()
         setupSections()
+        subscribe()
     }
 }
 
 // MARK: - Private
 
 private extension StatisticsPresenter {
+    
+    func subscribe() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(didPay),
+                                               name: Notification.Name.reload,
+                                               object: nil)
+    }
     
     func setupSections() {
         let answeredCorrectlyBasic = UserDefaults.standard.integer(for: .answeredCorrectlyBasic)
@@ -32,7 +41,8 @@ private extension StatisticsPresenter {
         let answeredCorrectlyString = String(format: "answeredCorrectlyCount".localized,
                                              answeredCorrectlyTotal)
         
-        dataSource.setup([Section(items: [StatisticsHeaderItem(title: String(answeredCorrectlyTotal),
+        dataSource.setup([setupActivationSection(upgradeBlock: willBuy),
+                          Section(items: [StatisticsHeaderItem(title: String(answeredCorrectlyTotal),
                                                                subtitle: answeredCorrectlyString)],
                                   footer: "Using hints gives you no points".localized),
                           Section(header: "Basic tests".localized,
@@ -48,9 +58,33 @@ private extension StatisticsPresenter {
                                                      actionBlock: didResetTap)])])
     }
     
+    func setupActivationSection(upgradeBlock: @escaping ItemBlock) -> Section {
+        let upgradeItem = !FeatureToggle.isPaid ? ActionItem(text: "Upgrade to Pro".localized,
+                                                             style: .standard,
+                                                             actionBlock: upgradeBlock) : nil
+        let footer = "ProSuggestionStatistics".localized(with: [DemoService().items.count,
+                                                                VerbsService().items.count])
+        return Section(header: "Activation".localized,
+                       items: [upgradeItem].compactMap { $0 },
+                       footer: footer)
+    }
+    
+    func willBuy(_ sender: ItemProtocol) {
+        router?.goToPaywall()
+    }
+    
     func didResetTap(_ sender: ItemProtocol) {
-        UserDefaults.standard.set(0, for: .answeredCorrectlyBasic)
-        UserDefaults.standard.set(0, for: .answeredCorrectlyAdvanced)
+        router?.reset() { [weak self] in
+            guard let self = self else { return }
+            
+            UserDefaults.standard.set(0, for: .answeredCorrectlyBasic)
+            UserDefaults.standard.set(0, for: .answeredCorrectlyAdvanced)
+            self.setupSections()
+            self.viewController?.reloadData()
+        }
+    }
+    
+    @objc func didPay(_ notification: Notification) {
         setupSections()
         viewController?.reloadData()
     }

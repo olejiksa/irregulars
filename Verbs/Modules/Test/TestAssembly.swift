@@ -23,6 +23,7 @@ final class TestAssembly: AssemblyProtocol {
         let presenter = TestPresenter(audioService: .init(),
                                       verbsService: .init(),
                                       favoritesService: Locator.favoritesService,
+                                      demoService: .init(),
                                       itemsFactory: itemsFactory,
                                       test: test)
         let viewController = TestViewController(presenter: presenter, title: test.title)

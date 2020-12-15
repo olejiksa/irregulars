@@ -136,6 +136,9 @@ extension ListViewController: Scrollable {
     
     func scrollToTop() {
         let indexPath = IndexPath(row: 0, section: 0)
-        tableView?.scrollToRow(at: indexPath, at: .top, animated: true)
+        guard let tableView = tableView,
+              tableView.numberOfSections > 0,
+              tableView.numberOfRows(inSection: 0) > 0 else { return }
+        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
 }

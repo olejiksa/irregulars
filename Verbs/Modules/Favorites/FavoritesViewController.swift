@@ -174,12 +174,10 @@ private extension FavoritesViewController {
 extension FavoritesViewController: Scrollable {
     
     func scrollToTop() {
-        guard let tableView = tableView,
-              (tableView.dataSource?.numberOfSections?(in: tableView) ?? 0) > 0,
-              (tableView.dataSource?.tableView(tableView, numberOfRowsInSection: 0) ?? 0) > 0
-        else { return }
-        
         let indexPath = IndexPath(row: 0, section: 0)
+        guard let tableView = tableView,
+              tableView.numberOfSections > 0,
+              tableView.numberOfRows(inSection: 0) > 0 else { return }
         tableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
 }

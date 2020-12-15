@@ -14,6 +14,10 @@ extension String {
         NSLocalizedString(self, comment: "")
     }
     
+    func localized(with arguments: [CVarArg]) -> String {
+        .init(format: localized, locale: nil, arguments: arguments)
+    }
+    
     func hasPrefixIgnoringCase<T>(_ other: T) -> Bool where T: StringProtocol {
         lowercased().hasPrefix(other.lowercased())
     }

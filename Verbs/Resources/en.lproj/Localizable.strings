@@ -10,7 +10,7 @@
 "Advanced tests" = "Advanced tests";
 "Answered correctly" = "Answered correctly";
 "Reset statistics" = "Reset statistics";
-"Downgrade" = "Downgrade";
+"Downgrade to" = "Downgrade to %@ Lite";
 "Thank you" = "Thank you for being with us!";
 "Listen to pronunciation" = "Listen to pronunciation";
 "Pronunciation" = "Pronunciation";
@@ -58,7 +58,7 @@
 "More" = "More";
 "Error" = "Error";
 "Hint" = "Hint";
-"Get access to tests" = "Get access to tests";
+"Unlock all verbs in tests" = "Unlock all verbs in tests";
 "Accent color" = "Accent color";
 "View" = "View";
 "Blue" = "Blue";
@@ -102,6 +102,10 @@
 "EmptyFavoritesTitle" = "Empty Favorites";
 "Track your progress in learning irregular verbs" = "Track your progress in learning irregular verbs";
 "Using hints gives you no points" = "Only answers entered or selected correctly on the first try and without using hints are taken into account";
+"Attention" = "Attention";
+"Are you sure that you want to reset statistics?" = "Are you sure that you want to reset statistics?";
+"Yes" = "Yes";
+"ProSuggestionStatistics" = "Among other benefits, Pro expands the count of available irregular verbs in tests from %d to %d";
 
 // Irregular Verbs
 

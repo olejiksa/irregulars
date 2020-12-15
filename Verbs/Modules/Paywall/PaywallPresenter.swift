@@ -18,8 +18,8 @@ final class PaywallPresenter {
                           icon: .dictionary)
             : nil
         
-        let items = [PaywallItem(text: "Get access to tests".localized,
-                                 icon: .note),
+        let items = [PaywallItem(text: "Unlock all verbs in tests".localized,
+                                 icon: .key),
                      PaywallItem(text: "Listen to pronunciation".localized,
                                  icon: .speaker),
                      PaywallItem(text: "See a transcription".localized,

@@ -13,6 +13,7 @@ final class JSONParser<T: Decodable> {
     enum File: String {
         case irregulars
         case sentences
+        case demo
     }
     
     func read(from file: File) -> [T] {

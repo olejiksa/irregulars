@@ -21,11 +21,13 @@ final class SettingsItemsFactory {
     
     func setupActivationSection(upgradeBlock: @escaping ItemBlock,
                                 resetBlock: @escaping ItemBlock) -> Section {
+        let name = Bundle.main.productName ?? ""
         let upgradeItem = !FeatureToggle.isPaid ? ActionItem(text: "Upgrade to Pro".localized,
                                                              style: .standard,
                                                              actionBlock: upgradeBlock) : nil
-        let resetItem = FeatureToggle.isPaid && FeatureToggle.isDebug ? ActionItem(text: "Downgrade".localized,
-                                                                                   style: .standard,
+        let downgradeText = "Downgrade to".localized(with: [name])
+        let resetItem = FeatureToggle.isPaid && FeatureToggle.isDebug ? ActionItem(text: downgradeText,
+                                                                                   style: .destructive,
                                                                                    actionBlock: resetBlock) : nil
         let header = FeatureToggle.isPaid ? "Deactivation".localized : "Activation".localized
         return .init(header: header, items: [upgradeItem, resetItem].compactMap { $0 })
@@ -84,7 +86,6 @@ final class SettingsItemsFactory {
                 setupTestVerbsItem(testVerbsBlock: testVerbsBlock),
                 SwitchItem(text: "Listening".localized,
                            isOn: UserDefaults.standard.bool(for: .listening),
-                           isEnabled: FeatureToggle.isPaid,
                            actionBlock: listeningBlock)].compactMap { $0 })
     }
     
@@ -144,9 +145,15 @@ private extension SettingsItemsFactory {
     
     func setupTestVerbsItem(testVerbsBlock: @escaping ItemBlock) -> ItemProtocol? {
         let options = ["All".localized, "Favorites".localized]
-        let currentOption = !UserDefaults.standard.bool(for: .favoritesOnly)
-            ? options.first
-            : options.last
+        let currentOption: String?
+        switch (FeatureToggle.isPaid, UserDefaults.standard.bool(for: .favoritesOnly)) {
+        case (true, true):
+            currentOption = options.last
+        case (true, false):
+            currentOption = options.first
+        case (false, _):
+            currentOption = "Demo".localized
+        }
         return PickableItem(title: "Verbs".localized,
                             subtitle: currentOption ?? "",
                             actionBlock: testVerbsBlock,

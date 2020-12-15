@@ -18,6 +18,7 @@ final class TestPresenter: NSObject {
     private let audioService: AudioService
     private let verbsService: VerbsService
     private let favoritesService: FavoritesService
+    private let demoService: DemoService
     private let itemsFactory: TestItemsFactory
     private let test: Test
     
@@ -26,13 +27,21 @@ final class TestPresenter: NSObject {
     init(audioService: AudioService,
          verbsService: VerbsService,
          favoritesService: FavoritesService,
+         demoService: DemoService,
          itemsFactory: TestItemsFactory,
          test: Test) {
         self.verbsService = verbsService
         self.favoritesService = favoritesService
-        self.items = UserDefaults.standard.bool(for: .favoritesOnly)
-            ? favoritesService.items.map { $0.infinitive.value }
-            : verbsService.items.map { $0.infinitive.value }
+        self.demoService = demoService
+        switch (UserDefaults.standard.bool(for: .favoritesOnly),
+                !UserDefaults.standard.bool(for: .isPaid)) {
+        case (_, true):
+            self.items = verbsService.items.map { $0.infinitive.value }.filter(demoService.items.contains)
+        case (true, false):
+            self.items = favoritesService.items.map { $0.infinitive.value }
+        case (false, false):
+            self.items = verbsService.items.map { $0.infinitive.value }
+        }
         self.audioService = audioService
         self.itemsFactory = itemsFactory
         self.test = test

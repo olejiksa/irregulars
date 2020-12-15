@@ -6,8 +6,6 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
-import Foundation
-
 final class SentencesService {
     
     private let parser = JSONParser<Sentence>()

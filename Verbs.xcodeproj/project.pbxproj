@@ -193,6 +193,9 @@
 		EBF593A52585730E0091FCE0 /* AnswerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF593A42585730E0091FCE0 /* AnswerItem.swift */; };
 		EBF593AA2585736B0091FCE0 /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF593A82585736B0091FCE0 /* AnswerCell.swift */; };
 		EBF593AB2585736B0091FCE0 /* AnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBF593A92585736B0091FCE0 /* AnswerCell.xib */; };
+		EBF593B9258732F00091FCE0 /* StatisticsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF593B8258732F00091FCE0 /* StatisticsRouter.swift */; };
+		EBF593BF258851CD0091FCE0 /* demo.json in Resources */ = {isa = PBXBuildFile; fileRef = EBF593BE258851CD0091FCE0 /* demo.json */; };
+		EBF593C92588526E0091FCE0 /* DemoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF593C82588526E0091FCE0 /* DemoService.swift */; };
 		EBF8A62F2559172100A6265C /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8A62E2559172100A6265C /* Favorites.swift */; };
 		EBF8A6522559225D00A6265C /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8A6512559225D00A6265C /* Locator.swift */; };
 		EBF97C8A25623503009FFFBA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF97C8925623503009FFFBA /* StoreKit.framework */; };
@@ -405,6 +408,9 @@
 		EBF593A42585730E0091FCE0 /* AnswerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerItem.swift; sourceTree = "<group>"; };
 		EBF593A82585736B0091FCE0 /* AnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
 		EBF593A92585736B0091FCE0 /* AnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerCell.xib; sourceTree = "<group>"; };
+		EBF593B8258732F00091FCE0 /* StatisticsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsRouter.swift; sourceTree = "<group>"; };
+		EBF593BE258851CD0091FCE0 /* demo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = demo.json; sourceTree = "<group>"; };
+		EBF593C82588526E0091FCE0 /* DemoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoService.swift; sourceTree = "<group>"; };
 		EBF8A62E2559172100A6265C /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		EBF8A6512559225D00A6265C /* Locator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
 		EBF97C8925623503009FFFBA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -769,6 +775,7 @@
 				EB2E4BA525741970005B343A /* AppIconService.swift */,
 				EB2F5E15251F71DD007DCF60 /* AudioService.swift */,
 				EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */,
+				EBF593C82588526E0091FCE0 /* DemoService.swift */,
 				EB8325A52556EFF0005E02C1 /* FavoritesService.swift */,
 				EBB3BC0F251F3545006E0DC7 /* KeyboardService.swift */,
 				EBB95BFD25335C3E00376C3F /* LanguageService.swift */,
@@ -799,6 +806,7 @@
 			isa = PBXGroup;
 			children = (
 				EB2E4B5825741603005B343A /* Icons */,
+				EBF593BE258851CD0091FCE0 /* demo.json */,
 				EBB3BC14251F4BAA006E0DC7 /* irregulars.json */,
 				EBD2C4F4257FD6860023AED4 /* sentences.json */,
 				EBB95BE8253326CE00376C3F /* Localizable.strings */,
@@ -975,6 +983,7 @@
 				EBF593722583C3A40091FCE0 /* StatisticsHeaderItem */,
 				EBF5936C2583B3230091FCE0 /* StatisticsAssembly.swift */,
 				EBF593662583B3190091FCE0 /* StatisticsPresenter.swift */,
+				EBF593B8258732F00091FCE0 /* StatisticsRouter.swift */,
 				EBF593622583B2DD0091FCE0 /* StatisticsViewController.swift */,
 			);
 			path = Statistics;
@@ -1117,6 +1126,7 @@
 				EB2E4B9C25741832005B343A /* red@3x.png in Resources */,
 				EB269968256CF10C007CCF2E /* PlainDetailCell.xib in Resources */,
 				EB2E4B9925741832005B343A /* indigo@2x.png in Resources */,
+				EBF593BF258851CD0091FCE0 /* demo.json in Resources */,
 				EBEB1D7F251F11910019972C /* Assets.xcassets in Resources */,
 				EB2E4B9025741832005B343A /* green@3x.png in Resources */,
 				EBD2C4F5257FD6860023AED4 /* sentences.json in Resources */,
@@ -1211,6 +1221,7 @@
 				EBF4A135252E9961003E3A44 /* ListItem.swift in Sources */,
 				EBDF00892562E8A30041F458 /* TestAssembly.swift in Sources */,
 				EB2E4B532573D8A7005B343A /* SelectableSectionDataSource.swift in Sources */,
+				EBF593B9258732F00091FCE0 /* StatisticsRouter.swift in Sources */,
 				EB450973253B5CB300D31858 /* Section.swift in Sources */,
 				EBDF00A62562F1160041F458 /* FormTextField.swift in Sources */,
 				EB26996C256CFAC7007CCF2E /* RateService.swift in Sources */,
@@ -1265,6 +1276,7 @@
 				EB2F5E0D251F543A007DCF60 /* DetailViewController.swift in Sources */,
 				EBB3BC09251F2ADB006E0DC7 /* String.swift in Sources */,
 				EB450A33254B157B00D31858 /* SectionDataSource.swift in Sources */,
+				EBF593C92588526E0091FCE0 /* DemoService.swift in Sources */,
 				EB2E4B1725717A3E005B343A /* PurchaseError.swift in Sources */,
 				EB45098A253B67FA00D31858 /* DetailAssembly.swift in Sources */,
 				EB7B8581253B30C600542D3C /* MailService.swift in Sources */,
@@ -1349,7 +1361,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1357,7 +1369,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.6;
+				MARKETING_VERSION = 1.2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1373,7 +1385,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1381,7 +1393,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.6;
+				MARKETING_VERSION = 1.2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1515,7 +1527,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1523,7 +1535,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.6;
+				MARKETING_VERSION = 1.2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1539,7 +1551,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1547,7 +1559,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.6;
+				MARKETING_VERSION = 1.2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
