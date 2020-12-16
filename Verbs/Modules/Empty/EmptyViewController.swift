@@ -12,13 +12,13 @@ final class EmptyViewController: UIViewController {
     
     private let noDataLabel: UILabel = {
         let label = UILabel()
-        label.text = "EmptyDetail".localized
+        label.text = "EmptyVerbs".localized
         label.textAlignment = .center
         label.textColor = .secondaryLabel
         label.numberOfLines = 0
         return label
     }()
-   
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -35,6 +35,7 @@ final class EmptyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        subscribe()
         setupDelegate()
         setupNoDataLabel()
         setupView()
@@ -44,6 +45,13 @@ final class EmptyViewController: UIViewController {
 // MARK: - Private
 
 private extension EmptyViewController {
+    
+    func subscribe() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(didSidebarItemChange),
+                                               name: Notification.Name.sidebar,
+                                               object: nil)
+    }
     
     func setupDelegate() {
         navigationController?.delegate = self
@@ -62,6 +70,11 @@ private extension EmptyViewController {
     
     func setupView() {
         view.backgroundColor = .systemBackground
+    }
+    
+    @objc func didSidebarItemChange(_ notification: Notification) {
+        let areVerbs = notification.userInfo?[Notification.Name.sidebar] as? Bool ?? false
+        noDataLabel.text = areVerbs ? "EmptyVerbs".localized : "EmptyTests".localized
     }
 }
 

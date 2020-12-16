@@ -12,7 +12,7 @@ import UIKit
 final class SidebarPresenter: NSObject {
     
     private enum SidebarSection: Int {
-        case verbs, tests, more
+        case verbs, more
     }
     
     private struct RowIdentifier {
@@ -142,14 +142,26 @@ private extension SidebarPresenter {
             selectedIndexPath = indexPath
             let vc = ListAssembly(splitViewController: splitViewController).viewController()
             splitViewController.setViewController(vc.navigationController, for: .supplementary)
+            
+            NotificationCenter.default.post(name: .sidebar,
+                                            object: nil,
+                                            userInfo: [Notification.Name.sidebar: true])
         case RowIdentifier.favorites:
             selectedIndexPath = indexPath
             let vc = FavoritesAssembly(splitViewController: splitViewController).viewController()
             splitViewController.setViewController(vc.navigationController, for: .supplementary)
+            
+            NotificationCenter.default.post(name: .sidebar,
+                                            object: nil,
+                                            userInfo: [Notification.Name.sidebar: true])
         case RowIdentifier.tests:
             selectedIndexPath = indexPath
             let vc = TestsAssembly(splitViewController: splitViewController).viewController()
             splitViewController.setViewController(vc.navigationController, for: .supplementary)
+            
+            NotificationCenter.default.post(name: .sidebar,
+                                            object: nil,
+                                            userInfo: [Notification.Name.sidebar: false])
         case RowIdentifier.settings:
             viewController?.select(at: selectedIndexPath)
             let nvc = splitViewController.secondaryViewController
@@ -182,7 +194,7 @@ extension SidebarPresenter: UICollectionViewDelegate {
         }
         
         switch indexPath.section {
-        case SidebarSection.verbs.rawValue, SidebarSection.tests.rawValue, SidebarSection.more.rawValue:
+        case SidebarSection.verbs.rawValue, SidebarSection.more.rawValue:
             didSelectLibraryItem(sidebarItem, at: indexPath)
         default:
             collectionView.deselectItem(at: indexPath, animated: true)

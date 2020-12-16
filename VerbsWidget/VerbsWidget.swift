@@ -83,6 +83,8 @@ struct VerbEntry: TimelineEntry {
 struct VerbsWidgetEntryView: View {
     var entry: Provider.Entry
     @Environment(\.widgetFamily) private var widgetFamily
+    
+    private let languageService = LanguageService()
 
     var body: some View {
         switch (widgetFamily, entry.state) {
@@ -167,7 +169,7 @@ struct VerbsWidgetEntryView: View {
                     }.frame(maxWidth: .infinity)
                 }
             }
-            if LanguageService().hasTranslation {
+            if languageService.hasTranslation {
                 Text(verbatim: verb.translation)
                     .italic()
                     .lineLimit(1)
@@ -226,7 +228,7 @@ struct VerbsWidgetEntryView: View {
                         .frame(maxWidth: .infinity)
                 }
             }
-            if LanguageService().hasTranslation {
+            if languageService.hasTranslation {
                 Text(verbatim: verb.translation)
             }
             ForEach(sentences, id: \.self) { sentence in

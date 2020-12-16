@@ -17,7 +17,7 @@ final class TestsAssembly: AssemblyProtocol {
     }
     
     func viewController() -> some TestsViewController {
-        let presenter = TestsPresenter()
+        let presenter = TestsPresenter(languageService: .init())
         let viewConroller = TestsViewController(presenter: presenter)
         let navigationController = UINavigationController(rootViewController: viewConroller)
         navigationController.view.backgroundColor = .systemBackground

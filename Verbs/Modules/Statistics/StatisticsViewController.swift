@@ -33,6 +33,8 @@ final class StatisticsViewController: UIViewController {
         setupTableView()
         setupKeyboardService()
         setupDelegate()
+        
+        RateService().requestReviewIfAppropriate(minimumReviewWorthyActionCount: 20)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

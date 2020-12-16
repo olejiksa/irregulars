@@ -55,6 +55,8 @@ extension AccentColorPresenter: UITableViewDelegate {
         dataSource.selectedIndexPath = indexPath
         AccentColor.current = accentColors[indexPath.row]
         tableView.reloadSections(IndexSet(integer: 1), with: .none)
+        
+        RateService().requestReviewIfAppropriate(minimumReviewWorthyActionCount: 20)
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {

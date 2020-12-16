@@ -10,10 +10,8 @@ final class PaywallPresenter {
     
     let dataSource = SectionDataSource()
     
-    private let languageService = LanguageService()
-    
-    init() {
-        let item = LanguageService().hasTranslation
+    init(languageService: LanguageService) {
+        let item = languageService.hasTranslation
             ? PaywallItem(text: "View a translation without going to the verb page".localized,
                           icon: .dictionary)
             : nil

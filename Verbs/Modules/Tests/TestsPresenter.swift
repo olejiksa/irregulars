@@ -15,15 +15,16 @@ final class TestsPresenter: NSObject {
     
     let dataSource = SectionDataSource()
     
+    private let languageService: LanguageService
     private var selectedIndex: IndexPath?
     
-    override init() {
+    init(languageService: LanguageService) {
+        self.languageService = languageService
         super.init()
         subscribe()
     }
     
     func setupSections() {
-        let languageService = LanguageService()
         let translationItem = languageService.hasTranslation
             ? TestItem(icon: .globe,
                        title: Test.translation.title,

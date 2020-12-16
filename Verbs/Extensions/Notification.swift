@@ -17,4 +17,5 @@ extension Notification.Name {
     static let derivatives = Notification.Name("derivatives")
     static let list = Notification.Name("list")
     static let reloadData = Notification.Name("reloadData")
+    static let sidebar = Notification.Name("sidebar")
 }

@@ -14,9 +14,15 @@ final class StatisticsPresenter: NSObject {
     var router: StatisticsRouter?
     weak var viewController: StatisticsViewController?
     
+    private let languageService: LanguageService
     private var items: [String] = []
+    private let keys: [UserDefaults.Key] = [.translationAnswers,
+                                            .writingAnswers,
+                                            .sentencesAnswers,
+                                            .listeningAnswers]
     
-    override init() {
+    init(languageService: LanguageService) {
+        self.languageService = languageService
         super.init()
         setupSections()
         subscribe()
@@ -46,7 +52,7 @@ private extension StatisticsPresenter {
         let answeredCorrectlyString = String(format: "answeredCorrectlyCount".localized,
                                              answeredCorrectlyTotal)
         
-        let hasTranslation = LanguageService().hasTranslation ?
+        let hasTranslation = languageService.hasTranslation ?
             RightDetailItem(title: Test.translation.title,
                             subtitle: String(answeredCorrectlyTranslation),
                             isEnabled: false) :
@@ -91,11 +97,7 @@ private extension StatisticsPresenter {
         router?.reset() { [weak self] in
             guard let self = self else { return }
             
-            UserDefaults.shared.set(0, for: .translationAnswers)
-            UserDefaults.shared.set(0, for: .writingAnswers)
-            UserDefaults.shared.set(0, for: .sentencesAnswers)
-            UserDefaults.shared.set(0, for: .listeningAnswers)
-            
+            self.keys.forEach { UserDefaults.shared.set(0, for: $0) }
             self.setupSections()
             self.viewController?.reloadData()
         }
