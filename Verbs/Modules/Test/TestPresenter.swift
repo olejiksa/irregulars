@@ -76,9 +76,7 @@ private extension TestPresenter {
         
         guard let verb = verbWrapped,
               let index = items.firstIndex(of: verb.infinitive.value),
-              let currentTestKind = test == .basic ?
-                Test.basic.kinds.randomElement() :
-                Test.advanced.kinds.randomElement()
+              let currentTestKind = test.kinds.randomElement()
         else {
             wasHintUsed = false
             configureRandomComposition()
@@ -90,7 +88,8 @@ private extension TestPresenter {
         
         let sections = itemsFactory.build(with: currentTestKind,
                                           verb: verb,
-                                          hint: hint, didEndEntering: didEndEntering,
+                                          hint: hint,
+                                          didEndEntering: didEndEntering,
                                           play: play,
                                           answerActionBlock: didAnswerTap)
         
@@ -108,19 +107,28 @@ private extension TestPresenter {
         guard let items = dataSource.items(of: InputItem.self) as? [InputItem],
               items.allSatisfy({ $0.isFilled }) else { return }
         
-        viewController?.endEditing()
-        finishTask()
+        wasHintUsed = !items.allSatisfy(\.isValid)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+            self.finishTask()
+        }
     }
     
     func finishTask() {
         if !wasHintUsed {
             switch test {
-            case .basic:
-                let answeredCorrectlyCount = UserDefaults.shared.integer(for: .answeredCorrectlyBasic)
-                UserDefaults.shared.set(answeredCorrectlyCount + 1, for: .answeredCorrectlyBasic)
-            case .advanced:
-                let answeredCorrectlyCount = UserDefaults.shared.integer(for: .answeredCorrectlyAdvanced)
-                UserDefaults.shared.set(answeredCorrectlyCount + 1, for: .answeredCorrectlyAdvanced)
+            case .translation:
+                let answeredCorrectlyCount = UserDefaults.shared.integer(for: .translationAnswers)
+                UserDefaults.shared.set(answeredCorrectlyCount + 1, for: .translationAnswers)
+            case .listening:
+                let answeredCorrectlyCount = UserDefaults.shared.integer(for: .listeningAnswers)
+                UserDefaults.shared.set(answeredCorrectlyCount + 1, for: .listeningAnswers)
+            case .sentences:
+                let answeredCorrectlyCount = UserDefaults.shared.integer(for: .sentencesAnswers)
+                UserDefaults.shared.set(answeredCorrectlyCount + 1, for: .sentencesAnswers)
+            case .writing:
+                let answeredCorrectlyCount = UserDefaults.shared.integer(for: .writingAnswers)
+                UserDefaults.shared.set(answeredCorrectlyCount + 1, for: .writingAnswers)
             }
         }
         

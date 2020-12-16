@@ -64,7 +64,6 @@ struct Provider: IntentTimelineProvider {
             }
         }
         
-
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
@@ -88,84 +87,155 @@ struct VerbsWidgetEntryView: View {
     var body: some View {
         switch (widgetFamily, entry.state) {
         case (.systemSmall, .data(let verb)):
-            VStack(alignment: .leading, spacing: 5) {
-                Text("Infinitive")
-                    .font(.caption)
-                Text(verbatim: verb.infinitive.value)
-                    .bold()
-                    .lineLimit(1)
-                Text("Simple Past")
-                    .font(.caption)
-                if let simplePast = verb.simplePast?.first {
-                    Text(verbatim: simplePast.value)
-                        .bold()
-                        .truncationMode(.head)
-                        .lineLimit(1)
-                }
-                if let pastParticiple = verb.pastParticiple?.first {
-                    Text("Past Participle")
-                        .font(.caption)
-                    Text(verbatim: pastParticiple.value)
-                        .bold()
-                        .truncationMode(.head)
-                        .lineLimit(1)
-                }
-            }
-            .widgetURL(verb.url)
-            .padding(20)
+            small(with: verb)
         case (.systemMedium, .data(let verb)):
-            VStack(alignment: .center, spacing: 15) {
-                HStack(alignment: .center, spacing: 20) {
-                    VStack(alignment: .center, spacing: 10) {
-                        Text("Infinitive")
-                            .font(.caption)
-                        Text(verbatim: verb.infinitive.value)
-                            .bold()
-                            .lineLimit(1)
-                        Text(verbatim: verb.infinitive.transcription)
-                            .lineLimit(1)
-                    }
-                    if let simplePast = verb.simplePast?.first {
-                        VStack(alignment: .center, spacing: 10) {
-                            Text("Simple Past")
-                                .font(.caption)
-                            Text(verbatim: simplePast.value)
-                                .bold()
-                                .truncationMode(.head)
-                                .lineLimit(1)
-                            Text(verbatim: simplePast.transcription)
-                                .truncationMode(.head)
-                                .lineLimit(1)
-                        }
-                    }
-                    if let pastParticiple = verb.pastParticiple?.first {
-                        VStack(alignment: .center, spacing: 10) {
-                            Text("Past Participle")
-                                .font(.caption)
-                            Text(verbatim: pastParticiple.value)
-                                .bold()
-                                .truncationMode(.head)
-                                .lineLimit(1)
-                            Text(verbatim: pastParticiple.transcription)
-                                .truncationMode(.head)
-                                .lineLimit(1)
-                        }
-                    }
-                }
-                if LanguageService().hasTranslation {
-                    Text(verbatim: verb.translation)
-                        .italic()
-                        .lineLimit(1)
-                }
-            }
-            .widgetURL(verb.url)
-            .padding(20)
+            medium(with: verb)
+        case (.systemLarge, .data(let verb)):
+            large(with: verb)
         default:
             Text("No data to display")
                 .multilineTextAlignment(.center)
                 .font(.caption)
                 .padding(20)
         }
+    }
+    
+    private func small(with verb: Verb) -> some View {
+        VStack(alignment: .leading, spacing: 5) {
+            Text("Infinitive")
+                .font(.caption)
+            Text(verbatim: verb.infinitive.value)
+                .bold()
+                .lineLimit(1)
+            Text("Simple Past")
+                .font(.caption)
+            if let simplePast = verb.simplePast?.first {
+                Text(verbatim: simplePast.value)
+                    .bold()
+                    .truncationMode(.head)
+                    .lineLimit(1)
+            }
+            if let pastParticiple = verb.pastParticiple?.first {
+                Text("Past Participle")
+                    .font(.caption)
+                Text(verbatim: pastParticiple.value)
+                    .bold()
+                    .truncationMode(.head)
+                    .lineLimit(1)
+            }
+        }
+        .widgetURL(verb.url)
+        .padding(20)
+    }
+    
+    private func medium(with verb: Verb) -> some View {
+        VStack(alignment: .center, spacing: 15) {
+            HStack(alignment: .center, spacing: 20) {
+                VStack(alignment: .center, spacing: 10) {
+                    Text("Infinitive")
+                        .font(.caption)
+                    Text(verbatim: verb.infinitive.value)
+                        .bold()
+                        .lineLimit(1)
+                    Text(verbatim: verb.infinitive.transcription)
+                        .lineLimit(1)
+                }.frame(maxWidth: .infinity)
+                if let simplePast = verb.simplePast?.first {
+                    VStack(alignment: .center, spacing: 10) {
+                        Text("Simple Past")
+                            .font(.caption)
+                        Text(verbatim: simplePast.value)
+                            .bold()
+                            .truncationMode(.head)
+                            .lineLimit(1)
+                        Text(verbatim: simplePast.transcription)
+                            .truncationMode(.head)
+                            .lineLimit(1)
+                    }.frame(maxWidth: .infinity)
+                }
+                if let pastParticiple = verb.pastParticiple?.first {
+                    VStack(alignment: .center, spacing: 10) {
+                        Text("Past Participle")
+                            .font(.caption)
+                        Text(verbatim: pastParticiple.value)
+                            .bold()
+                            .truncationMode(.head)
+                            .lineLimit(1)
+                        Text(verbatim: pastParticiple.transcription)
+                            .truncationMode(.head)
+                            .lineLimit(1)
+                    }.frame(maxWidth: .infinity)
+                }
+            }
+            if LanguageService().hasTranslation {
+                Text(verbatim: verb.translation)
+                    .italic()
+                    .lineLimit(1)
+            }
+        }
+        .widgetURL(verb.url)
+        .padding(20)
+    }
+    
+    private func large(with verb: Verb) -> some View {
+        let sentences = SentencesService().items
+            .filter { $0.word == verb.infinitive.value }
+            .flatMap { $0.sentences }
+        let stack = VStack(alignment: .center, spacing: 15) {
+            HStack(alignment: .center, spacing: 10) {
+                Text("Infinitive")
+                    .font(.caption)
+                    .frame(maxWidth: .infinity)
+                Text(verbatim: verb.infinitive.value)
+                    .bold()
+                    .lineLimit(1)
+                    .frame(maxWidth: .infinity)
+                Text(verbatim: verb.infinitive.transcription)
+                    .lineLimit(1)
+                    .frame(maxWidth: .infinity)
+            }
+            if let simplePast = verb.simplePast?.first {
+                HStack(alignment: .center, spacing: 10) {
+                    Text("Simple Past")
+                        .font(.caption)
+                        .frame(maxWidth: .infinity)
+                    Text(verbatim: simplePast.value)
+                        .bold()
+                        .truncationMode(.head)
+                        .lineLimit(1)
+                        .frame(maxWidth: .infinity)
+                    Text(verbatim: simplePast.transcription)
+                        .truncationMode(.head)
+                        .lineLimit(1)
+                        .frame(maxWidth: .infinity)
+                }
+            }
+            if let pastParticiple = verb.pastParticiple?.first {
+                HStack(alignment: .center, spacing: 10) {
+                    Text("Past Participle")
+                        .font(.caption)
+                        .frame(maxWidth: .infinity)
+                    Text(verbatim: pastParticiple.value)
+                        .bold()
+                        .truncationMode(.head)
+                        .lineLimit(1)
+                        .frame(maxWidth: .infinity)
+                    Text(verbatim: pastParticiple.transcription)
+                        .truncationMode(.head)
+                        .lineLimit(1)
+                        .frame(maxWidth: .infinity)
+                }
+            }
+            if LanguageService().hasTranslation {
+                Text(verbatim: verb.translation)
+            }
+            ForEach(sentences, id: \.self) { sentence in
+                Text(verbatim: sentence)
+            }
+        }
+        .widgetURL(verb.url)
+        .padding(20)
+        return stack
     }
 }
 

@@ -79,14 +79,10 @@ final class SettingsItemsFactory {
               items: [setupListViewModeItem(listViewModeBlock: listViewModeBlock)].compactMap { $0 })
     }
     
-    func setupTestsSection(testVerbsBlock: @escaping ItemBlock,
-                           listeningBlock: @escaping BoolBlock) -> Section {
+    func setupTestsSection(testVerbsBlock: @escaping ItemBlock) -> Section {
         .init(header: "Tests".localized,
               items: [
-                setupTestVerbsItem(testVerbsBlock: testVerbsBlock),
-                SwitchItem(text: "Listening".localized,
-                           isOn: UserDefaults.shared.bool(for: .listening),
-                           actionBlock: listeningBlock)].compactMap { $0 })
+                setupTestVerbsItem(testVerbsBlock: testVerbsBlock)].compactMap { $0 })
     }
     
     func setupLinksSection(rateBlock: @escaping ItemBlock,

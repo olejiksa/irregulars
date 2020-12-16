@@ -37,7 +37,7 @@ final class TestItemsFactory {
         }
         
         switch testKind {
-        case .threeForms:
+        case .twoForms:
             return [Section(header: "InfinitiveValue".localized,
                             items: [PlainDetailItem(text: verb.infinitive.value)]),
                     Section(header: "SimplePastValue".localized,
@@ -53,7 +53,7 @@ final class TestItemsFactory {
                                               hintActionBlock: hint,
                                               tag: 1,
                                               returnKeyType: .done)].compactMap { $0 })]
-        case .translation:
+        case .threeForms:
             guard languageService.hasTranslation else { return [] }
             
             return [Section(header: "Translation".localized,
@@ -77,21 +77,29 @@ final class TestItemsFactory {
                                               hintActionBlock: hint,
                                               tag: 2,
                                               returnKeyType: .done)].compactMap { $0 })]
+        case .translation:
+            guard languageService.hasTranslation else { return [] }
+            
+            let items = generateAnswerItems(count: 4, verb: verb, form: .translation,
+                                            verbForms: [verb.infinitive.value.localized],
+                                            actionBlock: answerActionBlock)
+            
+            return [Section(header: "InfinitiveValue".localized,
+                            items: [PlainDetailItem(text: verb.infinitive.value)].compactMap { $0 }),
+                    Section(header: "Translation".localized,
+                            items: items.compactMap { $0 })]
         case .retranslation:
             guard languageService.hasTranslation else { return [] }
+            
+            let items = generateAnswerItems(count: 4, verb: verb, form: .infinitive,
+                                            verbForms: [verb.infinitive.value],
+                                            actionBlock: answerActionBlock)
             
             return [Section(header: "Translation".localized,
                             items: [PlainDetailItem(text: verb.infinitive.value.localized)].compactMap { $0 }),
                     Section(header: "InfinitiveValue".localized,
-                            items: [InputItem(words: [verb.infinitive],
-                                              playActionBlock: play,
-                                              successActionBlock: didEndEntering,
-                                              hintActionBlock: hint,
-                                              tag: 0,
-                                              returnKeyType: .done)].compactMap { $0 })]
+                            items: items.compactMap { $0 })]
         case .listening:
-            guard UserDefaults.shared.bool(for: .listening) else { return [] }
-            
             return [Section(items: [PlainDetailItem(text: "Listen and write".localized,
                                                     textStyle: .secondary)].compactMap { $0 }),
                     Section(header: "InfinitiveValue".localized,
@@ -168,6 +176,9 @@ private extension TestItemsFactory {
                 formString = value
             case .pastParticiple:
                 guard let value = verb?.pastParticiple?.randomElement()?.value else { continue }
+                formString = value
+            case .translation:
+                guard let value = verb?.infinitive.value.localized else { continue }
                 formString = value
             }
             

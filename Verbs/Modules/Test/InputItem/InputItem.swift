@@ -16,6 +16,7 @@ final class InputItem {
     let hintActionBlock: ((String) -> ())
     let isAudio: Bool
     var isFilled: Bool = false
+    var isValid: Bool = false
     let tag: Int
     let returnKeyType: UIReturnKeyType
     

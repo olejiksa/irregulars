@@ -14,6 +14,7 @@ struct Verb: Codable {
         case infinitive
         case simplePast
         case pastParticiple
+        case translation
     }
     
     let infinitive: Word

@@ -23,19 +23,25 @@ final class TestsPresenter: NSObject {
     }
     
     func setupSections() {
-        let items = [TestItem(icon: .studentdesk,
-                              title: "ThreeFormsTitle".localized,
+        let languageService = LanguageService()
+        let translationItem = languageService.hasTranslation ?
+            TestItem(icon: .globe, title: Test.translation.title, subtitle: "TranslationSubtitle".localized) :
+            nil
+        
+        let items = [translationItem,
+                     TestItem(icon: .pencil,
+                              title: Test.writing.title,
                               subtitle: "ThreeFormsSubtitle".localized),
-                     TestItem(icon: .graduationcap,
-                              title: "SentenceTitle".localized,
+                     TestItem(icon: .sentences,
+                              title: Test.sentences.title,
                               subtitle: "SentenceSubtitle".localized),
-//                     TestItem(icon: .mouth,
-//                              title: "Pronunciation".localized,
-//                              subtitle: "SentenceSubtitle".localized),
+                     TestItem(icon: .headphones,
+                              title: Test.listening.title,
+                              subtitle: "ListeningSubtitle".localized),
                      TestItem(icon: .chart,
                               title: "Statistics".localized,
                               subtitle: "Track your progress in learning irregular verbs".localized)
-        ]
+        ].compactMap { $0 }
         dataSource.setup([Section(items: items)])
     }
 }
@@ -67,15 +73,20 @@ extension TestsPresenter: UITableViewDelegate {
         
         if UserDefaults.shared.bool(for: .favoritesOnly),
            Locator.favorites.verbs.isEmpty,
-           0...1 ~= indexPath.row {
+           0...3 ~= indexPath.row {
             router?.showEmptyFavorites()
             return
         }
         
-        switch indexPath.row {
-        case 0: router?.goTo(test: .basic)
-        case 1: router?.goTo(test: .advanced)
-        case 2: router?.goToStatistics()
+        let languageService = LanguageService()
+        let index = languageService.hasTranslation ? indexPath.row : indexPath.row + 1
+        
+        switch index {
+        case 0: router?.goTo(test: .translation)
+        case 1: router?.goTo(test: .writing)
+        case 2: router?.goTo(test: .sentences)
+        case 3: router?.goTo(test: .listening)
+        case 4: router?.goToStatistics()
         default: break
         }
         

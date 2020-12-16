@@ -6,8 +6,7 @@
   Copyright © 2020 Oleg Samoylov. All rights reserved.
 */
 
-"Basic tests" = "Basic tests";
-"Advanced tests" = "Advanced tests";
+"Of them" = "Of them";
 "Answered correctly" = "Answered correctly";
 "Reset statistics" = "Reset statistics";
 "Downgrade to" = "Downgrade to %@ Lite";
@@ -39,6 +38,7 @@
 "Regular verbs (-ed)" = "Regular verbs (-ed)";
 "Derivatives" = "Derivatives";
 "Translation" = "Translation";
+"TranslationSubtitle" = "Check your knowledge of the translation of irregular verbs";
 "Language" = "Language";
 "Contact us" = "Contact us";
 "Rate and review" = "Rate and review";
@@ -49,6 +49,7 @@
 "Done" = "Done";
 "Cancel" = "Cancel";
 "Verb forms" = "Verb forms";
+"Forms" = "Forms";
 "Privacy policy" = "Privacy policy";
 "Share the app" = "Share the app";
 "Edition" = "Edition";
@@ -78,9 +79,8 @@
 "Terms of use" = "Terms of use";
 "Personalize the app: pick an accent color to your liking" = "Personalize the app: pick an accent color to your liking";
 "Examples" = "Examples";
-"ThreeFormsTitle" = "Basic";
-"SentenceTitle" = "Advanced";
-"ThreeFormsSubtitle" = "Check your knowledge of all three forms of irregular verbs as well as their listening comprehension";
+"Sentences" = "Sentences";
+"ThreeFormsSubtitle" = "Check your knowledge of irregular verbs forms";
 "SentenceSubtitle" = "How well do you understand irregular verbs in context?";
 "Notifications" = "Notifications";
 "Sentence" = "Sentence";
@@ -90,6 +90,7 @@
 "Answer options" = "Answer options";
 "Keyboard" = "Keyboard";
 "Listening" = "Listening";
+"ListeningSubtitle" = "Сheck your listening comprehension of irregular verbs";
 "Demo" = "Demo";
 "Missed word" = "Missed word";
 "InfinitiveValue" = "Infinitive";

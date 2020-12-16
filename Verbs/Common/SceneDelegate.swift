@@ -36,7 +36,6 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         UserDefaults.shared.register(true, for: .shouldRegularVerbsBeShown)
         UserDefaults.shared.register(true, for: .shouldDerivedFormsBeShown)
-        UserDefaults.shared.register(true, for: .listening)
         UserDefaults.shared.register(2, for: .playbackSpeed)
         
         window = UIWindow(windowScene: windowScene)

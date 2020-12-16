@@ -35,24 +35,38 @@ private extension StatisticsPresenter {
     }
     
     func setupSections() {
-        let answeredCorrectlyBasic = UserDefaults.shared.integer(for: .answeredCorrectlyBasic)
-        let answeredCorrectlyAdvanced = UserDefaults.shared.integer(for: .answeredCorrectlyAdvanced)
-        let answeredCorrectlyTotal = answeredCorrectlyBasic + answeredCorrectlyAdvanced
+        let answeredCorrectlyTranslation = UserDefaults.shared.integer(for: .translationAnswers)
+        let answeredCorrectlyWriting = UserDefaults.shared.integer(for: .writingAnswers)
+        let answeredCorrectlySentences = UserDefaults.shared.integer(for: .sentencesAnswers)
+        let answeredCorrectlyListening = UserDefaults.shared.integer(for: .listeningAnswers)
+        let answeredCorrectlyTotal = answeredCorrectlyTranslation +
+            answeredCorrectlyWriting +
+            answeredCorrectlySentences +
+            answeredCorrectlyListening
         let answeredCorrectlyString = String(format: "answeredCorrectlyCount".localized,
                                              answeredCorrectlyTotal)
+        
+        let hasTranslation = LanguageService().hasTranslation ?
+            RightDetailItem(title: Test.translation.title,
+                            subtitle: String(answeredCorrectlyTranslation),
+                            isEnabled: false) :
+            nil
         
         dataSource.setup([setupActivationSection(upgradeBlock: willBuy),
                           Section(items: [StatisticsHeaderItem(title: String(answeredCorrectlyTotal),
                                                                subtitle: answeredCorrectlyString)],
                                   footer: "Using hints gives you no points".localized),
-                          Section(header: "Basic tests".localized,
-                                  items: [RightDetailItem(title: "Answered correctly".localized,
-                                                          subtitle: String(answeredCorrectlyBasic),
-                                                          isEnabled: false)]),
-                          Section(header: "Advanced tests".localized,
-                                  items: [RightDetailItem(title: "Answered correctly".localized,
-                                                          subtitle: String(answeredCorrectlyAdvanced),
-                                                          isEnabled: false)]),
+                          Section(header: "Of them".localized,
+                                  items: [hasTranslation,
+                                          RightDetailItem(title: Test.writing.title,
+                                                          subtitle: String(answeredCorrectlyWriting),
+                                                          isEnabled: false),
+                                          RightDetailItem(title: Test.sentences.title,
+                                                          subtitle: String(answeredCorrectlySentences),
+                                                          isEnabled: false),
+                                          RightDetailItem(title: Test.listening.title,
+                                                          subtitle: String(answeredCorrectlyListening),
+                                                          isEnabled: false)].compactMap { $0 }),
                           Section(items: [ActionItem(text: "Reset statistics".localized,
                                                      style: .standard,
                                                      actionBlock: didResetTap)])])
@@ -77,8 +91,11 @@ private extension StatisticsPresenter {
         router?.reset() { [weak self] in
             guard let self = self else { return }
             
-            UserDefaults.shared.set(0, for: .answeredCorrectlyBasic)
-            UserDefaults.shared.set(0, for: .answeredCorrectlyAdvanced)
+            UserDefaults.shared.set(0, for: .translationAnswers)
+            UserDefaults.shared.set(0, for: .writingAnswers)
+            UserDefaults.shared.set(0, for: .sentencesAnswers)
+            UserDefaults.shared.set(0, for: .listeningAnswers)
+            
             self.setupSections()
             self.viewController?.reloadData()
         }

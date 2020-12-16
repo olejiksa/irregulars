@@ -12,6 +12,7 @@ final class InputCell: UITableViewCell {
     
     @IBOutlet private weak var textField: UITextField!
     @IBOutlet private weak var playButton: UIButton!
+    @IBOutlet private weak var hintButton: UIButton!
     
     private weak var item: InputItem?
     private var expectedValues: [String]?
@@ -23,6 +24,18 @@ final class InputCell: UITableViewCell {
         textField.delegate = self
         
         selectionStyle = .none
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        item = nil
+        expectedValues = nil
+        isUserInteractionEnabled = true
+        textField.isUserInteractionEnabled = true
+        hintButton.isHidden = false
+        textField.text = nil
+        textField.attributedText = nil
     }
 }
 
@@ -39,6 +52,20 @@ private extension InputCell {
         guard let text = expectedValues?.first else { return }
         item?.playActionBlock?(text, play, stop)
     }
+    
+    func applyValidation(_ text: String) {
+        if expectedValues?.contains(where: { $0.lowercased() == text.lowercased() }) == false {
+            let element = expectedValues?.randomElement() ?? ""
+            let rawAttributedText = element + " " + text + " "
+            let attributeString = NSMutableAttributedString(string: rawAttributedText)
+            attributeString.addAttribute(.strikethroughStyle,
+                                         value: 2,
+                                         range: NSRange(location: element.count + 1, length: text.count))
+            textField.attributedText = attributeString
+        } else {
+            item?.isValid = true
+        }
+    }
 }
 
 // MARK: - CellProtocol
@@ -52,7 +79,6 @@ extension InputCell: CellProtocol {
         
         self.item = item
         
-        textField.text = ""
         textField.tag = item.tag
         textField.returnKeyType = item.returnKeyType
         expectedValues = item.words.map { $0.value }
@@ -65,11 +91,11 @@ extension InputCell: CellProtocol {
 private extension InputCell {
     
     func play() {
-        playButton.setImage(UIImage(systemName: "stop.circle"), for: .normal)
+        playButton.setImage(SystemIcon.stop.image, for: .normal)
     }
     
     func stop() {
-        playButton.setImage(UIImage(systemName: "play.circle"), for: .normal)
+        playButton.setImage(SystemIcon.play.image, for: .normal)
     }
 }
 
@@ -77,19 +103,16 @@ private extension InputCell {
 
 extension InputCell: UITextFieldDelegate {
     
-    func textField(_ textField: UITextField,
-                   shouldChangeCharactersIn range: NSRange,
-                   replacementString string: String) -> Bool {
-        guard let text = textField.text?.appending(string) else { return true }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let text = textField.text, !text.isEmpty else { return }
         
-        if expectedValues?.contains(where: { $0.lowercased() == text.lowercased() }) == true {
-            item?.isFilled = true
-            item?.successActionBlock()
-        } else {
-            item?.isFilled = false
-        }
+        applyValidation(text)
         
-        return true
+        item?.isFilled = true
+        item?.successActionBlock()
+        
+        textField.isUserInteractionEnabled = false
+        hintButton.isHidden = true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -100,6 +123,6 @@ extension InputCell: UITextFieldDelegate {
             textField.resignFirstResponder()
         }
         
-        return false
+        return true
     }
 }

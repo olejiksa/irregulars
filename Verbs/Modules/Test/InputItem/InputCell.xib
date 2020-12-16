@@ -75,6 +75,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="hintButton" destination="Ymp-yC-3fQ" id="Ln9-1W-7qA"/>
                 <outlet property="playButton" destination="24G-bR-9bO" id="IKF-20-RQX"/>
                 <outlet property="textField" destination="m47-xU-kFD" id="SXN-hD-01C"/>
             </connections>

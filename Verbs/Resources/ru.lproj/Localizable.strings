@@ -6,6 +6,7 @@
   Copyright © 2020 Oleg Samoylov. All rights reserved.
 */
 
+"Of them" = "Из них";
 "Basic tests" = "Базовые тесты";
 "Advanced tests" = "Продвинутые тесты";
 "Answered correctly" = "Отвечено верно";
@@ -41,6 +42,7 @@
 "Derivatives" = "Производные формы";
 "DerivativesFooter" = "Определяет отображение неправильных глаголов с приставками be-, for(e)-, in-, inter-, mis-, off-, out-, over-, pre-, under-, with- и другими";
 "Translation" = "Перевод";
+"TranslationSubtitle" = "Проверьте знание перевода неправильных глаголов";
 "Language" = "Язык";
 "Contact us" = "Связаться с нами";
 "Rate and review" = "Оценить и дать отзыв";
@@ -51,6 +53,7 @@
 "Done" = "Готово";
 "Cancel" = "Отмена";
 "Verb forms" = "Формы глагола";
+"Forms" = "Формы";
 "Privacy policy" = "Политика конфиденциальности";
 "Share the app" = "Поделиться приложением";
 "Edition" = "Редакция";
@@ -80,9 +83,8 @@
 "Terms of use" = "Условия использования";
 "Personalize the app: pick an accent color to your liking" = "Персонализируйте приложение: выберите акцентный цвет по своему вкусу";
 "Examples" = "Примеры";
-"ThreeFormsTitle" = "Базовые";
-"SentenceTitle" = "Продвинутые";
-"ThreeFormsSubtitle" = "Проверьте свои знания всех трех форм и перевода неправильных глаголов, а также их понимание на слух";
+"Sentences" = "Предложения";
+"ThreeFormsSubtitle" = "Проверьте знания форм неправильных глаголов";
 "SentenceSubtitle" = "Насколько хорошо Вы понимаете неправильные глаголы из контекста?";
 "Notifications" = "Уведомления";
 "Sentence" = "Предложение";
@@ -92,6 +94,7 @@
 "Answer options" = "Варианты ответа";
 "Keyboard" = "Клавиатура";
 "Listening" = "Аудирование";
+"ListeningSubtitle" = "Проверьте понимание неправильных глаголов на слух";
 "Demo" = "Демонстрационные";
 "Missed word" = "Пропущенное слово";
 "InfinitiveValue" = "Неопределенная форма глагола";

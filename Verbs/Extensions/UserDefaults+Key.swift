@@ -17,15 +17,18 @@ extension UserDefaults {
         case shouldRegularVerbsBeShown
         case shouldDerivedFormsBeShown
         case shouldTranslationBeShown
+        case favorites
         case favoritesOnly
         case playbackSpeed
-        case answeredCorrectlyBasic
-        case answeredCorrectlyAdvanced
+        case translationAnswers
+        case writingAnswers
+        case sentencesAnswers
+        case listeningAnswers
         case accentColor
-        case listening
     }
     
     func bool(for key: Key) -> Bool { bool(forKey: key.rawValue) }
+    func data(for key: Key) -> Data? { data(forKey: key.rawValue) }
     func integer(for key: Key) -> Int { integer(forKey: key.rawValue) }
     func string(for key: Key) -> String? { string(forKey: key.rawValue) }
     

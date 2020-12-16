@@ -9,6 +9,7 @@
 enum Test {
     
     enum Kind {
+        case twoForms
         case threeForms
         case translation
         case retranslation
@@ -16,24 +17,34 @@ enum Test {
         case sentences
     }
     
-    case basic
-    case advanced
+    case translation
+    case writing
+    case sentences
+    case listening
     
     var kinds: [Kind] {
         switch self {
-        case .basic:
-            return [.threeForms, .translation, .retranslation, .listening]
-        case .advanced:
+        case .translation:
+            return [.translation, .retranslation]
+        case .writing:
+            return [.twoForms]
+        case .sentences:
             return [.sentences]
+        case .listening:
+            return [.listening]
         }
     }
     
     var title: String {
         switch self {
-        case .basic:
-            return "ThreeFormsTitle".localized
-        case .advanced:
-            return "SentenceTitle".localized
+        case .translation:
+            return "Translation".localized
+        case .writing:
+            return "Forms".localized
+        case .sentences:
+            return "Sentences".localized
+        case .listening:
+            return "Listening".localized
         }
     }
 }

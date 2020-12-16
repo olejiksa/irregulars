@@ -57,7 +57,7 @@ private extension TabBarController {
         compound(items: [(listViewController, "Verbs".localized, .bookFill),
                          (favoritesViewController, "Favorites".localized, .starFill),
                          (testsViewController, "Tests".localized, .puzzleFill),
-                         (settingsViewController, "Settings".localized, .gear)])
+                         (settingsViewController, "Settings".localized, .gearFill)])
     }
     
     func compound(items: [(controller: UIViewController?,

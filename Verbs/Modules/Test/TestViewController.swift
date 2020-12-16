@@ -43,8 +43,9 @@ final class TestViewController: UIViewController {
     }
     
     func reloadData() {
-        tableView?.scrollToRow(at: .init(row: 0, section: 0), at: .top, animated: true)
-        tableView?.reloadData()
+        guard let tableView = tableView else { return }
+        tableView.reloadData()
+        tableView.setContentOffset(.zero, animated: true)
     }
     
     func endEditing() {
@@ -71,7 +72,7 @@ private extension TestViewController {
         let keyboardHeightLayoutConstraint = tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             keyboardHeightLayoutConstraint

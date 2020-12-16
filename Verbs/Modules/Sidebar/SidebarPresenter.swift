@@ -106,42 +106,6 @@ private extension SidebarPresenter {
         return snapshot
     }
     
-    func testsSnapshot() -> NSDiffableDataSourceSectionSnapshot<SidebarItem> {
-        var snapshot = NSDiffableDataSourceSectionSnapshot<SidebarItem>()
-        let header = SidebarItem.header(title: "Tests".localized, isExpandable: true)
-        
-        let items: [SidebarItem] = [
-            .row(title: "Test 1".localized,
-                 image: SystemIcon.folder.image,
-                 id: RowIdentifier.tests),
-            .row(title: "Test 2".localized,
-                 image: SystemIcon.folder.image,
-                 id: RowIdentifier.tests),
-            .row(title: "Test 3".localized,
-                 image: SystemIcon.folder.image,
-                 id: RowIdentifier.tests),
-            .row(title: "Test 4".localized,
-                 image: SystemIcon.folder.image,
-                 id: RowIdentifier.tests),
-            .row(title: "Test 5".localized,
-                 image: SystemIcon.folder.image,
-                 id: RowIdentifier.tests),
-            .row(title: "Test 6".localized,
-                 image: SystemIcon.folder.image,
-                 id: RowIdentifier.tests),
-            .row(title: "Test 7".localized,
-                 image: SystemIcon.folder.image,
-                 id: RowIdentifier.tests),
-            .row(title: "Test 8".localized,
-                 image: SystemIcon.folder.image,
-                 id: RowIdentifier.tests)
-        ]
-        
-        snapshot.append([header])
-        snapshot.append(items, to: header)
-        return snapshot
-    }
-    
     func moreSnapshot() -> NSDiffableDataSourceSectionSnapshot<SidebarItem> {
         var snapshot = NSDiffableDataSourceSectionSnapshot<SidebarItem>()
         let header = SidebarItem.header(title: "More".localized)
@@ -160,7 +124,6 @@ private extension SidebarPresenter {
     
     func applyInitialSnapshot() {
         dataSource?.apply(verbsSnapshot(), to: .verbs, animatingDifferences: false)
-        // dataSource?.apply(testsSnapshot(), to: .tests, animatingDifferences: false)
         dataSource?.apply(moreSnapshot(), to: .more, animatingDifferences: false)
         
         viewController?.select(at: selectedIndexPath)
