@@ -12,7 +12,7 @@ final class PaywallPresenter {
     
     init(languageService: LanguageService) {
         let item = languageService.hasTranslation
-            ? PaywallItem(text: "View a translation without going to the verb page".localized,
+            ? PaywallItem(text: "View a translation without going to the verb card".localized,
                           icon: .dictionary)
             : nil
         
@@ -20,9 +20,9 @@ final class PaywallPresenter {
                                  icon: .key),
                      PaywallItem(text: "Listen to pronunciation".localized,
                                  icon: .speaker),
-                     PaywallItem(text: "See a transcription".localized,
+                     PaywallItem(text: "View a transcription".localized,
                                  icon: .transcription),
-                     PaywallItem(text: "Add unlimited items in Favorites".localized,
+                     PaywallItem(text: "Store unlimited items in Favorites".localized,
                                  icon: .starFill),
                      PaywallItem(text: "Personalize the app: pick an accent color to your liking".localized,
                                  icon: .paintpalette),

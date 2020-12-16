@@ -6,21 +6,18 @@
   Copyright © 2020 Oleg Samoylov. All rights reserved.
 */
 
-"Of them" = "Including";
-"Answered correctly" = "Answered correctly";
+"Including" = "Including";
 "Reset statistics" = "Reset statistics";
 "Downgrade to" = "Downgrade to %@ Lite";
 "Thank you" = "Thank you for being with us!";
 "Listen to pronunciation" = "Listen to pronunciation";
 "Pronunciation" = "Pronunciation";
 "Statistics" = "Statistics";
-"See a transcription" = "View a transcription in the verb card";
-"Add unlimited items in Favorites" = "Store unlimited items in Favorites";
-"Find words faster using search" = "Find words faster using search";
-"Find words faster using the alphabetical scrollbar" = "Find words faster using the alphabetical scrollbar";
+"View a transcription" = "View a transcription in the verb card";
+"Store unlimited items in Favorites" = "Store unlimited items in Favorites";
 "Hide or show regular verbs (-ed)" = "Hide or show regular verbs (-ed)";
 "Hide or show derivatives" = "Hide or show derivatives";
-"View a translation without going to the verb page" = "View a translation without going to the verb card";
+"View a translation without going to the verb card" = "View a translation without going to the verb card";
 "Tests" = "Tests";
 "Activation" = "Activation";
 "Deactivation" = "Deactivation";
@@ -36,7 +33,9 @@
 "General" = "General";
 "Links" = "Links";
 "Regular verbs (-ed)" = "Regular verbs (-ed)";
+"RegularVerbsFooter" = "Determines the display of verbs with both regular and irregular forms";
 "Derivatives" = "Derivatives";
+"DerivativesFooter" = "Determines the display of irregular verbs with the prefixes be-, for(e)-, in-, inter-, mis-, off-, out-, over-, pre-, under-, with- and others";
 "Translation" = "Translation";
 "TranslationSubtitle" = "Check your knowledge of the translation of irregular verbs";
 "Language" = "Language";
@@ -52,7 +51,7 @@
 "Verb forms" = "Verb forms";
 "Forms" = "Forms";
 "Privacy policy" = "Privacy policy";
-"Share the app" = "Share the app";
+"Share app" = "Share app";
 "Edition" = "Edition";
 "All" = "All";
 "Favorites" = "Favorites";
@@ -87,9 +86,6 @@
 "Sentence" = "Sentence";
 "Choose a word from offered" = "Choose a word from offered";
 "Vocabulary" = "Vocabulary";
-"Input mode" = "Input mode";
-"Answer options" = "Answer options";
-"Keyboard" = "Keyboard";
 "Listening" = "Listening";
 "ListeningSubtitle" = "Сheck your listening comprehension of irregular verbs";
 "Demo" = "Demo";
@@ -97,8 +93,6 @@
 "InfinitiveValue" = "Infinitive";
 "SimplePastValue" = "Simple Past";
 "PastParticipleValue" = "Past Participle";
-"RegularVerbsFooter" = "Determines the display of verbs with both regular and irregular forms";
-"DerivativesFooter" = "Determines the display of irregular verbs with the prefixes be-, for(e)-, in-, inter-, mis-, off-, out-, over-, pre-, under-, with- and others";
 "Listen and write" = "Listen and write below";
 "Playback speed" = "Playback speed";
 "EmptyFavoritesTitle" = "Empty Favorites";

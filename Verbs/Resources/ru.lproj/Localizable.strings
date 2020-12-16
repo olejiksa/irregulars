@@ -6,23 +6,18 @@
   Copyright © 2020 Oleg Samoylov. All rights reserved.
 */
 
-"Of them" = "Из них";
-"Basic tests" = "Базовые тесты";
-"Advanced tests" = "Продвинутые тесты";
-"Answered correctly" = "Отвечено верно";
+"Including" = "Из них";
 "Reset statistics" = "Сбросить статистику";
 "Downgrade to" = "Вернуться к %@ Lite";
 "Thank you" = "Спасибо за то, что Вы с нами!";
 "Listen to pronunciation" = "Слушайте произношение";
 "Pronunciation" = "Произношение";
 "Statistics" = "Статистика";
-"See a transcription" = "Просматривайте транскрипцию в карточке глагола";
-"Add unlimited items in Favorites" = "Храните неограниченное количество элементов в «Избранном»";
-"Find words faster using search" = "Находите слова быстрее через поиск";
-"Find words faster using the alphabetical scrollbar" = "Находите слова быстрее с помощью алфавитной полосы прокрутки";
+"View a transcription" = "Просматривайте транскрипцию в карточке глагола";
+"Store unlimited items in Favorites" = "Храните неограниченное количество элементов в «Избранном»";
 "Hide or show regular verbs (-ed)" = "Скройте или отобразите правильные глаголы (-ed)";
 "Hide or show derivatives" = "Скройте или отобразите производные формы";
-"View a translation without going to the verb page" = "Просматривайте перевод без перехода на карточку глагола";
+"View a translation without going to the verb card" = "Просматривайте перевод без перехода на карточку глагола";
 "Tests" = "Тесты";
 "Activation" = "Активация";
 "Deactivation" = "Деактивация";
@@ -56,7 +51,7 @@
 "Verb forms" = "Формы глагола";
 "Forms" = "Формы";
 "Privacy policy" = "Политика конфиденциальности";
-"Share the app" = "Поделиться приложением";
+"Share app" = "Поделиться приложением";
 "Edition" = "Редакция";
 "All" = "Все";
 "Favorites" = "Избранное";
@@ -91,9 +86,6 @@
 "Sentence" = "Предложение";
 "Choose a word from offered" = "Выберите слово из предложенных";
 "Vocabulary" = "Лексика";
-"Input mode" = "Режим ввода";
-"Answer options" = "Варианты ответа";
-"Keyboard" = "Клавиатура";
 "Listening" = "Аудирование";
 "ListeningSubtitle" = "Проверьте понимание неправильных глаголов на слух";
 "Demo" = "Демонстрационные";
@@ -103,8 +95,6 @@
 "PastParticipleValue" = "Причастие прошедшего времени";
 "Listen and write" = "Прослушайте и напишите ниже";
 "Playback speed" = "Скорость воспроизведения";
-"Fast" = "Быстро";
-"Slow" = "Медленно";
 "EmptyFavoritesTitle" = "Нет «Избранного»";
 "Track your progress in learning irregular verbs" = "Отслеживайте свой прогресс в изучении неправильных глаголов";
 "Using hints gives you no points" = "Учитываются только ответы, введенные или выбранные правильно с первой попытки и без использования подсказок";

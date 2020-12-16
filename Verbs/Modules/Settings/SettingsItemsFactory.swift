@@ -100,7 +100,7 @@ final class SettingsItemsFactory {
                       DisclosureItem(text: "Contact us".localized,
                                      isEnabled: mailService.isMailAvailable,
                                      actionBlock: mailBlock),
-                      DisclosureItem(text: "Share the app".localized,
+                      DisclosureItem(text: "Share app".localized,
                                        actionBlock: shareBlock)])
     }
     

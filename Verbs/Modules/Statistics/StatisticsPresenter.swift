@@ -62,7 +62,7 @@ private extension StatisticsPresenter {
                           Section(items: [StatisticsHeaderItem(title: String(answeredCorrectlyTotal),
                                                                subtitle: answeredCorrectlyString)],
                                   footer: "Using hints gives you no points".localized),
-                          Section(header: "Of them".localized,
+                          Section(header: "Including".localized,
                                   items: [hasTranslation,
                                           RightDetailItem(title: Test.writing.title,
                                                           subtitle: String(answeredCorrectlyWriting),
