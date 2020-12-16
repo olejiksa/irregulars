@@ -27,6 +27,12 @@ final class TestsRouter {
     }
     
     func goTo(test: Test) {
+        if UserDefaults.shared.bool(for: .favoritesOnly),
+           Locator.favorites.verbs.isEmpty {
+            showEmptyFavorites()
+            return
+        }
+        
         let nvc = viewController?.navigationController
         let vc = TestAssembly(test: test).viewController()
         if splitViewController?.secondaryViewController?.topViewController is DetailViewController ||
@@ -45,6 +51,11 @@ final class TestsRouter {
         }
         nvc?.push(vc, in: splitViewController)
     }
+}
+
+// MARK: - Private
+
+private extension TestsRouter {
     
     func showEmptyFavorites() {
         let alertController = UIAlertController(title: "EmptyFavoritesTitle".localized,

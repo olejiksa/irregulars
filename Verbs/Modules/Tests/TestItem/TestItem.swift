@@ -11,6 +11,7 @@ struct TestItem {
     let icon: SystemIcon
     let title: String
     let subtitle: String
+    let test: Test?
 }
 
 // MARK: - ItemProtocol
@@ -19,4 +20,3 @@ extension TestItem: ItemProtocol {
     
     var identifier: String { TestCell.identifier }
 }
-
