@@ -151,6 +151,11 @@ extension FavoritesPresenter: UITableViewDataSource {
         return Array(set).sorted()
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        guard !isSearchActive else { return false }
+        return true
+    }
+    
     func tableView(_ tableView: UITableView,
                    commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath) {
