@@ -173,9 +173,11 @@ extension FavoritesPresenter: UITableViewDelegate {
             tableView.deselectRow(at: indexPath, animated: true)
         }
 
-        guard let verb = favoritesService.groupedItems[safe: indexPath.section]?[indexPath.row],
-              infinitive != verb.infinitive.value else { return }
+        let verb = !isSearchActive
+            ? favoritesService.groupedItems[indexPath.section][indexPath.row]
+            : favoritesService.searchedItems[indexPath.row]
         
+        guard infinitive != verb.infinitive.value else { return }
         router?.goToDetail(with: verb)
     }
 }
