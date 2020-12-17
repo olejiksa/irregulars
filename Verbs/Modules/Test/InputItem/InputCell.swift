@@ -117,7 +117,8 @@ extension InputCell: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let hostView = contentView.superview?.superview
-        if let nextTextField = hostView?.viewWithTag(textField.tag + 1) as? UITextField {
+        if let nextTextField = hostView?.viewWithTag(textField.tag + 1) as? UITextField,
+           nextTextField.isUserInteractionEnabled {
             nextTextField.becomeFirstResponder()
         } else {
             textField.resignFirstResponder()

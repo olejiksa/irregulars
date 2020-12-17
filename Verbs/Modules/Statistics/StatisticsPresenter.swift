@@ -58,8 +58,18 @@ private extension StatisticsPresenter {
                             isEnabled: false) :
             nil
         
+        let learnedCount = Locator.statistics.info.filter { $0.value >= 3 }.count
+        let inProgressCount = Locator.statistics.info.filter { $0.value > 0 && $0.value < 3 }.count
+        let verbsCount = VerbsService().items.count
+        
         dataSource.setup([setupActivationSection(upgradeBlock: willBuy),
-                          Section(items: [StatisticsHeaderItem(title: String(answeredCorrectlyTotal),
+                          Section(header: "LearnedVerbs".localized,
+                                  items: [ProgressItem(value: learnedCount, maximum: verbsCount)],
+                                  footer: "LearnedVerbsFooter".localized),
+                          Section(header: "In progress".localized,
+                                  items: [ProgressItem(value: inProgressCount, maximum: verbsCount - learnedCount)]),
+                          Section(header: "Your efforts".localized,
+                                  items: [StatisticsHeaderItem(title: String(answeredCorrectlyTotal),
                                                                subtitle: answeredCorrectlyString)],
                                   footer: "Using hints gives you no points".localized),
                           Section(header: "Including".localized,
@@ -73,7 +83,11 @@ private extension StatisticsPresenter {
                                           RightDetailItem(title: Test.listening.title,
                                                           subtitle: String(answeredCorrectlyListening),
                                                           isEnabled: false)].compactMap { $0 }),
-                          Section(items: [ActionItem(text: "Reset statistics".localized,
+                          Section(header: "Reset".localized,
+                                  items: [ActionItem(text: "Clear learned verbs".localized,
+                                                     style: .standard,
+                                                     actionBlock: didResetTap),
+                                          ActionItem(text: "Clear correct answers".localized,
                                                      style: .standard,
                                                      actionBlock: didResetTap)])])
     }
@@ -94,10 +108,31 @@ private extension StatisticsPresenter {
     }
     
     func didResetTap(_ sender: ItemProtocol) {
-        router?.reset() { [weak self] in
+        guard let actionItem = sender as? ActionItem else { return }
+        
+        let statisticsKind: StatisticsKind
+        switch actionItem.text {
+        case "Clear learned verbs".localized:
+            statisticsKind = .learnedVerbs
+        case "Clear correct answers".localized:
+            statisticsKind = .correctAnswers
+        default:
+            statisticsKind = .correctAnswers
+        }
+        
+        router?.reset(statisticsKind: statisticsKind) { [weak self] in
             guard let self = self else { return }
             
-            self.keys.forEach { UserDefaults.shared.set(0, for: $0) }
+            switch statisticsKind {
+            case .learnedVerbs:
+                Locator.statistics.clear()
+            case .correctAnswers:
+                [.translationAnswers,
+                 .writingAnswers,
+                 .sentencesAnswers,
+                 .listeningAnswers].forEach { UserDefaults.shared.set(0, for: $0) }
+            }
+            
             self.setupSections()
             self.viewController?.reloadData()
         }

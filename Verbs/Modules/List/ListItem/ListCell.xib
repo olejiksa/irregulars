@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="a97-5F-yB8">
-                        <rect key="frame" x="20" y="13" width="37.5" height="18"/>
+                        <rect key="frame" x="16" y="13" width="37.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -29,7 +29,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Na-6S-HvD">
-                        <rect key="frame" x="262.5" y="13" width="37.5" height="18"/>
+                        <rect key="frame" x="266.5" y="13" width="37.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -37,8 +37,8 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="ClY-Lk-YEZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="a97-5F-yB8" secondAttribute="trailing" constant="20" id="4lL-Gt-vDL"/>
-                    <constraint firstAttribute="trailing" secondItem="1Na-6S-HvD" secondAttribute="trailing" constant="20" id="4sR-8r-gPW"/>
-                    <constraint firstItem="a97-5F-yB8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="7nG-BS-rOM"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="1Na-6S-HvD" secondAttribute="trailing" id="4sR-8r-gPW"/>
+                    <constraint firstItem="a97-5F-yB8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="7nG-BS-rOM"/>
                     <constraint firstItem="1Na-6S-HvD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ClY-Lk-YEZ" secondAttribute="trailing" constant="20" id="BZa-U6-Bug"/>
                     <constraint firstItem="ClY-Lk-YEZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="KKY-Z2-8rc"/>
                     <constraint firstItem="a97-5F-yB8" firstAttribute="centerY" secondItem="ClY-Lk-YEZ" secondAttribute="centerY" id="TX2-8Y-B2a"/>

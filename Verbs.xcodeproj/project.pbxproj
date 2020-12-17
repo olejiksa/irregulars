@@ -52,6 +52,12 @@
 		EB2F5E11251F5B26007DCF60 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2F5E0F251F5B26007DCF60 /* DetailCell.swift */; };
 		EB2F5E12251F5B26007DCF60 /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB2F5E10251F5B26007DCF60 /* DetailCell.xib */; };
 		EB2F5E16251F71DD007DCF60 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2F5E15251F71DD007DCF60 /* AudioService.swift */; };
+		EB3217A5258BCDAC00023F0B /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3217A4258BCDAC00023F0B /* Statistics.swift */; };
+		EB3217AC258BCFEC00023F0B /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3217A4258BCDAC00023F0B /* Statistics.swift */; };
+		EB3217B7258BDBE100023F0B /* StatisticsKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3217B6258BDBE100023F0B /* StatisticsKind.swift */; };
+		EB3217BD258BE42300023F0B /* ProgressItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3217BC258BE42300023F0B /* ProgressItem.swift */; };
+		EB3217C3258BE4B300023F0B /* ProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3217C1258BE4B300023F0B /* ProgressCell.swift */; };
+		EB3217C4258BE4B300023F0B /* ProgressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB3217C2258BE4B300023F0B /* ProgressCell.xib */; };
 		EB450973253B5CB300D31858 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB450972253B5CB300D31858 /* Section.swift */; };
 		EB45097B253B630900D31858 /* SectionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB45097A253B630900D31858 /* SectionArray.swift */; };
 		EB450982253B65E800D31858 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB450981253B65E800D31858 /* DetailPresenter.swift */; };
@@ -313,6 +319,11 @@
 		EB2F5E0F251F5B26007DCF60 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		EB2F5E10251F5B26007DCF60 /* DetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
 		EB2F5E15251F71DD007DCF60 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		EB3217A4258BCDAC00023F0B /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
+		EB3217B6258BDBE100023F0B /* StatisticsKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsKind.swift; sourceTree = "<group>"; };
+		EB3217BC258BE42300023F0B /* ProgressItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressItem.swift; sourceTree = "<group>"; };
+		EB3217C1258BE4B300023F0B /* ProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCell.swift; sourceTree = "<group>"; };
+		EB3217C2258BE4B300023F0B /* ProgressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressCell.xib; sourceTree = "<group>"; };
 		EB450972253B5CB300D31858 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		EB45097A253B630900D31858 /* SectionArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionArray.swift; sourceTree = "<group>"; };
 		EB450981253B65E800D31858 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
@@ -671,6 +682,16 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		EB3217BB258BE41300023F0B /* ProgressItem */ = {
+			isa = PBXGroup;
+			children = (
+				EB3217BC258BE42300023F0B /* ProgressItem.swift */,
+				EB3217C1258BE4B300023F0B /* ProgressCell.swift */,
+				EB3217C2258BE4B300023F0B /* ProgressCell.xib */,
+			);
+			path = ProgressItem;
+			sourceTree = "<group>";
+		};
 		EB4509D72541E61700D31858 /* RightDetailItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -1014,6 +1035,7 @@
 				EBF4A13A252EA2F6003E3A44 /* FeatureToggle.swift */,
 				EBB01C0825217F5400BB646B /* Language.swift */,
 				EBA644B3255988FC0012B973 /* ListState.swift */,
+				EBF593CE258865680091FCE0 /* MenuAction.swift */,
 				EB9C5BA72582A3F00086A3D5 /* PlaybackSpeed.swift */,
 				EB2E4B1625717A3E005B343A /* PurchaseError.swift */,
 				EB450972253B5CB300D31858 /* Section.swift */,
@@ -1021,12 +1043,12 @@
 				EB450A32254B157A00D31858 /* SectionDataSource.swift */,
 				EB2E4B522573D8A7005B343A /* SelectableSectionDataSource.swift */,
 				EBD2C508257FDC780023AED4 /* Sentence.swift */,
+				EB3217A4258BCDAC00023F0B /* Statistics.swift */,
 				EBF4A13E252EC9A3003E3A44 /* SystemIcon.swift */,
 				EB269991256E29DA007CCF2E /* TabBarItem.swift */,
 				EB2E4BCA2576B59F005B343A /* Test.swift */,
 				EBEB1D93251F15D30019972C /* Verb.swift */,
 				EB7B85642537FAE000542D3C /* Word.swift */,
-				EBF593CE258865680091FCE0 /* MenuAction.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1082,11 +1104,13 @@
 		EBF593612583B27B0091FCE0 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				EB3217BB258BE41300023F0B /* ProgressItem */,
 				EBF593722583C3A40091FCE0 /* StatisticsHeaderItem */,
 				EBF5936C2583B3230091FCE0 /* StatisticsAssembly.swift */,
 				EBF593662583B3190091FCE0 /* StatisticsPresenter.swift */,
 				EBF593B8258732F00091FCE0 /* StatisticsRouter.swift */,
 				EBF593622583B2DD0091FCE0 /* StatisticsViewController.swift */,
+				EB3217B6258BDBE100023F0B /* StatisticsKind.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -1262,6 +1286,7 @@
 				EB2E4B9125741832005B343A /* yellow@3x.png in Resources */,
 				EBF594842589030E0091FCE0 /* green@3x~ipad.png in Resources */,
 				EBF4A12F252E981F003E3A44 /* ListCell.xib in Resources */,
+				EB3217C4258BE4B300023F0B /* ProgressCell.xib in Resources */,
 				EBF5948C2589030E0091FCE0 /* red@2x~ipad.png in Resources */,
 				EBF594862589030E0091FCE0 /* orange@3x~ipad.png in Resources */,
 				EB2E4B9525741832005B343A /* green@2x.png in Resources */,
@@ -1326,6 +1351,7 @@
 			files = (
 				EB7DFF69252451D2000B711D /* VerbsWidget.swift in Sources */,
 				EB4509D12541703700D31858 /* Language.swift in Sources */,
+				EB3217AC258BCFEC00023F0B /* Statistics.swift in Sources */,
 				EBE4AD0F2582AF7E001E9E4A /* VerbsServiceProtocol.swift in Sources */,
 				EB4509D42541798900D31858 /* FeatureToggle.swift in Sources */,
 				EBF593E3258869C00091FCE0 /* Blocks.swift in Sources */,
@@ -1387,6 +1413,7 @@
 				EB269967256CF10C007CCF2E /* PlainDetailCell.swift in Sources */,
 				EBD476CA254BBEA60033067B /* PaywallItem.swift in Sources */,
 				EB450A27254A8D2900D31858 /* TestsPresenter.swift in Sources */,
+				EB3217BD258BE42300023F0B /* ProgressItem.swift in Sources */,
 				EBB01C252521903A00BB646B /* Identifiable.swift in Sources */,
 				EB717DE42530C04A007791AD /* ListPresenter.swift in Sources */,
 				EBF5935C2583AD580091FCE0 /* TestItemsFactory.swift in Sources */,
@@ -1394,6 +1421,7 @@
 				EB450A3A254B19CB00D31858 /* PlainItem.swift in Sources */,
 				EBB95BFE25335C3E00376C3F /* LanguageService.swift in Sources */,
 				EB269962256CF0EF007CCF2E /* PlainDetailItem.swift in Sources */,
+				EB3217C3258BE4B300023F0B /* ProgressCell.swift in Sources */,
 				EBF4A135252E9961003E3A44 /* ListItem.swift in Sources */,
 				EBDF00892562E8A30041F458 /* TestAssembly.swift in Sources */,
 				EB2E4B532573D8A7005B343A /* SelectableSectionDataSource.swift in Sources */,
@@ -1435,6 +1463,7 @@
 				EB7B856D253B0A9700542D3C /* DisclosureItem.swift in Sources */,
 				EB4509DB2541E68000D31858 /* RightDetailItem.swift in Sources */,
 				EB450A052549D27400D31858 /* PaywallViewController.swift in Sources */,
+				EB3217B7258BDBE100023F0B /* StatisticsKind.swift in Sources */,
 				EB69F8B52569DB6800759BAA /* TestsRouter.swift in Sources */,
 				EBF593792583C5090091FCE0 /* StatisticsHeaderCell.swift in Sources */,
 				EBEB1D78251F11900019972C /* SceneDelegate.swift in Sources */,
@@ -1450,6 +1479,7 @@
 				EBF593672583B3190091FCE0 /* StatisticsPresenter.swift in Sources */,
 				EB8325A62556EFF0005E02C1 /* FavoritesService.swift in Sources */,
 				EB2E4BA025741880005B343A /* AppIcon.swift in Sources */,
+				EB3217A5258BCDAC00023F0B /* Statistics.swift in Sources */,
 				EB7B85652537FAE000542D3C /* Word.swift in Sources */,
 				EB9C5BA2258296EC0086A3D5 /* SliderItem.swift in Sources */,
 				EB2F5E0D251F543A007DCF60 /* DetailViewController.swift in Sources */,
@@ -1573,7 +1603,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.3.2;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1598,7 +1628,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.3.2;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1741,7 +1771,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.2;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1766,7 +1796,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.2;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1789,7 +1819,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.3.2;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidgetIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1812,7 +1842,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.3.2;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidgetIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

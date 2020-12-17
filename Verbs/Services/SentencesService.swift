@@ -31,7 +31,7 @@ final class SentencesService {
     }
     
     func replaceSentence(_ sentence: String, using verb: Verb) -> String {
-        let spacer = "..."
+        let spacer = "…"
         if contains(verb.infinitive.value, in: sentence) {
             return sentence.replacingOccurrences(of: verb.infinitive.value,
                                                  with: spacer,

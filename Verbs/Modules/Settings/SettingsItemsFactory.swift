@@ -27,7 +27,7 @@ final class SettingsItemsFactory {
                                                              actionBlock: upgradeBlock) : nil
         let downgradeText = "Downgrade to".localized(with: [name])
         let resetItem = FeatureToggle.isPaid && FeatureToggle.isDebug ? ActionItem(text: downgradeText,
-                                                                                   style: .destructive,
+                                                                                   style: .standard,
                                                                                    actionBlock: resetBlock) : nil
         let header = FeatureToggle.isPaid ? "Deactivation".localized : "Activation".localized
         return .init(header: header, items: [upgradeItem, resetItem].compactMap { $0 })

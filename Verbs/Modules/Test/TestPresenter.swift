@@ -22,6 +22,7 @@ final class TestPresenter: NSObject {
     private let itemsFactory: TestItemsFactory
     private let test: Test
     
+    private var verb: Verb?
     private var wasHintUsed = false
     
     init(audioService: AudioService,
@@ -70,11 +71,11 @@ private extension TestPresenter {
             return
         }
         
-        let verbWrapped = UserDefaults.shared.bool(for: .favoritesOnly)
+        self.verb = UserDefaults.shared.bool(for: .favoritesOnly)
             ? favoritesService.verb(of: items.randomElement())
             : verbsService.verb(of: items.randomElement())
         
-        guard let verb = verbWrapped,
+        guard let verb = self.verb,
               let index = items.firstIndex(of: verb.infinitive.value),
               let currentTestKind = test.kinds.randomElement()
         else {
@@ -130,6 +131,12 @@ private extension TestPresenter {
                 let answeredCorrectlyCount = UserDefaults.shared.integer(for: .writingAnswers)
                 UserDefaults.shared.set(answeredCorrectlyCount + 1, for: .writingAnswers)
             }
+            
+            guard let verb = verb else { return }
+            Locator.statistics.increase(verb)
+        } else {
+            guard let verb = verb else { return }
+            Locator.statistics.decrease(verb)
         }
         
         wasHintUsed = false

@@ -27,6 +27,7 @@ extension UserDefaults {
         case accentColor
         case reviewWorthyActionCount
         case lastReviewRequestAppVersion
+        case statistics
     }
     
     func bool(for key: Key) -> Bool { bool(forKey: key.rawValue) }
