@@ -21,7 +21,7 @@ final class StatisticsRouter {
                                                 message: statisticsKind.resetText,
                                                 preferredStyle: .alert)
         alertController.addAction(.init(title: "Cancel".localized, style: .cancel))
-        alertController.addAction(.init(title: "Yes".localized, style: .default, handler: { _ in
+        alertController.addAction(.init(title: "Yes".localized, style: .destructive, handler: { _ in
             yesHandler()
         }))
         viewController?.present(alertController, animated: true)

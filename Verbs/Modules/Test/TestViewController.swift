@@ -58,6 +58,12 @@ private extension TestViewController {
     func setupNavigationBar() {
         navigationItem.title = title
         navigationItem.largeTitleDisplayMode = .never
+        
+//        let moreButton = presenter.test == .listening ? UIBarButtonItem(image: SystemIcon.ellipsis.image,
+//                                                                        style: .plain,
+//                                                                        target: nil,
+//                                                                        action: nil) : nil
+//        navigationItem.rightBarButtonItem = moreButton
     }
     
     func setupTableView() {

@@ -142,10 +142,12 @@ private extension SidebarPresenter {
             selectedIndexPath = indexPath
             let vc = ListAssembly(splitViewController: splitViewController).viewController()
             splitViewController.setViewController(vc.navigationController, for: .supplementary)
-            
             NotificationCenter.default.post(name: .sidebar,
                                             object: nil,
                                             userInfo: [Notification.Name.sidebar: true])
+            let nvc = splitViewController.secondaryViewController
+            guard nvc?.topViewController is TestViewController else { return }
+            nvc?.popToRootViewController(animated: true)
         case RowIdentifier.favorites:
             selectedIndexPath = indexPath
             let vc = FavoritesAssembly(splitViewController: splitViewController).viewController()
@@ -154,6 +156,9 @@ private extension SidebarPresenter {
             NotificationCenter.default.post(name: .sidebar,
                                             object: nil,
                                             userInfo: [Notification.Name.sidebar: true])
+            let nvc = splitViewController.secondaryViewController
+            guard nvc?.topViewController is TestViewController else { return }
+            nvc?.popToRootViewController(animated: true)
         case RowIdentifier.tests:
             selectedIndexPath = indexPath
             let vc = TestsAssembly(splitViewController: splitViewController).viewController()

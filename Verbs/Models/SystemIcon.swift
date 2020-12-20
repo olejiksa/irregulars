@@ -14,12 +14,15 @@ enum SystemIcon: String {
     case gear = "gearshape"
     case gearFill = "gearshape.fill"
     case star
+    case starSlash = "star.slash"
     case folder
     case eye
     case ear
+    case lock
     case key
     case globe
     case headphones
+    case ellipsis = "ellipsis.circle"
     case tortoise = "tortoise.fill"
     case hare = "hare.fill"
     case studentdesk
@@ -31,8 +34,12 @@ enum SystemIcon: String {
     case mic = "mic.fill"
     case transcription = "textformat.abc.dottedunderline"
     case search = "magnifyingglass"
-    case alphabet = "list.triangle"
-    case dictionary = "a.book.closed.fill"
+    case listBullet = "list.bullet"
+    case listStar = "list.star"
+    case textBook = "text.book.closed"
+    case textBookFill = "text.book.closed.fill"
+    case aBook = "a.book.closed"
+    case aBookFill = "a.book.closed.fill"
     case book = "book"
     case bookFill = "book.fill"
     case info = "info.circle"
@@ -46,6 +53,7 @@ enum SystemIcon: String {
     case play = "play.circle"
     case stop = "stop.circle"
     case pencil = "pencil.and.outline"
+    case twentyFive = "25.circle"
     
     var image: UIImage? { UIImage(systemName: rawValue) }
 }

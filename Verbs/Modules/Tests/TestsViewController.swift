@@ -14,6 +14,7 @@ final class TestsViewController: UIViewController {
     private var tableView: UITableView?
     private var keyboardService: KeyboardService?
     private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
+    private var moreButton: UIBarButtonItem?
     
     init(presenter: TestsPresenter) {
         self.presenter = presenter
@@ -44,6 +45,7 @@ final class TestsViewController: UIViewController {
     }
     
     func reloadData() {
+        buildMenu(for: moreButton)
         tableView?.reloadData()
     }
 }
@@ -68,6 +70,13 @@ private extension TestsViewController {
     func setupNavigationBar() {
         navigationItem.title = "Tests".localized
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        moreButton = .init(image: SystemIcon.ellipsis.image,
+                           style: .plain,
+                           target: nil,
+                           action: nil)
+        buildMenu(for: moreButton)
+        navigationItem.rightBarButtonItem = moreButton
     }
     
     func setupTableView() {
@@ -107,5 +116,43 @@ private extension TestsViewController {
     
     func setupKeyboardService() {
         keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
+    }
+    
+    func buildMenu(for barButtonItem: UIBarButtonItem?) {
+        let isPaid = FeatureToggle.isPaid
+        let favoritesOnly = UserDefaults.shared.bool(for: .favoritesOnly)
+        
+        barButtonItem?.menu = .init(children: [
+            UIAction(title: "Demo".localized,
+                     image: SystemIcon.twentyFive.image,
+                     attributes: !isPaid ? [] : .hidden,
+                     state: !isPaid ? .on : .off,
+                     handler: handleMenu),
+            UIAction(title: "All".localized,
+                     image: SystemIcon.listBullet.image,
+                     state: isPaid && !favoritesOnly ? .on : .off,
+                     handler: handleMenu),
+            UIAction(title: "Favorites".localized,
+                     image: SystemIcon.star.image,
+                     state: isPaid && favoritesOnly ? .on : .off,
+                     handler: handleMenu)
+        ])
+    }
+    
+    func handleMenu(action: UIAction) {
+        let isPaid = FeatureToggle.isPaid
+        
+        if isPaid {
+            let favoritesOnly = UserDefaults.shared.bool(for: .favoritesOnly)
+            let state = action.state == .on
+            let newState = favoritesOnly == state
+            UserDefaults.shared.set(newState, for: .favoritesOnly)
+        } else if action.state == .off {
+            presenter.router?.goToPaywall()
+        } else {
+            return
+        }
+        
+        buildMenu(for: moreButton)
     }
 }

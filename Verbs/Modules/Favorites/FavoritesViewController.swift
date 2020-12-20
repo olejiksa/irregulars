@@ -16,6 +16,7 @@ final class FavoritesViewController: UIViewController {
     private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     private var tableView: UITableView?
     private var state: ListState = .empty
+    private var moreButton: UIBarButtonItem?
     
     private let noDataLabel: UILabel = {
         let label = UILabel()
@@ -59,11 +60,12 @@ final class FavoritesViewController: UIViewController {
     }
     
     func reloadData() {
+        buildMenu(for: moreButton)
         tableView?.reloadData()
     }
     
     func getPaid() {
-        tableView?.reloadData()
+        reloadData()
         setupSearchController()
     }
     
@@ -113,6 +115,15 @@ private extension FavoritesViewController {
         navigationItem.title = "Favorites".localized
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        moreButton = LanguageService().hasTranslation ?
+            .init(image: SystemIcon.ellipsis.image,
+                  style: .plain,
+                  target: nil,
+                  action: nil)
+            : nil
+        buildMenu(for: moreButton)
+        navigationItem.rightBarButtonItem = moreButton
     }
     
     func setupTableView() {
@@ -166,6 +177,39 @@ private extension FavoritesViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         
         navigationItem.searchController = searchController
+    }
+    
+    func buildMenu(for barButtonItem: UIBarButtonItem?) {
+        let isTranslation = UserDefaults.shared.bool(for: .shouldTranslationBeShown)
+        
+        barButtonItem?.menu = .init(children: [
+            UIAction(title: "Verb forms".localized,
+                     state: !isTranslation ? .on : .off,
+                     handler: handleMenu),
+            UIAction(title: "Translation".localized,
+                     state: isTranslation ? .on : .off,
+                     handler: handleMenu)
+        ])
+    }
+    
+    func handleMenu(action: UIAction) {
+        let isPaid = FeatureToggle.isPaid
+        
+        if isPaid {
+            let isTranslation = UserDefaults.shared.bool(for: .shouldTranslationBeShown)
+            let state = action.state == .on
+            let newState = isTranslation == state
+            UserDefaults.shared.set(newState, for: .shouldTranslationBeShown)
+            NotificationCenter.default.post(name: .list,
+                                            object: nil,
+                                            userInfo: [Notification.Name.list: newState])
+        } else if action.state == .off {
+            presenter.router?.goToPaywall()
+        } else {
+            return
+        }
+        
+        buildMenu(for: moreButton)
     }
 }
 

@@ -50,7 +50,7 @@ final class SettingsItemsFactory {
     
     func setupPlaybackSpeedSection(playbackSpeedBlock: @escaping IntBlock) -> Section {
         let index = UserDefaults.shared.integer(for: .playbackSpeed)
-        return .init(header: "Playback speed".localized,
+        return .init(header: "SpeakingRate".localized,
                      items: [SliderItem(leadingIcon: .tortoise,
                                         trailingIcon: .hare,
                                         steps: 5,
@@ -72,17 +72,6 @@ final class SettingsItemsFactory {
                                   isEnabled: FeatureToggle.isPaid,
                                   actionBlock: derivativesBlock)],
                footer: "DerivativesFooter".localized)]
-    }
-    
-    func setupListSection(listViewModeBlock: @escaping ItemBlock) -> Section {
-        .init(header: "List".localized,
-              items: [setupListViewModeItem(listViewModeBlock: listViewModeBlock)].compactMap { $0 })
-    }
-    
-    func setupTestsSection(testVerbsBlock: @escaping ItemBlock) -> Section {
-        .init(header: "Tests".localized,
-              items: [
-                setupTestVerbsItem(testVerbsBlock: testVerbsBlock)].compactMap { $0 })
     }
     
     func setupLinksSection(rateBlock: @escaping ItemBlock,
@@ -120,40 +109,5 @@ final class SettingsItemsFactory {
                              RightDetailItem(title: "Version".localized,
                                              subtitle: version,
                                              isEnabled: false)])
-    }
-}
-
-// MARK: - Private
-
-private extension SettingsItemsFactory {
-    
-    func setupListViewModeItem(listViewModeBlock: @escaping ItemBlock) -> PickableItem? {
-        let options = ["Verb forms".localized, "Translation".localized]
-        let currentOption = !UserDefaults.shared.bool(for: .shouldTranslationBeShown)
-            ? options.first
-            : options.last
-        return languageService.hasTranslation ? .init(title: "View".localized,
-                                                      subtitle: currentOption ?? "",
-                                                      actionBlock: listViewModeBlock,
-                                                      options: options,
-                                                      isEnabled: FeatureToggle.isPaid) : nil
-    }
-    
-    func setupTestVerbsItem(testVerbsBlock: @escaping ItemBlock) -> ItemProtocol? {
-        let options = ["All".localized, "Favorites".localized]
-        let currentOption: String?
-        switch (FeatureToggle.isPaid, UserDefaults.shared.bool(for: .favoritesOnly)) {
-        case (true, true):
-            currentOption = options.last
-        case (true, false):
-            currentOption = options.first
-        case (false, _):
-            currentOption = "Demo".localized
-        }
-        return PickableItem(title: "Verbs".localized,
-                            subtitle: currentOption ?? "",
-                            actionBlock: testVerbsBlock,
-                            options: options,
-                            isEnabled: FeatureToggle.isPaid)
     }
 }

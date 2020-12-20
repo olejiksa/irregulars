@@ -18,9 +18,9 @@ final class FavoritesService: VerbsServiceProtocol {
     var searchedItems: [Verb] {
         items.filter {
             $0.infinitive.value.hasPrefixIgnoringCase(searchText) ||
-                $0.simplePast?.contains { $0.value.hasPrefixIgnoringCase(searchText) } ?? false ||
+            $0.simplePast?.contains { $0.value.hasPrefixIgnoringCase(searchText) } ?? false ||
             $0.pastParticiple?.contains { $0.value.hasPrefixIgnoringCase(searchText) } ?? false ||
-            $0.translation.hasPrefixIgnoringCase(searchText)
+            $0.translation.contains(searchText)
         }
     }
     

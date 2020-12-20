@@ -66,7 +66,7 @@ private extension FavoritesPresenter {
                                                object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(willReloadData),
-                                               name: Notification.Name.reloadData,
+                                               name: Notification.Name.favorites,
                                                object: nil)
     }
     
@@ -102,6 +102,19 @@ private extension FavoritesPresenter {
     @objc func willReloadData(_ notification: Notification) {
         viewController?.reloadData()
         didSelectedItemSet()
+    }
+    
+    func handleMenuAction(verb: Verb, isFavorite: Bool) {
+        if isFavorite {
+            Locator.favorites.remove(verb)
+        } else {
+            guard !Locator.favorites.shouldPaywallBeShown else {
+                router?.goToPaywall()
+                return
+            }
+            
+            Locator.favorites.add(verb)
+        }
     }
 }
 
@@ -157,15 +170,22 @@ extension FavoritesPresenter: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView,
-                   commit editingStyle: UITableViewCell.EditingStyle,
-                   forRowAt indexPath: IndexPath) {
-        guard !isSearchActive,
-              editingStyle == .delete,
-              let verb = favoritesService.groupedItems[safe: indexPath.section]?[indexPath.row]
-        else { return }
+                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let removeAction = UIContextualAction(style: .destructive,
+                                              title: "Remove".localized) { [weak self] _, _, _ in
+            guard let self = self,
+                  !self.isSearchActive,
+                  let verb = self.favoritesService.groupedItems[safe: indexPath.section]?[indexPath.row]
+            else { return }
+            
+            self.favorites.remove(verb)
+            tableView.reloadData()
+        }
         
-        favorites.remove(verb)
-        tableView.reloadData()
+        removeAction.backgroundColor = tableView.tintAdjustmentMode != .dimmed ?
+            .systemRed :
+            .systemGray
+        return .init(actions: [removeAction])
     }
 }
 
@@ -184,6 +204,24 @@ extension FavoritesPresenter: UITableViewDelegate {
         
         guard infinitive != verb.infinitive.value else { return }
         router?.goToDetail(with: verb)
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   contextMenuConfigurationForRowAt indexPath: IndexPath,
+                   point: CGPoint) -> UIContextMenuConfiguration? {
+        guard !isSearchActive else { return nil }
+        let verb = favoritesService.groupedItems[indexPath.section][indexPath.row]
+        let isFavorite = Locator.favorites.verbs.contains(verb)
+        
+        let actionProvider: UIContextMenuActionProvider = { _ in
+            let action = UIAction(title: "Remove".localized,
+                                  image: SystemIcon.starSlash.image) { [weak self] _ in
+                self?.handleMenuAction(verb: verb, isFavorite: isFavorite)
+            }
+            return .init(children: [action])
+        }
+        
+        return .init(identifier: nil, previewProvider: nil, actionProvider: actionProvider)
     }
 }
 

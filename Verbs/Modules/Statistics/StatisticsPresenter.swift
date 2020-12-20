@@ -84,11 +84,11 @@ private extension StatisticsPresenter {
                                                           subtitle: String(answeredCorrectlyListening),
                                                           isEnabled: false)].compactMap { $0 }),
                           Section(header: "Reset".localized,
-                                  items: [ActionItem(text: "Clear learned verbs".localized,
-                                                     style: .standard,
+                                  items: [ActionItem(text: "Erase learned verbs".localized,
+                                                     style: .destructive,
                                                      actionBlock: didResetTap),
-                                          ActionItem(text: "Clear correct answers".localized,
-                                                     style: .standard,
+                                          ActionItem(text: "Erase correct answers".localized,
+                                                     style: .destructive,
                                                      actionBlock: didResetTap)])])
     }
     
@@ -112,9 +112,9 @@ private extension StatisticsPresenter {
         
         let statisticsKind: StatisticsKind
         switch actionItem.text {
-        case "Clear learned verbs".localized:
+        case "Erase learned verbs".localized:
             statisticsKind = .learnedVerbs
-        case "Clear correct answers".localized:
+        case "Erase correct answers".localized:
             statisticsKind = .correctAnswers
         default:
             statisticsKind = .correctAnswers

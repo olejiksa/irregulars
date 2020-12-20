@@ -40,9 +40,17 @@ final class Favorites {
         didUpdateBlock?()
         save()
     }
+}
+
+// MARK: - Private
+
+private extension Favorites {
     
     func save() {
         guard let encoded = try? encoder.encode(verbs) else { return }
         defaults.set(encoded, for: .favorites)
+        NotificationCenter.default.post(name: .favorites,
+                                        object: nil,
+                                        userInfo: nil)
     }
 }

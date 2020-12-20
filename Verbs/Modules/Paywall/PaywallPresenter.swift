@@ -13,7 +13,7 @@ final class PaywallPresenter {
     init(languageService: LanguageService) {
         let item = languageService.hasTranslation
             ? PaywallItem(text: "View a translation without going to the verb card".localized,
-                          icon: .dictionary)
+                          icon: .aBookFill)
             : nil
         
         let items = [PaywallItem(text: "Unlock all verbs in tests".localized,
@@ -23,7 +23,7 @@ final class PaywallPresenter {
                      PaywallItem(text: "View a transcription".localized,
                                  icon: .transcription),
                      PaywallItem(text: "Store unlimited items in Favorites".localized,
-                                 icon: .starFill),
+                                 icon: .listStar),
                      PaywallItem(text: "Personalize the app: pick an accent color to your liking".localized,
                                  icon: .paintpalette),
                      PaywallItem(text: "Hide or show regular verbs (-ed)".localized,

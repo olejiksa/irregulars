@@ -34,14 +34,14 @@
             "transcription": "/əˈlɪt/"
         }, {
             "value": "alighted",
-            "transcription": "/əˈlʌɪt(ə)d/"
+            "transcription": "/əˈlʌɪtɪd/"
         }],
         "pastParticiple": [{
             "value": "alit",
             "transcription": "/əˈlɪt/"
         }, {
             "value": "alighted",
-            "transcription": "/əˈlʌɪt(ə)d/"
+            "transcription": "/əˈlʌɪtɪd/"
         }],
         "hasRegular": true,
         "isDerived": true
@@ -72,7 +72,7 @@
             "transcription": "/əˈwəʊk/"
         }, {
             "value": "awaked",
-            "transcription": "/əˈweɪk(ə)d/"
+            "transcription": "/əˈweɪkd/"
         }],
         "pastParticiple": [{
             "value": "awoken",
@@ -291,14 +291,14 @@
             "transcription": "/bɪˈrɛft/"
         }, {
             "value": "bereaved",
-            "transcription": "/bɪˈriːv(ə)d/"
+            "transcription": "/bɪˈriːvd/"
         }],
         "pastParticiple": [{
             "value": "bereft",
             "transcription": "/bɪˈrɛft/"
         },{
             "value": "bereaved",
-            "transcription": "/bɪˈriːv(ə)d/"
+            "transcription": "/bɪˈriːvd/"
         }],
         "hasRegular": true,
         "isDerived": false
@@ -1129,14 +1129,14 @@
             "transcription": "/fɪt/"
         }, {
             "value": "fitted",
-            "transcription": "/ˈfɪt(ə)d/"
+            "transcription": "/ˈfɪtɪd/"
         }],
         "pastParticiple": [{
             "value": "fit",
             "transcription": "/fɪt/"
         }, {
             "value": "fitted",
-            "transcription": "/ˈfɪt(ə)d/"
+            "transcription": "/ˈfɪtɪd/"
         }],
         "hasRegular": true,
         "isDerived": false
@@ -1576,14 +1576,14 @@
             "transcription": "/ˈɪnpʊt/"
         }, {
             "value": "inputted",
-            "transcription": "/ˈɪnpʊt(ə)d/"
+            "transcription": "/ˈɪnpʊtɪd/"
         }],
         "pastParticiple": [{
             "value": "input",
             "transcription": "/ˈɪnpʊt/"
         }, {
             "value": "inputted",
-            "transcription": "/ˈɪnpʊt(ə)d/"
+            "transcription": "/ˈɪnpʊtɪd/"
         }],
         "hasRegular": true,
         "isDerived": true
@@ -1852,14 +1852,14 @@
             "transcription": "/lɪt/"
         }, {
             "value": "lighted",
-            "transcription": "/ˈlʌɪt(ə)d/"
+            "transcription": "/ˈlʌɪtɪd/"
         }],
         "pastParticiple": [{
             "value": "lit",
             "transcription": "/lɪt/"
         },{
             "value": "lighted",
-            "transcription": "/ˈlʌɪt(ə)d/"
+            "transcription": "/ˈlʌɪtɪd/"
         }],
         "hasRegular": true,
         "isDerived": false
@@ -1947,14 +1947,14 @@
         },
         "simplePast": [{
             "value": "melted",
-            "transcription": "/ˈmɛlt(ə)d/"
+            "transcription": "/ˈmɛltɪd/"
         }],
         "pastParticiple": [{
             "value": "molt",
             "transcription": "/məʊlt/"
         }, {
             "value": "melted",
-            "transcription": "/ˈmɛlt(ə)d/"
+            "transcription": "/ˈmɛltɪd/"
         }],
         "hasRegular": true,
         "isDerived": false
@@ -2302,14 +2302,14 @@
             "transcription": "/ˈəʊtpʊt/"
         }, {
             "value": "outputted",
-            "transcription": "/ˈəʊtpʊt(ə)d/"
+            "transcription": "/ˈəʊtpʊtɪd/"
         }],
         "pastParticiple": [{
             "value": "output",
             "transcription": "/ˈəʊtpʊt/"
         }, {
             "value": "outputted",
-            "transcription": "/ˈəʊtpʊt(ə)d/"
+            "transcription": "/ˈəʊtpʊtɪd/"
         }],
         "hasRegular": true,
         "isDerived": true
@@ -2838,14 +2838,14 @@
             "transcription": "/rɪd/"
         }, {
             "value": "ridded",
-            "transcription": "/ˈrɪd(ə)d/"
+            "transcription": "/ˈrɪdɪd/"
         }],
         "pastParticiple": [{
             "value": "rid",
             "transcription": "/rɪd/"
         }, {
             "value": "ridded",
-            "transcription": "/ˈrɪd(ə)d/"
+            "transcription": "/ˈrɪdɪd/"
         }],
         "hasRegular": true,
         "isDerived": false
@@ -3366,14 +3366,14 @@
             "transcription": "/slʌŋk/"
         }, {
             "value": "slinked",
-            "transcription": "/ˈslɪŋk(ə)d/"
+            "transcription": "/slɪŋkt/"
         }],
         "pastParticiple": [{
             "value": "slunk",
             "transcription": "/slʌŋk/"
         },{
             "value": "slinked",
-            "transcription": "/ˈslɪŋk(ə)d/"
+            "transcription": "/slɪŋkt/"
         }],
         "hasRegular": true,
         "isDerived": false

@@ -108,6 +108,19 @@ private extension ListPresenter {
         viewController?.reloadData()
         didSelectedItemSet()
     }
+    
+    func handleMenuAction(verb: Verb, isFavorite: Bool) {
+        if isFavorite {
+            Locator.favorites.remove(verb)
+        } else {
+            guard !Locator.favorites.shouldPaywallBeShown else {
+                router?.goToPaywall()
+                return
+            }
+            
+            Locator.favorites.add(verb)
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -171,6 +184,29 @@ extension ListPresenter: UITableViewDelegate {
         
         guard infinitive != verb.infinitive.value else { return }
         router?.goToDetail(with: verb)
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   contextMenuConfigurationForRowAt indexPath: IndexPath,
+                   point: CGPoint) -> UIContextMenuConfiguration? {
+        guard !isSearchActive else { return nil }
+        let verb = verbsService.groupedItems[indexPath.section][indexPath.row]
+        let isFavorite = Locator.favorites.verbs.contains(verb)
+        
+        let actionProvider: UIContextMenuActionProvider = { _ in
+            let action = !isFavorite ?
+                UIAction(title: "AddToFavorites".localized,
+                         image: SystemIcon.star.image) { [weak self] _ in
+                    self?.handleMenuAction(verb: verb, isFavorite: isFavorite)
+                } :
+                UIAction(title: "RemoveFromFavorites".localized,
+                         image: SystemIcon.starSlash.image) { [weak self] _ in
+                    self?.handleMenuAction(verb: verb, isFavorite: isFavorite)
+                }
+            return .init(children: [action])
+        }
+        
+        return .init(identifier: nil, previewProvider: nil, actionProvider: actionProvider)
     }
 }
 

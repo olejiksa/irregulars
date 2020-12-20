@@ -51,15 +51,13 @@ private extension SettingsPresenter {
                                               notificationsBlock: didDerivedFormsOptionChange),
              itemsFactory.setupPlaybackSpeedSection(playbackSpeedBlock: didPlaybackSpeedChange)]
                 + itemsFactory.setupVocabularySections(regularVerbsBlock: didRegularVerbsOptionChange,
-                                                       derivativesBlock: didDerivedFormsOptionChange)
-                + [itemsFactory.setupListSection(listViewModeBlock: didListViewChange),
-                   itemsFactory.setupTestsSection(testVerbsBlock: didTestVerbsChange),
-                   itemsFactory.setupLinksSection(rateBlock: willRate,
-                                                  privacyBlock: willGoToPrivacyPolicy,
-                                                  termsBlock: willGoToTermsOfUse,
-                                                  mailBlock: willGoToMail,
-                                                  shareBlock: willShare),
-                   itemsFactory.setupAboutSection(upgradeBlock: willBuy)]
+                                                       derivativesBlock: didDerivedFormsOptionChange) +
+                [itemsFactory.setupLinksSection(rateBlock: willRate,
+                                                privacyBlock: willGoToPrivacyPolicy,
+                                                termsBlock: willGoToTermsOfUse,
+                                                mailBlock: willGoToMail,
+                                                shareBlock: willShare),
+                 itemsFactory.setupAboutSection(upgradeBlock: willBuy)]
         )
     }
     
@@ -84,13 +82,6 @@ private extension SettingsPresenter {
         NotificationCenter.default.post(name: .list,
                                         object: nil,
                                         userInfo: [Notification.Name.list: value])
-        viewController?.reloadData()
-    }
-    
-    func didTestVerbsChange(_ sender: ItemProtocol) {
-        guard let item = sender as? PickableItem else { return }
-        let value = item.subtitle == "Favorites".localized
-        UserDefaults.shared.set(value, for: .favoritesOnly)
         viewController?.reloadData()
     }
     

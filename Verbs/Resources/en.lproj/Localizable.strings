@@ -61,7 +61,6 @@
 "Hint" = "Hint";
 "Unlock all verbs in tests" = "Unlock all verbs in tests including Favorites";
 "Accent color" = "Accent color";
-"View" = "View";
 "Blue" = "Blue";
 "Green" = "Green";
 "Indigo" = "Indigo";
@@ -94,7 +93,7 @@
 "SimplePastValue" = "Simple Past";
 "PastParticipleValue" = "Past Participle";
 "Listen and write" = "Listen and write below";
-"Playback speed" = "Playback speed";
+"SpeakingRate" = "Speaking rate";
 "EmptyFavoritesTitle" = "Empty Favorites";
 "Track your progress in learning irregular verbs" = "Track your progress in learning irregular verbs";
 "Using hints gives you no points" = "Only answers entered or selected correctly on the first try and without using hints are taken into account";
@@ -107,11 +106,14 @@
 "LearnedVerbs" = "Learned verbs";
 "LearnedVerbsFooter" = "A word is considered learned if it was answered correctly at least 3 times. If the answer turned out to be correct, the verb knowledge metric increases by one, otherwise it decreases";
 "Reset" = "Reset";
-"Clear learned verbs" = "Clear learned verbs";
-"Clear correct answers" = "Clear correct answers";
+"Erase learned verbs" = "Erase learned verbs";
+"Erase correct answers" = "Erase correct answers";
 "Your efforts" = "Your efforts";
 "In progress" = "In progress";
 "Of" = "of %d";
+"AddToFavorites" = "Favorite";
+"RemoveFromFavorites" = "Unfavorite";
+"Remove" = "Remove";
 
 // Irregular Verbs
 

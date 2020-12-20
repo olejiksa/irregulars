@@ -61,7 +61,6 @@
 "Hint" = "Подсказка";
 "Unlock all verbs in tests" = "Разблокируйте все глаголы в тестах, включая «Избранное»";
 "Accent color" = "Акцентный цвет";
-"View" = "Вид";
 "Blue" = "Синий";
 "Green" = "Зеленый";
 "Indigo" = "Индиго";
@@ -88,13 +87,13 @@
 "Vocabulary" = "Лексика";
 "Listening" = "Аудирование";
 "ListeningSubtitle" = "Проверьте понимание неправильных глаголов на слух";
-"Demo" = "Демонстрационные";
+"Demo" = "Демо";
 "Missed word" = "Пропущенное слово";
 "InfinitiveValue" = "Неопределенная форма глагола";
 "SimplePastValue" = "Простое прошедшее";
 "PastParticipleValue" = "Причастие прошедшего времени";
 "Listen and write" = "Прослушайте и напишите ниже";
-"Playback speed" = "Скорость воспроизведения";
+"SpeakingRate" = "Скорость речи";
 "EmptyFavoritesTitle" = "Нет «Избранного»";
 "Track your progress in learning irregular verbs" = "Отслеживайте свой прогресс в изучении неправильных глаголов";
 "Using hints gives you no points" = "Учитываются только ответы, введенные или выбранные правильно с первой попытки и без использования подсказок";
@@ -107,11 +106,14 @@
 "LearnedVerbs" = "Выученные глаголы";
 "LearnedVerbsFooter" = "Слово считается изученным, если оно было отвечено верно не менее 3 раз. Если ответ оказался правильным, изученность глагола увеличивается на единицу, иначе — уменьшается";
 "Reset" = "Сброс";
-"Clear learned verbs" = "Очистить выученные глаголы";
-"Clear correct answers" = "Очистить правильные ответы";
+"Erase learned verbs" = "Стереть выученные глаголы";
+"Erase correct answers" = "Стереть правильные ответы";
 "Your efforts" = "Ваши старания";
 "In progress" = "В процессе";
 "Of" = "из %d";
+"AddToFavorites" = "Добавить в «Избранное»";
+"RemoveFromFavorites" = "Убрать из «Избранного»";
+"Remove" = "Убрать";
 
 // Irregular Verbs
 

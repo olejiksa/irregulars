@@ -50,6 +50,12 @@ final class DetailViewController: UIViewController {
     func getPaid() {
         tableView?.reloadData()
     }
+    
+    func updateFavoriteButton() {
+        favoriteButton?.image = !favorites.verbs.contains(verb) ?
+            SystemIcon.star.image :
+            SystemIcon.starFill.image
+    }
 }
 
 // MARK: - Private
@@ -59,6 +65,11 @@ private extension DetailViewController {
     func setupNavigationBar() {
         navigationItem.title = presenter.title
         navigationItem.largeTitleDisplayMode = .never
+        
+//        let moreButton = UIBarButtonItem(image: SystemIcon.ellipsis.image,
+//                                         style: .plain,
+//                                         target: nil,
+//                                         action: nil)
         
         let isFavorite = favorites.verbs.contains(verb)
         let image = isFavorite ? SystemIcon.starFill.image : SystemIcon.star.image
@@ -96,23 +107,17 @@ private extension DetailViewController {
     }
     
     @objc func didFavoriteTap() {
+        updateFavoriteButton()
+
         if !favorites.verbs.contains(verb) {
             guard !favorites.shouldPaywallBeShown else {
                 presenter.router?.goToPaywall()
                 return
             }
             
-            favoriteButton?.image = SystemIcon.starFill.image
             favorites.add(verb)
-            NotificationCenter.default.post(name: .reloadData,
-                                            object: nil,
-                                            userInfo: nil)
         } else {
-            favoriteButton?.image = SystemIcon.star.image
             favorites.remove(verb)
-            NotificationCenter.default.post(name: .reloadData,
-                                            object: nil,
-                                            userInfo: nil)
         }
     }
 }

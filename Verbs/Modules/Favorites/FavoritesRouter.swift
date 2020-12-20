@@ -26,6 +26,13 @@ final class FavoritesRouter {
                                 navigationController: navigationController).viewController()
         navigationController?.push(vc, in: splitViewController)
     }
+    
+    func goToPaywall() {
+        let vc = PaywallAssembly().viewController()
+        let nvc = UINavigationController(rootViewController: vc)
+        nvc.modalPresentationStyle = .formSheet
+        navigationController?.present(nvc, animated: true)
+    }
 }
 
 // MARK: - Private

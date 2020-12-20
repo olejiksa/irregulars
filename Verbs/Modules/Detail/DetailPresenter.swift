@@ -44,6 +44,10 @@ private extension DetailPresenter {
                                                selector: #selector(didPay),
                                                name: Notification.Name.reload,
                                                object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(willReloadData),
+                                               name: Notification.Name.favorites,
+                                               object: nil)
     }
     
     func setupSections() {
@@ -79,6 +83,10 @@ private extension DetailPresenter {
     
     @objc func didPay(_ notification: Notification) {
         viewController?.getPaid()
+    }
+    
+    @objc func willReloadData(_ notification: Notification) {
+        viewController?.updateFavoriteButton()
     }
 }
 

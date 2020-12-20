@@ -10,6 +10,7 @@ import UIKit
 
 final class TestPresenter: NSObject {
     
+    let test: Test
     let dataSource = SectionDataSource()
     var router: TestRouter?
     weak var viewController: TestViewController?
@@ -20,7 +21,6 @@ final class TestPresenter: NSObject {
     private let favoritesService: FavoritesService
     private let demoService: DemoService
     private let itemsFactory: TestItemsFactory
-    private let test: Test
     
     private var verb: Verb?
     private var wasHintUsed = false
@@ -71,7 +71,7 @@ private extension TestPresenter {
             return
         }
         
-        self.verb = UserDefaults.shared.bool(for: .favoritesOnly)
+        self.verb = UserDefaults.shared.bool(for: .favoritesOnly) && FeatureToggle.isPaid
             ? favoritesService.verb(of: items.randomElement())
             : verbsService.verb(of: items.randomElement())
         

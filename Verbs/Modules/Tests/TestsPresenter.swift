@@ -63,10 +63,18 @@ private extension TestsPresenter {
                                                selector: #selector(didSelectedItemReset),
                                                name: Notification.Name.test,
                                                object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(didPay),
+                                               name: Notification.Name.reload,
+                                               object: nil)
     }
     
     @objc func didSelectedItemReset(_ notification: Notification) {
         selectedIndex = nil
+    }
+    
+    @objc func didPay(_ notification: Notification) {
+        viewController?.reloadData()
     }
 }
 
