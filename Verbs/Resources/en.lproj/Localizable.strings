@@ -79,7 +79,7 @@
 "Personalize the app: pick an accent color to your liking" = "Personalize the app: pick an accent color to your liking";
 "Examples" = "Examples";
 "Sentences" = "Sentences";
-"ThreeFormsSubtitle" = "Check your knowledge of irregular verbs forms";
+"WritingSubtitle" = "Check your knowledge of irregular verbs forms";
 "SentenceSubtitle" = "How well do you understand irregular verbs in context?";
 "Notifications" = "Notifications";
 "Sentence" = "Sentence";
@@ -114,6 +114,19 @@
 "AddToFavorites" = "Favorite";
 "RemoveFromFavorites" = "Unfavorite";
 "Remove" = "Remove";
+"Speaking" = "Speaking";
+"SpeakingSubtitle" = "Compare the speaker's pronunciation to your own";
+"Australian" = "Australian";
+"Irish" = "Irish";
+"Indian" = "Indian";
+"South African" = "South African";
+"British" = "British";
+"American" = "American";
+"Voice" = "Voice";
+"Male" = "Male";
+"Female" = "Female";
+"Untitled" = "Untitled";
+"Default" = "Default";
 
 // Irregular Verbs
 

@@ -53,30 +53,6 @@ final class TestItemsFactory {
                                               hintActionBlock: hint,
                                               tag: 1,
                                               returnKeyType: .done)].compactMap { $0 })]
-        case .threeForms:
-            guard languageService.hasTranslation else { return [] }
-            
-            return [Section(header: "Translation".localized,
-                            items: [PlainDetailItem(text: verb.infinitive.value.localized)]),
-                    Section(header: "InfinitiveValue".localized,
-                            items: [InputItem(words: [verb.infinitive],
-                                              playActionBlock: play,
-                                              successActionBlock: didEndEntering,
-                                              hintActionBlock: hint,
-                                              tag: 0)].compactMap { $0 }),
-                    Section(header: "SimplePastValue".localized,
-                            items: [InputItem(words: simplePast,
-                                              playActionBlock: play,
-                                              successActionBlock: didEndEntering,
-                                              hintActionBlock: hint,
-                                              tag: 1)].compactMap { $0 }),
-                    Section(header: "PastParticipleValue".localized,
-                            items: [InputItem(words: pastParticiple,
-                                              playActionBlock: play,
-                                              successActionBlock: didEndEntering,
-                                              hintActionBlock: hint,
-                                              tag: 2,
-                                              returnKeyType: .done)].compactMap { $0 })]
         case .translation:
             guard languageService.hasTranslation else { return [] }
             
@@ -99,7 +75,7 @@ final class TestItemsFactory {
                             items: [PlainDetailItem(text: verb.infinitive.value.localized)].compactMap { $0 }),
                     Section(header: "InfinitiveValue".localized,
                             items: items.compactMap { $0 })]
-        case .listening:
+        case .listening, .speaking:
             return [Section(items: [PlainDetailItem(text: "Listen and write".localized,
                                                     textStyle: .secondary)].compactMap { $0 }),
                     Section(header: "InfinitiveValue".localized,

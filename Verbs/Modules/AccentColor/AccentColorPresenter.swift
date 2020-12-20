@@ -15,7 +15,6 @@ final class AccentColorPresenter: NSObject {
     
     private let appIconService: AppIconService
     private let accentColors = AccentColor.allCases.sorted { $0.rawValue < $1.rawValue }
-    private var selectedIndexPath: IndexPath?
     
     init(appIconService: AppIconService) {
         self.appIconService = appIconService

@@ -51,7 +51,6 @@ extension AccentColorCell: CellProtocol {
         guard let item = item as? AccentColorItem else { return }
         self.item = item
         colorNameLabel?.text = item.color.rawValue.capitalized.localized
-        accessoryType = item.isSelected ? .checkmark : .none
         applyColor()
     }
 }

@@ -28,6 +28,10 @@ extension UserDefaults {
         case reviewWorthyActionCount
         case lastReviewRequestAppVersion
         case statistics
+        case notifications
+        case region
+        case gender
+        case voice
     }
     
     func bool(for key: Key) -> Bool { bool(forKey: key.rawValue) }

@@ -20,7 +20,8 @@ final class TestAssembly: AssemblyProtocol {
         let itemsFactory = TestItemsFactory(languageService: .init(),
                                             sentencesService: .init(),
                                             verbsService: .init())
-        let presenter = TestPresenter(audioService: .init(),
+        let audioService = AudioService(voiceService: .init())
+        let presenter = TestPresenter(audioService: audioService,
                                       verbsService: .init(),
                                       favoritesService: Locator.favoritesService,
                                       demoService: .init(),

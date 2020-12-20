@@ -9,11 +9,9 @@
 final class AccentColorItem {
     
     let color: AccentColor
-    var isSelected: Bool
     
     init(color: AccentColor) {
         self.color = color
-        self.isSelected = false
     }
 }
 

@@ -85,6 +85,15 @@
 		EB450A59254BB3F800D31858 /* BigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB450A58254BB3F800D31858 /* BigButton.swift */; };
 		EB5547542553CB22001C5585 /* SidebarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5547532553CB22001C5585 /* SidebarCell.swift */; };
 		EB5547632554089F001C5585 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5547622554089F001C5585 /* TabBarController.swift */; };
+		EB59F00A258FE35E004676D2 /* VoiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59F009258FE35E004676D2 /* VoiceAssembly.swift */; };
+		EB59F00F258FE38B004676D2 /* VoicePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59F00E258FE38B004676D2 /* VoicePresenter.swift */; };
+		EB59F014258FE394004676D2 /* VoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59F013258FE394004676D2 /* VoiceViewController.swift */; };
+		EB59F01F258FE429004676D2 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59F01E258FE429004676D2 /* Region.swift */; };
+		EB59F027258FE7F2004676D2 /* VoiceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59F026258FE7F2004676D2 /* VoiceService.swift */; };
+		EB59F02C258FE9E1004676D2 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59F02B258FE9E1004676D2 /* Gender.swift */; };
+		EB59F03C258FF0D6004676D2 /* VoiceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59F03B258FF0D6004676D2 /* VoiceItem.swift */; };
+		EB59F042258FF0F0004676D2 /* VoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59F040258FF0F0004676D2 /* VoiceCell.swift */; };
+		EB59F043258FF0F0004676D2 /* VoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB59F041258FF0F0004676D2 /* VoiceCell.xib */; };
 		EB69A26925322AFA00DD1827 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB69A26825322AF900DD1827 /* Notification.swift */; };
 		EB69F8AF2569D7AA00759BAA /* TestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB69F8AE2569D7AA00759BAA /* TestRouter.swift */; };
 		EB69F8B52569DB6800759BAA /* TestsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB69F8B42569DB6800759BAA /* TestsRouter.swift */; };
@@ -347,6 +356,15 @@
 		EB450A58254BB3F800D31858 /* BigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButton.swift; sourceTree = "<group>"; };
 		EB5547532553CB22001C5585 /* SidebarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarCell.swift; sourceTree = "<group>"; };
 		EB5547622554089F001C5585 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		EB59F009258FE35E004676D2 /* VoiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceAssembly.swift; sourceTree = "<group>"; };
+		EB59F00E258FE38B004676D2 /* VoicePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicePresenter.swift; sourceTree = "<group>"; };
+		EB59F013258FE394004676D2 /* VoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceViewController.swift; sourceTree = "<group>"; };
+		EB59F01E258FE429004676D2 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		EB59F026258FE7F2004676D2 /* VoiceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceService.swift; sourceTree = "<group>"; };
+		EB59F02B258FE9E1004676D2 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		EB59F03B258FF0D6004676D2 /* VoiceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceItem.swift; sourceTree = "<group>"; };
+		EB59F040258FF0F0004676D2 /* VoiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCell.swift; sourceTree = "<group>"; };
+		EB59F041258FF0F0004676D2 /* VoiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoiceCell.xib; sourceTree = "<group>"; };
 		EB69A26825322AF900DD1827 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		EB69F8AE2569D7AA00759BAA /* TestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRouter.swift; sourceTree = "<group>"; };
 		EB69F8B42569DB6800759BAA /* TestsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsRouter.swift; sourceTree = "<group>"; };
@@ -637,6 +655,7 @@
 				EB55475925540827001C5585 /* TabBar */,
 				EB2E4BF7257A0A7A005B343A /* Tests */,
 				EBDF00752562DD620041F458 /* Test */,
+				EB59F008258FE311004676D2 /* Voice */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -740,6 +759,27 @@
 				EB5547622554089F001C5585 /* TabBarController.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		EB59F008258FE311004676D2 /* Voice */ = {
+			isa = PBXGroup;
+			children = (
+				EB59F03A258FF08E004676D2 /* VoiceItem */,
+				EB59F009258FE35E004676D2 /* VoiceAssembly.swift */,
+				EB59F00E258FE38B004676D2 /* VoicePresenter.swift */,
+				EB59F013258FE394004676D2 /* VoiceViewController.swift */,
+			);
+			path = Voice;
+			sourceTree = "<group>";
+		};
+		EB59F03A258FF08E004676D2 /* VoiceItem */ = {
+			isa = PBXGroup;
+			children = (
+				EB59F03B258FF0D6004676D2 /* VoiceItem.swift */,
+				EB59F040258FF0F0004676D2 /* VoiceCell.swift */,
+				EB59F041258FF0F0004676D2 /* VoiceCell.xib */,
+			);
+			path = VoiceItem;
 			sourceTree = "<group>";
 		};
 		EB69F8BA2569E33800759BAA /* UI */ = {
@@ -903,6 +943,7 @@
 				EB26996B256CFAC7007CCF2E /* RateService.swift */,
 				EBD2C502257FDA4A0023AED4 /* SentencesService.swift */,
 				EBEB1D91251F15B40019972C /* VerbsService.swift */,
+				EB59F026258FE7F2004676D2 /* VoiceService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1033,11 +1074,13 @@
 				EB2E4B9F25741880005B343A /* AppIcon.swift */,
 				EBF8A62E2559172100A6265C /* Favorites.swift */,
 				EBF4A13A252EA2F6003E3A44 /* FeatureToggle.swift */,
+				EB59F02B258FE9E1004676D2 /* Gender.swift */,
 				EBB01C0825217F5400BB646B /* Language.swift */,
 				EBA644B3255988FC0012B973 /* ListState.swift */,
 				EBF593CE258865680091FCE0 /* MenuAction.swift */,
 				EB9C5BA72582A3F00086A3D5 /* PlaybackSpeed.swift */,
 				EB2E4B1625717A3E005B343A /* PurchaseError.swift */,
+				EB59F01E258FE429004676D2 /* Region.swift */,
 				EB450972253B5CB300D31858 /* Section.swift */,
 				EB45097A253B630900D31858 /* SectionArray.swift */,
 				EB450A32254B157A00D31858 /* SectionDataSource.swift */,
@@ -1278,6 +1321,7 @@
 				EBEB1D82251F11910019972C /* LaunchScreen.storyboard in Resources */,
 				EBF594832589030E0091FCE0 /* yellow@2x~ipad.png in Resources */,
 				EBF5949E258918290091FCE0 /* ExampleCell.xib in Resources */,
+				EB59F043258FF0F0004676D2 /* VoiceCell.xib in Resources */,
 				EBF594902589030E0091FCE0 /* purple@2x~ipad.png in Resources */,
 				EB2E4B9825741832005B343A /* teal@3x.png in Resources */,
 				EB2E4B9325741832005B343A /* purple@2x.png in Resources */,
@@ -1381,6 +1425,7 @@
 				EB5547632554089F001C5585 /* TabBarController.swift in Sources */,
 				EB4509A4253B6EB600D31858 /* Actionable.swift in Sources */,
 				EBD476D6254BDF850033067B /* Bundle.swift in Sources */,
+				EB59F01F258FE429004676D2 /* Region.swift in Sources */,
 				EBF97C9D256259A4009FFFBA /* PaywallRouter.swift in Sources */,
 				EB2E4B29257293C5005B343A /* AccentColorViewController.swift in Sources */,
 				EBB01C2D25219E9A00BB646B /* SubtitleItem.swift in Sources */,
@@ -1400,6 +1445,7 @@
 				EB450A59254BB3F800D31858 /* BigButton.swift in Sources */,
 				EB2F5E11251F5B26007DCF60 /* DetailCell.swift in Sources */,
 				EBF8A6522559225D00A6265C /* Locator.swift in Sources */,
+				EB59F00F258FE38B004676D2 /* VoicePresenter.swift in Sources */,
 				EB2E4BC52576A8DC005B343A /* Array+Safe.swift in Sources */,
 				EB269972256D1009007CCF2E /* UserDefaults+Key.swift in Sources */,
 				EB450A2D254A8D3300D31858 /* TestsAssembly.swift in Sources */,
@@ -1408,12 +1454,15 @@
 				EB2E4BA625741970005B343A /* AppIconService.swift in Sources */,
 				EB7DFF4E25236DA4000B711D /* EmptyViewController.swift in Sources */,
 				EBEB1D76251F11900019972C /* AppDelegate.swift in Sources */,
+				EB59F027258FE7F2004676D2 /* VoiceService.swift in Sources */,
 				EB269988256D3FB9007CCF2E /* PickableCell.swift in Sources */,
 				EBA644CF255ADB3A0012B973 /* SidebarItem.swift in Sources */,
 				EB269967256CF10C007CCF2E /* PlainDetailCell.swift in Sources */,
 				EBD476CA254BBEA60033067B /* PaywallItem.swift in Sources */,
 				EB450A27254A8D2900D31858 /* TestsPresenter.swift in Sources */,
 				EB3217BD258BE42300023F0B /* ProgressItem.swift in Sources */,
+				EB59F014258FE394004676D2 /* VoiceViewController.swift in Sources */,
+				EB59F02C258FE9E1004676D2 /* Gender.swift in Sources */,
 				EBB01C252521903A00BB646B /* Identifiable.swift in Sources */,
 				EB717DE42530C04A007791AD /* ListPresenter.swift in Sources */,
 				EBF5935C2583AD580091FCE0 /* TestItemsFactory.swift in Sources */,
@@ -1431,6 +1480,7 @@
 				EB26996C256CFAC7007CCF2E /* RateService.swift in Sources */,
 				EBB01C0C2521825000BB646B /* TranslationCell.swift in Sources */,
 				EB69F8AF2569D7AA00759BAA /* TestRouter.swift in Sources */,
+				EB59F042258FF0F0004676D2 /* VoiceCell.swift in Sources */,
 				EBB01C0925217F5400BB646B /* Language.swift in Sources */,
 				EB269992256E29DA007CCF2E /* TabBarItem.swift in Sources */,
 				EB450A49254B1A2B00D31858 /* PlainCell.swift in Sources */,
@@ -1446,6 +1496,8 @@
 				EBF59497258917F30091FCE0 /* ExampleItem.swift in Sources */,
 				EBA644B4255988FC0012B973 /* ListState.swift in Sources */,
 				EB69A26925322AFA00DD1827 /* Notification.swift in Sources */,
+				EB59F03C258FF0D6004676D2 /* VoiceItem.swift in Sources */,
+				EB59F00A258FE35E004676D2 /* VoiceAssembly.swift in Sources */,
 				EBA644DF255ADC910012B973 /* SidebarAssembly.swift in Sources */,
 				EB8325982556EB6B005E02C1 /* FavoritesPresenter.swift in Sources */,
 				EBF5949D258918290091FCE0 /* ExampleCell.swift in Sources */,
@@ -1603,7 +1655,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1628,7 +1680,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1771,7 +1823,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1796,7 +1848,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1819,7 +1871,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidgetIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1842,7 +1894,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidgetIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

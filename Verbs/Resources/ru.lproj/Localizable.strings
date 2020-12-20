@@ -79,7 +79,7 @@
 "Personalize the app: pick an accent color to your liking" = "Персонализируйте приложение: выберите акцентный цвет по своему вкусу";
 "Examples" = "Примеры";
 "Sentences" = "Предложения";
-"ThreeFormsSubtitle" = "Проверьте знания форм неправильных глаголов";
+"WritingSubtitle" = "Проверьте знания форм неправильных глаголов";
 "SentenceSubtitle" = "Насколько хорошо Вы понимаете неправильные глаголы из контекста?";
 "Notifications" = "Уведомления";
 "Sentence" = "Предложение";
@@ -114,6 +114,19 @@
 "AddToFavorites" = "Добавить в «Избранное»";
 "RemoveFromFavorites" = "Убрать из «Избранного»";
 "Remove" = "Убрать";
+"Speaking" = "Произношение";
+"SpeakingSubtitle" = "Сравните свое произношение с произношением диктора";
+"Australian" = "австралийский";
+"Irish" = "ирландский";
+"Indian" = "индийский";
+"South African" = "южноафриканский";
+"British" = "британский";
+"American" = "американский";
+"Voice" = "Голос";
+"Male" = "Мужской";
+"Female" = "Женский";
+"Untitled" = "Безымянный";
+"Default" = "По умолчанию";
 
 // Irregular Verbs
 

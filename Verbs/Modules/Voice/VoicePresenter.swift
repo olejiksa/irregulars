@@ -1,0 +1,92 @@
+//
+//  VoicePresenter.swift
+//  Verbs
+//
+//  Created by Oleg Samoylov on 21.12.2020.
+//  Copyright © 2020 Oleg Samoylov. All rights reserved.
+//
+
+import UIKit
+
+final class VoicePresenter: NSObject {
+    
+    let dataSource = SelectableSectionDataSource()
+    weak var viewController: VoiceViewController?
+    
+    private let voiceService: VoiceService
+    
+    init(voiceService: VoiceService) {
+        self.voiceService = voiceService
+        super.init()
+        setupSections()
+    }
+}
+
+// MARK: - Private
+
+private extension VoicePresenter {
+    
+    func setupSections() {
+        let sections = Gender.allCases.map { gender in
+            Section(header: gender.description,
+                    items: voiceService.voices(gender: gender)
+                        .sorted { $0.name < $1.name }
+                        .map { voice in
+                        let region = Region(rawValue: String(voice.language.suffix(2)))
+                        return VoiceItem(name: voice.name,
+                                         gender: gender,
+                                         region: region ?? .unitedKingdom) }
+            )
+        }
+        
+        dataSource.setup(sections)
+        
+        let iterativeSections = sections.filter { !$0.items.isEmpty }
+        
+        let name = UserDefaults.shared.string(for: .voice)
+        for sectionIndex in 0..<iterativeSections.count {
+            if let items = iterativeSections[safe: sectionIndex]?.items as? [VoiceItem],
+               let index = items.firstIndex(where: { $0.name == name }) {
+                let indexPath = IndexPath(row: index, section: sectionIndex)
+                dataSource.selectedIndexPath = indexPath
+                return
+            }
+        }
+        
+        for sectionIndex in 0..<iterativeSections.count {
+            if let items = iterativeSections[safe: sectionIndex]?.items as? [VoiceItem],
+               let index = items.firstIndex(where: { $0.gender == Gender.current && $0.region == Region.current }) {
+                let indexPath = IndexPath(row: index, section: sectionIndex)
+                dataSource.selectedIndexPath = indexPath
+                return
+            }
+        }
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension VoicePresenter: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        dataSource.selectedIndexPath = indexPath
+        
+        guard let item = dataSource.item(at: indexPath) as? VoiceItem else { return }
+        
+        Gender.current = item.gender
+        Region.current = item.region
+        UserDefaults.shared.set(item.name, for: .voice)
+        NotificationCenter.default.post(name: .reload, object: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if let oldIndex = dataSource.selectedIndexPath {
+            tableView.cellForRow(at: oldIndex)?.accessoryType = .none
+        }
+        
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        return indexPath
+    }
+}
+

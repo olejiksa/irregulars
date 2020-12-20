@@ -13,6 +13,8 @@ final class FavoritesPresenter: NSObject {
     weak var viewController: FavoritesViewController?
     var router: FavoritesRouter?
     
+    var isEditing = false
+    
     private let languageService: LanguageService
     private let favoritesService: FavoritesService
     private var favorites = Locator.favorites
@@ -209,7 +211,7 @@ extension FavoritesPresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    contextMenuConfigurationForRowAt indexPath: IndexPath,
                    point: CGPoint) -> UIContextMenuConfiguration? {
-        guard !isSearchActive else { return nil }
+        guard !isSearchActive, !isEditing else { return nil }
         let verb = favoritesService.groupedItems[indexPath.section][indexPath.row]
         let isFavorite = Locator.favorites.verbs.contains(verb)
         

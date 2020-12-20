@@ -15,7 +15,10 @@ final class AudioService: NSObject {
     private var playHandler: Block?
     private var stopHandler: Block?
     
-    override init() {
+    private let voiceService: VoiceService
+    
+    init(voiceService: VoiceService) {
+        self.voiceService = voiceService
         super.init()
         synthesizer.delegate = self
     }
@@ -36,7 +39,7 @@ final class AudioService: NSObject {
             let utterance = AVSpeechUtterance(string: text)
             let playbackSpeed = PlaybackSpeed(UserDefaults.shared.integer(for: .playbackSpeed))
             utterance.rate = playbackSpeed.rawValue
-            utterance.voice = AVSpeechSynthesisVoice(language: Language.english.rawValue)
+            utterance.voice = voiceService.voice(gender: Gender.current, region: Region.current)
             synthesizer.speak(utterance)
         }
         

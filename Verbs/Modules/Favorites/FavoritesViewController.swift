@@ -229,9 +229,11 @@ private extension FavoritesViewController {
         
         if tableView.isEditing {
             tableView.setEditing(false, animated: true)
+            presenter.isEditing = false
             navigationItem.leftBarButtonItem = editButton
         } else {
             tableView.setEditing(true, animated: true)
+            presenter.isEditing = true
             navigationItem.leftBarButtonItem = doneButton
         }
     }

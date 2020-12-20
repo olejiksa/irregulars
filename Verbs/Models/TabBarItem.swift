@@ -20,6 +20,8 @@ enum TabBarItem: Int {
             self = .settings
         case (_, is AccentColorViewController):
             self = .settings
+        case (_, is VoiceViewController):
+            self = .settings
         case (is ListViewController, _):
             self = .all
         case (is FavoritesViewController, _):

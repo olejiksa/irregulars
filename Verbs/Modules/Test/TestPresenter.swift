@@ -130,6 +130,8 @@ private extension TestPresenter {
             case .writing:
                 let answeredCorrectlyCount = UserDefaults.shared.integer(for: .writingAnswers)
                 UserDefaults.shared.set(answeredCorrectlyCount + 1, for: .writingAnswers)
+            case .speaking:
+                break
             }
             
             guard let verb = verb else { return }

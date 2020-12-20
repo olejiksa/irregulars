@@ -43,6 +43,11 @@ final class SettingsRouter {
         viewController?.navigationController?.push(vc)
     }
     
+    func goToVoice() {
+        let vc = VoiceAssembly().viewController()
+        viewController?.navigationController?.push(vc)
+    }
+    
     func share(_ url: URL, in view: UIView) {
         let activityViewController = UIActivityViewController(activityItems: [url],
                                                               applicationActivities: nil)

@@ -119,6 +119,7 @@ struct VerbsWidgetEntryView: View {
             }
             if let pastParticiple = verb.pastParticiple?.first {
                 Text("Past Participle")
+                    .lineLimit(1)
                     .font(.caption)
                 Text(verbatim: pastParticiple.value)
                     .bold()
@@ -158,6 +159,7 @@ struct VerbsWidgetEntryView: View {
                 if let pastParticiple = verb.pastParticiple?.first {
                     VStack(alignment: .center, spacing: 10) {
                         Text("Past Participle")
+                            .lineLimit(1)
                             .font(.caption)
                         Text(verbatim: pastParticiple.value)
                             .bold()
@@ -216,6 +218,7 @@ struct VerbsWidgetEntryView: View {
                 HStack(alignment: .center, spacing: 10) {
                     Text("Past Participle")
                         .font(.caption)
+                        .lineLimit(1)
                         .frame(maxWidth: .infinity)
                     Text(verbatim: pastParticiple.value)
                         .bold()

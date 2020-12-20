@@ -21,7 +21,8 @@ final class DetailAssembly: AssemblyProtocol {
     }
     
     func viewController() -> some DetailViewController {
-        let presenter = DetailPresenter(audioService: .init(),
+        let audioService = AudioService(voiceService: .init())
+        let presenter = DetailPresenter(audioService: audioService,
                                         languageService: .init(),
                                         sentencesService: .init(),
                                         verb: verb)

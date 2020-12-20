@@ -18,6 +18,10 @@ extension String {
         .init(format: localized, locale: nil, arguments: arguments)
     }
     
+    func containsIgnoringCase<T>(_ other: T) -> Bool where T: StringProtocol {
+        lowercased().contains(other.lowercased())
+    }
+    
     func hasPrefixIgnoringCase<T>(_ other: T) -> Bool where T: StringProtocol {
         lowercased().hasPrefix(other.lowercased())
     }

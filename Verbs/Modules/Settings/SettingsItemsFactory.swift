@@ -35,16 +35,29 @@ final class SettingsItemsFactory {
     
     func setupGeneralSection(languageBlock: @escaping ItemBlock,
                              accentColorBlock: @escaping ItemBlock,
+                             voiceBlock: @escaping ItemBlock,
                              notificationsBlock: @escaping BoolBlock) -> Section {
         let accentColor = AccentColor.current.rawValue.capitalized.localized
-        let items: [ItemProtocol] =  [RightDetailItem(title: "Language".localized,
-                                                      subtitle: languageService.current.description,
-                                                      actionBlock: languageBlock),
-                                      RightDetailItem(title: "Accent color".localized,
-                                                      subtitle: accentColor,
-                                                      actionBlock: accentColorBlock,
-                                                      hasDisclosureItem: true,
-                                                      isEnabled: FeatureToggle.isPaid)].compactMap { $0 }
+        let voice = [Gender.current.description, Region.current.description].joined(separator: ", ")
+        
+        let items: [ItemProtocol] =
+            [RightDetailItem(title: "Language".localized,
+                             subtitle: languageService.current.description,
+                             actionBlock: languageBlock),
+             RightDetailItem(title: "Accent color".localized,
+                             subtitle: accentColor,
+                             actionBlock: accentColorBlock,
+                             hasDisclosureItem: true,
+                             isEnabled: FeatureToggle.isPaid),
+             RightDetailItem(title: "Voice".localized,
+                             subtitle: voice,
+                             actionBlock: voiceBlock,
+                             hasDisclosureItem: true,
+                             isEnabled: FeatureToggle.isPaid)].compactMap { $0 } // +
+//            [SwitchItem(text: "Notifications".localized,
+//                        isOn: UserDefaults.shared.bool(for: .notifications),
+//                        isEnabled: FeatureToggle.isPaid,
+//                        actionBlock: notificationsBlock)]
         return .init(header: "General".localized, items: items)
     }
     

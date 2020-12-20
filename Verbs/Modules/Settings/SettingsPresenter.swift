@@ -48,6 +48,7 @@ private extension SettingsPresenter {
                                                  resetBlock: willReset),
              itemsFactory.setupGeneralSection(languageBlock: willShowLanguageSettings,
                                               accentColorBlock: willGoToAccentColor,
+                                              voiceBlock: willGoToVoice,
                                               notificationsBlock: didDerivedFormsOptionChange),
              itemsFactory.setupPlaybackSpeedSection(playbackSpeedBlock: didPlaybackSpeedChange)]
                 + itemsFactory.setupVocabularySections(regularVerbsBlock: didRegularVerbsOptionChange,
@@ -122,6 +123,10 @@ private extension SettingsPresenter {
     
     func willGoToAccentColor(_ sender: ItemProtocol) {
         router?.goToAccentColor()
+    }
+    
+    func willGoToVoice(_ sender: ItemProtocol) {
+        router?.goToVoice()
     }
     
     func willShare(_ sender: ItemProtocol) {
