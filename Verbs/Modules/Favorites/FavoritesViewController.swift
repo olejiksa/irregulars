@@ -16,7 +16,10 @@ final class FavoritesViewController: UIViewController {
     private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     private var tableView: UITableView?
     private var state: ListState = .empty
+    
     private var moreButton: UIBarButtonItem?
+    private var editButton: UIBarButtonItem?
+    private var doneButton: UIBarButtonItem?
     
     private let noDataLabel: UILabel = {
         let label = UILabel()
@@ -123,6 +126,15 @@ private extension FavoritesViewController {
                   action: nil)
             : nil
         buildMenu(for: moreButton)
+        
+        editButton = .init(barButtonSystemItem: .edit,
+                           target: self,
+                           action: #selector(didEditTap))
+        doneButton = .init(barButtonSystemItem: .done,
+                           target: self,
+                           action: #selector(didEditTap))
+        
+        navigationItem.leftBarButtonItem = editButton
         navigationItem.rightBarButtonItem = moreButton
     }
     
@@ -210,6 +222,18 @@ private extension FavoritesViewController {
         }
         
         buildMenu(for: moreButton)
+    }
+    
+    @objc func didEditTap() {
+        guard let tableView = tableView else { return }
+        
+        if tableView.isEditing {
+            tableView.setEditing(false, animated: true)
+            navigationItem.leftBarButtonItem = editButton
+        } else {
+            tableView.setEditing(true, animated: true)
+            navigationItem.leftBarButtonItem = doneButton
+        }
     }
 }
 
