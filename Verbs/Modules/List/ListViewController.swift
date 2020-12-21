@@ -101,6 +101,8 @@ private extension ListViewController {
             : nil
         buildMenu(for: moreButton)
         navigationItem.rightBarButtonItem = moreButton
+        
+        extendedLayoutIncludesOpaqueBars = true
     }
     
     func setupTableView() {
@@ -124,9 +126,6 @@ private extension ListViewController {
         
         tableView.register(ListCell.self, SubtitleCell.self)
         tableView.tableFooterView = UIView()
-        DispatchQueue.main.async {
-            self.navigationController?.navigationBar.sizeToFit()
-        }
         
         self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.tableView = tableView
@@ -179,10 +178,9 @@ private extension ListViewController {
 extension ListViewController: Scrollable {
     
     func scrollToTop() {
-        let indexPath = IndexPath(row: 0, section: 0)
-        guard let tableView = tableView,
-              tableView.numberOfSections > 0,
-              tableView.numberOfRows(inSection: 0) > 0 else { return }
-        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        guard let tableView = tableView else { return }
+        let y = max(144, tableView.safeAreaInsets.top)
+        let yWithSearchBarHeight = y + searchController.searchBar.bounds.height
+        tableView.setContentOffset(.init(x: 0, y: -yWithSearchBarHeight), animated: true)
     }
 }
