@@ -17,6 +17,8 @@ final class ListViewController: UIViewController {
     private var tableView: UITableView?
     private var moreButton: UIBarButtonItem?
     
+    private var topInset: CGFloat = 0
+    
     init(presenter: ListPresenter) {
         self.presenter = presenter
         
@@ -35,6 +37,12 @@ final class ListViewController: UIViewController {
         setupSearchController()
         setupKeyboardService()
         presenter.selectWhenRegular()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        topInset = -(tableView?.safeAreaInsets.top ?? 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -94,12 +102,10 @@ private extension ListViewController {
             navigationItem.title = "All".localized
         }
         
-        moreButton = LanguageService().hasTranslation ?
-            .init(image: SystemIcon.ellipsis.image,
-                  style: .plain,
-                  target: nil,
-                  action: nil)
-            : nil
+        moreButton = .init(image: SystemIcon.ellipsis.image,
+                           style: .plain,
+                           target: nil,
+                           action: nil)
         buildMenu(for: moreButton)
         navigationItem.rightBarButtonItem = moreButton
     }
@@ -139,25 +145,42 @@ private extension ListViewController {
     }
     
     func buildMenu(for barButtonItem: UIBarButtonItem?) {
-        let isTranslation = UserDefaults.shared.bool(for: .shouldTranslationBeShown)
+        let shouldTranslationBeShown = UserDefaults.shared.bool(for: .shouldTranslationBeShown)
+        let shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .regularVerbs)
+        let shouldDerivativesBeShown = UserDefaults.shared.bool(for: .derivatives)
+        
+        let viewMenu = LanguageService().hasTranslation ?
+            UIMenu(options: .displayInline, children: [
+                UIAction(title: "ThreeForms".localized,
+                         state: !shouldTranslationBeShown ? .on : .off,
+                         handler: handleViewMenu),
+                UIAction(title: "Translation".localized,
+                         state: shouldTranslationBeShown ? .on : .off,
+                         handler: handleViewMenu)
+            ]) : nil
         
         barButtonItem?.menu = .init(children: [
-            UIAction(title: "Verb forms".localized,
-                     state: !isTranslation ? .on : .off,
-                     handler: handleMenu),
-            UIAction(title: "Translation".localized,
-                     state: isTranslation ? .on : .off,
-                     handler: handleMenu)
-        ])
+            viewMenu,
+            UIMenu(options: .displayInline, children: [
+                UIAction(title: "RegularVerbs".localized,
+                         state: shouldRegularVerbsBeShown ? .on : .off,
+                         handler: handleRegularsMenu)
+            ]),
+            UIMenu(options: .displayInline, children: [
+                UIAction(title: "Derivatives".localized,
+                         state: shouldDerivativesBeShown ? .on : .off,
+                         handler: handleDerivativesMenu)
+            ])
+        ].compactMap { $0 })
     }
     
-    func handleMenu(action: UIAction) {
+    func handleViewMenu(action: UIAction) {
         let isPaid = FeatureToggle.isPaid
         
         if isPaid {
-            let isTranslation = UserDefaults.shared.bool(for: .shouldTranslationBeShown)
+            let shouldTranslationBeShown = UserDefaults.shared.bool(for: .shouldTranslationBeShown)
             let state = action.state == .on
-            let newState = isTranslation == state
+            let newState = shouldTranslationBeShown == state
             UserDefaults.shared.set(newState, for: .shouldTranslationBeShown)
             NotificationCenter.default.post(name: .list,
                                             object: nil,
@@ -170,6 +193,30 @@ private extension ListViewController {
         
         buildMenu(for: moreButton)
     }
+    
+    func handleRegularsMenu(action: UIAction) {
+        guard FeatureToggle.isPaid else {
+            presenter.router?.goToPaywall()
+            return
+        }
+        
+        let shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .regularVerbs)
+        UserDefaults.shared.set(!shouldRegularVerbsBeShown, for: .regularVerbs)
+        presenter.updateRegulars(!shouldRegularVerbsBeShown)
+        buildMenu(for: moreButton)
+    }
+    
+    func handleDerivativesMenu(action: UIAction) {
+        guard FeatureToggle.isPaid else {
+            presenter.router?.goToPaywall()
+            return
+        }
+        
+        let shouldDerivativesBeShown = UserDefaults.shared.bool(for: .derivatives)
+        UserDefaults.shared.set(!shouldDerivativesBeShown, for: .derivatives)
+        presenter.updateDerivatives(!shouldDerivativesBeShown)
+        buildMenu(for: moreButton)
+    }
 }
 
 // MARK: - Scrollable
@@ -178,7 +225,7 @@ extension ListViewController: Scrollable {
     
     func scrollToTop() {
         guard let tableView = tableView else { return }
-        let y = min(-196, -tableView.safeAreaInsets.top)
+        let y = max(topInset, -tableView.safeAreaInsets.top - 52)
         tableView.setContentOffset(.init(x: 0, y: y), animated: true)
     }
 }

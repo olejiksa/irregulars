@@ -11,6 +11,7 @@ import UIKit
 final class VoicePresenter: NSObject {
     
     let dataSource = SelectableSectionDataSource()
+    var router: VoiceRouter?
     weak var viewController: VoiceViewController?
     
     private let voiceService: VoiceService
@@ -34,6 +35,7 @@ private extension VoicePresenter {
                         .map { voice in
                             let region = Region(rawValue: String(voice.language.suffix(2)))
                             return VoiceItem(name: voice.name,
+                                             voiceID: voice.identifier,
                                              gender: gender,
                                              region: region ?? .unitedStates) }
             )
@@ -44,10 +46,10 @@ private extension VoicePresenter {
         
         let iterativeSections = sections.filter { !$0.items.isEmpty }
         
-        let name = UserDefaults.shared.string(for: .voice)
+        let voiceID = UserDefaults.shared.string(for: .voice)
         for sectionIndex in 0..<iterativeSections.count {
             if let items = iterativeSections[safe: sectionIndex]?.items as? [VoiceItem],
-               let index = items.firstIndex(where: { $0.name == name }) {
+               let index = items.firstIndex(where: { $0.voiceID == voiceID }) {
                 let indexPath = IndexPath(row: index, section: sectionIndex)
                 dataSource.selectedIndexPath = indexPath
                 return
@@ -72,17 +74,26 @@ extension VoicePresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        guard dataSource.selectedIndexPath != indexPath else {
+            return
+        }
+        
+        guard FeatureToggle.isPaid else {
+            router?.goToPaywall()
+            return
+        }
+        
         guard let item = dataSource.item(at: indexPath) as? VoiceItem else { return }
         dataSource.selectedIndexPath = indexPath
         
         Gender.current = item.gender
         Region.current = item.region
-        UserDefaults.shared.set(item.name, for: .voice)
+        UserDefaults.shared.set(item.voiceID, for: .voice)
         NotificationCenter.default.post(name: .reload, object: nil)
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        guard dataSource.item(at: indexPath) is VoiceItem else { return nil }
+        guard FeatureToggle.isPaid, dataSource.item(at: indexPath) is VoiceItem else { return indexPath }
         
         if let oldIndex = dataSource.selectedIndexPath {
             tableView.cellForRow(at: oldIndex)?.accessoryType = .none

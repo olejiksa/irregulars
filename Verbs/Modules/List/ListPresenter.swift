@@ -31,9 +31,22 @@ final class ListPresenter: NSObject {
     }
     
     func selectWhenRegular() {
+        let neededViewController = viewController?.splitViewController?.secondaryViewController?.topViewController
         guard viewController?.splitViewController?.isCollapsed == false else { return }
-        guard let title = viewController?.splitViewController?.secondaryViewController?.topViewController?.navigationItem.title else { return }
+        guard let title = neededViewController?.navigationItem.title else { return }
         infinitive = title
+        didSelectedItemSet()
+    }
+    
+    func updateRegulars(_ value: Bool) {
+        verbsService.shouldRegularVerbsBeShown = value
+        viewController?.reloadData()
+        didSelectedItemSet()
+    }
+    
+    func updateDerivatives(_ value: Bool) {
+        verbsService.shouldDerivativesBeShown = value
+        viewController?.reloadData()
         didSelectedItemSet()
     }
 }
@@ -43,31 +56,23 @@ final class ListPresenter: NSObject {
 private extension ListPresenter {
     
     func loadSettings() {
-        verbsService.shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .shouldRegularVerbsBeShown)
-        verbsService.shouldDerivedFormsBeShown = UserDefaults.shared.bool(for: .shouldDerivedFormsBeShown)
+        verbsService.shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .regularVerbs)
+        verbsService.shouldDerivativesBeShown = UserDefaults.shared.bool(for: .derivatives)
         verbsService.shouldTranslationBeShown = UserDefaults.shared.bool(for: .shouldTranslationBeShown)
     }
     
     func subscribe() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(didSelectedItemUpdate),
-                                               name: Notification.Name.infinitive,
+                                               name: .infinitive,
                                                object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(didPay),
-                                               name: Notification.Name.reload,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(willUpdateRegulars),
-                                               name: Notification.Name.regulars,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(willUpdateDerivatives),
-                                               name: Notification.Name.derivatives,
+                                               name: .reload,
                                                object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(willUpdateList),
-                                               name: Notification.Name.list,
+                                               name: .list,
                                                object: nil)
     }
     
@@ -86,20 +91,6 @@ private extension ListPresenter {
     
     @objc func didPay(_ notification: Notification) {
         viewController?.getPaid()
-    }
-    
-    @objc func willUpdateRegulars(_ notification: Notification) {
-        let value = notification.userInfo?[Notification.Name.regulars] as? Bool ?? false
-        verbsService.shouldRegularVerbsBeShown = value
-        viewController?.reloadData()
-        didSelectedItemSet()
-    }
-    
-    @objc func willUpdateDerivatives(_ notification: Notification) {
-        let value = notification.userInfo?[Notification.Name.derivatives] as? Bool ?? false
-        verbsService.shouldDerivedFormsBeShown = value
-        viewController?.reloadData()
-        didSelectedItemSet()
     }
     
     @objc func willUpdateList(_ notification: Notification) {
@@ -206,7 +197,29 @@ extension ListPresenter: UITableViewDelegate {
             return .init(children: [action])
         }
         
-        return .init(identifier: nil, previewProvider: nil, actionProvider: actionProvider)
+        let previewProvider: UIContextMenuContentPreviewProvider = { [weak self] in
+            guard let nvc = self?.viewController?.navigationController else { return nil }
+            return DetailAssembly(verb: verb,
+                                  isOpenedByDeeplink: false,
+                                  navigationController: nvc).viewController()
+        }
+        
+        let svc = viewController?.splitViewController
+        let isCompact = svc?.traitCollection.horizontalSizeClass == .compact
+        
+        return .init(identifier: indexPath as NSIndexPath,
+                     previewProvider: isCompact ? previewProvider : nil,
+                     actionProvider: actionProvider)
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   willPerformPreviewActionForMenuWith configuration: UIContextMenuConfiguration,
+                   animator: UIContextMenuInteractionCommitAnimating) {
+        guard let indexPath = configuration.identifier as? IndexPath else { return }
+        let verb = verbsService.groupedItems[indexPath.section][indexPath.row]
+        animator.addAnimations {
+            self.router?.goToDetail(with: verb)
+        }
     }
 }
 

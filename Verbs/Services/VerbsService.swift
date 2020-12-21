@@ -35,7 +35,7 @@ final class VerbsService: VerbsServiceProtocol {
         }
     }
     
-    var shouldDerivedFormsBeShown: Bool = true {
+    var shouldDerivativesBeShown: Bool = true {
         didSet {
             setItems()
             setGroupedItems()
@@ -83,7 +83,7 @@ private extension VerbsService {
             elements.forEach { set.remove($0) }
         }
         
-        if !shouldDerivedFormsBeShown {
+        if !shouldDerivativesBeShown {
             let elements = set.filter { $0.isDerived }
             elements.forEach { set.remove($0) }
         }

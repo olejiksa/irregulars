@@ -11,7 +11,9 @@ final class AccentColorAssembly: AssemblyProtocol {
     func viewController() -> some AccentColorViewController {
         let presenter = AccentColorPresenter(appIconService: .init())
         let viewConroller = AccentColorViewController(presenter: presenter)
+        let router = AccentColorRouter(viewController: viewConroller)
         presenter.viewController = viewConroller
+        presenter.router = router
         return viewConroller
     }
 }

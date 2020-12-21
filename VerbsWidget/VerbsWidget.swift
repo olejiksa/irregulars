@@ -14,8 +14,8 @@ struct Provider: IntentTimelineProvider {
     
     private var service: VerbsService = {
         let service = VerbsService()
-        service.shouldDerivedFormsBeShown = UserDefaults.shared.bool(for: .shouldDerivedFormsBeShown)
-        service.shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .shouldRegularVerbsBeShown)
+        service.shouldDerivativesBeShown = UserDefaults.shared.bool(for: .derivatives)
+        service.shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .regularVerbs)
         return service
     }()
     

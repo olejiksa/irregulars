@@ -32,10 +32,8 @@
 "Settings" = "Settings";
 "General" = "General";
 "Links" = "Links";
-"Regular verbs (-ed)" = "Regular verbs (-ed)";
-"RegularVerbsFooter" = "Determines the display of verbs with both regular and irregular forms";
+"RegularVerbs" = "Regular (-ed)";
 "Derivatives" = "Derivatives";
-"DerivativesFooter" = "Determines the display of irregular verbs with the prefixes be-, for(e)-, in-, inter-, mis-, off-, out-, over-, pre-, under-, with- and others";
 "Translation" = "Translation";
 "TranslationSubtitle" = "Check your knowledge of the translation of irregular verbs";
 "Language" = "Language";
@@ -48,7 +46,7 @@
 "EmptyFavorites" = "To add an irregular verb to your Favorites, open it from the all verbs list and tap on the star button in the upper right corner of the screen";
 "Done" = "Done";
 "Cancel" = "Cancel";
-"Verb forms" = "Verb forms";
+"ThreeForms" = "3 forms";
 "Forms" = "Forms";
 "Privacy policy" = "Privacy policy";
 "Share app" = "Share app";
@@ -59,7 +57,7 @@
 "More" = "More";
 "Error" = "Error";
 "Hint" = "Hint";
-"Unlock all verbs in tests" = "Unlock all verbs in tests including Favorites";
+"Unlock all verbs in tests" = "Unlock all verbs in tests";
 "Accent color" = "Accent color";
 "Blue" = "Blue";
 "Green" = "Green";
@@ -84,7 +82,6 @@
 "Notifications" = "Notifications";
 "Sentence" = "Sentence";
 "Choose a word from offered" = "Choose a word from offered";
-"Vocabulary" = "Vocabulary";
 "Listening" = "Listening";
 "ListeningSubtitle" = "Сheck your listening comprehension of irregular verbs";
 "Demo" = "Demo";

@@ -15,6 +15,7 @@ final class TestsViewController: UIViewController {
     private var keyboardService: KeyboardService?
     private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     private var moreButton: UIBarButtonItem?
+    private var topInset: CGFloat = 0
     
     init(presenter: TestsPresenter) {
         self.presenter = presenter
@@ -34,6 +35,12 @@ final class TestsViewController: UIViewController {
         setupView()
         setupSections()
         setupKeyboardService()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        topInset = -(tableView?.safeAreaInsets.top ?? 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,7 +63,7 @@ extension TestsViewController: Scrollable {
     
     func scrollToTop() {
         guard let tableView = tableView else { return }
-        let y = min(-144, -tableView.safeAreaInsets.top)
+        let y = max(topInset, -tableView.safeAreaInsets.top - 52)
         tableView.setContentOffset(.init(x: 0, y: y), animated: true)
     }
 }
@@ -119,22 +126,38 @@ private extension TestsViewController {
     func buildMenu(for barButtonItem: UIBarButtonItem?) {
         let isPaid = FeatureToggle.isPaid
         let favoritesOnly = UserDefaults.shared.bool(for: .favoritesOnly)
+        let shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .regularVerbsTests)
+        let shouldDerivativesBeShown = UserDefaults.shared.bool(for: .derivativesTests)
+        
+        let allMenu = isPaid && !favoritesOnly ?
+            [UIMenu(options: .displayInline, children: [
+                UIAction(title: "RegularVerbs".localized,
+                         state: shouldRegularVerbsBeShown ? .on : .off,
+                         handler: handleRegularsMenu)
+            ]),
+            UIMenu(options: .displayInline, children: [
+                UIAction(title: "Derivatives".localized,
+                         state: shouldDerivativesBeShown ? .on : .off,
+                         handler: handleDerivativesMenu)
+            ])] : []
         
         barButtonItem?.menu = .init(children: [
-            UIAction(title: "Demo".localized,
-                     image: SystemIcon.twentyFive.image,
-                     attributes: !isPaid ? [] : .hidden,
-                     state: !isPaid ? .on : .off,
-                     handler: handleMenu),
-            UIAction(title: "All".localized,
-                     image: SystemIcon.listBullet.image,
-                     state: isPaid && !favoritesOnly ? .on : .off,
-                     handler: handleMenu),
-            UIAction(title: "Favorites".localized,
-                     image: SystemIcon.star.image,
-                     state: isPaid && favoritesOnly ? .on : .off,
-                     handler: handleMenu)
-        ])
+            UIMenu(options: .displayInline, children: [
+                UIAction(title: "Demo".localized,
+                         image: SystemIcon.twentyFive.image,
+                         attributes: !isPaid ? [] : .hidden,
+                         state: !isPaid ? .on : .off,
+                         handler: handleMenu),
+                UIAction(title: "All".localized,
+                         image: SystemIcon.listBullet.image,
+                         state: isPaid && !favoritesOnly ? .on : .off,
+                         handler: handleMenu),
+                UIAction(title: "Favorites".localized,
+                         image: SystemIcon.star.image,
+                         state: isPaid && favoritesOnly ? .on : .off,
+                         handler: handleMenu)
+            ])
+        ] + allMenu)
     }
     
     func handleMenu(action: UIAction) {
@@ -151,6 +174,28 @@ private extension TestsViewController {
             return
         }
         
+        buildMenu(for: moreButton)
+    }
+    
+    func handleRegularsMenu(action: UIAction) {
+        guard FeatureToggle.isPaid else {
+            presenter.router?.goToPaywall()
+            return
+        }
+        
+        let shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .regularVerbsTests)
+        UserDefaults.shared.set(!shouldRegularVerbsBeShown, for: .regularVerbsTests)
+        buildMenu(for: moreButton)
+    }
+    
+    func handleDerivativesMenu(action: UIAction) {
+        guard FeatureToggle.isPaid else {
+            presenter.router?.goToPaywall()
+            return
+        }
+        
+        let shouldDerivativesBeShown = UserDefaults.shared.bool(for: .derivativesTests)
+        UserDefaults.shared.set(!shouldDerivativesBeShown, for: .derivativesTests)
         buildMenu(for: moreButton)
     }
 }

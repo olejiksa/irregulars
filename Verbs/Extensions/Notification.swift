@@ -13,8 +13,6 @@ extension Notification.Name {
     static let infinitive = Notification.Name("infinitive")
     static let test = Notification.Name("test")
     static let reload = Notification.Name("reload")
-    static let regulars = Notification.Name("regulars")
-    static let derivatives = Notification.Name("derivatives")
     static let list = Notification.Name("list")
     static let favorites = Notification.Name("favorites")
     static let sidebar = Notification.Name("sidebar")

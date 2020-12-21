@@ -106,7 +106,8 @@ extension InputCell: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let text = textField.text, !text.isEmpty else { return }
         
-        applyValidation(text)
+        let trimmedText = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        applyValidation(trimmedText)
         
         item?.isFilled = true
         item?.successActionBlock()

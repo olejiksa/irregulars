@@ -17,12 +17,17 @@ final class VoiceService {
         englishVoices = voices.filter { $0.language.hasPrefix(Language.english.rawValue) }
     }
     
-    func voices(gender: Gender) -> [(language: String, name: String)] {
-        englishVoices.filter { $0.gender == gender.speechGender }.map { ($0.language, $0.name) }
+    func voices(gender: Gender) -> [(language: String, name: String, identifier: String)] {
+        englishVoices.filter { $0.gender == gender.speechGender }.map { ($0.language,
+                                                                         $0.name,
+                                                                         $0.identifier) }
     }
     
-    func voice(gender: Gender, region: Region) -> AVSpeechSynthesisVoice? {
-        let voicesByGender = englishVoices.filter { $0.gender == gender.speechGender }
-        return voicesByGender.filter { $0.language.hasSuffix(region.rawValue) }.first
+    func voice(identifier: String) -> AVSpeechSynthesisVoice? {
+        englishVoices.first { $0.identifier == identifier }
+    }
+    
+    func voiceName(identifier: String) -> String {
+        englishVoices.first { $0.identifier == identifier }?.name ?? ""
     }
 }

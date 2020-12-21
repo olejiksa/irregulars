@@ -48,32 +48,15 @@ private extension SettingsPresenter {
                                                  resetBlock: willReset),
              itemsFactory.setupGeneralSection(languageBlock: willShowLanguageSettings,
                                               accentColorBlock: willGoToAccentColor,
-                                              voiceBlock: willGoToVoice,
-                                              notificationsBlock: didDerivedFormsOptionChange),
-             itemsFactory.setupPlaybackSpeedSection(playbackSpeedBlock: didPlaybackSpeedChange)]
-                + itemsFactory.setupVocabularySections(regularVerbsBlock: didRegularVerbsOptionChange,
-                                                       derivativesBlock: didDerivedFormsOptionChange) +
-                [itemsFactory.setupLinksSection(rateBlock: willRate,
-                                                privacyBlock: willGoToPrivacyPolicy,
-                                                termsBlock: willGoToTermsOfUse,
-                                                mailBlock: willGoToMail,
-                                                shareBlock: willShare),
-                 itemsFactory.setupAboutSection(upgradeBlock: willBuy)]
+                                              voiceBlock: willGoToVoice),
+             itemsFactory.setupPlaybackSpeedSection(playbackSpeedBlock: didPlaybackSpeedChange),
+             itemsFactory.setupLinksSection(rateBlock: willRate,
+                                            privacyBlock: willGoToPrivacyPolicy,
+                                            termsBlock: willGoToTermsOfUse,
+                                            mailBlock: willGoToMail,
+                                            shareBlock: willShare),
+             itemsFactory.setupAboutSection(upgradeBlock: willBuy)]
         )
-    }
-    
-    func didRegularVerbsOptionChange(_ value: Bool) {
-        UserDefaults.shared.set(value, for: .shouldRegularVerbsBeShown)
-        NotificationCenter.default.post(name: .regulars,
-                                        object: nil,
-                                        userInfo: [Notification.Name.regulars: value])
-    }
-    
-    func didDerivedFormsOptionChange(_ value: Bool) {
-        UserDefaults.shared.set(value, for: .shouldDerivedFormsBeShown)
-        NotificationCenter.default.post(name: .derivatives,
-                                        object: nil,
-                                        userInfo: [Notification.Name.derivatives: value])
     }
     
     func didListViewChange(_ sender: ItemProtocol) {

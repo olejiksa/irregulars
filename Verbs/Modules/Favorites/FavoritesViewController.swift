@@ -16,10 +16,12 @@ final class FavoritesViewController: UIViewController {
     private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     private var tableView: UITableView?
     private var state: ListState = .empty
+    private var topInset: CGFloat = 0
     
     private var moreButton: UIBarButtonItem?
     private var editButton: UIBarButtonItem?
     private var doneButton: UIBarButtonItem?
+    
     
     private let noDataLabel: UILabel = {
         let label = UILabel()
@@ -50,6 +52,12 @@ final class FavoritesViewController: UIViewController {
         setupView()
         setupKeyboardService()
         presenter.selectWhenRegular()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        topInset = -(tableView?.safeAreaInsets.top ?? 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -192,7 +200,7 @@ private extension FavoritesViewController {
         let isTranslation = UserDefaults.shared.bool(for: .shouldTranslationBeShown)
         
         barButtonItem?.menu = .init(children: [
-            UIAction(title: "Verb forms".localized,
+            UIAction(title: "ThreeForms".localized,
                      state: !isTranslation ? .on : .off,
                      handler: handleMenu),
             UIAction(title: "Translation".localized,
@@ -242,7 +250,7 @@ extension FavoritesViewController: Scrollable {
     
     func scrollToTop() {
         guard let tableView = tableView else { return }
-        let y = min(-196, -tableView.safeAreaInsets.top)
+        let y = max(topInset, -tableView.safeAreaInsets.top - 52)
         tableView.setContentOffset(.init(x: 0, y: y), animated: true)
     }
 }

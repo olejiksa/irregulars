@@ -223,7 +223,29 @@ extension FavoritesPresenter: UITableViewDelegate {
             return .init(children: [action])
         }
         
-        return .init(identifier: nil, previewProvider: nil, actionProvider: actionProvider)
+        let previewProvider: UIContextMenuContentPreviewProvider = { [weak self] in
+            guard let nvc = self?.viewController?.navigationController else { return nil }
+            return DetailAssembly(verb: verb,
+                                  isOpenedByDeeplink: false,
+                                  navigationController: nvc).viewController()
+        }
+        
+        let svc = viewController?.splitViewController
+        let isCompact = svc?.traitCollection.horizontalSizeClass == .compact
+        
+        return .init(identifier: indexPath as NSIndexPath,
+                     previewProvider: isCompact ? previewProvider : nil,
+                     actionProvider: actionProvider)
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   willPerformPreviewActionForMenuWith configuration: UIContextMenuConfiguration,
+                   animator: UIContextMenuInteractionCommitAnimating) {
+        guard let indexPath = configuration.identifier as? IndexPath else { return }
+        let verb = favoritesService.groupedItems[indexPath.section][indexPath.row]
+        animator.addAnimations {
+            self.router?.goToDetail(with: verb)
+        }
     }
 }
 

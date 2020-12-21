@@ -57,8 +57,8 @@ final class TestPresenter: NSObject {
 private extension TestPresenter {
     
     func loadSettings() {
-        verbsService.shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .shouldRegularVerbsBeShown)
-        verbsService.shouldDerivedFormsBeShown = UserDefaults.shared.bool(for: .shouldDerivedFormsBeShown)
+        verbsService.shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .regularVerbsTests)
+        verbsService.shouldDerivativesBeShown = UserDefaults.shared.bool(for: .derivativesTests)
     }
     
     func setupSections() {

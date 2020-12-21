@@ -39,7 +39,8 @@ final class AudioService: NSObject {
             let utterance = AVSpeechUtterance(string: text)
             let playbackSpeed = PlaybackSpeed(UserDefaults.shared.integer(for: .playbackSpeed))
             utterance.rate = playbackSpeed.rawValue
-            utterance.voice = voiceService.voice(gender: Gender.current, region: Region.current)
+            let voiceID = UserDefaults.shared.string(for: .voice) ?? ""
+            utterance.voice = voiceService.voice(identifier: voiceID)
             synthesizer.speak(utterance)
         }
         

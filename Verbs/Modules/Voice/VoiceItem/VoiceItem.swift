@@ -9,13 +9,16 @@
 final class VoiceItem {
     
     let name: String
+    let voiceID: String
     let gender: Gender
     let region: Region
     
     init(name: String,
+         voiceID: String,
          gender: Gender,
          region: Region) {
         self.name = name
+        self.voiceID = voiceID
         self.gender = gender
         self.region = region
     }

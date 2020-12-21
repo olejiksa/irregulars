@@ -35,29 +35,22 @@ final class SettingsItemsFactory {
     
     func setupGeneralSection(languageBlock: @escaping ItemBlock,
                              accentColorBlock: @escaping ItemBlock,
-                             voiceBlock: @escaping ItemBlock,
-                             notificationsBlock: @escaping BoolBlock) -> Section {
+                             voiceBlock: @escaping ItemBlock) -> Section {
         let accentColor = AccentColor.current.rawValue.capitalized.localized
-        let voice = [Gender.current.description, Region.current.description].joined(separator: ", ")
+        let voiceID = UserDefaults.shared.string(for: .voice) ?? ""
+        let voiceName = VoiceService().voiceName(identifier: voiceID)
         
-        let items: [ItemProtocol] =
-            [RightDetailItem(title: "Language".localized,
-                             subtitle: languageService.current.description,
-                             actionBlock: languageBlock),
-             RightDetailItem(title: "Accent color".localized,
-                             subtitle: accentColor,
-                             actionBlock: accentColorBlock,
-                             hasDisclosureItem: true,
-                             isEnabled: FeatureToggle.isPaid),
-             RightDetailItem(title: "Voice".localized,
-                             subtitle: voice,
-                             actionBlock: voiceBlock,
-                             hasDisclosureItem: true,
-                             isEnabled: FeatureToggle.isPaid)].compactMap { $0 } // +
-//            [SwitchItem(text: "Notifications".localized,
-//                        isOn: UserDefaults.shared.bool(for: .notifications),
-//                        isEnabled: FeatureToggle.isPaid,
-//                        actionBlock: notificationsBlock)]
+        let items: [ItemProtocol] = [RightDetailItem(title: "Language".localized,
+                                                     subtitle: languageService.current.description,
+                                                     actionBlock: languageBlock),
+                                     RightDetailItem(title: "Accent color".localized,
+                                                     subtitle: accentColor,
+                                                     actionBlock: accentColorBlock,
+                                                     hasDisclosureItem: true),
+                                     RightDetailItem(title: "Voice".localized,
+                                                     subtitle: voiceName,
+                                                     actionBlock: voiceBlock,
+                                                     hasDisclosureItem: true)].compactMap { $0 }
         return .init(header: "General".localized, items: items)
     }
     
@@ -70,21 +63,6 @@ final class SettingsItemsFactory {
                                         index: index,
                                         playbackSpeedBlock: playbackSpeedBlock,
                                         isEnabled: FeatureToggle.isPaid)])
-    }
-    
-    func setupVocabularySections(regularVerbsBlock: @escaping BoolBlock,
-                                 derivativesBlock: @escaping BoolBlock) -> [Section] {
-        [.init(header: "Vocabulary".localized,
-               items: [SwitchItem(text: "Regular verbs (-ed)".localized,
-                                  isOn: UserDefaults.shared.bool(for: .shouldRegularVerbsBeShown),
-                                  isEnabled: FeatureToggle.isPaid,
-                                  actionBlock: regularVerbsBlock)],
-               footer: "RegularVerbsFooter".localized),
-         .init(items: [SwitchItem(text: "Derivatives".localized,
-                                  isOn: UserDefaults.shared.bool(for: .shouldDerivedFormsBeShown),
-                                  isEnabled: FeatureToggle.isPaid,
-                                  actionBlock: derivativesBlock)],
-               footer: "DerivativesFooter".localized)]
     }
     
     func setupLinksSection(rateBlock: @escaping ItemBlock,

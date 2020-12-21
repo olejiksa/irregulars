@@ -11,6 +11,7 @@ import UIKit
 final class AccentColorPresenter: NSObject {
     
     let dataSource = SelectableSectionDataSource()
+    var router: AccentColorRouter?
     weak var viewController: AccentColorViewController?
     
     private let appIconService: AppIconService
@@ -46,6 +47,13 @@ extension AccentColorPresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        guard dataSource.selectedIndexPath != indexPath else { return }
+        
+        guard FeatureToggle.isPaid else {
+            router?.goToPaywall()
+            return
+        }
+        
         guard indexPath.section == 0 else {
             appIconService.setIcon(for: AccentColor.current)
             return
@@ -59,7 +67,7 @@ extension AccentColorPresenter: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        guard indexPath.section == 0 else { return indexPath }
+        guard FeatureToggle.isPaid, indexPath.section == 0 else { return indexPath }
         
         if let oldIndex = dataSource.selectedIndexPath {
             tableView.cellForRow(at: oldIndex)?.accessoryType = .none

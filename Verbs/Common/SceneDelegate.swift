@@ -59,8 +59,10 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 private extension SceneDelegate {
     
     func registerSettings() {
-        UserDefaults.shared.register(true, for: .shouldRegularVerbsBeShown)
-        UserDefaults.shared.register(true, for: .shouldDerivedFormsBeShown)
+        UserDefaults.shared.register(true, for: .regularVerbs)
+        UserDefaults.shared.register(true, for: .regularVerbsTests)
+        UserDefaults.shared.register(true, for: .derivatives)
+        UserDefaults.shared.register(true, for: .derivativesTests)
         UserDefaults.shared.register(2, for: .playbackSpeed)
     }
 }

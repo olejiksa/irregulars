@@ -11,7 +11,9 @@ final class VoiceAssembly: AssemblyProtocol {
     func viewController() -> some VoiceViewController {
         let presenter = VoicePresenter(voiceService: .init())
         let viewConroller = VoiceViewController(presenter: presenter)
+        let router = VoiceRouter(viewController: viewConroller)
         presenter.viewController = viewConroller
+        presenter.router = router
         return viewConroller
     }
 }

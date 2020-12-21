@@ -14,8 +14,10 @@ extension UserDefaults {
     
     enum Key: String {
         case isPaid
-        case shouldRegularVerbsBeShown
-        case shouldDerivedFormsBeShown
+        case regularVerbs
+        case regularVerbsTests
+        case derivatives
+        case derivativesTests
         case shouldTranslationBeShown
         case favorites
         case favoritesOnly
