@@ -69,7 +69,7 @@ private extension VoiceViewController {
         tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         
-        tableView.register(VoiceCell.self)
+        tableView.register(PlainDetailCell.self, VoiceCell.self)
         
         self.tableView = tableView
     }

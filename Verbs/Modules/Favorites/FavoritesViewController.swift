@@ -55,6 +55,9 @@ final class FavoritesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationController?.navigationBar.sizeToFit()
         deselectWhenCompact()
         guard animated else { return }
         NotificationCenter.default.post(name: .infinitive,
@@ -116,8 +119,6 @@ private extension FavoritesViewController {
     
     func setupNavigationBar() {
         navigationItem.title = "Favorites".localized
-        navigationItem.hidesSearchBarWhenScrolling = false
-        navigationController?.navigationBar.prefersLargeTitles = true
         
         moreButton = LanguageService().hasTranslation ?
             .init(image: SystemIcon.ellipsis.image,
@@ -241,8 +242,7 @@ extension FavoritesViewController: Scrollable {
     
     func scrollToTop() {
         guard let tableView = tableView else { return }
-        let y = max(144, tableView.safeAreaInsets.top)
-        let yWithSearchBarHeight = y + searchController.searchBar.bounds.height
-        tableView.setContentOffset(.init(x: 0, y: -yWithSearchBarHeight), animated: true)
+        let y = min(-196, -tableView.safeAreaInsets.top)
+        tableView.setContentOffset(.init(x: 0, y: y), animated: true)
     }
 }

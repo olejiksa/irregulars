@@ -56,8 +56,8 @@ extension TestsViewController: Scrollable {
     
     func scrollToTop() {
         guard let tableView = tableView else { return }
-        let y = max(144, tableView.safeAreaInsets.top)
-        tableView.setContentOffset(.init(x: 0, y: -y), animated: true)
+        let y = min(-144, -tableView.safeAreaInsets.top)
+        tableView.setContentOffset(.init(x: 0, y: y), animated: true)
     }
 }
 

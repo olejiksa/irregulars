@@ -32,14 +32,15 @@ private extension VoicePresenter {
                     items: voiceService.voices(gender: gender)
                         .sorted { $0.name < $1.name }
                         .map { voice in
-                        let region = Region(rawValue: String(voice.language.suffix(2)))
-                        return VoiceItem(name: voice.name,
-                                         gender: gender,
-                                         region: region ?? .unitedKingdom) }
+                            let region = Region(rawValue: String(voice.language.suffix(2)))
+                            return VoiceItem(name: voice.name,
+                                             gender: gender,
+                                             region: region ?? .unitedStates) }
             )
         }
         
-        dataSource.setup(sections)
+        let hintSection = Section(items: [PlainDetailItem(text: "VoiceHint".localized, textStyle: .secondary)])
+        dataSource.setup(sections + [hintSection])
         
         let iterativeSections = sections.filter { !$0.items.isEmpty }
         
@@ -70,9 +71,9 @@ extension VoicePresenter: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        dataSource.selectedIndexPath = indexPath
         
         guard let item = dataSource.item(at: indexPath) as? VoiceItem else { return }
+        dataSource.selectedIndexPath = indexPath
         
         Gender.current = item.gender
         Region.current = item.region
@@ -81,6 +82,8 @@ extension VoicePresenter: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        guard dataSource.item(at: indexPath) is VoiceItem else { return nil }
+        
         if let oldIndex = dataSource.selectedIndexPath {
             tableView.cellForRow(at: oldIndex)?.accessoryType = .none
         }
