@@ -174,7 +174,7 @@ extension FavoritesPresenter: UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let removeAction = UIContextualAction(style: .destructive,
-                                              title: "Remove".localized) { [weak self] _, _, _ in
+                                              title: "remove".localized) { [weak self] _, _, _ in
             guard let self = self,
                   !self.isSearchActive,
                   let verb = self.favoritesService.groupedItems[safe: indexPath.section]?[indexPath.row]
@@ -216,7 +216,7 @@ extension FavoritesPresenter: UITableViewDelegate {
         let isFavorite = Locator.favorites.verbs.contains(verb)
         
         let actionProvider: UIContextMenuActionProvider = { _ in
-            let action = UIAction(title: "Remove".localized,
+            let action = UIAction(title: "remove".localized,
                                   image: SystemIcon.starSlash.image) { [weak self] _ in
                 self?.handleMenuAction(verb: verb, isFavorite: isFavorite)
             }

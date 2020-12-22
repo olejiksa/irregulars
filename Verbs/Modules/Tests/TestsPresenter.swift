@@ -28,30 +28,26 @@ final class TestsPresenter: NSObject {
         let translationItem = languageService.hasTranslation
             ? TestItem(icon: .globe,
                        title: Test.translation.title,
-                       subtitle: "TranslationSubtitle".localized,
+                       subtitle: "translation_subtitle".localized,
                        test: .translation)
             : nil
         
         let items = [translationItem,
                      TestItem(icon: .pencil,
                               title: Test.writing.title,
-                              subtitle: "WritingSubtitle".localized,
+                              subtitle: "writing_subtitle".localized,
                               test: .writing),
                      TestItem(icon: .sentences,
                               title: Test.sentences.title,
-                              subtitle: "SentenceSubtitle".localized,
+                              subtitle: "sentences_subtitle".localized,
                               test: .sentences),
                      TestItem(icon: .headphones,
                               title: Test.listening.title,
-                              subtitle: "ListeningSubtitle".localized,
+                              subtitle: "listening_subtitle".localized,
                               test: .listening),
-//                     TestItem(icon: .mic,
-//                              title: Test.speaking.title,
-//                              subtitle: "SpeakingSubtitle".localized,
-//                              test: .speaking),
                      TestItem(icon: .chart,
-                              title: "Statistics".localized,
-                              subtitle: "Track your progress in learning irregular verbs".localized,
+                              title: "statistics".localized,
+                              subtitle: "track_your_progress_in_learning_irregular_verbs".localized,
                               test: nil)
         ].compactMap { $0 }
         dataSource.setup([Section(items: items)])

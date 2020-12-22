@@ -48,7 +48,7 @@ extension VoiceViewController: Restorable {
 private extension VoiceViewController {
     
     func setupNavigationBar() {
-        navigationItem.title = "Voice".localized
+        navigationItem.title = "voice".localized
         navigationItem.largeTitleDisplayMode = .never
     }
     

@@ -48,7 +48,7 @@ private extension PaywallViewController {
     func setupNavigationBar() {
         guard let productName = Bundle.main.productName else { return }
             
-        navigationItem.title = "\(productName) Pro".localized
+        navigationItem.title = "\(productName) Pro"
         navigationItem.largeTitleDisplayMode = .never
         
         let closeButton = UIBarButtonItem(barButtonSystemItem: .close,
@@ -64,13 +64,13 @@ private extension PaywallViewController {
     }
     
     func setupView() {
-        buyButton.setTitle("Buy".localized, for: .normal)
+        buyButton.setTitle("buy_button".localized, for: .normal)
         buyButton.backgroundColor = AccentColor.current.color
         
-        restoreButton.setTitle("Restore purchases".localized, for: .normal)
+        restoreButton.setTitle("restore_purchases".localized, for: .normal)
         restoreButton.setTitleColor(AccentColor.current.color, for: .normal)
         
-        thanksLabel.text = "Thank you".localized
+        thanksLabel.text = "thank_you".localized
         thanksLabel.textColor = AccentColor.current.color
         
         thanksLabel.isHidden = !FeatureToggle.isPaid

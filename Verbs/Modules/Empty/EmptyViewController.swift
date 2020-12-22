@@ -12,7 +12,7 @@ final class EmptyViewController: UIViewController {
     
     private let noDataLabel: UILabel = {
         let label = UILabel()
-        label.text = "EmptyVerbs".localized
+        label.text = "empty_verbs".localized
         label.textAlignment = .center
         label.textColor = .secondaryLabel
         label.numberOfLines = 0
@@ -74,7 +74,7 @@ private extension EmptyViewController {
     
     @objc func didSidebarItemChange(_ notification: Notification) {
         let areVerbs = notification.userInfo?[Notification.Name.sidebar] as? Bool ?? false
-        noDataLabel.text = areVerbs ? "EmptyVerbs".localized : "EmptyTests".localized
+        noDataLabel.text = areVerbs ? "empty_verbs".localized : "empty_tests".localized
     }
 }
 

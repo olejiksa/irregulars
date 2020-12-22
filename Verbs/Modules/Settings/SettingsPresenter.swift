@@ -61,7 +61,7 @@ private extension SettingsPresenter {
     
     func didListViewChange(_ sender: ItemProtocol) {
         guard let item = sender as? PickableItem else { return }
-        let value = item.subtitle == "Translation".localized
+        let value = item.subtitle == "translation".localized
         UserDefaults.shared.set(value, for: .shouldTranslationBeShown)
         NotificationCenter.default.post(name: .list,
                                         object: nil,
@@ -139,15 +139,9 @@ extension SettingsPresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let item = dataSource.item(at: indexPath)
+        guard let actionableItem = dataSource.item(at: indexPath) as? Actionable,
+              let item = actionableItem as? ItemProtocol else { return }
         
-        if item is PickableItem,
-           let cell = tableView.cellForRow(at: indexPath),
-           !cell.isFirstResponder {
-            cell.becomeFirstResponder()
-        } else if let actionableItem = dataSource.item(at: indexPath) as? Actionable,
-                  let item = actionableItem as? ItemProtocol {
-            actionableItem.actionBlock?(item)
-        }
+        actionableItem.actionBlock?(item)
     }
 }

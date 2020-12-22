@@ -22,41 +22,41 @@ final class SettingsItemsFactory {
     func setupActivationSection(upgradeBlock: @escaping ItemBlock,
                                 resetBlock: @escaping ItemBlock) -> Section {
         let name = Bundle.main.productName ?? ""
-        let upgradeItem = !FeatureToggle.isPaid ? ActionItem(text: "Upgrade to Pro".localized,
+        let upgradeItem = !FeatureToggle.isPaid ? ActionItem(text: "upgrade_to_pro".localized,
                                                              style: .standard,
                                                              actionBlock: upgradeBlock) : nil
-        let downgradeText = "Downgrade to".localized(with: [name])
+        let downgradeText = "downgrade_to".localized(with: [name])
         let resetItem = FeatureToggle.isPaid && FeatureToggle.isDebug ? ActionItem(text: downgradeText,
                                                                                    style: .standard,
                                                                                    actionBlock: resetBlock) : nil
-        let header = FeatureToggle.isPaid ? "Deactivation".localized : "Activation".localized
+        let header = FeatureToggle.isPaid ? "deactivation".localized : "activation".localized
         return .init(header: header, items: [upgradeItem, resetItem].compactMap { $0 })
     }
     
     func setupGeneralSection(languageBlock: @escaping ItemBlock,
                              accentColorBlock: @escaping ItemBlock,
                              voiceBlock: @escaping ItemBlock) -> Section {
-        let accentColor = AccentColor.current.rawValue.capitalized.localized
+        let accentColor = AccentColor.current.rawValue.localized
         let voiceID = UserDefaults.shared.string(for: .voice) ?? ""
         let voiceName = VoiceService().voiceName(identifier: voiceID)
         
-        let items: [ItemProtocol] = [RightDetailItem(title: "Language".localized,
+        let items: [ItemProtocol] = [RightDetailItem(title: "language".localized,
                                                      subtitle: languageService.current.description,
                                                      actionBlock: languageBlock),
-                                     RightDetailItem(title: "Accent color".localized,
+                                     RightDetailItem(title: "accent_color".localized,
                                                      subtitle: accentColor,
                                                      actionBlock: accentColorBlock,
                                                      hasDisclosureItem: true),
-                                     RightDetailItem(title: "Voice".localized,
+                                     RightDetailItem(title: "voice".localized,
                                                      subtitle: voiceName,
                                                      actionBlock: voiceBlock,
                                                      hasDisclosureItem: true)].compactMap { $0 }
-        return .init(header: "General".localized, items: items)
+        return .init(header: "general".localized, items: items)
     }
     
     func setupPlaybackSpeedSection(playbackSpeedBlock: @escaping IntBlock) -> Section {
         let index = UserDefaults.shared.integer(for: .playbackSpeed)
-        return .init(header: "SpeakingRate".localized,
+        return .init(header: "speaking_rate".localized,
                      items: [SliderItem(leadingIcon: .tortoise,
                                         trailingIcon: .hare,
                                         steps: 5,
@@ -70,17 +70,17 @@ final class SettingsItemsFactory {
                            termsBlock: @escaping ItemBlock,
                            mailBlock: @escaping ItemBlock,
                            shareBlock: @escaping ItemBlock) -> Section {
-        .init(header: "Links".localized,
-              items: [DisclosureItem(text: "Rate and review".localized,
+        .init(header: "links".localized,
+              items: [DisclosureItem(text: "rate_and_review".localized,
                                      actionBlock: rateBlock),
-                      DisclosureItem(text: "Privacy policy".localized,
+                      DisclosureItem(text: "privacy_policy".localized,
                                      actionBlock: privacyBlock),
-                      DisclosureItem(text: "Terms of use".localized,
+                      DisclosureItem(text: "terms".localized,
                                      actionBlock: termsBlock),
-                      DisclosureItem(text: "Contact us".localized,
+                      DisclosureItem(text: "contact_us".localized,
                                      isEnabled: mailService.isMailAvailable,
                                      actionBlock: mailBlock),
-                      DisclosureItem(text: "Share app".localized,
+                      DisclosureItem(text: "share_app".localized,
                                        actionBlock: shareBlock)])
     }
     
@@ -89,15 +89,15 @@ final class SettingsItemsFactory {
         let name = Bundle.main.productName ?? ""
         let editionName = FeatureToggle.isPaid ? "\(name) Pro" : "\(name) Lite"
         
-        return .init(header: "About".localized,
-                     items: [RightDetailItem(title: "Developer".localized,
-                                             subtitle: "Oleg Samoylov".localized,
+        return .init(header: "about".localized,
+                     items: [RightDetailItem(title: "developer".localized,
+                                             subtitle: "oleg_samoylov".localized,
                                              isEnabled: false),
-                             RightDetailItem(title: "Edition".localized,
+                             RightDetailItem(title: "edition".localized,
                                              subtitle: editionName,
                                              actionBlock: upgradeBlock,
                                              hasDisclosureItem: false),
-                             RightDetailItem(title: "Version".localized,
+                             RightDetailItem(title: "version".localized,
                                              subtitle: version,
                                              isEnabled: false)])
     }

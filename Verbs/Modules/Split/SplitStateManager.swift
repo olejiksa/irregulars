@@ -48,7 +48,7 @@ final class SplitStateManager: UISplitViewControllerDelegate {
         switch secondaryViewController {
         case is SettingsViewController:
             let navigationController = UINavigationController(rootViewController: secondaryViewController)
-            navigationController.tabBarItem = .init(title: "Settings".localized,
+            navigationController.tabBarItem = .init(title: "settings".localized,
                                                     image: SystemIcon.gearFill.image,
                                                     tag: 3)
             svc.compactViewController?.viewControllers?[tabBarItem.rawValue] = navigationController

@@ -23,7 +23,7 @@ final class TestRouter {
     }
     
     func show(hint: String) {
-        let alertController = UIAlertController(title: "Hint".localized,
+        let alertController = UIAlertController(title: "hint".localized,
                                                 message: hint,
                                                 preferredStyle: .alert)
         alertController.addAction(.init(title: "OK", style: .default))

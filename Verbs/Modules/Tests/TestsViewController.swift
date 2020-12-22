@@ -73,7 +73,7 @@ extension TestsViewController: Scrollable {
 private extension TestsViewController {
     
     func setupNavigationBar() {
-        navigationItem.title = "Tests".localized
+        navigationItem.title = "tests".localized
         navigationController?.navigationBar.prefersLargeTitles = true
         
         moreButton = .init(image: SystemIcon.ellipsis.image,
@@ -131,28 +131,28 @@ private extension TestsViewController {
         
         let allMenu = isPaid && !favoritesOnly ?
             [UIMenu(options: .displayInline, children: [
-                UIAction(title: "RegularVerbs".localized,
+                UIAction(title: "regular_verbs".localized,
                          state: shouldRegularVerbsBeShown ? .on : .off,
                          handler: handleRegularsMenu)
             ]),
             UIMenu(options: .displayInline, children: [
-                UIAction(title: "Derivatives".localized,
+                UIAction(title: "derivatives".localized,
                          state: shouldDerivativesBeShown ? .on : .off,
                          handler: handleDerivativesMenu)
             ])] : []
         
         barButtonItem?.menu = .init(children: [
             UIMenu(options: .displayInline, children: [
-                UIAction(title: "Demo".localized,
+                UIAction(title: "demo".localized,
                          image: SystemIcon.twentyFive.image,
                          attributes: !isPaid ? [] : .hidden,
                          state: !isPaid ? .on : .off,
                          handler: handleMenu),
-                UIAction(title: "All".localized,
+                UIAction(title: "all".localized,
                          image: SystemIcon.listBullet.image,
                          state: isPaid && !favoritesOnly ? .on : .off,
                          handler: handleMenu),
-                UIAction(title: "Favorites".localized,
+                UIAction(title: "favorites".localized,
                          image: SystemIcon.star.image,
                          state: isPaid && favoritesOnly ? .on : .off,
                          handler: handleMenu)

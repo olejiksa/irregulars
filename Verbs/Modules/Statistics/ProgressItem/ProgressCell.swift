@@ -29,7 +29,7 @@ extension ProgressCell: CellProtocol {
     func setup(with item: ItemProtocol) {
         guard let item = item as? ProgressItem else { return }
         
-        let maximum = String(format: "Of".localized, item.maximum)
+        let maximum = String(format: "of".localized, item.maximum)
         captionLabel.text = "\(item.value) \(maximum)"
         progressView.progress = Float(item.value) / Float(item.maximum)
     }

@@ -5,8 +5,8 @@
 	<key>answeredCorrectlyCount</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
-		<string>%#@answeredCorrectlyCount@</string>
-		<key>answeredCorrectlyCount</key>
+		<string>%#@answered_correctly_count@</string>
+		<key>answered_correctly_count</key>
 		<dict>
 			<key>NSStringFormatSpecTypeKey</key>
 			<string>NSStringPluralRuleType</string>

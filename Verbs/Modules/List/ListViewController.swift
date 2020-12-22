@@ -97,9 +97,9 @@ private extension ListViewController {
     
     func setupNavigationBar() {
         if splitViewController?.isCollapsed == true {
-            navigationItem.title = "Verbs".localized
+            navigationItem.title = "verbs".localized
         } else {
-            navigationItem.title = "All".localized
+            navigationItem.title = "all".localized
         }
         
         moreButton = .init(image: SystemIcon.ellipsis.image,
@@ -151,10 +151,10 @@ private extension ListViewController {
         
         let viewMenu = LanguageService().hasTranslation ?
             UIMenu(options: .displayInline, children: [
-                UIAction(title: "ThreeForms".localized,
+                UIAction(title: "three_forms".localized,
                          state: !shouldTranslationBeShown ? .on : .off,
                          handler: handleViewMenu),
-                UIAction(title: "Translation".localized,
+                UIAction(title: "translation".localized,
                          state: shouldTranslationBeShown ? .on : .off,
                          handler: handleViewMenu)
             ]) : nil
@@ -162,12 +162,12 @@ private extension ListViewController {
         barButtonItem?.menu = .init(children: [
             viewMenu,
             UIMenu(options: .displayInline, children: [
-                UIAction(title: "RegularVerbs".localized,
+                UIAction(title: "regular_verbs".localized,
                          state: shouldRegularVerbsBeShown ? .on : .off,
                          handler: handleRegularsMenu)
             ]),
             UIMenu(options: .displayInline, children: [
-                UIAction(title: "Derivatives".localized,
+                UIAction(title: "derivatives".localized,
                          state: shouldDerivativesBeShown ? .on : .off,
                          handler: handleDerivativesMenu)
             ])

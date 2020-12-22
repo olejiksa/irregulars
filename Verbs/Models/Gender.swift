@@ -14,16 +14,7 @@ enum Gender: String, CaseIterable {
     case male
     case female
     
-    var description: String {
-        switch self {
-        case .default:
-            return "Default".localized
-        case .male:
-            return "Male".localized
-        case .female:
-            return "Female".localized
-        }
-    }
+    var description: String { rawValue.localized }
     
     var speechGender: AVSpeechSynthesisVoiceGender {
         switch self {

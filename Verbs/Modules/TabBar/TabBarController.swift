@@ -54,10 +54,10 @@ private extension TabBarController {
         let testsViewController = TestsAssembly(splitViewController: svc).viewController().navigationController
         let settingsViewController = SettingsAssembly().viewController().navigationController
         
-        compound(items: [(listViewController, "Verbs".localized, .bookFill),
-                         (favoritesViewController, "Favorites".localized, .starFill),
-                         (testsViewController, "Tests".localized, .puzzleFill),
-                         (settingsViewController, "Settings".localized, .gearFill)])
+        compound(items: [(listViewController, "verbs".localized, .bookFill),
+                         (favoritesViewController, "favorites".localized, .starFill),
+                         (testsViewController, "tests".localized, .puzzleFill),
+                         (settingsViewController, "settings".localized, .gearFill)])
     }
     
     func compound(items: [(controller: UIViewController?,

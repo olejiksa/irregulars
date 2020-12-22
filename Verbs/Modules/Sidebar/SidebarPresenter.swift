@@ -85,16 +85,16 @@ private extension SidebarPresenter {
     
     func verbsSnapshot() -> NSDiffableDataSourceSectionSnapshot<SidebarItem> {
         var snapshot = NSDiffableDataSourceSectionSnapshot<SidebarItem>()
-        let header = SidebarItem.header(title: "Verbs".localized)
+        let header = SidebarItem.header(title: "verbs".localized)
         
         let items: [SidebarItem] = [
-            .row(title: "All".localized,
+            .row(title: "all".localized,
                  image: SystemIcon.book.image,
                  id: RowIdentifier.all),
-            .row(title: "Favorites".localized,
+            .row(title: "favorites".localized,
                  image: SystemIcon.star.image,
                  id: RowIdentifier.favorites),
-            .row(title: "Tests".localized,
+            .row(title: "tests".localized,
                  subtitle: nil,
                  image: SystemIcon.puzzle.image,
                  id: RowIdentifier.tests)
@@ -108,10 +108,10 @@ private extension SidebarPresenter {
     
     func moreSnapshot() -> NSDiffableDataSourceSectionSnapshot<SidebarItem> {
         var snapshot = NSDiffableDataSourceSectionSnapshot<SidebarItem>()
-        let header = SidebarItem.header(title: "More".localized)
+        let header = SidebarItem.header(title: "more".localized)
         
         let items: [SidebarItem] = [
-            .row(title: "Settings".localized,
+            .row(title: "settings".localized,
                  image: SystemIcon.gear.image,
                  id: RowIdentifier.settings)
         ]

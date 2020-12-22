@@ -13,9 +13,9 @@ enum StatisticsKind {
     var resetText: String {
         switch self {
         case .learnedVerbs:
-            return "ResetStatisticsLearnedVerbs".localized
+            return "reset_statistics_learned_verbs".localized
         case .correctAnswers:
-            return "ResetStatisticsCorrectAnswer".localized
+            return "reset_statistics_correct_answers".localized
         }
     }
 }

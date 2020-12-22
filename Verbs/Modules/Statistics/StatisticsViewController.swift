@@ -53,7 +53,7 @@ final class StatisticsViewController: UIViewController {
 private extension StatisticsViewController {
     
     func setupNavigationBar() {
-        navigationItem.title = "Statistics".localized
+        navigationItem.title = "statistics".localized
         navigationItem.largeTitleDisplayMode = .never
     }
     

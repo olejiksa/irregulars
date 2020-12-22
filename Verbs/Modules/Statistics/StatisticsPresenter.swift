@@ -49,7 +49,7 @@ private extension StatisticsPresenter {
             answeredCorrectlyWriting +
             answeredCorrectlySentences +
             answeredCorrectlyListening
-        let answeredCorrectlyString = String(format: "answeredCorrectlyCount".localized,
+        let answeredCorrectlyString = String(format: "answered_correctly_count".localized,
                                              answeredCorrectlyTotal)
         
         let hasTranslation = languageService.hasTranslation ?
@@ -63,16 +63,16 @@ private extension StatisticsPresenter {
         let verbsCount = VerbsService().items.count
         
         dataSource.setup([setupActivationSection(upgradeBlock: willBuy),
-                          Section(header: "LearnedVerbs".localized,
+                          Section(header: "learned_verbs".localized,
                                   items: [ProgressItem(value: learnedCount, maximum: verbsCount)],
-                                  footer: "LearnedVerbsFooter".localized),
-                          Section(header: "In progress".localized,
+                                  footer: "learned_verbs_footer".localized),
+                          Section(header: "in_progress".localized,
                                   items: [ProgressItem(value: inProgressCount, maximum: verbsCount - learnedCount)]),
-                          Section(header: "Your efforts".localized,
+                          Section(header: "your_efforts".localized,
                                   items: [StatisticsHeaderItem(title: String(answeredCorrectlyTotal),
                                                                subtitle: answeredCorrectlyString)],
-                                  footer: "Using hints gives you no points".localized),
-                          Section(header: "Including".localized,
+                                  footer: "using_hints_gives_you_no_points".localized),
+                          Section(header: "including".localized,
                                   items: [hasTranslation,
                                           RightDetailItem(title: Test.writing.title,
                                                           subtitle: String(answeredCorrectlyWriting),
@@ -83,22 +83,22 @@ private extension StatisticsPresenter {
                                           RightDetailItem(title: Test.listening.title,
                                                           subtitle: String(answeredCorrectlyListening),
                                                           isEnabled: false)].compactMap { $0 }),
-                          Section(header: "Reset".localized,
-                                  items: [ActionItem(text: "Erase learned verbs".localized,
+                          Section(header: "reset".localized,
+                                  items: [ActionItem(text: "erase_learned_verbs".localized,
                                                      style: .destructive,
                                                      actionBlock: didResetTap),
-                                          ActionItem(text: "Erase correct answers".localized,
+                                          ActionItem(text: "erase_correct_answers".localized,
                                                      style: .destructive,
                                                      actionBlock: didResetTap)])])
     }
     
     func setupActivationSection(upgradeBlock: @escaping ItemBlock) -> Section {
-        let upgradeItem = !FeatureToggle.isPaid ? ActionItem(text: "Upgrade to Pro".localized,
+        let upgradeItem = !FeatureToggle.isPaid ? ActionItem(text: "upgrade_to_pro".localized,
                                                              style: .standard,
                                                              actionBlock: upgradeBlock) : nil
-        let footer = "ProSuggestionStatistics".localized(with: [DemoService().items.count,
-                                                                VerbsService().items.count])
-        return Section(header: "Activation".localized,
+        let footer = "pro_suggestion_statistics".localized(with: [DemoService().items.count,
+                                                                  VerbsService().items.count])
+        return Section(header: "activation".localized,
                        items: [upgradeItem].compactMap { $0 },
                        footer: footer)
     }
@@ -112,9 +112,9 @@ private extension StatisticsPresenter {
         
         let statisticsKind: StatisticsKind
         switch actionItem.text {
-        case "Erase learned verbs".localized:
+        case "erase_learned_verbs".localized:
             statisticsKind = .learnedVerbs
-        case "Erase correct answers".localized:
+        case "erase_correct_answers".localized:
             statisticsKind = .correctAnswers
         default:
             statisticsKind = .correctAnswers

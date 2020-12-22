@@ -17,11 +17,11 @@ final class StatisticsRouter {
     }
     
     func reset(statisticsKind: StatisticsKind, yesHandler: @escaping Block) {
-        let alertController = UIAlertController(title: "Attention".localized,
+        let alertController = UIAlertController(title: "attention".localized,
                                                 message: statisticsKind.resetText,
                                                 preferredStyle: .alert)
-        alertController.addAction(.init(title: "Cancel".localized, style: .cancel))
-        alertController.addAction(.init(title: "Yes".localized, style: .destructive, handler: { _ in
+        alertController.addAction(.init(title: "cancel".localized, style: .cancel))
+        alertController.addAction(.init(title: "yes".localized, style: .destructive, handler: { _ in
             yesHandler()
         }))
         viewController?.present(alertController, animated: true)

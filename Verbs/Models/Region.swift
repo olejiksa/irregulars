@@ -21,17 +21,17 @@ enum Region: String {
     var description: String {
         switch self {
         case .australia:
-            return "Australian".localized
+            return "australian".localized
         case .ireland:
-            return "Irish".localized
+            return "irish".localized
         case .india:
-            return "Indian".localized
+            return "indian".localized
         case .southAfrica:
-            return "South African".localized
+            return "south_african".localized
         case .unitedKingdom:
-            return "British".localized
+            return "british".localized
         case .unitedStates:
-            return "American".localized
+            return "american".localized
         }
     }
     

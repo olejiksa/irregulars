@@ -20,7 +20,7 @@ final class InputCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        textField.placeholder = "Enter here".localized
+        textField.placeholder = "enter_here".localized
         textField.delegate = self
         
         selectionStyle = .none

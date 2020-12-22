@@ -50,7 +50,7 @@ extension AccentColorCell: CellProtocol {
     func setup(with item: ItemProtocol) {
         guard let item = item as? AccentColorItem else { return }
         self.item = item
-        colorNameLabel?.text = item.color.rawValue.capitalized.localized
+        colorNameLabel?.text = item.color.rawValue.localized
         applyColor()
     }
 }

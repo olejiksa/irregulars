@@ -38,15 +38,15 @@ final class TestItemsFactory {
         
         switch testKind {
         case .twoForms:
-            return [Section(header: "InfinitiveValue".localized,
+            return [Section(header: "infinitive".localized,
                             items: [PlainDetailItem(text: verb.infinitive.value)]),
-                    Section(header: "SimplePastValue".localized,
+                    Section(header: "simple_past".localized,
                             items: [InputItem(words: simplePast,
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
                                               hintActionBlock: hint,
                                               tag: 0)].compactMap { $0 }),
-                    Section(header: "PastParticipleValue".localized,
+                    Section(header: "past_participle".localized,
                             items: [InputItem(words: pastParticiple,
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
@@ -60,9 +60,9 @@ final class TestItemsFactory {
                                             verbForms: [verb.infinitive.value.localized],
                                             actionBlock: answerActionBlock)
             
-            return [Section(header: "InfinitiveValue".localized,
+            return [Section(header: "infinitive".localized,
                             items: [PlainDetailItem(text: verb.infinitive.value)].compactMap { $0 }),
-                    Section(header: "Translation".localized,
+                    Section(header: "translation".localized,
                             items: items.compactMap { $0 })]
         case .retranslation:
             guard languageService.hasTranslation else { return [] }
@@ -71,28 +71,28 @@ final class TestItemsFactory {
                                             verbForms: [verb.infinitive.value],
                                             actionBlock: answerActionBlock)
             
-            return [Section(header: "Translation".localized,
+            return [Section(header: "translation".localized,
                             items: [PlainDetailItem(text: verb.infinitive.value.localized)].compactMap { $0 }),
-                    Section(header: "InfinitiveValue".localized,
+                    Section(header: "infinitive".localized,
                             items: items.compactMap { $0 })]
-        case .listening, .speaking:
-            return [Section(items: [PlainDetailItem(text: "Listen and write".localized,
+        case .listening:
+            return [Section(items: [PlainDetailItem(text: "listen_and_write".localized,
                                                     textStyle: .secondary)].compactMap { $0 }),
-                    Section(header: "InfinitiveValue".localized,
+                    Section(header: "infinitive".localized,
                             items: [InputItem(words: [verb.infinitive],
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
                                               hintActionBlock: hint,
                                               isAudio: true,
                                               tag: 0)].compactMap { $0 }),
-                    Section(header: "SimplePastValue".localized,
+                    Section(header: "simple_past".localized,
                             items: [InputItem(words: simplePast,
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
                                               hintActionBlock: hint,
                                               isAudio: true,
                                               tag: 1)].compactMap { $0 }),
-                    Section(header: "PastParticipleValue".localized,
+                    Section(header: "past_participle".localized,
                             items: [InputItem(words: pastParticiple,
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
@@ -107,9 +107,9 @@ final class TestItemsFactory {
             
             let replacedSentence = sentencesService.replaceSentence(randomSentenceString, using: verb)
             
-            return [Section(header: "Sentence".localized,
+            return [Section(header: "sentence".localized,
                             items: [PlainDetailItem(text: replacedSentence)]),
-                    Section(header: "Missed word".localized,
+                    Section(header: "missed_word".localized,
                             items: generateAnswerItems(count: 4,
                                                        verb: verb,
                                                        form: verbForms.0,

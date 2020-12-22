@@ -50,7 +50,7 @@ final class SettingsViewController: UIViewController {
 private extension SettingsViewController {
     
     func setupNavigationBar() {
-        navigationItem.title = "Settings".localized
+        navigationItem.title = "settings".localized
         navigationItem.largeTitleDisplayMode = .never
     }
     

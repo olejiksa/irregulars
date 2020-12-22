@@ -17,7 +17,7 @@ final class PaywallRouter {
     }
     
     func show(error: Error) {
-        let alertController = UIAlertController(title: "Error".localized,
+        let alertController = UIAlertController(title: "error".localized,
                                                 message: error.localizedDescription,
                                                 preferredStyle: .alert)
         alertController.addAction(.init(title: "OK", style: .default))

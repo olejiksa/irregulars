@@ -254,8 +254,8 @@ struct VerbsWidget: Widget {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color(UIColor.systemBackground))
         }
-        .configurationDisplayName("WidgetConfigurationDisplayTitle".localized)
-        .description("WidgetDescription".localized)
+        .configurationDisplayName("widget_configuration_display_title".localized)
+        .description("widget_description".localized)
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }

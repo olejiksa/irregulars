@@ -22,10 +22,9 @@ final class FavoritesViewController: UIViewController {
     private var editButton: UIBarButtonItem?
     private var doneButton: UIBarButtonItem?
     
-    
     private let noDataLabel: UILabel = {
         let label = UILabel()
-        label.text = "EmptyFavorites".localized
+        label.text = "empty_favorites".localized
         label.textAlignment = .center
         label.textColor = .secondaryLabel
         label.numberOfLines = 0
@@ -126,7 +125,7 @@ private extension FavoritesViewController {
     }
     
     func setupNavigationBar() {
-        navigationItem.title = "Favorites".localized
+        navigationItem.title = "favorites".localized
         
         moreButton = LanguageService().hasTranslation ?
             .init(image: SystemIcon.ellipsis.image,
@@ -200,10 +199,10 @@ private extension FavoritesViewController {
         let isTranslation = UserDefaults.shared.bool(for: .shouldTranslationBeShown)
         
         barButtonItem?.menu = .init(children: [
-            UIAction(title: "ThreeForms".localized,
+            UIAction(title: "three_forms".localized,
                      state: !isTranslation ? .on : .off,
                      handler: handleMenu),
-            UIAction(title: "Translation".localized,
+            UIAction(title: "translation".localized,
                      state: isTranslation ? .on : .off,
                      handler: handleMenu)
         ])

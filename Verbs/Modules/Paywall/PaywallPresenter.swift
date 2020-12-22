@@ -12,23 +12,23 @@ final class PaywallPresenter {
     
     init(languageService: LanguageService) {
         let item = languageService.hasTranslation
-            ? PaywallItem(text: "View a translation without going to the verb card".localized,
+            ? PaywallItem(text: "view_a_translation_without_going_to_the_verb_card".localized,
                           icon: .aBookFill)
             : nil
         
-        let items = [PaywallItem(text: "Unlock all verbs in tests".localized,
+        let items = [PaywallItem(text: "unlock_all_verbs_in_tests".localized,
                                  icon: .key),
-                     PaywallItem(text: "Listen to pronunciation".localized,
+                     PaywallItem(text: "listen_to_pronunciation".localized,
                                  icon: .speaker),
-                     PaywallItem(text: "View a transcription".localized,
+                     PaywallItem(text: "view_a_transcription".localized,
                                  icon: .transcription),
-                     PaywallItem(text: "Store unlimited items in Favorites".localized,
+                     PaywallItem(text: "store_unlimited_items_in_favorites".localized,
                                  icon: .listStar),
-                     PaywallItem(text: "Personalize the app: pick an accent color to your liking".localized,
+                     PaywallItem(text: "personalize".localized,
                                  icon: .paintpalette),
-                     PaywallItem(text: "Hide or show regular verbs (-ed)".localized,
+                     PaywallItem(text: "hide_or_show_regular_verbs".localized,
                                  icon: .eye),
-                     PaywallItem(text: "Hide or show derivatives".localized,
+                     PaywallItem(text: "hide_or_show_derivatives".localized,
                                  icon: .eye),
                      item]
         

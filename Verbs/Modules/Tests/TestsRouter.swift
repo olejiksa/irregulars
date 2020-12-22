@@ -58,8 +58,8 @@ final class TestsRouter {
 private extension TestsRouter {
     
     func showEmptyFavorites() {
-        let alertController = UIAlertController(title: "EmptyFavoritesTitle".localized,
-                                                message: "EmptyFavorites".localized,
+        let alertController = UIAlertController(title: "empty_favorites_title".localized,
+                                                message: "empty_favorites".localized,
                                                 preferredStyle: .alert)
         alertController.addAction(.init(title: "OK", style: .default))
         viewController?.present(alertController, animated: true)

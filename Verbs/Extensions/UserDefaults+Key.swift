@@ -30,7 +30,6 @@ extension UserDefaults {
         case reviewWorthyActionCount
         case lastReviewRequestAppVersion
         case statistics
-        case notifications
         case region
         case gender
         case voice

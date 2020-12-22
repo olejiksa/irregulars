@@ -14,14 +14,12 @@ enum Test {
         case retranslation
         case listening
         case sentences
-        case speaking
     }
     
     case translation
     case writing
     case sentences
     case listening
-    case speaking
     
     var kinds: [Kind] {
         switch self {
@@ -33,23 +31,19 @@ enum Test {
             return [.sentences]
         case .listening:
             return [.listening]
-        case .speaking:
-            return [.speaking]
         }
     }
     
     var title: String {
         switch self {
         case .translation:
-            return "Translation".localized
+            return "translation".localized
         case .writing:
-            return "Forms".localized
+            return "forms".localized
         case .sentences:
-            return "Sentences".localized
+            return "sentences".localized
         case .listening:
-            return "Listening".localized
-        case .speaking:
-            return "Speaking".localized
+            return "listening".localized
         }
     }
 }

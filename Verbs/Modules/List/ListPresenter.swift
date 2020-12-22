@@ -186,11 +186,11 @@ extension ListPresenter: UITableViewDelegate {
         
         let actionProvider: UIContextMenuActionProvider = { _ in
             let action = !isFavorite ?
-                UIAction(title: "AddToFavorites".localized,
+                UIAction(title: "add_to_favorites".localized,
                          image: SystemIcon.star.image) { [weak self] _ in
                     self?.handleMenuAction(verb: verb, isFavorite: isFavorite)
                 } :
-                UIAction(title: "RemoveFromFavorites".localized,
+                UIAction(title: "remove_from_favorites".localized,
                          image: SystemIcon.starSlash.image) { [weak self] _ in
                     self?.handleMenuAction(verb: verb, isFavorite: isFavorite)
                 }
