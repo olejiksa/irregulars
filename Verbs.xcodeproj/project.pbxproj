@@ -369,6 +369,8 @@
 		EB59F041258FF0F0004676D2 /* VoiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoiceCell.xib; sourceTree = "<group>"; };
 		EB59F07225910119004676D2 /* AccentColorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorRouter.swift; sourceTree = "<group>"; };
 		EB59F07A259102A5004676D2 /* VoiceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRouter.swift; sourceTree = "<group>"; };
+		EB59F0882591E78A004676D2 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		EB59F0892591E78B004676D2 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Intents.strings"; sourceTree = "<group>"; };
 		EB69A26825322AF900DD1827 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		EB69F8AE2569D7AA00759BAA /* TestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRouter.swift; sourceTree = "<group>"; };
 		EB69F8B42569DB6800759BAA /* TestsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsRouter.swift; sourceTree = "<group>"; };
@@ -1291,6 +1293,7 @@
 				en,
 				Base,
 				ru,
+				"en-GB",
 			);
 			mainGroup = EBEB1D69251F11900019972C;
 			packageReferences = (
@@ -1613,6 +1616,7 @@
 			children = (
 				EBB95BE7253326CE00376C3F /* en */,
 				EBB95BEB253326F300376C3F /* ru */,
+				EB59F0882591E78A004676D2 /* en-GB */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1640,6 +1644,7 @@
 				EBF59447258879770091FCE0 /* Base */,
 				EBF59457258883970091FCE0 /* en */,
 				EBF59459258883980091FCE0 /* ru */,
+				EB59F0892591E78B004676D2 /* en-GB */,
 			);
 			name = Intents.intentdefinition;
 			sourceTree = "<group>";

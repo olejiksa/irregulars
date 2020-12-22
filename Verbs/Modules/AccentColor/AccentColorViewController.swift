@@ -48,7 +48,7 @@ extension AccentColorViewController: Restorable {
 private extension AccentColorViewController {
     
     func setupNavigationBar() {
-        navigationItem.title = "Accent color".localized
+        navigationItem.title = "accent_color".localized
         navigationItem.largeTitleDisplayMode = .never
     }
     
