@@ -18,25 +18,16 @@ final class ExampleCell: UITableViewCell {
 private extension ExampleCell {
     
     func attributedString(_ sentence: String, using verb: Verb) -> NSAttributedString? {
-        if let range = contains([verb.infinitive], in: sentence) {
+        if let range = contains([verb.infinitive], in: sentence) ??
+            contains(verb.simplePast, in: sentence) ??
+            contains(verb.pastParticiple, in: sentence) {
             let attributedString = NSMutableAttributedString(string: sentence)
-            attributedString.addAttribute(.font,
-                                          value: UIFont.boldSystemFont(ofSize: UIFont.labelFontSize),
-                                          range: range)
-            return attributedString
-        } else if let range = contains(verb.simplePast, in: sentence) {
-            let attributedString = NSMutableAttributedString(string: sentence)
-            attributedString.addAttribute(.font,
-                                          value: UIFont.boldSystemFont(ofSize: UIFont.labelFontSize),
-                                          range: range)
-            return attributedString
-        } else if let range = contains(verb.pastParticiple, in: sentence) {
-            let attributedString = NSMutableAttributedString(string: sentence)
-            attributedString.addAttribute(.font,
-                                          value: UIFont.boldSystemFont(ofSize: UIFont.labelFontSize),
-                                          range: range)
+            let boldSystemFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
+            let scaledFont = UIFontMetrics.default.scaledFont(for: boldSystemFont)
+            attributedString.addAttribute(.font, value: scaledFont, range: range)
             return attributedString
         } else {
+            print(sentence)
             return nil
         }
     }

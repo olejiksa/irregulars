@@ -1,27 +1,27 @@
 [
     {
         "word": "abide",
-        "sentences": ["Everyone should abide by our social norms", "She abode at New York", "He has always abided by his promises"]
+        "sentences": ["Everyone should abide by our social norms", "Despite additional physical and geographical handicaps and resource constraints, it had faithfully abided by its commitments", "He has always abided by his promises"]
     },
     {
         "word": "alight",
-        "sentences": ["Do not alight while the train is still in motion ", "His mind alighted on several possible answers", "Also crossed two stations, nearby her two passengers alit"]
+        "sentences": ["Do not alight while the train is still in motion ", "The suspect alighted from the train at Euston and proceeded to Heathrow", "Also crossed two stations, nearby her two passengers alit"]
     },
     {
         "word": "arise",
-        "sentences": ["How did the quarrel arise?", "The topic arose naturally in the conversation", "A number of problems have arisen"]
+        "sentences": ["Accidents often arise from carelessness", "The speaker failed to put his ideas over clearly enough so that some misunderstanding arose", "A good deal of discord has arisen over the new construction project among the government officials"]
     },
     {
         "word": "awake",
-        "sentences": ["I lay awake all night", "The noise awoke me from my sleep", "She was awoken by the noise"]
+        "sentences": ["The hypnotic state actually lies somewhere between being awake and being asleep", "The noise awoke me from my sleep", "She was awoken by the noise"]
     },
     {
         "word": "backslide",
-        "sentences": ["Many of the patients backslide into drug and alcohol abuse", "So, Christians who have backslid away from God are really doing so because they want to", "Mr Jack was once active in the church, but he has backslidden"]
+        "sentences": ["Many of the patients backslide into drug and alcohol abuse", "So, Christians who have backslid away from God are really doing so because they want to", "Mr. Jack was once active in the church, but he has backslidden"]
     },
     {
         "word": "be",
-        "sentences": ["Love can neither be bought nor sold", "Rome was not built in a day", "He's been working hard all day"]
+        "sentences": ["Love can neither be bought nor sold", "Rome was not built in a day", "He has been working hard all day"]
     },
     {
         "word": "bear",
@@ -41,7 +41,7 @@
     },
     {
         "word": "beget",
-        "sentences": ["One trade barrier can beget another", "He begot three children", "In due course she bore the son begotten on her by Thyestes"]
+        "sentences": ["Dragons beget dragons, phoenixes beget phoenixes", "He begot three children", "In due course she bore the son begotten on her by Thyestes"]
     },
     {
         "word": "begin",
@@ -69,7 +69,7 @@
     },
     {
         "word": "bid",
-        "sentences": ["Do as I bid you", "We bade him farewell", "I was bidden to enter"]
+        "sentences": ["She knew she couldn't afford it, so she didn't bid", "She bade her friends goodbye, and again started along the road of yellow brick", "Mrs Atkins had just bidden them good night and gone across to her rooms"]
     },
     {
         "word": "bind",
@@ -81,11 +81,11 @@
     },
     {
         "word": "bleed",
-        "sentences": ["Doctors used to bleed people when they were ill", "Tragically, she bled to death ", "So he bit his lip until it bled"]
+        "sentences": ["Doctors used to bleed people when they were ill", "He quickly bled to death from the injury", "He bled to death after being stabbed repeatedly"]
     },
     {
         "word": "bless",
-        "sentences": ["Bless the name of the Lord!", "I am blest if I know", "How blest were I if thou wouldn't prove me"]
+        "sentences": ["Bless the name of the Lord!", "If China had democratized it, the Beijing Olympics was blest in the world", "How blest were I if thou wouldn't prove me"]
     },
     {
         "word": "blow",
@@ -117,7 +117,7 @@
     },
     {
         "word": "burn",
-        "sentences": ["Green wood does not burn well", "Her hair was burnt off", "I'm afraid I've burnt the pizza"]
+        "sentences": ["Green wood does not burn well", "Her hair was burnt off", " I'm afraid I've burnt the pizza"]
     },
     {
         "word": "burst",
@@ -173,7 +173,7 @@
     },
     {
         "word": "cost",
-        "sentences": ["It must cost a good deal to live here", "It will cost you 1000 yuan at most", "It'll cost you to have your roof mended"]
+        "sentences": ["It must cost a good deal to live here", "It will cost you ¥1000 at most", "It'll cost you to have your roof mended"]
     },
     {
         "word": "creep",
@@ -325,7 +325,7 @@
     },
     {
         "word": "grind",
-        "sentences": ["The rice will grind down into flour", "I always ground my arguments on facts", "The flour was ground from barley"]
+        "sentences": ["The rice will grind down into flour", " I always ground my arguments on facts", "The flour was ground from barley"]
     },
     {
         "word": "grip",
@@ -341,7 +341,7 @@
     },
     {
         "word": "hang",
-        "sentences": ["Hang off the rope, let's start our boat", "I hung my coat on a hook", "She hung up on me"]
+        "sentences": ["Hang off the rope, let's start our boat", " I hung my coat on a hook", "She hung up on me"]
     },
     {
         "word": "have",
@@ -385,7 +385,7 @@
     },
     {
         "word": "interweave",
-        "sentences": ["How about if you only interweave a quarter?", "I'll let the voice interweave with the story of the Chinese parasols", "Your destiny is interwoven with mine"]
+        "sentences": ["How about if you only interweave a quarter?", " I'll let the voice interweave with the story of the Chinese parasols", "Your destiny is interwoven with mine"]
     },
     {
         "word": "keep",
@@ -477,15 +477,15 @@
     },
     {
         "word": "misdo",
-        "sentences": ["I misdo my homework", "He misdid with you", "They misdone law"]
+        "sentences": ["I misdo my homework", "He misdid with your work", "They misdone law"]
     },
     {
         "word": "misgive",
-        "sentences": ["My mind misgives me", "Her mind misgave her about her friend", "Sometimes all of our thoughts are misgiven"]
+        "sentences": ["At present the operation state of giant is healthy, the outside need not misgive", "Her mind misgave her about her friend", "Sometimes all of our thoughts are misgiven"]
     },
     {
         "word": "mishear",
-        "sentences": ["You misheard me, Frank", "I misheard the word \"sick\" as \"thick\", I never said that! You must have misheard me"]
+        "sentences": ["You misheard me, Frank", "I misheard the word \"sick\" as \"thick\"", "I never said that! You must have misheard me"]
     },
     {
         "word": "mishit",
@@ -513,7 +513,7 @@
     },
     {
         "word": "mistake",
-        "sentences": ["I think, I was mistake", "I'm sorry, he had mistook", "I think you're mistaken business with pleasure"]
+        "sentences": ["You was mistake at the outset", "However, he mistook certain war-time conditions in the main belligerent states as being irreversible changes", "I think you're mistaken business with pleasure"]
     },
     {
         "word": "misunderstand",
@@ -525,7 +525,7 @@
     },
     {
         "word": "must",
-        "sentences": ["He that will thrive must rise at five"]
+        "sentences": ["They must come and have lunch with us someday"]
     },
     {
         "word": "offset",
@@ -577,7 +577,7 @@
     },
     {
         "word": "overdraw",
-        "sentences": ["What if I overdraw?", "I overdrew my account by £20", "His current account was seriously overdrawn"]
+        "sentences": ["I am avoided breath overdraw consumed ¥60000, did not remand in time", "I overdrew my account by £20", "His current account was seriously overdrawn"]
     },
     {
         "word": "overeat",
@@ -593,7 +593,7 @@
     },
     {
         "word": "overhear",
-        "sentences": ["Pay attention to overhear our talk!", "I overheard some cruel remarks about my husband", "I just overheard it"]
+        "sentences": ["Pay attention to overhear our talk!", "I overheard some cruel remarks about my husband", "We talked quietly so as not to be overheard"]
     },
     {
         "word": "overlay",
@@ -605,7 +605,7 @@
     },
     {
         "word": "override",
-        "sentences": ["Considerations of safety override all other concerns", "As a matter of fact his remarks overrode your motion", "BuildXSD is the abstract method that must be overriden in each concrete descendent"]
+        "sentences": ["Considerations of safety override all other concerns", "As a matter of fact his remarks overrode your motion", "BuildXSD is the abstract method that must be overridden in each concrete descendent"]
     },
     {
         "word": "overrun",
@@ -641,7 +641,7 @@
     },
     {
         "word": "pen",
-        "sentences": ["He needs an outlet for his pent - up anger", "Her pent - up anger was released in a torrent of words"]
+        "sentences": ["He needs an outlet for his pent-up anger", "Her pent-up anger was released in a torrent of words"]
     },
     {
         "word": "plead",
@@ -665,7 +665,7 @@
     },
     {
         "word": "quit",
-        "sentences": ["Winners never quit, quitters never win", "No, thanks I quit smoking", "You really ought to quit smoking"]
+        "sentences": ["Winners never quit, quitters never win", "No, thanks. I quit smoking", "You really ought to quit smoking"]
     },
     {
         "word": "read",
@@ -689,7 +689,7 @@
     },
     {
         "word": "ring",
-        "sentences": ["They ring out at 5 pm every day", "The bells rang a joyous peal", "She'd rung up to discuss the divorce"]
+        "sentences": ["They ring out at 5 p.m. every day", "The bells rang a joyous peal", "She'd rung up to discuss the divorce"]
     },
     {
         "word": "rise",
@@ -713,7 +713,7 @@
     },
     {
         "word": "see",
-        "sentences": ["We see not what is in the wallet behind", "Where they saw chance, we see law", "The moon is not seen where the sun shines"]
+        "sentences": ["We see not what is in the wallet behind", " Where they saw chance, we see law", "The moon is not seen where the sun shines"]
     },
     {
         "word": "seek",
@@ -721,7 +721,7 @@
     },
     {
         "word": "sell",
-        "sentences": ["You cannot sell the cow and sup the milk", "I sold my car to James for ￡800", "The milk is sold in grades"]
+        "sentences": ["You cannot sell the cow and sup the milk", "I sold my car to James for £800", "The milk is sold in grades"]
     },
     {
         "word": "send",
@@ -853,7 +853,7 @@
     },
     {
         "word": "spill",
-        "sentences": ["Don't pour too much: it might spill over", "Is is no use crying over spilt milk", "I spilt coffee on my silk shirts"]
+        "sentences": ["Don't pour too much;it might spill over", "Is is no use crying over spilt milk", "I spilt coffee on my silk shirt.s"]
     },
     {
         "word": "spin",
@@ -861,11 +861,11 @@
     },
     {
         "word": "spit",
-        "sentences": ["Sam is the dead spit of his dad", "Come on Jean, spit it out!", "Roast the lamb on a spit"]
+        "sentences": ["Sam is the dead spit of his dad", "Come on Jean, spit it out!", "If you must spit at all, please spit in the bucket provided"]
     },
     {
         "word": "split",
-        "sentences": ["The companies split the profits fifty-fifty", "Only a skilled workman can split slate into layers", "Sew the split seams of the shirt"]
+        "sentences": ["The companies split the profits fifty-fifty", "Only a skilled workman can split slate into layers", "Let's split the cost right down the middle"]
     },
     {
         "word": "spoil",
@@ -905,7 +905,7 @@
     },
     {
         "word": "stride",
-        "sentences": ["The fence is so low that even a ten - year - old boy can stride it", "He strode angrily into the classroom", "If I dare to imagining, the I had stridden the first step"]
+        "sentences": ["The fence is so low that even a ten-year-old boy can stride it", "He strode angrily into the classroom", "If I dare to imagining, the I had stridden the first step"]
     },
     {
         "word": "strike",
@@ -929,7 +929,7 @@
     },
     {
         "word": "sweat",
-        "sentences": ["Don't sweat the small stuff", "I always sweat at night", "Sweat dribbled down Hart's face"]
+        "sentences": ["Don't sweat the small stuff", "I always sweat at night", "The glasses of my car began to sweat when I drove out of Dublin"]
     },
     {
         "word": "sweep",
@@ -937,7 +937,7 @@
     },
     {
         "word": "swell",
-        "sentences": ["The breasts swell during pregnancy", "The rain swelled the rivers", "He gently rubbed his swollen nose"]
+        "sentences": ["Bacteria can cause gums to swell and bleed", "The rain swelled the rivers", "He gently rubbed his swollen nose"]
     },
     {
         "word": "swim",
@@ -949,7 +949,7 @@
     },
     {
         "word": "take",
-        "sentences": ["Take the world as it is", "Would you mind if I took you out?", "A maid that laughs is half taken"]
+        "sentences": ["In a great river great fish are found; but take heed lest you be drowned", "Would you mind if I took you out?", "A maid that laughs is half taken"]
     },
     {
         "word": "teach",
@@ -985,7 +985,7 @@
     },
     {
         "word": "typeset",
-        "sentences": ["Pages can now be typeset on-screen", "Typeset and saving material", "My book will be typeset nicely"]
+        "sentences": ["Pages can now be typeset on-screen", "An overloaded function or method will have several signatures that will generally be typeset together", "My book will be typeset nicely"]
     },
     {
         "word": "undergo",
@@ -1001,7 +1001,7 @@
     },
     {
         "word": "upset",
-        "sentences": ["Don't upset the apple-cart", "I upset the soup all over the table", "A large wave upset the boat"]
+        "sentences": ["My best friend tells me that I am silly to be upset about this", "I upset the soup all over the table", "A large wave upset the boat"]
     },
     {
         "word": "vex",
@@ -1053,7 +1053,7 @@
     },
     {
         "word": "withdraw",
-        "sentences": ["I need to withdraw", "She hastily withdrew her hand from his", "She became withdrawn and pensive, hardly speaking to anyone"]
+        "sentences": ["They threatened to withdraw their support from the government", "She hastily withdrew her hand from his", "She became withdrawn and pensive, hardly speaking to anyone"]
     },
     {
         "word": "withhold",

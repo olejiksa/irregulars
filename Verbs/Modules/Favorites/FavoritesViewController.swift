@@ -24,6 +24,8 @@ final class FavoritesViewController: UIViewController {
     
     private let noDataLabel: UILabel = {
         let label = UILabel()
+        label.adjustsFontForContentSizeCategory = true
+        label.font = .preferredFont(forTextStyle: .body)
         label.text = "empty_favorites".localized
         label.textAlignment = .center
         label.textColor = .secondaryLabel

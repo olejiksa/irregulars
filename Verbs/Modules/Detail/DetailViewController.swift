@@ -97,6 +97,9 @@ private extension DetailViewController {
         tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100
+        
         tableView.register(DetailCell.self, TranslationCell.self, ExampleCell.self)
         
         self.tableView = tableView

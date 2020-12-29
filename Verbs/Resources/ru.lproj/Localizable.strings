@@ -78,7 +78,7 @@
 "missed_word" = "Пропущенное слово";
 "infinitive" = "Неопределенная форма глагола";
 "simple_past" = "Простое прошедшее";
-"past_participle_value" = "Причастие прошедшего времени";
+"past_participle" = "Причастие прошедшего времени";
 "listen_and_write" = "Прослушайте и напишите ниже";
 "speaking_rate" = "Скорость речи";
 "empty_favorites_title" = "Нет «Избранного»";

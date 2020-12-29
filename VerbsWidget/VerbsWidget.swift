@@ -109,9 +109,9 @@ struct VerbsWidgetEntryView: View {
             Text(verbatim: verb.infinitive.value)
                 .bold()
                 .lineLimit(1)
-            Text("Simple Past")
-                .font(.caption)
             if let simplePast = verb.simplePast?.first {
+                Text("Simple Past")
+                    .font(.caption)
                 Text(verbatim: simplePast.value)
                     .bold()
                     .truncationMode(.head)
