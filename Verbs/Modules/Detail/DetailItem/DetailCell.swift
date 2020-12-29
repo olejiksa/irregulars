@@ -20,6 +20,7 @@ final class DetailCell: UITableViewCell {
         super.awakeFromNib()
         
         selectionStyle = .none
+        transcriptionLabel?.accessibilityElementsHidden = true
         playButton.addTarget(self, action: #selector(playButtonDidTap), for: .touchUpInside)
     }
 }

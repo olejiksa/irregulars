@@ -47,7 +47,10 @@ extension SliderCell: CellProtocol {
         self.item = item
         
         leadingIconView.image = item.leadingIcon.image
+        leadingIconView.accessibilityLabel = item.leadingAccessibilityText
+        
         trailingIconView.image = item.trailingIcon.image
+        trailingIconView.accessibilityLabel = item.trailingAccessibilityText
         
         slider.maximumValue = Float(item.steps - 1)
         slider.minimumValue = 0

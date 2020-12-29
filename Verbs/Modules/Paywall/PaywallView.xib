@@ -63,7 +63,7 @@
                                 <action selector="didRestoreTap" destination="-1" eventType="touchUpInside" id="BZ4-mT-vGi"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you, you're great!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGs-Ye-7HQ">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you, you're great!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGs-Ye-7HQ">
                             <rect key="frame" x="0.0" y="0.0" width="335" height="54"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="54" id="KPv-9l-xD0"/>

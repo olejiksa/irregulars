@@ -58,7 +58,9 @@ final class SettingsItemsFactory {
         let index = UserDefaults.shared.integer(for: .playbackSpeed)
         return .init(header: "speaking_rate".localized,
                      items: [SliderItem(leadingIcon: .tortoise,
+                                        leadingAccessibilityText: "slower".localized,
                                         trailingIcon: .hare,
+                                        trailingAccessibilityText: "faster".localized,
                                         steps: 5,
                                         index: index,
                                         playbackSpeedBlock: playbackSpeedBlock,

@@ -66,9 +66,15 @@ private extension PaywallViewController {
     func setupView() {
         buyButton.setTitle("buy_button".localized, for: .normal)
         buyButton.backgroundColor = AccentColor.current.color
+        buyButton.titleLabel?.numberOfLines = 1
+        buyButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        buyButton.titleLabel?.lineBreakMode = .byClipping
         
         restoreButton.setTitle("restore_purchases".localized, for: .normal)
         restoreButton.setTitleColor(AccentColor.current.color, for: .normal)
+        restoreButton.titleLabel?.numberOfLines = 1
+        restoreButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        restoreButton.titleLabel?.lineBreakMode = .byClipping
         
         thanksLabel.text = "thank_you".localized
         thanksLabel.textColor = AccentColor.current.color

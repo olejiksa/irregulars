@@ -113,6 +113,8 @@
 "female" = "Female";
 "untitled" = "Untitled";
 "default" = "Default";
+"slower" = "Slower";
+"faster" = "Faster";
 "voice_hint" = "To use a better version of a voice, add a new one, or remove a previously added one, go to Settings → Accessibility → VoiceOver → Speech → Voice";
 
 // Irregular Verbs

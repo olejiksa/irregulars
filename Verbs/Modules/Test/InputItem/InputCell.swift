@@ -23,6 +23,8 @@ final class InputCell: UITableViewCell {
         textField.placeholder = "enter_here".localized
         textField.delegate = self
         
+        hintButton.accessibilityLabel = "hint".localized
+        
         selectionStyle = .none
     }
     
