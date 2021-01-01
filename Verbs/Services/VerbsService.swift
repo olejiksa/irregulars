@@ -11,6 +11,7 @@ import Foundation
 final class VerbsService: VerbsServiceProtocol {
     
     private let parser = JSONParser<Verb>()
+    private let spotlightService = SpotlightService()
     
     var searchText = ""
     
@@ -89,6 +90,7 @@ private extension VerbsService {
         }
         
         items = Array(set).sorted(by: <)
+        spotlightService.setupSpotlight(with: items)
     }
     
     func setGroupedItems() {

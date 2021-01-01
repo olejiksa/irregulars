@@ -101,6 +101,8 @@
 		EB59F043258FF0F0004676D2 /* VoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB59F041258FF0F0004676D2 /* VoiceCell.xib */; };
 		EB59F07325910119004676D2 /* AccentColorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59F07225910119004676D2 /* AccentColorRouter.swift */; };
 		EB59F07B259102A5004676D2 /* VoiceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59F07A259102A5004676D2 /* VoiceRouter.swift */; };
+		EB5D6DF9259ECD2400CCCA85 /* SpotlightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5D6DF8259ECD2400CCCA85 /* SpotlightService.swift */; };
+		EB5D6E00259ED3A600CCCA85 /* SpotlightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5D6DF8259ECD2400CCCA85 /* SpotlightService.swift */; };
 		EB69A26925322AFA00DD1827 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB69A26825322AF900DD1827 /* Notification.swift */; };
 		EB69F8AF2569D7AA00759BAA /* TestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB69F8AE2569D7AA00759BAA /* TestRouter.swift */; };
 		EB69F8B52569DB6800759BAA /* TestsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB69F8B42569DB6800759BAA /* TestsRouter.swift */; };
@@ -377,6 +379,7 @@
 		EB59F07A259102A5004676D2 /* VoiceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRouter.swift; sourceTree = "<group>"; };
 		EB59F0882591E78A004676D2 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		EB59F0892591E78B004676D2 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Intents.strings"; sourceTree = "<group>"; };
+		EB5D6DF8259ECD2400CCCA85 /* SpotlightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightService.swift; sourceTree = "<group>"; };
 		EB69A26825322AF900DD1827 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		EB69F8AE2569D7AA00759BAA /* TestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRouter.swift; sourceTree = "<group>"; };
 		EB69F8B42569DB6800759BAA /* TestsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsRouter.swift; sourceTree = "<group>"; };
@@ -967,6 +970,7 @@
 				EBF97C8D256235AF009FFFBA /* PurchaseService.swift */,
 				EB26996B256CFAC7007CCF2E /* RateService.swift */,
 				EBD2C502257FDA4A0023AED4 /* SentencesService.swift */,
+				EB5D6DF8259ECD2400CCCA85 /* SpotlightService.swift */,
 				EBEB1D91251F15B40019972C /* VerbsService.swift */,
 				EB59F026258FE7F2004676D2 /* VoiceService.swift */,
 			);
@@ -1418,6 +1422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB5D6E00259ED3A600CCCA85 /* SpotlightService.swift in Sources */,
 				EB7DFF69252451D2000B711D /* VerbsWidget.swift in Sources */,
 				EB4509D12541703700D31858 /* Language.swift in Sources */,
 				EB409E4A259B8DA200E3B690 /* Localizable.swift in Sources */,
@@ -1497,6 +1502,7 @@
 				EBF5935C2583AD580091FCE0 /* TestItemsFactory.swift in Sources */,
 				EB450982253B65E800D31858 /* DetailPresenter.swift in Sources */,
 				EB450A3A254B19CB00D31858 /* PlainItem.swift in Sources */,
+				EB5D6DF9259ECD2400CCCA85 /* SpotlightService.swift in Sources */,
 				EBB95BFE25335C3E00376C3F /* LanguageService.swift in Sources */,
 				EB269962256CF0EF007CCF2E /* PlainDetailItem.swift in Sources */,
 				EB3217C3258BE4B300023F0B /* ProgressCell.swift in Sources */,

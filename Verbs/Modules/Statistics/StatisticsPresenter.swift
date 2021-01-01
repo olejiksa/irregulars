@@ -54,8 +54,7 @@ private extension StatisticsPresenter {
         
         let hasTranslation = languageService.hasTranslation ?
             RightDetailItem(title: Test.translation.title,
-                            subtitle: String(answeredCorrectlyTranslation),
-                            isEnabled: false) :
+                            subtitle: String(answeredCorrectlyTranslation)) :
             nil
         
         let learnedCount = Locator.statistics.info.filter { $0.value >= 3 }.count

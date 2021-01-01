@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreSpotlight
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -51,6 +52,14 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         else { return }
         
         deeplinkService.handle(host, in: splitViewController)
+    }
+    
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        guard userActivity.activityType == CSSearchableItemActionType,
+              let identifier = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String else { return }
+        
+        let infinitive = identifier.split(separator: ".").last ?? ""
+        deeplinkService.handle(String(infinitive), in: splitViewController)
     }
 }
 
