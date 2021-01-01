@@ -21,10 +21,10 @@ extension RightDetailCell: CellProtocol {
         
         textLabel?.text = item.title
         detailTextLabel?.text = item.subtitle
-        accessoryType = item.hasDisclosureItem ? .disclosureIndicator : .none
+        accessoryType = item.hasDisclosureIndicator ? .disclosureIndicator : .none
         
-        isUserInteractionEnabled = item.isEnabled
-        textLabel?.isEnabled = item.isEnabled || !item.hasDisclosureItem
-        detailTextLabel?.isEnabled = item.isEnabled || !item.hasDisclosureItem
+        isUserInteractionEnabled = item.isEnabled && item.actionBlock != nil
+        textLabel?.isEnabled = item.isEnabled
+        detailTextLabel?.isEnabled = item.isEnabled
     }
 }

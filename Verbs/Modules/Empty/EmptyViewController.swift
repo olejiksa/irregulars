@@ -14,7 +14,7 @@ final class EmptyViewController: UIViewController {
         let label = UILabel()
         label.adjustsFontForContentSizeCategory = true
         label.font = .preferredFont(forTextStyle: .body)
-        label.text = "empty_verbs".localized
+        label.text = .localized(.emptyVerbs)
         label.textAlignment = .center
         label.textColor = .secondaryLabel
         label.numberOfLines = 0

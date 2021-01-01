@@ -1,11 +1,3 @@
-/* 
-  Localizable.strings
-  Verbs
-
-  Created by Oleg Samoylov on 11.10.2020.
-  Copyright © 2020 Oleg Samoylov. All rights reserved.
-*/
-
 "including" = "Including";
 "downgrade_to" = "Downgrade to %@ Lite";
 "thank_you" = "Thank you for being with us!";
@@ -116,8 +108,7 @@
 "slower" = "Slower";
 "faster" = "Faster";
 "voice_hint" = "To use a better version of a voice, add a new one, or remove a previously added one, go to Settings → Accessibility → VoiceOver → Speech → Voice";
-
-// Irregular Verbs
+"print" = "Print";
 
 "abide" = "abide";
 "alight" = "alight";
@@ -351,8 +342,6 @@
 "shred" = "shred";
 "smite" = "smite";
 
-// Mis
-
 "miscast" = "miscast";
 "misdeal" = "misdeal";
 "misdo" = "misdo";
@@ -367,8 +356,6 @@
 "mistake" = "mistake";
 "misunderstand" = "misunderstand";
 
-// Out
-
 "outbid" = "outbid";
 "outdo" = "outdo";
 "outfight" = "outfight";
@@ -377,8 +364,6 @@
 "outrun" = "outrun";
 "outsell" = "outsell";
 "outshine" = "outshine";
-
-// Over
 
 "overbid" = "overbid";
 "overdo" = "overdo";

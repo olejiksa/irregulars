@@ -78,7 +78,7 @@ extension PickableCell: CellProtocol {
         
         textLabel?.text = item.title
         detailTextLabel?.text = item.subtitle
-        accessoryType = item.hasDisclosureItem ? .disclosureIndicator : .none
+        accessoryType = item.hasDisclosureIndicator ? .disclosureIndicator : .none
         
         let index = item.options.firstIndex { $0 == selectedValue } ?? 0
         picker.selectRow(index, inComponent: 0, animated: true)

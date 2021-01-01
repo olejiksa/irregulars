@@ -131,19 +131,19 @@ private extension TestsViewController {
         
         let allMenu = isPaid && !favoritesOnly ?
             [UIMenu(options: .displayInline, children: [
-                UIAction(title: "regular_verbs".localized,
+                UIAction(title: .localized(.regularVerbs),
                          state: shouldRegularVerbsBeShown ? .on : .off,
                          handler: handleRegularsMenu)
             ]),
             UIMenu(options: .displayInline, children: [
-                UIAction(title: "derivatives".localized,
+                UIAction(title: .localized(.derivatives),
                          state: shouldDerivativesBeShown ? .on : .off,
                          handler: handleDerivativesMenu)
             ])] : []
         
         barButtonItem?.menu = .init(children: [
             UIMenu(options: .displayInline, children: [
-                UIAction(title: "demo".localized,
+                UIAction(title: .localized(.demo),
                          image: SystemIcon.twentyFive.image,
                          attributes: !isPaid ? [] : .hidden,
                          state: !isPaid ? .on : .off,

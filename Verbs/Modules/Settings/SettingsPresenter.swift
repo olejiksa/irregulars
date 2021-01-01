@@ -15,6 +15,7 @@ final class SettingsPresenter: NSObject {
     weak var viewController: SettingsViewController?
     
     private let productURL = URL(string: "https://apps.apple.com/app/id1540487254")
+    private let developerURL = URL(string: "itms-apps://apps.apple.com/developer/id1460125465")
     private let languageService: LanguageService
     private let mailService: MailService
     private let itemsFactory: SettingsItemsFactory
@@ -35,6 +36,8 @@ final class SettingsPresenter: NSObject {
 
 private extension SettingsPresenter {
     
+    var areAllAppsAvailable: Bool { developerURL.map(UIApplication.shared.canOpenURL) ?? false }
+    
     func subscribe() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(didPay),
@@ -44,7 +47,7 @@ private extension SettingsPresenter {
     
     func setupItems() {
         dataSource.setup(
-            [itemsFactory.setupActivationSection(upgradeBlock: willBuy,
+            [itemsFactory.setupActivationSection(upgradeBlock: willUpgrade,
                                                  resetBlock: willReset),
              itemsFactory.setupGeneralSection(languageBlock: willShowLanguageSettings,
                                               accentColorBlock: willGoToAccentColor,
@@ -55,7 +58,9 @@ private extension SettingsPresenter {
                                             termsBlock: willGoToTermsOfUse,
                                             mailBlock: willGoToMail,
                                             shareBlock: willShare),
-             itemsFactory.setupAboutSection(upgradeBlock: willBuy)]
+             itemsFactory.setupAboutSection(areAllAppsAvailable: areAllAppsAvailable,
+                                            allAppsBlock: willOverviewAllApps,
+                                            upgradeBlock: willUpgrade)]
         )
     }
     
@@ -84,6 +89,11 @@ private extension SettingsPresenter {
         components?.queryItems = [URLQueryItem(name: "action", value: "write-review")]
         guard let writeReviewURL = components?.url else { return }
         router?.open(writeReviewURL)
+    }
+    
+    func willOverviewAllApps(_ sender: ItemProtocol) {
+        guard let developerURL = developerURL else { return }
+        router?.open(developerURL)
     }
     
     func willGoToMail(_ sender: ItemProtocol) {
@@ -117,7 +127,7 @@ private extension SettingsPresenter {
         router?.share(productURL, in: view)
     }
     
-    func willBuy(_ sender: ItemProtocol) {
+    func willUpgrade(_ sender: ItemProtocol) {
         router?.goToPaywall()
     }
     

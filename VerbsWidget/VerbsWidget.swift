@@ -141,6 +141,7 @@ struct VerbsWidgetEntryView: View {
                         .bold()
                         .lineLimit(1)
                     Text(verbatim: verb.infinitive.transcription)
+                        .foregroundColor(.secondary)
                         .lineLimit(1)
                 }.frame(maxWidth: .infinity)
                 if let simplePast = verb.simplePast?.first {
@@ -152,6 +153,7 @@ struct VerbsWidgetEntryView: View {
                             .truncationMode(.head)
                             .lineLimit(1)
                         Text(verbatim: simplePast.transcription)
+                            .foregroundColor(.secondary)
                             .truncationMode(.head)
                             .lineLimit(1)
                     }.frame(maxWidth: .infinity)
@@ -166,6 +168,7 @@ struct VerbsWidgetEntryView: View {
                             .truncationMode(.head)
                             .lineLimit(1)
                         Text(verbatim: pastParticiple.transcription)
+                            .foregroundColor(.secondary)
                             .truncationMode(.head)
                             .lineLimit(1)
                     }.frame(maxWidth: .infinity)
@@ -173,7 +176,7 @@ struct VerbsWidgetEntryView: View {
             }
             if languageService.hasTranslation {
                 Text(verbatim: verb.translation)
-                    .italic()
+                    .font(.footnote)
                     .lineLimit(1)
             }
         }
@@ -191,6 +194,7 @@ struct VerbsWidgetEntryView: View {
                     .font(.caption)
                     .frame(maxWidth: .infinity)
                 Text(verbatim: verb.infinitive.value)
+                    .foregroundColor(.secondary)
                     .bold()
                     .lineLimit(1)
                     .frame(maxWidth: .infinity)
@@ -209,6 +213,7 @@ struct VerbsWidgetEntryView: View {
                         .lineLimit(1)
                         .frame(maxWidth: .infinity)
                     Text(verbatim: simplePast.transcription)
+                        .foregroundColor(.secondary)
                         .truncationMode(.head)
                         .lineLimit(1)
                         .frame(maxWidth: .infinity)
@@ -221,6 +226,7 @@ struct VerbsWidgetEntryView: View {
                         .lineLimit(1)
                         .frame(maxWidth: .infinity)
                     Text(verbatim: pastParticiple.value)
+                        .foregroundColor(.secondary)
                         .bold()
                         .truncationMode(.head)
                         .lineLimit(1)
@@ -233,6 +239,7 @@ struct VerbsWidgetEntryView: View {
             }
             if languageService.hasTranslation {
                 Text(verbatim: verb.translation)
+                    .font(.footnote)
             }
             ForEach(sentences, id: \.self) { sentence in
                 Text(verbatim: sentence)
@@ -254,8 +261,8 @@ struct VerbsWidget: Widget {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color(UIColor.systemBackground))
         }
-        .configurationDisplayName("widget_configuration_display_title".localized)
-        .description("widget_description".localized)
+        .configurationDisplayName(String.localized(.widgetConfigurationDisplayTitle))
+        .description(String.localized(.widgetDescription))
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }

@@ -37,13 +37,13 @@ enum Test {
     var title: String {
         switch self {
         case .translation:
-            return "translation".localized
+            return .localized(.translation)
         case .writing:
-            return "forms".localized
+            return .localized(.forms)
         case .sentences:
-            return "sentences".localized
+            return .localized(.sentences)
         case .listening:
-            return "listening".localized
+            return .localized(.listening)
         }
     }
 }

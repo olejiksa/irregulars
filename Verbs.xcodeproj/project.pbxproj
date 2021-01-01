@@ -58,6 +58,11 @@
 		EB3217BD258BE42300023F0B /* ProgressItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3217BC258BE42300023F0B /* ProgressItem.swift */; };
 		EB3217C3258BE4B300023F0B /* ProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3217C1258BE4B300023F0B /* ProgressCell.swift */; };
 		EB3217C4258BE4B300023F0B /* ProgressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB3217C2258BE4B300023F0B /* ProgressCell.xib */; };
+		EB409E36259B8CC800E3B690 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB409E35259B8CC800E3B690 /* Localizable.swift */; };
+		EB409E3F259B8D4A00E3B690 /* AppLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB409E3E259B8D4A00E3B690 /* AppLocalizable.swift */; };
+		EB409E46259B8D9D00E3B690 /* AppLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB409E3E259B8D4A00E3B690 /* AppLocalizable.swift */; };
+		EB409E4A259B8DA200E3B690 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB409E35259B8CC800E3B690 /* Localizable.swift */; };
+		EB409E4E259B8DA500E3B690 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3BC08251F2ADB006E0DC7 /* String.swift */; };
 		EB450973253B5CB300D31858 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB450972253B5CB300D31858 /* Section.swift */; };
 		EB45097B253B630900D31858 /* SectionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB45097A253B630900D31858 /* SectionArray.swift */; };
 		EB450982253B65E800D31858 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB450981253B65E800D31858 /* DetailPresenter.swift */; };
@@ -119,7 +124,6 @@
 		EB7DFF83252B1CB8000B711D /* VerbsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB1D91251F15B40019972C /* VerbsService.swift */; };
 		EB7DFF89252B1CD7000B711D /* Verb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB1D93251F15D30019972C /* Verb.swift */; };
 		EB7DFF8C252B1CE6000B711D /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3BC16251F4D60006E0DC7 /* JSONParser.swift */; };
-		EB7DFF8F252B1CED000B711D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3BC08251F2ADB006E0DC7 /* String.swift */; };
 		EB7DFF95252B25DD000B711D /* irregulars.json in Resources */ = {isa = PBXBuildFile; fileRef = EBB3BC14251F4BAA006E0DC7 /* irregulars.json */; };
 		EB83258B2556EAEB005E02C1 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325892556EAEB005E02C1 /* FavoritesViewController.swift */; };
 		EB8325922556EB60005E02C1 /* FavoritesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325912556EB60005E02C1 /* FavoritesAssembly.swift */; };
@@ -335,6 +339,8 @@
 		EB3217BC258BE42300023F0B /* ProgressItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressItem.swift; sourceTree = "<group>"; };
 		EB3217C1258BE4B300023F0B /* ProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCell.swift; sourceTree = "<group>"; };
 		EB3217C2258BE4B300023F0B /* ProgressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressCell.xib; sourceTree = "<group>"; };
+		EB409E35259B8CC800E3B690 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		EB409E3E259B8D4A00E3B690 /* AppLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocalizable.swift; sourceTree = "<group>"; };
 		EB450972253B5CB300D31858 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		EB45097A253B630900D31858 /* SectionArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionArray.swift; sourceTree = "<group>"; };
 		EB450981253B65E800D31858 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
@@ -696,6 +702,7 @@
 		EB2F5E17251F78F8007DCF60 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				EB409E3A259B8CFD00E3B690 /* Localization */,
 				EBA732AC25702F73001B69EF /* Protocols */,
 				EB69F8BA2569E33800759BAA /* UI */,
 				EB450A4F254BB3B700D31858 /* Items */,
@@ -716,6 +723,16 @@
 				EB3217C2258BE4B300023F0B /* ProgressCell.xib */,
 			);
 			path = ProgressItem;
+			sourceTree = "<group>";
+		};
+		EB409E3A259B8CFD00E3B690 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				EB409E3E259B8D4A00E3B690 /* AppLocalizable.swift */,
+				EB409E35259B8CC800E3B690 /* Localizable.swift */,
+				EBB3BC08251F2ADB006E0DC7 /* String.swift */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		EB4509D72541E61700D31858 /* RightDetailItem */ = {
@@ -963,7 +980,6 @@
 				EBD476D5254BDF850033067B /* Bundle.swift */,
 				EBF4A125252E901A003E3A44 /* NavigationController.swift */,
 				EB69A26825322AF900DD1827 /* Notification.swift */,
-				EBB3BC08251F2ADB006E0DC7 /* String.swift */,
 				EBB01C1A2521874E00BB646B /* TableView.swift */,
 				EB269971256D1009007CCF2E /* UserDefaults+Key.swift */,
 			);
@@ -1404,10 +1420,13 @@
 			files = (
 				EB7DFF69252451D2000B711D /* VerbsWidget.swift in Sources */,
 				EB4509D12541703700D31858 /* Language.swift in Sources */,
+				EB409E4A259B8DA200E3B690 /* Localizable.swift in Sources */,
 				EB3217AC258BCFEC00023F0B /* Statistics.swift in Sources */,
 				EBE4AD0F2582AF7E001E9E4A /* VerbsServiceProtocol.swift in Sources */,
 				EB4509D42541798900D31858 /* FeatureToggle.swift in Sources */,
+				EB409E4E259B8DA500E3B690 /* String.swift in Sources */,
 				EBF593E3258869C00091FCE0 /* Blocks.swift in Sources */,
+				EB409E46259B8D9D00E3B690 /* AppLocalizable.swift in Sources */,
 				EB7DFF89252B1CD7000B711D /* Verb.swift in Sources */,
 				EB7B85682537FB0C00542D3C /* Word.swift in Sources */,
 				EBF593E625886A220091FCE0 /* ItemProtocol.swift in Sources */,
@@ -1421,7 +1440,6 @@
 				EBF59446258879770091FCE0 /* Intents.intentdefinition in Sources */,
 				EB26998C256D40DD007CCF2E /* Notification.swift in Sources */,
 				EBF594D42589357D0091FCE0 /* Favorites.swift in Sources */,
-				EB7DFF8F252B1CED000B711D /* String.swift in Sources */,
 				EBF5950725893BBA0091FCE0 /* Sentence.swift in Sources */,
 				EB4509CE2541700A00D31858 /* LanguageService.swift in Sources */,
 			);
@@ -1453,6 +1471,7 @@
 				EB2E4B3B25729E2E005B343A /* AccentColorItem.swift in Sources */,
 				EB450A59254BB3F800D31858 /* BigButton.swift in Sources */,
 				EB2F5E11251F5B26007DCF60 /* DetailCell.swift in Sources */,
+				EB409E36259B8CC800E3B690 /* Localizable.swift in Sources */,
 				EBF8A6522559225D00A6265C /* Locator.swift in Sources */,
 				EB59F00F258FE38B004676D2 /* VoicePresenter.swift in Sources */,
 				EB2E4BC52576A8DC005B343A /* Array+Safe.swift in Sources */,
@@ -1581,6 +1600,7 @@
 				EBF97CA5256270DB009FFFBA /* PaywallPresenter.swift in Sources */,
 				EBEB1D8B251F13570019972C /* ListViewController.swift in Sources */,
 				EBF593A52585730E0091FCE0 /* AnswerItem.swift in Sources */,
+				EB409E3F259B8D4A00E3B690 /* AppLocalizable.swift in Sources */,
 				EBF593AA2585736B0091FCE0 /* AnswerCell.swift in Sources */,
 				EB7DFF5625244977000B711D /* SplitViewController.swift in Sources */,
 				EB450992253B6B4700D31858 /* SettingsPresenter.swift in Sources */,
@@ -1660,7 +1680,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = VerbsWidget/VerbsWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1668,7 +1688,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5.4;
+				MARKETING_VERSION = 1.5.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1685,7 +1705,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = VerbsWidget/VerbsWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1693,7 +1713,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5.4;
+				MARKETING_VERSION = 1.5.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1828,7 +1848,7 @@
 				CODE_SIGN_ENTITLEMENTS = Verbs/Verbs.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1836,7 +1856,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.4;
+				MARKETING_VERSION = 1.5.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1853,7 +1873,7 @@
 				CODE_SIGN_ENTITLEMENTS = Verbs/Verbs.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1861,7 +1881,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.4;
+				MARKETING_VERSION = 1.5.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1875,7 +1895,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidgetIntent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1884,7 +1904,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5.4;
+				MARKETING_VERSION = 1.5.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidgetIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1898,7 +1918,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidgetIntent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1907,7 +1927,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5.4;
+				MARKETING_VERSION = 1.5.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidgetIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

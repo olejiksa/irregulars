@@ -14,10 +14,6 @@ extension String {
         NSLocalizedString(self, comment: "")
     }
     
-    func localized(comment: String) -> String {
-        NSLocalizedString(self, comment: comment)
-    }
-    
     func localized(with arguments: [CVarArg]) -> String {
         .init(format: localized, locale: nil, arguments: arguments)
     }

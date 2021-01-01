@@ -41,7 +41,8 @@ private extension VoicePresenter {
             )
         }
         
-        let hintSection = Section(items: [PlainDetailItem(text: "voice_hint".localized, textStyle: .secondary)])
+        let hintText: String = .localized(.voiceHint)
+        let hintSection = Section(items: [PlainDetailItem(text: hintText, textStyle: .secondary)])
         dataSource.setup(sections + [hintSection])
         
         let iterativeSections = sections.filter { !$0.items.isEmpty }

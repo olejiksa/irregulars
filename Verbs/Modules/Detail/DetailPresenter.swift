@@ -66,8 +66,9 @@ private extension DetailPresenter {
                           Section(header: "past_participle".localized,
                                   items: verb.pastParticiple?.compactMap { DetailItem(word: $0,
                                                                                       actionBlock: play) } ?? []),
-                          Section(header: "translation".localized, items: translationItems),
-                          Section(header: "examples".localized, items: examples)])
+                          Section(header: .localized(.translation), items: translationItems),
+                          Section(header: .localized(.examples),
+                                  items: examples)])
     }
     
     func play(text: String, playHandler: @escaping Block, stopHandler: @escaping Block) {

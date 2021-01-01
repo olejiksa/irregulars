@@ -11,20 +11,20 @@ final class PickableItem {
     let title: String
     var subtitle: String
     let actionBlock: ItemBlock?
-    let hasDisclosureItem: Bool
+    let hasDisclosureIndicator: Bool
     let options: [String]
     let isEnabled: Bool
     
     init(title: String,
          subtitle: String,
          actionBlock: ItemBlock? = nil,
-         hasDisclosureItem: Bool? = nil,
+         hasDisclosureIndicator: Bool? = nil,
          options: [String],
          isEnabled: Bool = true) {
         self.title = title
         self.subtitle = subtitle
         self.actionBlock = actionBlock
-        self.hasDisclosureItem = hasDisclosureItem ?? (actionBlock != nil)
+        self.hasDisclosureIndicator = hasDisclosureIndicator ?? (actionBlock != nil)
         self.options = options
         self.isEnabled = isEnabled
     }

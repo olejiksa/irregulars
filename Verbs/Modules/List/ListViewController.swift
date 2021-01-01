@@ -159,6 +159,12 @@ private extension ListViewController {
                          handler: handleViewMenu)
             ]) : nil
         
+        let printMenu = UIMenu(options: .displayInline, children: [
+            UIAction(title: "print".localized,
+                     image: SystemIcon.printer.image,
+                     handler: handlePrint)
+        ])
+        
         barButtonItem?.menu = .init(children: [
             viewMenu,
             UIMenu(options: .displayInline, children: [
@@ -170,7 +176,8 @@ private extension ListViewController {
                 UIAction(title: "derivatives".localized,
                          state: shouldDerivativesBeShown ? .on : .off,
                          handler: handleDerivativesMenu)
-            ])
+            ]),
+            printMenu
         ].compactMap { $0 })
     }
     
@@ -216,6 +223,10 @@ private extension ListViewController {
         UserDefaults.shared.set(!shouldDerivativesBeShown, for: .derivatives)
         presenter.updateDerivatives(!shouldDerivativesBeShown)
         buildMenu(for: moreButton)
+    }
+    
+    func handlePrint(action: UIAction) {
+        
     }
 }
 

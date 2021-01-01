@@ -45,12 +45,10 @@ final class SettingsItemsFactory {
                                                      actionBlock: languageBlock),
                                      RightDetailItem(title: "accent_color".localized,
                                                      subtitle: accentColor,
-                                                     actionBlock: accentColorBlock,
-                                                     hasDisclosureItem: true),
+                                                     actionBlock: accentColorBlock),
                                      RightDetailItem(title: "voice".localized,
                                                      subtitle: voiceName,
-                                                     actionBlock: voiceBlock,
-                                                     hasDisclosureItem: true)].compactMap { $0 }
+                                                     actionBlock: voiceBlock)].compactMap { $0 }
         return .init(header: "general".localized, items: items)
     }
     
@@ -86,7 +84,9 @@ final class SettingsItemsFactory {
                                        actionBlock: shareBlock)])
     }
     
-    func setupAboutSection(upgradeBlock: @escaping ItemBlock) -> Section {
+    func setupAboutSection(areAllAppsAvailable: Bool,
+                           allAppsBlock: @escaping ItemBlock,
+                           upgradeBlock: @escaping ItemBlock) -> Section {
         let version = Bundle.main.releaseVersionNumber ?? ""
         let name = Bundle.main.productName ?? ""
         let editionName = FeatureToggle.isPaid ? "\(name) Pro" : "\(name) Lite"
@@ -94,13 +94,14 @@ final class SettingsItemsFactory {
         return .init(header: "about".localized,
                      items: [RightDetailItem(title: "developer".localized,
                                              subtitle: "oleg_samoylov".localized,
-                                             isEnabled: false),
+                                             actionBlock: allAppsBlock,
+                                             hasDisclosureIndicator: false,
+                                             isEnabled: areAllAppsAvailable),
                              RightDetailItem(title: "edition".localized,
                                              subtitle: editionName,
                                              actionBlock: upgradeBlock,
-                                             hasDisclosureItem: false),
+                                             hasDisclosureIndicator: false),
                              RightDetailItem(title: "version".localized,
-                                             subtitle: version,
-                                             isEnabled: false)])
+                                             subtitle: version)])
     }
 }

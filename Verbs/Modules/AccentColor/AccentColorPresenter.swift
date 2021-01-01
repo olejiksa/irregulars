@@ -34,7 +34,7 @@ private extension AccentColorPresenter {
         dataSource.selectedIndexPath = IndexPath(row: index, section: 0)
         
         dataSource.setup([Section(items: accentColorItems),
-                          Section(items: [ActionItem(text: "match_app_icon_with_accent_color".localized,
+                          Section(items: [ActionItem(text: .localized(.matchAppIconWithAccentColor),
                                                      style: .standard,
                                                      actionBlock: nil)])])
     }

@@ -54,6 +54,7 @@ enum SystemIcon: String {
     case stop = "stop.circle"
     case pencil = "pencil.and.outline"
     case twentyFive = "25.circle"
+    case printer
     
     var image: UIImage? { UIImage(systemName: rawValue) }
 }
