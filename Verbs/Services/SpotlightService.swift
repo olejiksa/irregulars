@@ -18,14 +18,10 @@ final class SpotlightService {
         guard !isIndexed else { return }
         
         let searchableItems: [CSSearchableItem] = verbs.map {
-            let infinitive = "\($0.infinitive.value) \($0.infinitive.transcription)"
-            let simplePast = $0.simplePast?
-                .compactMap { "\($0.value) \($0.transcription)" }
-                .joined(separator: " | ") ?? ""
-            let pastParticiple = $0.pastParticiple?
-                .compactMap { "\($0.value) \($0.transcription)" }
-                .joined(separator: " | ") ?? ""
-            let contentDescription = simplePast + "\n" + pastParticiple
+            let infinitive = "\($0.infinitive.value)"
+            let simplePast = $0.simplePast?.map(\.value).joined(separator: ", ") ?? ""
+            let pastParticiple = $0.pastParticiple?.map(\.value).joined(separator: ", ") ?? ""
+            let contentDescription = pastParticiple.isEmpty ? simplePast : simplePast + "\n" + pastParticiple
             
             let searchableItemAttributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeText as String)
             searchableItemAttributeSet.title = infinitive

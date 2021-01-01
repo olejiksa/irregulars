@@ -55,11 +55,13 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
-        guard userActivity.activityType == CSSearchableItemActionType,
-              let identifier = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String else { return }
-        
-        let infinitive = identifier.split(separator: ".").last ?? ""
-        deeplinkService.handle(String(infinitive), in: splitViewController)
+        if userActivity.activityType == CSSearchableItemActionType,
+           let identifier = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String {
+            let infinitive = identifier.split(separator: ".").last ?? ""
+            deeplinkService.handle(String(infinitive), in: splitViewController)
+        } else if let searchText = userActivity.userInfo?[CSSearchQueryString] as? String {
+            deeplinkService.search(text: searchText, in: splitViewController)
+        }
     }
 }
 

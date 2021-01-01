@@ -20,7 +20,7 @@ final class DeeplinkService {
             let tabBarController = splitViewController.compactViewController
             tabBarController?.selectedIndex = 0
             let navigationController = tabBarController?.selectedViewController as? UINavigationController
-            clearTabBarNavigationStack(svc: splitViewController, nvc: navigationController)
+            clearTabBarNavigationStackForDeeplink(svc: splitViewController, nvc: navigationController)
             handle(host: host,
                    verb: verb,
                    navigationController: navigationController,
@@ -31,6 +31,26 @@ final class DeeplinkService {
                    verb: verb,
                    navigationController: navigationController,
                    splitViewController: splitViewController)
+        case .unspecified:
+            break
+        @unknown default:
+            break
+        }
+    }
+    
+    func search(text: String, in splitViewController: UISplitViewController) {
+        switch splitViewController.traitCollection.horizontalSizeClass {
+        case .compact:
+            let tabBarController = splitViewController.compactViewController
+            tabBarController?.selectedIndex = 0
+            let navigationController = tabBarController?.selectedViewController as? UINavigationController
+            clearTabBarNavigationStackForSearch(svc: splitViewController, nvc: navigationController)
+            let listViewController = navigationController?.topViewController as? ListViewController
+            listViewController?.search(text: text)
+        case .regular:
+            splitViewController.sidebarViewController?.restore(at: IndexPath(row: 1, section: 0))
+            let listViewController = splitViewController.supplementaryViewController as? ListViewController
+            listViewController?.search(text: text)
         case .unspecified:
             break
         @unknown default:
@@ -59,9 +79,20 @@ private extension DeeplinkService {
         navigationController?.push(vc, in: splitViewController)
     }
     
-    func clearTabBarNavigationStack(svc: UISplitViewController, nvc: UINavigationController?) {
+    func clearTabBarNavigationStackForDeeplink(svc: UISplitViewController, nvc: UINavigationController?) {
         guard let viewControllers = svc.compactViewController?.viewControllers,
               !(nvc?.topViewController is DetailViewController) else { return }
+        
+        for case let navigationController as UINavigationController in viewControllers {
+            navigationController.isNavigationBarHidden = true
+            navigationController.popToRootViewController(animated: true)
+            navigationController.isNavigationBarHidden = false
+        }
+    }
+    
+    func clearTabBarNavigationStackForSearch(svc: UISplitViewController, nvc: UINavigationController?) {
+        guard let viewControllers = svc.compactViewController?.viewControllers,
+              !(nvc?.topViewController is ListViewController) else { return }
         
         for case let navigationController as UINavigationController in viewControllers {
             navigationController.isNavigationBarHidden = true

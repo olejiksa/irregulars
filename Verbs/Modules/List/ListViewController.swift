@@ -85,6 +85,13 @@ final class ListViewController: UIViewController {
               let indexPath = tableView?.indexPathForSelectedRow else { return }
         tableView?.deselectRow(at: indexPath, animated: true)
     }
+    
+    func search(text: String) {
+        searchController.isActive = true
+        searchController.searchBar.becomeFirstResponder()
+        searchController.searchBar.text = text
+        presenter.updateSearchResults(for: searchController)
+    }
 }
 
 // MARK: - Private
