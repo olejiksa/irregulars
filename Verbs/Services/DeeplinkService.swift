@@ -49,8 +49,10 @@ final class DeeplinkService {
             listViewController?.search(text: text)
         case .regular:
             splitViewController.sidebarViewController?.restore(at: IndexPath(row: 1, section: 0))
-            let listViewController = splitViewController.supplementaryViewController as? ListViewController
-            listViewController?.search(text: text)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                let listViewController = splitViewController.supplementaryViewController as? ListViewController
+                listViewController?.search(text: text)
+            }
         case .unspecified:
             break
         @unknown default:

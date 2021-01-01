@@ -43,6 +43,9 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         
         self.scene(scene, openURLContexts: connectionOptions.urlContexts)
+        for userActivity in connectionOptions.userActivities {
+            self.scene(scene, continue: userActivity)
+        }
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
