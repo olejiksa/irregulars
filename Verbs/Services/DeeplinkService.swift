@@ -45,11 +45,13 @@ final class DeeplinkService {
             tabBarController?.selectedIndex = 0
             let navigationController = tabBarController?.selectedViewController as? UINavigationController
             clearTabBarNavigationStackForSearch(svc: splitViewController, nvc: navigationController)
-            let listViewController = navigationController?.topViewController as? ListViewController
-            listViewController?.search(text: text)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                let listViewController = navigationController?.topViewController as? ListViewController
+                listViewController?.search(text: text)
+            }
         case .regular:
             splitViewController.sidebarViewController?.restore(at: IndexPath(row: 1, section: 0))
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 let listViewController = splitViewController.supplementaryViewController as? ListViewController
                 listViewController?.search(text: text)
             }

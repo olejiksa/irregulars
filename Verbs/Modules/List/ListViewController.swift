@@ -166,11 +166,11 @@ private extension ListViewController {
                          handler: handleViewMenu)
             ]) : nil
         
-        let printMenu = UIMenu(options: .displayInline, children: [
-            UIAction(title: "print".localized,
-                     image: SystemIcon.printer.image,
-                     handler: handlePrint)
-        ])
+//        let printMenu = UIMenu(options: .displayInline, children: [
+//            UIAction(title: "print".localized,
+//                     image: SystemIcon.printer.image,
+//                     handler: handlePrint)
+//        ])
         
         barButtonItem?.menu = .init(children: [
             viewMenu,
@@ -184,7 +184,7 @@ private extension ListViewController {
                          state: shouldDerivativesBeShown ? .on : .off,
                          handler: handleDerivativesMenu)
             ]),
-            printMenu
+//            printMenu
         ].compactMap { $0 })
     }
     

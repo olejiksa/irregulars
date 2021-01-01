@@ -20,7 +20,7 @@ final class VerbsService: VerbsServiceProtocol {
             $0.infinitive.value.hasPrefixIgnoringCase(searchText) ||
             $0.simplePast?.contains { $0.value.hasPrefixIgnoringCase(searchText) } ?? false ||
             $0.pastParticiple?.contains { $0.value.hasPrefixIgnoringCase(searchText) } ?? false ||
-            $0.translation.containsIgnoringCase(searchText)
+            $0.translation.containsWordIgnoringCase(searchText)
         }
     }
     

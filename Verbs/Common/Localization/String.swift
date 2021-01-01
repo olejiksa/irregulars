@@ -22,6 +22,15 @@ extension String {
         lowercased().contains(other.lowercased())
     }
     
+    func containsWordIgnoringCase<T>(_ other: T) -> Bool where T: StringProtocol {
+        for item in lowercased().split(separator: " ") {
+            let string = String(item)
+            return string.hasPrefix(other.lowercased())
+        }
+        
+        return false
+    }
+    
     func hasPrefixIgnoringCase<T>(_ other: T) -> Bool where T: StringProtocol {
         lowercased().hasPrefix(other.lowercased())
     }
