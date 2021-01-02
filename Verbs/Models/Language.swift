@@ -11,6 +11,9 @@ enum Language: String {
     case english = "en"
     case russian = "ru"
     case spanish = "es"
+    case italian = "it"
+    case japanese = "ja"
+    case korean = "ko"
     
     var description: String {
         switch self {
@@ -20,6 +23,12 @@ enum Language: String {
             return "Русский"
         case .spanish:
             return "Español"
+        case .italian:
+            return "Italiano"
+        case .japanese:
+            return "日本語"
+        case .korean:
+            return "한국어"
         }
     }
 }
