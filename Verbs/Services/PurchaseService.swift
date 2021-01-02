@@ -17,7 +17,15 @@ final class PurchaseService: NSObject {
     private var products: [SKProduct] = []
     private var productsRequest: SKProductsRequest?
     private var activationHandler: Block?
+    private var priceHandler: StringBlock?
     private var errorHandler: ErrorHandler?
+    
+    private let priceFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.minimumFractionDigits = 0
+        return formatter
+    }()
     
     var canMakePayments: Bool { SKPaymentQueue.canMakePayments() }
     
@@ -26,11 +34,24 @@ final class PurchaseService: NSObject {
         SKPaymentQueue.default().add(self)
     }
     
+    func fetchPrice(priceHandler: @escaping StringBlock) {
+        productsRequest?.cancel()
+        
+        self.activationHandler = nil
+        self.priceHandler = priceHandler
+        self.errorHandler = nil
+        
+        productsRequest = SKProductsRequest(productIdentifiers: [proID])
+        productsRequest?.delegate = self
+        productsRequest?.start()
+    }
+    
     func requestProducts(activationHandler: @escaping Block,
                          errorHandler: @escaping ErrorHandler) {
         productsRequest?.cancel()
         
         self.activationHandler = activationHandler
+        self.priceHandler = nil
         self.errorHandler = errorHandler
         
         productsRequest = SKProductsRequest(productIdentifiers: [proID])
@@ -139,8 +160,10 @@ extension PurchaseService: SKProductsRequestDelegate {
         errorHandler?(nil)
         clearRequest()
         
-        for p in products {
-            print("Found product: \(p.productIdentifier) \(p.localizedTitle) \(p.price.floatValue)")
+        for product in products {
+            print("Found product: \(product.productIdentifier) \(product.localizedTitle) \(product.price.floatValue)")
+            guard let price = priceFormatter.string(from: product.price) else { continue }
+            priceHandler?(price)
         }
     }
     

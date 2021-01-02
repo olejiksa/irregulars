@@ -38,6 +38,8 @@ final class PaywallViewController: UIViewController {
         setupNavigationBar()
         setupTableView()
         setupView()
+        
+        purchaseService.fetchPrice(priceHandler: didObtainPrice)
     }
 }
 
@@ -116,6 +118,12 @@ private extension PaywallViewController {
         DispatchQueue.main.async {
             self.buyButton.hideLoading()
             self.view.window?.rootViewController?.dismiss(animated: true)
+        }
+    }
+    
+    func didObtainPrice(_ price: String) {
+        DispatchQueue.main.async {
+            self.buyButton.setTitle("\("buy_for".localized) \(price)", for: .normal)
         }
     }
     

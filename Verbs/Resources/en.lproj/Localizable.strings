@@ -65,7 +65,7 @@
 "sentences_subtitle" = "How well do you understand irregular verbs in context?";
 "sentence" = "Sentence";
 "listening" = "Listening";
-"listening_subtitle" = "Сheck your listening comprehension of irregular verbs";
+"listening_subtitle" = "Check your listening comprehension of irregular verbs";
 "demo" = "Demo";
 "missed_word" = "Missed word";
 "infinitive" = "Infinitive";
@@ -114,6 +114,9 @@
 "sofiia_sokolova" = "Sofiia Sokolova";
 "artyom_shumilov" = "Artyom Shumilov";
 "elizaveta_keplin" = "Elizaveta Keplin";
+"buy_for" = "Buy for";
+"one_time_payment" = "One-time payment, lifetime access";
+"ok" = "OK";
 
 "abide" = "abide";
 "alight" = "alight";

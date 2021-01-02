@@ -26,7 +26,7 @@ final class TestRouter {
         let alertController = UIAlertController(title: "hint".localized,
                                                 message: hint,
                                                 preferredStyle: .alert)
-        alertController.addAction(.init(title: "OK", style: .default))
+        alertController.addAction(.init(title: "ok".localized, style: .default))
         viewController?.present(alertController, animated: true)
     }
 }

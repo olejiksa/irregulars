@@ -388,6 +388,9 @@
 		EB5D6E1625A0193400CCCA85 /* AcknowledgementsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsAssembly.swift; sourceTree = "<group>"; };
 		EB5D6E1B25A0195D00CCCA85 /* AcknowledgementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsViewController.swift; sourceTree = "<group>"; };
 		EB5D6E2025A0196A00CCCA85 /* AcknowledgementsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsPresenter.swift; sourceTree = "<group>"; };
+		EB5D6E2825A03FEB00CCCA85 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Intents.strings; sourceTree = "<group>"; };
+		EB5D6E2925A03FEB00CCCA85 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EB5D6E2A25A03FEB00CCCA85 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = es; path = es.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		EB69A26825322AF900DD1827 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		EB69F8AE2569D7AA00759BAA /* TestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRouter.swift; sourceTree = "<group>"; };
 		EB69F8B42569DB6800759BAA /* TestsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsRouter.swift; sourceTree = "<group>"; };
@@ -1334,6 +1337,7 @@
 				Base,
 				ru,
 				"en-GB",
+				es,
 			);
 			mainGroup = EBEB1D69251F11900019972C;
 			packageReferences = (
@@ -1667,6 +1671,7 @@
 				EBB95BE7253326CE00376C3F /* en */,
 				EBB95BEB253326F300376C3F /* ru */,
 				EB59F0882591E78A004676D2 /* en-GB */,
+				EB5D6E2925A03FEB00CCCA85 /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1684,6 +1689,7 @@
 			children = (
 				EBF593842583CC530091FCE0 /* ru */,
 				EBF593882583CC5A0091FCE0 /* en */,
+				EB5D6E2A25A03FEB00CCCA85 /* es */,
 			);
 			name = Localizable.stringsdict;
 			sourceTree = "<group>";
@@ -1695,6 +1701,7 @@
 				EBF59457258883970091FCE0 /* en */,
 				EBF59459258883980091FCE0 /* ru */,
 				EB59F0892591E78B004676D2 /* en-GB */,
+				EB5D6E2825A03FEB00CCCA85 /* es */,
 			);
 			name = Intents.intentdefinition;
 			sourceTree = "<group>";

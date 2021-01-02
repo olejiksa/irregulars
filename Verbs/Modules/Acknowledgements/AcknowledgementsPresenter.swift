@@ -31,7 +31,7 @@ private extension AcknowledgementsPresenter {
                                           PlainItem(title: .localized(.artyomShumilov)),
                                           PlainItem(title: .localized(.elizavetaKeplin))]),
                           Section(header: .localized(.translation),
-                                  items: [RightDetailItem(title: "Julian",
+                                  items: [RightDetailItem(title: "Julian Eduardo",
                                                           subtitle: Language.spanish.description)])])
     }
 }

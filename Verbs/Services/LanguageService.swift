@@ -15,6 +15,15 @@ final class LanguageService {
         return Language(rawValue: currentLanguage) ?? .english
     }
     
+    var legal: Language {
+        switch current {
+        case .russian:
+            return .russian
+        default:
+            return .english
+        }
+    }
+    
     var hasTranslation: Bool {
         guard let currentLanguage = Locale.current.languageCode else { return false }
         let supportedLocalizations = Bundle.main.localizations

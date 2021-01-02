@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyN-px-ISO">
-                        <rect key="frame" x="16" y="12" width="312" height="20.5"/>
+                        <rect key="frame" x="16" y="12" width="288" height="20.5"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -27,7 +27,7 @@
                     <constraint firstItem="eyN-px-ISO" firstAttribute="leading" secondItem="yTv-MO-ccD" secondAttribute="leadingMargin" id="CTW-ut-zwH"/>
                     <constraint firstItem="eyN-px-ISO" firstAttribute="top" secondItem="yTv-MO-ccD" secondAttribute="top" constant="12" id="ESa-jj-yIb"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="eyN-px-ISO" secondAttribute="bottom" constant="12" id="Pvd-T4-NA6"/>
-                    <constraint firstAttribute="trailing" secondItem="eyN-px-ISO" secondAttribute="trailingMargin" id="aG1-Pl-Jfj"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="eyN-px-ISO" secondAttribute="trailing" id="aG1-Pl-Jfj"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="oRJ-BO-Shb"/>

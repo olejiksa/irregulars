@@ -30,7 +30,9 @@ final class PaywallPresenter {
                                  icon: .eye),
                      PaywallItem(text: "hide_or_show_derivatives".localized,
                                  icon: .eye),
-                     item]
+                     item,
+                     PaywallItem(text: "one_time_payment".localized,
+                                 icon: .creditcard),]
         
         dataSource.setup([Section(items: items.compactMap { $0 })])
     }

@@ -106,14 +106,14 @@ private extension SettingsPresenter {
     }
     
     func willGoToPrivacyPolicy(_ sender: ItemProtocol) {
-        let code = languageService.current.rawValue
+        let code = languageService.legal.rawValue
         guard let url = URL(string: "https://github.com/olejiksa/legal/blob/master/privacy-\(code).md")
         else { return }
         router?.goToURL(url)
     }
     
     func willGoToTermsOfUse(_ sender: ItemProtocol) {
-        let code = languageService.current.rawValue
+        let code = languageService.legal.rawValue
         guard let url = URL(string: "https://github.com/olejiksa/legal/blob/master/terms-\(code).md")
         else { return }
         router?.goToURL(url)

@@ -62,7 +62,7 @@ private extension TestsRouter {
         let alertController = UIAlertController(title: "empty_favorites_title".localized,
                                                 message: message,
                                                 preferredStyle: .alert)
-        alertController.addAction(.init(title: "OK", style: .default))
+        alertController.addAction(.init(title: "ok".localized, style: .default))
         viewController?.present(alertController, animated: true)
     }
 }

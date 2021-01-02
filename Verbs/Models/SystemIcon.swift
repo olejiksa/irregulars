@@ -18,6 +18,7 @@ enum SystemIcon: String {
     case folder
     case eye
     case ear
+    case creditcard
     case lock
     case key
     case globe

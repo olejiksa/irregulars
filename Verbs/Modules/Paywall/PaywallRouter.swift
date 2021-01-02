@@ -20,7 +20,7 @@ final class PaywallRouter {
         let alertController = UIAlertController(title: "error".localized,
                                                 message: error.localizedDescription,
                                                 preferredStyle: .alert)
-        alertController.addAction(.init(title: "OK", style: .default))
+        alertController.addAction(.init(title: "ok".localized, style: .default))
         viewController?.present(alertController, animated: true)
     }
 }
