@@ -162,6 +162,7 @@ extension PurchaseService: SKProductsRequestDelegate {
         
         for product in products {
             print("Found product: \(product.productIdentifier) \(product.localizedTitle) \(product.price.floatValue)")
+            priceFormatter.locale = product.priceLocale
             guard let price = priceFormatter.string(from: product.price) else { continue }
             priceHandler?(price)
         }
