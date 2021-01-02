@@ -16,6 +16,7 @@ final class ListViewController: UIViewController {
     private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     private var tableView: UITableView?
     private var moreButton: UIBarButtonItem?
+    private var listMenu: ListMenu?
     
     private var topInset: CGFloat = 0
     
@@ -33,6 +34,7 @@ final class ListViewController: UIViewController {
         super.viewDidLoad()
 
         setupNavigationBar()
+        setupMenu()
         setupTableView()
         setupSearchController()
         setupKeyboardService()
@@ -59,7 +61,7 @@ final class ListViewController: UIViewController {
     }
     
     func reloadData() {
-        buildMenu(for: moreButton)
+        listMenu?.build()
         tableView?.reloadData()
     }
     
@@ -113,8 +115,15 @@ private extension ListViewController {
                            style: .plain,
                            target: nil,
                            action: nil)
-        buildMenu(for: moreButton)
         navigationItem.rightBarButtonItem = moreButton
+    }
+    
+    func setupMenu() {
+        listMenu = .init(barButtonItem: moreButton,
+                         paywallBlock: presenter.router?.goToPaywall,
+                         updateDerivativesBlock: presenter.updateDerivatives,
+                         updateRegularsBlock: presenter.updateRegulars)
+        listMenu?.build()
     }
     
     func setupTableView() {
@@ -149,91 +158,6 @@ private extension ListViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         
         navigationItem.searchController = searchController
-    }
-    
-    func buildMenu(for barButtonItem: UIBarButtonItem?) {
-        let shouldTranslationBeShown = UserDefaults.shared.bool(for: .shouldTranslationBeShown)
-        let shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .regularVerbs)
-        let shouldDerivativesBeShown = UserDefaults.shared.bool(for: .derivatives)
-        
-        let viewMenu = LanguageService().hasTranslation ?
-            UIMenu(options: .displayInline, children: [
-                UIAction(title: "three_forms".localized,
-                         state: !shouldTranslationBeShown ? .on : .off,
-                         handler: handleViewMenu),
-                UIAction(title: "translation".localized,
-                         state: shouldTranslationBeShown ? .on : .off,
-                         handler: handleViewMenu)
-            ]) : nil
-        
-//        let printMenu = UIMenu(options: .displayInline, children: [
-//            UIAction(title: "print".localized,
-//                     image: SystemIcon.printer.image,
-//                     handler: handlePrint)
-//        ])
-        
-        barButtonItem?.menu = .init(children: [
-            viewMenu,
-            UIMenu(options: .displayInline, children: [
-                UIAction(title: "regular_verbs".localized,
-                         state: shouldRegularVerbsBeShown ? .on : .off,
-                         handler: handleRegularsMenu)
-            ]),
-            UIMenu(options: .displayInline, children: [
-                UIAction(title: "derivatives".localized,
-                         state: shouldDerivativesBeShown ? .on : .off,
-                         handler: handleDerivativesMenu)
-            ]),
-//            printMenu
-        ].compactMap { $0 })
-    }
-    
-    func handleViewMenu(action: UIAction) {
-        let isPaid = FeatureToggle.isPaid
-        
-        if isPaid {
-            let shouldTranslationBeShown = UserDefaults.shared.bool(for: .shouldTranslationBeShown)
-            let state = action.state == .on
-            let newState = shouldTranslationBeShown == state
-            UserDefaults.shared.set(newState, for: .shouldTranslationBeShown)
-            NotificationCenter.default.post(name: .list,
-                                            object: nil,
-                                            userInfo: [Notification.Name.list: newState])
-        } else if action.state == .off {
-            presenter.router?.goToPaywall()
-        } else {
-            return
-        }
-        
-        buildMenu(for: moreButton)
-    }
-    
-    func handleRegularsMenu(action: UIAction) {
-        guard FeatureToggle.isPaid else {
-            presenter.router?.goToPaywall()
-            return
-        }
-        
-        let shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .regularVerbs)
-        UserDefaults.shared.set(!shouldRegularVerbsBeShown, for: .regularVerbs)
-        presenter.updateRegulars(!shouldRegularVerbsBeShown)
-        buildMenu(for: moreButton)
-    }
-    
-    func handleDerivativesMenu(action: UIAction) {
-        guard FeatureToggle.isPaid else {
-            presenter.router?.goToPaywall()
-            return
-        }
-        
-        let shouldDerivativesBeShown = UserDefaults.shared.bool(for: .derivatives)
-        UserDefaults.shared.set(!shouldDerivativesBeShown, for: .derivatives)
-        presenter.updateDerivatives(!shouldDerivativesBeShown)
-        buildMenu(for: moreButton)
-    }
-    
-    func handlePrint(action: UIAction) {
-        
     }
 }
 

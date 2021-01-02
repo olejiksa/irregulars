@@ -25,7 +25,8 @@ extension UINavigationController {
             secondaryVc?.topViewController is TestViewController ||
             secondaryVc?.topViewController is StatisticsViewController ||
             secondaryVc?.topViewController is AccentColorViewController ||
-            secondaryVc?.topViewController is VoiceViewController {
+            secondaryVc?.topViewController is VoiceViewController ||
+            secondaryVc?.topViewController is AcknowledgementsViewController {
             secondaryVc?.popToRootViewController(animated: false)
         }
         

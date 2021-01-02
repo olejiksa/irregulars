@@ -69,19 +69,22 @@ final class SettingsItemsFactory {
                            privacyBlock: @escaping ItemBlock,
                            termsBlock: @escaping ItemBlock,
                            mailBlock: @escaping ItemBlock,
-                           shareBlock: @escaping ItemBlock) -> Section {
-        .init(header: "links".localized,
-              items: [DisclosureItem(text: "rate_and_review".localized,
+                           shareBlock: @escaping ItemBlock,
+                           acknowledgementsBlock: @escaping ItemBlock) -> Section {
+        .init(header: .localized(.links),
+              items: [DisclosureItem(text: .localized(.rateAndReview),
                                      actionBlock: rateBlock),
-                      DisclosureItem(text: "privacy_policy".localized,
+                      DisclosureItem(text: .localized(.privacyPolicy),
                                      actionBlock: privacyBlock),
-                      DisclosureItem(text: "terms".localized,
+                      DisclosureItem(text: .localized(.terms),
                                      actionBlock: termsBlock),
-                      DisclosureItem(text: "contact_us".localized,
+                      DisclosureItem(text: .localized(.acknowledgements),
+                                     actionBlock: acknowledgementsBlock),
+                      DisclosureItem(text: .localized(.contactUs),
                                      isEnabled: mailService.isMailAvailable,
                                      actionBlock: mailBlock),
-                      DisclosureItem(text: "share_app".localized,
-                                       actionBlock: shareBlock)])
+                      DisclosureItem(text: .localized(.shareApp),
+                                     actionBlock: shareBlock)])
     }
     
     func setupAboutSection(areAllAppsAvailable: Bool,
@@ -89,19 +92,19 @@ final class SettingsItemsFactory {
                            upgradeBlock: @escaping ItemBlock) -> Section {
         let version = Bundle.main.releaseVersionNumber ?? ""
         let name = Bundle.main.productName ?? ""
-        let editionName = FeatureToggle.isPaid ? "\(name) Pro" : "\(name) Lite"
+        let fullEditionName = "\(name) \(FeatureToggle.editionName)"
         
-        return .init(header: "about".localized,
-                     items: [RightDetailItem(title: "developer".localized,
-                                             subtitle: "oleg_samoylov".localized,
+        return .init(header: .localized(.about),
+                     items: [RightDetailItem(title: .localized(.developer),
+                                             subtitle: .localized(.olegSamoylov),
                                              actionBlock: allAppsBlock,
                                              hasDisclosureIndicator: false,
                                              isEnabled: areAllAppsAvailable),
-                             RightDetailItem(title: "edition".localized,
-                                             subtitle: editionName,
+                             RightDetailItem(title: .localized(.edition),
+                                             subtitle: fullEditionName,
                                              actionBlock: upgradeBlock,
                                              hasDisclosureIndicator: false),
-                             RightDetailItem(title: "version".localized,
+                             RightDetailItem(title: .localized(.version),
                                              subtitle: version)])
     }
 }

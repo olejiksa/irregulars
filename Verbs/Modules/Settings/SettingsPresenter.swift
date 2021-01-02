@@ -57,7 +57,8 @@ private extension SettingsPresenter {
                                             privacyBlock: willGoToPrivacyPolicy,
                                             termsBlock: willGoToTermsOfUse,
                                             mailBlock: willGoToMail,
-                                            shareBlock: willShare),
+                                            shareBlock: willShare,
+                                            acknowledgementsBlock: willGoToAcknowledgements),
              itemsFactory.setupAboutSection(areAllAppsAvailable: areAllAppsAvailable,
                                             allAppsBlock: willOverviewAllApps,
                                             upgradeBlock: willUpgrade)]
@@ -98,6 +99,10 @@ private extension SettingsPresenter {
     
     func willGoToMail(_ sender: ItemProtocol) {
         mailService.present(in: viewController)
+    }
+    
+    func willGoToAcknowledgements(_ sender: ItemProtocol) {
+        router?.goToAcknowledgements()
     }
     
     func willGoToPrivacyPolicy(_ sender: ItemProtocol) {

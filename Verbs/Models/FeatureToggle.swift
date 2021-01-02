@@ -25,4 +25,8 @@ struct FeatureToggle {
     #else
     static var isDebug = false
     #endif
+    
+    static var editionName: String {
+        !isPaid ? "Lite" : "Pro"
+    }
 }

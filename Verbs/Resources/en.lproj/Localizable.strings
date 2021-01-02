@@ -109,6 +109,11 @@
 "faster" = "Faster";
 "voice_hint" = "To use a better version of a voice, add a new one, or remove a previously added one, go to Settings → Accessibility → VoiceOver → Speech → Voice";
 "print" = "Print";
+"acknowledgements" = "Acknowledgements";
+"beta_testing" = "Beta testing";
+"sofiia_sokolova" = "Sofiia Sokolova";
+"artyom_shumilov" = "Artyom Shumilov";
+"elizaveta_keplin" = "Elizaveta Keplin";
 
 "abide" = "abide";
 "alight" = "alight";

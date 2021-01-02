@@ -40,6 +40,37 @@ extension Localizable {
         NSLocalizedString("empty_favorites", comment: "Explains what needs to be done for verbs to appear in Favorites"))
 }
 
+// MARK: - Settings
+
+extension Localizable {
+    
+    static let links = Localizable(
+        NSLocalizedString("links", comment: "The Links section title on the Settings page"))
+    static let rateAndReview = Localizable(
+        NSLocalizedString("rate_and_review", comment: "The App Store Rate and Review redirection link text"))
+    static let privacyPolicy = Localizable(
+        NSLocalizedString("privacy_policy", comment: "The Privacy Policy link text"))
+    static let terms = Localizable(
+        NSLocalizedString("terms", comment: "The Terms of Use link text"))
+    static let contactUs = Localizable(
+        NSLocalizedString("contact_us", comment: "The Contact Us link text"))
+    static let shareApp = Localizable(
+        NSLocalizedString("share_app", comment: "Lets a user to tell a friend about the app"))
+    static let acknowledgements = Localizable(
+        NSLocalizedString("acknowledgements", comment: "The title of the acknowledgements page as well as the corresponding link text"))
+    
+    static let about = Localizable(
+        NSLocalizedString("about", comment: "The About section title on the Settings page"))
+    static let developer = Localizable(
+        NSLocalizedString("developer", comment: "Mentions the app's developer"))
+    static let edition = Localizable(
+        NSLocalizedString("edition", comment: "The app's edition: Lite, Pro"))
+    static let version = Localizable(
+        NSLocalizedString("version", comment: "The current version of the app"))
+    static let betaTesting = Localizable(
+        NSLocalizedString("beta_testing", comment: "The title of the section for beta testing participants"))
+}
+
 // MARK: - Accent Color
 
 extension Localizable {
@@ -78,4 +109,18 @@ extension Localizable {
         NSLocalizedString("british", comment: "Refers to British English"))
     static let american = Localizable(
         NSLocalizedString("american", comment: "Refers to American English"))
+}
+
+// MARK: - People
+
+extension Localizable {
+    
+    static let olegSamoylov = Localizable(
+        NSLocalizedString("oleg_samoylov", comment: "The full name of the app's develop"))
+    static let sofiiaSokolova = Localizable(
+        NSLocalizedString("sofiia_sokolova", comment: "Refers to Sofia Sokolova"))
+    static let artyomShumilov = Localizable(
+        NSLocalizedString("artyom_shumilov", comment: "Refers to Artyom Shumilov"))
+    static let elizavetaKeplin = Localizable(
+        NSLocalizedString("elizaveta_keplin", comment: "Refers to Elizaveta Keplin"))
 }

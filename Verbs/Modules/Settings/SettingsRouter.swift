@@ -48,6 +48,11 @@ final class SettingsRouter {
         viewController?.navigationController?.push(vc)
     }
     
+    func goToAcknowledgements() {
+        let vc = AcknowledgementsAssembly().viewController()
+        viewController?.navigationController?.push(vc)
+    }
+    
     func share(_ url: URL, in view: UIView) {
         let activityViewController = UIActivityViewController(activityItems: [url],
                                                               applicationActivities: nil)

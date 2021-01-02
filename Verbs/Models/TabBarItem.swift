@@ -16,11 +16,10 @@ enum TabBarItem: Int {
     
     init?(supplementary: UIViewController, secondary: UIViewController) {
         switch (supplementary, secondary) {
-        case (_, is SettingsViewController):
-            self = .settings
-        case (_, is AccentColorViewController):
-            self = .settings
-        case (_, is VoiceViewController):
+        case (_, is SettingsViewController),
+             (_, is AcknowledgementsViewController),
+             (_, is AccentColorViewController),
+             (_, is VoiceViewController):
             self = .settings
         case (is ListViewController, _):
             self = .all

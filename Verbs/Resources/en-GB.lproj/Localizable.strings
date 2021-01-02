@@ -16,7 +16,7 @@
 "oleg_samoylov" = "Oleg Samoylov";
 "version" = "Version";
 "widget_configuration_display_title" = "Words for every day";
-"widget_description" = "Memorize all three forms of irregular verbs simply and easily";
+"widget_description" = "Memorise all three forms of irregular verbs simply and easily";
 "verbs" = "Verbs";
 "settings" = "Settings";
 "general" = "General";
@@ -58,7 +58,7 @@
 "match_app_icon_with_accent_color" = "Match app icon with accent colour";
 "enter_here" = "Enter here";
 "terms" = "Terms of use";
-"personalize" = "Personalize the app: pick an accent colour to your liking";
+"personalize" = "Personalise the app: pick an accent colour to your liking";
 "examples" = "Examples";
 "sentences" = "Sentences";
 "writing_subtitle" = "Check your knowledge of irregular verbs forms";
@@ -109,6 +109,11 @@
 "faster" = "Faster";
 "voice_hint" = "To use a better version of a voice, add a new one, or remove a previously added one, go to Settings → Accessibility → VoiceOver → Speech → Voice";
 "print" = "Print";
+"acknowledgements" = "Acknowledgments";
+"beta_testing" = "Beta testing";
+"sofiia_sokolova" = "Sofiia Sokolova";
+"artyom_shumilov" = "Artyom Shumilov";
+"elizaveta_keplin" = "Elizaveta Keplin";
 
 "abide" = "abide";
 "alight" = "alight";
