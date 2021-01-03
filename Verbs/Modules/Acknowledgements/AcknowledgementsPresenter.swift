@@ -36,8 +36,6 @@ private extension AcknowledgementsPresenter {
                                   items: [RightDetailItem(title: "Julian Eduardo",
                                                           subtitle: Language.spanish.description),
                                           RightDetailItem(title: "To Be Clarified",
-                                                          subtitle: Language.italian.description),
-                                          RightDetailItem(title: "To Be Clarified",
                                                           subtitle: Language.japanese.description),
                                           RightDetailItem(title: "To Be Clarified",
                                                           subtitle: Language.korean.description)])])

@@ -1,392 +1,1155 @@
-"including" = "Из них";
-"downgrade_to" = "Вернуться к %@ Lite";
-"thank_you" = "Спасибо за то, что Вы с нами!";
-"listen_to_pronunciation" = "Слушайте произношение";
-"statistics" = "Статистика";
-"view_a_transcription" = "Просматривайте транскрипцию в карточке глагола";
-"store_unlimited_items_in_favorites" = "Храните неограниченное количество элементов в «Избранном»";
-"hide_or_show_regular_verbs" = "Скройте или отобразите правильные глаголы (-ed)";
-"hide_or_show_derivatives" = "Скройте или отобразите производные формы";
-"view_a_translation_without_going_to_the_verb_card" = "Просматривайте перевод без перехода на карточку глагола";
-"tests" = "Тесты";
-"activation" = "Активация";
-"deactivation" = "Деактивация";
-"about" = "О программе";
-"developer" = "Разработчик";
-"oleg_samoylov" = "Олег Самойлов";
-"version" = "Версия";
-"widget_configuration_display_title" = "Слова на каждый день";
-"widget_description" = "Запоминайте все три формы неправильных глаголов легко и просто, даже не заходя в приложение";
-"verbs" = "Глаголы";
-"settings" = "Настройки";
-"general" = "Общее";
-"links" = "Ссылки";
-"regular_verbs" = "Правильные (-ed)";
-"derivatives" = "Производные формы";
-"translation" = "Перевод";
-"translation_subtitle" = "Проверьте знание перевода неправильных глаголов";
-"language" = "Язык";
-"contact_us" = "Связаться с нами";
-"rate_and_review" = "Оценить и дать отзыв";
-"buy_button" = "Купить";
-"restore_purchases" = "Восстановить покупки";
-"empty_verbs" = "Чтобы посмотреть информацию о неправильном глаголе, нажмите на него в левой части экрана";
-"empty_tests" = "Чтобы начать прохождение теста, нажмите на него в левой части экрана";
-"empty_favorites" = "Чтобы добавить неправильный глагол в «Избранное», откройте его из списка всех глаголов и нажмите на кнопку-звездочку в правом верхнем углу экрана";
-"three_forms" = "3 формы";
-"forms" = "Формы";
-"privacy_policy" = "Политика конфиденциальности";
-"share_app" = "Поделиться приложением";
-"edition" = "Редакция";
-"all" = "Все";
-"favorites" = "Избранное";
-"upgrade_to_pro" = "Купить Pro-версию";
-"more" = "Еще";
-"error" = "Ошибка";
-"hint" = "Подсказка";
-"unlock_all_verbs_in_tests" = "Разблокируйте все глаголы в тестах";
-"accent_color" = "Акцентный цвет";
-"blue" = "Синий";
-"green" = "Зеленый";
-"indigo" = "Индиго";
-"orange" = "Оранжевый";
-"pink" = "Розовый";
-"purple" = "Пурпурный";
-"red" = "Красный";
-"teal" = "Бирюзовый";
-"yellow" = "Желтый";
-"match_app_icon_with_accent_color" = "Сопоставить иконку с цветом";
-"enter_here" = "Введите здесь";
-"terms" = "Условия использования";
-"personalize" = "Персонализируйте приложение: выберите акцентный цвет по своему вкусу";
-"examples" = "Примеры";
-"sentences" = "Предложения";
-"writing_subtitle" = "Проверьте знания форм неправильных глаголов";
-"sentences_subtitle" = "Насколько хорошо Вы понимаете неправильные глаголы из контекста?";
-"sentence" = "Предложение";
-"listening" = "Аудирование";
-"listening_subtitle" = "Проверьте понимание неправильных глаголов на слух";
-"demo" = "Демо";
-"missed_word" = "Пропущенное слово";
-"infinitive" = "Неопределенная форма глагола";
-"simple_past" = "Простое прошедшее";
-"past_participle" = "Причастие прошедшего времени";
-"listen_and_write" = "Прослушайте и напишите ниже";
-"speaking_rate" = "Скорость речи";
-"empty_favorites_title" = "Нет «Избранного»";
-"track_your_progress_in_learning_irregular_verbs" = "Отслеживайте свой прогресс в изучении неправильных глаголов";
-"using_hints_gives_you_no_points" = "Учитываются только ответы, введенные или выбранные правильно с первой попытки и без использования подсказок";
-"attention" = "Внимание";
-"cancel" = "Отмена";
-"reset_statistics_learned_verbs" = "Вы действительно хотите сбросить статистику выученных глаголов?";
-"reset_statistics_correct_answers" = "Вы действительно хотите сбросить статистику правильных ответов?";
-"yes" = "Да";
-"pro_suggestion_statistics" = "Кроме других преимуществ, в Pro-версии увеличено количество неправильных глаголов, доступных для закрепления в тестах: с %d до %d";
-"no_data_to_display" = "Нет данных для показа";
-"learned_verbs" = "Выученные глаголы";
-"learned_verbs_footer" = "Слово считается изученным, если оно было отвечено верно не менее 3 раз. Если ответ оказался правильным, изученность глагола увеличивается на единицу, иначе — уменьшается";
-"reset" = "Сброс";
-"erase_learned_verbs" = "Стереть выученные глаголы";
-"erase_correct_answers" = "Стереть правильные ответы";
-"your_efforts" = "Ваши старания";
-"in_progress" = "В процессе";
-"of" = "из %d";
-"add_to_favorites" = "Добавить в «Избранное»";
-"remove_from_favorites" = "Убрать из «Избранного»";
-"remove" = "Убрать";
-"australian" = "Австралийский";
-"irish" = "Ирландский";
-"indian" = "Индийский";
-"south_african" = "Южноафриканский";
-"british" = "Британский";
-"american" = "Американский";
-"voice" = "Голос";
-"male" = "Мужской";
-"female" = "Женский";
-"untitled" = "Безымянный";
-"default" = "По умолчанию";
-"slower" = "Медленнее";
-"faster" = "Быстрее";
-"voice_hint" = "Чтобы использовать более качественный вариант какого-либо голоса, добавить новый или удалить ранее добавленный, выберите Настройки → Универсальный доступ → VoiceOver → Речь → Голос";
-"print" = "Печать";
-"acknowledgements" = "Благодарности";
-"beta_testing" = "Бета-тестирование";
-"sofiia_sokolova" = "София Соколова";
-"artyom_shumilov" = "Артем Шумилов";
-"elizaveta_keplin" = "Елизавета Кеплин";
-"buy_for" = "Купить за";
-"one_time_payment" = "Одноразовый платеж, пожизненный доступ";
+/* (No Comment) */
+"abide" = "sopportare";
+
+/* The About section title on the Settings page */
+"about" = "di";
+
+/* Refers to both the Settings section and the title of the accent colors list page */
+"accent_color" = "Accento di colore";
+
+/* The title of the acknowledgements page as well as the corresponding link text */
+"acknowledgements" = "Riconoscimenti";
+
+/* (No Comment) */
+"activation" = "Attivazione";
+
+/* (No Comment) */
+"add_to_favorites" = "Preferito";
+
+/* (No Comment) */
+"alight" = "uscire dal transporto";
+
+/* (No Comment) */
+"all" = "Tutti";
+
+/* Refers to American English */
+"american" = "Americano";
+
+/* (No Comment) */
+"arise" = "sorgere";
+
+/* (No Comment) */
+"attention" = "Attenzione";
+
+/* Refers to Australian English */
+"australian" = "Australiano";
+
+/* (No Comment) */
+"awake" = "sveglio";
+
+/* (No Comment) */
+"backslide" = "ricadere in vizio";
+
+/* (No Comment) */
+"be" = "essere";
+
+/* (No Comment) */
+"bear" = "sopportare";
+
+/* (No Comment) */
+"beat" = "battere";
+
+/* (No Comment) */
+"become" = "diventare";
+
+/* (No Comment) */
+"befall" = "accadere";
+
+/* (No Comment) */
+"beget" = "generare";
+
+/* (No Comment) */
+"begin" = "cominciare";
+
+/* (No Comment) */
+"behold" = "ecco";
+
+/* (No Comment) */
+"bend" = "curvare, piegare";
+
+/* (No Comment) */
+"bereave" = "lutto";
+
+/* (No Comment) */
+"beseech" = "supplica";
+
+/* (No Comment) */
+"bet" = "scommettere";
+
+/* The title of the section for beta testing participants */
+"beta_testing" = "Beta test";
+
+/* (No Comment) */
+"bid" = "fare un'offerta";
+
+/* (No Comment) */
+"bind" = "legare";
+
+/* (No Comment) */
+"bite" = "mordere";
+
+/* (No Comment) */
+"bleed" = "sanguinare";
+
+/* (No Comment) */
+"bless" = "benedire";
+
+/* (No Comment) */
+"blow" = "soffiare";
+
+/* (No Comment) */
+"blue" = "Blu";
+
+/* (No Comment) */
+"break" = "rompere";
+
+/* (No Comment) */
+"breed" = "allevare";
+
+/* (No Comment) */
+"bring" = "accompagnare";
+
+/* Refers to British English */
+"british" = "Britannico";
+
+/* Refers to Indian English */
+"indian" = "Indiano";
+
+/* (No Comment) */
+"broadcast" = "trasmissione";
+
+/* (No Comment) */
+"browbeat" = "sopracciglio";
+
+/* (No Comment) */
+"build" = "costruire";
+
+/* (No Comment) */
+"burn" = "bruciare";
+
+/* (No Comment) */
+"burst" = "scoppiare";
+
+/* (No Comment) */
+"bust" = "fallimento";
+
+/* (No Comment) */
+"buy" = "comprare";
+
+/* (No Comment) */
+"buy_button" = "Comprare";
+
+/* (No Comment) */
+"buy_for" = "comprare per";
+
+/* (No Comment) */
+"can" = "puo";
+
+/* (No Comment) */
+"cancel" = "Annulla";
+
+/* (No Comment) */
+"cast" = "lanciare (un dado)";
+
+/* (No Comment) */
+"catch" = "ottenere (prendere)";
+
+/* (No Comment) */
+"chide" = "rimproverare";
+
+/* (No Comment) */
+"choose" = "scegliere";
+
+/* (No Comment) */
+"clap" = "battere le mani";
+
+/* (No Comment) */
+"cleave" = "fendere";
+
+/* (No Comment) */
+"cling" = "afferrare";
+
+/* (No Comment) */
+"clothe" = "vestire";
+
+/* (No Comment) */
+"come" = "venire";
+
+/* The Contact Us link text */
+"contact_us" = "Contattaci";
+
+/* (No Comment) */
+"cost" = "costare";
+
+/* (No Comment) */
+"creep" = "strisciare";
+
+/* (No Comment) */
+"crow" = "corvo";
+
+/* (No Comment) */
+"cut" = "eliminare, tagliare";
+
+/* (No Comment) */
+"dare" = "osare";
+
+/* (No Comment) */
+"deactivation" = "Disattivazione";
+
+/* (No Comment) */
+"deal" = "gestire (trattare)";
+
+/* (No Comment) */
+"default" = "Predefinito";
+
+/* Refers to verbs for tests available only in the free version */
+"demo" = "Demo";
+
+/* Determines the display of irregular verbs with the prefixes be-, for(e)-, in-, inter-, mis-, off-, out-, over-, pre-, under-, with- and others */
+"derivatives" = "Derivati";
+
+/* Mentions the app's developer */
+"developer" = "Sviluppatore";
+
+/* (No Comment) */
+"dig" = "scavare";
+
+/* (No Comment) */
+"dive" = "immergersi";
+
+/* (No Comment) */
+"do" = "fare";
+
+/* (No Comment) */
+"downgrade_to" = "Ridimensionare a %@ Lite";
+
+/* (No Comment) */
+"draw" = "tirare";
+
+/* (No Comment) */
+"dream" = "sognare";
+
+/* (No Comment) */
+"drink" = "bere";
+
+/* (No Comment) */
+"drive" = "guidare";
+
+/* (No Comment) */
+"dwell" = "dimorare";
+
+/* (No Comment) */
+"eat" = "mangiare";
+
+/* The app's edition: Lite, Pro */
+"edition" = "Edizione";
+
+/* Explains what needs to be done for verbs to appear in Favorites */
+"empty_favorites" = "Per aggiungere un verbo irregolare ai tuoi preferiti, aprilo dall'elenco di tutti i verbi e fai clic sul pulsante a stella nell'angolo in alto a destra dello schermo";
+
+/* (No Comment) */
+"empty_favorites_title" = "Preferiti vuoti";
+
+/* (No Comment) */
+"empty_tests" = "Per iniziare a fare il test, fare clic su di esso sul lato sinistro dello schermo";
+
+/* Gives the cue what needs to be done to make this part of the screen stop empty */
+"empty_verbs" = "Per visualizzare le informazioni su un verbo irregolare, fare clic su di esso sul lato sinistro dello schermo";
+
+/* (No Comment) */
+"enter_here" = "Entra qui";
+
+/* (No Comment) */
+"erase_correct_answers" = "Cancella le risposte corrette";
+
+/* (No Comment) */
+"erase_learned_verbs" = "Cancella verbi appresi";
+
+/* (No Comment) */
+"error" = "Errore";
+
+/* Example sentences related to the verb */
+"examples" = "Esempi";
+
+/* (No Comment) */
+"fall" = "cadere";
+
+/* (No Comment) */
+"faster" = "Più veloce";
+
+/* (No Comment) */
+"favorites" = "Preferiti";
+
+/* (No Comment) */
+"feed" = "nutrire";
+
+/* (No Comment) */
+"feel" = "sentire";
+
+/* (No Comment) */
+"female" = "Femmina";
+
+/* (No Comment) */
+"fight" = "combattere";
+
+/* (No Comment) */
+"find" = "trovare";
+
+/* (No Comment) */
+"fit" = "adattare";
+
+/* (No Comment) */
+"flee" = "fuggire";
+
+/* (No Comment) */
+"fling" = "lanciare (con forza)";
+
+/* (No Comment) */
+"fly" = "volare";
+
+/* (No Comment) */
+"forbid" = "vietare";
+
+/* (No Comment) */
+"forecast" = "previsione";
+
+/* (No Comment) */
+"foresee" = "prevedere";
+
+/* (No Comment) */
+"foretell" = "predire";
+
+/* (No Comment) */
+"forget" = "dimenticare";
+
+/* (No Comment) */
+"forgive" = "perdonare";
+
+/* Refers to the section of tests where both second and third irregular verb forms are to be filled in */
+"forms" = "Forme";
+
+/* (No Comment) */
+"forsake" = "abbandonare";
+
+/* (No Comment) */
+"freeze" = "ghiacciare";
+
+/* (No Comment) */
+"geld" = "castrone";
+
+/* (No Comment) */
+"general" = "Generale";
+
+/* (No Comment) */
+"get" = "ottenere, diventare";
+
+/* (No Comment) */
+"gild" = "dorare, indorare";
+
+/* (No Comment) */
+"give" = "dare";
+
+/* (No Comment) */
+"gnaw" = "rosicchiare";
+
+/* (No Comment) */
+"go" = "andare";
+
+/* (No Comment) */
+"green" = "Verde";
+
+/* (No Comment) */
+"grind" = "macinare";
+
+/* (No Comment) */
+"grip" = "afferrare";
+
+/* (No Comment) */
+"grow" = "produrre (coltivare)";
+
+/* (No Comment) */
+"handwrite" = "scrivere a mano";
+
+/* (No Comment) */
+"hang" = "appendere";
+
+/* (No Comment) */
+"have" = "avere";
+
+/* (No Comment) */
+"hear" = "udire";
+
+/* (No Comment) */
+"heave" = "sollevare, tirare";
+
+/* (No Comment) */
+"hew" = "tagliare";
+
+/* (No Comment) */
+"hide" = "nascondere";
+
+/* (No Comment) */
+"hide_or_show_derivatives" = "Nascondi o mostra le forme derivate";
+
+/* (No Comment) */
+"hide_or_show_regular_verbs" = "Nascondi o mostra i verbi regolari (-ed)";
+
+/* (No Comment) */
+"hint" = "Suggerimento";
+
+/* (No Comment) */
+"hit" = "percuotere, colpire";
+
+/* (No Comment) */
+"hold" = "tenere";
+
+/* (No Comment) */
+"hurt" = "fare male";
+
+/* (No Comment) */
+"in_progress" = "In corso";
+
+/* (No Comment) */
+"including" = "Compreso";
+
+/* (No Comment) */
+"indigo" = "Indaco";
+
+/* (No Comment) */
+"infinitive" = "Infinito";
+
+/* (No Comment) */
+"inlay" = "intarsio";
+
+/* (No Comment) */
+"input" = "unserite, immettere";
+
+/* (No Comment) */
+"interweave" = "intrecciarsi";
+
+/* Refers to Irish English */
+"irish" = "Irlandesi";
+
+/* (No Comment) */
+"keep" = "conservare";
+
+/* (No Comment) */
+"kneel" = "inginocchiarsi";
+
+/* (No Comment) */
+"knit" = "lavorae a maglia";
+
+/* (No Comment) */
+"know" = "sapere";
+
+/* (No Comment) */
+"language" = "Linguaggio";
+
+/* (No Comment) */
+"lay" = "stendere";
+
+/* (No Comment) */
+"lead" = "condurre";
+
+/* (No Comment) */
+"lean" = "piegare (inclinare)";
+
+/* (No Comment) */
+"leap" = "saltare";
+
+/* (No Comment) */
+"learn" = "imparare";
+
+/* (No Comment) */
+"learned_verbs" = "Verbi appresi";
+
+/* (No Comment) */
+"learned_verbs_footer" = "Una parola è considerata appresa se ha ricevuto una risposta corretta almeno 3 volte. Se la risposta si è rivelata corretta, lo studio del verbo aumenta di uno, altrimenti diminuisce";
+
+/* (No Comment) */
+"leave" = "partire (andar via)";
+
+/* (No Comment) */
+"lend" = "prestare";
+
+/* (No Comment) */
+"let" = "lasciare";
+
+/* (No Comment) */
+"lie" = "sdraiarsi";
+
+/* (No Comment) */
+"light" = "illuminare";
+
+/* The Links section title on the Settings page */
+"links" = "Collegamenti";
+
+/* (No Comment) */
+"listen_and_write" = "Ascolta e scrivi di seguito";
+
+/* (No Comment) */
+"listen_to_pronunciation" = "Ascolta la pronuncia";
+
+/* Refers to the listening section of the tests */
+"listening" = "Ascoltando";
+
+/* (No Comment) */
+"listening_subtitle" = "Controlla la tua comprensione orale dei verbi irregolari";
+
+/* (No Comment) */
+"lose" = "perdere";
+
+/* (No Comment) */
+"make" = "fare, realizzare";
+
+/* (No Comment) */
+"male" = "Maschio";
+
+/* Refers to the section of tests where both second and third irregular verb forms are to be filled in */
+"match_app_icon_with_accent_color" = "Abbina l'icona al colore";
+
+/* (No Comment) */
+"may" = "Maggio";
+
+/* (No Comment) */
+"mean" = "significare";
+
+/* (No Comment) */
+"meet" = "incontrare";
+
+/* (No Comment) */
+"melt" = "sciogliersi";
+
+/* (No Comment) */
+"miscast" = "scegliere un attore non adatto a";
+
+/* (No Comment) */
+"misdeal" = "sbaglio nel dare le carte";
+
+/* (No Comment) */
+"misdo" = "errore";
+
+/* (No Comment) */
+"misgive" = "dubbio";
+
+/* (No Comment) */
+"mishear" = "capire male";
+
+/* (No Comment) */
+"mishit" = "colpire male";
+
+/* (No Comment) */
+"mislay" = "perdere, smarrire";
+
+/* (No Comment) */
+"mislead" = "ingannare, fuorviare";
+
+/* (No Comment) */
+"misread" = "fraintendre, leggere male";
+
+/* (No Comment) */
+"missed_word" = "Parola persa";
+
+/* (No Comment) */
+"misspell" = "scrivere make, sbagliare l'ortografia di";
+
+/* (No Comment) */
+"misspend" = "spendere male";
+
+/* (No Comment) */
+"mistake" = "sbagliare";
+
+/* (No Comment) */
+"misunderstand" = "fraintendere";
+
+/* (No Comment) */
+"more" = "Di Più";
+
+/* (No Comment) */
+"mow" = "falciare";
+
+/* (No Comment) */
+"must" = "dovere";
+
+/* (No Comment) */
+"no_data_to_display" = "Nessun dato da visualizzare";
+
+/* (No Comment) */
+"of" = "di %d";
+
+/* (No Comment) */
+"offset" = "compensare";
+
+/* (No Comment) */
 "ok" = "OK";
 
-"abide" = "выносить, терпеть";
-"alight" = "выходить из транспорта";
-"arise" = "возникать, появляться, подниматься";
-"awake" = "будить, просыпаться";
-"backslide" = "отказываться от прежних убеждений";
-"be" = "быть";
-"bear" = "нести, переносить, рождать";
-"beat" = "бить";
-"become" = "становиться";
-"befall" = "случаться";
-"beget" = "порождать";
-"begin" = "начинать";
-"behold" = "глядеть, созерцать";
-"bend" = "гнуть, сгибать";
-"bereave" = "отнимать, лишать, обездоливать";
-"bet" = "держать пари, делать ставку";
-"beseech" = "просить";
-"bid" = "предлагать цену, велеть, просить";
-"bind" = "связывать";
-"bite" = "кусать";
-"bleed" = "истекать кровью, кровоточить";
-"bless" = "благословлять";
-"blow" = "дуть";
-"break" = "ломать, прерывать, разбивать";
-"breed" = "выращивать, выводить, разводить";
-"bring" = "приносить, приводить";
-"broadcast" = "транслировать, распространять";
-"browbeat" = "запугивать";
-"build" = "строить";
-"burn" = "гореть, жечь";
-"burst" = "взрывать(ся)";
-"bust" = "разжаловать";
-"buy" = "покупать";
-"can" = "мочь, уметь";
-"cast" = "бросить, кинуть, вышвырнуть";
-"catch" = "ловить, хватать";
-"chide" = "упрекать";
-"choose" = "выбирать";
-"clap" = "хлопать, аплодировать";
-"cleave" = "раскалывать";
-"cling" = "цепляться, льнуть";
-"clothe" = "одевать (кого-либо)";
-"come" = "приходить";
-"cost" = "стоить, обходиться (в какую-либо сумму)";
-"creep" = "ползать";
-"crow" = "кукарекать";
-"cut" = "резать, разрезать";
-"deal" = "иметь дела, разрешать трудности";
-"dig" = "копать";
-"dive" = "нырять, погружаться";
-"do" = "делать, выполнять";
-"draw" = "рисовать, чертить";
-"dream" = "грезить, мечтать";
-"drink" = "пить, выпивать";
-"drive" = "водить";
-"dwell" = "обитать, жить";
-"eat" = "есть пищу, кушать";
-"fall" = "падать";
-"feed" = "кормить(ся)";
-"feel" = "чувствовать";
-"fight" = "драться, сражаться, бороться";
-"find" = "находить";
-"fit" = "подходить (по размеру)";
-"flee" = "убегать, спасаться бегством";
-"fling" = "бросать, швырнуть";
-"fly" = "летать";
-"forbid" = "запрещать";
-"forecast" = "предсказывать, прогнозировать";
-"foretell" = "предсказывать";
-"forget" = "забывать";
-"forgive" = "прощать";
-"forsake" = "покидать, отказываться, бросать";
-"foresee" = "предвидеть";
-"freeze" = "замерзать, замораживать";
-"get" = "получать";
-"give" = "давать";
-"go" = "идти, двигаться";
-"grind" = "молоть, толочь";
-"grow" = "расти, выращивать";
-"handwrite" = "писать вручную";
-"hang" = "вешать, висеть, повесить";
-"have" = "иметь";
-"hear" = "слышать";
-"hew" = "рубить";
-"hide" = "прятать(ся), скрывать(ся)";
-"hit" = "ударять, поражать";
-"hold" = "держать, удерживать";
-"hurt" = "ранить, причинять боль";
-"inlay" = "вкладывать, выстилать";
-"input" = "вводить данные";
-"interweave" = "воткать";
-"keep" = "держать, хранить";
-"kneel" = "становиться на колени";
-"knit" = "вязать";
-"know" = "знать";
-"lay" = "класть, положить";
-"lead" = "вести, руководить, управлять";
-"lean" = "опираться, прислоняться, наклоняться";
-"leap" = "прыгать, скакать";
-"learn" = "учить(ся)";
-"leave" = "покидать, оставлять";
-"lend" = "одалживать, давать взаймы";
-"let" = "позволять";
-"lie" = "лежать";
-"light" = "освещать";
-"lose" = "терять";
-"make" = "делать, производить, создавать";
-"may" = "мочь, иметь возможность";
-"mean" = "значить, подразумевать, иметь в виду";
-"meet" = "встречать, знакомиться";
-"melt" = "таять, плавиться";
-"mow" = "косить, жать, подстригать (траву)";
-"must" = "должен (сделать что-то)";
-"offset" = "компенсировать, возмещать, вознаграждать";
-"partake" = "принимать участие";
-"pay" = "платить";
-"prepay" = "платить вперед";
-"plead" = "умолять, обращаться к суду";
-"preset" = "заранее (предварительно) устанавливать";
-"prove" = "доказывать";
-"put" = "класть, ставить, размещать";
-"quit" = "оставлять, покидать";
-"read" = "читать";
-"relay" = "передавать, ретранслировать";
-"rend" = "раздирать";
-"rid" = "избавлять(ся), освобождать";
-"ride" = "ездить верхом";
-"ring" = "звенеть, звонить";
-"rise" = "восходить, подниматься";
-"run" = "бежать, течь";
-"saw" = "пилить";
-"say" = "сказать, говорить";
-"see" = "видеть";
-"seek" = "искать";
-"sell" = "продавать";
-"send" = "посылать, отправлять";
-"set" = "ставить, устанавливать, задавать";
-"sew" = "шить, пришивать, сшивать";
-"shake" = "трясти";
-"shall" = "делать что-то (в будущем)";
-"shave" = "брить(ся)";
-"shear" = "срезать, стричь";
-"shed" = "проливать, сбрасывать";
-"shine" = "светить, сиять, озарять";
-"shoot" = "стрелять";
-"shoe" = "обувать";
-"show" = "показывать";
-"shrink" = "сокращаться, сжиматься";
-"shut" = "закрывать(ся), запирать(ся), затворять";
-"sing" = "петь";
-"sink" = "тонуть, опускаться, погружаться (под воду)";
-"sit" = "сидеть";
-"slay" = "убивать";
-"sleep" = "спать";
-"slide" = "скользить";
-"sling" = "метать, швырять";
-"slink" = "красться";
-"slit" = "разрезать (вдоль), делать разрез";
-"smell" = "пахнуть, нюхать";
-"sneak" = "красться, подкрадываться";
-"sow" = "сеять, засеивать";
-"speak" = "говорить";
-"speed" = "спешить, ускорять";
-"spell" = "писать или читать по буквам";
-"spend" = "тратить, расходовать";
-"spill" = "проливать, разливать";
-"spin" = "крутить, прясть";
-"spit" = "плевать";
-"split" = "разделять, расщеплять, раскалывать";
-"spoil" = "портить";
-"spread" = "распространять(ся), развернуть";
-"spring" = "прыгать, скакать";
-"stand" = "стоять";
-"steal" = "воровать, красть";
-"stick" = "уколоть, приклеивать(ся), липнуть, втыкать";
-"sting" = "жалить";
-"stink" = "вонять";
-"strew" = "посыпать";
-"stride" = "шагать";
-"strike" = "бастовать, поражать, ударять";
-"string" = "натягивать, нанизывать";
-"strive" = "стараться, стремиться";
-"swear" = "клясться, присягать, ругаться";
-"sweat" = "потеть";
-"sweep" = "подметать, сметать";
-"swell" = "набухать, разбухать, раздуваться";
-"swim" = "плавать";
-"swing" = "качать(ся), раскачивать, вертеть";
-"take" = "брать, взять";
-"teach" = "учить";
-"tear" = "рвать";
-"tell" = "рассказывать";
-"think" = "думать";
-"thrive" = "преуспевать, процветать";
-"throw" = "бросать, кидать";
-"thrust" = "пропихивать, протыкать, совать, толкать";
-"tread" = "ступать, топтать";
-"typeset" = "набирать";
-"undergo" = "испытывать, переносить";
-"understand" = "понимать";
-"undertake" = "предпринимать";
-"upset" = "расстроиться, опрокидывать(ся)";
-"vex" = "раздражать, беспокоить";
-"wake" = "будить, просыпаться";
-"waylay" = "подстерегать";
-"wear" = "носить, одевать";
-"weave" = "плести, ткать";
-"wed" = "жениться, выходить (выдавать) замуж";
-"weep" = "плакать, рыдать";
-"wend" = "отправляться, направляться, путешествовать";
-"wet" = "мочить, промокать, увлажнять";
-"will" = "делать что-то (в будущем)";
-"win" = "выигрывать, побеждать";
-"wind" = "виться, заводить (механизм), наматывать";
-"withdraw" = "забирать назад, отзывать, изымать";
-"withhold" = "воздерживаться, отказывать(ся), удерживать, утаивать";
-"withstand" = "выдерживать, не поддаваться";
-"wring" = "выжимать, сдавливать, скручивать";
-"write" = "писать";
-"zinc" = "оцинковывать";
-"strip" = "раздеваться";
-"dare" = "рисковать, отваживаться";
-"geld" = "кастрировать";
-"gild" = "золотить";
-"gnaw" = "грызть";
-"grip" = "захватывать, схватить";
-"heave" = "тянуть, поворачивать";
-"pen" = "писать, сочинять";
-"rive" = "разрывать, отрывать";
-"shred" = "кромсать";
-"smite" = "карать, наказывать";
+/* The full name of the app's develop */
+"oleg_samoylov" = "Oleg Samoylov";
 
-"miscast" = "неправильно распределять роли";
-"misdeal" = "поступать неправильно";
-"misdo" = "делать что-либо неправильно или небрежно";
-"misgive" = "внушать недоверия, опасения";
-"mishear" = "ослышаться";
-"mishit" = "промахнуться";
-"mislay" = "класть не на место";
-"mislead" = "ввести в заблуждение";
-"misread" = "неправильно истолковывать";
-"misspell" = "писать с ошибками";
-"misspend" = "неразумно, зря тратить";
-"mistake" = "ошибаться";
-"misunderstand" = "неправильно понимать";
+/* (No Comment) */
+"one_time_payment" = "Pagamento una tantum, accesso a vita";
 
-"outbid" = "перебивать цену";
-"outdo" = "превосходить";
-"outfight" = "побеждать в бою";
-"outgrow" = "вырастать из";
-"output" = "выводить данные";
-"outrun" = "опережать, перегонять";
-"outsell" = "продавать лучше или дороже";
-"outshine" = "затмевать";
+/* (No Comment) */
+"orange" = "Arancia";
 
-"overbid" = "повелевать";
-"overdo" = "пережаривать";
-"overcome" = "преодолевать, компенсировать";
-"overdraw" = "превышать";
-"overeat" = "объедаться";
-"overfly" = "перелетать";
-"overhang" = "нависать";
-"overhear" = "подслушивать";
-"overlay" = "покрывать";
-"overpay" = "переплачивать";
-"override" = "переопределять";
-"overrun" = "переливаться через край";
-"oversee" = "надзирать за";
-"overshoot" = "расстреливать";
-"oversleep" = "проспать, заспаться";
-"overtake" = "догонять";
-"overthrow" = "свергать";
+/* (No Comment) */
+"outbid" = "offrire piu di";
+
+/* (No Comment) */
+"outdo" = "superarsi";
+
+/* (No Comment) */
+"outfight" = "sorpassare";
+
+/* (No Comment) */
+"outgrow" = "diventare troppi grande";
+
+/* (No Comment) */
+"output" = "produzione";
+
+/* (No Comment) */
+"outrun" = "superare";
+
+/* (No Comment) */
+"outsell" = "vendere piu";
+
+/* (No Comment) */
+"outshine" = "eclissare";
+
+/* (No Comment) */
+"overbid" = "offerta eccessiva";
+
+/* (No Comment) */
+"overcome" = "sopraffare";
+
+/* (No Comment) */
+"overdo" = "esagerare, strafare";
+
+/* (No Comment) */
+"overdraw" = "avere il conto scoperto";
+
+/* (No Comment) */
+"overeat" = "mangiare troppo";
+
+/* (No Comment) */
+"overfly" = "sorvolare";
+
+/* (No Comment) */
+"overhang" = "sporgenza";
+
+/* (No Comment) */
+"overhear" = "origliare";
+
+/* (No Comment) */
+"overlay" = "sovrapposizione";
+
+/* (No Comment) */
+"overpay" = "pagare piu del dovuto";
+
+/* (No Comment) */
+"override" = "sovrascrivere";
+
+/* (No Comment) */
+"overrun" = "invadere, eccedere";
+
+/* (No Comment) */
+"oversee" = "sorvegliare";
+
+/* (No Comment) */
+"overshoot" = "superare, mancare";
+
+/* (No Comment) */
+"oversleep" = "dormire troppo";
+
+/* (No Comment) */
+"overtake" = "sorpassare";
+
+/* (No Comment) */
+"overthrow" = "rovesciare";
+
+/* (No Comment) */
+"partake" = "partecipare";
+
+/* (No Comment) */
+"past_participle" = "Participio passato";
+
+/* (No Comment) */
+"pay" = "pagare";
+
+/* (No Comment) */
+"pen" = "comporre, scrivere";
+
+/* (No Comment) */
+"personalize" = "Personalizza l'app: scegli un colore accento a tuo piacimento";
+
+/* (No Comment) */
+"pink" = "Rosa";
+
+/* (No Comment) */
+"plead" = "supplicare";
+
+/* (No Comment) */
+"prepay" = "pagamento anticipato";
+
+/* (No Comment) */
+"preset" = "preset";
+
+/* (No Comment) */
+"print" = "Stampa";
+
+/* The Privacy Policy link text */
+"privacy_policy" = "Politica sulla riservatezza";
+
+/* (No Comment) */
+"pro_suggestion_statistics" = "Tra gli altri vantaggi, Pro amplia il conteggio dei verbi irregolari disponibili nei test da %d a %d";
+
+/* (No Comment) */
+"prove" = "dimostrare";
+
+/* (No Comment) */
+"purple" = "Viola";
+
+/* (No Comment) */
+"put" = "mettere";
+
+/* (No Comment) */
+"quit" = "smettere";
+
+/* The App Store Rate and Review redirection link text */
+"rate_and_review" = "Valuta e recensisci";
+
+/* (No Comment) */
+"read" = "leggere";
+
+/* (No Comment) */
+"red" = "Rosso";
+
+/* Determines the display of verbs with both regular and irregular forms */
+"regular_verbs" = "Regolare  (-ed)";
+
+/* (No Comment) */
+"relay" = "relè";
+
+/* (No Comment) */
+"remove" = "Rimuovere";
+
+/* (No Comment) */
+"remove_from_favorites" = "Sfavorevole";
+
+/* (No Comment) */
+"rend" = "sprappare";
+
+/* (No Comment) */
+"reset" = "Ripristina";
+
+/* (No Comment) */
+"reset_statistics_correct_answers" = "Sei sicuro di voler reimpostare le statistiche delle risposte corrette?";
+
+/* (No Comment) */
+"reset_statistics_learned_verbs" = "Sei sicuro di voler reimpostare le  statistiche dei verbi appresi?";
+
+/* (No Comment) */
+"restore_purchases" = "Ripristinare gli acquisti";
+
+/* (No Comment) */
+"rid" = "liberare da";
+
+/* (No Comment) */
+"ride" = "andare in, cavalcare";
+
+/* (No Comment) */
+"ring" = "suonare";
+
+/* (No Comment) */
+"rise" = "alzarsi";
+
+/* (No Comment) */
+"rive" = "strappare";
+
+/* (No Comment) */
+"run" = "correre";
+
+/* (No Comment) */
+"saw" = "segare";
+
+/* (No Comment) */
+"say" = "dire";
+
+/* (No Comment) */
+"see" = "vedere";
+
+/* (No Comment) */
+"seek" = "cercare";
+
+/* (No Comment) */
+"sell" = "vendere";
+
+/* (No Comment) */
+"send" = "mandare";
+
+/* (No Comment) */
+"sentence" = "Frase";
+
+/* Refers to the section of the tests where the missed word inside the sentence should be provided as the correct answer */
+"sentences" = "Frasi";
+
+/* (No Comment) */
+"sentences_subtitle" = "Quanto bene capisci i verbi irregolari nel contesto?";
+
+/* (No Comment) */
+"set" = "fissare";
+
+/* (No Comment) */
+"settings" = "Impostazioni";
+
+/* (No Comment) */
+"sew" = "cucire";
+
+/* (No Comment) */
+"shake" = "scuotere";
+
+/* (No Comment) */
+"shall" = "deve";
+
+/* Lets a user to tell a friend about the app */
+"share_app" = "Condividi app";
+
+/* (No Comment) */
+"shave" = "farsi la barba";
+
+/* (No Comment) */
+"shear" = "tosare";
+
+/* (No Comment) */
+"shed" = "spargere";
+
+/* (No Comment) */
+"shine" = "brillare";
+
+/* (No Comment) */
+"shoe" = "ferrare i cavalli";
+
+/* (No Comment) */
+"shoot" = "sparare";
+
+/* (No Comment) */
+"show" = "mostrare";
+
+/* (No Comment) */
+"shred" = "brandello";
+
+/* (No Comment) */
+"shrink" = "ridursi";
+
+/* (No Comment) */
+"shut" = "chiudere";
+
+/* (No Comment) */
+"simple_past" = "Passato Semplice";
+
+/* (No Comment) */
+"sing" = "cantare";
+
+/* (No Comment) */
+"sink" = "affondare";
+
+/* (No Comment) */
+"sit" = "sedersi";
+
+/* (No Comment) */
+"slay" = "uccidere";
+
+/* (No Comment) */
+"sleep" = "dormire";
+
+/* (No Comment) */
+"slide" = "scivolare";
+
+/* (No Comment) */
+"sling" = "fionda";
+
+/* (No Comment) */
+"slink" = "sgattaiolare";
+
+/* (No Comment) */
+"slit" = "tagliare";
+
+/* (No Comment) */
+"slower" = "Più lentamente";
+
+/* (No Comment) */
+"smell" = "sentire odore";
+
+/* (No Comment) */
+"smite" = "colpire";
+
+/* (No Comment) */
+"sneak" = "sgattaiolare";
+
+/* Refers to South African English */
+"south_african" = "Sudafricano";
+
+/* (No Comment) */
+"sow" = "seminare";
+
+/* (No Comment) */
+"speak" = "parlare";
+
+/* (No Comment) */
+"speaking_rate" = "Tasso di conversazione";
+
+/* (No Comment) */
+"speed" = "accelerare";
+
+/* (No Comment) */
+"spell" = "scandire";
+
+/* (No Comment) */
+"spend" = "spendere";
+
+/* (No Comment) */
+"spill" = "versare";
+
+/* (No Comment) */
+"spin" = "rotazione";
+
+/* (No Comment) */
+"spit" = "sputare";
+
+/* (No Comment) */
+"split" = "spaccare";
+
+/* (No Comment) */
+"spoil" = "guastare";
+
+/* (No Comment) */
+"spread" = "espandere";
+
+/* (No Comment) */
+"spring" = "rimbalzare";
+
+/* (No Comment) */
+"stand" = "stare in piedi";
+
+/* (No Comment) */
+"statistics" = "Statistiche";
+
+/* (No Comment) */
+"steal" = "rubare";
+
+/* (No Comment) */
+"stick" = "appiccicare";
+
+/* (No Comment) */
+"sting" = "pungere";
+
+/* (No Comment) */
+"stink" = "puzzare";
+
+/* (No Comment) */
+"store_unlimited_items_in_favorites" = "Memorizzare elementi illimitati nei Preferiti";
+
+/* (No Comment) */
+"strew" = "spargere";
+
+/* (No Comment) */
+"stride" = "avanzare a grandi passi";
+
+/* (No Comment) */
+"strike" = "colpire";
+
+/* (No Comment) */
+"string" = "stringa";
+
+/* (No Comment) */
+"strip" = "stricia";
+
+/* (No Comment) */
+"strive" = "sforzarsi";
+
+/* (No Comment) */
+"swear" = "giurare";
+
+/* (No Comment) */
+"sweat" = "sudore";
+
+/* (No Comment) */
+"sweep" = "spazzare";
+
+/* (No Comment) */
+"swell" = "gonfiare";
+
+/* (No Comment) */
+"swim" = "nuotare";
+
+/* (No Comment) */
+"swing" = "dondolare";
+
+/* (No Comment) */
+"take" = "prendere";
+
+/* (No Comment) */
+"teach" = "insegnare";
+
+/* (No Comment) */
+"teal" = "Verde acqua";
+
+/* (No Comment) */
+"tear" = "lacerare";
+
+/* (No Comment) */
+"tell" = "dire, raccontare";
+
+/* The Terms of Use link text */
+"terms" = "Condizioni d'uso";
+
+/* (No Comment) */
+"tests" = "Test";
+
+/* (No Comment) */
+"thank_you" = "Crazie per essere con noi";
+
+/* (No Comment) */
+"think" = "pensare";
+
+/* (No Comment) */
+"three_forms" = "3 moduli";
+
+/* (No Comment) */
+"thrive" = "prosperare";
+
+/* (No Comment) */
+"throw" = "gettare, slanciare";
+
+/* (No Comment) */
+"thrust" = "ficcare, forzare";
+
+/* (No Comment) */
+"track_your_progress_in_learning_irregular_verbs" = "Tieni tracvia dei tuoi progressi nell'apprendimento dei verbi irregolari";
+
+/* Refers to the irregular verb translation caption */
+"translation" = "Traduzione";
+
+/* (No Comment) */
+"translation_subtitle" = "Verifica la tua conoscenza della traduzione dei verbi irregolari";
+
+/* (No Comment) */
+"tread" = "calpestare";
+
+/* (No Comment) */
+"typeset" = "comporre";
+
+/* (No Comment) */
+"undergo" = "subire";
+
+/* (No Comment) */
+"understand" = "capire";
+
+/* (No Comment) */
+"undertake" = "intraprendere";
+
+/* (No Comment) */
+"unlock_all_verbs_in_tests" = "Sblocca tutti I verbi nei test";
+
+/* (No Comment) */
+"untitled" = "Senza titolo";
+
+/* (No Comment) */
+"upgrade_to_pro" = "Aggiornamento a Pro";
+
+/* (No Comment) */
+"upset" = "preoccupare";
+
+/* (No Comment) */
+"using_hints_gives_you_no_points" = "Vengono prese in considerazione solo le risposte unserite o selezionate correttamente al primo tentativo e senza utilizzare suggerimenti";
+
+/* (No Comment) */
+"verbs" = "Verbi";
+
+/* The current version of the app */
+"version" = "Versione";
+
+/* (No Comment) */
+"vex" = "preoccupare";
+
+/* (No Comment) */
+"view_a_transcription" = "Visualizza una transcrizione nella scheda del verbo";
+
+/* (No Comment) */
+"view_a_translation_without_going_to_the_verb_card" = "Visualizza una traduzione senza passare alla scheda del verbo";
+
+/* The title of the voice list page */
+"voice" = "Voce";
+
+/* The quick reference on how to customize the voice list */
+"voice_hint" = "Pet utilizzare una versione migliore di una voce, aggiungerne una nuova o rimuoverne una aggiunta in precedenza, vai su Impostazioni → Accessibilità → Voce fuoricampo → Discorso → Voce";
+
+/* (No Comment) */
+"wake" = "svegliarsi";
+
+/* (No Comment) */
+"waylay" = "trattenere, bloccare";
+
+/* (No Comment) */
+"wear" = "indossare";
+
+/* (No Comment) */
+"weave" = "tessere";
+
+/* (No Comment) */
+"wed" = "sposare";
+
+/* (No Comment) */
+"weep" = "piangere";
+
+/* (No Comment) */
+"wend" = "dirigersi, spingersi";
+
+/* (No Comment) */
+"wet" = "bagnato";
+
+/* The short description displayed at the top of the add widget view */
+"widget_configuration_display_title" = "Parole per tutti I giorni";
+
+/* The title displayed at the top of the add widget view */
+"widget_description" = "Memorizzare tutte e tre le forme di verbi irregolari in modo semplice e facile";
+
+/* (No Comment) */
+"will" = "volere";
+
+/* (No Comment) */
+"win" = "vincere";
+
+/* (No Comment) */
+"wind" = "serpeggiare";
+
+/* (No Comment) */
+"withdraw" = "ritirarsi";
+
+/* (No Comment) */
+"withhold" = "trattenere";
+
+/* (No Comment) */
+"withstand" = "resistere";
+
+/* (No Comment) */
+"wring" = "torcere";
+
+/* (No Comment) */
+"write" = "scrivere";
+
+/* (No Comment) */
+"writing_subtitle" = "Verifica la tua conoscenza delle forme dei verbi irregolari";
+
+/* (No Comment) */
+"yellow" = "Giallo";
+
+/* (No Comment) */
+"yes" = "Si";
+
+/* (No Comment) */
+"your_efforts" = "I tuoi sforzi";
+
+/* (No Comment) */
+"zinc" = "zinco";
+

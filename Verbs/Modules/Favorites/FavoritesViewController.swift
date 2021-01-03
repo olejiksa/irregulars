@@ -101,10 +101,8 @@ final class FavoritesViewController: UIViewController {
         
         switch state {
         case .data:
-            tableView?.isHidden = false
             noDataLabel.isHidden = true
         case .empty:
-            tableView?.isHidden = true
             noDataLabel.isHidden = false
         }
         

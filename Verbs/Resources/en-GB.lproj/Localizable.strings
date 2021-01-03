@@ -96,7 +96,7 @@
 "remove" = "Remove";
 "australian" = "Australian";
 "irish" = "Irish";
-"undian" = "Indian";
+"indian" = "Indian";
 "south_african" = "South African";
 "british" = "British";
 "american" = "American";
@@ -122,7 +122,7 @@
 "alight" = "alight";
 "arise" = "arise";
 "awake" = "awake";
-"backslid" = "backslid";
+"backslide" = "backslide";
 "be" = "be";
 "bear" = "bear";
 "beat" = "beat";

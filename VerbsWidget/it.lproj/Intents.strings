@@ -1,20 +1,30 @@
-"05iu2V" = "Verbs Intent";
+/* (No Comment) */
+"3F2cmR" = "Verbi";
 
-"3F2cmR" = "Глаголы";
+/* (No Comment) */
+"4drxkG-BZzO9q" = "Solo per confermare, volevi 'Tutti' ? ";
 
-"4drxkG-BZzO9q" = "Just to confirm, you wanted ‘All’?";
+/* (No Comment) */
+"4drxkG-ReGcTO" = "Solo per confermare, volevi 'Preferiti'? ";
 
-"4drxkG-ReGcTO" = "Just to confirm, you wanted ‘Favorites’?";
+/* (No Comment) */
+"05iu2V" = "Verbi Intenti";
 
-"BZzO9q" = "Все";
+/* (No Comment) */
+"BZzO9q" = "Tutti";
 
-"ReGcTO" = "Избранное";
+/* (No Comment) */
+"qLuGx1" = "Opzione di visualizzazione dei verbi";
 
-"qLuGx1" = "Verbs Display Option";
+/* (No Comment) */
+"ReGcTO" = "Preferiti";
 
-"sw2doT-BZzO9q" = "There are ${count} options matching ‘All’.";
+/* (No Comment) */
+"sw2doT-BZzO9q" = "Ci sono ${count} opzioni che corrispondono a  ‘Tutto’.";
 
-"sw2doT-ReGcTO" = "There are ${count} options matching ‘Favorites’.";
+/* (No Comment) */
+"sw2doT-ReGcTO" = "Ci sono ${count} opzioni Che corrispondono a 'Preferiti'. ";
 
-"wy8PUd" = "Choose an option on your own";
+/* (No Comment) */
+"wy8PUd" = "Scegli un'opzione de solo";
 

@@ -12,18 +12,12 @@
 			<string>NSStringPluralRuleType</string>
 			<key>NSStringFormatValueTypeKey</key>
 			<string>u</string>
-			<key>zero</key>
-			<string>правильных ответов за все время</string>
 			<key>one</key>
-			<string>правильный ответ за все время</string>
-			<key>two</key>
-			<string>правильных ответа за все время</string>
-			<key>few</key>
-			<string>правильных ответа за все время</string>
-			<key>many</key>
-			<string>правильных ответов за все время</string>
+			<string>risposta corretta per tutti il tempo</string>
 			<key>other</key>
-			<string>правильных ответов за все время</string>
+			<string>risposte corrette per tutti il tempo</string>
+			<key>zero</key>
+			<string>risposte corrette per tutti il tempo</string>
 		</dict>
 	</dict>
 </dict>
