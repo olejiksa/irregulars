@@ -24,14 +24,22 @@ final class AcknowledgementsPresenter: NSObject {
 private extension AcknowledgementsPresenter {
     
     func setupSections() {
+        let betaTestersString: String = [.localized(.sofiiaSokolova),
+                                         .localized(.artyomShumilov),
+                                         .localized(.elizavetaKeplin)].joined(separator: ", ")
+        
         dataSource.setup([Section(header: .localized(.sentences),
                                   items: [PlainItem(title: .localized(.sofiiaSokolova))]),
                           Section(header: .localized(.betaTesting),
-                                  items: [PlainItem(title: .localized(.sofiiaSokolova)),
-                                          PlainItem(title: .localized(.artyomShumilov)),
-                                          PlainItem(title: .localized(.elizavetaKeplin))]),
+                                  items: [PlainItem(title: betaTestersString)]),
                           Section(header: .localized(.translation),
                                   items: [RightDetailItem(title: "Julian Eduardo",
-                                                          subtitle: Language.spanish.description)])])
+                                                          subtitle: Language.spanish.description),
+                                          RightDetailItem(title: "To Be Clarified",
+                                                          subtitle: Language.italian.description),
+                                          RightDetailItem(title: "To Be Clarified",
+                                                          subtitle: Language.japanese.description),
+                                          RightDetailItem(title: "To Be Clarified",
+                                                          subtitle: Language.korean.description)])])
     }
 }
