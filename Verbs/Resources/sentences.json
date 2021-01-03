@@ -1005,7 +1005,7 @@
     },
     {
         "word": "vex",
-        "sentences": ["His silly chatter would vex a saint", "She is vexed by many cares", "He was vexed at his failure"]
+        "sentences": ["His silly chatter would vex a saint", "Annie Edison... smart, attractive, but easily vexed", "He was vexed at his failure"]
     },
     {
         "word": "wake",
@@ -1013,7 +1013,7 @@
     },
     {
         "word": "waylay",
-        "sentences": ["She might just waylay him and hit him with something heavy!", "The patrol was waylaid by bandits", "He waylaid me with a request for a loan"]
+        "sentences": ["She might just waylay him and hit him with something heavy!", "He waylaid me with a request for a loan", "The patrol was waylaid by bandits"]
     },
     {
         "word": "wear",
@@ -1025,31 +1025,31 @@
     },
     {
         "word": "wed",
-        "sentences": ["Better be half hanged than ill wed", "She will wed her daughter to a rich man", "He will wed that waitress next month"]
+        "sentences": ["Wulfric and I... want to be wed", "Dire mischance the day she wedded me", "I promised I would wait until I was wed"]
     },
     {
         "word": "weep",
-        "sentences": ["The sight made me want to weep", "She turned aside and wept", "He wept over his sad fate"]
+        "sentences": ["The sight made me want to weep", "She turned aside and wept", "Every night this week, I have wept in the arms of my loving wife, Peggy"]
     },
     {
         "word": "wend",
-        "sentences": ["As I wend to the shores I know not", "She went aside for a few moments", "We went on a day trip to the seaside"]
+        "sentences": ["As I wend to the shores I know not", "She went aside for a few moments", "They wended their way across the city"]
     },
     {
         "word": "wet",
-        "sentences": ["The grass was wet with dew", "My shirt was wet through", "He wetted a cloth and tried to rub the mark away"]
+        "sentences": ["Her tongue darted out to wet her lips nervously", "Her face wet with tears", "When they reached the stall, Casper's flanks were wet with sweat"]
     },
     {
         "word": "will",
-        "sentences": ["He that will thrive must rise at five", "He that would command must serve"]
+        "sentences": ["He that will thrive must rise at five", "That would be the best way"]
     },
     {
         "word": "win",
-        "sentences": ["Patient men win the day", "A good name is easier lost than won", "She won first prize in the 100 metres race"]
+        "sentences": ["Patient men win the day", "A good name is easier lost than won", "The next battle is won by him alone"]
     },
     {
         "word": "wind",
-        "sentences": ["Wind up your watch every day", "Blood was pouring from the wound", "He has got a superficial wound"]
+        "sentences": ["Wind up your watch every day", "The trail wound around pine trees and over rock outcroppings", "The metal to be tested was prepared in the form of a ring, upon which were wound primary and secondary coils of copper wire insulated with asbestos"]
     },
     {
         "word": "withdraw",
@@ -1057,15 +1057,15 @@
     },
     {
         "word": "withhold",
-        "sentences": ["The dam can withhold the pressure of the water", "I withheld payment until they had fulfilled the contract", "He withheld his consent to the marriage"]
+        "sentences": ["The dam can withhold the pressure of the water", "I withheld payment until they had fulfilled the contract", "Details were withheld pending further investigation"]
     },
     {
         "word": "withstand",
-        "sentences": ["This fabric can withstand steam and high temperatures", "She withstood several challenges to her leadership", "Jason withstood the fearful creatures as a great rock in the sea withstands the waves"]
+        "sentences": ["This fabric can withstand steam and high temperatures", "She withstood several challenges to her leadership", "Athens alone had withstood them with success"]
     },
     {
         "word": "wring",
-        "sentences": ["Please wring all the water from the soaking-wet shirt", "She wrung the wet clothes", "He wrung my hand warmly"]
+        "sentences": ["Please wring all the water from the soaking-wet shirt", "She wrung the wet clothes", "Rinse the floor by using a mop or cloth in cold water only again making sure the cloth or mop is well wrung out"]
     },
     {
         "word": "write",
@@ -1073,6 +1073,6 @@
     },
     {
         "word": "zinc",
-        "sentences": ["Brass is a metallic alloy of copper and zinc", "We zincked this box", "They zincked our bag"]
+        "sentences": ["Brass is a metallic alloy of copper and zinc", "We zincked this box", "They have zincked our bag"]
     }
 ]
