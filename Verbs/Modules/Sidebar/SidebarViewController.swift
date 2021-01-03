@@ -76,6 +76,7 @@ private extension SidebarViewController {
         ])
         
         collectionView.delegate = presenter
+        collectionView.dropDelegate = presenter
         
         self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.collectionView = collectionView

@@ -144,6 +144,7 @@ private extension ListViewController {
         
         tableView.dataSource = presenter
         tableView.delegate = presenter
+        tableView.dragDelegate = presenter
         
         tableView.register(ListCell.self, SubtitleCell.self)
         tableView.tableFooterView = UIView()

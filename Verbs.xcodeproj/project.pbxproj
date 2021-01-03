@@ -58,6 +58,7 @@
 		EB3217BD258BE42300023F0B /* ProgressItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3217BC258BE42300023F0B /* ProgressItem.swift */; };
 		EB3217C3258BE4B300023F0B /* ProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3217C1258BE4B300023F0B /* ProgressCell.swift */; };
 		EB3217C4258BE4B300023F0B /* ProgressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB3217C2258BE4B300023F0B /* ProgressCell.xib */; };
+		EB39619925A1A42F00E3B65F /* VerbDragItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB39619825A1A42F00E3B65F /* VerbDragItem.swift */; };
 		EB409E36259B8CC800E3B690 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB409E35259B8CC800E3B690 /* Localizable.swift */; };
 		EB409E3F259B8D4A00E3B690 /* AppLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB409E3E259B8D4A00E3B690 /* AppLocalizable.swift */; };
 		EB409E46259B8D9D00E3B690 /* AppLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB409E3E259B8D4A00E3B690 /* AppLocalizable.swift */; };
@@ -351,6 +352,7 @@
 		EB39616E25A0774B00E3B65F /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EB39616F25A0774B00E3B65F /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ko; path = ko.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		EB39617025A0774B00E3B65F /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Intents.strings; sourceTree = "<group>"; };
+		EB39619825A1A42F00E3B65F /* VerbDragItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbDragItem.swift; sourceTree = "<group>"; };
 		EB409E35259B8CC800E3B690 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		EB409E3E259B8D4A00E3B690 /* AppLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocalizable.swift; sourceTree = "<group>"; };
 		EB450972253B5CB300D31858 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
@@ -1151,6 +1153,7 @@
 				EB269991256E29DA007CCF2E /* TabBarItem.swift */,
 				EB2E4BCA2576B59F005B343A /* Test.swift */,
 				EBEB1D93251F15D30019972C /* Verb.swift */,
+				EB39619825A1A42F00E3B65F /* VerbDragItem.swift */,
 				EB7B85642537FAE000542D3C /* Word.swift */,
 			);
 			path = Models;
@@ -1575,6 +1578,7 @@
 				EB8325982556EB6B005E02C1 /* FavoritesPresenter.swift in Sources */,
 				EBF5949D258918290091FCE0 /* ExampleCell.swift in Sources */,
 				EB83259C2556EBE9005E02C1 /* FavoritesRouter.swift in Sources */,
+				EB39619925A1A42F00E3B65F /* VerbDragItem.swift in Sources */,
 				EB5547542553CB22001C5585 /* SidebarCell.swift in Sources */,
 				EBB01C1F25218BAB00BB646B /* ItemProtocol.swift in Sources */,
 				EBA644D7255ADC800012B973 /* SidebarPresenter.swift in Sources */,

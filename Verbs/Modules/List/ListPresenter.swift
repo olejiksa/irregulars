@@ -223,6 +223,37 @@ extension ListPresenter: UITableViewDelegate {
     }
 }
 
+// MARK: - UITableViewDragDelegate
+
+extension ListPresenter: UITableViewDragDelegate {
+    
+    func tableView(_ tableView: UITableView,
+                   itemsForBeginning session: UIDragSession,
+                   at indexPath: IndexPath) -> [UIDragItem] {
+        guard !isSearchActive else { return [] }
+        guard viewController?.splitViewController?.isCollapsed == false else { return [] }
+        session.localContext = tableView
+        let verb = verbsService.groupedItems[indexPath.section][indexPath.row]
+        guard !Locator.favorites.verbs.contains(verb) else { return [] }
+        let dragItem = UIDragItem(itemProvider: NSItemProvider(object: VerbDragItem(verb: verb)))
+        dragItem.localObject = verb
+        return [dragItem]
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   itemsForAddingTo session: UIDragSession,
+                   at indexPath: IndexPath,
+                   point: CGPoint) -> [UIDragItem] {
+        guard !isSearchActive else { return [] }
+        guard viewController?.splitViewController?.isCollapsed == false else { return [] }
+        let verb = verbsService.groupedItems[indexPath.section][indexPath.row]
+        guard !Locator.favorites.verbs.contains(verb) else { return [] }
+        let dragItem = UIDragItem(itemProvider: NSItemProvider(object: VerbDragItem(verb: verb)))
+        dragItem.localObject = verb
+        return [dragItem]
+    }
+}
+
 // MARK: - UISearchResultsUpdating
 
 extension ListPresenter: UISearchResultsUpdating {

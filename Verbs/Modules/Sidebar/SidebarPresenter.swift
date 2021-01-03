@@ -206,3 +206,31 @@ extension SidebarPresenter: UICollectionViewDelegate {
         }
     }
 }
+
+// MARK: - UICollectionViewDropDelegate
+
+extension SidebarPresenter: UICollectionViewDropDelegate {
+
+    func collectionView(_ collectionView: UICollectionView,
+                        performDropWith coordinator: UICollectionViewDropCoordinator) {
+        for item in coordinator.items {
+            guard let verb = item.dragItem.localObject as? Verb else { continue }
+            Locator.favorites.add(verb)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        canHandle session: UIDropSession) -> Bool {
+        session.canLoadObjects(ofClass: VerbDragItem.self)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        dropSessionDidUpdate session: UIDropSession,
+                        withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
+        guard let destinationIndexPath = destinationIndexPath,
+              let sidebarItem = dataSource?.itemIdentifier(for: destinationIndexPath),
+              destinationIndexPath.section == SidebarSection.verbs.rawValue,
+              sidebarItem.id == RowIdentifier.favorites else { return .init(operation: .forbidden) }
+        return .init(operation: .copy, intent: .insertIntoDestinationIndexPath)
+    }
+}
