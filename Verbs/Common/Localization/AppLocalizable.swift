@@ -120,7 +120,7 @@ extension Localizable {
     static let sofiiaSokolova = Localizable(
         NSLocalizedString("sofiia_sokolova", comment: "Refers to Sofia Sokolova"))
     static let artyomShumilov = Localizable(
-        NSLocalizedString("artyom_shumilov", comment: "Refers to Artyom Shumilov"))
+        NSLocalizedString("artyom_shumilov", comment: "Refers to Artem Shumilov"))
     static let elizavetaKeplin = Localizable(
-        NSLocalizedString("elizaveta_keplin", comment: "Refers to Elizaveta Keplin"))
+        NSLocalizedString("elizaveta_keplin", comment: "Refers to Elizabeth Keplin"))
 }
