@@ -389,12 +389,6 @@
 "hide" = "nascondere";
 
 /* (No Comment) */
-"hide_or_show_derivatives" = "Nascondi o mostra le forme derivate";
-
-/* (No Comment) */
-"hide_or_show_regular_verbs" = "Nascondi o mostra i verbi regolari (-ed)";
-
-/* (No Comment) */
 "hint" = "Suggerimento";
 
 /* (No Comment) */
@@ -1074,9 +1068,6 @@
 
 /* (No Comment) */
 "view_a_transcription" = "Visualizza una transcrizione nella scheda del verbo";
-
-/* (No Comment) */
-"view_a_translation_without_going_to_the_verb_card" = "Visualizza una traduzione senza passare alla scheda del verbo";
 
 /* The title of the voice list page */
 "voice" = "Voce";

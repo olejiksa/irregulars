@@ -17,6 +17,7 @@ final class FavoritesViewController: UIViewController {
     private var tableView: UITableView?
     private var state: ListState = .empty
     private var topInset: CGFloat = 0
+    private var listMenu: ListMenu?
     
     private var moreButton: UIBarButtonItem?
     private var editButton: UIBarButtonItem?
@@ -47,6 +48,7 @@ final class FavoritesViewController: UIViewController {
         super.viewDidLoad()
 
         setupNavigationBar()
+        setupMenu()
         setupTableView()
         setupSearchController()
         setupNoDataLabel()
@@ -75,7 +77,7 @@ final class FavoritesViewController: UIViewController {
     }
     
     func reloadData() {
-        buildMenu(for: moreButton)
+        listMenu?.build()
         tableView?.reloadData()
     }
     
@@ -127,14 +129,10 @@ private extension FavoritesViewController {
     func setupNavigationBar() {
         navigationItem.title = "favorites".localized
         
-        moreButton = LanguageService().hasTranslation ?
-            .init(image: SystemIcon.ellipsis.image,
-                  style: .plain,
-                  target: nil,
-                  action: nil)
-            : nil
-        buildMenu(for: moreButton)
-        
+        moreButton = .init(image: SystemIcon.ellipsis.image,
+                           style: .plain,
+                           target: nil,
+                           action: nil)
         editButton = .init(barButtonSystemItem: .edit,
                            target: self,
                            action: #selector(didEditTap))
@@ -195,37 +193,12 @@ private extension FavoritesViewController {
         navigationItem.searchController = searchController
     }
     
-    func buildMenu(for barButtonItem: UIBarButtonItem?) {
-        let isTranslation = UserDefaults.shared.bool(for: .shouldTranslationBeShown)
-        
-        barButtonItem?.menu = .init(children: [
-            UIAction(title: "three_forms".localized,
-                     state: !isTranslation ? .on : .off,
-                     handler: handleMenu),
-            UIAction(title: "translation".localized,
-                     state: isTranslation ? .on : .off,
-                     handler: handleMenu)
-        ])
-    }
-    
-    func handleMenu(action: UIAction) {
-        let isPaid = FeatureToggle.isPaid
-        
-        if isPaid {
-            let isTranslation = UserDefaults.shared.bool(for: .shouldTranslationBeShown)
-            let state = action.state == .on
-            let newState = isTranslation == state
-            UserDefaults.shared.set(newState, for: .shouldTranslationBeShown)
-            NotificationCenter.default.post(name: .list,
-                                            object: nil,
-                                            userInfo: [Notification.Name.list: newState])
-        } else if action.state == .off {
-            presenter.router?.goToPaywall()
-        } else {
-            return
-        }
-        
-        buildMenu(for: moreButton)
+    func setupMenu() {
+        listMenu = .init(barButtonItem: moreButton,
+                         hasTranslation: presenter.hasTranslation,
+                         favoritesOnly: true,
+                         printInfoBlock: presenter.print)
+        listMenu?.build()
     }
     
     @objc func didEditTap() {

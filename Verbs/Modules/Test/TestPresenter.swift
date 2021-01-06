@@ -37,11 +37,11 @@ final class TestPresenter: NSObject {
         switch (UserDefaults.shared.bool(for: .favoritesOnly),
                 !UserDefaults.shared.bool(for: .isPaid)) {
         case (_, true):
-            self.items = verbsService.items.map { $0.infinitive.value }.filter(demoService.items.contains)
+            self.items = verbsService.items.map(\.infinitive.value).filter(demoService.items.contains)
         case (true, false):
-            self.items = favoritesService.items.map { $0.infinitive.value }
+            self.items = favoritesService.items.map(\.infinitive.value)
         case (false, false):
-            self.items = verbsService.items.map { $0.infinitive.value }
+            self.items = verbsService.items.map(\.infinitive.value)
         }
         self.audioService = audioService
         self.itemsFactory = itemsFactory

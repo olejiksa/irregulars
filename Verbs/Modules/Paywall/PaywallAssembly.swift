@@ -9,7 +9,7 @@
 final class PaywallAssembly: AssemblyProtocol {
     
     func viewController() -> some PaywallViewController {
-        let presenter = PaywallPresenter(languageService: .init())
+        let presenter = PaywallPresenter()
         let viewController = PaywallViewController(presenter: presenter,
                                                    purchaseService: .init())
         let router = PaywallRouter(viewController: viewController)

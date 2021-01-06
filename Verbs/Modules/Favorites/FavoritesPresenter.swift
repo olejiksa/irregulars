@@ -14,18 +14,22 @@ final class FavoritesPresenter: NSObject {
     var router: FavoritesRouter?
     
     var isEditing = false
+    var hasTranslation: Bool { languageService.hasTranslation }
     
     private let languageService: LanguageService
     private let favoritesService: FavoritesService
+    private let printService: PrintService
     private var favorites = Locator.favorites
     private var isSearchActive = false
     
     private var infinitive: String?
     
     init(languageService: LanguageService,
-         favoritesService: FavoritesService) {
+         favoritesService: FavoritesService,
+         printService: PrintService) {
         self.languageService = languageService
         self.favoritesService = favoritesService
+        self.printService = printService
         
         super.init()
         
@@ -38,6 +42,11 @@ final class FavoritesPresenter: NSObject {
         guard let title = viewController?.splitViewController?.secondaryViewController?.topViewController?.navigationItem.title else { return }
         infinitive = title
         didSelectedItemSet()
+    }
+    
+    func print() {
+        printService.print(favoritesService.items,
+                           hasTranslation: languageService.hasTranslation)
     }
 }
 

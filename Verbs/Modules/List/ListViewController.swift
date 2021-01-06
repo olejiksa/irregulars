@@ -120,7 +120,9 @@ private extension ListViewController {
     
     func setupMenu() {
         listMenu = .init(barButtonItem: moreButton,
-                         paywallBlock: presenter.router?.goToPaywall,
+                         hasTranslation: presenter.hasTranslation,
+                         favoritesOnly: false,
+                         printInfoBlock: presenter.print,
                          updateDerivativesBlock: presenter.updateDerivatives,
                          updateRegularsBlock: presenter.updateRegulars)
         listMenu?.build()

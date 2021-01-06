@@ -13,16 +13,21 @@ final class ListPresenter: NSObject {
     weak var viewController: ListViewController?
     var router: ListRouter?
     
+    var hasTranslation: Bool { languageService.hasTranslation }
+    
     private let languageService: LanguageService
     private let verbsService: VerbsService
+    private var printService: PrintService
     private var isSearchActive = false
     
     private var infinitive: String?
     
     init(languageService: LanguageService,
-         verbsService: VerbsService) {
+         verbsService: VerbsService,
+         printService: PrintService) {
         self.languageService = languageService
         self.verbsService = verbsService
+        self.printService = printService
         
         super.init()
         
@@ -48,6 +53,11 @@ final class ListPresenter: NSObject {
         verbsService.shouldDerivativesBeShown = value
         viewController?.reloadData()
         didSelectedItemSet()
+    }
+    
+    func print() {
+        printService.print(verbsService.items,
+                           hasTranslation: languageService.hasTranslation)
     }
 }
 
