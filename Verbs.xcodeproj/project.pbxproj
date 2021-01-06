@@ -92,6 +92,8 @@
 		EB5547542553CB22001C5585 /* SidebarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5547532553CB22001C5585 /* SidebarCell.swift */; };
 		EB5547632554089F001C5585 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5547622554089F001C5585 /* TabBarController.swift */; };
 		EB59AF4025A60318005A212C /* PrintService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59AF3F25A60318005A212C /* PrintService.swift */; };
+		EB59AF5925A631A8005A212C /* PurchaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF97C8D256235AF009FFFBA /* PurchaseService.swift */; };
+		EB59AF5D25A631E8005A212C /* PurchaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4B1625717A3E005B343A /* PurchaseError.swift */; };
 		EB59F00A258FE35E004676D2 /* VoiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59F009258FE35E004676D2 /* VoiceAssembly.swift */; };
 		EB59F00F258FE38B004676D2 /* VoicePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59F00E258FE38B004676D2 /* VoicePresenter.swift */; };
 		EB59F014258FE394004676D2 /* VoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59F013258FE394004676D2 /* VoiceViewController.swift */; };
@@ -1469,6 +1471,7 @@
 				EB5D6E00259ED3A600CCCA85 /* SpotlightService.swift in Sources */,
 				EB7DFF69252451D2000B711D /* VerbsWidget.swift in Sources */,
 				EB4509D12541703700D31858 /* Language.swift in Sources */,
+				EB59AF5D25A631E8005A212C /* PurchaseError.swift in Sources */,
 				EB409E4A259B8DA200E3B690 /* Localizable.swift in Sources */,
 				EB3217AC258BCFEC00023F0B /* Statistics.swift in Sources */,
 				EBE4AD0F2582AF7E001E9E4A /* VerbsServiceProtocol.swift in Sources */,
@@ -1488,6 +1491,7 @@
 				EBF5954C258A76A20091FCE0 /* Locator.swift in Sources */,
 				EBF59446258879770091FCE0 /* Intents.intentdefinition in Sources */,
 				EB26998C256D40DD007CCF2E /* Notification.swift in Sources */,
+				EB59AF5925A631A8005A212C /* PurchaseService.swift in Sources */,
 				EBF594D42589357D0091FCE0 /* Favorites.swift in Sources */,
 				EBF5950725893BBA0091FCE0 /* Sentence.swift in Sources */,
 				EB4509CE2541700A00D31858 /* LanguageService.swift in Sources */,
@@ -1748,7 +1752,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = VerbsWidget/VerbsWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1773,7 +1777,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = VerbsWidget/VerbsWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1916,7 +1920,7 @@
 				CODE_SIGN_ENTITLEMENTS = Verbs/Verbs.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1941,7 +1945,7 @@
 				CODE_SIGN_ENTITLEMENTS = Verbs/Verbs.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1964,7 +1968,7 @@
 				CODE_SIGN_ENTITLEMENTS = VerbsWidgetIntent/VerbsWidgetIntent.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidgetIntent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1988,7 +1992,7 @@
 				CODE_SIGN_ENTITLEMENTS = VerbsWidgetIntent/VerbsWidgetIntent.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidgetIntent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

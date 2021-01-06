@@ -49,6 +49,10 @@ final class SettingsItemsFactory {
                                      RightDetailItem(title: "voice".localized,
                                                      subtitle: voiceName,
                                                      actionBlock: voiceBlock)].compactMap { $0 }
+//                                    + [SwitchItem(text: "Notifications",
+//                                                isOn: false,
+//                                                isEnabled: true, actionBlock: { _ in
+//                                     })]
         return .init(header: "general".localized, items: items)
     }
     

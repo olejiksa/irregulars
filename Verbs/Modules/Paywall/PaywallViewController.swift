@@ -117,6 +117,7 @@ private extension PaywallViewController {
     func didActivate() {
         DispatchQueue.main.async {
             self.buyButton.hideLoading()
+            self.restoreButton.hideLoading()
             self.view.window?.rootViewController?.dismiss(animated: true)
         }
     }

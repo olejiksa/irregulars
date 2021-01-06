@@ -29,18 +29,11 @@ final class PurchaseService: NSObject {
     
     var canMakePayments: Bool { SKPaymentQueue.canMakePayments() }
     
-    override init() {
-        super.init()
-        SKPaymentQueue.default().add(self)
-    }
-    
     func fetchPrice(priceHandler: @escaping StringBlock) {
         productsRequest?.cancel()
         
-        self.activationHandler = nil
         self.priceHandler = priceHandler
-        self.errorHandler = nil
-        
+
         productsRequest = SKProductsRequest(productIdentifiers: [proID])
         productsRequest?.delegate = self
         productsRequest?.start()
