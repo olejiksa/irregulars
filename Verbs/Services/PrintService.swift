@@ -44,7 +44,7 @@ tr    { page-break-inside:avoid; page-break-after:auto }
 .styled-table {
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width: 400px;
+    width: 100%;
     border-collapse: separate;
     border-spacing: 2px;
     border-color: \(color.rgbaString);
@@ -58,7 +58,7 @@ tr    { page-break-inside:avoid; page-break-after:auto }
 
 .styled-table th,
 .styled-table td {
-    padding: 12px 15px;
+    padding: 4px 5px;
 }
 
 .styled-table tbody tr {
