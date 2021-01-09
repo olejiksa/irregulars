@@ -1128,3 +1128,5 @@
 "empty_favorites" = "“즐겨찾기” 없습니다";
 "empty_tests" = "테스트를 시작하려면 화면 왼쪽에있는 테스트를 클릭하십시오";
 "empty_verbs" = "불규칙 동사에 대한 정보를 보려면 화면 왼쪽에있는 해당 동사를 클릭하십시오";
+"acknowledgements" = "감사";
+"beta_testing" = "베타 테스트";
