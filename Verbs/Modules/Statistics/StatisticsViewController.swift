@@ -34,7 +34,7 @@ final class StatisticsViewController: UIViewController {
         setupKeyboardService()
         setupDelegate()
         
-        RateService().requestReviewIfAppropriate(minimumReviewWorthyActionCount: 20)
+        RateService().requestReviewIfAppropriate(minimumReviewWorthyActionCount: 30)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

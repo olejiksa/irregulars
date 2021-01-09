@@ -14,9 +14,12 @@ final class VoicePresenter: NSObject {
     var router: VoiceRouter?
     weak var viewController: VoiceViewController?
     
+    private let audioService: AudioService
     private let voiceService: VoiceService
     
-    init(voiceService: VoiceService) {
+    init(audioService: AudioService,
+         voiceService: VoiceService) {
+        self.audioService = audioService
         self.voiceService = voiceService
         super.init()
         setupSections()
@@ -75,15 +78,11 @@ extension VoicePresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        guard dataSource.selectedIndexPath != indexPath else {
-            return
-        }
-        
+        guard dataSource.selectedIndexPath != indexPath else { return }
         guard FeatureToggle.isPaid else {
             router?.goToPaywall()
             return
         }
-        
         guard let item = dataSource.item(at: indexPath) as? VoiceItem else { return }
         dataSource.selectedIndexPath = indexPath
         
@@ -91,6 +90,8 @@ extension VoicePresenter: UITableViewDelegate {
         Region.current = item.region
         UserDefaults.shared.set(item.voiceID, for: .voice)
         NotificationCenter.default.post(name: .reload, object: nil)
+        
+        audioService.play(text: "The quick brown fox jumps over the lazy dog", playHandler: {}, stopHandler: {})
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
@@ -104,4 +105,3 @@ extension VoicePresenter: UITableViewDelegate {
         return indexPath
     }
 }
-

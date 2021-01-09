@@ -79,9 +79,9 @@ tr    { page-break-inside:avoid; page-break-after:auto }
         string += "<table class=\"styled-table\">"
         string += "<thead>"
         string += "<tr>"
-        string += "<th>\(String.localized(.infinitive))</th>"
-        string += "<th>\(String.localized(.pastSimple))</th>"
-        string += "<th>\(String.localized(.pastParticiple))</th>"
+        string += "<th>Infinitive</th>"
+        string += "<th>Past Simple</th>"
+        string += "<th>Past Participle</th>"
         if hasTranslation { string += "<th>\(String.localized(.translation))</th>" }
         string += "</tr>"
         string += "</thead>"

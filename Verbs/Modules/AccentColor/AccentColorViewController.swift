@@ -69,6 +69,8 @@ private extension AccentColorViewController {
         tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         
+        tableView.separatorInset = .init(top: 0, left: 66, bottom: 0, right: 0)
+        
         tableView.register(ActionCell.self, AccentColorCell.self)
         
         self.tableView = tableView

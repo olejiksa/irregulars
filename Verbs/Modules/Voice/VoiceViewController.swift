@@ -29,6 +29,7 @@ final class VoiceViewController: UIViewController {
         setupNavigationBar()
         setupTableView()
         setupView()
+        scrollToRow()
     }
 }
 
@@ -76,6 +77,12 @@ private extension VoiceViewController {
     
     func setupView() {
         view.backgroundColor = .systemBackground
+    }
+    
+    func scrollToRow() {
+        guard let indexPath = presenter.dataSource.selectedIndexPath else { return }
+        tableView?.layoutIfNeeded()
+        tableView?.scrollToRow(at: indexPath, at: .middle, animated: true)
     }
 }
 

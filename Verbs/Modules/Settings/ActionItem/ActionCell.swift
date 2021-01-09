@@ -48,6 +48,7 @@ extension ActionCell: CellProtocol {
     func setup(with item: ItemProtocol) {
         guard let item = item as? ActionItem else { return }
         
+        separatorInset = .zero
         textLabel?.text = item.text
         style = item.style
     }

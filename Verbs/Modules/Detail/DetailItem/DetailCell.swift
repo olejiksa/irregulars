@@ -41,7 +41,7 @@ private extension DetailCell {
     func stop() {
         playButton.setImage(SystemIcon.play.image, for: .normal)
         
-        RateService().requestReviewIfAppropriate(minimumReviewWorthyActionCount: 20)
+        RateService().requestReviewIfAppropriate(minimumReviewWorthyActionCount: 25)
     }
 }
 

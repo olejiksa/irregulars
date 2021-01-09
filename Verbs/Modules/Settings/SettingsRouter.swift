@@ -50,6 +50,7 @@ final class SettingsRouter {
     
     func goToAcknowledgements() {
         let vc = AcknowledgementsAssembly().viewController()
+        viewController?.navigationController?.view?.backgroundColor = .systemBackground
         viewController?.navigationController?.push(vc)
     }
     
