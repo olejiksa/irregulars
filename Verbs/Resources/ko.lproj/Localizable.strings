@@ -1,391 +1,1130 @@
-"including" = "Из них";
-"downgrade_to" = "Вернуться к %@ Lite";
-"thank_you" = "Спасибо за то, что Вы с нами!";
-"listen_to_pronunciation" = "Слушайте произношение";
-"statistics" = "Статистика";
-"view_a_transcription" = "Просматривайте транскрипцию в карточке глагола";
-"store_unlimited_items_in_favorites" = "Храните неограниченное количество элементов в «Избранном»";
-"tests" = "Тесты";
-"activation" = "Активация";
-"deactivation" = "Деактивация";
-"about" = "О программе";
-"developer" = "Разработчик";
-"oleg_samoylov" = "Олег Самойлов";
-"version" = "Версия";
-"widget_configuration_display_title" = "Слова на каждый день";
-"widget_description" = "Запоминайте все три формы неправильных глаголов легко и просто, даже не заходя в приложение";
-"verbs" = "Глаголы";
-"settings" = "Настройки";
-"general" = "Общее";
-"links" = "Ссылки";
-"regular_verbs" = "Правильные (-ed)";
-"derivatives" = "Производные формы";
-"translation" = "Перевод";
-"translation_subtitle" = "Проверьте знание перевода неправильных глаголов";
-"language" = "Язык";
-"contact_us" = "Связаться с нами";
-"rate_and_review" = "Оценить и дать отзыв";
-"buy_button" = "Купить";
-"restore_purchases" = "Восстановить покупки";
-"empty_verbs" = "Чтобы посмотреть информацию о неправильном глаголе, нажмите на него в левой части экрана";
-"empty_tests" = "Чтобы начать прохождение теста, нажмите на него в левой части экрана";
-"empty_favorites" = "Чтобы добавить неправильный глагол в «Избранное», откройте его из списка всех глаголов и нажмите на кнопку-звездочку в правом верхнем углу экрана";
-"three_forms" = "3 формы";
-"forms" = "Формы";
-"privacy_policy" = "Политика конфиденциальности";
-"share_app" = "Поделиться приложением";
-"edition" = "Редакция";
-"all" = "Все";
-"favorites" = "Избранное";
-"upgrade_to_pro" = "Купить Pro-версию";
-"more" = "Еще";
-"error" = "Ошибка";
-"hint" = "Подсказка";
-"unlock_all_verbs_in_tests" = "Разблокируйте все глаголы в тестах";
-"accent_color" = "Акцентный цвет";
-"blue" = "Синий";
-"green" = "Зеленый";
-"indigo" = "Индиго";
-"orange" = "Оранжевый";
-"pink" = "Розовый";
-"purple" = "Пурпурный";
-"red" = "Красный";
-"teal" = "Бирюзовый";
-"yellow" = "Желтый";
-"match_app_icon_with_accent_color" = "Сопоставить иконку с цветом";
-"enter_here" = "Введите здесь";
-"terms" = "Условия использования";
-"personalize" = "Персонализируйте приложение: выберите акцентный цвет по своему вкусу";
-"examples" = "Примеры";
-"sentences" = "Предложения";
-"writing_subtitle" = "Проверьте знания форм неправильных глаголов";
-"sentences_subtitle" = "Насколько хорошо Вы понимаете неправильные глаголы из контекста?";
-"sentence" = "Предложение";
-"listening" = "Аудирование";
-"listening_subtitle" = "Проверьте понимание неправильных глаголов на слух";
-"demo" = "Демо";
-"missed_word" = "Пропущенное слово";
-"infinitive" = "Неопределенная форма глагола";
-"past_simple" = "Простое прошедшее";
-"past_participle" = "Причастие прошедшего времени";
-"listen_and_write" = "Прослушайте и напишите ниже";
-"speaking_rate" = "Скорость речи";
-"empty_favorites_title" = "Нет «Избранного»";
-"track_your_progress_in_learning_irregular_verbs" = "Отслеживайте свой прогресс в изучении неправильных глаголов";
-"using_hints_gives_you_no_points" = "Учитываются только ответы, введенные или выбранные правильно с первой попытки и без использования подсказок";
-"attention" = "Внимание";
-"cancel" = "Отмена";
-"reset_statistics_learned_verbs" = "Вы действительно хотите сбросить статистику выученных глаголов?";
-"reset_statistics_correct_answers" = "Вы действительно хотите сбросить статистику правильных ответов?";
-"yes" = "Да";
-"pro_suggestion_statistics" = "Кроме других преимуществ, в Pro-версии увеличено количество неправильных глаголов, доступных для закрепления в тестах: с %d до %d";
-"no_data_to_display" = "Нет данных для показа";
-"learned_verbs" = "Выученные глаголы";
-"learned_verbs_footer" = "Слово считается изученным, если оно было отвечено верно не менее 3 раз. Если ответ оказался правильным, изученность глагола увеличивается на единицу, иначе — уменьшается";
-"reset" = "Сброс";
-"erase_learned_verbs" = "Стереть выученные глаголы";
-"erase_correct_answers" = "Стереть правильные ответы";
-"your_efforts" = "Ваш прогресс";
-"in_progress" = "В процессе";
-"of" = "из %d";
-"add_to_favorites" = "Добавить в «Избранное»";
-"remove_from_favorites" = "Убрать из «Избранного»";
-"remove" = "Убрать";
-"australian" = "Австралийский";
-"irish" = "Ирландский";
-"indian" = "Индийский";
-"south_african" = "Южноафриканский";
-"british" = "Британский";
-"american" = "Американский";
-"voice" = "Голос";
-"male" = "Мужской";
-"female" = "Женский";
-"untitled" = "Безымянный";
-"default" = "По умолчанию";
-"slower" = "Медленнее";
-"faster" = "Быстрее";
-"voice_hint" = "Чтобы использовать более качественный вариант какого-либо голоса, добавить новый или удалить ранее добавленный, выберите Настройки → Универсальный доступ → VoiceOver → Речь → Голос";
-"print" = "Печать";
-"acknowledgements" = "Благодарности";
+/* (No Comment) */
+"abide" = "견디다";
+
+/* The About section title on the Settings page */
+"about" = "프러그램으로";
+
+/* Refers to both the Settings section and the title of the accent colors list page */
+"accent_color" = "악센트의 색";
+
+/* (No Comment) */
+"activation" = "활동화";
+
+/* (No Comment) */
+"add_to_favorites" = "“즐겨찾기”에 추가하다";
+
+/* (No Comment) */
+"alight" = "교통에서 나가다";
+
+/* (No Comment) */
+"all" = "모든";
+
+/* Refers to American English */
+"american" = "미국의";
+
+/* (No Comment) */
+"arise" = "생기다";
+
+/* (No Comment) */
+"attention" = "관심";
+
+/* Refers to Australian English */
+"australian" = "오스트레일리아의";
+
+/* (No Comment) */
+"awake" = "일어나다";
+
+/* (No Comment) */
+"be" = "있다";
+
+/* (No Comment) */
+"bear" = "낳다";
+
+/* (No Comment) */
+"beat" = "치다";
+
+/* (No Comment) */
+"become" = "되다";
+
+/* (No Comment) */
+"befall" = "생기다";
+
+/* (No Comment) */
+"beget" = "내다";
+
+/* (No Comment) */
+"begin" = "손내다";
+
+/* (No Comment) */
+"behold" = "관조하다";
+
+/* (No Comment) */
+"bend" = "굽히다";
+
+/* (No Comment) */
+"bereave" = "박탈하다";
+
+/* (No Comment) */
+"beseech" = "빌리다";
+
+/* (No Comment) */
+"bet" = "내기하다";
+
+/* The title of the section for beta testing participants */
 "beta_testing" = "Бета-тестирование";
-"sofia_sokolova" = "София Соколова";
-"artem_shumilov" = "Артем Шумилов";
-"elizabeth_keplin" = "Елизавета Кеплин";
-"buy_for" = "Купить за";
-"one_time_payment" = "Одноразовый платеж, пожизненный доступ";
-"ok" = "OK";
 
-"abide" = "выносить, терпеть";
-"alight" = "выходить из транспорта";
-"arise" = "возникать, появляться, подниматься";
-"awake" = "будить, просыпаться";
-"backslide" = "отказываться от прежних убеждений";
-"be" = "быть";
-"bear" = "нести, переносить, рождать";
-"beat" = "бить";
-"become" = "становиться";
-"befall" = "случаться";
-"beget" = "порождать";
-"begin" = "начинать";
-"behold" = "глядеть, созерцать";
-"bend" = "гнуть, сгибать";
-"bereave" = "отнимать, лишать, обездоливать";
-"bet" = "держать пари, делать ставку";
-"beseech" = "просить";
-"bid" = "предлагать цену, велеть, просить";
-"bind" = "связывать";
-"bite" = "кусать";
-"bleed" = "истекать кровью, кровоточить";
-"bless" = "благословлять";
-"blow" = "дуть";
-"break" = "ломать, прерывать, разбивать";
-"breed" = "выращивать, выводить, разводить";
-"bring" = "приносить, приводить";
-"broadcast" = "транслировать, распространять";
-"browbeat" = "запугивать";
-"build" = "строить";
-"burn" = "гореть, жечь";
-"burst" = "взрывать(ся)";
-"bust" = "разжаловать";
-"buy" = "покупать";
-"can" = "мочь, уметь";
-"cast" = "бросить, кинуть, вышвырнуть";
-"catch" = "ловить, хватать";
-"chide" = "упрекать";
-"choose" = "выбирать";
-"clap" = "хлопать, аплодировать";
-"cleave" = "раскалывать";
-"cling" = "цепляться, льнуть";
-"clothe" = "одевать (кого-либо)";
-"come" = "приходить";
-"cost" = "стоить, обходиться (в какую-либо сумму)";
-"creep" = "ползать";
-"crow" = "кукарекать";
-"cut" = "резать, разрезать";
-"deal" = "иметь дела, разрешать трудности";
-"dig" = "копать";
-"dive" = "нырять, погружаться";
-"do" = "делать, выполнять";
-"draw" = "рисовать, чертить";
-"dream" = "грезить, мечтать";
-"drink" = "пить, выпивать";
-"drive" = "водить";
-"dwell" = "обитать, жить";
-"eat" = "есть пищу, кушать";
-"fall" = "падать";
-"feed" = "кормить(ся)";
-"feel" = "чувствовать";
-"fight" = "драться, сражаться, бороться";
-"find" = "находить";
-"fit" = "подходить (по размеру)";
-"flee" = "убегать, спасаться бегством";
-"fling" = "бросать, швырнуть";
-"fly" = "летать";
-"forbid" = "запрещать";
-"forecast" = "предсказывать, прогнозировать";
-"foretell" = "предсказывать";
-"forget" = "забывать";
-"forgive" = "прощать";
-"forsake" = "покидать, отказываться, бросать";
-"foresee" = "предвидеть";
-"freeze" = "замерзать, замораживать";
-"get" = "получать";
-"give" = "давать";
-"go" = "идти, двигаться";
-"grind" = "молоть, толочь";
-"grow" = "расти, выращивать";
-"handwrite" = "писать вручную";
-"hang" = "вешать, висеть, повесить";
-"have" = "иметь";
-"hear" = "слышать";
-"hew" = "рубить";
-"hide" = "прятать(ся), скрывать(ся)";
-"hit" = "ударять, поражать";
-"hold" = "держать, удерживать";
-"hurt" = "ранить, причинять боль";
-"inlay" = "вкладывать, выстилать";
-"input" = "вводить данные";
-"interweave" = "воткать";
-"keep" = "держать, хранить";
-"kneel" = "становиться на колени";
-"knit" = "вязать";
-"know" = "знать";
-"lay" = "класть, положить";
-"lead" = "вести, руководить, управлять";
-"lean" = "опираться, прислоняться, наклоняться";
-"leap" = "прыгать, скакать";
-"learn" = "учить(ся)";
-"leave" = "покидать, оставлять";
-"lend" = "одалживать, давать взаймы";
-"let" = "позволять";
-"lie" = "лежать";
-"light" = "освещать";
-"lose" = "терять";
-"make" = "делать, производить, создавать";
-"may" = "мочь, иметь возможность";
-"mean" = "значить, подразумевать, иметь в виду";
-"meet" = "встречать, знакомиться";
-"melt" = "таять, плавиться";
-"mow" = "косить, жать, подстригать (траву)";
-"must" = "должен (сделать что-то)";
-"offset" = "компенсировать, возмещать, вознаграждать";
-"partake" = "принимать участие";
-"pay" = "платить";
-"prepay" = "платить вперед";
-"plead" = "умолять, обращаться к суду";
-"preset" = "заранее (предварительно) устанавливать";
-"prove" = "доказывать";
-"put" = "класть, ставить, размещать";
-"quit" = "оставлять, покидать";
-"read" = "читать";
-"relay" = "передавать, ретранслировать";
-"rend" = "раздирать";
-"rid" = "избавлять(ся), освобождать";
-"ride" = "ездить верхом";
-"ring" = "звенеть, звонить";
-"rise" = "восходить, подниматься";
-"run" = "бежать, течь";
-"saw" = "пилить";
-"say" = "сказать, говорить";
-"see" = "видеть";
-"seek" = "искать";
-"sell" = "продавать";
-"send" = "посылать, отправлять";
-"set" = "ставить, устанавливать, задавать";
-"sew" = "шить, пришивать, сшивать";
-"shake" = "трясти";
-"shall" = "делать что-то (в будущем)";
-"shave" = "брить(ся)";
-"shear" = "срезать, стричь";
-"shed" = "проливать, сбрасывать";
-"shine" = "светить, сиять, озарять";
-"shoot" = "стрелять";
-"shoe" = "обувать";
-"show" = "показывать";
-"shrink" = "сокращаться, сжиматься";
-"shut" = "закрывать(ся), запирать(ся), затворять";
-"sing" = "петь";
-"sink" = "тонуть, опускаться, погружаться (под воду)";
-"sit" = "сидеть";
-"slay" = "убивать";
-"sleep" = "спать";
-"slide" = "скользить";
-"sling" = "метать, швырять";
-"slink" = "красться";
-"slit" = "разрезать (вдоль), делать разрез";
-"smell" = "пахнуть, нюхать";
-"sneak" = "красться, подкрадываться";
-"sow" = "сеять, засеивать";
-"speak" = "говорить";
-"speed" = "спешить, ускорять";
-"spell" = "писать или читать по буквам";
-"spend" = "тратить, расходовать";
-"spill" = "проливать, разливать";
-"spin" = "крутить, прясть";
-"spit" = "плевать";
-"split" = "разделять, расщеплять, раскалывать";
-"spoil" = "портить";
-"spread" = "распространять(ся), развернуть";
-"spring" = "прыгать, скакать";
-"stand" = "стоять";
-"steal" = "воровать, красть";
-"stick" = "уколоть, приклеивать(ся), липнуть, втыкать";
-"sting" = "жалить";
-"stink" = "вонять";
-"strew" = "посыпать";
-"stride" = "шагать";
-"strike" = "бастовать, поражать, ударять";
-"string" = "натягивать, нанизывать";
-"strive" = "стараться, стремиться";
-"swear" = "клясться, присягать, ругаться";
-"sweat" = "потеть";
-"sweep" = "подметать, сметать";
-"swell" = "набухать, разбухать, раздуваться";
-"swim" = "плавать";
-"swing" = "качать(ся), раскачивать, вертеть";
-"take" = "брать, взять";
-"teach" = "учить";
-"tear" = "рвать";
-"tell" = "рассказывать";
-"think" = "думать";
-"thrive" = "преуспевать, процветать";
-"throw" = "бросать, кидать";
-"thrust" = "пропихивать, протыкать, совать, толкать";
-"tread" = "ступать, топтать";
-"typeset" = "набирать";
-"undergo" = "испытывать, переносить";
-"understand" = "понимать";
-"undertake" = "предпринимать";
-"upset" = "расстроиться, опрокидывать(ся)";
-"vex" = "раздражать, беспокоить";
-"wake" = "будить, просыпаться";
-"waylay" = "подстерегать";
-"wear" = "носить, одевать";
-"weave" = "плести, ткать";
-"wed" = "жениться, выходить (выдавать) замуж";
-"weep" = "плакать, рыдать";
-"wend" = "отправляться, направляться, путешествовать";
-"wet" = "мочить, промокать, увлажнять";
-"will" = "делать что-то (в будущем)";
-"win" = "выигрывать, побеждать";
-"wind" = "виться, заводить (механизм), наматывать";
-"withdraw" = "забирать назад, отзывать, изымать";
-"withhold" = "воздерживаться, отказывать(ся), удерживать, утаивать";
-"withstand" = "выдерживать, не поддаваться";
-"wring" = "выжимать, сдавливать, скручивать";
-"write" = "писать";
-"zinc" = "оцинковывать";
-"strip" = "раздеваться";
-"dare" = "рисковать, отваживаться";
-"geld" = "кастрировать";
-"gild" = "золотить";
-"gnaw" = "грызть";
-"grip" = "захватывать, схватить";
-"heave" = "тянуть, поворачивать";
-"pen" = "писать, сочинять";
-"rive" = "разрывать, отрывать";
-"shred" = "кромсать";
-"smite" = "карать, наказывать";
+/* (No Comment) */
+"bid" = "시키다";
 
-"miscast" = "неправильно распределять роли";
-"misdeal" = "поступать неправильно";
-"misdo" = "делать что-либо неправильно или небрежно";
-"misgive" = "внушать недоверия, опасения";
-"mishear" = "ослышаться";
-"mishit" = "промахнуться";
-"mislay" = "класть не на место";
-"mislead" = "ввести в заблуждение";
-"misread" = "неправильно истолковывать";
-"misspell" = "писать с ошибками";
-"misspend" = "неразумно, зря тратить";
-"mistake" = "ошибаться";
-"misunderstand" = "неправильно понимать";
+/* (No Comment) */
+"bind" = "묶다";
 
-"outbid" = "перебивать цену";
-"outdo" = "превосходить";
-"outfight" = "побеждать в бою";
-"outgrow" = "вырастать из";
-"output" = "выводить данные";
-"outrun" = "опережать, перегонять";
-"outsell" = "продавать лучше или дороже";
-"outshine" = "затмевать";
+/* (No Comment) */
+"bite" = "물다";
 
-"overbid" = "повелевать";
-"overdo" = "пережаривать";
-"overcome" = "преодолевать, компенсировать";
-"overdraw" = "превышать";
-"overeat" = "объедаться";
-"overfly" = "перелетать";
-"overhang" = "нависать";
-"overhear" = "подслушивать";
-"overlay" = "покрывать";
-"overpay" = "переплачивать";
-"override" = "переопределять";
-"overrun" = "переливаться через край";
-"oversee" = "надзирать за";
-"overshoot" = "расстреливать";
-"oversleep" = "проспать, заспаться";
-"overtake" = "догонять";
-"overthrow" = "свергать";
+/* (No Comment) */
+"bleed" = "출혈하다";
 
-"tatiana_perfilieva" = "Tatiana Perfilieva";
+/* (No Comment) */
+"bless" = "축복하다";
+
+/* (No Comment) */
+"blow" = "불다";
+
+/* (No Comment) */
+"blue" = "파란색";
+
+/* (No Comment) */
+"break" = "깨뜨리다";
+
+/* (No Comment) */
+"breed" = "양식하다";
+
+/* (No Comment) */
+"bring" = "가져오다";
+
+/* Refers to British English */
+"british" = "영국의";
+
+/* (No Comment) */
+"broadcast" = "방송하다";
+
+/* (No Comment) */
+"browbeat" = "위협하다";
+
+/* (No Comment) */
+"build" = "건출하다";
+
+/* (No Comment) */
+"burn" = "끓다";
+
+/* (No Comment) */
+"burst" = "터지다";
+
+/* (No Comment) */
+"bust" = "좌천하다";
+
+/* (No Comment) */
+"buy" = "사다";
+
+/* (No Comment) */
+"buy_button" = "구매하다";
+
+/* (No Comment) */
+"buy_for" = "구입하다";
+
+/* (No Comment) */
+"can" = "할 수 있다";
+
+/* (No Comment) */
+"cancel" = "취소";
+
+/* (No Comment) */
+"cast" = "내치다";
+
+/* (No Comment) */
+"catch" = "잡다";
+
+/* (No Comment) */
+"chide" = "나무라다";
+
+/* (No Comment) */
+"choose" = "택하다";
+
+/* (No Comment) */
+"clap" = "박수하다";
+
+/* (No Comment) */
+"cleave" = "조각내다";
+
+/* (No Comment) */
+"cling" = "달라붙다";
+
+/* (No Comment) */
+"clothe" = "입히다";
+
+/* (No Comment) */
+"come" = "오다";
+
+/* The Contact Us link text */
+"contact_us" = "연락하다";
+
+/* (No Comment) */
+"cost" = "값하다";
+
+/* (No Comment) */
+"creep" = "기다";
+
+/* (No Comment) */
+"crow" = "꼬끼오하고 울다";
+
+/* (No Comment) */
+"cut" = "끊다";
+
+/* (No Comment) */
+"dare" = "감행하다";
+
+/* (No Comment) */
+"deactivation" = "비활성화";
+
+/* (No Comment) */
+"deal" = "허락하다";
+
+/* (No Comment) */
+"default" = "기본값";
+
+/* Refers to verbs for tests available only in the free version */
+"demo" = "데모";
+
+/* Determines the display of irregular verbs with the prefixes be-, for(e)-, in-, inter-, mis-, off-, out-, over-, pre-, under-, with- and others */
+"derivatives" = "파생 된 형태";
+
+/* Mentions the app's developer */
+"developer" = "개발자";
+
+/* (No Comment) */
+"dig" = "파다";
+
+/* (No Comment) */
+"dive" = "물입하다";
+
+/* (No Comment) */
+"do" = "하다";
+
+/* (No Comment) */
+"downgrade_to" = "돌아가다 %@ Lite";
+
+/* (No Comment) */
+"draw" = "그리다";
+
+/* (No Comment) */
+"dream" = "꿈꾸다";
+
+/* (No Comment) */
+"drink" = "마시다";
+
+/* (No Comment) */
+"drive" = "운전하다";
+
+/* (No Comment) */
+"dwell" = "서식하다";
+
+/* (No Comment) */
+"eat" = "먹다";
+
+/* The app's edition: Lite, Pro */
+"edition" = "편집부";
+
+/* (No Comment) */
+"enter_here" = "여기에 입력합니다";
+
+/* (No Comment) */
+"erase_correct_answers" = "정답을 지우다 ";
+
+/* (No Comment) */
+"erase_learned_verbs" = "학습 한 동사 지우다";
+
+/* (No Comment) */
+"error" = "잘못";
+
+/* Example sentences related to the verb */
+"examples" = "모범들";
+
+/* (No Comment) */
+"fall" = "떨어지다";
+
+/* (No Comment) */
+"faster" = "빨리";
+
+/* (No Comment) */
+"favorites" = "즐겨찾기";
+
+/* (No Comment) */
+"feed" = "받아먹다";
+
+/* (No Comment) */
+"feel" = "느끼다";
+
+/* (No Comment) */
+"female" = "여자적";
+
+/* (No Comment) */
+"fight" = "싸우다";
+
+/* (No Comment) */
+"find" = "구하다";
+
+/* (No Comment) */
+"fit" = "어울리다";
+
+/* (No Comment) */
+"flee" = "달아나다";
+
+/* (No Comment) */
+"fling" = "내던지다";
+
+/* (No Comment) */
+"fly" = "날다";
+
+/* (No Comment) */
+"forbid" = "금지하다";
+
+/* (No Comment) */
+"forecast" = "내다보다";
+
+/* (No Comment) */
+"foresee" = "조망하다";
+
+/* (No Comment) */
+"foretell" = "예언하다";
+
+/* (No Comment) */
+"forget" = "잊어버리다";
+
+/* (No Comment) */
+"forgive" = "용서하다";
+
+/* (No Comment) */
+"forsake" = "떠나다";
+
+/* (No Comment) */
+"freeze" = "얼다";
+
+/* (No Comment) */
+"geld" = "거세하다";
+
+/* (No Comment) */
+"general" = "공동";
+
+/* (No Comment) */
+"get" = "받다";
+
+/* (No Comment) */
+"gild" = "도금하다";
+
+/* (No Comment) */
+"give" = "주다";
+
+/* (No Comment) */
+"gnaw" = "쏠다";
+
+/* (No Comment) */
+"go" = "가다";
+
+/* (No Comment) */
+"green" = "녹색";
+
+/* (No Comment) */
+"grind" = "찧다";
+
+/* (No Comment) */
+"grip" = "붙들다";
+
+/* (No Comment) */
+"grow" = "키우다";
+
+/* (No Comment) */
+"handwrite" = "적다";
+
+/* (No Comment) */
+"hang" = "걸다";
+
+/* (No Comment) */
+"have" = "갖추다";
+
+/* (No Comment) */
+"hear" = "듣다";
+
+/* (No Comment) */
+"heave" = "끌다";
+
+/* (No Comment) */
+"hew" = "찍다";
+
+/* (No Comment) */
+"hide" = "숨다";
+
+/* (No Comment) */
+"hint" = "힌트";
+
+/* (No Comment) */
+"hit" = "때리다";
+
+/* (No Comment) */
+"hold" = "잡다";
+
+/* (No Comment) */
+"hurt" = "해하다";
+
+/* (No Comment) */
+"in_progress" = "과정 중";
+
+/* (No Comment) */
+"including" = "그중";
+
+/* (No Comment) */
+"indigo" = "쪽빛";
+
+/* The basic form of a verb, without an inflection binding it to a particular subject or tense */
+"infinitive" = "부정사";
+
+/* (No Comment) */
+"inlay" = "넣다";
+
+/* (No Comment) */
+"input" = "데이터를 입력하다";
+
+/* (No Comment) */
+"interweave" = "짜넣다";
+
+/* Refers to Irish English */
+"irish" = "아일랜디오의";
+
+/* (No Comment) */
+"keep" = "부치다";
+
+/* (No Comment) */
+"kneel" = "무릅을 꿇고 서다";
+
+/* (No Comment) */
+"knit" = "뜨다";
+
+/* (No Comment) */
+"know" = "알다";
+
+/* (No Comment) */
+"language" = "언어";
+
+/* (No Comment) */
+"lay" = "넣다";
+
+/* (No Comment) */
+"lead" = "거느리다";
+
+/* (No Comment) */
+"lean" = "기대다";
+
+/* (No Comment) */
+"leap" = "날뛰다";
+
+/* (No Comment) */
+"learn" = "공부하다";
+
+/* (No Comment) */
+"learned_verbs" = "배운 동사";
+
+/* (No Comment) */
+"learned_verbs_footer" = "단어가 3 번 이상 정답이면 학습 된 것으로 간주됩니다. 답이 옳은 것으로 판명되면 동사 연구가 1 씩 증가하고 그렇지 않으면 감소합니다";
+
+/* (No Comment) */
+"leave" = "떠나다";
+
+/* (No Comment) */
+"lend" = "빌리다";
+
+/* (No Comment) */
+"let" = "허가하다";
+
+/* (No Comment) */
+"lie" = "엎아지다";
+
+/* (No Comment) */
+"light" = "비추다";
+
+/* The Links section title on the Settings page */
+"links" = "링크";
+
+/* (No Comment) */
+"listen_and_write" = "아래에서 듣고 쓰세요";
+
+/* (No Comment) */
+"listen_to_pronunciation" = "발음 듣다";
+
+/* Refers to the listening section of the tests */
+"listening" = "듣기";
+
+/* (No Comment) */
+"listening_subtitle" = "불규칙 동사의 듣기 이해력 확인하다";
+
+/* (No Comment) */
+"lose" = "잃어버리다";
+
+/* (No Comment) */
+"make" = "하다";
+
+/* (No Comment) */
+"male" = "남성적";
+
+/* Referts to the app icon color matching action button */
+"match_app_icon_with_accent_color" = "아이콘을 색상에 일치하다";
+
+/* (No Comment) */
+"may" = "할 수 있다";
+
+/* (No Comment) */
+"mean" = "의미하다";
+
+/* (No Comment) */
+"meet" = "인사하다";
+
+/* (No Comment) */
+"melt" = "녹다";
+
+/* (No Comment) */
+"miscast" = "잘못 캐스팅";
+
+/* (No Comment) */
+"misdeal" = "잘 못하다";
+
+/* (No Comment) */
+"misdo" = "잘못하거나 부주의 한 행동";
+
+/* (No Comment) */
+"misgive" = "불신, 두려움을 불러 일으키다";
+
+/* (No Comment) */
+"mishear" = "잘못 듣다";
+
+/* (No Comment) */
+"mishit" = "실패하다";
+
+/* (No Comment) */
+"mislay" = "잘못 두다";
+
+/* (No Comment) */
+"mislead" = "오도하다";
+
+/* (No Comment) */
+"misread" = "오해하다";
+
+/* (No Comment) */
+"missed_word" = "누락 된 단어";
+
+/* (No Comment) */
+"misspell" = "잘못 쓰다";
+
+/* (No Comment) */
+"misspend" = "허송하다";
+
+/* (No Comment) */
+"mistake" = "잘못하다";
+
+/* (No Comment) */
+"misunderstand" = "잘못 이해하다";
+
+/* (No Comment) */
+"more" = "더욱";
+
+/* (No Comment) */
+"mow" = "꺾다";
+
+/* (No Comment) */
+"must" = "해야 하다";
+
+/* (No Comment) */
+"no_data_to_display" = "표시 할 데이터 없다";
+
+/* (No Comment) */
+"of" = "부터 %d";
+
+/* (No Comment) */
+"offset" = "배상하다";
+
+/* (No Comment) */
+"ok" = "오케이K";
+
+/* The full name of the app's develop */
+"oleg_samoylov" = "올레그 사모일로프";
+
+/* (No Comment) */
+"one_time_payment" = "일회성 결제";
+
+/* (No Comment) */
+"orange" = "오랜즈색";
+
+/* (No Comment) */
+"outbid" = "가격을 바꾸다";
+
+/* (No Comment) */
+"outdo" = "뛰어나다";
+
+/* (No Comment) */
+"outfight" = "격투에서 정복하다";
+
+/* (No Comment) */
+"outgrow" = "성장하다";
+
+/* (No Comment) */
+"output" = "데이터 출력하다 ";
+
+/* (No Comment) */
+"outrun" = "앞서다";
+
+/* (No Comment) */
+"outsell" = "더 잘 팔거나 더 비싸다";
+
+/* (No Comment) */
+"outshine" = "가리다";
+
+/* (No Comment) */
+"overbid" = "지시하다";
+
+/* (No Comment) */
+"overcome" = "넘다";
+
+/* (No Comment) */
+"overdo" = "뒤볶다";
+
+/* (No Comment) */
+"overdraw" = "능가하다";
+
+/* (No Comment) */
+"overeat" = "폭시하다";
+
+/* (No Comment) */
+"overfly" = "나라가다";
+
+/* (No Comment) */
+"overhang" = "닥쳐오다";
+
+/* (No Comment) */
+"overhear" = "도청하다";
+
+/* (No Comment) */
+"overlay" = "덮다";
+
+/* (No Comment) */
+"overpay" = "솟보다";
+
+/* (No Comment) */
+"override" = "우세하다";
+
+/* (No Comment) */
+"overrun" = "과다";
+
+/* (No Comment) */
+"oversee" = "감독하다";
+
+/* (No Comment) */
+"overshoot" = "퍼붓다";
+
+/* (No Comment) */
+"oversleep" = "늦어지다";
+
+/* (No Comment) */
+"overtake" = "따라오다";
+
+/* (No Comment) */
+"overthrow" = "넘어뜨리다";
+
+/* (No Comment) */
+"partake" = "가입하다";
+
+/* A word that can be used as an adjective or to form verb tense */
+"past_participle" = "과거 분사";
+
+/* (No Comment) */
+"pay" = "지불하다";
+
+/* (No Comment) */
+"pen" = "짓다";
+
+/* (No Comment) */
+"personalize" = "앱 개인화 : 원하는대로 강조 색상 선택";
+
+/* (No Comment) */
+"pink" = "분홍";
+
+/* (No Comment) */
+"plead" = "애원하다";
+
+/* (No Comment) */
+"prepay" = "선불하다";
+
+/* (No Comment) */
+"preset" = "예정하다";
+
+/* (No Comment) */
+"print" = "인쇄";
+
+/* The Privacy Policy link text */
+"privacy_policy" = "개인 정보 정책";
+
+/* (No Comment) */
+"pro_suggestion_statistics" = "다른 장점 중, Pro 버전은 테스트에서 고정 할 수있는 불규칙 동사의 수를 늘 렸습니다: с %d до %d";
+
+/* (No Comment) */
+"prove" = "입증하다";
+
+/* (No Comment) */
+"purple" = "성홍색";
+
+/* (No Comment) */
+"put" = "넣다";
+
+/* (No Comment) */
+"quit" = "떠나다";
+
+/* The App Store Rate and Review redirection link text */
+"rate_and_review" = "평가 및 피드백 제공";
+
+/* (No Comment) */
+"read" = "읽다";
+
+/* (No Comment) */
+"red" = "빨강색";
+
+/* Determines the display of verbs with both regular and irregular forms */
+"regular_verbs" = "행의 (-ed)";
+
+/* (No Comment) */
+"relay" = "건네다";
+
+/* (No Comment) */
+"remove" = "빼다";
+
+/* (No Comment) */
+"remove_from_favorites" = "\"즐겨찾기\" 지우다";
+
+/* (No Comment) */
+"rend" = "찢다";
+
+/* (No Comment) */
+"reset" = "초기화";
+
+/* (No Comment) */
+"reset_statistics_correct_answers" = "정답 통계를 재설정 하시겠습니까?";
+
+/* (No Comment) */
+"reset_statistics_learned_verbs" = "학습 된 동사의 통계를 재설정 하시겠습니까?";
+
+/* (No Comment) */
+"restore_purchases" = "구매를 복원하다";
+
+/* (No Comment) */
+"rid" = "버리다";
+
+/* (No Comment) */
+"ride" = "타다";
+
+/* (No Comment) */
+"ring" = "울리다";
+
+/* (No Comment) */
+"rise" = "솟다";
+
+/* (No Comment) */
+"rive" = "데다";
+
+/* (No Comment) */
+"run" = "흐르다";
+
+/* (No Comment) */
+"saw" = "톱질하다";
+
+/* (No Comment) */
+"say" = "말하다";
+
+/* (No Comment) */
+"see" = "보다";
+
+/* (No Comment) */
+"seek" = "구하다";
+
+/* (No Comment) */
+"sell" = "팔다";
+
+/* (No Comment) */
+"send" = "보내다";
+
+/* (No Comment) */
+"sentence" = "방안";
+
+/* Refers to the section of the tests where the missed word inside the sentence should be provided as the correct answer */
+"sentences" = "절";
+
+/* (No Comment) */
+"sentences_subtitle" = "문맥에서 불규칙 동사를 얼마나 잘 이해하고 있습니까?";
+
+/* (No Comment) */
+"set" = "정하다";
+
+/* (No Comment) */
+"settings" = "설정";
+
+/* (No Comment) */
+"sew" = "깁다";
+
+/* (No Comment) */
+"shake" = "들썩이다";
+
+/* (No Comment) */
+"shall" = "(미래에) 하다";
+
+/* Lets a user to tell a friend about the app */
+"share_app" = "앱 공유하다";
+
+/* (No Comment) */
+"shave" = "밀다";
+
+/* (No Comment) */
+"shear" = "깎다";
+
+/* (No Comment) */
+"shed" = "쏟다";
+
+/* (No Comment) */
+"shine" = "비추다";
+
+/* (No Comment) */
+"shoe" = "신다";
+
+/* (No Comment) */
+"shoot" = "쏘다";
+
+/* (No Comment) */
+"show" = "드러내다";
+
+/* (No Comment) */
+"shred" = "난도질하다";
+
+/* (No Comment) */
+"shrink" = "졸아들다";
+
+/* (No Comment) */
+"shut" = "닫히다";
+
+/* (No Comment) */
+"sing" = "노래하다";
+
+/* (No Comment) */
+"sink" = "짐물하다";
+
+/* (No Comment) */
+"sit" = "앉다";
+
+/* (No Comment) */
+"slay" = "죽이다";
+
+/* (No Comment) */
+"sleep" = "자다";
+
+/* (No Comment) */
+"slide" = "미끄러지다";
+
+/* (No Comment) */
+"sling" = "던지다";
+
+/* (No Comment) */
+"slink" = "다가오다";
+
+/* (No Comment) */
+"slit" = "횡단하다";
+
+/* (No Comment) */
+"slower" = "천천히";
+
+/* (No Comment) */
+"smell" = "냄새가 나다";
+
+/* (No Comment) */
+"smite" = "처벌하다";
+
+/* (No Comment) */
+"sneak" = "다가오다";
+
+/* Refers to South African English */
+"south_african" = "남아프리카 공화국";
+
+/* (No Comment) */
+"sow" = "심다";
+
+/* (No Comment) */
+"speak" = "말하다";
+
+/* (No Comment) */
+"speaking_rate" = "말하기 속도";
+
+/* (No Comment) */
+"speed" = "서두르다";
+
+/* (No Comment) */
+"spell" = "스페링";
+
+/* (No Comment) */
+"spend" = "쓰다";
+
+/* (No Comment) */
+"spill" = "쏟다";
+
+/* (No Comment) */
+"spin" = "꼬다";
+
+/* (No Comment) */
+"spit" = "침을 뱉다";
+
+/* (No Comment) */
+"split" = "빠개다";
+
+/* (No Comment) */
+"spoil" = "부수다";
+
+/* (No Comment) */
+"spread" = "안내하다";
+
+/* (No Comment) */
+"spring" = "뛰다";
+
+/* (No Comment) */
+"stand" = "서다";
+
+/* (No Comment) */
+"statistics" = "통계";
+
+/* (No Comment) */
+"steal" = "빼내다";
+
+/* (No Comment) */
+"stick" = "달라붙다";
+
+/* (No Comment) */
+"sting" = "물다";
+
+/* (No Comment) */
+"stink" = "냄새하다";
+
+/* (No Comment) */
+"store_unlimited_items_in_favorites" = "즐겨 찾기에 무제한 항목 저장";
+
+/* (No Comment) */
+"strew" = "씌우다";
+
+/* (No Comment) */
+"stride" = "걷다";
+
+/* (No Comment) */
+"strike" = "파업하다";
+
+/* (No Comment) */
+"string" = "꿰다";
+
+/* (No Comment) */
+"strip" = "벗다";
+
+/* (No Comment) */
+"strive" = "향하다";
+
+/* (No Comment) */
+"swear" = "서약하다";
+
+/* (No Comment) */
+"sweat" = "땀이 나다";
+
+/* (No Comment) */
+"sweep" = "쓸다";
+
+/* (No Comment) */
+"swell" = "부풀다";
+
+/* (No Comment) */
+"swim" = "수영하다";
+
+/* (No Comment) */
+"swing" = "건들거리다";
+
+/* (No Comment) */
+"take" = "가져오다";
+
+/* (No Comment) */
+"teach" = "배우다";
+
+/* (No Comment) */
+"teal" = "물색";
+
+/* (No Comment) */
+"tear" = "찢다";
+
+/* (No Comment) */
+"tell" = "얘기하다";
+
+/* The Terms of Use link text */
+"terms" = "이용 약관";
+
+/* (No Comment) */
+"tests" = "테스트";
+
+/* (No Comment) */
+"thank_you" = "함께 해주셔서 감사합니다!";
+
+/* (No Comment) */
+"think" = "생각하다";
+
+/* (No Comment) */
+"three_forms" = "3 모양들";
+
+/* (No Comment) */
+"thrive" = "개화하다";
+
+/* (No Comment) */
+"throw" = "던지다";
+
+/* (No Comment) */
+"thrust" = "쑤석이다";
+
+/* (No Comment) */
+"track_your_progress_in_learning_irregular_verbs" = "불규칙 동사 학습 진행 상황 추적하다";
+
+/* Refers to the irregular verb translation caption */
+"translation" = "통역";
+
+/* (No Comment) */
+"translation_subtitle" = "불규칙 동사 번역에 대한 지식 확인하다";
+
+/* (No Comment) */
+"tread" = "짓밟다";
+
+/* (No Comment) */
+"typeset" = "입력하다";
+
+/* (No Comment) */
+"undergo" = "걲다";
+
+/* (No Comment) */
+"understand" = "이해하다";
+
+/* (No Comment) */
+"undertake" = "작전하다";
+
+/* (No Comment) */
+"unlock_all_verbs_in_tests" = "테스트에서 모든 동사 차단 해제하다";
+
+/* (No Comment) */
+"untitled" = "미상";
+
+/* (No Comment) */
+"upgrade_to_pro" = "Pro 버전을 구매하다";
+
+/* (No Comment) */
+"upset" = "울상이 되다";
+
+/* (No Comment) */
+"using_hints_gives_you_no_points" = "프롬프트를 사용하지 않고 첫 번째 시도에서 올바르게 입력하거나 선택한 답변 만 고려됩니다";
+
+/* (No Comment) */
+"verbs" = "동사";
+
+/* The current version of the app */
+"version" = "이본";
+
+/* (No Comment) */
+"vex" = "볶다";
+
+/* (No Comment) */
+"view_a_transcription" = "동사 카드에서 텍스트 변환보기";
+
+/* The title of the voice list page */
+"voice" = "목소리";
+
+/* The quick reference on how to customize the voice list */
+"voice_hint" = "고품질 버전의 음성을 사용하거나 새 음성을 추가하거나 이전에 추가 한 음성을 제거하려면 설정 → 접근성 → VoiceOver → 음성 → 음성으로 이동합니다";
+
+/* (No Comment) */
+"wake" = "일어나다";
+
+/* (No Comment) */
+"waylay" = "대기하고 있다";
+
+/* (No Comment) */
+"wear" = "쓰다";
+
+/* (No Comment) */
+"weave" = "직조하다";
+
+/* (No Comment) */
+"wed" = "결혼하다";
+
+/* (No Comment) */
+"weep" = "울다";
+
+/* (No Comment) */
+"wend" = "여행하다";
+
+/* (No Comment) */
+"wet" = "적시다";
+
+/* The short description displayed at the top of the add widget view */
+"widget_configuration_display_title" = "매일의 단어";
+
+/* The title displayed at the top of the add widget view */
+"widget_description" = "З앱에 들어 가지 않고도 쉽고 간편하게 세 가지 형태의 불규칙 동사를 외우세요";
+
+/* (No Comment) */
+"will" = "미래에 하다";
+
+/* (No Comment) */
+"win" = "이기다";
+
+/* (No Comment) */
+"wind" = "감다";
+
+/* (No Comment) */
+"withdraw" = "철수하다";
+
+/* (No Comment) */
+"withhold" = "삼가다";
+
+/* (No Comment) */
+"withstand" = "이기다";
+
+/* (No Comment) */
+"wring" = "누르다";
+
+/* (No Comment) */
+"write" = "쓰다";
+
+/* (No Comment) */
+"writing_subtitle" = "불규칙 동사 형태에 대한 지식 테스트를 하다";
+
+/* (No Comment) */
+"yellow" = "노랑색";
+
+/* (No Comment) */
+"yes" = "네";
+
+/* (No Comment) */
+"your_efforts" = "당신의 노력";
+
+/* (No Comment) */
+"zinc" = "어연을 입하다";
+
+"indian" = "인도 사람";
+"sofia_sokolova" = "소피아 소콜로바";
+"elizabeth_keplin" = "엘리자베타 케플린";
+"tatiana_perfilieva" = "타티아나 퍼 필리 에바";
+"artem_shumilov" = "아르템 슈미로프";
+"past_simple" = "단순 과거";
+"forms" = "동사 형태";
+"backslide" = "(이전의 나쁜 상태로) 되돌아가다, 뒷걸음치다";
+"empty_favorites" = "“즐겨찾기” 없습니다";
+"empty_tests" = "테스트를 시작하려면 화면 왼쪽에있는 테스트를 클릭하십시오";
+"empty_verbs" = "불규칙 동사에 대한 정보를 보려면 화면 왼쪽에있는 해당 동사를 클릭하십시오";

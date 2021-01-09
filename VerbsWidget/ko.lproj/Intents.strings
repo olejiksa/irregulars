@@ -1,20 +1,29 @@
-"05iu2V" = "Verbs Intent";
+/* (No Comment) */
+"3F2cmR" = "동사";
 
-"3F2cmR" = "Глаголы";
+/* (No Comment) */
+"4drxkG-BZzO9q" = "확인하기 위해 '모두’?";
 
-"4drxkG-BZzO9q" = "Just to confirm, you wanted ‘All’?";
+/* (No Comment) */
+"4drxkG-ReGcTO" = "확인하기 위해‘즐겨 찾기’를 원하셨습니다?";
 
-"4drxkG-ReGcTO" = "Just to confirm, you wanted ‘Favorites’?";
+/* (No Comment) */
+"05iu2V" = "동사 의도";
 
-"BZzO9q" = "Все";
+/* (No Comment) */
+"BZzO9q" = "모든";
 
-"ReGcTO" = "Избранное";
+/* (No Comment) */
+"qLuGx1" = "동사 표시 옵션";
 
-"qLuGx1" = "Verbs Display Option";
+/* (No Comment) */
+"ReGcTO" = "즐겨찾기";
 
-"sw2doT-BZzO9q" = "There are ${count} options matching ‘All’.";
+/* (No Comment) */
+"sw2doT-BZzO9q" = "'모두'와 일치하는 $ {count} 옵션이 있습니다.";
 
-"sw2doT-ReGcTO" = "There are ${count} options matching ‘Favorites’.";
+/* (No Comment) */
+"sw2doT-ReGcTO" = "'즐겨 찾기'와 일치하는 $ {count} 옵션이 있습니다.";
 
-"wy8PUd" = "Choose an option on your own";
-
+/* (No Comment) */
+"wy8PUd" = "직접 옵션 선택하다";
