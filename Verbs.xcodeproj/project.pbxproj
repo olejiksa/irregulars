@@ -1752,7 +1752,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = VerbsWidget/VerbsWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1760,7 +1760,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1777,7 +1777,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = VerbsWidget/VerbsWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1785,7 +1785,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1920,7 +1920,7 @@
 				CODE_SIGN_ENTITLEMENTS = Verbs/Verbs.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1928,7 +1928,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1945,7 +1945,7 @@
 				CODE_SIGN_ENTITLEMENTS = Verbs/Verbs.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1953,7 +1953,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1968,7 +1968,7 @@
 				CODE_SIGN_ENTITLEMENTS = VerbsWidgetIntent/VerbsWidgetIntent.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidgetIntent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1977,7 +1977,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidgetIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1992,7 +1992,7 @@
 				CODE_SIGN_ENTITLEMENTS = VerbsWidgetIntent/VerbsWidgetIntent.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidgetIntent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -2001,7 +2001,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidgetIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

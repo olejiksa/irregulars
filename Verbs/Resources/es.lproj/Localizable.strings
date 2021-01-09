@@ -1,389 +1,1143 @@
-"including" = "Including";
-"downgrade_to" = "Downgrade to %@ Lite";
-"thank_you" = "Thank you for being with us!";
-"listen_to_pronunciation" = "Listen to pronunciation";
-"statistics" = "Statistics";
-"view_a_transcription" = "View a transcription in the verb card";
-"store_unlimited_items_in_favorites" = "Store unlimited items in Favorites";
-"tests" = "Tests";
-"activation" = "Activation";
-"deactivation" = "Deactivation";
-"about" = "About";
-"developer" = "Developer";
-"oleg_samoylov" = "Oleg Samoylov";
-"version" = "Version";
-"widget_configuration_display_title" = "Words for every day";
-"widget_description" = "Memorize all three forms of irregular verbs simply and easily";
-"verbs" = "Verbs";
-"settings" = "Settings";
-"general" = "General";
-"links" = "Links";
-"regular_verbs" = "Regular (-ed)";
-"derivatives" = "Derivatives";
-"translation" = "Translation";
-"translation_subtitle" = "Check your knowledge of the translation of irregular verbs";
-"language" = "Language";
-"contact_us" = "Contact us";
-"rate_and_review" = "Rate and review";
-"buy_button" = "Buy";
-"restore_purchases" = "Restore purchases";
-"empty_verbs" = "To view info about an irregular verb, tap on it on the left side of the screen";
-"empty_tests" = "To start the test, tap on it on the left side of the screen";
-"empty_favorites" = "To add an irregular verb to your Favorites, open it from the all verbs list and tap on the star button in the upper right corner of the screen";
-"three_forms" = "3 forms";
-"forms" = "Forms";
-"privacy_policy" = "Privacy policy";
-"share_app" = "Share app";
-"edition" = "Edition";
-"all" = "All";
-"favorites" = "Favorites";
-"upgrade_to_pro" = "Upgrade to Pro";
-"more" = "More";
-"error" = "Error";
-"hint" = "Hint";
-"unlock_all_verbs_in_tests" = "Unlock all verbs in tests";
-"accent_color" = "Accent color";
-"blue" = "Blue";
-"green" = "Green";
-"indigo" = "Indigo";
-"orange" = "Orange";
-"pink" = "Pink";
-"purple" = "Purple";
-"red" = "Red";
-"teal" = "Teal";
-"yellow" = "Yellow";
-"match_app_icon_with_accent_color" = "Match app icon with accent color";
-"enter_here" = "Enter here";
-"terms" = "Terms of use";
-"personalize" = "Personalize the app: pick an accent color to your liking";
-"examples" = "Examples";
-"sentences" = "Sentences";
-"writing_subtitle" = "Check your knowledge of irregular verbs forms";
-"sentences_subtitle" = "How well do you understand irregular verbs in context?";
-"sentence" = "Sentence";
-"listening" = "Listening";
-"listening_subtitle" = "Сheck your listening comprehension of irregular verbs";
+/* (No Comment) */
+"abide" = "acatar";
+
+/* The About section title on the Settings page */
+"about" = "Sobre el programa";
+
+/* Refers to both the Settings section and the title of the accent colors list page */
+"accent_color" = "Color de acento";
+
+/* The title of the acknowledgements page as well as the corresponding link text */
+"acknowledgements" = "Agradecimientos";
+
+/* (No Comment) */
+"activation" = "Activar";
+
+/* (No Comment) */
+"add_to_favorites" = "Agregar a los Favoritos";
+
+/* (No Comment) */
+"alight" = "encendida";
+
+/* (No Comment) */
+"all" = "Todo";
+
+/* Refers to American English */
+"american" = "Americano";
+
+/* (No Comment) */
+"arise" = "surgir";
+
+/* (No Comment) */
+"attention" = "Atender";
+
+/* Refers to Australian English */
+"australian" = "Australiano";
+
+/* (No Comment) */
+"awake" = "despertar";
+
+/* (No Comment) */
+"be" = "ser";
+
+/* (No Comment) */
+"bear" = "oso";
+
+/* (No Comment) */
+"beat" = "golpear";
+
+/* (No Comment) */
+"become" = "bienvenda";
+
+/* (No Comment) */
+"befall" = "acontecer";
+
+/* (No Comment) */
+"beget" = "Engendrar";
+
+/* (No Comment) */
+"begin" = "Empezar";
+
+/* (No Comment) */
+"behold" = "Observar";
+
+/* (No Comment) */
+"bend" = "Doblar";
+
+/* (No Comment) */
+"bereave" = "Privar";
+
+/* (No Comment) */
+"beseech" = "Implorar";
+
+/* (No Comment) */
+"bet" = "Apostar";
+
+/* The title of the section for beta testing participants */
+"beta_testing" = "Prueba beta";
+
+/* (No Comment) */
+"bid" = "Ofrecer";
+
+/* (No Comment) */
+"bind" = "Enlazar";
+
+/* (No Comment) */
+"bite" = "Morder";
+
+/* (No Comment) */
+"bleed" = "Sangrar";
+
+/* (No Comment) */
+"bless" = "Bendecir";
+
+/* (No Comment) */
+"blow" = "Soplar";
+
+/* (No Comment) */
+"blue" = "Azul";
+
+/* (No Comment) */
+"break" = "Romper";
+
+/* (No Comment) */
+"breed" = "Criar";
+
+/* (No Comment) */
+"bring" = "Traer";
+
+/* Refers to British English */
+"british" = "Britanico";
+
+/* (No Comment) */
+"broadcast" = "Transmitir";
+
+/* (No Comment) */
+"browbeat" = "Atemorizar";
+
+/* (No Comment) */
+"build" = "contruir";
+
+/* (No Comment) */
+"burn" = "quemar";
+
+/* (No Comment) */
+"burst" = "estallar";
+
+/* (No Comment) */
+"bust" = "fracasar";
+
+/* (No Comment) */
+"buy" = "comprar";
+
+/* (No Comment) */
+"buy_button" = "Compra";
+
+/* (No Comment) */
+"buy_for" = "Comprar para";
+
+/* (No Comment) */
+"can" = "poder";
+
+/* (No Comment) */
+"cancel" = "Cancelar";
+
+/* (No Comment) */
+"cast" = "emitir";
+
+/* (No Comment) */
+"catch" = "capturar";
+
+/* (No Comment) */
+"chide" = "comer bien";
+
+/* (No Comment) */
+"choose" = "escoger";
+
+/* (No Comment) */
+"clap" = "aplaudir";
+
+/* (No Comment) */
+"cleave" = "adherir";
+
+/* (No Comment) */
+"cling" = "pegar";
+
+/* (No Comment) */
+"clothe" = "vestir";
+
+/* (No Comment) */
+"come" = "venir";
+
+/* The Contact Us link text */
+"contact_us" = "Contacta con nosotros";
+
+/* (No Comment) */
+"cost" = "Costar";
+
+/* (No Comment) */
+"creep" = "Arrastrar";
+
+/* (No Comment) */
+"crow" = "Graznar";
+
+/* (No Comment) */
+"cut" = "Cortar";
+
+/* (No Comment) */
+"dare" = "Dar";
+
+/* (No Comment) */
+"deactivation" = "Desactivar";
+
+/* (No Comment) */
+"deal" = "Acordar";
+
+/* (No Comment) */
+"default" = "Faltar";
+
+/* Refers to verbs for tests available only in the free version */
 "demo" = "Demo";
-"missed_word" = "Missed word";
-"infinitive" = "Infinitive";
-"simple_past" = "Simple Past";
-"past_participle" = "Past Participle";
-"listen_and_write" = "Listen and write below";
-"speaking_rate" = "Speaking rate";
-"empty_favorites_title" = "Empty Favorites";
-"track_your_progress_in_learning_irregular_verbs" = "Track your progress in learning irregular verbs";
-"using_hints_gives_you_no_points" = "Only answers entered or selected correctly on the first try and without using hints are taken into account";
-"attention" = "Attention";
-"cancel" = "Cancel";
-"reset_statistics_learned_verbs" = "Are you sure you want to reset the learned verbs statistics?";
-"reset_statistics_correct_answers" = "Are you sure you want to reset the correct answers statistics?";
-"yes" = "Yes";
+
+/* Determines the display of irregular verbs with the prefixes be-, for(e)-, in-, inter-, mis-, off-, out-, over-, pre-, under-, with- and others */
+"derivatives" = "Formas derivadas";
+
+/* Mentions the app's developer */
+"developer" = "Desarrollar";
+
+/* (No Comment) */
+"dig" = "cavar";
+
+/* (No Comment) */
+"dive" = "bucear";
+
+/* (No Comment) */
+"do" = "Hacer";
+
+/* (No Comment) */
+"downgrade_to" = "Degradar a %@ Lite";
+
+/* (No Comment) */
+"draw" = "dibujar";
+
+/* (No Comment) */
+"dream" = "soñar";
+
+/* (No Comment) */
+"drink" = "beber";
+
+/* (No Comment) */
+"drive" = "manejar";
+
+/* (No Comment) */
+"dwell" = "habitar";
+
+/* (No Comment) */
+"eat" = "comer";
+
+/* The app's edition: Lite, Pro */
+"edition" = "Edición";
+
+/* Explains what needs to be done for verbs to appear in Favorites */
+"empty_favorites" = "Para agregar un verbo irregular a sus Favoritos, ábralo desde la lista de todos los verbos y toque el botón de estrella en la esquina superior derecha de la pantalla";
+
+/* (No Comment) */
+"empty_favorites_title" = "Sin Favoritos";
+
+/* (No Comment) */
+"empty_tests" = "Para comenzar la prueba, tóquelo en el lado izquierdo de la pantalla";
+
+/* Gives the cue what needs to be done to make this part of the screen stop empty */
+"empty_verbs" = "Para ver información sobre un verbo irregular, tóquelo en el lado izquierdo de la pantalla";
+
+/* (No Comment) */
+"enter_here" = "Entrar aqui";
+
+/* (No Comment) */
+"erase_correct_answers" = "Borrar las respuestas correctas";
+
+/* (No Comment) */
+"erase_learned_verbs" = "Borrar los verbos aprendidos";
+
+/* (No Comment) */
+"error" = "Error";
+
+/* Example sentences related to the verb */
+"examples" = "Ejemplo";
+
+/* (No Comment) */
+"fall" = "Caer";
+
+/* (No Comment) */
+"faster" = "Mas rapido";
+
+/* (No Comment) */
+"favorites" = "Favoritos";
+
+/* (No Comment) */
+"feed" = "Alimentar";
+
+/* (No Comment) */
+"feel" = "Sentir";
+
+/* (No Comment) */
+"female" = "Femenino";
+
+/* (No Comment) */
+"fight" = "Luchar";
+
+/* (No Comment) */
+"find" = "Encontar";
+
+/* (No Comment) */
+"fit" = "Colocar";
+
+/* (No Comment) */
+"flee" = "Huir";
+
+/* (No Comment) */
+"fling" = "Arrojar";
+
+/* (No Comment) */
+"fly" = "Volar";
+
+/* (No Comment) */
+"forbid" = "Prohibir";
+
+/* (No Comment) */
+"forecast" = "Prever";
+
+/* (No Comment) */
+"foresee" = "Prever";
+
+/* (No Comment) */
+"foretell" = "Preducir";
+
+/* (No Comment) */
+"forget" = "Olvidar";
+
+/* (No Comment) */
+"forgive" = "Perdonar";
+
+/* Refers to the section of tests where both second and third irregular verb forms are to be filled in */
+"forms" = "Formas";
+
+/* (No Comment) */
+"forsake" = "Abandonar";
+
+/* (No Comment) */
+"freeze" = "Congelar";
+
+/* (No Comment) */
+"geld" = "Dinero";
+
+/* (No Comment) */
+"general" = "General";
+
+/* (No Comment) */
+"get" = "Obtener";
+
+/* (No Comment) */
+"gild" = "Gremio";
+
+/* (No Comment) */
+"give" = "Dar";
+
+/* (No Comment) */
+"gnaw" = "Roer";
+
+/* (No Comment) */
+"go" = "Ir";
+
+/* (No Comment) */
+"green" = "Verde";
+
+/* (No Comment) */
+"grind" = "Moler";
+
+/* (No Comment) */
+"grip" = "Agarrar";
+
+/* (No Comment) */
+"grow" = "Crecer";
+
+/* (No Comment) */
+"handwrite" = "Escribir a mano";
+
+/* (No Comment) */
+"hang" = "Colgar";
+
+/* (No Comment) */
+"have" = "Tener";
+
+/* (No Comment) */
+"hear" = "Oir";
+
+/* (No Comment) */
+"heave" = "Levantar";
+
+/* (No Comment) */
+"hew" = "Labrar";
+
+/* (No Comment) */
+"hide" = "Esconder";
+
+/* (No Comment) */
+"hint" = "Insinuar";
+
+/* (No Comment) */
+"hit" = "Golpear";
+
+/* (No Comment) */
+"hold" = "Sostener";
+
+/* (No Comment) */
+"hurt" = "Herir";
+
+/* (No Comment) */
+"in_progress" = "En progreso";
+
+/* (No Comment) */
+"including" = "Incluir";
+
+/* (No Comment) */
+"indigo" = "Índigo";
+
+/* (No Comment) */
+"infinitive" = "Infinitivo";
+
+/* (No Comment) */
+"inlay" = "embutir";
+
+/* (No Comment) */
+"input" = "entrar";
+
+/* (No Comment) */
+"interweave" = "Entrelazar";
+
+/* Refers to Irish English */
+"irish" = "Irlandese";
+
+/* (No Comment) */
+"keep" = "mantener";
+
+/* (No Comment) */
+"kneel" = "arrodillar";
+
+/* (No Comment) */
+"knit" = "tejer";
+
+/* (No Comment) */
+"know" = "saber";
+
+/* (No Comment) */
+"language" = "Idioma";
+
+/* (No Comment) */
+"lay" = "colocar";
+
+/* (No Comment) */
+"lead" = "dirigir";
+
+/* (No Comment) */
+"lean" = "apoyar";
+
+/* (No Comment) */
+"leap" = "saltar";
+
+/* (No Comment) */
+"learn" = "aprender";
+
+/* (No Comment) */
+"learned_verbs" = "Aprender verbos";
+
+/* (No Comment) */
+"learned_verbs_footer" = "Una palabra se considera aprendida si fue respondida correctamente al menos 3 veces. Si la respuesta resultó ser correcta, la métrica de conocimiento del verbo aumenta en uno, de lo contrario disminuye";
+
+/* (No Comment) */
+"leave" = "Dejar";
+
+/* (No Comment) */
+"lend" = "Prestar";
+
+/* (No Comment) */
+"let" = "Dejar";
+
+/* (No Comment) */
+"lie" = "Mentir";
+
+/* (No Comment) */
+"light" = "Luces";
+
+/* The Links section title on the Settings page */
+"links" = "Enlaces";
+
+/* (No Comment) */
+"listen_and_write" = "Escuchar y escribir";
+
+/* (No Comment) */
+"listen_to_pronunciation" = "Escucha la pronunciación";
+
+/* Refers to the listening section of the tests */
+"listening" = "Escuchando";
+
+/* (No Comment) */
+"listening_subtitle" = "Comprueba tu comprensión auditiva de verbos irregulares";
+
+/* (No Comment) */
+"lose" = "perder";
+
+/* (No Comment) */
+"make" = "Hacer";
+
+/* (No Comment) */
+"male" = "Masculino";
+
+/* Refers to the section of tests where both second and third irregular verb forms are to be filled in */
+"match_app_icon_with_accent_color" = "Hacer coincidir icono con color";
+
+/* (No Comment) */
+"may" = "Poder";
+
+/* (No Comment) */
+"mean" = "Significar";
+
+/* (No Comment) */
+"meet" = "Carne";
+
+/* (No Comment) */
+"melt" = "Derretir";
+
+/* (No Comment) */
+"miscast" = "Equivocar";
+
+/* (No Comment) */
+"misdeal" = "reparto erroneo";
+
+/* (No Comment) */
+"misdo" = "equivocarse";
+
+/* (No Comment) */
+"misgive" = "hacer recelar";
+
+/* (No Comment) */
+"mishear" = "Oir mal";
+
+/* (No Comment) */
+"mishit" = "Golpe defectuoso";
+
+/* (No Comment) */
+"mislay" = "Perder";
+
+/* (No Comment) */
+"mislead" = "engañar";
+
+/* (No Comment) */
+"misread" = "Leer mal";
+
+/* (No Comment) */
+"missed_word" = "Palabra perdida";
+
+/* (No Comment) */
+"misspell" = "Deletrear mal";
+
+/* (No Comment) */
+"misspend" = "malgastar";
+
+/* (No Comment) */
+"mistake" = "Error";
+
+/* (No Comment) */
+"misunderstand" = "Entender mal";
+
+/* (No Comment) */
+"more" = "Mas";
+
+/* (No Comment) */
+"mow" = "Cortar";
+
+/* (No Comment) */
+"must" = "Deber";
+
+/* (No Comment) */
+"no_data_to_display" = "no hay información para mostrar";
+
+/* (No Comment) */
+"of" = "de %d";
+
+/* (No Comment) */
+"offset" = "Compensar";
+
+/* (No Comment) */
+"ok" = "Esta bien";
+
+/* The full name of the app's develop */
+"oleg_samoylov" = "Oleg Samoylov";
+
+/* (No Comment) */
+"one_time_payment" = "Pago único, acceso de por vida";
+
+/* (No Comment) */
+"orange" = "Naranja";
+
+/* (No Comment) */
+"outbid" = "sobrepujar";
+
+/* (No Comment) */
+"outdo" = "superar";
+
+/* (No Comment) */
+"outfight" = "pelear";
+
+/* (No Comment) */
+"outgrow" = "crecer";
+
+/* (No Comment) */
+"output" = "salida";
+
+/* (No Comment) */
+"outrun" = "correr mas rapido";
+
+/* (No Comment) */
+"outsell" = "vender mas";
+
+/* (No Comment) */
+"outshine" = "eclipsar";
+
+/* (No Comment) */
+"overbid" = "sobreoferta";
+
+/* (No Comment) */
+"overcome" = "superar";
+
+/* (No Comment) */
+"overdo" = "exagerar";
+
+/* (No Comment) */
+"overdraw" = "sobregirar";
+
+/* (No Comment) */
+"overeat" = "comer en exceso";
+
+/* (No Comment) */
+"overfly" = "sobrevuelo";
+
+/* (No Comment) */
+"overhang" = "voladizo";
+
+/* (No Comment) */
+"overhear" = "escuchar";
+
+/* (No Comment) */
+"overlay" = "superposición";
+
+/* (No Comment) */
+"overpay" = "sobrepago";
+
+/* (No Comment) */
+"override" = "anular";
+
+/* (No Comment) */
+"overrun" = "invadir";
+
+/* (No Comment) */
+"oversee" = "supervisar";
+
+/* (No Comment) */
+"overshoot" = "excederse";
+
+/* (No Comment) */
+"oversleep" = "dormir demasiado";
+
+/* (No Comment) */
+"overtake" = "adelantar";
+
+/* (No Comment) */
+"overthrow" = "derribar";
+
+/* (No Comment) */
+"partake" = "participar";
+
+/* (No Comment) */
+"past_participle" = "Pasado participio";
+
+/* (No Comment) */
+"pay" = "pagar";
+
+/* (No Comment) */
+"pen" = "lapiz";
+
+/* (No Comment) */
+"personalize" = "Personalice la app: elija un color de acento a su gusto";
+
+/* (No Comment) */
+"pink" = "Rosa";
+
+/* (No Comment) */
+"plead" = "alegar";
+
+/* (No Comment) */
+"preset" = "preestablecido";
+
+/* (No Comment) */
+"print" = "Imprimir";
+
+/* The Privacy Policy link text */
+"privacy_policy" = "Política de privacidad";
+
+/* (No Comment) */
 "pro_suggestion_statistics" = "Among other benefits, Pro expands the count of available irregular verbs in tests from %d to %d";
-"no_data_to_display" = "No data to display";
-"learned_verbs" = "Learned verbs";
-"learned_verbs_footer" = "A word is considered learned if it was answered correctly at least 3 times. If the answer turned out to be correct, the verb knowledge metric increases by one, otherwise it decreases";
-"reset" = "Reset";
-"erase_learned_verbs" = "Erase learned verbs";
-"erase_correct_answers" = "Erase correct answers";
-"your_efforts" = "Your efforts";
-"in_progress" = "In progress";
-"of" = "of %d";
-"add_to_favorites" = "Favorite";
-"remove_from_favorites" = "Unfavorite";
-"remove" = "Remove";
-"australian" = "Australian";
-"irish" = "Irish";
-"indian" = "Indian";
-"south_african" = "South African";
-"british" = "British";
-"american" = "American";
-"voice" = "Voice";
-"male" = "Male";
-"female" = "Female";
-"untitled" = "Untitled";
-"default" = "Default";
-"slower" = "Slower";
-"faster" = "Faster";
-"voice_hint" = "To use a better version of a voice, add a new one, or remove a previously added one, go to Settings → Accessibility → VoiceOver → Speech → Voice";
-"print" = "Print";
-"acknowledgements" = "Acknowledgements";
-"beta_testing" = "Beta testing";
-"sofiia_sokolova" = "Sofia Sokolova";
-"artyom_shumilov" = "Artem Shumilov";
-"elizaveta_keplin" = "Elizabeth Keplin";
-"buy_for" = "Buy for";
-"one_time_payment" = "One-time payment, lifetime access";
-"ok" = "OK";
 
-"abide" = "abide";
-"alight" = "alight";
-"arise" = "arise";
-"awake" = "awake";
-"backslide" = "backslide";
-"be" = "be";
-"bear" = "bear";
-"beat" = "beat";
-"become" = "become";
-"befall" = "befall";
-"beget" = "beget";
-"begin" = "begin";
-"behold" = "behold";
-"beseech" = "beseech";
-"bend" = "bend";
-"bereave" = "bereave";
-"bet" = "bet";
-"bid" = "bid";
-"bind" = "bind";
-"bite" = "bite";
-"bleed" = "bleed";
-"bless" = "bless";
-"blow" = "blow";
-"break" = "break";
-"breed" = "breed";
-"bring" = "bring";
-"broadcast" = "broadcast";
-"browbeat" = "browbeat";
-"build" = "build";
-"burn" = "burn";
-"burst" = "burst";
-"bust" = "bust";
-"buy" = "buy";
-"can" = "can";
-"cast" = "cast";
-"catch" = "catch";
-"chide" = "chide";
-"choose" = "choose";
-"clap" = "clap";
-"cleave" = "cleave";
-"cling" = "cling";
-"clothe" = "clothe";
-"come" = "come";
-"cost" = "cost";
-"creep" = "creep";
-"crow" = "crow";
-"cut" = "cut";
-"deal" = "deal";
-"dig" = "dig";
-"dive" = "dive";
-"do" = "do";
-"draw" = "draw";
-"dream" = "dream";
-"drink" = "drink";
-"drive" = "drive";
-"dwell" = "dwell";
-"eat" = "eat";
-"fall" = "fall";
-"feed" = "feed";
-"feel" = "feel";
-"fight" = "fight";
-"find" = "find";
-"fit" = "fit";
-"flee" = "flee";
-"fling" = "fling";
-"fly" = "fly";
-"forbid" = "forbid";
-"forecast" = "forecast";
-"foretell" = "foretell";
-"forget" = "forget";
-"forgive" = "forgive";
-"forsake" = "forsake";
-"foresee" = "foresee";
-"freeze" = "freeze";
-"get" = "get";
-"give" = "give";
-"go" = "go";
-"grind" = "grind";
-"grow" = "grow";
-"handwrite" = "handwrite";
-"hang" = "hang";
-"have" = "have";
-"hear" = "heard";
-"hew" = "hew";
-"hide" = "hide";
-"hit" = "hit";
-"hold" = "hold";
-"hurt" = "hurt";
-"inlay" = "inlay";
-"input" = "input";
-"interweave" = "interweave";
-"keep" = "keep";
-"kneel" = "kneel";
-"knit" = "knit";
-"know" = "know";
-"lay" = "lay";
-"lead" = "lead";
-"lean" = "lean";
-"leap" = "leap";
-"learn" = "learn";
-"leave" = "leave";
-"lend" = "lend";
-"let" = "let";
-"lie" = "lie";
-"light" = "light";
-"lose" = "lose";
-"make" = "make";
-"may" = "may";
-"mean" = "mean";
-"meet" = "meet";
-"melt" = "melt";
-"mow" = "mow";
-"must" = "must";
-"offset" = "offset";
-"partake" = "partake";
-"pay" = "pay";
-"prepay" = "prepay";
-"plead" = "plead";
-"preset" = "preset";
-"prove" = "prove";
-"put" = "put";
-"quit" = "quit";
-"read" = "read";
-"relay" = "relay";
-"rend" = "rend";
-"rid" = "rid";
-"ride" = "ride";
-"ring" = "ring";
-"rise" = "rise";
-"run" = "run";
-"saw" = "saw";
-"say" = "say";
-"see" = "see";
-"seek" = "seek";
-"sell" = "sell";
-"send" = "send";
-"set" = "set";
-"sew" = "sew";
-"shake" = "shake";
-"shall" = "shall";
-"shave" = "shave";
-"shear" = "shear";
-"shed" = "shed";
-"shine" = "shine";
-"shoot" = "shoot";
-"shoe" = "shoe";
-"show" = "show";
-"shrink" = "shrink";
-"shut" = "shut";
-"sing" = "sing";
-"sink" = "sink";
-"sit" = "sit";
-"slay" = "slay";
-"sleep" = "sleep";
-"slide" = "slide";
-"sling" = "sling";
-"slink" = "slink";
-"slit" = "slit";
-"smell" = "smell";
-"sneak" = "sneak";
-"sow" = "sow";
-"speak" = "speak";
-"speed" = "speed";
-"spell" = "spell";
-"spend" = "spend";
-"spill" = "spill";
-"spin" = "spin";
-"spit" = "spit";
-"split" = "split";
-"spoil" = "spoil";
-"spread" = "spread";
-"spring" = "spring";
-"stand" = "stand";
-"steal" = "steal";
-"stick" = "stick";
-"sting" = "sting";
-"stink" = "stink";
-"strew" = "strew";
-"stride" = "stride";
-"strike" = "strike";
-"string" = "string";
-"strive" = "strive";
-"swear" = "swear";
-"sweat" = "sweat";
-"sweep" = "sweep";
-"swell" = "swell";
-"swim" = "swim";
-"swing" = "swing";
-"take" = "take";
-"teach" = "teach";
-"tear" = "tear";
-"tell" = "tell";
-"think" = "think";
-"thrive" = "thrive";
-"throw" = "throw";
-"thrust" = "thrust";
-"tread" = "tread";
-"typeset" = "typeset";
-"undergo" = "undergo";
-"understand" = "understand";
-"undertake" = "undertake";
-"upset" = "upset";
-"vex" = "vex";
-"wake" = "wake";
-"waylay" = "waylay";
-"wear" = "wear";
-"weave" = "weave";
-"wed" = "wed";
-"weep" = "weep";
-"wend" = "wend";
-"wet" = "wet";
-"will" = "will";
-"win" = "win";
-"wind" = "wind";
-"withdraw" = "withdraw";
-"withhold" = "withhold";
-"withstand" = "withstand";
-"wring" = "wring";
-"write" = "write";
+/* (No Comment) */
+"prove" = "probar";
+
+/* (No Comment) */
+"purple" = "Morado";
+
+/* (No Comment) */
+"put" = "poner";
+
+/* (No Comment) */
+"quit" = "quitar";
+
+/* The App Store Rate and Review redirection link text */
+"rate_and_review" = "Valorar y comentar";
+
+/* (No Comment) */
+"read" = "leer";
+
+/* (No Comment) */
+"red" = "Rojo";
+
+/* Determines the display of verbs with both regular and irregular forms */
+"regular_verbs" = "Regulares (-ed)";
+
+/* (No Comment) */
+"relay" = "retransmitir";
+
+/* (No Comment) */
+"remove" = "Eliminar";
+
+/* (No Comment) */
+"remove_from_favorites" = "Quitar de Favoritos";
+
+/* (No Comment) */
+"rend" = "desgarrar";
+
+/* (No Comment) */
+"reset" = "Restablecer";
+
+/* (No Comment) */
+"reset_statistics_correct_answers" = "¿Está seguro de que desea restablecer las estadísticas de respuestas correctas?";
+
+/* (No Comment) */
+"reset_statistics_learned_verbs" = "¿Está seguro de que desea restablecer las estadísticas de los verbos aprendidos?";
+
+/* (No Comment) */
+"restore_purchases" = "Restaurar las compras";
+
+/* (No Comment) */
+"rid" = "eliminar";
+
+/* (No Comment) */
+"ride" = "montar";
+
+/* (No Comment) */
+"ring" = "sonar";
+
+/* (No Comment) */
+"rise" = "subir";
+
+/* (No Comment) */
+"rive" = "hender";
+
+/* (No Comment) */
+"run" = "correr";
+
+/* (No Comment) */
+"saw" = "serrar";
+
+/* (No Comment) */
+"say" = "decir";
+
+/* (No Comment) */
+"see" = "ver";
+
+/* (No Comment) */
+"seek" = "buscar";
+
+/* (No Comment) */
+"sell" = "vender";
+
+/* (No Comment) */
+"send" = "enviar";
+
+/* (No Comment) */
+"sentence" = "Frase";
+
+/* Refers to the section of the tests where the missed word inside the sentence should be provided as the correct answer */
+"sentences" = "Frases";
+
+/* (No Comment) */
+"sentences_subtitle" = "¿Qué tan bien entiendes los verbos irregulares en contexto?";
+
+/* (No Comment) */
+"set" = "conjunto";
+
+/* (No Comment) */
+"settings" = "Ajustes";
+
+/* (No Comment) */
+"sew" = "coser";
+
+/* (No Comment) */
+"shake" = "sacudir";
+
+/* (No Comment) */
+"shall" = "deber";
+
+/* Lets a user to tell a friend about the app */
+"share_app" = "Compartir app";
+
+/* (No Comment) */
+"shave" = "Afeitar";
+
+/* (No Comment) */
+"shear" = "Cortar";
+
+/* (No Comment) */
+"shed" = "Perder";
+
+/* (No Comment) */
+"shine" = "brillar";
+
+/* (No Comment) */
+"shoe" = "zapato";
+
+/* (No Comment) */
+"shoot" = "disparar";
+
+/* (No Comment) */
+"show" = "mostrar";
+
+/* (No Comment) */
+"shred" = "desgarrar";
+
+/* (No Comment) */
+"shrink" = "encoger";
+
+/* (No Comment) */
+"shut" = "cerrar";
+
+/* (No Comment) */
+"past_simple" = "Pasado simple";
+
+/* (No Comment) */
+"sing" = "Sonar";
+
+/* (No Comment) */
+"sink" = "Hundir";
+
+/* (No Comment) */
+"sit" = "Sentar";
+
+/* (No Comment) */
+"slay" = "matar";
+
+/* (No Comment) */
+"sleep" = "Dormie";
+
+/* (No Comment) */
+"slide" = "Deslizar";
+
+/* (No Comment) */
+"sling" = "Colgar";
+
+/* (No Comment) */
+"slink" = "escabullir";
+
+/* (No Comment) */
+"slit" = "rajar";
+
+/* (No Comment) */
+"slower" = "Mas lento";
+
+/* (No Comment) */
+"smell" = "oler";
+
+/* (No Comment) */
+"smite" = "herir";
+
+/* (No Comment) */
+"sneak" = "Afanar";
+
+/* Refers to South African English */
+"south_african" = "sudafricano";
+
+/* (No Comment) */
+"sow" = "sembrar";
+
+/* (No Comment) */
+"speak" = "hablar";
+
+/* (No Comment) */
+"speaking_rate" = "Velocidad de habla";
+
+/* (No Comment) */
+"speed" = "velocidad";
+
+/* (No Comment) */
+"spell" = "deletrear";
+
+/* (No Comment) */
+"spend" = "gastar";
+
+/* (No Comment) */
+"spill" = "derramar";
+
+/* (No Comment) */
+"spin" = "girar";
+
+/* (No Comment) */
+"spit" = "escupir";
+
+/* (No Comment) */
+"split" = "divdir";
+
+/* (No Comment) */
+"spoil" = "mimar";
+
+/* (No Comment) */
+"spread" = "propagar";
+
+/* (No Comment) */
+"spring" = "brotar";
+
+/* (No Comment) */
+"stand" = "puesto";
+
+/* (No Comment) */
+"statistics" = "Estadísticas";
+
+/* (No Comment) */
+"steal" = "robar";
+
+/* (No Comment) */
+"stick" = "palo";
+
+/* (No Comment) */
+"sting" = "picar";
+
+/* (No Comment) */
+"stink" = "hedor";
+
+/* (No Comment) */
+"store_unlimited_items_in_favorites" = "Almacenar artículos ilimitados en Favoritos";
+
+/* (No Comment) */
+"strew" = "esparcir";
+
+/* (No Comment) */
+"stride" = "paso";
+
+/* (No Comment) */
+"strike" = "Huelga";
+
+/* (No Comment) */
+"string" = "ensartar";
+
+/* (No Comment) */
+"strip" = "desnudar";
+
+/* (No Comment) */
+"strive" = "esforzarse";
+
+/* (No Comment) */
+"swear" = "jurar";
+
+/* (No Comment) */
+"sweat" = "sudar";
+
+/* (No Comment) */
+"sweep" = "barrer";
+
+/* (No Comment) */
+"swell" = "hinchar";
+
+/* (No Comment) */
+"swim" = "nadar";
+
+/* (No Comment) */
+"swing" = "columpio";
+
+/* (No Comment) */
+"take" = "tomar";
+
+/* (No Comment) */
+"teach" = "enseñar";
+
+/* (No Comment) */
+"teal" = "Verde azulado";
+
+/* (No Comment) */
+"tear" = "lagrima";
+
+/* (No Comment) */
+"tell" = "contar";
+
+/* The Terms of Use link text */
+"terms" = "Términos de uso";
+
+/* (No Comment) */
+"tests" = "Pruebas";
+
+/* (No Comment) */
+"thank_you" = "¡Gracias por estar con nosotros!";
+
+/* (No Comment) */
+"think" = "pensar";
+
+/* (No Comment) */
+"three_forms" = "3 formas";
+
+/* (No Comment) */
+"thrive" = "prosperar";
+
+/* (No Comment) */
+"throw" = "lanzar";
+
+/* (No Comment) */
+"thrust" = "empujar";
+
+/* (No Comment) */
+"track_your_progress_in_learning_irregular_verbs" = "Seguir su progreso en el aprendizaje de los verbos irregulares";
+
+/* Refers to the irregular verb translation caption */
+"translation" = "Traducción";
+
+/* (No Comment) */
+"translation_subtitle" = "Comprueba tu conocimiento de la traducción de verbos irregulares";
+
+/* (No Comment) */
+"tread" = "Pisar";
+
+/* (No Comment) */
+"typeset" = "componer";
+
+/* (No Comment) */
+"undergo" = "someterse";
+
+/* (No Comment) */
+"understand" = "entender";
+
+/* (No Comment) */
+"undertake" = "emprender";
+
+/* (No Comment) */
+"unlock_all_verbs_in_tests" = "Desbloquear todos los verbos en las pruebas";
+
+/* (No Comment) */
+"untitled" = "Intitulado";
+
+/* (No Comment) */
+"upgrade_to_pro" = "Actualizar a Pro";
+
+/* (No Comment) */
+"upset" = "trastornar";
+
+/* (No Comment) */
+"using_hints_gives_you_no_points" = "Solo se tienen en cuenta las respuestas ingresadas o seleccionadas correctamente en el primer intento y sin usar pistas";
+
+/* (No Comment) */
+"verbs" = "Verbos";
+
+/* The current version of the app */
+"version" = "Versión";
+
+/* (No Comment) */
+"vex" = "vejar";
+
+/* (No Comment) */
+"view_a_transcription" = "Ver una transcripción en la tarjeta de verbos";
+
+/* The title of the voice list page */
+"voice" = "Voz";
+
+/* The quick reference on how to customize the voice list */
+"voice_hint" = "Para usar una mejor versión de una voz, agregar una nueva o eliminar una agregada anteriormente, vaya a Configuración → Accesibilidad → VoiceOver → Leer → Voz";
+
+/* (No Comment) */
+"wake" = "semana";
+
+/* (No Comment) */
+"waylay" = "acechar";
+
+/* (No Comment) */
+"wear" = "vestir";
+
+/* (No Comment) */
+"weave" = "tejer";
+
+/* (No Comment) */
+"wed" = "casar";
+
+/* (No Comment) */
+"weep" = "llorar";
+
+/* (No Comment) */
+"wend" = "encaminarse a";
+
+/* (No Comment) */
+"wet" = "mojar";
+
+/* The short description displayed at the top of the add widget view */
+"widget_configuration_display_title" = "Palabras para todos los días";
+
+/* The title displayed at the top of the add widget view */
+"widget_description" = "Memoriza las tres formas de verbos irregulares de forma sencilla y sencilla";
+
+/* (No Comment) */
+"will" = "querer";
+
+/* (No Comment) */
+"win" = "ganar";
+
+/* (No Comment) */
+"wind" = "viento";
+
+/* (No Comment) */
+"withdraw" = "retirar";
+
+/* (No Comment) */
+"withhold" = "retener";
+
+/* (No Comment) */
+"withstand" = "resistir a";
+
+/* (No Comment) */
+"wring" = "exprimir";
+
+/* (No Comment) */
+"write" = "escribir";
+
+/* (No Comment) */
+"writing_subtitle" = "Comprueba tu conocimiento de las formas verbales irregulares";
+
+/* (No Comment) */
+"yellow" = "Amarillo";
+
+/* (No Comment) */
+"yes" = "Si";
+
+/* (No Comment) */
+"your_efforts" = "Sus esfuerzos";
+
+/* (No Comment) */
 "zinc" = "zinc";
-"strip" = "strip";
-"dare" = "dare";
-"geld" = "geld";
-"gild" = "gild";
-"gnaw" = "gnaw";
-"grip" = "grip";
-"heave" = "heave";
-"pen" = "pen";
-"rive" = "rive";
-"shred" = "shred";
-"smite" = "smite";
 
-"miscast" = "miscast";
-"misdeal" = "misdeal";
-"misdo" = "misdo";
-"misgive" = "misgive";
-"mishear" = "mishear";
-"mishit" = "mishit";
-"mislay" = "mislay";
-"mislead" = "mislead";
-"misread" = "misread";
-"misspell" = "misspell";
-"misspend" = "misspend";
-"mistake" = "mistake";
-"misunderstand" = "misunderstand";
-
-"outbid" = "outbid";
-"outdo" = "outdo";
-"outfight" = "outfight";
-"outgrow" = "outgrow";
-"output" = "output";
-"outrun" = "outrun";
-"outsell" = "outsell";
-"outshine" = "outshine";
-
-"overbid" = "overbid";
-"overdo" = "overdo";
-"overcome" = "overcome";
-"overdraw" = "overdraw";
-"overeat" = "overeat";
-"overfly" = "overfly";
-"overhang" = "overhang";
-"overhear" = "overhear";
-"overlay" = "overlay";
-"overpay" = "overpay";
-"override" = "override";
-"overrun" = "overrun";
-"oversee" = "oversee";
-"overshoot" = "overshoot";
-"oversleep" = "oversleep";
-"overtake" = "overtake";
-"overthrow" = "overthrow";
+"sofia_sokolova" = "Sofia Sokolova";
+"artem_shumilov" = "Artem Shumilov";
+"elizabeth_keplin" = "Isabel Keplin";
+"tatiana_perfilieva" = "Tatiana Perfilieva";
+"indian" = "Indio";
+"backslide" = "recaer";

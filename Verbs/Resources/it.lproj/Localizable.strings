@@ -2,10 +2,10 @@
 "abide" = "sopportare";
 
 /* The About section title on the Settings page */
-"about" = "di";
+"about" = "Sul programma";
 
 /* Refers to both the Settings section and the title of the accent colors list page */
-"accent_color" = "Accento di colore";
+"accent_color" = "Colore accento";
 
 /* The title of the acknowledgements page as well as the corresponding link text */
 "acknowledgements" = "Riconoscimenti";
@@ -206,7 +206,7 @@
 "demo" = "Demo";
 
 /* Determines the display of irregular verbs with the prefixes be-, for(e)-, in-, inter-, mis-, off-, out-, over-, pre-, under-, with- and others */
-"derivatives" = "Derivati";
+"derivatives" = "Forme derivate";
 
 /* Mentions the app's developer */
 "developer" = "Sviluppatore";
@@ -248,7 +248,7 @@
 "empty_favorites" = "Per aggiungere un verbo irregolare ai tuoi preferiti, aprilo dall'elenco di tutti i verbi e fai clic sul pulsante a stella nell'angolo in alto a destra dello schermo";
 
 /* (No Comment) */
-"empty_favorites_title" = "Preferiti vuoti";
+"empty_favorites_title" = "Nessun Perferiti";
 
 /* (No Comment) */
 "empty_tests" = "Per iniziare a fare il test, fare clic su di esso sul lato sinistro dello schermo";
@@ -719,7 +719,7 @@
 "red" = "Rosso";
 
 /* Determines the display of verbs with both regular and irregular forms */
-"regular_verbs" = "Regolare  (-ed)";
+"regular_verbs" = "Regolare (-ed)";
 
 /* (No Comment) */
 "relay" = "relè";
@@ -740,7 +740,7 @@
 "reset_statistics_correct_answers" = "Sei sicuro di voler reimpostare le statistiche delle risposte corrette?";
 
 /* (No Comment) */
-"reset_statistics_learned_verbs" = "Sei sicuro di voler reimpostare le  statistiche dei verbi appresi?";
+"reset_statistics_learned_verbs" = "Sei sicuro di voler reimpostare le statistiche dei verbi appresi?";
 
 /* (No Comment) */
 "restore_purchases" = "Ripristinare gli acquisti";
@@ -839,7 +839,7 @@
 "shut" = "chiudere";
 
 /* (No Comment) */
-"simple_past" = "Passato Semplice";
+"past_simple" = "Passato semplice";
 
 /* (No Comment) */
 "sing" = "cantare";
@@ -890,7 +890,7 @@
 "speak" = "parlare";
 
 /* (No Comment) */
-"speaking_rate" = "Tasso di conversazione";
+"speaking_rate" = "Velocita voce";
 
 /* (No Comment) */
 "speed" = "accelerare";
@@ -1001,7 +1001,7 @@
 "tests" = "Test";
 
 /* (No Comment) */
-"thank_you" = "Crazie per essere con noi";
+"thank_you" = "Grazie per essere con noi!";
 
 /* (No Comment) */
 "think" = "pensare";
@@ -1145,10 +1145,12 @@
 "zinc" = "zinco";
 
 /* (No Comment) */
-"sofiia_sokolova" = "Sofia Sokolova";
+"sofia_sokolova" = "Sofia Sokolova";
 
 /* (No Comment) */
-"artyom_shumilov" = "Artem Shumilov";
+"artem_shumilov" = "Artem Shumilov";
 
 /* (No Comment) */
-"elizaveta_keplin" = "Elisabetta Keplin";
+"elizabeth_keplin" = "Elisabetta Keplin";
+
+"tatiana_perfilieva" = "Tatiana Perfilieva";

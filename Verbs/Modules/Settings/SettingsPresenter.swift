@@ -36,7 +36,11 @@ final class SettingsPresenter: NSObject {
 
 private extension SettingsPresenter {
     
-    var areAllAppsAvailable: Bool { developerURL.map(UIApplication.shared.canOpenURL) ?? false }
+    var areAllAppsAvailable: Bool {
+        guard !FeatureToggle.isDebug,
+              let value = developerURL.map(UIApplication.shared.canOpenURL) else { return false }
+        return value
+    }
     
     func subscribe() {
         NotificationCenter.default.addObserver(self,
@@ -67,7 +71,7 @@ private extension SettingsPresenter {
     
     func didListViewChange(_ sender: ItemProtocol) {
         guard let item = sender as? PickableItem else { return }
-        let value = item.subtitle == "translation".localized
+        let value = item.subtitle == .localized(.translation)
         UserDefaults.shared.set(value, for: .shouldTranslationBeShown)
         NotificationCenter.default.post(name: .list,
                                         object: nil,

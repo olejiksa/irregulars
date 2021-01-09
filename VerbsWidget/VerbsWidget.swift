@@ -110,7 +110,7 @@ struct VerbsWidgetEntryView: View {
                 .bold()
                 .lineLimit(1)
             if let simplePast = verb.simplePast?.first {
-                Text("Simple Past")
+                Text("Past Simple")
                     .font(.caption)
                 Text(verbatim: simplePast.value)
                     .bold()
@@ -146,7 +146,7 @@ struct VerbsWidgetEntryView: View {
                 }.frame(maxWidth: .infinity)
                 if let simplePast = verb.simplePast?.first {
                     VStack(alignment: .center, spacing: 10) {
-                        Text("Simple Past")
+                        Text("Past Simple")
                             .font(.caption)
                         Text(verbatim: simplePast.value)
                             .bold()
@@ -204,7 +204,7 @@ struct VerbsWidgetEntryView: View {
             }
             if let simplePast = verb.simplePast?.first {
                 HStack(alignment: .center, spacing: 10) {
-                    Text("Simple Past")
+                    Text("Past Simple")
                         .font(.caption)
                         .frame(maxWidth: .infinity)
                     Text(verbatim: simplePast.value)

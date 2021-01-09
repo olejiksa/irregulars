@@ -24,20 +24,26 @@ final class AcknowledgementsPresenter: NSObject {
 private extension AcknowledgementsPresenter {
     
     func setupSections() {
-        let betaTestersString: String = [.localized(.sofiiaSokolova),
-                                         .localized(.artyomShumilov),
-                                         .localized(.elizavetaKeplin)].joined(separator: ", ")
+        let betaTestersString: String = [.localized(.sofiaSokolova),
+                                         .localized(.artemShumilov),
+                                         .localized(.elizabethKeplin)].joined(separator: ", ")
         
         dataSource.setup([Section(header: .localized(.sentences),
-                                  items: [PlainItem(title: .localized(.sofiiaSokolova))]),
+                                  items: [PlainItem(title: .localized(.sofiaSokolova))]),
                           Section(header: .localized(.betaTesting),
                                   items: [PlainItem(title: betaTestersString)]),
                           Section(header: .localized(.translation),
-                                  items: [RightDetailItem(title: "Julian Eduardo",
+                                  items: [RightDetailItem(title: "To Be Clarified",
+                                                          subtitle: Language.french.description),
+                                          RightDetailItem(title: "To Be Clarified",
+                                                          subtitle: Language.german.description),
+                                          RightDetailItem(title: "Julian Eduardo Couoh Pablo",
                                                           subtitle: Language.spanish.description),
                                           RightDetailItem(title: "To Be Clarified",
                                                           subtitle: Language.japanese.description),
+                                          RightDetailItem(title: .localized(.tatianaPerfilieva),
+                                                          subtitle: Language.korean.description),
                                           RightDetailItem(title: "To Be Clarified",
-                                                          subtitle: Language.korean.description)])])
+                                                          subtitle: Language.chinese.description)])])
     }
 }

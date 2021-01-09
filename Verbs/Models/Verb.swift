@@ -23,7 +23,7 @@ struct Verb: Codable {
     let hasRegular: Bool
     let isDerived: Bool
     
-    var translation: String { infinitive.value.localized }
+    var translation: String { infinitive.value.localized.lowercased() }
     var url: URL? { URL(string: "verbs://\(infinitive.value)") }
 }
 

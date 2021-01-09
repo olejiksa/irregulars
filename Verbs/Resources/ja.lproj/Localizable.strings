@@ -66,7 +66,7 @@
 "demo" = "Демо";
 "missed_word" = "Пропущенное слово";
 "infinitive" = "Неопределенная форма глагола";
-"simple_past" = "Простое прошедшее";
+"past_simple" = "Простое прошедшее";
 "past_participle" = "Причастие прошедшего времени";
 "listen_and_write" = "Прослушайте и напишите ниже";
 "speaking_rate" = "Скорость речи";
@@ -85,7 +85,7 @@
 "reset" = "Сброс";
 "erase_learned_verbs" = "Стереть выученные глаголы";
 "erase_correct_answers" = "Стереть правильные ответы";
-"your_efforts" = "Ваши старания";
+"your_efforts" = "Ваш прогресс";
 "in_progress" = "В процессе";
 "of" = "из %d";
 "add_to_favorites" = "Добавить в «Избранное»";
@@ -108,9 +108,9 @@
 "print" = "Печать";
 "acknowledgements" = "Благодарности";
 "beta_testing" = "Бета-тестирование";
-"sofiia_sokolova" = "София Соколова";
-"artyom_shumilov" = "Артем Шумилов";
-"elizaveta_keplin" = "Елизавета Кеплин";
+"sofia_sokolova" = "София Соколова";
+"artem_shumilov" = "Артем Шумилов";
+"elizabeth_keplin" = "Елизавета Кеплин";
 "buy_for" = "Купить за";
 "one_time_payment" = "Одноразовый платеж, пожизненный доступ";
 "ok" = "OK";
@@ -387,3 +387,5 @@
 "oversleep" = "проспать, заспаться";
 "overtake" = "догонять";
 "overthrow" = "свергать";
+
+"tatiana_perfilieva" = "Tatiana Perfilieva";

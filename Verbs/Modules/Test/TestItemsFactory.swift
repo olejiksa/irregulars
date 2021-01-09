@@ -38,15 +38,15 @@ final class TestItemsFactory {
         
         switch testKind {
         case .twoForms:
-            return [Section(header: "infinitive".localized,
+            return [Section(header: .localized(.infinitive),
                             items: [PlainDetailItem(text: verb.infinitive.value)]),
-                    Section(header: "simple_past".localized,
+                    Section(header: .localized(.pastSimple),
                             items: [InputItem(words: simplePast,
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
                                               hintActionBlock: hint,
                                               tag: 0)].compactMap { $0 }),
-                    Section(header: "past_participle".localized,
+                    Section(header: .localized(.pastParticiple),
                             items: [InputItem(words: pastParticiple,
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
@@ -57,12 +57,12 @@ final class TestItemsFactory {
             guard languageService.hasTranslation else { return [] }
             
             let items = generateAnswerItems(count: 4, verb: verb, form: .translation,
-                                            verbForms: [verb.infinitive.value.localized],
+                                            verbForms: [verb.translation],
                                             actionBlock: answerActionBlock)
             
-            return [Section(header: "infinitive".localized,
+            return [Section(header: .localized(.infinitive),
                             items: [PlainDetailItem(text: verb.infinitive.value)].compactMap { $0 }),
-                    Section(header: "translation".localized,
+                    Section(header: .localized(.translation),
                             items: items.compactMap { $0 })]
         case .retranslation:
             guard languageService.hasTranslation else { return [] }
@@ -71,28 +71,28 @@ final class TestItemsFactory {
                                             verbForms: [verb.infinitive.value],
                                             actionBlock: answerActionBlock)
             
-            return [Section(header: "translation".localized,
-                            items: [PlainDetailItem(text: verb.infinitive.value.localized)].compactMap { $0 }),
-                    Section(header: "infinitive".localized,
+            return [Section(header: .localized(.translation),
+                            items: [PlainDetailItem(text: verb.translation)].compactMap { $0 }),
+                    Section(header: .localized(.infinitive),
                             items: items.compactMap { $0 })]
         case .listening:
             return [Section(items: [PlainDetailItem(text: "listen_and_write".localized,
                                                     textStyle: .secondary)].compactMap { $0 }),
-                    Section(header: "infinitive".localized,
+                    Section(header: .localized(.infinitive),
                             items: [InputItem(words: [verb.infinitive],
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
                                               hintActionBlock: hint,
                                               isAudio: true,
                                               tag: 0)].compactMap { $0 }),
-                    Section(header: "simple_past".localized,
+                    Section(header: .localized(.pastSimple),
                             items: [InputItem(words: simplePast,
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
                                               hintActionBlock: hint,
                                               isAudio: true,
                                               tag: 1)].compactMap { $0 }),
-                    Section(header: "past_participle".localized,
+                    Section(header: .localized(.pastParticiple),
                             items: [InputItem(words: pastParticiple,
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
@@ -154,7 +154,7 @@ private extension TestItemsFactory {
                 guard let value = verb?.pastParticiple?.randomElement()?.value else { continue }
                 formString = value
             case .translation:
-                guard let value = verb?.infinitive.value.localized else { continue }
+                guard let value = verb?.translation else { continue }
                 formString = value
             }
             

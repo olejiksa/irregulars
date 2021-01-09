@@ -12,18 +12,12 @@
 			<string>NSStringPluralRuleType</string>
 			<key>NSStringFormatValueTypeKey</key>
 			<string>u</string>
-			<key>zero</key>
-			<string>correct answers for all the time</string>
 			<key>one</key>
-			<string>correct answer for all the time</string>
-			<key>two</key>
-			<string>correct answers for all the time</string>
-			<key>few</key>
-			<string>correct answers for all the time</string>
-			<key>many</key>
-			<string>correct answers for all the time</string>
+			<string>respuesta correcta de todos los tiempos</string>
 			<key>other</key>
-			<string>correct answers for all the time</string>
+			<string>respuestas correctas de todos los tiempos</string>
+			<key>zero</key>
+			<string>respuestas correctas de todos los tiempos</string>
 		</dict>
 	</dict>
 </dict>

@@ -8,22 +8,22 @@
 		<string>%#@answered_correctly_count@</string>
 		<key>answered_correctly_count</key>
 		<dict>
+			<key>one</key>
+			<string>correct answer for all time</string>
 			<key>NSStringFormatSpecTypeKey</key>
 			<string>NSStringPluralRuleType</string>
 			<key>NSStringFormatValueTypeKey</key>
 			<string>u</string>
 			<key>zero</key>
-			<string>correct answers for all the time</string>
-			<key>one</key>
-			<string>correct answer for all the time</string>
+			<string>correct answers for all time</string>
 			<key>two</key>
-			<string>correct answers for all the time</string>
+			<string>correct answers for all time</string>
 			<key>few</key>
-			<string>correct answers for all the time</string>
+			<string>correct answers for all time</string>
 			<key>many</key>
-			<string>correct answers for all the time</string>
+			<string>correct answers for all time</string>
 			<key>other</key>
-			<string>correct answers for all the time</string>
+			<string>correct answers for all time</string>
 		</dict>
 	</dict>
 </dict>

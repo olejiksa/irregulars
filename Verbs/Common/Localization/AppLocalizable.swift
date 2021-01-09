@@ -44,6 +44,13 @@ extension Localizable {
 
 extension Localizable {
     
+    static let infinitive = Localizable(
+        NSLocalizedString("infinitive", comment: "The basic form of a verb, without an inflection binding it to a particular subject or tense"))
+    static let pastSimple = Localizable(
+        NSLocalizedString("past_simple", comment: "Used to show that a completed action took place at a specific time in the past"))
+    static let pastParticiple = Localizable(
+        NSLocalizedString("past_participle", comment: "A word that can be used as an adjective or to form verb tense"))
+    
     static let links = Localizable(
         NSLocalizedString("links", comment: "The Links section title on the Settings page"))
     static let rateAndReview = Localizable(
@@ -78,7 +85,7 @@ extension Localizable {
     static let accentColor = Localizable(
         NSLocalizedString("accent_color", comment: "Refers to both the Settings section and the title of the accent colors list page"))
     static let matchAppIconWithAccentColor = Localizable(
-        NSLocalizedString("match_app_icon_with_accent_color", comment: "Refers to the section of tests where both second and third irregular verb forms are to be filled in"))
+        NSLocalizedString("match_app_icon_with_accent_color", comment: "Referts to the app icon color matching action button"))
 }
 
 // MARK: - Test
@@ -117,10 +124,12 @@ extension Localizable {
     
     static let olegSamoylov = Localizable(
         NSLocalizedString("oleg_samoylov", comment: "The full name of the app's develop"))
-    static let sofiiaSokolova = Localizable(
-        NSLocalizedString("sofiia_sokolova", comment: "Refers to Sofia Sokolova"))
-    static let artyomShumilov = Localizable(
-        NSLocalizedString("artyom_shumilov", comment: "Refers to Artem Shumilov"))
-    static let elizavetaKeplin = Localizable(
-        NSLocalizedString("elizaveta_keplin", comment: "Refers to Elizabeth Keplin"))
+    static let sofiaSokolova = Localizable(
+        NSLocalizedString("sofia_sokolova", comment: "Refers to Sofia Sokolova"))
+    static let artemShumilov = Localizable(
+        NSLocalizedString("artem_shumilov", comment: "Refers to Artem Shumilov"))
+    static let elizabethKeplin = Localizable(
+        NSLocalizedString("elizabeth_keplin", comment: "Refers to Elizabeth Keplin"))
+    static let tatianaPerfilieva = Localizable(
+        NSLocalizedString("tatiana_perfilieva", comment: "Refers to Tatiana Perfilieva"))
 }

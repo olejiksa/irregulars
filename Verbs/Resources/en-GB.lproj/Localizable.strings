@@ -27,9 +27,9 @@
 "rate_and_review" = "Rate and review";
 "buy_button" = "Buy";
 "restore_purchases" = "Restore purchases";
-"empty_verbs" = "To view info about an irregular verb, tap on it on the left side of the screen";
-"empty_tests" = "To start the test, tap on it on the left side of the screen";
-"empty_favorites" = "To add an irregular verb to your Favourites, open it from the all verbs list and tap on the star button in the upper right corner of the screen";
+"empty_verbs" = "To view info about an irregular verb, tap it on the left side of the screen";
+"empty_tests" = "To start the test, tap it on the left side of the screen";
+"empty_favorites" = "To add an irregular verb to your Favourites, open it from the all verbs list and tap the star button in the top right corner of the screen";
 "three_forms" = "3 forms";
 "forms" = "Forms";
 "privacy_policy" = "Privacy policy";
@@ -66,11 +66,11 @@
 "demo" = "Demo";
 "missed_word" = "Missed word";
 "infinitive" = "Infinitive";
-"simple_past" = "Simple Past";
+"past_simple" = "Past Simple";
 "past_participle" = "Past Participle";
 "listen_and_write" = "Listen and write below";
 "speaking_rate" = "Speaking rate";
-"empty_favorites_title" = "Empty Favourites";
+"empty_favorites_title" = "No Favourites";
 "track_your_progress_in_learning_irregular_verbs" = "Track your progress in learning irregular verbs";
 "using_hints_gives_you_no_points" = "Only answers entered or selected correctly on the first try and without using hints are taken into account";
 "attention" = "Attention";
@@ -106,11 +106,11 @@
 "faster" = "Faster";
 "voice_hint" = "To use a better version of a voice, add a new one, or remove a previously added one, go to Settings → Accessibility → VoiceOver → Speech → Voice";
 "print" = "Print";
-"acknowledgements" = "Acknowledgments";
+"acknowledgements" = "Acknowledgements";
 "beta_testing" = "Beta testing";
-"sofiia_sokolova" = "Sofia Sokolova";
-"artyom_shumilov" = "Artem Shumilov";
-"elizaveta_keplin" = "Elizabeth Keplin";
+"sofia_sokolova" = "Sofia Sokolova";
+"artem_shumilov" = "Artem Shumilov";
+"elizabeth_keplin" = "Elizabeth Keplin";
 "buy_for" = "Buy for";
 "one_time_payment" = "One-time payment, lifetime access";
 "ok" = "OK";
@@ -387,3 +387,5 @@
 "oversleep" = "oversleep";
 "overtake" = "overtake";
 "overthrow" = "overthrow";
+
+"tatiana_perfilieva" = "Tatiana Perfilieva";

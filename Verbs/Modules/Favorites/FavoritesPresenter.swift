@@ -250,7 +250,9 @@ extension FavoritesPresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    willPerformPreviewActionForMenuWith configuration: UIContextMenuConfiguration,
                    animator: UIContextMenuInteractionCommitAnimating) {
-        guard let indexPath = configuration.identifier as? IndexPath else { return }
+        let svc = viewController?.splitViewController
+        let isCompact = svc?.traitCollection.horizontalSizeClass == .compact
+        guard isCompact, let indexPath = configuration.identifier as? IndexPath else { return }
         let verb = favoritesService.groupedItems[indexPath.section][indexPath.row]
         animator.addAnimations {
             self.router?.goToDetail(with: verb)

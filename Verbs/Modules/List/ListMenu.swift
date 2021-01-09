@@ -42,7 +42,7 @@ final class ListMenu {
                          attributes: !hasTranslation ? .hidden : [],
                          state: !shouldTranslationBeShown ? .on : .off,
                          handler: handleViewMenu),
-                UIAction(title: "translation".localized,
+                UIAction(title: .localized(.translation),
                          attributes: !hasTranslation ? .hidden : [],
                          state: shouldTranslationBeShown ? .on : .off,
                          handler: handleViewMenu)
