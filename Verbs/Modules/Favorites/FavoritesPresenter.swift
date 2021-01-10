@@ -35,6 +35,7 @@ final class FavoritesPresenter: NSObject {
         
         loadSettings()
         subscribe()
+        setState()
     }
     
     func selectWhenRegular() {

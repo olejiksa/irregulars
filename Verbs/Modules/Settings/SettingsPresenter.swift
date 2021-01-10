@@ -56,14 +56,13 @@ private extension SettingsPresenter {
              itemsFactory.setupGeneralSection(languageBlock: willShowLanguageSettings,
                                               accentColorBlock: willGoToAccentColor,
                                               voiceBlock: willGoToVoice),
-             itemsFactory.setupPlaybackSpeedSection(playbackSpeedBlock: didPlaybackSpeedChange),
              itemsFactory.setupLinksSection(rateBlock: willRate,
                                             privacyBlock: willGoToPrivacyPolicy,
                                             termsBlock: willGoToTermsOfUse,
                                             mailBlock: willGoToMail,
-                                            shareBlock: willShare,
-                                            acknowledgementsBlock: willGoToAcknowledgements),
+                                            shareBlock: willShare),
              itemsFactory.setupAboutSection(areAllAppsAvailable: areAllAppsAvailable,
+                                            acknowledgementsBlock: willGoToAcknowledgements,
                                             allAppsBlock: willOverviewAllApps,
                                             upgradeBlock: willUpgrade)]
         )

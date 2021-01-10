@@ -21,11 +21,10 @@ final class SettingsItemsFactory {
     
     func setupActivationSection(upgradeBlock: @escaping ItemBlock,
                                 resetBlock: @escaping ItemBlock) -> Section {
-        let name = Bundle.main.productName ?? ""
         let upgradeItem = !FeatureToggle.isPaid ? ActionItem(text: "upgrade_to_pro".localized,
                                                              style: .standard,
                                                              actionBlock: upgradeBlock) : nil
-        let downgradeText = "downgrade_to".localized(with: [name])
+        let downgradeText = "downgrade_to".localized
         let resetItem = FeatureToggle.isPaid && FeatureToggle.isDebug ? ActionItem(text: downgradeText,
                                                                                    style: .standard,
                                                                                    actionBlock: resetBlock) : nil
@@ -56,42 +55,27 @@ final class SettingsItemsFactory {
         return .init(header: "general".localized, items: items)
     }
     
-    func setupPlaybackSpeedSection(playbackSpeedBlock: @escaping IntBlock) -> Section {
-        let index = UserDefaults.shared.integer(for: .playbackSpeed)
-        return .init(header: "speaking_rate".localized,
-                     items: [SliderItem(leadingIcon: .tortoise,
-                                        leadingAccessibilityText: "slower".localized,
-                                        trailingIcon: .hare,
-                                        trailingAccessibilityText: "faster".localized,
-                                        steps: 5,
-                                        index: index,
-                                        playbackSpeedBlock: playbackSpeedBlock,
-                                        isEnabled: FeatureToggle.isPaid)])
-    }
-    
     func setupLinksSection(rateBlock: @escaping ItemBlock,
                            privacyBlock: @escaping ItemBlock,
                            termsBlock: @escaping ItemBlock,
                            mailBlock: @escaping ItemBlock,
-                           shareBlock: @escaping ItemBlock,
-                           acknowledgementsBlock: @escaping ItemBlock) -> Section {
+                           shareBlock: @escaping ItemBlock) -> Section {
         .init(header: .localized(.links),
-              items: [DisclosureItem(text: .localized(.rateAndReview),
-                                     actionBlock: rateBlock),
+              items: [ActionItem(text: .localized(.rateAndReview),
+                                 actionBlock: rateBlock),
+                      ActionItem(text: .localized(.shareApp),
+                                 actionBlock: shareBlock),
                       DisclosureItem(text: .localized(.privacyPolicy),
                                      actionBlock: privacyBlock),
                       DisclosureItem(text: .localized(.terms),
                                      actionBlock: termsBlock),
-                      DisclosureItem(text: .localized(.acknowledgements),
-                                     actionBlock: acknowledgementsBlock),
                       DisclosureItem(text: .localized(.contactUs),
                                      isEnabled: mailService.isMailAvailable,
-                                     actionBlock: mailBlock),
-                      DisclosureItem(text: .localized(.shareApp),
-                                     actionBlock: shareBlock)])
+                                     actionBlock: mailBlock)])
     }
     
     func setupAboutSection(areAllAppsAvailable: Bool,
+                           acknowledgementsBlock: @escaping ItemBlock,
                            allAppsBlock: @escaping ItemBlock,
                            upgradeBlock: @escaping ItemBlock) -> Section {
         let version = Bundle.main.releaseVersionNumber ?? ""
@@ -102,13 +86,15 @@ final class SettingsItemsFactory {
                      items: [RightDetailItem(title: .localized(.developer),
                                              subtitle: .localized(.olegSamoylov),
                                              actionBlock: allAppsBlock,
-                                             hasDisclosureIndicator: false,
+                                             hasDisclosureIndicator: true,
                                              isEnabled: areAllAppsAvailable),
                              RightDetailItem(title: .localized(.edition),
                                              subtitle: fullEditionName,
                                              actionBlock: upgradeBlock,
-                                             hasDisclosureIndicator: false),
+                                             hasDisclosureIndicator: true),
                              RightDetailItem(title: .localized(.version),
-                                             subtitle: version)])
+                                             subtitle: version),
+                             DisclosureItem(text: .localized(.acknowledgements),
+                                            actionBlock: acknowledgementsBlock)])
     }
 }

@@ -32,6 +32,7 @@ enum SystemIcon: String {
     case note = "note.text"
     case starFill = "star.fill"
     case speaker = "speaker.wave.3.fill"
+    case speakerCircle = "speaker.wave.2.circle"
     case mic = "mic.fill"
     case transcription = "textformat.abc.dottedunderline"
     case search = "magnifyingglass"

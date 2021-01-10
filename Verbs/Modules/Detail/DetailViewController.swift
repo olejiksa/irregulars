@@ -66,10 +66,10 @@ private extension DetailViewController {
         navigationItem.title = presenter.title
         navigationItem.largeTitleDisplayMode = .never
         
-//        let moreButton = UIBarButtonItem(image: SystemIcon.ellipsis.image,
-//                                         style: .plain,
-//                                         target: nil,
-//                                         action: nil)
+        let moreButton = UIBarButtonItem(image: SystemIcon.ellipsis.image,
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(didMoreButtonTap))
         
         let isFavorite = favorites.verbs.contains(verb)
         let image = isFavorite ? SystemIcon.starFill.image : SystemIcon.star.image
@@ -77,7 +77,7 @@ private extension DetailViewController {
                                          style: .plain,
                                          target: self,
                                          action: #selector(didFavoriteTap))
-        navigationItem.rightBarButtonItem = favoriteButton
+        navigationItem.rightBarButtonItems = [favoriteButton, moreButton].compactMap { $0 }
     }
     
     func setupTableView() {
@@ -122,6 +122,16 @@ private extension DetailViewController {
         } else {
             favorites.remove(verb)
         }
+    }
+    
+    @objc func didMoreButtonTap(_ sender: UIBarButtonItem) {
+        let viewController = PopoverAssembly(width: view.frame.width - 40,
+                                             isCollapsed: splitViewController?.isCollapsed ?? false).viewController()
+        viewController.modalPresentationStyle = .popover
+        guard let popoverViewController = viewController.popoverPresentationController else { return }
+        popoverViewController.barButtonItem = sender
+        popoverViewController.delegate = viewController
+        present(viewController, animated: true)
     }
 }
 

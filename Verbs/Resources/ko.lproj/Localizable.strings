@@ -71,7 +71,7 @@
 "bet" = "내기하다";
 
 /* The title of the section for beta testing participants */
-"beta_testing" = "Бета-тестирование";
+"beta_testing" = "베타 테스트";
 
 /* (No Comment) */
 "bid" = "시키다";
@@ -212,7 +212,7 @@
 "do" = "하다";
 
 /* (No Comment) */
-"downgrade_to" = "돌아가다 %@ Lite";
+"downgrade_to" = "돌아가다 Lite";
 
 /* (No Comment) */
 "draw" = "그리다";
@@ -1129,4 +1129,3 @@
 "empty_tests" = "테스트를 시작하려면 화면 왼쪽에있는 테스트를 클릭하십시오";
 "empty_verbs" = "불규칙 동사에 대한 정보를 보려면 화면 왼쪽에있는 해당 동사를 클릭하십시오";
 "acknowledgements" = "감사";
-"beta_testing" = "베타 테스트";

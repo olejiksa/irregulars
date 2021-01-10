@@ -24,7 +24,7 @@ final class SliderItem {
          steps: Int,
          index: Int,
          playbackSpeedBlock: @escaping IntBlock,
-         isEnabled: Bool) {
+         isEnabled: Bool = true) {
         self.leadingIcon = leadingIcon
         self.leadingAccessibilityText = leadingAccessibilityText
         self.trailingIcon = trailingIcon

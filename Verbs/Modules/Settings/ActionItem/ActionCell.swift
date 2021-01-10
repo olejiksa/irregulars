@@ -28,12 +28,12 @@ final class ActionCell: UITableViewCell {
 private extension ActionCell {
     
     func applyStyle() {
-        switch (style, tintAdjustmentMode) {
-        case (.standard, .normal):
+        switch (style, tintAdjustmentMode, isUserInteractionEnabled) {
+        case (.standard, .normal, true):
             textLabel?.textColor = AccentColor.current.color
-        case (.destructive, .normal):
+        case (.destructive, .normal, true):
             textLabel?.textColor = .systemRed
-        case (_, _):
+        case (_, _, _):
             textLabel?.textColor = .systemGray
         }
     }
@@ -47,6 +47,9 @@ extension ActionCell: CellProtocol {
     
     func setup(with item: ItemProtocol) {
         guard let item = item as? ActionItem else { return }
+        
+        isUserInteractionEnabled = item.isEnabled
+        textLabel?.isUserInteractionEnabled = item.isEnabled
         
         separatorInset = .zero
         textLabel?.text = item.text

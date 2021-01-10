@@ -59,11 +59,11 @@ private extension TestViewController {
         navigationItem.title = title
         navigationItem.largeTitleDisplayMode = .never
         
-//        let moreButton = presenter.test == .listening ? UIBarButtonItem(image: SystemIcon.ellipsis.image,
-//                                                                        style: .plain,
-//                                                                        target: nil,
-//                                                                        action: nil) : nil
-//        navigationItem.rightBarButtonItem = moreButton
+        let moreButton = presenter.test == .listening ? UIBarButtonItem(image: SystemIcon.ellipsis.image,
+                                                                        style: .plain,
+                                                                        target: self,
+                                                                        action: #selector(didMoreButtonTap)) : nil
+        navigationItem.rightBarButtonItem = moreButton
     }
     
     func setupTableView() {
@@ -97,6 +97,17 @@ private extension TestViewController {
     
     func setupDelegate() {
         navigationController?.delegate = self
+    }
+    
+    @objc func didMoreButtonTap(_ sender: UIBarButtonItem) {
+        let viewController = PopoverAssembly(width: view.frame.width - 40,
+                                             isCollapsed: splitViewController?.isCollapsed ?? false).viewController()
+        viewController.modalPresentationStyle = .popover
+        viewController.modalTransitionStyle = .crossDissolve
+        guard let popoverViewController = viewController.popoverPresentationController else { return }
+        popoverViewController.barButtonItem = sender
+        popoverViewController.delegate = viewController
+        present(viewController, animated: true)
     }
 }
 

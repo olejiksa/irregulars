@@ -15,7 +15,7 @@ final class FavoritesViewController: UIViewController {
     private var keyboardService: KeyboardService?
     private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     private var tableView: UITableView?
-    private var state: ListState = .empty
+    private var state: ListState = .data
     private var topInset: CGFloat = 0
     private var listMenu: ListMenu?
     
@@ -99,12 +99,12 @@ final class FavoritesViewController: UIViewController {
     }
     
     func setState(_ state: ListState) {
-        guard state != self.state else { return }
-        
         switch state {
         case .data:
+            tableView?.isScrollEnabled = true
             noDataLabel.isHidden = true
         case .empty:
+            tableView?.isScrollEnabled = false
             noDataLabel.isHidden = false
         }
         

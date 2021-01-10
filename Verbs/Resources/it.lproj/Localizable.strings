@@ -221,7 +221,7 @@
 "do" = "fare";
 
 /* (No Comment) */
-"downgrade_to" = "Ridimensionare a %@ Lite";
+"downgrade_to" = "Ridimensionare a Lite";
 
 /* (No Comment) */
 "draw" = "tirare";
@@ -248,7 +248,7 @@
 "empty_favorites" = "Per aggiungere un verbo irregolare ai tuoi preferiti, aprilo dall'elenco di tutti i verbi e fai clic sul pulsante a stella nell'angolo in alto a destra dello schermo";
 
 /* (No Comment) */
-"empty_favorites_title" = "Nessun Perferiti";
+"empty_favorites_title" = "Nessun Preferiti";
 
 /* (No Comment) */
 "empty_tests" = "Per iniziare a fare il test, fare clic su di esso sul lato sinistro dello schermo";

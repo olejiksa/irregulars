@@ -15,7 +15,18 @@ struct ActionItem {
     
     let text: String
     let style: Style
+    let isEnabled: Bool
     let actionBlock: ItemBlock?
+    
+    init(text: String,
+         style: Style = .standard,
+         isEnabled: Bool = true,
+         actionBlock: ItemBlock? = nil) {
+        self.text = text
+        self.style = style
+        self.isEnabled = isEnabled
+        self.actionBlock = actionBlock
+    }
 }
 
 // MARK: - ItemProtocol
