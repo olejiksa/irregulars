@@ -10,6 +10,8 @@ import UIKit
 
 struct Locator {
     
+    static var areNotificationsAvailable = false
+    
     static let favorites = Favorites()
     static let favoritesService = FavoritesService()
     static let purchaseService = PurchaseService()

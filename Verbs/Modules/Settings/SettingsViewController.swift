@@ -39,12 +39,6 @@ final class SettingsViewController: UIViewController {
             self.tableView?.reloadData()
         }
     }
-    
-    func reload(at indexPath: IndexPath) {
-        tableView?.beginUpdates()
-        tableView?.reloadRows(at: [indexPath], with: .automatic)
-        tableView?.endUpdates()
-    }
 }
 
 // MARK: - Private
@@ -57,7 +51,8 @@ private extension SettingsViewController {
     }
     
     func setupTableView() {
-        let tableViewStyle: UITableView.Style = splitViewController?.isCollapsed == true ? .grouped : .insetGrouped
+        let tableViewStyle: UITableView.Style = splitViewController?.isCollapsed == true ||
+            splitViewController?.traitCollection.horizontalSizeClass == .compact ? .grouped : .insetGrouped
         let tableView = UITableView(frame: .zero, style: tableViewStyle)
         
         view.addSubview(tableView)

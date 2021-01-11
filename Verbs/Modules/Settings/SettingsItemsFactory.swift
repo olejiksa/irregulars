@@ -10,8 +10,6 @@ import Foundation
 
 final class SettingsItemsFactory {
     
-    var areNotificationsAvailable = false
-    
     private let languageService: LanguageService
     private let mailService: MailService
     
@@ -43,7 +41,7 @@ final class SettingsItemsFactory {
         let voiceID = UserDefaults.shared.string(for: .voice) ?? ""
         let voiceName = VoiceService().voiceName(identifier: voiceID)
         
-        let notificationsItem: ItemProtocol = areNotificationsAvailable ?
+        let notificationsItem: ItemProtocol = Locator.areNotificationsAvailable ?
             SwitchItem(text: "notifications".localized,
                        isOn: UserDefaults.shared.bool(for: .notifications),
                        actionBlock: notificationsBlock) :

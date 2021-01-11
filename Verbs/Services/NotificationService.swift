@@ -96,10 +96,6 @@ final class NotificationService {
                 print(error)
             }
         }
-        
-        center.getPendingNotificationRequests(completionHandler: { notifications in
-            print("num of pending notifications \(notifications.count)")
-        })
     }
     
     func clean() {

@@ -73,16 +73,6 @@ private extension SettingsPresenter {
         )
     }
     
-    func didListViewChange(_ sender: ItemProtocol) {
-        guard let item = sender as? PickableItem else { return }
-        let value = item.subtitle == .localized(.translation)
-        UserDefaults.shared.set(value, for: .shouldTranslationBeShown)
-        NotificationCenter.default.post(name: .list,
-                                        object: nil,
-                                        userInfo: [Notification.Name.list: value])
-        viewController?.reloadData()
-    }
-    
     func didNotificationsEnabled(_ value: Bool) {
         value ?
             notificationService.authorize() :
@@ -166,7 +156,7 @@ private extension SettingsPresenter {
     func updateNotificationsAvailability() {
         notificationService.checkAvailability { [weak self] result in
             guard let self = self else { return }
-            self.itemsFactory.areNotificationsAvailable = result
+            Locator.areNotificationsAvailable = result
             DispatchQueue.main.async {
                 self.setupItems()
                 self.viewController?.reloadData()
