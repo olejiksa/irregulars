@@ -671,7 +671,7 @@
 "privacy_policy" = "개인 정보 정책";
 
 /* (No Comment) */
-"pro_suggestion_statistics" = "다른 장점 중, Pro 버전은 테스트에서 고정 할 수있는 불규칙 동사의 수를 늘 렸습니다: с %d до %d";
+"pro_suggestion_statistics" = "다른 장점 중, Pro 버전은 테스트에서 고정 할 수있는 불규칙 동사의 수를 늘 렸습니다 : с %d до %d";
 
 /* (No Comment) */
 "prove" = "입증하다";
@@ -760,7 +760,7 @@
 /* (No Comment) */
 "sentence" = "방안";
 
-/* Refers to the section of the tests where the missed word inside the sentence should be provided as the correct answer */
+/* Refers to the section of the tests where the missed word inside the sentence should be provided as the right answer */
 "sentences" = "절";
 
 /* (No Comment) */
@@ -1122,6 +1122,7 @@
 "elizabeth_keplin" = "엘리자베타 케플린";
 "tatiana_perfilieva" = "타티아나 퍼 필리 에바";
 "artem_shumilov" = "아르템 슈미로프";
+"vladislav_plotnikov" = "블라디슬라프 플로트 니 코프";
 "past_simple" = "단순 과거";
 "forms" = "동사 형태";
 "backslide" = "(이전의 나쁜 상태로) 되돌아가다, 뒷걸음치다";
@@ -1129,3 +1130,6 @@
 "empty_tests" = "테스트를 시작하려면 화면 왼쪽에있는 테스트를 클릭하십시오";
 "empty_verbs" = "불규칙 동사에 대한 정보를 보려면 화면 왼쪽에있는 해당 동사를 클릭하십시오";
 "acknowledgements" = "감사";
+"notifications" = "알림";
+"not_allowed" = "허용되지 않음";
+"what_is" = "정답은 무엇입니까?";

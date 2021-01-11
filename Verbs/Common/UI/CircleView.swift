@@ -16,13 +16,8 @@ final class CircleView: UIView {
         }
     }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        bounds = frame.insetBy(dx: 1, dy: 0)
-    }
-    
     override func draw(_ rect: CGRect) {
-        let rectange = CGRect(x: frame.minX + 10,
+        let rectange = CGRect(x: frame.minX - 10,
                               y: frame.minY + 10,
                               width: frame.width - 20,
                               height: frame.height - 20)
@@ -31,7 +26,7 @@ final class CircleView: UIView {
         ovalPath.lineWidth = 3
         ovalPath.stroke()
         
-        let rectange2 = CGRect(x: frame.minX + 15,
+        let rectange2 = CGRect(x: frame.minX - 5,
                                y: frame.minY + 15,
                                width: frame.width - 30,
                                height: frame.height - 30)

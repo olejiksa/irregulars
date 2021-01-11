@@ -437,7 +437,7 @@
 "know" = "sapere";
 
 /* (No Comment) */
-"language" = "Linguaggio";
+"language" = "Lingua";
 
 /* (No Comment) */
 "lay" = "stendere";
@@ -725,10 +725,10 @@
 "relay" = "relè";
 
 /* (No Comment) */
-"remove" = "Rimuovere";
+"remove" = "Rimuovi";
 
 /* (No Comment) */
-"remove_from_favorites" = "Sfavorevole";
+"remove_from_favorites" = "Rimuovi dai Preferiti";
 
 /* (No Comment) */
 "rend" = "sprappare";
@@ -784,7 +784,7 @@
 /* (No Comment) */
 "sentence" = "Frase";
 
-/* Refers to the section of the tests where the missed word inside the sentence should be provided as the correct answer */
+/* Refers to the section of the tests where the missed word inside the sentence should be provided as the right answer */
 "sentences" = "Frasi";
 
 /* (No Comment) */
@@ -1154,3 +1154,7 @@
 "elizabeth_keplin" = "Elisabetta Keplin";
 
 "tatiana_perfilieva" = "Tatiana Perfilieva";
+"vladislav_plotnikov" = "Vladislav Plotnikov";
+"notifications" = "Notifiche";
+"not_allowed" = "Non consentite";
+"what_is" = "Qual è la risposta giusta?";

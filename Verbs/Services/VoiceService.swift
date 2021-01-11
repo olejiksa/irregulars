@@ -24,10 +24,11 @@ final class VoiceService {
     }
     
     func voice(identifier: String) -> AVSpeechSynthesisVoice? {
-        englishVoices.first { $0.identifier == identifier }
+        englishVoices.first { $0.identifier == identifier } ??
+            englishVoices.first { $0.language.suffix(2) == Region.unitedStates.rawValue }
     }
     
     func voiceName(identifier: String) -> String {
-        englishVoices.first { $0.identifier == identifier }?.name ?? ""
+        voice(identifier: identifier)?.name ?? ""
     }
 }

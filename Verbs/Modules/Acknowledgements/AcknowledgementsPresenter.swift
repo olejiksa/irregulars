@@ -26,7 +26,8 @@ private extension AcknowledgementsPresenter {
     func setupSections() {
         let betaTestersString: String = [.localized(.sofiaSokolova),
                                          .localized(.artemShumilov),
-                                         .localized(.elizabethKeplin)].joined(separator: ", ")
+                                         .localized(.elizabethKeplin),
+                                         .localized(.vladislavPlotnikov)].joined(separator: ", ")
         
         dataSource.setup([Section(header: .localized(.sentences),
                                   items: [PlainItem(title: .localized(.sofiaSokolova))]),

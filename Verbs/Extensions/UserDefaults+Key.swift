@@ -33,6 +33,7 @@ extension UserDefaults {
         case region
         case gender
         case voice
+        case notifications
     }
     
     func bool(for key: Key) -> Bool { bool(forKey: key.rawValue) }

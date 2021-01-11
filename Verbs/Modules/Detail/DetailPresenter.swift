@@ -42,11 +42,11 @@ private extension DetailPresenter {
     func subscribe() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(didPay),
-                                               name: Notification.Name.reload,
+                                               name: .reload,
                                                object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(willReloadData),
-                                               name: Notification.Name.favorites,
+                                               name: .favorites,
                                                object: nil)
     }
     

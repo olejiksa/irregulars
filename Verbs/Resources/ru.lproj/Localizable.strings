@@ -110,6 +110,7 @@
 "beta_testing" = "Бета-тестирование";
 "sofia_sokolova" = "София Соколова";
 "artem_shumilov" = "Артем Шумилов";
+"vladislav_plotnikov" = "Владислав Плотников";
 "elizabeth_keplin" = "Елизавета Кеплин";
 "buy_for" = "Купить за";
 "one_time_payment" = "Одноразовый платеж, неограниченный по времени доступ";
@@ -389,3 +390,6 @@
 "overthrow" = "свергать";
 
 "tatiana_perfilieva" = "Татьяна Перфильева";
+"notifications" = "Уведомления";
+"not_allowed" = "Не разрешены";
+"what_is" = "Какой правильный ответ?";

@@ -66,6 +66,12 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             deeplinkService.search(text: searchText, in: splitViewController)
         }
     }
+    
+    func sceneDidBecomeActive(_ scene: UIScene) {
+        NotificationCenter.default.post(name: .reload,
+                                        object: nil,
+                                        userInfo: [:])
+    }
 }
 
 // MARK: - Private

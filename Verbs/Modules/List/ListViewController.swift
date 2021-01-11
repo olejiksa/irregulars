@@ -66,8 +66,10 @@ final class ListViewController: UIViewController {
     }
     
     func getPaid() {
-        reloadData()
-        setupSearchController()
+        DispatchQueue.main.async {
+            self.reloadData()
+            self.setupSearchController()
+        }
     }
     
     func selectRow(at indexPath: IndexPath?) {

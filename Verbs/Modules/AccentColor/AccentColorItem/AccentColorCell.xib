@@ -36,7 +36,7 @@
                     <constraint firstAttribute="bottom" secondItem="tgx-tK-CKb" secondAttribute="bottom" id="3H0-eF-zko"/>
                     <constraint firstItem="tgx-tK-CKb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="aKB-tq-xKX"/>
                     <constraint firstAttribute="trailing" secondItem="6E2-uk-47w" secondAttribute="trailing" constant="20" id="kSE-uT-Tkj"/>
-                    <constraint firstItem="tgx-tK-CKb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="n1z-FZ-iko"/>
+                    <constraint firstItem="tgx-tK-CKb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="n1z-FZ-iko"/>
                     <constraint firstItem="6E2-uk-47w" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="su1-EZ-POi"/>
                 </constraints>
             </tableViewCellContentView>

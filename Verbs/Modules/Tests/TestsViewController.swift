@@ -52,8 +52,10 @@ final class TestsViewController: UIViewController {
     }
     
     func reloadData() {
-        buildMenu(for: moreButton)
-        tableView?.reloadData()
+        DispatchQueue.main.async {
+            self.buildMenu(for: self.moreButton)
+            self.tableView?.reloadData()
+        }
     }
 }
 

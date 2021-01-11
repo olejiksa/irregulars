@@ -12,6 +12,9 @@ final class VoiceViewController: UIViewController {
     
     private let presenter: VoicePresenter
     private var tableView: UITableView?
+    private var playButton: UIBarButtonItem?
+    private var stopButton: UIBarButtonItem?
+    private var moreButton: UIBarButtonItem?
     
     init(presenter: VoicePresenter) {
         self.presenter = presenter
@@ -51,6 +54,20 @@ private extension VoiceViewController {
     func setupNavigationBar() {
         navigationItem.title = .localized(.voice)
         navigationItem.largeTitleDisplayMode = .never
+        
+        self.moreButton = UIBarButtonItem(image: SystemIcon.ellipsis.image,
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(didMoreButtonTap))
+        self.playButton = UIBarButtonItem(image: image(for: .play),
+                                          style: .plain,
+                                          target: self,
+                                          action: #selector(didPlayTap))
+        self.stopButton = UIBarButtonItem(image: image(for: .stop),
+                                          style: .plain,
+                                          target: self,
+                                          action: #selector(didPlayTap))
+        navigationItem.rightBarButtonItems = [self.playButton, self.moreButton].compactMap { $0 }
     }
     
     func setupTableView() {
@@ -84,5 +101,27 @@ private extension VoiceViewController {
         tableView?.layoutIfNeeded()
         tableView?.scrollToRow(at: indexPath, at: .middle, animated: true)
     }
+    
+    @objc func didPlayTap() {
+        presenter.play { [weak self] in
+            self?.navigationItem.rightBarButtonItems = [self?.stopButton, self?.moreButton].compactMap { $0 }
+        } stopHandler: { [weak self] in
+            self?.navigationItem.rightBarButtonItems = [self?.playButton, self?.moreButton].compactMap { $0 }
+        }
+    }
+    
+    func image(for playbackIcon: SystemIcon) -> UIImage? {
+        let configuration = UIImage.SymbolConfiguration(weight: .semibold)
+        return UIImage(systemName: playbackIcon.rawValue, withConfiguration: configuration)
+    }
+    
+    @objc func didMoreButtonTap(_ sender: UIBarButtonItem) {
+        let viewController = PopoverAssembly(width: view.frame.width - 40,
+                                             isCollapsed: splitViewController?.isCollapsed ?? false).viewController()
+        viewController.modalPresentationStyle = .popover
+        guard let popoverViewController = viewController.popoverPresentationController else { return }
+        popoverViewController.barButtonItem = sender
+        popoverViewController.delegate = viewController
+        present(viewController, animated: true)
+    }
 }
-

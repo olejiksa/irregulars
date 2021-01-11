@@ -61,11 +61,11 @@ private extension TestsPresenter {
     func subscribe() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(didSelectedItemReset),
-                                               name: Notification.Name.test,
+                                               name: .test,
                                                object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(didPay),
-                                               name: Notification.Name.reload,
+                                               name: .reload,
                                                object: nil)
     }
     

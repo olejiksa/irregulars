@@ -6,15 +6,19 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
-import StoreKit
 import UIKit
+import StoreKit
+import NotificationCenter
 
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    private let deeplinkService = DeeplinkService()
+    
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         SKPaymentQueue.default().add(Locator.purchaseService)
+        UNUserNotificationCenter.current().delegate = self
         return true
     }
     
@@ -28,5 +32,20 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
                      configurationForConnecting connectingSceneSession: UISceneSession,
                      options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         .init(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    }
+}
+
+// MARK: - UNUserNotificationCenterDelegate
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        let scene = UIApplication.shared.connectedScenes.first
+        let sd = scene?.delegate as? SceneDelegate
+        guard let splitViewController = sd?.window?.rootViewController as? SplitViewController else { return }
+        deeplinkService.handle(response.notification.request.identifier,
+                               in: splitViewController)
     }
 }

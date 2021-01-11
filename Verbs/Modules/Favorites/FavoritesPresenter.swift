@@ -66,19 +66,19 @@ private extension FavoritesPresenter {
     func subscribe() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(didSelectedItemUpdate),
-                                               name: Notification.Name.infinitive,
+                                               name: .infinitive,
                                                object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(didPay),
-                                               name: Notification.Name.reload,
+                                               name: .reload,
                                                object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(willUpdateList),
-                                               name: Notification.Name.list,
+                                               name: .list,
                                                object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(willReloadData),
-                                               name: Notification.Name.favorites,
+                                               name: .favorites,
                                                object: nil)
     }
     

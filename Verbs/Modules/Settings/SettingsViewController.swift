@@ -35,7 +35,9 @@ final class SettingsViewController: UIViewController {
     }
     
     func reloadData() {
-        tableView?.reloadData()
+        DispatchQueue.main.async {
+            self.tableView?.reloadData()
+        }
     }
     
     func reload(at indexPath: IndexPath) {

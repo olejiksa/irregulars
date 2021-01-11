@@ -10,7 +10,7 @@ final class SwitchItem {
     
     let text: String
     var isOn: Bool
-    let isEnabled: Bool
+    var isEnabled: Bool
     let actionBlock: BoolBlock
     
     init(text: String,

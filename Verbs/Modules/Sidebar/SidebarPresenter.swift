@@ -79,7 +79,7 @@ private extension SidebarPresenter {
     func subscribe() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(didPay),
-                                               name: Notification.Name.reload,
+                                               name: .reload,
                                                object: nil)
     }
     

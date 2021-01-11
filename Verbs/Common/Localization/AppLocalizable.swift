@@ -95,7 +95,7 @@ extension Localizable {
     static let forms = Localizable(
         NSLocalizedString("forms", comment: "Refers to the section of tests where both second and third irregular verb forms are to be filled in"))
     static let sentences = Localizable(
-        NSLocalizedString("sentences", comment: "Refers to the section of the tests where the missed word inside the sentence should be provided as the correct answer"))
+        NSLocalizedString("sentences", comment: "Refers to the section of the tests where the missed word inside the sentence should be provided as the right answer"))
     static let listening = Localizable(
         NSLocalizedString("listening", comment: "Refers to the listening section of the tests"))
 }
@@ -132,4 +132,6 @@ extension Localizable {
         NSLocalizedString("elizabeth_keplin", comment: "Refers to Elizabeth Keplin"))
     static let tatianaPerfilieva = Localizable(
         NSLocalizedString("tatiana_perfilieva", comment: "Refers to Tatiana Perfilieva"))
+    static let vladislavPlotnikov = Localizable(
+        NSLocalizedString("vladislav_plotnikov", comment: "Refers to Vladislav Plotnikov"))
 }

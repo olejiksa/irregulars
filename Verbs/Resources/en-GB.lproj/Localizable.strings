@@ -32,7 +32,7 @@
 "empty_favorites" = "To add an irregular verb to your Favourites, open it from the all verbs list and tap the star button in the top right corner of the screen";
 "three_forms" = "3 forms";
 "forms" = "Forms";
-"privacy_policy" = "Privacy policy";
+"privacy_policy" = "Privacy Policy";
 "share_app" = "Share app";
 "edition" = "Edition";
 "all" = "All";
@@ -54,7 +54,7 @@
 "yellow" = "Yellow";
 "match_app_icon_with_accent_color" = "Match app icon with accent colour";
 "enter_here" = "Enter here";
-"terms" = "Terms of use";
+"terms" = "Terms of Use";
 "personalize" = "Personalise the app: pick an accent colour to your liking";
 "examples" = "Examples";
 "sentences" = "Sentences";
@@ -76,15 +76,15 @@
 "attention" = "Attention";
 "cancel" = "Cancel";
 "reset_statistics_learned_verbs" = "Are you sure you want to reset the learned verbs statistics?";
-"reset_statistics_correct_answers" = "Are you sure you want to reset the correct answers statistics?";
+"reset_statistics_correct_answers" = "Are you sure you want to reset the right answers statistics?";
 "yes" = "Yes";
 "pro_suggestion_statistics" = "Among other benefits, Pro expands the count of available irregular verbs in tests from %d to %d";
 "no_data_to_display" = "No data to display";
 "learned_verbs" = "Learned verbs";
-"learned_verbs_footer" = "A word is considered learned if it was answered correctly at least 3 times. If the answer turned out to be correct, the verb knowledge metric increases by one, otherwise it decreases";
+"learned_verbs_footer" = "A word is considered learned if it was answered correctly at least 3 times. If the answer turned out to be right, the verb knowledge metric increases by one, otherwise it decreases";
 "reset" = "Reset";
 "erase_learned_verbs" = "Erase learned verbs";
-"erase_correct_answers" = "Erase correct answers";
+"erase_correct_answers" = "Erase right answers";
 "your_efforts" = "Your efforts";
 "in_progress" = "In progress";
 "of" = "of %d";
@@ -110,6 +110,7 @@
 "beta_testing" = "Beta testing";
 "sofia_sokolova" = "Sofia Sokolova";
 "artem_shumilov" = "Artem Shumilov";
+"vladislav_plotnikov" = "Vladislav Plotnikov";
 "elizabeth_keplin" = "Elizabeth Keplin";
 "buy_for" = "Buy for";
 "one_time_payment" = "One-time payment, lifetime access";
@@ -389,3 +390,6 @@
 "overthrow" = "overthrow";
 
 "tatiana_perfilieva" = "Tatiana Perfilieva";
+"notifications" = "Notifications";
+"not_allowed" = "Not allowed";
+"what_is" = "What is the right answer?";

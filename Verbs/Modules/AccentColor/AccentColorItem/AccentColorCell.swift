@@ -15,6 +15,12 @@ final class AccentColorCell: UITableViewCell {
     
     private weak var item: AccentColorItem?
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        separatorInset = .init(top: 0, left: 66, bottom: 0, right: 0)
+    }
+    
     override func tintColorDidChange() {
         super.tintColorDidChange()
         

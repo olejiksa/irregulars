@@ -10,6 +10,8 @@ import Foundation
 
 final class SettingsItemsFactory {
     
+    var areNotificationsAvailable = false
+    
     private let languageService: LanguageService
     private let mailService: MailService
     
@@ -34,10 +36,20 @@ final class SettingsItemsFactory {
     
     func setupGeneralSection(languageBlock: @escaping ItemBlock,
                              accentColorBlock: @escaping ItemBlock,
-                             voiceBlock: @escaping ItemBlock) -> Section {
+                             voiceBlock: @escaping ItemBlock,
+                             notificationsBlock: @escaping BoolBlock,
+                             settingsBlock: @escaping ItemBlock) -> Section {
         let accentColor = AccentColor.current.rawValue.localized
         let voiceID = UserDefaults.shared.string(for: .voice) ?? ""
         let voiceName = VoiceService().voiceName(identifier: voiceID)
+        
+        let notificationsItem: ItemProtocol = areNotificationsAvailable ?
+            SwitchItem(text: "notifications".localized,
+                       isOn: UserDefaults.shared.bool(for: .notifications),
+                       actionBlock: notificationsBlock) :
+            RightDetailItem(title: "notifications".localized,
+                            subtitle: "not_allowed".localized,
+                            actionBlock: settingsBlock)
         
         let items: [ItemProtocol] = [RightDetailItem(title: "language".localized,
                                                      subtitle: languageService.current.description,
@@ -48,11 +60,8 @@ final class SettingsItemsFactory {
                                      RightDetailItem(title: "voice".localized,
                                                      subtitle: voiceName,
                                                      actionBlock: voiceBlock)].compactMap { $0 }
-//                                    + [SwitchItem(text: "Notifications",
-//                                                isOn: false,
-//                                                isEnabled: true, actionBlock: { _ in
-//                                     })]
-        return .init(header: "general".localized, items: items)
+        
+        return .init(header: "general".localized, items: items + [notificationsItem])
     }
     
     func setupLinksSection(rateBlock: @escaping ItemBlock,

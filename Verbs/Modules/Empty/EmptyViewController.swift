@@ -51,7 +51,7 @@ private extension EmptyViewController {
     func subscribe() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(didSidebarItemChange),
-                                               name: Notification.Name.sidebar,
+                                               name: .sidebar,
                                                object: nil)
     }
     

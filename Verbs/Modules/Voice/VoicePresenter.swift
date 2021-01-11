@@ -24,6 +24,11 @@ final class VoicePresenter: NSObject {
         super.init()
         setupSections()
     }
+    
+    func play(playHandler: @escaping Block, stopHandler: @escaping Block) {
+        let text = "The quick brown fox jumps over the lazy dog"
+        audioService.play(text: text, playHandler: playHandler, stopHandler: stopHandler)
+    }
 }
 
 // MARK: - Private
@@ -62,7 +67,7 @@ private extension VoicePresenter {
         
         for sectionIndex in 0..<iterativeSections.count {
             if let items = iterativeSections[safe: sectionIndex]?.items as? [VoiceItem],
-               let index = items.firstIndex(where: { $0.gender == Gender.current && $0.region == Region.current }) {
+               let index = items.firstIndex(where: { $0.region == Region.unitedStates }) {
                 let indexPath = IndexPath(row: index, section: sectionIndex)
                 dataSource.selectedIndexPath = indexPath
                 return
@@ -90,8 +95,6 @@ extension VoicePresenter: UITableViewDelegate {
         Region.current = item.region
         UserDefaults.shared.set(item.voiceID, for: .voice)
         NotificationCenter.default.post(name: .reload, object: nil)
-        
-        audioService.play(text: "The quick brown fox jumps over the lazy dog", playHandler: {}, stopHandler: {})
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {

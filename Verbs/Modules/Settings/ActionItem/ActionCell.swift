@@ -51,7 +51,6 @@ extension ActionCell: CellProtocol {
         isUserInteractionEnabled = item.isEnabled
         textLabel?.isUserInteractionEnabled = item.isEnabled
         
-        separatorInset = .zero
         textLabel?.text = item.text
         style = item.style
     }

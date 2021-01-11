@@ -18,13 +18,16 @@ final class SettingsPresenter: NSObject {
     private let developerURL = URL(string: "itms-apps://apps.apple.com/developer/id1460125465")
     private let languageService: LanguageService
     private let mailService: MailService
+    private let notificationService: NotificationService
     private let itemsFactory: SettingsItemsFactory
     
     init(languageService: LanguageService,
          mailService: MailService,
+         notificationService: NotificationService,
          itemsFactory: SettingsItemsFactory) {
         self.languageService = languageService
         self.mailService = mailService
+        self.notificationService = notificationService
         self.itemsFactory = itemsFactory
         super.init()
         subscribe()
@@ -45,7 +48,7 @@ private extension SettingsPresenter {
     func subscribe() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(didPay),
-                                               name: Notification.Name.reload,
+                                               name: .reload,
                                                object: nil)
     }
     
@@ -53,9 +56,11 @@ private extension SettingsPresenter {
         dataSource.setup(
             [itemsFactory.setupActivationSection(upgradeBlock: willUpgrade,
                                                  resetBlock: willReset),
-             itemsFactory.setupGeneralSection(languageBlock: willShowLanguageSettings,
+             itemsFactory.setupGeneralSection(languageBlock: willShowSystemAppSettings,
                                               accentColorBlock: willGoToAccentColor,
-                                              voiceBlock: willGoToVoice),
+                                              voiceBlock: willGoToVoice,
+                                              notificationsBlock: didNotificationsEnabled,
+                                              settingsBlock: willShowSystemAppSettings),
              itemsFactory.setupLinksSection(rateBlock: willRate,
                                             privacyBlock: willGoToPrivacyPolicy,
                                             termsBlock: willGoToTermsOfUse,
@@ -78,11 +83,17 @@ private extension SettingsPresenter {
         viewController?.reloadData()
     }
     
+    func didNotificationsEnabled(_ value: Bool) {
+        value ?
+            notificationService.authorize() :
+            notificationService.deauthorize()
+    }
+    
     func didPlaybackSpeedChange(_ value: Int) {
         UserDefaults.shared.set(value, for: .playbackSpeed)
     }
     
-    func willShowLanguageSettings(_ sender: ItemProtocol) {
+    func willShowSystemAppSettings(_ sender: ItemProtocol) {
         guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
         router?.open(url)
     }
@@ -145,8 +156,22 @@ private extension SettingsPresenter {
     }
     
     @objc func didPay(_ notification: Notification) {
-        setupItems()
-        viewController?.reloadData()
+        DispatchQueue.main.async {
+            self.setupItems()
+            self.viewController?.reloadData()
+            self.updateNotificationsAvailability()
+        }
+    }
+    
+    func updateNotificationsAvailability() {
+        notificationService.checkAvailability { [weak self] result in
+            guard let self = self else { return }
+            self.itemsFactory.areNotificationsAvailable = result
+            DispatchQueue.main.async {
+                self.setupItems()
+                self.viewController?.reloadData()
+            }
+        }
     }
 }
 

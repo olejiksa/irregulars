@@ -775,7 +775,7 @@
 /* (No Comment) */
 "sentence" = "Frase";
 
-/* Refers to the section of the tests where the missed word inside the sentence should be provided as the correct answer */
+/* Refers to the section of the tests where the missed word inside the sentence should be provided as the right answer */
 "sentences" = "Frases";
 
 /* (No Comment) */
@@ -1137,7 +1137,11 @@
 
 "sofia_sokolova" = "Sofia Sokolova";
 "artem_shumilov" = "Artem Shumilov";
+"vladislav_plotnikov" = "Vladislav Plotnikov";
 "elizabeth_keplin" = "Isabel Keplin";
 "tatiana_perfilieva" = "Tatiana Perfilieva";
 "indian" = "Indio";
 "backslide" = "recaer";
+"notifications" = "Notificaciones";
+"not_allowed" = "No permitidas";
+"what_is" = "¿Cuál es la respuesta correcta?";
