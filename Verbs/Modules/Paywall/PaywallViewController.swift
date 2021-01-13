@@ -14,6 +14,7 @@ final class PaywallViewController: UIViewController {
     
     private let presenter: PaywallPresenter
     private let purchaseService: PurchaseService
+    private let hapticService: HapticService
 
     @IBOutlet private weak var thanksLabel: UILabel!
     @IBOutlet private weak var buyButton: BigButton!
@@ -21,9 +22,11 @@ final class PaywallViewController: UIViewController {
     @IBOutlet private weak var tableView: FadeTableView!
     
     init(presenter: PaywallPresenter,
-         purchaseService: PurchaseService) {
+         purchaseService: PurchaseService,
+         hapticService: HapticService) {
         self.presenter = presenter
         self.purchaseService = purchaseService
+        self.hapticService = hapticService
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -133,6 +136,7 @@ private extension PaywallViewController {
             if (error as? PurchaseError) != nil {
                 self.buyButton.hideLoading()
             } else if let error = error {
+                self.hapticService.generateHapticFeedback(for: .notification(.error))
                 self.router?.show(error: error)
                 self.buyButton.hideLoading()
             } else {
@@ -144,6 +148,7 @@ private extension PaywallViewController {
     func didRestore(error: Error?) {
         DispatchQueue.main.async {
             if let error = error {
+                self.hapticService.generateHapticFeedback(for: .notification(.error))
                 self.router?.show(error: error)
                 self.restoreButton.hideLoading()
             } else {

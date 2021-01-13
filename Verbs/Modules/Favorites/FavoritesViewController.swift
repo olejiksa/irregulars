@@ -131,10 +131,7 @@ private extension FavoritesViewController {
     func setupNavigationBar() {
         navigationItem.title = "favorites".localized
         
-        moreButton = .init(image: SystemIcon.ellipsis.image,
-                           style: .plain,
-                           target: nil,
-                           action: nil)
+        moreButton = .init(icon: .ellipsis)
         editButton = .init(barButtonSystemItem: .edit,
                            target: self,
                            action: #selector(didEditTap))

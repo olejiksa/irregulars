@@ -113,10 +113,7 @@ private extension ListViewController {
             navigationItem.title = "all".localized
         }
         
-        moreButton = .init(image: SystemIcon.ellipsis.image,
-                           style: .plain,
-                           target: nil,
-                           action: nil)
+        moreButton = .init(icon: .ellipsis)
         navigationItem.rightBarButtonItem = moreButton
     }
     

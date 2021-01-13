@@ -11,7 +11,6 @@ import UIKit
 final class TestViewController: UIViewController {
     
     private let presenter: TestPresenter
-    
     private var tableView: UITableView?
     private var keyboardService: KeyboardService?
     private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
@@ -43,6 +42,14 @@ final class TestViewController: UIViewController {
     }
     
     func reloadData() {
+        let transition = CATransition()
+        transition.type = .push
+        transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        transition.fillMode = .forwards
+        transition.duration = 0.5
+        transition.subtype = .fromTop
+        
+        tableView?.layer.add(transition, forKey: kCATransition)
         tableView?.reloadData()
     }
     

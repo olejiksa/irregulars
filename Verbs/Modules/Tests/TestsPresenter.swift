@@ -16,10 +16,13 @@ final class TestsPresenter: NSObject {
     let dataSource = SectionDataSource()
     
     private let languageService: LanguageService
+    private let hapticService: HapticService
     private var selectedIndex: IndexPath?
     
-    init(languageService: LanguageService) {
+    init(languageService: LanguageService,
+         hapticService: HapticService) {
         self.languageService = languageService
+        self.hapticService = hapticService
         super.init()
         subscribe()
     }
@@ -84,13 +87,20 @@ extension TestsPresenter: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
-        guard indexPath != selectedIndex else { return }
         
         let item = dataSource.item(at: indexPath) as? TestItem
         if let test = item?.test {
+            if UserDefaults.shared.bool(for: .favoritesOnly),
+               Locator.favorites.verbs.isEmpty {
+                hapticService.generateHapticFeedback(for: .notification(.error))
+                router?.showEmptyFavorites()
+                return
+            }
+            
+            guard indexPath != selectedIndex else { return }
             router?.goTo(test: test)
         } else {
+            guard indexPath != selectedIndex else { return }
             router?.goToStatistics()
         }
         

@@ -145,6 +145,9 @@
 		EB83259C2556EBE9005E02C1 /* FavoritesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83259B2556EBE9005E02C1 /* FavoritesRouter.swift */; };
 		EB8325A22556EC9F005E02C1 /* AssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325A12556EC9F005E02C1 /* AssemblyProtocol.swift */; };
 		EB8325A62556EFF0005E02C1 /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325A52556EFF0005E02C1 /* FavoritesService.swift */; };
+		EB8B2BA125AF5A5C008E0118 /* BarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B2BA025AF5A5C008E0118 /* BarButtonItem.swift */; };
+		EB8B2BA925AF5DD5008E0118 /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B2BA825AF5DD5008E0118 /* HapticService.swift */; };
+		EB8B2BAE25AF5E83008E0118 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B2BAD25AF5E83008E0118 /* HapticFeedback.swift */; };
 		EB9A4FBC252E8D9800443D47 /* DeeplinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */; };
 		EB9C5B9B258295C70086A3D5 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9C5B99258295C70086A3D5 /* SliderCell.swift */; };
 		EB9C5B9C258295C70086A3D5 /* SliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB9C5B9A258295C70086A3D5 /* SliderCell.xib */; };
@@ -441,6 +444,9 @@
 		EB83259B2556EBE9005E02C1 /* FavoritesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRouter.swift; sourceTree = "<group>"; };
 		EB8325A12556EC9F005E02C1 /* AssemblyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyProtocol.swift; sourceTree = "<group>"; };
 		EB8325A52556EFF0005E02C1 /* FavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesService.swift; sourceTree = "<group>"; };
+		EB8B2BA025AF5A5C008E0118 /* BarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonItem.swift; sourceTree = "<group>"; };
+		EB8B2BA825AF5DD5008E0118 /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
+		EB8B2BAD25AF5E83008E0118 /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
 		EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkService.swift; sourceTree = "<group>"; };
 		EB9C5B99258295C70086A3D5 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		EB9C5B9A258295C70086A3D5 /* SliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
@@ -1024,6 +1030,7 @@
 				EB8325A52556EFF0005E02C1 /* FavoritesService.swift */,
 				EBB3BC0F251F3545006E0DC7 /* KeyboardService.swift */,
 				EBB95BFD25335C3E00376C3F /* LanguageService.swift */,
+				EB8B2BA825AF5DD5008E0118 /* HapticService.swift */,
 				EB7B8580253B30C600542D3C /* MailService.swift */,
 				EB59AFBF25AB312E005A212C /* NotificationService.swift */,
 				EB59AF3F25A60318005A212C /* PrintService.swift */,
@@ -1041,6 +1048,7 @@
 			isa = PBXGroup;
 			children = (
 				EB2E4BC42576A8DC005B343A /* Array+Safe.swift */,
+				EB8B2BA025AF5A5C008E0118 /* BarButtonItem.swift */,
 				EBD476D5254BDF850033067B /* Bundle.swift */,
 				EBF4A125252E901A003E3A44 /* NavigationController.swift */,
 				EB69A26825322AF900DD1827 /* Notification.swift */,
@@ -1163,6 +1171,7 @@
 				EBF8A62E2559172100A6265C /* Favorites.swift */,
 				EBF4A13A252EA2F6003E3A44 /* FeatureToggle.swift */,
 				EB59F02B258FE9E1004676D2 /* Gender.swift */,
+				EB8B2BAD25AF5E83008E0118 /* HapticFeedback.swift */,
 				EBB01C0825217F5400BB646B /* Language.swift */,
 				EBA644B3255988FC0012B973 /* ListState.swift */,
 				EBF593CE258865680091FCE0 /* MenuAction.swift */,
@@ -1562,6 +1571,7 @@
 				EB269967256CF10C007CCF2E /* PlainDetailCell.swift in Sources */,
 				EBD476CA254BBEA60033067B /* PaywallItem.swift in Sources */,
 				EB450A27254A8D2900D31858 /* TestsPresenter.swift in Sources */,
+				EB8B2BAE25AF5E83008E0118 /* HapticFeedback.swift in Sources */,
 				EB3217BD258BE42300023F0B /* ProgressItem.swift in Sources */,
 				EB59F014258FE394004676D2 /* VoiceViewController.swift in Sources */,
 				EB59F02C258FE9E1004676D2 /* Gender.swift in Sources */,
@@ -1578,6 +1588,7 @@
 				EBF4A135252E9961003E3A44 /* ListItem.swift in Sources */,
 				EBDF00892562E8A30041F458 /* TestAssembly.swift in Sources */,
 				EB2E4B532573D8A7005B343A /* SelectableSectionDataSource.swift in Sources */,
+				EB8B2BA925AF5DD5008E0118 /* HapticService.swift in Sources */,
 				EBF593B9258732F00091FCE0 /* StatisticsRouter.swift in Sources */,
 				EB450973253B5CB300D31858 /* Section.swift in Sources */,
 				EBDF00A62562F1160041F458 /* FormTextField.swift in Sources */,
@@ -1688,6 +1699,7 @@
 				EBF593AA2585736B0091FCE0 /* AnswerCell.swift in Sources */,
 				EB7DFF5625244977000B711D /* SplitViewController.swift in Sources */,
 				EB450992253B6B4700D31858 /* SettingsPresenter.swift in Sources */,
+				EB8B2BA125AF5A5C008E0118 /* BarButtonItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

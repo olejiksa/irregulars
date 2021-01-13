@@ -33,9 +33,7 @@ final class PickableCell: UITableViewCell {
                                          target: self,
                                          action: #selector(didDoneTap))
         doneButton.tintColor = AccentColor.current.color
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
-                                          target: nil,
-                                          action: nil)
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace)
         let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel,
                                            target: self,
                                            action: #selector(didCancelTap))

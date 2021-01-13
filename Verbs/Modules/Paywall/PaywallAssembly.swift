@@ -11,7 +11,8 @@ final class PaywallAssembly: AssemblyProtocol {
     func viewController() -> some PaywallViewController {
         let presenter = PaywallPresenter()
         let viewController = PaywallViewController(presenter: presenter,
-                                                   purchaseService: Locator.purchaseService)
+                                                   purchaseService: Locator.purchaseService,
+                                                   hapticService: .init())
         let router = PaywallRouter(viewController: viewController)
         viewController.router = router
         return viewController

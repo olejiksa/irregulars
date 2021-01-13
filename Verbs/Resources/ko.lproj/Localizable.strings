@@ -1127,6 +1127,7 @@
 "forms" = "동사 형태";
 "backslide" = "(이전의 나쁜 상태로) 되돌아가다, 뒷걸음치다";
 "empty_favorites" = "“즐겨찾기” 없습니다";
+"empty_favorites_title" = "즐겨 찾기 없음";
 "empty_tests" = "테스트를 시작하려면 화면 왼쪽에있는 테스트를 클릭하십시오";
 "empty_verbs" = "불규칙 동사에 대한 정보를 보려면 화면 왼쪽에있는 해당 동사를 클릭하십시오";
 "acknowledgements" = "감사";

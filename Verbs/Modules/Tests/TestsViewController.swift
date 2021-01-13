@@ -78,10 +78,7 @@ private extension TestsViewController {
         navigationItem.title = "tests".localized
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        moreButton = .init(image: SystemIcon.ellipsis.image,
-                           style: .plain,
-                           target: nil,
-                           action: nil)
+        moreButton = .init(icon: .ellipsis)
         buildMenu(for: moreButton)
         navigationItem.rightBarButtonItem = moreButton
     }

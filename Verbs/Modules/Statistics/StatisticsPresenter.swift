@@ -15,14 +15,17 @@ final class StatisticsPresenter: NSObject {
     weak var viewController: StatisticsViewController?
     
     private let languageService: LanguageService
+    private let hapticService: HapticService
     private var items: [String] = []
     private let keys: [UserDefaults.Key] = [.translationAnswers,
                                             .writingAnswers,
                                             .sentencesAnswers,
                                             .listeningAnswers]
     
-    init(languageService: LanguageService) {
+    init(languageService: LanguageService,
+         hapticService: HapticService) {
         self.languageService = languageService
+        self.hapticService = hapticService
         super.init()
         setupSections()
         subscribe()
@@ -116,6 +119,7 @@ private extension StatisticsPresenter {
             statisticsKind = .correctAnswers
         }
         
+        hapticService.generateHapticFeedback(for: .notification(.warning))
         router?.reset(statisticsKind: statisticsKind) { [weak self] in
             guard let self = self else { return }
             
