@@ -1,11 +1,11 @@
 [
     {
         "word": "abide",
-        "sentences": ["Everyone should abide by our social norms", "Despite additional physical and geographical handicaps and resource constraints, it had faithfully abided by its commitments", "He has always abided by his promises"]
+        "sentences": ["Everyone should abide by our social norms", "I abode in that hotel for five days", "Your husband has abidden by your decisions, why are you so unhappy?"]
     },
     {
         "word": "alight",
-        "sentences": ["Do not alight while the train is still in motion ", "The suspect alighted from the train at Euston and proceeded to Heathrow", "Also crossed two stations, nearby her two passengers alit"]
+        "sentences": ["Do not alight while the train is still in motion", "Also crossed two stations, nearby her two passengers alit", "The demonstrator had alighted from the car, and was looking it over, testing the tires with his hand"]
     },
     {
         "word": "arise",
@@ -13,11 +13,11 @@
     },
     {
         "word": "awake",
-        "sentences": ["The hypnotic state actually lies somewhere between being awake and being asleep", "The noise awoke me from my sleep", "She was awoken by the noise"]
+        "sentences": ["He likes to awake to the sound of a radio", "The noise awoke me from my sleep", "She was awoken by the noise"]
     },
     {
         "word": "backslide",
-        "sentences": ["Many of the patients backslide into drug and alcohol abuse", "So, Christians who have backslid away from God are really doing so because they want to", "Mr. Jack was once active in the church, but he has backslidden"]
+        "sentences": ["Many of the patients backslide into drug and alcohol abuse", "But these insurgent parties often quickly backslid on their founding principles when it became politic to do so", "Mr. Jack was once active in the church, but he has backslidden"]
     },
     {
         "word": "be",
@@ -25,11 +25,11 @@
     },
     {
         "word": "bear",
-        "sentences": ["Different trees bear different fruits", "The queen bore him four fine sons", "There's one born every minute"]
+        "sentences": ["Different trees bear different fruits", "The queen bore him four fine sons", "She has borne all her problems with great courage"]
     },
     {
         "word": "beat",
-        "sentences": ["The storms beat on the ship", "The policemen had to beat the door in", "Glaze the pie with beaten egg"]
+        "sentences": ["The storms beat on the ship", "The girl beat on the window yesterday", "His little army had been beaten and scattered"]
     },
     {
         "word": "become",
@@ -41,19 +41,19 @@
     },
     {
         "word": "beget",
-        "sentences": ["Dragons beget dragons, phoenixes beget phoenixes", "He begot three children", "In due course she bore the son begotten on her by Thyestes"]
+        "sentences": ["Dragons beget dragons, phoenixes beget phoenixes", "Jane Davenant was a natural suspect in view of her son William Davenant's reputed willingness to believe that Shakespeare begot him", "While Nennius' Ambrosius eventually reveals himself to be the son of a Roman consul, Geoffrey's Merlin is begotten on a king's daughter by an incubus"]
     },
     {
         "word": "begin",
-        "sentences": ["Good to begin well, better to end well", "A light rain began to fall", "Well begun is half done"]
+        "sentences": ["Good to begin well, better to end well", "A light rain began to fall", "By early September the sea is warm and the mandarin oranges and cactus fruit have begun to replace the summer crowds"]
     },
     {
         "word": "behold",
-        "sentences": ["His garden was a sight to behold", "She looked into his eyes and beheld madness", "When Crass beheld this being, he touched his cap respectfully"]
+        "sentences": ["His garden was a sight to behold", "She looked into his eyes and beheld madness", "The savage and the satyr might have beheld, and been awed into reverence"]
     },
     {
         "word": "bend",
-        "sentences": ["It's hard to bend an iron bar", "The tree must be bent while it is young", "She has a bent for music"]
+        "sentences": ["It's hard to bend an iron bar", "The storm bent the tree to the ground", "The tree must be bent while it is young"]
     },
     {
         "word": "bereave",
@@ -61,11 +61,11 @@
     },
     {
         "word": "beseech",
-        "sentences": ["I beseech you to forgive me", "He besought her help", "They besought him to speak the truth"]
+        "sentences": ["I beseech you to forgive me", "He besought her help", "A committee of his political party has besought him for a hundred or two of dollars, in addition to his previous disbursements, towards carrying on the fall campaign"]
     },
     {
         "word": "bet",
-        "sentences": ["I offered to bet with him", "For horse race betted is foolish", "We betted who could lean further out of the window"]
+        "sentences": ["I offered to bet with him", "For horse race betted is foolish", "The company has bet big on exploiting hard-to-extract natural gas and hard-to-process heavy crude, bitumen, and oil sand"]
     },
     {
         "word": "bid",
@@ -73,7 +73,7 @@
     },
     {
         "word": "bind",
-        "sentences": ["Many things bind them together", "His sister had been bound to secrecy", "Your work is bound to be successful"]
+        "sentences": ["Many things bind them together", "They bound our hands and feet with parachute cord and duct tape", "His sister had been bound to secrecy"]
     },
     {
         "word": "bite",
@@ -81,11 +81,11 @@
     },
     {
         "word": "bleed",
-        "sentences": ["Doctors used to bleed people when they were ill", "He quickly bled to death from the injury", "He bled to death after being stabbed repeatedly"]
+        "sentences": ["Doctors used to bleed people when they were ill", "He quickly bled to death from the injury", "Patients have bled themselves into anemia and then showed up at a doctor's office stating they haven't a clue about how they became so ill"]
     },
     {
         "word": "bless",
-        "sentences": ["Bless the name of the Lord!", "If China had democratized it, the Beijing Olympics was blest in the world", "How blest were I if thou wouldn't prove me"]
+        "sentences": ["Bless the name of the Lord!", "One of these hours my dear Clarinda blest me with yesternight", "The members of the church today are blest with all spiritual blessings in the heavenly places in Christ"]
     },
     {
         "word": "blow",
@@ -97,39 +97,39 @@
     },
     {
         "word": "breed",
-        "sentences": ["The new breed is under observation", "I'm a countryman born and bred", "The bear bred two cubs"]
+        "sentences": ["The new breed is under observation", "The bear bred two cubs", "The mice had been bred to overproduce a protein which had been implicated previously in tumor formation"]
     },
     {
         "word": "bring",
-        "sentences": ["Care and diligence bring luck", "We brought home two bags of rice", "He brought a new book with him"]
+        "sentences": ["Care and diligence bring luck", "We brought home two bags of rice", "God had brought His people into Canaan with the promise to give them the land"]
     },
     {
         "word": "broadcast",
-        "sentences": ["Most of the programmes are broadcast in English", "The interview was broadcast on radio and television", "The concert will be broadcast in stereo"]
+        "sentences": ["Most of the programmes are broadcast in English", "ESPN broadcasted the football game on the television", "The concert will be broadcasted in stereo"]
     },
     {
         "word": "browbeat",
-        "sentences": ["The only way was to browbeat them", "He browbeat her into agreeing", "The police could not browbeat him confessing"]
+        "sentences": ["The only way was to browbeat them", "He browbeat her into agreeing", "He had learned that the students would not be browbeaten or bullied"]
     },
     {
         "word": "build",
-        "sentences": ["He planned to build on a shed", "The school is built of brick", "They built a raft of logs"]
+        "sentences": ["He planned to build on a shed", "They built a raft of logs", "The school is built of brick"]
     },
     {
         "word": "burn",
-        "sentences": ["Green wood does not burn well", "Her hair was burnt off", " I'm afraid I've burnt the pizza"]
+        "sentences": ["Green wood does not burn well", "I burnt my tongue on some soup last night", "The plane was completely burnt out after the crash"]
     },
     {
         "word": "burst",
-        "sentences": ["He burst out laughing", "The truth burst upon me", "The sticks burst into flames"]
+        "sentences": ["He burst out laughing", "With his hands to his face, he burst into tears, shocking us", "Sandra has burst the balloon"]
     },
     {
         "word": "bust",
-        "sentences": ["I bust my watch this morning", "The lights are busted", "He busted up the place"]
+        "sentences": ["I bust my watch this morning", "\"Freeze! You're busted!\", shout the police", "The time has come: Greta has busted out The Fresh Prince of Bel Air theme tune on the iPod and we've had the obligatory group singalong"]
     },
     {
         "word": "buy",
-        "sentences": ["Gold will not buy anything", "I bought it at the store", "He bought me a bag of toffees"]
+        "sentences": ["She asked him for some money to buy a new dress", "I bought it at the store", "He has bought a refrigerator and a computer"]
     },
     {
         "word": "can",
@@ -325,7 +325,7 @@
     },
     {
         "word": "grind",
-        "sentences": ["The rice will grind down into flour", " I always ground my arguments on facts", "The flour was ground from barley"]
+        "sentences": ["The rice will grind down into flour", "I always ground my arguments on facts", "The flour was ground from barley"]
     },
     {
         "word": "grip",
@@ -341,7 +341,7 @@
     },
     {
         "word": "hang",
-        "sentences": ["Hang off the rope, let's start our boat", " I hung my coat on a hook", "She hung up on me"]
+        "sentences": ["Hang off the rope, let's start our boat", "I hung my coat on a hook", "She hung up on me"]
     },
     {
         "word": "have",
@@ -385,7 +385,7 @@
     },
     {
         "word": "interweave",
-        "sentences": ["How about if you only interweave a quarter?", " I'll let the voice interweave with the story of the Chinese parasols", "Your destiny is interwoven with mine"]
+        "sentences": ["How about if you only interweave a quarter?", "I'll let the voice interweave with the story of the Chinese parasols", "Your destiny is interwoven with mine"]
     },
     {
         "word": "keep",
@@ -713,7 +713,7 @@
     },
     {
         "word": "see",
-        "sentences": ["We see not what is in the wallet behind", " Where they saw chance, we see law", "The moon is not seen where the sun shines"]
+        "sentences": ["We see not what is in the wallet behind", "Where they saw chance, we see law", "The moon is not seen where the sun shines"]
     },
     {
         "word": "seek",

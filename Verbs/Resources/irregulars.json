@@ -92,15 +92,21 @@
         "simplePast": [{
             "value": "backslid",
             "transcription": "/ˈbækslɪd/"
+        }, {
+            "value": "backslided",
+            "transcription": "/ˈbækslɪdɪd/"
         }],
         "pastParticiple": [{
             "value": "backslid",
             "transcription": "/ˈbækslɪd/"
         }, {
+            "value": "backslided",
+            "transcription": "/ˈbækslɪdɪd/"
+        }, {
             "value": "backslidden",
             "transcription": "/ˈbækslɪd(ə)n/"
         }],
-        "hasRegular": false,
+        "hasRegular": true,
         "isDerived": true
     },
     {

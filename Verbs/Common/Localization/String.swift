@@ -18,20 +18,21 @@ extension String {
         .init(format: localized, locale: nil, arguments: arguments)
     }
     
-    func containsIgnoringCase<T>(_ other: T) -> Bool where T: StringProtocol {
-        lowercased().contains(other.lowercased())
-    }
-    
     func containsWordIgnoringCase<T>(_ other: T) -> Bool where T: StringProtocol {
-        for item in lowercased().split(separator: " ") {
-            let string = String(item)
-            return string.hasPrefix(other.lowercased())
+        guard !other.isEmpty else { return false }
+        
+        for item in lowercased().split(separator: ",") {
+            let string = String(item).trimmingCharacters(in: .whitespacesAndNewlines)
+            guard string.hasPrefix(other.lowercased()) else { continue }
+            return true
         }
         
         return false
     }
     
     func hasPrefixIgnoringCase<T>(_ other: T) -> Bool where T: StringProtocol {
-        lowercased().hasPrefix(other.lowercased())
+        guard !other.isEmpty else { return false }
+        
+        return lowercased().hasPrefix(other.lowercased())
     }
 }
