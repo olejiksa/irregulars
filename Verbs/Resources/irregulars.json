@@ -640,12 +640,18 @@
         "simplePast": [{
             "value": "cast",
             "transcription": "/kɑːst/"
+        }, {
+            "value": "casted",
+            "transcription": "/ˈkɑːstəd/"
         }],
         "pastParticiple": [{
             "value": "cast",
             "transcription": "/kɑːst/"
+        }, {
+            "value": "casted",
+            "transcription": "/ˈkɑːstəd/"
         }],
-        "hasRegular": false,
+        "hasRegular": true,
         "isDerived": false
     },
     {
@@ -845,9 +851,6 @@
             "transcription": "/krəʊd/"
         }],
         "pastParticiple": [{
-            "value": "crown",
-            "transcription": "/krəʊn/"
-        }, {
             "value": "crowed",
             "transcription": "/krəʊd/"
         }],
