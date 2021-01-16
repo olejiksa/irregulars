@@ -695,7 +695,7 @@
 "privacy_policy" = "Politica sulla riservatezza";
 
 /* (No Comment) */
-"pro_suggestion_statistics" = "Tra gli altri vantaggi, Pro amplia il conteggio dei verbi irregolari disponibili nei test da %d a %d";
+"pro_suggestion_statistics" = "Tra gli altri vantaggi, Pro amplia il conteggio dei verbi irregolari disponibili nei test: da %d a %d";
 
 /* (No Comment) */
 "prove" = "dimostrare";
@@ -1158,3 +1158,4 @@
 "notifications" = "Notifiche";
 "not_allowed" = "Non consentite";
 "what_is" = "Qual è la risposta giusta?";
+"julian_eduardo_couoh_pablo" = "Julián Eduardo Couoh Pablo";

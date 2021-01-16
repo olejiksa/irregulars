@@ -55,7 +55,7 @@ private extension DetailPresenter {
             .filter { _ in languageService.hasTranslation }
         let sentences = sentencesService.items
             .filter { $0.word == verb.infinitive.value }
-            .flatMap { $0.sentences }
+            .flatMap(\.sentences)
         let examples = sentences.map { ExampleItem(sentence: $0, verb: verb) }
         dataSource.setup([Section(header: .localized(.infinitive),
                                   items: [DetailItem(word: verb.infinitive,

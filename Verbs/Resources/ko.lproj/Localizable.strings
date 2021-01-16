@@ -671,7 +671,7 @@
 "privacy_policy" = "개인 정보 정책";
 
 /* (No Comment) */
-"pro_suggestion_statistics" = "다른 장점 중, Pro 버전은 테스트에서 고정 할 수있는 불규칙 동사의 수를 늘 렸습니다 : с %d до %d";
+"pro_suggestion_statistics" = "다른 이점 중에서 Pro는 테스트에서 사용 가능한 불규칙 동사의 수를 %d에서 %d로 확장합니다";
 
 /* (No Comment) */
 "prove" = "입증하다";
@@ -1134,3 +1134,4 @@
 "notifications" = "알림";
 "not_allowed" = "허용되지 않음";
 "what_is" = "정답은 무엇입니까?";
+"julian_eduardo_couoh_pablo" = "줄리안 에두아르도 쿠오 파블로";

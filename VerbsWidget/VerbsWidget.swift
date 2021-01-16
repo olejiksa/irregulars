@@ -187,7 +187,7 @@ struct VerbsWidgetEntryView: View {
     private func large(with verb: Verb) -> some View {
         let sentences = SentencesService().items
             .filter { $0.word == verb.infinitive.value }
-            .flatMap { $0.sentences }
+            .flatMap(\.sentences)
         let stack = VStack(alignment: .center, spacing: 15) {
             HStack(alignment: .center, spacing: 10) {
                 Text("Infinitive")

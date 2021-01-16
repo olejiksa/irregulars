@@ -143,7 +143,7 @@ private extension ListViewController {
             keyboardHeightLayoutConstraint
         ])
         
-        tableView.dataSource = presenter
+        tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         tableView.dragDelegate = presenter
         

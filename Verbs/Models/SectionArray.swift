@@ -21,11 +21,11 @@ struct SectionArray {
     }
     
     func header(_ index: Int) -> String? {
-        sections.filter { !$0.items.isEmpty }[index].header
+        sections.filter { !$0.items.isEmpty }[safe: index]?.header
     }
     
     func footer(_ index: Int) -> String? {
-        sections.filter { !$0.items.isEmpty }[index].footer
+        sections.filter { !$0.items.isEmpty }[safe: index]?.footer
     }
     
     func count(_ index: Int) -> Int {
@@ -33,7 +33,7 @@ struct SectionArray {
     }
     
     func items<T>(of type: T.Type) -> [ItemProtocol] where T: ItemProtocol {
-        let items = sections.flatMap { $0.items }
+        let items = sections.flatMap(\.items)
         return items.filter { $0 is T }
     }
     

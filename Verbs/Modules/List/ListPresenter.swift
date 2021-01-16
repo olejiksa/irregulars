@@ -10,24 +10,27 @@ import UIKit
 
 final class ListPresenter: NSObject {
     
+    let dataSource: VerbsSectionDataSource
     weak var viewController: ListViewController?
     var router: ListRouter?
     
     var hasTranslation: Bool { languageService.hasTranslation }
     
     private let languageService: LanguageService
-    private let verbsService: VerbsService
+    private let verbsService: VerbsServiceProtocol
     private var printService: PrintService
     private var isSearchActive = false
     
     private var infinitive: String?
     
     init(languageService: LanguageService,
-         verbsService: VerbsService,
+         verbsService: VerbsServiceProtocol,
          printService: PrintService) {
         self.languageService = languageService
         self.verbsService = verbsService
         self.printService = printService
+        self.dataSource = .init(verbsService: verbsService,
+                                hasTranslation: languageService.hasTranslation)
         
         super.init()
         
@@ -87,7 +90,7 @@ private extension ListPresenter {
     }
     
     func didSelectedItemSet() {
-        guard !isSearchActive,
+        guard !dataSource.isSearchActive,
               viewController?.splitViewController?.isCollapsed == false else { return }
         
         let indexPath = verbsService.indexPath(of: infinitive)
@@ -124,62 +127,16 @@ private extension ListPresenter {
     }
 }
 
-// MARK: - UITableViewDataSource
-
-extension ListPresenter: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        let count = !isSearchActive
-            ? verbsService.groupedItems.count
-            : (verbsService.searchedItems.count > 0 ? 1 : 0)
-        tableView.separatorStyle = count > 0 ? .singleLine : .none
-        return count
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        !isSearchActive
-            ? verbsService.groupedItems[section].count
-            : verbsService.searchedItems.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let verb = !isSearchActive
-            ? verbsService.groupedItems[indexPath.section][indexPath.row]
-            : verbsService.searchedItems[indexPath.row]
-        let item: ItemProtocol = !verbsService.shouldTranslationBeShown || !languageService.hasTranslation ?
-            ListItem(verb: verb) :
-            SubtitleItem(title: verb.infinitive.value, subtitle: verb.translation)
-        return tableView.dequeueReusableCell(for: item, at: indexPath)
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard !isSearchActive else { return nil }
-        let items = verbsService.groupedItems[section]
-        guard let letter = items.first?.infinitive.value.first else { return nil }
-        return letter.uppercased()
-    }
-    
-    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        guard !isSearchActive else { return nil }
-        let set = Set(verbsService.items.compactMap { item -> String? in
-            guard let character = item.infinitive.value.first else { return nil }
-            return character.uppercased()
-        })
-        
-        return Array(set).sorted()
-    }
-}
-
 // MARK: - UITableViewDelegate
 
 extension ListPresenter: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if isSearchActive {
+        if dataSource.isSearchActive {
             tableView.deselectRow(at: indexPath, animated: true)
         }
 
-        let verb = !isSearchActive
+        let verb = !dataSource.isSearchActive
             ? verbsService.groupedItems[indexPath.section][indexPath.row]
             : verbsService.searchedItems[indexPath.row]
         
@@ -190,7 +147,7 @@ extension ListPresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    contextMenuConfigurationForRowAt indexPath: IndexPath,
                    point: CGPoint) -> UIContextMenuConfiguration? {
-        guard !isSearchActive else { return nil }
+        guard !dataSource.isSearchActive else { return nil }
         let verb = verbsService.groupedItems[indexPath.section][indexPath.row]
         let isFavorite = Locator.favorites.verbs.contains(verb)
         
@@ -282,11 +239,11 @@ extension ListPresenter: UISearchResultsUpdating {
 extension ListPresenter: UISearchControllerDelegate {
     
     func willPresentSearchController(_ searchController: UISearchController) {
-        isSearchActive = true
+        dataSource.isSearchActive = true
     }
     
     func willDismissSearchController(_ searchController: UISearchController) {
-        isSearchActive = false
+        dataSource.isSearchActive = false
     }
     
     func didDismissSearchController(_ searchController: UISearchController) {

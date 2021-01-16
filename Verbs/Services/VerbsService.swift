@@ -80,12 +80,12 @@ private extension VerbsService {
         var set = Set(parser.read(from: .irregulars))
        
         if !shouldRegularVerbsBeShown {
-            let elements = set.filter { $0.hasRegular }
+            let elements = set.filter(\.hasRegular)
             elements.forEach { set.remove($0) }
         }
         
         if !shouldDerivativesBeShown {
-            let elements = set.filter { $0.isDerived }
+            let elements = set.filter(\.isDerived)
             elements.forEach { set.remove($0) }
         }
         

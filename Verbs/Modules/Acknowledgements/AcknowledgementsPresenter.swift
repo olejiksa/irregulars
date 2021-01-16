@@ -38,7 +38,7 @@ private extension AcknowledgementsPresenter {
                                                           subtitle: Language.french.description),
                                           RightDetailItem(title: "To Be Clarified",
                                                           subtitle: Language.german.description),
-                                          RightDetailItem(title: "Julian Eduardo Couoh Pablo",
+                                          RightDetailItem(title: .localized(.julianEduardo),
                                                           subtitle: Language.spanish.description),
                                           RightDetailItem(title: "To Be Clarified",
                                                           subtitle: Language.japanese.description),

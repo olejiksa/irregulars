@@ -10,6 +10,7 @@ import UIKit
 
 final class FavoritesPresenter: NSObject {
     
+    var dataSource: VerbsSectionDataSource?
     weak var viewController: FavoritesViewController?
     var router: FavoritesRouter?
     
@@ -17,7 +18,7 @@ final class FavoritesPresenter: NSObject {
     var hasTranslation: Bool { languageService.hasTranslation }
     
     private let languageService: LanguageService
-    private let favoritesService: FavoritesService
+    private let favoritesService: VerbsServiceProtocol
     private let printService: PrintService
     private var favorites = Locator.favorites
     private var isSearchActive = false
@@ -25,13 +26,17 @@ final class FavoritesPresenter: NSObject {
     private var infinitive: String?
     
     init(languageService: LanguageService,
-         favoritesService: FavoritesService,
+         favoritesService: VerbsServiceProtocol,
          printService: PrintService) {
         self.languageService = languageService
         self.favoritesService = favoritesService
         self.printService = printService
         
         super.init()
+        
+        self.dataSource = .init(verbsService: favoritesService,
+                                hasTranslation: languageService.hasTranslation,
+                                setStateBlock: setState)
         
         loadSettings()
         subscribe()
@@ -130,77 +135,6 @@ private extension FavoritesPresenter {
     }
 }
 
-// MARK: - UITableViewDataSource
-
-extension FavoritesPresenter: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        let count = !isSearchActive
-            ? favoritesService.groupedItems.count
-            : (favoritesService.searchedItems.count > 0 ? 1 : 0)
-        tableView.separatorStyle = count > 0 ? .singleLine : .none
-        setState()
-        return max(count, 1)
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        !isSearchActive
-            ? favoritesService.groupedItems[safe: section]?.count ?? 0
-            : favoritesService.searchedItems.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let verb = !isSearchActive
-            ? favoritesService.groupedItems[safe: indexPath.section]?[indexPath.row]
-            : favoritesService.searchedItems[indexPath.row] else { return .init() }
-        let item: ItemProtocol = !favoritesService.shouldTranslationBeShown || !languageService.hasTranslation ?
-            ListItem(verb: verb) :
-            SubtitleItem(title: verb.infinitive.value, subtitle: verb.translation)
-        return tableView.dequeueReusableCell(for: item, at: indexPath)
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard !isSearchActive else { return nil }
-        let items = favoritesService.groupedItems[safe: section]
-        guard let letter = items?.first?.infinitive.value.first else { return nil }
-        return letter.uppercased()
-    }
-    
-    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        guard !isSearchActive else { return nil }
-        let set = Set(favoritesService.items.compactMap { item -> String? in
-            guard let character = item.infinitive.value.first else { return nil }
-            return character.uppercased()
-        })
-        
-        return Array(set).sorted()
-    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        guard !isSearchActive else { return false }
-        return true
-    }
-    
-    func tableView(_ tableView: UITableView,
-                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let removeAction = UIContextualAction(style: .destructive,
-                                              title: "remove".localized) { [weak self] _, _, _ in
-            guard let self = self,
-                  !self.isSearchActive,
-                  let verb = self.favoritesService.groupedItems[safe: indexPath.section]?[indexPath.row]
-            else { return }
-            
-            self.favorites.remove(verb)
-            tableView.reloadData()
-        }
-        
-        removeAction.backgroundColor = tableView.tintAdjustmentMode != .dimmed ?
-            .systemRed :
-            .systemGray
-        return .init(actions: [removeAction])
-    }
-}
-
 // MARK: - UITableViewDelegate
 
 extension FavoritesPresenter: UITableViewDelegate {
@@ -258,6 +192,25 @@ extension FavoritesPresenter: UITableViewDelegate {
         animator.addAnimations {
             self.router?.goToDetail(with: verb)
         }
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let removeAction = UIContextualAction(style: .destructive,
+                                              title: "remove".localized) { [weak self] _, _, _ in
+            guard let self = self,
+                  !self.isSearchActive,
+                  let verb = self.favoritesService.groupedItems[safe: indexPath.section]?[indexPath.row]
+            else { return }
+            
+            self.favorites.remove(verb)
+            tableView.reloadData()
+        }
+        
+        removeAction.backgroundColor = tableView.tintAdjustmentMode != .dimmed ?
+            .systemRed :
+            .systemGray
+        return .init(actions: [removeAction])
     }
 }
 

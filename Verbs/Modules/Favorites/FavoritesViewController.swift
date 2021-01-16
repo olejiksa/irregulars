@@ -159,7 +159,7 @@ private extension FavoritesViewController {
             keyboardHeightLayoutConstraint
         ])
         
-        tableView.dataSource = presenter
+        tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         
         tableView.register(ListCell.self, SubtitleCell.self)

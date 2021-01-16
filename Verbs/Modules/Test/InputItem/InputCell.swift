@@ -83,7 +83,7 @@ extension InputCell: CellProtocol {
         
         textField.tag = item.tag
         textField.returnKeyType = item.returnKeyType
-        expectedValues = item.words.map { $0.value }
+        expectedValues = item.words.map(\.value)
         playButton.isHidden = !item.isAudio
     }
 }

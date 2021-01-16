@@ -21,10 +21,10 @@ final class SentencesService {
             return (.infinitive, [verb.infinitive.value])
         } else {
             let isSimplePast = verb.simplePast?.contains { contains($0.value, in: sentence) } ?? false
-            if isSimplePast { return (.simplePast, verb.simplePast?.map { $0.value } ?? []) }
+            if isSimplePast { return (.simplePast, verb.simplePast?.map(\.value) ?? []) }
             
             let isPastParticiple = verb.pastParticiple?.contains { contains($0.value, in: sentence) } ?? false
-            if isPastParticiple { return (.pastParticiple, verb.pastParticiple?.map { $0.value } ?? []) }
+            if isPastParticiple { return (.pastParticiple, verb.pastParticiple?.map(\.value) ?? []) }
             
             return nil
         }

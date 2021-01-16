@@ -36,6 +36,9 @@ final class FavoritesService: VerbsServiceProtocol {
         }
     }
     
+    var shouldDerivativesBeShown: Bool = false
+    var shouldRegularVerbsBeShown: Bool = false
+    
     init() {
         setupFavorites()
         setItems()

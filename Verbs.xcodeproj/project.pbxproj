@@ -148,6 +148,7 @@
 		EB8B2BA125AF5A5C008E0118 /* BarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B2BA025AF5A5C008E0118 /* BarButtonItem.swift */; };
 		EB8B2BA925AF5DD5008E0118 /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B2BA825AF5DD5008E0118 /* HapticService.swift */; };
 		EB8B2BAE25AF5E83008E0118 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B2BAD25AF5E83008E0118 /* HapticFeedback.swift */; };
+		EB8B2BC325B33A0D008E0118 /* VerbsSectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B2BC225B33A0D008E0118 /* VerbsSectionDataSource.swift */; };
 		EB9A4FBC252E8D9800443D47 /* DeeplinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */; };
 		EB9C5B9B258295C70086A3D5 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9C5B99258295C70086A3D5 /* SliderCell.swift */; };
 		EB9C5B9C258295C70086A3D5 /* SliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB9C5B9A258295C70086A3D5 /* SliderCell.xib */; };
@@ -447,6 +448,10 @@
 		EB8B2BA025AF5A5C008E0118 /* BarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonItem.swift; sourceTree = "<group>"; };
 		EB8B2BA825AF5DD5008E0118 /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
 		EB8B2BAD25AF5E83008E0118 /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
+		EB8B2BBB25B3321A008E0118 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		EB8B2BBC25B3321A008E0118 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.stringsdict"; sourceTree = "<group>"; };
+		EB8B2BBD25B3321A008E0118 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Intents.strings"; sourceTree = "<group>"; };
+		EB8B2BC225B33A0D008E0118 /* VerbsSectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbsSectionDataSource.swift; sourceTree = "<group>"; };
 		EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkService.swift; sourceTree = "<group>"; };
 		EB9C5B99258295C70086A3D5 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		EB9C5B9A258295C70086A3D5 /* SliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
@@ -947,6 +952,16 @@
 			path = Favorites;
 			sourceTree = "<group>";
 		};
+		EB8B2BC125B339F6008E0118 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				EB450A32254B157A00D31858 /* SectionDataSource.swift */,
+				EB2E4B522573D8A7005B343A /* SelectableSectionDataSource.swift */,
+				EB8B2BC225B33A0D008E0118 /* VerbsSectionDataSource.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		EB9C5B98258295620086A3D5 /* SliderItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -1166,6 +1181,7 @@
 		EBEB1D95251F15FD0019972C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EB8B2BC125B339F6008E0118 /* Sources */,
 				EB2E4B4025729EBE005B343A /* AccentColor.swift */,
 				EB2E4B9F25741880005B343A /* AppIcon.swift */,
 				EBF8A62E2559172100A6265C /* Favorites.swift */,
@@ -1180,8 +1196,6 @@
 				EB59F01E258FE429004676D2 /* Region.swift */,
 				EB450972253B5CB300D31858 /* Section.swift */,
 				EB45097A253B630900D31858 /* SectionArray.swift */,
-				EB450A32254B157A00D31858 /* SectionDataSource.swift */,
-				EB2E4B522573D8A7005B343A /* SelectableSectionDataSource.swift */,
 				EBD2C508257FDC780023AED4 /* Sentence.swift */,
 				EB3217A4258BCDAC00023F0B /* Statistics.swift */,
 				EBF4A13E252EC9A3003E3A44 /* SystemIcon.swift */,
@@ -1389,6 +1403,7 @@
 				it,
 				ja,
 				ko,
+				"zh-Hans",
 			);
 			mainGroup = EBEB1D69251F11900019972C;
 			packageReferences = (
@@ -1550,6 +1565,7 @@
 				EBDF00782562DD850041F458 /* TestViewController.swift in Sources */,
 				EB2E4B2E2572963D005B343A /* AccentColorAssembly.swift in Sources */,
 				EBF00FB3257BB5B0002FA49B /* TestCell.swift in Sources */,
+				EB8B2BC325B33A0D008E0118 /* VerbsSectionDataSource.swift in Sources */,
 				EB2E4B3B25729E2E005B343A /* AccentColorItem.swift in Sources */,
 				EB450A59254BB3F800D31858 /* BigButton.swift in Sources */,
 				EB2F5E11251F5B26007DCF60 /* DetailCell.swift in Sources */,
@@ -1737,6 +1753,7 @@
 				EB5D6E2E25A057C100CCCA85 /* it */,
 				EB39616B25A0773800E3B65F /* ja */,
 				EB39616E25A0774B00E3B65F /* ko */,
+				EB8B2BBB25B3321A008E0118 /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1758,6 +1775,7 @@
 				EB5D6E2F25A057C100CCCA85 /* it */,
 				EB39616C25A0773800E3B65F /* ja */,
 				EB39616F25A0774B00E3B65F /* ko */,
+				EB8B2BBC25B3321A008E0118 /* zh-Hans */,
 			);
 			name = Localizable.stringsdict;
 			sourceTree = "<group>";
@@ -1773,6 +1791,7 @@
 				EB5D6E3025A057C100CCCA85 /* it */,
 				EB39616D25A0773800E3B65F /* ja */,
 				EB39617025A0774B00E3B65F /* ko */,
+				EB8B2BBD25B3321A008E0118 /* zh-Hans */,
 			);
 			name = Intents.intentdefinition;
 			sourceTree = "<group>";

@@ -67,6 +67,6 @@ private extension TabBarController {
             $1.controller?.tabBarItem = .init(title: $1.title, image: $1.icon.image, tag: $0)
         }
         
-        viewControllers = items.map { $0.controller }.compactMap { $0 }
+        viewControllers = items.map(\.controller).compactMap { $0 }
     }
 }

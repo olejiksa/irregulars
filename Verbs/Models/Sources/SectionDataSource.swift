@@ -50,4 +50,12 @@ extension SectionDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         sectionArray.footer(section)
     }
+    
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        nil
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        false
+    }
 }

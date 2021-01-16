@@ -686,7 +686,7 @@
 "privacy_policy" = "Política de privacidad";
 
 /* (No Comment) */
-"pro_suggestion_statistics" = "Among other benefits, Pro expands the count of available irregular verbs in tests from %d to %d";
+"pro_suggestion_statistics" = "Entre otros beneficios, Pro amplía el recuento de verbos irregulares disponibles en las pruebas: de 25 a 269";
 
 /* (No Comment) */
 "prove" = "probar";
@@ -1145,3 +1145,4 @@
 "notifications" = "Notificaciones";
 "not_allowed" = "No permitidas";
 "what_is" = "¿Cuál es la respuesta correcta?";
+"julian_eduardo_couoh_pablo" = "Julián Eduardo Couoh Pablo";
