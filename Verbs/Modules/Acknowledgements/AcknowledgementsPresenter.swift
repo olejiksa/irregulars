@@ -34,17 +34,9 @@ private extension AcknowledgementsPresenter {
                           Section(header: .localized(.betaTesting),
                                   items: [PlainItem(title: betaTestersString)]),
                           Section(header: .localized(.translation),
-                                  items: [RightDetailItem(title: "To Be Clarified",
-                                                          subtitle: Language.french.description),
-                                          RightDetailItem(title: "To Be Clarified",
-                                                          subtitle: Language.german.description),
-                                          RightDetailItem(title: .localized(.julianEduardo),
+                                  items: [RightDetailItem(title: .localized(.julianEduardo),
                                                           subtitle: Language.spanish.description),
-                                          RightDetailItem(title: "To Be Clarified",
-                                                          subtitle: Language.japanese.description),
                                           RightDetailItem(title: .localized(.tatianaPerfilieva),
-                                                          subtitle: Language.korean.description),
-                                          RightDetailItem(title: "To Be Clarified",
-                                                          subtitle: Language.chinese.description)])])
+                                                          subtitle: Language.korean.description)])])
     }
 }

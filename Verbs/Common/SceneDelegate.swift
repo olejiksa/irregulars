@@ -14,6 +14,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     private let deeplinkService = DeeplinkService()
+    private var shortcutItemToProcess: UIApplicationShortcutItem?
     
     private lazy var splitViewController: UISplitViewController = {
         let splitViewController = SplitViewController()
@@ -46,6 +47,8 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         for userActivity in connectionOptions.userActivities {
             self.scene(scene, continue: userActivity)
         }
+        
+        shortcutItemToProcess = connectionOptions.shortcutItem
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
@@ -68,9 +71,30 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func sceneDidBecomeActive(_ scene: UIScene) {
-        NotificationCenter.default.post(name: .reload,
-                                        object: nil,
-                                        userInfo: [:])
+        NotificationCenter.default.post(name: .reload, object: nil, userInfo: [:])
+        
+        if let shortcutItem = shortcutItemToProcess {
+            guard let windowScene = scene as? UIWindowScene else { return }
+            self.windowScene(windowScene, performActionFor: shortcutItem) { _ in }
+            shortcutItemToProcess = nil
+        }
+    }
+    
+    func windowScene(_ windowScene: UIWindowScene,
+                     performActionFor shortcutItem: UIApplicationShortcutItem,
+                     completionHandler: @escaping (Bool) -> Void) {
+        guard let shortcut = AppShortcut(rawValue: shortcutItem.type) else { return }
+        
+        switch shortcut {
+        case .search:
+            deeplinkService.search(text: "", in: splitViewController)
+        case .favorites:
+            deeplinkService.favorites(in: splitViewController)
+        case .tests:
+            deeplinkService.tests(in: splitViewController)
+        case .statistics:
+            deeplinkService.statistics(in: splitViewController)
+        }
     }
 }
 

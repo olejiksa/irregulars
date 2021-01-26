@@ -2,8 +2,41 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>search</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>magnifyingglass</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>SEARCH</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>favorites</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>star</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>FAVORITES</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>tests</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>puzzlepiece</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>TESTS</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>statistics</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>chart.pie</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>STATISTICS</string>
+		</dict>
+	</array>
 	<key>CFBundleDisplayName</key>
 	<string>Irregulars</string>
 	<key>CFBundleExecutable</key>

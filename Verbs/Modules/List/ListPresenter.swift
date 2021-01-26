@@ -19,7 +19,6 @@ final class ListPresenter: NSObject {
     private let languageService: LanguageService
     private let verbsService: VerbsServiceProtocol
     private var printService: PrintService
-    private var isSearchActive = false
     
     private var infinitive: String?
     
@@ -125,6 +124,14 @@ private extension ListPresenter {
             Locator.favorites.add(verb)
         }
     }
+    
+    func dragItems(at indexPath: IndexPath) -> [UIDragItem] {
+        let verb = verbsService.groupedItems[indexPath.section][indexPath.row]
+        guard !Locator.favorites.verbs.contains(verb) else { return [] }
+        let dragItem = UIDragItem(itemProvider: NSItemProvider(object: VerbDragItem(verb: verb)))
+        dragItem.localObject = verb
+        return [dragItem]
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -199,27 +206,19 @@ extension ListPresenter: UITableViewDragDelegate {
     func tableView(_ tableView: UITableView,
                    itemsForBeginning session: UIDragSession,
                    at indexPath: IndexPath) -> [UIDragItem] {
-        guard !isSearchActive else { return [] }
-        guard viewController?.splitViewController?.isCollapsed == false else { return [] }
+        guard !dataSource.isSearchActive,
+              viewController?.splitViewController?.isCollapsed == false else { return [] }
         session.localContext = tableView
-        let verb = verbsService.groupedItems[indexPath.section][indexPath.row]
-        guard !Locator.favorites.verbs.contains(verb) else { return [] }
-        let dragItem = UIDragItem(itemProvider: NSItemProvider(object: VerbDragItem(verb: verb)))
-        dragItem.localObject = verb
-        return [dragItem]
+        return dragItems(at: indexPath)
     }
     
     func tableView(_ tableView: UITableView,
                    itemsForAddingTo session: UIDragSession,
                    at indexPath: IndexPath,
                    point: CGPoint) -> [UIDragItem] {
-        guard !isSearchActive else { return [] }
-        guard viewController?.splitViewController?.isCollapsed == false else { return [] }
-        let verb = verbsService.groupedItems[indexPath.section][indexPath.row]
-        guard !Locator.favorites.verbs.contains(verb) else { return [] }
-        let dragItem = UIDragItem(itemProvider: NSItemProvider(object: VerbDragItem(verb: verb)))
-        dragItem.localObject = verb
-        return [dragItem]
+        guard !dataSource.isSearchActive,
+              viewController?.splitViewController?.isCollapsed == false else { return [] }
+        return dragItems(at: indexPath)
     }
 }
 

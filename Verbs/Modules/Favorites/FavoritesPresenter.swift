@@ -21,7 +21,11 @@ final class FavoritesPresenter: NSObject {
     private let favoritesService: VerbsServiceProtocol
     private let printService: PrintService
     private var favorites = Locator.favorites
-    private var isSearchActive = false
+    
+    private var isSearchActive: Bool {
+        get { dataSource?.isSearchActive ?? false }
+        set { dataSource?.isSearchActive = newValue }
+    }
     
     private var infinitive: String?
     

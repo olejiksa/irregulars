@@ -1,0 +1,12 @@
+/* 
+  InfoPlist.strings
+  Verbs
+
+  Created by Oleg Samoylov on 20.01.2021.
+  Copyright © 2021 Oleg Samoylov. All rights reserved.
+*/
+
+SEARCH = "검색";
+FAVORITES = "즐겨찾기";
+TESTS = "테스트";
+STATISTICS = "통계";

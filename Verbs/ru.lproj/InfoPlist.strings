@@ -1,0 +1,12 @@
+/* 
+  InfoPlist.strings
+  Verbs
+
+  Created by Oleg Samoylov on 20.01.2021.
+  Copyright © 2021 Oleg Samoylov. All rights reserved.
+*/
+
+SEARCH = "Поиск";
+FAVORITES = "Избранное";
+TESTS = "Тесты";
+STATISTICS = "Статистика";

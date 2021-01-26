@@ -20,7 +20,9 @@ final class DeeplinkService {
             let tabBarController = splitViewController.compactViewController
             tabBarController?.selectedIndex = 0
             let navigationController = tabBarController?.selectedViewController as? UINavigationController
-            clearTabBarNavigationStackForDeeplink(svc: splitViewController, nvc: navigationController)
+            clearTabBarNavigationStack(svc: splitViewController,
+                                       nvc: navigationController,
+                                       endpoint: .detail)
             handle(host: host,
                    verb: verb,
                    navigationController: navigationController,
@@ -44,7 +46,9 @@ final class DeeplinkService {
             let tabBarController = splitViewController.compactViewController
             tabBarController?.selectedIndex = 0
             let navigationController = tabBarController?.selectedViewController as? UINavigationController
-            clearTabBarNavigationStackForSearch(svc: splitViewController, nvc: navigationController)
+            clearTabBarNavigationStack(svc: splitViewController,
+                                       nvc: navigationController,
+                                       endpoint: .search)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 let listViewController = navigationController?.topViewController as? ListViewController
                 listViewController?.search(text: text)
@@ -55,6 +59,62 @@ final class DeeplinkService {
                 let listViewController = splitViewController.supplementaryViewController as? ListViewController
                 listViewController?.search(text: text)
             }
+        case .unspecified:
+            break
+        @unknown default:
+            break
+        }
+    }
+    
+    func favorites(in splitViewController: UISplitViewController) {
+        switch splitViewController.traitCollection.horizontalSizeClass {
+        case .compact:
+            let tabBarController = splitViewController.compactViewController
+            tabBarController?.selectedIndex = 1
+            let navigationController = tabBarController?.selectedViewController as? UINavigationController
+            clearTabBarNavigationStack(svc: splitViewController,
+                                       nvc: navigationController,
+                                       endpoint: .favorites)
+        case .regular:
+            splitViewController.sidebarViewController?.restore(at: IndexPath(row: 2, section: 0))
+        case .unspecified:
+            break
+        @unknown default:
+            break
+        }
+    }
+    
+    func tests(in splitViewController: UISplitViewController) {
+        switch splitViewController.traitCollection.horizontalSizeClass {
+        case .compact:
+            let tabBarController = splitViewController.compactViewController
+            tabBarController?.selectedIndex = 2
+            let navigationController = tabBarController?.selectedViewController as? UINavigationController
+            clearTabBarNavigationStack(svc: splitViewController,
+                                       nvc: navigationController,
+                                       endpoint: .tests)
+        case .regular:
+            splitViewController.sidebarViewController?.restore(at: IndexPath(row: 3, section: 0))
+        case .unspecified:
+            break
+        @unknown default:
+            break
+        }
+    }
+    
+    func statistics(in splitViewController: UISplitViewController) {
+        switch splitViewController.traitCollection.horizontalSizeClass {
+        case .compact:
+            let tabBarController = splitViewController.compactViewController
+            tabBarController?.selectedIndex = 2
+            let navigationController = tabBarController?.selectedViewController as? UINavigationController
+            clearTabBarNavigationStack(svc: splitViewController,
+                                       nvc: navigationController,
+                                       endpoint: .statistics)
+        case .regular:
+            splitViewController.sidebarViewController?.restore(at: IndexPath(row: 3, section: 0))
+            let vc = StatisticsAssembly().viewController()
+            splitViewController.secondaryViewController?.push(vc, in: splitViewController)
         case .unspecified:
             break
         @unknown default:
@@ -83,25 +143,33 @@ private extension DeeplinkService {
         navigationController?.push(vc, in: splitViewController)
     }
     
-    func clearTabBarNavigationStackForDeeplink(svc: UISplitViewController, nvc: UINavigationController?) {
-        guard let viewControllers = svc.compactViewController?.viewControllers,
-              !(nvc?.topViewController is DetailViewController) else { return }
+    func clearTabBarNavigationStack(svc: UISplitViewController,
+                                    nvc: UINavigationController?,
+                                    endpoint: Endpoint) {
+        guard let viewControllers = svc.compactViewController?.viewControllers else { return }
+        
+        switch endpoint {
+        case .detail:
+            guard !(nvc?.topViewController is DetailViewController) else { return }
+        case .favorites:
+            guard !(nvc?.topViewController is FavoritesViewController) else { return }
+        case .search:
+            guard !(nvc?.topViewController is ListViewController) else { return }
+        case .statistics:
+            guard !(nvc?.topViewController is StatisticsViewController) else { return }
+        case .tests:
+            guard !(nvc?.topViewController is TestsViewController) else { return }
+        }
         
         for case let navigationController as UINavigationController in viewControllers {
             navigationController.isNavigationBarHidden = true
             navigationController.popToRootViewController(animated: true)
             navigationController.isNavigationBarHidden = false
         }
-    }
-    
-    func clearTabBarNavigationStackForSearch(svc: UISplitViewController, nvc: UINavigationController?) {
-        guard let viewControllers = svc.compactViewController?.viewControllers,
-              !(nvc?.topViewController is ListViewController) else { return }
         
-        for case let navigationController as UINavigationController in viewControllers {
-            navigationController.isNavigationBarHidden = true
-            navigationController.popToRootViewController(animated: true)
-            navigationController.isNavigationBarHidden = false
+        if endpoint == .statistics {
+            let vc = StatisticsAssembly().viewController()
+            nvc?.push(vc, in: svc)
         }
     }
 }
