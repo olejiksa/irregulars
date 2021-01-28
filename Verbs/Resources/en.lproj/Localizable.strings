@@ -108,7 +108,7 @@
 "print" = "Print";
 "acknowledgements" = "Acknowledgments";
 "beta_testing" = "Beta testing";
-"sofia_sokolova" = "Sofia Sokolova";
+"sofia_sokolova" = "Sophie Sokolova";
 "artem_shumilov" = "Artem Shumilov";
 "vladislav_plotnikov" = "Vladislav Plotnikov";
 "elizabeth_keplin" = "Elizabeth Keplin";
@@ -389,6 +389,7 @@
 "overtake" = "overtake";
 "overthrow" = "overthrow";
 
+"paulina_litvinova" = "Paulina Litvinova";
 "tatiana_perfilieva" = "Tatiana Perfilieva";
 "notifications" = "Notifications";
 "not_allowed" = "Not allowed";

@@ -239,7 +239,7 @@
 "enter_here" = "여기에 입력합니다";
 
 /* (No Comment) */
-"erase_correct_answers" = "정답을 지우다 ";
+"erase_correct_answers" = "정답을 지우다";
 
 /* (No Comment) */
 "erase_learned_verbs" = "학습 한 동사 지우다";
@@ -551,7 +551,7 @@
 "offset" = "배상하다";
 
 /* (No Comment) */
-"ok" = "오케이K";
+"ok" = "오케이";
 
 /* The full name of the app's develop */
 "oleg_samoylov" = "올레그 사모일로프";
@@ -575,7 +575,7 @@
 "outgrow" = "성장하다";
 
 /* (No Comment) */
-"output" = "데이터 출력하다 ";
+"output" = "데이터 출력하다";
 
 /* (No Comment) */
 "outrun" = "앞서다";
@@ -1120,6 +1120,7 @@
 "indian" = "인도 사람";
 "sofia_sokolova" = "소피아 소콜로바";
 "elizabeth_keplin" = "엘리자베타 케플린";
+"paulina_litvinova" = "폴리나 리트 비 노바";
 "tatiana_perfilieva" = "타티아나 퍼 필리 에바";
 "artem_shumilov" = "아르템 슈미로프";
 "vladislav_plotnikov" = "블라디슬라프 플로트 니 코프";

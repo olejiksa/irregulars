@@ -578,7 +578,7 @@
 "ok" = "Va bene";
 
 /* The full name of the app's develop */
-"oleg_samoylov" = "Oleg Samoylov";
+"oleg_samoylov" = "Oleg Samoilov";
 
 /* (No Comment) */
 "one_time_payment" = "Pagamento una tantum, accesso a vita";
@@ -1153,6 +1153,7 @@
 /* (No Comment) */
 "elizabeth_keplin" = "Elisabetta Keplin";
 
+"paulina_litvinova" = "Paolina Litvinova";
 "tatiana_perfilieva" = "Tatiana Perfilieva";
 "vladislav_plotnikov" = "Vladislav Plotnikov";
 "notifications" = "Notifiche";
