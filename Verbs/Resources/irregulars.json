@@ -94,14 +94,14 @@
             "transcription": "/ˈbækslɪd/"
         }, {
             "value": "backslided",
-            "transcription": "/ˈbækslɪdɪd/"
+            "transcription": "/ˈbækslʌɪdɪd/"
         }],
         "pastParticiple": [{
             "value": "backslid",
             "transcription": "/ˈbækslɪd/"
         }, {
             "value": "backslided",
-            "transcription": "/ˈbækslɪdɪd/"
+            "transcription": "/ˈbækslʌɪdɪd/"
         }, {
             "value": "backslidden",
             "transcription": "/ˈbækslɪd(ə)n/"
@@ -1439,12 +1439,18 @@
         "simplePast": [{
             "value": "hung",
             "transcription": "/hʌŋ/"
+        }, {
+            "value": "hanged",
+            "transcription": "/hæŋd/"
         }],
         "pastParticiple": [{
             "value": "hung",
             "transcription": "/hʌŋ/"
+        }, {
+            "value": "hanged",
+            "transcription": "/hæŋd/"
         }],
-        "hasRegular": false,
+        "hasRegular": true,
         "isDerived": false
     },
     {
