@@ -22,6 +22,7 @@ final class StoreScreenshotsTests: XCTestCase {
     }
 
     func testAllVerbs() {
+        app.launchEnvironment = ["accent-color": "blue"]
         app.launch()
 
         attachScreenshot(name: "all-verbs")

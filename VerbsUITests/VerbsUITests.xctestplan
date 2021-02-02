@@ -1,0 +1,92 @@
+{
+  "configurations" : [
+    {
+      "id" : "BD8D505B-817D-4278-BA87-7AAB76BE75DE",
+      "name" : "English (US)",
+      "options" : {
+        "language" : "en",
+        "region" : "US",
+        "userAttachmentLifetime" : "keepAlways"
+      }
+    },
+    {
+      "id" : "284D161E-BA9B-4D7E-A471-AC58CF4ECBE4",
+      "name" : "English (UK)",
+      "options" : {
+        "language" : "en-GB",
+        "region" : "GB",
+        "userAttachmentLifetime" : "keepAlways"
+      }
+    },
+    {
+      "id" : "588CDDF1-CF49-4BBE-97BD-606930C2340C",
+      "name" : "Russian",
+      "options" : {
+        "language" : "ru",
+        "region" : "RU",
+        "userAttachmentLifetime" : "keepAlways"
+      }
+    },
+    {
+      "id" : "A2B573C9-607E-4C49-B086-A8868E9CECE9",
+      "name" : "Italian",
+      "options" : {
+        "language" : "it",
+        "region" : "IT",
+        "userAttachmentLifetime" : "keepAlways"
+      }
+    },
+    {
+      "id" : "FB2D4856-1288-40F1-ACE6-4EA13EC55FD1",
+      "name" : "German",
+      "options" : {
+        "language" : "de",
+        "region" : "DE",
+        "userAttachmentLifetime" : "keepAlways"
+      }
+    },
+    {
+      "id" : "3C3AC6DF-3874-44CC-BD05-A5D61ED70147",
+      "name" : "Chinese (Simplified)",
+      "options" : {
+        "language" : "zh-Hans",
+        "region" : "CN",
+        "userAttachmentLifetime" : "keepAlways"
+      }
+    },
+    {
+      "id" : "8843202C-9C45-4315-BA9C-F2840987D5A0",
+      "name" : "Korean",
+      "options" : {
+        "language" : "ko",
+        "region" : "KR",
+        "userAttachmentLifetime" : "keepAlways"
+      }
+    },
+    {
+      "id" : "C6F677D4-EFD5-4574-89B4-F2B1977C122C",
+      "name" : "Spanish",
+      "options" : {
+        "language" : "es",
+        "region" : "ES",
+        "userAttachmentLifetime" : "keepAlways"
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "skippedTests" : [
+        "PerformanceTests"
+      ],
+      "target" : {
+        "containerPath" : "container:Verbs.xcodeproj",
+        "identifier" : "EBE00CA725C871AE00560A7D",
+        "name" : "VerbsUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
