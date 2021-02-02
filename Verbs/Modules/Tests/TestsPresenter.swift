@@ -32,26 +32,31 @@ final class TestsPresenter: NSObject {
             ? TestItem(icon: .globe,
                        title: Test.translation.title,
                        subtitle: "translation_subtitle".localized,
-                       test: .translation)
+                       test: .translation,
+                       accessibilityIdentifier: nil)
             : nil
         
         let items = [translationItem,
                      TestItem(icon: .pencil,
                               title: Test.writing.title,
                               subtitle: "writing_subtitle".localized,
-                              test: .writing),
+                              test: .writing,
+                              accessibilityIdentifier: .writingCell),
                      TestItem(icon: .sentences,
                               title: Test.sentences.title,
                               subtitle: "sentences_subtitle".localized,
-                              test: .sentences),
+                              test: .sentences,
+                              accessibilityIdentifier: .sentencesCell),
                      TestItem(icon: .headphones,
                               title: Test.listening.title,
                               subtitle: "listening_subtitle".localized,
-                              test: .listening),
+                              test: .listening,
+                              accessibilityIdentifier: .listeningCell),
                      TestItem(icon: .chart,
                               title: "statistics".localized,
                               subtitle: "track_your_progress_in_learning_irregular_verbs".localized,
-                              test: nil)
+                              test: nil,
+                              accessibilityIdentifier: nil)
         ].compactMap { $0 }
         dataSource.setup([Section(items: items)])
     }

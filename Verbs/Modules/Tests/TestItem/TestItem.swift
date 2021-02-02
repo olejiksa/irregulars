@@ -12,6 +12,7 @@ struct TestItem {
     let title: String
     let subtitle: String
     let test: Test?
+    let accessibilityIdentifier: AccessibilityIdentifier?
 }
 
 // MARK: - ItemProtocol

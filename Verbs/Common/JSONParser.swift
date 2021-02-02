@@ -24,6 +24,7 @@ final class JSONParser<T: Decodable> {
             let data = try Data(contentsOf: fileUrl, options: .mappedIfSafe)
             return try parse(data: data) ?? []
         } catch {
+            print(error)
             return []
         }
     }

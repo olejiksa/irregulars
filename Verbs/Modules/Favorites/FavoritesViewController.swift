@@ -124,14 +124,11 @@ final class FavoritesViewController: UIViewController {
 
 private extension FavoritesViewController {
     
-    func setupKeyboardService() {
-        keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
-    }
-    
     func setupNavigationBar() {
         navigationItem.title = "favorites".localized
         
         moreButton = .init(icon: .ellipsis)
+        
         editButton = .init(barButtonSystemItem: .edit,
                            target: self,
                            action: #selector(didEditTap))
@@ -141,6 +138,9 @@ private extension FavoritesViewController {
         
         navigationItem.leftBarButtonItem = editButton
         navigationItem.rightBarButtonItem = moreButton
+        
+        editButton?.accessibilityIdentifier = AccessibilityIdentifier.editButton.rawValue
+        doneButton?.accessibilityIdentifier = AccessibilityIdentifier.doneButton.rawValue
     }
     
     func setupTableView() {
@@ -198,6 +198,10 @@ private extension FavoritesViewController {
                          favoritesOnly: true,
                          printInfoBlock: presenter.print)
         listMenu?.build()
+    }
+    
+    func setupKeyboardService() {
+        keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
     }
     
     @objc func didEditTap() {

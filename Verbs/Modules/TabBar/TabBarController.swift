@@ -54,17 +54,20 @@ private extension TabBarController {
         let testsViewController = TestsAssembly(splitViewController: svc).viewController().navigationController
         let settingsViewController = SettingsAssembly().viewController().navigationController
         
-        compound(items: [(listViewController, "verbs".localized, .bookFill),
-                         (favoritesViewController, "favorites".localized, .starFill),
-                         (testsViewController, "tests".localized, .puzzleFill),
-                         (settingsViewController, "settings".localized, .gearFill)])
+        compound(items: [(listViewController, "verbs".localized, .bookFill, .verbsTab),
+                         (favoritesViewController, "favorites".localized, .starFill, .favoritesTab),
+                         (testsViewController, "tests".localized, .puzzleFill, .testsTab),
+                         (settingsViewController, "settings".localized, .gearFill, .settingsTab)])
     }
     
     func compound(items: [(controller: UIViewController?,
                            title: String,
-                           icon: SystemIcon)]) {
+                           icon: SystemIcon,
+                           accessibilityIdentifier: AccessibilityIdentifier)]) {
         items.enumerated().forEach {
-            $1.controller?.tabBarItem = .init(title: $1.title, image: $1.icon.image, tag: $0)
+            let tabBarItem = UITabBarItem(title: $1.title, image: $1.icon.image, tag: $0)
+            tabBarItem.accessibilityIdentifier = $1.accessibilityIdentifier.rawValue
+            $1.controller?.tabBarItem = tabBarItem
         }
         
         viewControllers = items.map(\.controller).compactMap { $0 }

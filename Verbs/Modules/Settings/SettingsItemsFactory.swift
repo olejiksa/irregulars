@@ -54,10 +54,12 @@ final class SettingsItemsFactory {
                                                      actionBlock: languageBlock),
                                      RightDetailItem(title: "accent_color".localized,
                                                      subtitle: accentColor,
-                                                     actionBlock: accentColorBlock),
+                                                     actionBlock: accentColorBlock,
+                                                     accessibilityIdentifier: .accentColorCell),
                                      RightDetailItem(title: "voice".localized,
                                                      subtitle: voiceName,
-                                                     actionBlock: voiceBlock)].compactMap { $0 }
+                                                     actionBlock: voiceBlock,
+                                                     accessibilityIdentifier: .voiceCell)].compactMap { $0 }
         
         return .init(header: "general".localized, items: items + [notificationsItem])
     }

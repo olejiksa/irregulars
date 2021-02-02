@@ -43,6 +43,18 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.tintColor = AccentColor.current.color
         window?.makeKeyAndVisible()
         
+        #if DEBUG
+        if CommandLine.arguments.contains("dark") {
+            window?.overrideUserInterfaceStyle = .dark
+        }
+        
+        guard let accentColorString = ProcessInfo.processInfo.environment["accent-color"],
+              let accentColor = AccentColor(rawValue: accentColorString)
+        else { return }
+        
+        window?.tintColor = accentColor.color
+        #endif
+        
         self.scene(scene, openURLContexts: connectionOptions.urlContexts)
         for userActivity in connectionOptions.userActivities {
             self.scene(scene, continue: userActivity)

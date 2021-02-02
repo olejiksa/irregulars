@@ -12,17 +12,20 @@ final class RightDetailItem {
     var subtitle: String
     let actionBlock: ItemBlock?
     let hasDisclosureIndicator: Bool
+    let accessibilityIdentifier: AccessibilityIdentifier?
     let isEnabled: Bool
     
     init(title: String,
          subtitle: String,
          actionBlock: ItemBlock? = nil,
          hasDisclosureIndicator: Bool? = nil,
+         accessibilityIdentifier: AccessibilityIdentifier? = nil,
          isEnabled: Bool = true) {
         self.title = title
         self.subtitle = subtitle
         self.actionBlock = actionBlock
         self.hasDisclosureIndicator = hasDisclosureIndicator ?? (actionBlock != nil)
+        self.accessibilityIdentifier = accessibilityIdentifier
         self.isEnabled = isEnabled
     }
 }

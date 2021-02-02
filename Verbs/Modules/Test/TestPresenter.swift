@@ -106,7 +106,7 @@ private extension TestPresenter {
     
     func didEndEntering() {
         guard let items = dataSource.items(of: InputItem.self) as? [InputItem],
-              items.allSatisfy({ $0.isFilled }) else { return }
+              items.allSatisfy(\.isFilled) else { return }
         
         wasHintUsed = !items.allSatisfy(\.isValid)
         

@@ -26,5 +26,7 @@ extension RightDetailCell: CellProtocol {
         isUserInteractionEnabled = item.isEnabled && item.actionBlock != nil
         textLabel?.isEnabled = item.isEnabled
         detailTextLabel?.isEnabled = item.isEnabled
+        
+        accessibilityIdentifier = item.accessibilityIdentifier?.rawValue
     }
 }
