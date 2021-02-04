@@ -601,7 +601,7 @@
     },
     {
         "word": "overpay",
-        "sentences": ["We overpay the invoice by $245", "I overpaid him for his service", "Reclaim tax you've overpaid on them in the past."]
+        "sentences": ["We overpay the invoice by $245", "I overpaid him for his service", "Reclaim tax you've overpaid on them in the past"]
     },
     {
         "word": "override",
@@ -709,7 +709,7 @@
     },
     {
         "word": "say",
-        "sentences": ["Do as I say, not as I do", "The least said the better", "He proposed to me and I said yes"]
+        "sentences": ["Do as I say, not as I do", "He proposed to me and I said yes", "You might have said something in my defense last night, instead of sitting there like a lump on a log"]
     },
     {
         "word": "see",
@@ -717,7 +717,7 @@
     },
     {
         "word": "seek",
-        "sentences": ["Gentlemen seek harmony but not uniformity", "He sought vainly for the answer", "Love sought is good, but give unsought is better"]
+        "sentences": ["Gentlemen seek harmony but not uniformity", "He sought vainly for the answer", "With all his soul he had always sought one thing – to be perfectly good – so he could not be afraid of death"]
     },
     {
         "word": "sell",
@@ -725,19 +725,19 @@
     },
     {
         "word": "send",
-        "sentences": ["Send these shirts to be laundered", "The boss has sent for me", "The young lady at reception sent me up here"]
+        "sentences": ["Send these shirts to be laundered", "The young lady at reception sent me up here", "The boss has sent for me"]
     },
     {
         "word": "set",
-        "sentences": ["A match will set fire to a large building", "The rainy season has set in", "Set my case over the shelves"]
+        "sentences": ["A match will set fire to a large building", "The doctor set a due date of August 17th", "The rainy season has set in"]
     },
     {
         "word": "sew",
-        "sentences": ["Sew the split seams of the shirt", "She sewed patches on the elbows of jacket", "One quality of this kind of timber is that it can be sawn easily"]
+        "sentences": ["Sew the split seams of the shirt", "She sewed patches on the elbows of jacket", "In the center was a large emerald-green star, and all over the four quarters were sewn spangles that glittered beautifully in the sunshine"]
     },
     {
         "word": "shake",
-        "sentences": ["Shake the bottle well before use", "He shook me so hard that my teeth rattled", "The experience left her deeply shaken"]
+        "sentences": ["Shake the bottle well before use", "He shook me so hard that my teeth rattled", "Recent electoral shocks have shaken the European political landscape"]
     },
     {
         "word": "shall",
@@ -749,23 +749,23 @@
     },
     {
         "word": "shear",
-        "sentences": ["The farmer taught her how to shear sheep", "The ship was anchored off shore", "It was time for the sheep to be shorn"]
+        "sentences": ["The farmer taught her how to shear sheep", "Then the bolts sheared or the ironwork broke in a new place", "It was time for the sheep to be shorn"]
     },
     {
         "word": "shed",
-        "sentences": ["He planned to build on a shed", "The lorry had shed its load", "David built us a shed in the back yard"]
+        "sentences": ["It can't do any harm and it may shed light on his intentions", "She shed it and her boots quickly, wanting to escape to her room before her father cornered her", "The lorry had shed its load"]
     },
     {
         "word": "shine",
-        "sentences": ["One day i will shine", "He buffed the wood until it shone", "The dark polished wood shone like glass"]
+        "sentences": ["One day I will shine", "He buffed the wood until it shone", "The light of understanding has shone upon my little pupil's mind, and behold, all things are changed!"]
     },
     {
         "word": "shoe",
-        "sentences": ["Keep still while I fasten shoe", "The children were well shod and happy", "She turned on her elegantly shod heel"]
+        "sentences": ["You wanted to shoe horses?", "We need all these horses shod", "The children were well shod and happy"]
     },
     {
         "word": "shoot",
-        "sentences": ["Don't shoot the messenger", "Lisa shot him a venomous glance", "He was shot by a lone gunman"]
+        "sentences": ["I started learning to shoot a laser gun today, she said", "Lisa shot him a venomous glance", "He was shot by a lone gunman"]
     },
     {
         "word": "show",
@@ -773,7 +773,7 @@
     },
     {
         "word": "shred",
-        "sentences": ["Could you shred me a piece of bread?", "Mice will shred things such as newspapers", "Shred the lettuce leaves finely"]
+        "sentences": ["Could you shred me a piece of bread?", "Leave me alone before I shred your office grapevine", "To boil off say 300 lb of thrown silk, about 60 lb of fine white soap is shred, and dissolved in about 200 gallons of pure water"]
     },
     {
         "word": "shrink",
@@ -781,7 +781,7 @@
     },
     {
         "word": "shut",
-        "sentences": ["A book that remains shut is but a block", "Keep your mouth shut and your ears open", "Please will you shut the door?"]
+        "sentences": ["Please will you shut the door?", "Carmen kissed Destiny goodnight and shut the door to their room", "They seem to know man isn't a threat until the engine is shut off"]
     },
     {
         "word": "sing",
@@ -793,7 +793,7 @@
     },
     {
         "word": "sit",
-        "sentences": ["The students sit in a circle on the floor", "He went and sat beside her", "He took off his coat and sat down"]
+        "sentences": ["The students sit in a circle on the floor", "He went and sat beside her", "Members of his family have sat for the town for over a century"]
     },
     {
         "word": "slay",
@@ -801,27 +801,27 @@
     },
     {
         "word": "sleep",
-        "sentences": ["Now I shall go to sleep", "The children slept on mattresses on the floor", "He slept solidly for ten hours"]
+        "sentences": ["Now I shall go to sleep", "The children slept on mattresses on the floor", "I'm haven't slept for nights"]
     },
     {
         "word": "slide",
-        "sentences": ["The drawers slide in and out easily", "He slid a coin into her hand", "She slid a coin into the drawer"]
+        "sentences": ["The drawers slide in and out easily", "He slid a coin into her hand", "The recorder is slid securely onto two bolts that extrude from the wooden backboard"]
     },
     {
         "word": "sling",
-        "sentences": ["Sling me an apple, will you?", "He slung the bag over his shoulder", "She slung barbs at me"]
+        "sentences": ["Sling me an apple, will you?", "He slung the bag over his shoulder", "In diameter, the body carrying one barrel, while another is slung beneath the axle"]
     },
     {
         "word": "slink",
-        "sentences": ["Edward was hoping to slink past unnoticed", "The thief slunk down the dark alley", "The dog howled and slunk away"]
+        "sentences": ["Edward was hoping to slink past unnoticed", "The thief slunk down the dark alley", "I thought you'd have slunk off by now"]
     },
     {
         "word": "slit",
-        "sentences": ["He slit open the envelope with a knife", "Guy slit open the envelope", "I slit open the letter with a knife"]
+        "sentences": ["Slit the roll with a sharp knife", "He slit open the envelope with a knife", "The skirt is slit to the hip on one side"]
     },
     {
         "word": "smell",
-        "sentences": ["Fish and visitors smell three days", "The house smelt of cedar wood and fresh polish", "The phone box smelt of sick"]
+        "sentences": ["Fish and visitors smell three days", "The house smelt of cedar wood and fresh polish", "The top note is smelled first and is usually the lightest scent"]
     },
     {
         "word": "smite",
@@ -829,7 +829,7 @@
     },
     {
         "word": "sneak",
-        "sentences": ["How did you sneak out of the meeting?", "I snuck her a note", "The result: more coins snuck into circulation, driving up the prices of goods"]
+        "sentences": ["How did you sneak out of the meeting?", "I snuck her a note", "That was the second time this week someone had snuck up on him"]
     },
     {
         "word": "sow",
@@ -837,51 +837,51 @@
     },
     {
         "word": "speak",
-        "sentences": ["First think, and then speak", "He spoke with a pronounced stutter", "A word spoken is past recalling"]
+        "sentences": ["First think, and then speak", "He spoke with a pronounced stutter", "Aphorisms should be peaks: and those to whom they are spoken, big and tall"]
     },
     {
         "word": "speed",
-        "sentences": ["He speed his car through the street", "The bus sped down the long hill", "We sped down the ski slopes"]
+        "sentences": ["He speed his car through the street", "The bus sped down the long hill", "When all the cheerleaders have the eight count down slowly, keep practicing it until the eight count is sped up to the temp of the music"]
     },
     {
         "word": "spell",
-        "sentences": ["How do you spell your name?", "How is the word spelt?", "My name was wrongly spelt"]
+        "sentences": ["How do you spell your name?", "Names in languages not using the Roman alphabet, or having 'no written alphabet should be spelt phonetically, as pronounced on the spot", "My name was wrongly spelt"]
     },
     {
         "word": "spend",
-        "sentences": ["To gain teaches how to spend", "I spent the whole day cleaning", "Lily spent years caring for her sick uncle"]
+        "sentences": ["To gain teaches how to spend", "I spent the whole day cleaning", "I've spent a lifetime looking at long term implications"]
     },
     {
         "word": "spill",
-        "sentences": ["Don't pour too much; it might spill over", "Is is no use crying over spilt milk", "I spilt coffee on my silk shirt.s"]
+        "sentences": ["Don't pour too much; it might spill over", "I spilt coffee on my silk skirt", "Critical reactions were decidedly spilt after the release"]
     },
     {
         "word": "spin",
-        "sentences": ["The wheel can now spin freely", "She got up and spun a little turn", "We spun out a whole hour waiting for a taxi"]
+        "sentences": ["The wheel can now spin freely", "We spun out a whole hour waiting for a taxi", "Factories are still in infancy, but silk is spun"]
     },
     {
         "word": "spit",
-        "sentences": ["Sam is the dead spit of his dad", "Come on Jean, spit it out!", "If you must spit at all, please spit in the bucket provided"]
+        "sentences": ["Come on Jean, spit it out!", "Swords clashed and spit sparks while their feet danced too fast for her to follow", "Sam is the dead spit of his dad"]
     },
     {
         "word": "split",
-        "sentences": ["The companies split the profits fifty-fifty", "Only a skilled workman can split slate into layers", "Let's split the cost right down the middle"]
+        "sentences": ["The companies split the profits fifty-fifty", "She waited until he split a piece of wood and then walked over to pick it up", "The wood was split and stacked beside the house, waiting for winter"]
     },
     {
         "word": "spoil",
-        "sentences": ["Spare the rod and spoil the child", "The spoilt child sat there pouting", "Stop acting like a spoilt child"]
+        "sentences": ["Roxanne had a set her cap for him and Adrienne had no intention of being the one to spoil her friends' plans", "She was well equipped in both respects, but human passions spoilt her chance; her heart turned her head", "He is said to have been the king's minstrel, and to have spoilt the earlier part of his life in frivolity"]
     },
     {
         "word": "spread",
-        "sentences": ["He spread out his arms and shrugged his shoulders", "He spread some strawberry jam on his toast", "The flames grew larger as the fire spread"]
+        "sentences": ["I wonder if she remembers how eagerly and gladly they spread their wings and flew away", "He spread some strawberry jam on his toast", "And that that same technology would allow his questions to be spread across Europe, thereby igniting the Protestant Reformation?"]
     },
     {
         "word": "spring",
-        "sentences": ["I was spring with a ball", "He sprang up from the sofa", "A breeze has sprung up"]
+        "sentences": ["Suddenly I felt my bed shake, and a wolf seemed to spring on me and snarl in my face", "He sprang up from the sofa", "A breeze has sprung up"]
     },
     {
         "word": "stand",
-        "sentences": ["Truth will stand without a prop", "Martin stood erect on the platform", "He stood to inherit property worth ￡5 million"]
+        "sentences": ["Truth will stand without a prop", "He stood to inherit property worth ￡5 million", "Inactivity. I don't think that this woman has stood upright.."]
     },
     {
         "word": "steal",
@@ -893,7 +893,7 @@
     },
     {
         "word": "sting",
-        "sentences": ["Pleasure has a sting in its tail", "The nettles stung their legs", "I was stung on the arm by a wasp"]
+        "sentences": ["She felt panic bubble and tears sting her eyes once again", "The nettles stung their legs", "I was stung on the arm by a wasp"]
     },
     {
         "word": "stink",
@@ -913,11 +913,11 @@
     },
     {
         "word": "string",
-        "sentences": ["He strung his gun up on the wall", "The parade strung out for miles"]
+        "sentences": ["Someone tried to string him up", "The parade strung out for miles", "Their gear was strung across three other beds, much to the doctor's irritation"]
     },
     {
         "word": "strip",
-        "sentences": ["The runway is simply a strip of grass", "Mia stript the cargo down to essentials"]
+        "sentences": ["Strip down to your unmentionables", "Mia stript the cargo down to essentials", "Her eyes went to Toni, who had stripped off her shirt"]
     },
     {
         "word": "strive",
@@ -929,15 +929,15 @@
     },
     {
         "word": "sweat",
-        "sentences": ["Don't sweat the small stuff", "I always sweat at night", "The glasses of my car began to sweat when I drove out of Dublin"]
+        "sentences": ["Don't sweat the small stuff", "On entering the forest the horses began to snort and sweated visibly", "He welcomed both the bill establishing a Ministry of Health and that establishing a Ministry of Transport; but he warned the House of Commons not to expect cheaper passenger fares and freight charges; the railwaymen would not allow themselves to be sweated for the benefit of the travelling public. But, once again, his real activity was outside"]
     },
     {
         "word": "sweep",
-        "sentences": ["Don't forget to sweep under the beds", "The wind swept the leaves away", "The wave swept over the deck"]
+        "sentences": ["Don't forget to sweep under the beds", "The wind swept the leaves away", "I've swept the floor"]
     },
     {
         "word": "swell",
-        "sentences": ["Bacteria can cause gums to swell and bleed", "The rain swelled the rivers", "He gently rubbed his swollen nose"]
+        "sentences": ["Bacteria can cause gums to swell and bleed", "The rain swelled the rivers", "If the gall-bladder was swollen, it pointed to an extension or enlargement of some kind"]
     },
     {
         "word": "swim",
@@ -945,7 +945,7 @@
     },
     {
         "word": "swing",
-        "sentences": ["Let your arms swing as you walk", "He swung the hammer with all his strength", "He swung himself into the saddle and rode off"]
+        "sentences": ["Let your arms swing as you walk", "He swung the hammer with all his strength", "The method of working is for the pole to be swung out behind a number of wagons"]
     },
     {
         "word": "take",
@@ -953,7 +953,7 @@
     },
     {
         "word": "teach",
-        "sentences": ["You can't teach an old dog new tricks", "He needs to be taught some manners", "My mother taught me how to sew"]
+        "sentences": ["You can't teach an old dog new tricks", "My mother taught me how to sew", "He needs to be taught some manners"]
     },
     {
         "word": "tear",
@@ -965,7 +965,7 @@
     },
     {
         "word": "think",
-        "sentences": ["In every beginning think of the end", "The wish is father to the thought", "He thought for a moment before replying"]
+        "sentences": ["In every beginning think of the end", "He thought for a moment before replying", "Princess Mary had thought and thought again now"]
     },
     {
         "word": "thrive",
@@ -977,7 +977,7 @@
     },
     {
         "word": "thrust",
-        "sentences": ["She thrust a letter into my hand", "They thrust themselves into the house", "He thrust at me with a knife"]
+        "sentences": ["It's easy to thrust your shoulders forward when doing presses or pulls", "She thrust a letter into my hand", "Three were thrust at her"]
     },
     {
         "word": "tread",
@@ -985,15 +985,15 @@
     },
     {
         "word": "typeset",
-        "sentences": ["Pages can now be typeset on-screen", "An overloaded function or method will have several signatures that will generally be typeset together", "My book will be typeset nicely"]
+        "sentences": ["I design the layout and send it over, then they typeset it", "7 Love's Labour's Lost – typeset from a corrected copy of Q1", "My book will be typeset nicely"]
     },
     {
         "word": "undergo",
-        "sentences": ["The planes have to undergo rigorous safety checks", "Fans may undergo body searches by security guards", "Police drivers have to undergo intensive training"]
+        "sentences": ["The planes have to undergo rigorous safety checks", "After he came out of the coma, he underwent a year or so of therapy", "The balance of Italian trade has undergone frequent fluctuations"]
     },
     {
         "word": "understand",
-        "sentences": ["I hope you understand what I told you", "I can't make myself understood", "He strove to make himself understood"]
+        "sentences": ["I hope you understand what I told you", "He didn't know if he understood what he was doing", "Had she ever understood how honorable and good he was?"]
     },
     {
         "word": "undertake",
@@ -1001,7 +1001,7 @@
     },
     {
         "word": "upset",
-        "sentences": ["My best friend tells me that I am silly to be upset about this", "I upset the soup all over the table", "A large wave upset the boat"]
+        "sentences": ["I've said something to upset you", "I upset the soup all over the table", "My best friend tells me that I am silly to be upset about this"]
     },
     {
         "word": "vex",
