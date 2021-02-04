@@ -44,6 +44,8 @@ final class SidebarPresenter: NSObject {
             cell.contentConfiguration = contentConfiguration
             cell.accessories = item.isExpandable ? [.outlineDisclosure()] : []
             cell.tintColor = AccentColor.current.color
+            
+            cell.accessibilityIdentifier = item.accessibilityIdentifier?.rawValue
         }
         
         let rowRegistration = UICollectionView.CellRegistration<SidebarCell, SidebarItem> {
@@ -57,6 +59,8 @@ final class SidebarPresenter: NSObject {
             cell.contentConfiguration = contentConfiguration
             cell.accessories = item.isExpandable ? [.outlineDisclosure()] : []
             cell.tintColor = AccentColor.current.color
+            
+            cell.accessibilityIdentifier = item.accessibilityIdentifier?.rawValue
         }
         
         dataSource = .init(collectionView: collectionView) {
@@ -90,14 +94,17 @@ private extension SidebarPresenter {
         let items: [SidebarItem] = [
             .row(title: "all".localized,
                  image: SystemIcon.book.image,
-                 id: RowIdentifier.all),
+                 id: RowIdentifier.all,
+                 accessibilityIdentifier: .verbsTab),
             .row(title: "favorites".localized,
                  image: SystemIcon.star.image,
-                 id: RowIdentifier.favorites),
+                 id: RowIdentifier.favorites,
+                 accessibilityIdentifier: .favoritesTab),
             .row(title: "tests".localized,
                  subtitle: nil,
                  image: SystemIcon.puzzle.image,
-                 id: RowIdentifier.tests)
+                 id: RowIdentifier.tests,
+                 accessibilityIdentifier: .testsTab)
         ]
         
         snapshot.append([header])
@@ -113,7 +120,8 @@ private extension SidebarPresenter {
         let items: [SidebarItem] = [
             .row(title: "settings".localized,
                  image: SystemIcon.gear.image,
-                 id: RowIdentifier.settings)
+                 id: RowIdentifier.settings,
+                 accessibilityIdentifier: .settingsTab)
         ]
         
         snapshot.append([header])

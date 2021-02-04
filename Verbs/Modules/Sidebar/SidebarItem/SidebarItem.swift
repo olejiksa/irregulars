@@ -16,19 +16,34 @@ struct SidebarItem: Hashable, Swift.Identifiable {
     let subtitle: String?
     let image: UIImage?
     let isExpandable: Bool
+    let accessibilityIdentifier: AccessibilityIdentifier?
     
     static func header(title: String,
                        isExpandable: Bool = false,
-                       id: UUID = UUID()) -> Self {
-        .init(id: id, type: .header, title: title, subtitle: nil, image: nil, isExpandable: isExpandable)
+                       id: UUID = UUID(),
+                       accessibilityIdentifier: AccessibilityIdentifier? = nil) -> Self {
+        .init(id: id,
+              type: .header,
+              title: title,
+              subtitle: nil,
+              image: nil,
+              isExpandable: isExpandable,
+              accessibilityIdentifier: accessibilityIdentifier)
     }
     
     static func row(title: String,
                     subtitle: String? = nil,
                     image: UIImage? = nil,
                     isExpandable: Bool = false,
-                    id: UUID = UUID()) -> Self {
-        .init(id: id, type: .row, title: title, subtitle: subtitle, image: image, isExpandable: isExpandable)
+                    id: UUID = UUID(),
+                    accessibilityIdentifier: AccessibilityIdentifier? = nil) -> Self {
+        .init(id: id,
+              type: .row,
+              title: title,
+              subtitle: subtitle,
+              image: image,
+              isExpandable: isExpandable,
+              accessibilityIdentifier: accessibilityIdentifier)
     }
 }
 

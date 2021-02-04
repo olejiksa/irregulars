@@ -45,8 +45,7 @@ final class StoreScreenshotsTests: XCTestCase {
         app.launchEnvironment = ["accent-color": "indigo"]
         app.launch()
         
-        let favoritesID = AccessibilityIdentifier.favoritesTab.rawValue
-        app.buttons[favoritesID].tap()
+        tapTab(.favoritesTab)
         
         let editButtonID = AccessibilityIdentifier.editButton.rawValue
         let editButton = app.navigationBars.children(matching: .button)[editButtonID]
@@ -66,8 +65,7 @@ final class StoreScreenshotsTests: XCTestCase {
         app.launchArguments = ["dark"]
         app.launch()
         
-        let settingsID = AccessibilityIdentifier.testsTab.rawValue
-        app.buttons[settingsID].tap()
+        tapTab(.testsTab)
         
         let cellID = AccessibilityIdentifier.writingCell.rawValue
         app.cells[cellID].tap()
@@ -82,8 +80,7 @@ final class StoreScreenshotsTests: XCTestCase {
         app.launchEnvironment = ["accent-color": "pink"]
         app.launch()
         
-        let settingsID = AccessibilityIdentifier.testsTab.rawValue
-        app.buttons[settingsID].tap()
+        tapTab(.testsTab)
         
         let cellID = AccessibilityIdentifier.sentencesCell.rawValue
         app.cells[cellID].tap()
@@ -98,8 +95,7 @@ final class StoreScreenshotsTests: XCTestCase {
         app.launchEnvironment = ["accent-color": "purple"]
         app.launch()
         
-        let settingsID = AccessibilityIdentifier.testsTab.rawValue
-        app.buttons[settingsID].tap()
+        tapTab(.testsTab)
         
         let cellID = AccessibilityIdentifier.listeningCell.rawValue
         app.cells[cellID].tap()
@@ -115,8 +111,7 @@ final class StoreScreenshotsTests: XCTestCase {
         app.launchArguments = ["dark"]
         app.launch()
         
-        let settingsID = AccessibilityIdentifier.settingsTab.rawValue
-        app.buttons[settingsID].tap()
+        tapTab(.settingsTab)
         
         let cellID = AccessibilityIdentifier.accentColorCell.rawValue
         app.cells[cellID].tap()
@@ -135,8 +130,7 @@ final class StoreScreenshotsTests: XCTestCase {
         app.launchArguments = ["dark"]
         app.launch()
         
-        let settingsID = AccessibilityIdentifier.settingsTab.rawValue
-        app.buttons[settingsID].tap()
+        tapTab(.settingsTab)
         
         let cellID = AccessibilityIdentifier.voiceCell.rawValue
         app.cells[cellID].tap()
@@ -151,6 +145,17 @@ final class StoreScreenshotsTests: XCTestCase {
 // MARK: - Private
 
 private extension StoreScreenshotsTests {
+    
+    func tapTab(_ identifier: AccessibilityIdentifier) {
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+            app.collectionViews.cells[identifier.rawValue].tap()
+        case .phone:
+            app.buttons[identifier.rawValue].tap()
+        default:
+            break
+        }
+    }
     
     func attachScreenshot(name: String) {
         let screenshot = app.windows.firstMatch.screenshot()

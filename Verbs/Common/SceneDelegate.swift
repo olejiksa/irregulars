@@ -52,6 +52,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
               let accentColor = AccentColor(rawValue: accentColorString)
         else { return }
         
+        AccentColor.current = accentColor
         window?.tintColor = accentColor.color
         #endif
         
