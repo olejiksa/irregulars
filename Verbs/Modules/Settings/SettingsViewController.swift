@@ -73,7 +73,7 @@ private extension SettingsViewController {
         tableView.register(SwitchCell.self,
                            DisclosureCell.self,
                            RightDetailCell.self,
-                           PickableCell.self,
+                           TimePickerCell.self,
                            ActionCell.self,
                            SliderCell.self)
         

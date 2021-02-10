@@ -58,9 +58,9 @@ private extension SettingsPresenter {
                                                  resetBlock: willReset),
              itemsFactory.setupGeneralSection(languageBlock: willShowSystemAppSettings,
                                               accentColorBlock: willGoToAccentColor,
-                                              voiceBlock: willGoToVoice,
-                                              notificationsBlock: didNotificationsEnabled,
-                                              settingsBlock: willShowSystemAppSettings),
+                                              voiceBlock: willGoToVoice),
+             itemsFactory.setupNotificationsSection(notificationsBlock: didNotificationsEnabled,
+                                                    settingsBlock: willShowSystemAppSettings),
              itemsFactory.setupLinksSection(rateBlock: willRate,
                                             privacyBlock: willGoToPrivacyPolicy,
                                             termsBlock: willGoToTermsOfUse,
@@ -77,6 +77,8 @@ private extension SettingsPresenter {
         value ?
             notificationService.authorize() :
             notificationService.deauthorize()
+        setupItems()
+        viewController?.reloadData()
     }
     
     func didPlaybackSpeedChange(_ value: Int) {
@@ -172,9 +174,14 @@ extension SettingsPresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        guard let actionableItem = dataSource.item(at: indexPath) as? Actionable,
-              let item = actionableItem as? ItemProtocol else { return }
-        
-        actionableItem.actionBlock?(item)
+        let item = dataSource.item(at: indexPath)
+        if item is TimePickerItem,
+           let cell = tableView.cellForRow(at: indexPath),
+           !cell.isFirstResponder {
+            cell.becomeFirstResponder()
+        } else if let actionableItem = dataSource.item(at: indexPath) as? Actionable,
+                  let item = actionableItem as? ItemProtocol {
+            actionableItem.actionBlock?(item)
+        }
     }
 }

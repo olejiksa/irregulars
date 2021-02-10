@@ -34,20 +34,10 @@ final class SettingsItemsFactory {
     
     func setupGeneralSection(languageBlock: @escaping ItemBlock,
                              accentColorBlock: @escaping ItemBlock,
-                             voiceBlock: @escaping ItemBlock,
-                             notificationsBlock: @escaping BoolBlock,
-                             settingsBlock: @escaping ItemBlock) -> Section {
+                             voiceBlock: @escaping ItemBlock) -> Section {
         let accentColor = AccentColor.current.rawValue.localized
         let voiceID = UserDefaults.shared.string(for: .voice) ?? ""
         let voiceName = VoiceService().voiceName(identifier: voiceID)
-        
-        let notificationsItem: ItemProtocol = Locator.areNotificationsAvailable ?
-            SwitchItem(text: "notifications".localized,
-                       isOn: UserDefaults.shared.bool(for: .notifications),
-                       actionBlock: notificationsBlock) :
-            RightDetailItem(title: "notifications".localized,
-                            subtitle: "not_allowed".localized,
-                            actionBlock: settingsBlock)
         
         let items: [ItemProtocol] = [RightDetailItem(title: "language".localized,
                                                      subtitle: languageService.current.description,
@@ -61,7 +51,27 @@ final class SettingsItemsFactory {
                                                      actionBlock: voiceBlock,
                                                      accessibilityIdentifier: .voiceCell)].compactMap { $0 }
         
-        return .init(header: "general".localized, items: items + [notificationsItem])
+        return .init(header: "general".localized, items: items)
+    }
+    
+    func setupNotificationsSection(notificationsBlock: @escaping BoolBlock,
+                                   settingsBlock: @escaping ItemBlock) -> Section {
+        var notificationItems: [ItemProtocol] = []
+        Locator.areNotificationsAvailable ?
+            notificationItems.append(SwitchItem(text: "notifications".localized,
+                                                isOn: UserDefaults.shared.bool(for: .notifications),
+                                                actionBlock: notificationsBlock)) :
+            notificationItems.append(RightDetailItem(title: "notifications".localized,
+                                                     subtitle: "not_allowed".localized,
+                                                     actionBlock: settingsBlock))
+        
+        if (notificationItems.first as? SwitchItem)?.isOn == true {
+            notificationItems.append(TimePickerItem(title: "time".localized,
+                                                    actionBlock: nil,
+                                                    isEnabled: true))
+        }
+        
+        return .init(header: "word_of_the_day".localized, items: notificationItems)
     }
     
     func setupLinksSection(rateBlock: @escaping ItemBlock,

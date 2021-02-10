@@ -21,14 +21,14 @@ final class StoreScreenshotsTests: XCTestCase {
         app = nil
     }
 
-    func testAllVerbs() {
+    func testHAllVerbs() {
         app.launchEnvironment = ["accent-color": "blue"]
         app.launch()
 
         attachScreenshot(name: "all-verbs")
     }
     
-    func testVerbDetail() {
+    func testGVerbDetail() {
         app.launchEnvironment = ["accent-color": "green"]
         app.launchArguments = ["dark"]
         app.launch()
@@ -36,12 +36,12 @@ final class StoreScreenshotsTests: XCTestCase {
         app.tables.element(boundBy: 0).cells.element(boundBy: 1).tap()
         
         let backBarButton = app.navigationBars.buttons.element(boundBy: 0)
-        XCTAssert(backBarButton.exists)
+        XCTAssertTrue(backBarButton.waitForExistence(timeout: 3))
 
         attachScreenshot(name: "verb-detail")
     }
     
-    func testFavorites() {
+    func testFFavorites() {
         app.launchEnvironment = ["accent-color": "indigo"]
         app.launch()
         
@@ -49,18 +49,18 @@ final class StoreScreenshotsTests: XCTestCase {
         
         let editButtonID = AccessibilityIdentifier.editButton.rawValue
         let editButton = app.navigationBars.children(matching: .button)[editButtonID]
-        XCTAssertTrue(editButton.waitForExistence(timeout: 5))
+        XCTAssertTrue(editButton.waitForExistence(timeout: 3))
         
         editButton.tap()
         
         let doneButtonID = AccessibilityIdentifier.doneButton.rawValue
         let doneButton = app.navigationBars.children(matching: .button)[doneButtonID]
-        XCTAssertTrue(doneButton.waitForExistence(timeout: 5))
+        XCTAssertTrue(doneButton.waitForExistence(timeout: 3))
 
         attachScreenshot(name: "favorites")
     }
     
-    func testForms() {
+    func testEForms() {
         app.launchEnvironment = ["accent-color": "orange"]
         app.launchArguments = ["dark"]
         app.launch()
@@ -71,12 +71,12 @@ final class StoreScreenshotsTests: XCTestCase {
         app.cells[cellID].tap()
         
         let backBarButton = app.navigationBars.buttons.element(boundBy: 0)
-        XCTAssertTrue(backBarButton.waitForExistence(timeout: 5))
+        XCTAssertTrue(backBarButton.waitForExistence(timeout: 3))
 
         attachScreenshot(name: "forms")
     }
     
-    func testSentences() {
+    func testDSentences() {
         app.launchEnvironment = ["accent-color": "pink"]
         app.launch()
         
@@ -86,12 +86,12 @@ final class StoreScreenshotsTests: XCTestCase {
         app.cells[cellID].tap()
         
         let backBarButton = app.navigationBars.buttons.element(boundBy: 0)
-        XCTAssertTrue(backBarButton.waitForExistence(timeout: 5))
+        XCTAssertTrue(backBarButton.waitForExistence(timeout: 3))
 
         attachScreenshot(name: "sentences")
     }
     
-    func testListening() {
+    func testCListening() {
         app.launchEnvironment = ["accent-color": "purple"]
         app.launch()
         
@@ -101,12 +101,12 @@ final class StoreScreenshotsTests: XCTestCase {
         app.cells[cellID].tap()
         
         let backBarButton = app.navigationBars.buttons.element(boundBy: 0)
-        XCTAssertTrue(backBarButton.waitForExistence(timeout: 5))
+        XCTAssertTrue(backBarButton.waitForExistence(timeout: 3))
 
         attachScreenshot(name: "listening")
     }
     
-    func testAccentColor() {
+    func testBAccentColor() {
         app.launchEnvironment = ["accent-color": "teal"]
         app.launchArguments = ["dark"]
         app.launch()
@@ -117,15 +117,16 @@ final class StoreScreenshotsTests: XCTestCase {
         app.cells[cellID].tap()
         
         let backBarButton = app.navigationBars.buttons.element(boundBy: 0)
-        XCTAssertTrue(backBarButton.waitForExistence(timeout: 5))
+        XCTAssertTrue(backBarButton.waitForExistence(timeout: 3))
         
-        let accentColorCell = app.tables.cells.element(boundBy: 7)
+        let tableID = AccessibilityIdentifier.accentColorTable.rawValue
+        let accentColorCell = app.tables[tableID].cells.element(boundBy: 7)
         accentColorCell.tap()
         
         attachScreenshot(name: "accent-color")
     }
     
-    func testVoice() {
+    func testATestVoice() {
         app.launchEnvironment = ["accent-color": "yellow"]
         app.launchArguments = ["dark"]
         app.launch()
@@ -136,7 +137,7 @@ final class StoreScreenshotsTests: XCTestCase {
         app.cells[cellID].tap()
         
         let backBarButton = app.navigationBars.buttons.element(boundBy: 0)
-        XCTAssertTrue(backBarButton.waitForExistence(timeout: 5))
+        XCTAssertTrue(backBarButton.waitForExistence(timeout: 3))
 
         attachScreenshot(name: "voice")
     }

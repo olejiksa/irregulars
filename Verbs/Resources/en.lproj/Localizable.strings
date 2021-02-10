@@ -115,6 +115,9 @@
 "buy_for" = "Buy for";
 "one_time_payment" = "One-time payment, lifetime access";
 "ok" = "OK";
+"mail_log_attachment" = "Please, do not remove the text below:";
+"time" = "Time";
+"word_of_the_day" = "Word of the day";
 
 "abide" = "abide";
 "alight" = "alight";

@@ -69,6 +69,8 @@ private extension AccentColorViewController {
         tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         
+        tableView.accessibilityIdentifier = AccessibilityIdentifier.accentColorTable.rawValue
+        
         tableView.register(ActionCell.self, AccentColorCell.self)
         
         self.tableView = tableView

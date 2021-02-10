@@ -1,5 +1,5 @@
 //
-//  PickableCell.swift
+//  PickerCell.swift
 //  Verbs
 //
 //  Created by Oleg Samoylov on 24.11.2020.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-final class PickableCell: UITableViewCell {
+final class PickerCell: UITableViewCell {
     
     private let picker = UIPickerView()
-    private weak var item: PickableItem?
+    private weak var item: PickerItem?
     private var selectedValue: String?
     
     override func awakeFromNib() {
@@ -45,7 +45,7 @@ final class PickableCell: UITableViewCell {
 
 // MARK: - Private
 
-private extension PickableCell {
+private extension PickerCell {
     
     @objc func didDoneTap() {
         guard let subtitle = selectedValue else { return }
@@ -65,12 +65,12 @@ private extension PickableCell {
 
 // MARK: - CellProtocol
 
-extension PickableCell: CellProtocol {
+extension PickerCell: CellProtocol {
     
-    static var identifier: String { "\(PickableCell.self)" }
+    static var identifier: String { "\(PickerCell.self)" }
     
     func setup(with item: ItemProtocol) {
-        guard let item = item as? PickableItem else { return }
+        guard let item = item as? PickerItem else { return }
         self.item = item
         self.selectedValue = item.subtitle
         
@@ -89,7 +89,7 @@ extension PickableCell: CellProtocol {
 
 // MARK: - UIPickerViewDataSource
 
-extension PickableCell: UIPickerViewDataSource {
+extension PickerCell: UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
@@ -106,7 +106,7 @@ extension PickableCell: UIPickerViewDataSource {
 
 // MARK: - UIPickerViewDelegate
 
-extension PickableCell: UIPickerViewDelegate {
+extension PickerCell: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView,
                     didSelectRow row: Int,

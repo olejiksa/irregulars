@@ -394,3 +394,7 @@
 "oversleep" = "睡过头了";
 "overtake" = "追上";
 "overthrow" = "推翻";
+
+"mail_log_attachment" = "Please, do not remove the text below:";
+"time" = "Time";
+"word_of_the_day" = "Word of the day";
