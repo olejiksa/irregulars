@@ -66,7 +66,10 @@ final class SettingsItemsFactory {
                                                      actionBlock: settingsBlock))
         
         if (notificationItems.first as? SwitchItem)?.isOn == true {
-            notificationItems.append(TimePickerItem(title: "time".localized,
+            notificationItems.append(TimePickerItem(title: "Since",
+                                                    actionBlock: nil,
+                                                    isEnabled: true))
+            notificationItems.append(TimePickerItem(title: "To",
                                                     actionBlock: nil,
                                                     isEnabled: true))
         }
