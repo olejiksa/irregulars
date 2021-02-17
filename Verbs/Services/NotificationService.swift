@@ -19,8 +19,8 @@ final class NotificationService {
     }
     
     func checkAvailability(availabilityBlock: @escaping BoolBlock) {
-        center.getNotificationSettings { [weak self] settings in
-            switch settings.authorizationStatus {
+        center.getNotificationSettings { [weak self] in
+            switch $0.authorizationStatus {
             case .authorized, .notDetermined:
                 availabilityBlock(true)
                 
@@ -35,8 +35,8 @@ final class NotificationService {
     
     func authorize() {
         DispatchQueue.main.async {
-            self.center.requestAuthorization(options: [.alert, .sound]) { granted, error in
-                guard granted, error == nil else { return }
+            self.center.requestAuthorization(options: [.alert, .sound]) { [weak self] in
+                guard let self = self, $0, $1 == nil else { return }
                 UserDefaults.shared.set(true, for: .notifications)
                 self.schedule()
             }
@@ -50,7 +50,7 @@ final class NotificationService {
     }
     
     func schedule() {
-        center.removeAllPendingNotificationRequests()
+        clean()
         
         let currentDate = Date()
         
@@ -91,8 +91,8 @@ final class NotificationService {
                                                 content: content,
                                                 trigger: trigger)
             
-            center.add(request) { error in
-                guard let error = error else { return }
+            center.add(request) {
+                guard let error = $0 else { return }
                 print(error)
             }
         }

@@ -1138,5 +1138,10 @@
 "julian_eduardo_couoh_pablo" = "줄리안 에두아르도 쿠오 파블로";
 
 "mail_log_attachment" = "Please, do not remove the text below:";
+"since" = "Since";
+"to" = "To";
 "time" = "Time";
-"word_of_the_day" = "Word of the day";
+"enabled" = "On";
+"disabled" = "Off";
+"frequency" = "Frequency";
+"count" = "Count";

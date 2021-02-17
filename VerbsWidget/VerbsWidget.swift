@@ -43,7 +43,7 @@ struct Provider: IntentTimelineProvider {
         case .unknown, .all:
             for _ in 1...8 {
                 guard let verb = service.randomItem else { continue }
-                let date = Calendar.current.date(byAdding: .minute, value: 15, to: Date()) ?? Date()
+                let date = Calendar.autoupdatingCurrent.date(byAdding: .minute, value: 15, to: Date()) ?? Date()
                 let entry = VerbEntry(date: date, state: .data(verb))
                 entries.append(entry)
             }
@@ -58,7 +58,7 @@ struct Provider: IntentTimelineProvider {
             
             for _ in 1...8 {
                 guard let verb = Locator.favorites.verbs.randomElement() else { continue }
-                let date = Calendar.current.date(byAdding: .minute, value: 15, to: Date()) ?? Date()
+                let date = Calendar.autoupdatingCurrent.date(byAdding: .minute, value: 15, to: Date()) ?? Date()
                 let entry = VerbEntry(date: date, state: .data(verb))
                 entries.append(entry)
             }

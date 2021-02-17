@@ -76,6 +76,9 @@ extension Localizable {
         NSLocalizedString("version", comment: "The current version of the app"))
     static let betaTesting = Localizable(
         NSLocalizedString("beta_testing", comment: "The title of the section for beta testing participants"))
+    
+    static let notifications = Localizable(
+        NSLocalizedString("notifications", comment: "Refers to the Notifications page"))
 }
 
 // MARK: - Accent Color

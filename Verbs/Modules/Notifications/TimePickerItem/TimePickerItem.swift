@@ -9,14 +9,17 @@
 final class TimePickerItem {
     
     let title: String
-    let actionBlock: ItemBlock?
+    let action: IntBlock
+    let value: Int
     let isEnabled: Bool
     
     init(title: String,
-         actionBlock: ItemBlock? = nil,
+         action: @escaping IntBlock,
+         value: Int,
          isEnabled: Bool = true) {
         self.title = title
-        self.actionBlock = actionBlock
+        self.action = action
+        self.value = value
         self.isEnabled = isEnabled
     }
 }
@@ -27,8 +30,3 @@ extension TimePickerItem: ItemProtocol {
     
     var identifier: String { TimePickerCell.identifier }
 }
-
-// MARK: - Actionable
-
-extension TimePickerItem: Actionable {}
-

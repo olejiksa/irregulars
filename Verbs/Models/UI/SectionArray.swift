@@ -16,8 +16,8 @@ struct SectionArray {
         sections.filter { !$0.items.isEmpty }.count
     }
     
-    func item(_ indexPath: IndexPath) -> ItemProtocol {
-        sections.filter { !$0.items.isEmpty }[indexPath.section].items[indexPath.row]
+    func item(_ indexPath: IndexPath) -> ItemProtocol? {
+        sections.filter { !$0.items.isEmpty }[safe: indexPath.section]?.items[safe: indexPath.row]
     }
     
     func header(_ index: Int) -> String? {

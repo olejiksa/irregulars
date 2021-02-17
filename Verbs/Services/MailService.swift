@@ -6,7 +6,6 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
-import DeviceKit
 import MessageUI
 
 final class MailService: NSObject {
@@ -20,11 +19,6 @@ final class MailService: NSObject {
         mailComposeViewController.mailComposeDelegate = self
         mailComposeViewController.setToRecipients(["quillaur@outlook.com"])
         mailComposeViewController.setSubject("\(productName) \(version)")
-        
-        var body = "\n\n\("mail_log_attachment".localized)\n-----\n"
-        body += "\(Device.current)\n"
-        body += "\(UIDevice.current.systemName) \(UIDevice.current.systemVersion)"
-        mailComposeViewController.setMessageBody(body, isHTML: false)
         
         viewController?.present(mailComposeViewController, animated: true)
     }

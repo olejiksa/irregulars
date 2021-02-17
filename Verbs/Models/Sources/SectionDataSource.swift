@@ -17,7 +17,7 @@ class SectionDataSource: NSObject {
         sectionArray.setup(array)
     }
     
-    func item(at indexPath: IndexPath) -> ItemProtocol {
+    func item(at indexPath: IndexPath) -> ItemProtocol? {
         sectionArray.item(indexPath)
     }
     
@@ -39,7 +39,7 @@ extension SectionDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = sectionArray.item(indexPath)
+        guard let item = sectionArray.item(indexPath) else { return .init(frame: .zero) }
         return tableView.dequeueReusableCell(for: item, at: indexPath)
     }
     

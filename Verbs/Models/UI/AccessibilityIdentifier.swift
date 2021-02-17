@@ -24,4 +24,5 @@ enum AccessibilityIdentifier: String {
     case listeningCell
     
     case accentColorTable
+    case notificationsTable
 }

@@ -48,6 +48,11 @@ final class SettingsRouter {
         viewController?.navigationController?.push(vc)
     }
     
+    func goToNotifications() {
+        let vc = NotificationsAssembly().viewController()
+        viewController?.navigationController?.push(vc)
+    }
+    
     func goToAcknowledgements() {
         let vc = AcknowledgementsAssembly().viewController()
         viewController?.navigationController?.view?.backgroundColor = .systemBackground

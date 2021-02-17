@@ -43,6 +43,10 @@ extension AccentColorViewController: Restorable {
     }
 }
 
+// MARK: - SettingsChildViewControllerProtocol
+
+extension AccentColorViewController: SettingsChildViewControllerProtocol {}
+
 // MARK: - Private
 
 private extension AccentColorViewController {

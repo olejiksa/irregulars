@@ -1,19 +1,19 @@
 //
-//  AcknowledgementsViewController.swift
+//  NotificationsViewController.swift
 //  Verbs
 //
-//  Created by Oleg Samoylov on 02.01.2021.
+//  Created by Oleg Samoylov on 12.02.2021.
 //  Copyright © 2021 Oleg Samoylov. All rights reserved.
 //
 
 import UIKit
 
-final class AcknowledgementsViewController: UIViewController {
+final class NotificationsViewController: UIViewController {
     
-    private let presenter: AcknowledgementsPresenter
+    private let presenter: NotificationsPresenter
     private var tableView: UITableView?
     
-    init(presenter: AcknowledgementsPresenter) {
+    init(presenter: NotificationsPresenter) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
         hidesBottomBarWhenPushed = true
@@ -30,11 +30,17 @@ final class AcknowledgementsViewController: UIViewController {
         setupTableView()
         setupView()
     }
+    
+    func reloadData() {
+        DispatchQueue.main.async {
+            self.tableView?.reloadData()
+        }
+    }
 }
 
 // MARK: - Restorable
 
-extension AcknowledgementsViewController: Restorable {
+extension NotificationsViewController: Restorable {
     
     func restore() {
         tableView?.removeFromSuperview()
@@ -45,14 +51,14 @@ extension AcknowledgementsViewController: Restorable {
 
 // MARK: - SettingsChildViewControllerProtocol
 
-extension AcknowledgementsViewController: SettingsChildViewControllerProtocol {}
+extension NotificationsViewController: SettingsChildViewControllerProtocol {}
 
 // MARK: - Private
 
-private extension AcknowledgementsViewController {
+private extension NotificationsViewController {
     
     func setupNavigationBar() {
-        navigationItem.title = .localized(.acknowledgements)
+        navigationItem.title = .localized(.notifications)
         navigationItem.largeTitleDisplayMode = .never
     }
     
@@ -70,9 +76,17 @@ private extension AcknowledgementsViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
-        tableView.allowsSelection = false
         tableView.dataSource = presenter.dataSource
-        tableView.register(PlainCell.self, RightDetailCell.self)
+        tableView.delegate = presenter
+        
+        tableView.accessibilityIdentifier = AccessibilityIdentifier.notificationsTable.rawValue
+        
+        tableView.register(TimePickerCell.self,
+                           SwitchCell.self,
+                           RightDetailCell.self,
+                           StepperCell.self,
+                           PlainDetailCell.self,
+                           IconDetailCell.self)
         
         self.tableView = tableView
     }

@@ -39,6 +39,8 @@ enum SystemIcon: String {
     case pencil = "pencil.and.outline"
     case twentyFive = "25.circle"
     case printer
+    case sunrise
+    case sunset = "moon.zzz"
     
     var image: UIImage? { UIImage(systemName: rawValue) }
 }

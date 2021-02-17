@@ -38,6 +38,16 @@
                ReferencedContainer = "container:Verbs.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "EB1EC46125DD8B3300F6299B"
+               BuildableName = "VerbsTests.xctest"
+               BlueprintName = "VerbsTests"
+               ReferencedContainer = "container:Verbs.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

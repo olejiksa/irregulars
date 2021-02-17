@@ -24,9 +24,7 @@ extension UINavigationController {
         if secondaryVc?.topViewController is SettingsViewController ||
             secondaryVc?.topViewController is TestViewController ||
             secondaryVc?.topViewController is StatisticsViewController ||
-            secondaryVc?.topViewController is AccentColorViewController ||
-            secondaryVc?.topViewController is VoiceViewController ||
-            secondaryVc?.topViewController is AcknowledgementsViewController {
+            secondaryVc?.topViewController is SettingsChildViewControllerProtocol {
             secondaryVc?.popToRootViewController(animated: false)
         }
         

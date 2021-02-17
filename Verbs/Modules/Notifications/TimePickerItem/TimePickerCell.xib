@@ -24,6 +24,9 @@
                     </label>
                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="yNd-nz-DS9">
                         <rect key="frame" x="162.33333333333337" y="0.0" width="196.66666666666663" height="141"/>
+                        <connections>
+                            <action selector="didValueChange:" destination="KGk-i7-Jjw" eventType="valueChanged" id="3Xv-yY-mTH"/>
+                        </connections>
                     </datePicker>
                 </subviews>
                 <constraints>

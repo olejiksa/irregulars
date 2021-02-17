@@ -34,6 +34,9 @@ extension UserDefaults {
         case gender
         case voice
         case notifications
+        case frequency
+        case since
+        case to
     }
     
     func bool(for key: Key) -> Bool { bool(forKey: key.rawValue) }

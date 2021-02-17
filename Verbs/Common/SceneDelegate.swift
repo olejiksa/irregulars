@@ -43,18 +43,18 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.tintColor = AccentColor.current.color
         window?.makeKeyAndVisible()
         
-        #if DEBUG
-        if CommandLine.arguments.contains("dark") {
-            window?.overrideUserInterfaceStyle = .dark
-        }
-        
-        guard let accentColorString = ProcessInfo.processInfo.environment["accent-color"],
-              let accentColor = AccentColor(rawValue: accentColorString)
-        else { return }
-        
-        AccentColor.current = accentColor
-        window?.tintColor = accentColor.color
-        #endif
+//        #if DEBUG
+//        if CommandLine.arguments.contains("dark") {
+//            window?.overrideUserInterfaceStyle = .dark
+//        }
+//        
+//        guard let accentColorString = ProcessInfo.processInfo.environment["accent-color"],
+//              let accentColor = AccentColor(rawValue: accentColorString)
+//        else { return }
+//        
+//        AccentColor.current = accentColor
+//        window?.tintColor = accentColor.color
+//        #endif
         
         self.scene(scene, openURLContexts: connectionOptions.urlContexts)
         for userActivity in connectionOptions.userActivities {
@@ -88,15 +88,19 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if let shortcutItem = shortcutItemToProcess {
             guard let windowScene = scene as? UIWindowScene else { return }
-            self.windowScene(windowScene, performActionFor: shortcutItem) { _ in }
-            shortcutItemToProcess = nil
+            self.windowScene(windowScene, performActionFor: shortcutItem) { [weak self] _ in
+                self?.shortcutItemToProcess = nil
+            }
         }
     }
     
     func windowScene(_ windowScene: UIWindowScene,
                      performActionFor shortcutItem: UIApplicationShortcutItem,
                      completionHandler: @escaping (Bool) -> Void) {
-        guard let shortcut = AppShortcut(rawValue: shortcutItem.type) else { return }
+        guard let shortcut = AppShortcut(rawValue: shortcutItem.type) else {
+            completionHandler(false)
+            return
+        }
         
         switch shortcut {
         case .search:
@@ -108,6 +112,8 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         case .statistics:
             deeplinkService.statistics(in: splitViewController)
         }
+        
+        completionHandler(true)
     }
 }
 
@@ -121,5 +127,8 @@ private extension SceneDelegate {
         UserDefaults.shared.register(true, for: .derivatives)
         UserDefaults.shared.register(true, for: .derivativesTests)
         UserDefaults.shared.register(2, for: .playbackSpeed)
+        UserDefaults.shared.register(1, for: .frequency)
+        UserDefaults.shared.register(540, for: .since)
+        UserDefaults.shared.register(1260, for: .to)
     }
 }

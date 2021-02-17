@@ -47,6 +47,10 @@ extension VoiceViewController: Restorable {
     }
 }
 
+// MARK: - SettingsChildViewControllerProtocol
+
+extension VoiceViewController: SettingsChildViewControllerProtocol {}
+
 // MARK: - Private
 
 private extension VoiceViewController {

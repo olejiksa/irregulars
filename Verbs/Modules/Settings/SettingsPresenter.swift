@@ -58,9 +58,8 @@ private extension SettingsPresenter {
                                                  resetBlock: willReset),
              itemsFactory.setupGeneralSection(languageBlock: willShowSystemAppSettings,
                                               accentColorBlock: willGoToAccentColor,
-                                              voiceBlock: willGoToVoice),
-             itemsFactory.setupNotificationsSection(notificationsBlock: didNotificationsEnabled,
-                                                    settingsBlock: willShowSystemAppSettings),
+                                              voiceBlock: willGoToVoice,
+                                              notificationsBlock: willGoToNotifications),
              itemsFactory.setupLinksSection(rateBlock: willRate,
                                             privacyBlock: willGoToPrivacyPolicy,
                                             termsBlock: willGoToTermsOfUse,
@@ -71,14 +70,6 @@ private extension SettingsPresenter {
                                             allAppsBlock: willOverviewAllApps,
                                             upgradeBlock: willUpgrade)]
         )
-    }
-    
-    func didNotificationsEnabled(_ value: Bool) {
-        value ?
-            notificationService.authorize() :
-            notificationService.deauthorize()
-        setupItems()
-        viewController?.reloadData()
     }
     
     func didPlaybackSpeedChange(_ value: Int) {
@@ -131,6 +122,10 @@ private extension SettingsPresenter {
     
     func willGoToVoice(_ sender: ItemProtocol) {
         router?.goToVoice()
+    }
+    
+    func willGoToNotifications(_ sender: ItemProtocol) {
+        router?.goToNotifications()
     }
     
     func willShare(_ sender: ItemProtocol) {
