@@ -12,6 +12,8 @@ final class AcknowledgementsViewController: UIViewController {
     
     private let presenter: AcknowledgementsPresenter
     private var tableView: UITableView?
+    private var keyboardService: KeyboardService?
+    private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     
     init(presenter: AcknowledgementsPresenter) {
         self.presenter = presenter
@@ -29,6 +31,7 @@ final class AcknowledgementsViewController: UIViewController {
         setupNavigationBar()
         setupTableView()
         setupView()
+        setupKeyboardService()
     }
 }
 
@@ -63,21 +66,28 @@ private extension AcknowledgementsViewController {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
+        let keyboardHeightLayoutConstraint = tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            keyboardHeightLayoutConstraint
         ])
         
         tableView.allowsSelection = false
         tableView.dataSource = presenter.dataSource
         tableView.register(PlainCell.self, RightDetailCell.self)
         
+        self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.tableView = tableView
     }
     
     func setupView() {
         view.backgroundColor = .systemBackground
+    }
+    
+    func setupKeyboardService() {
+        keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
     }
 }

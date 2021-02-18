@@ -16,6 +16,8 @@ final class DetailViewController: UIViewController {
     private var favoriteButton: UIBarButtonItem?
     private var favorites = Locator.favorites
     private var tableView: UITableView?
+    private var keyboardService: KeyboardService?
+    private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     
     init(presenter: DetailPresenter,
          verb: Verb,
@@ -39,6 +41,7 @@ final class DetailViewController: UIViewController {
         setupNavigationBar()
         setupTableView()
         setupDelegate()
+        setupKeyboardService()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,11 +90,13 @@ private extension DetailViewController {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
+        let keyboardHeightLayoutConstraint = tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            keyboardHeightLayoutConstraint
         ])
         
         tableView.dataSource = presenter.dataSource
@@ -102,11 +107,16 @@ private extension DetailViewController {
         
         tableView.register(DetailCell.self, TranslationCell.self, ExampleCell.self)
         
+        self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.tableView = tableView
     }
     
     func setupDelegate() {
         navigationController?.delegate = self
+    }
+    
+    func setupKeyboardService() {
+        keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
     }
     
     @objc func didFavoriteTap() {

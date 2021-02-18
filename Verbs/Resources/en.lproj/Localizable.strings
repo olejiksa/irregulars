@@ -115,7 +115,6 @@
 "buy_for" = "Buy for";
 "one_time_payment" = "One-time payment, lifetime access";
 "ok" = "OK";
-"mail_log_attachment" = "Please, do not remove the text below:";
 "since" = "Since";
 "to" = "To";
 "time" = "Time";
@@ -129,6 +128,11 @@
 "julian_eduardo_couoh_pablo" = "Julián Eduardo Couoh Pablo";
 "frequency" = "Frequency";
 "count" = "Count";
+"setup_notifications" = "Set up a convenient time and frequency of reminders of words for you throughout the day";
+"sunrise_question" = "When does your morning start?";
+"sunset_question" = "What time do you go to bed?";
+"not_found" = "Nothing found";
+"search_hint" = "Start typing any irregular verb or its translation to see the search results";
 
 "abide" = "abide";
 "alight" = "alight";

@@ -51,7 +51,7 @@ private extension NotificationsPresenter {
             let since = UserDefaults.shared.integer(for: .since)
             timeItems.append(IconDetailItem(icon: .sunrise,
                                             iconAccessibilityText: "sunrise".localized,
-                                            text: "Когда у Вас начинается утро?".localized))
+                                            text: "sunrise_question".localized))
             timeItems.append(TimePickerItem(title: "since".localized,
                                             action: didSinceTimeChange,
                                             scrollingBlock: didScroll,
@@ -60,7 +60,7 @@ private extension NotificationsPresenter {
             let to = UserDefaults.shared.integer(for: .to)
             timeItems.append(IconDetailItem(icon: .sunset,
                                             iconAccessibilityText: "sunset".localized,
-                                            text: "В каком часу Вы ложитесь спать?".localized))
+                                            text: "sunset_question".localized))
             timeItems.append(TimePickerItem(title: "to".localized,
                                             action: didToTimeChange,
                                             scrollingBlock: didScroll,
@@ -74,7 +74,7 @@ private extension NotificationsPresenter {
                                                action: didFrequencyChange))
         }
         
-        let contentItem = PlainDetailItem(text: "Настройте удобные для Вас время и частоту напоминаний слов в течение дня".localized,
+        let contentItem = PlainDetailItem(text: "setup_notifications".localized,
                                           textStyle: .secondary)
         
         dataSource.setup([Section(items: [contentItem, notificationItem]),

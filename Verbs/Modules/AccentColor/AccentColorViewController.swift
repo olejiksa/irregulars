@@ -12,6 +12,8 @@ final class AccentColorViewController: UIViewController {
     
     private let presenter: AccentColorPresenter
     private var tableView: UITableView?
+    private var keyboardService: KeyboardService?
+    private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     
     init(presenter: AccentColorPresenter) {
         self.presenter = presenter
@@ -29,6 +31,7 @@ final class AccentColorViewController: UIViewController {
         setupNavigationBar()
         setupTableView()
         setupView()
+        setupKeyboardService()
     }
 }
 
@@ -63,11 +66,13 @@ private extension AccentColorViewController {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
+        let keyboardHeightLayoutConstraint = tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            keyboardHeightLayoutConstraint
         ])
         
         tableView.dataSource = presenter.dataSource
@@ -77,10 +82,15 @@ private extension AccentColorViewController {
         
         tableView.register(ActionCell.self, AccentColorCell.self)
         
+        self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.tableView = tableView
     }
     
     func setupView() {
         view.backgroundColor = .systemBackground
+    }
+    
+    func setupKeyboardService() {
+        keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
     }
 }

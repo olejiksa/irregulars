@@ -14,6 +14,7 @@ final class FavoritesViewController: UIViewController {
     private let searchController = UISearchController(searchResultsController: nil)
     private var keyboardService: KeyboardService?
     private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
+    
     private var tableView: UITableView?
     private var state: ListState = .data
     private var topInset: CGFloat = 0

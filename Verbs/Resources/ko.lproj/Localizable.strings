@@ -1136,8 +1136,6 @@
 "not_allowed" = "허용되지 않음";
 "what_is" = "정답은 무엇입니까?";
 "julian_eduardo_couoh_pablo" = "줄리안 에두아르도 쿠오 파블로";
-
-"mail_log_attachment" = "Please, do not remove the text below:";
 "since" = "Since";
 "to" = "To";
 "time" = "Time";
@@ -1145,3 +1143,8 @@
 "disabled" = "Off";
 "frequency" = "Frequency";
 "count" = "Count";
+"setup_notifications" = "Set up a convenient time and frequency of reminders of words for you throughout the day";
+"sunrise_question" = "When does your morning start?";
+"sunset_question" = "What time do you go to bed?";
+"not_found" = "Nothing found";
+"search_hint" = "Start typing any irregular verb or its translation to see the search results";
