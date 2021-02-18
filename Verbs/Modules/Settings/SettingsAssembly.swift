@@ -19,7 +19,8 @@ final class SettingsAssembly: AssemblyProtocol {
     func viewController() -> some SettingsViewController {
         let languageService = LanguageService()
         let mailService = MailService()
-        let notificationService = NotificationService(verbsService: .init())
+        let notificationService = NotificationService(verbsService: .init(),
+                                                      calendarService: .init())
         let itemsFactory = SettingsItemsFactory(languageService: languageService,
                                                 mailService: mailService)
         let presenter = SettingsPresenter(languageService: languageService,

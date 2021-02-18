@@ -92,7 +92,18 @@ private extension FavoritesPresenter {
     }
     
     func setState() {
-        let state: ListState = isSearchActive || items.count > 0 ? .data : .empty
+        let state: ListState
+        switch (isSearchActive, favoritesService.searchText.isEmpty, items.isEmpty) {
+        case (true, false, true):
+            state = .searchNotFound("Ничего не найдено".localized)
+        case (true, true, true):
+            state = .searchStarted("Начните набирать неправильный глагол в любой из форм или его перевод, чтобы увидеть результаты поиска".localized)
+        case (_, _, false):
+            state = .data
+        case (false, _, true):
+            state = .empty("empty_favorites".localized)
+        }
+        
         viewController?.setState(state)
     }
     

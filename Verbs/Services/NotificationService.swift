@@ -12,10 +12,13 @@ import UserNotifications
 final class NotificationService {
     
     private let verbsService: VerbsService
-    let center = UNUserNotificationCenter.current()
+    private let calendarService: CalendarService
+    private let center = UNUserNotificationCenter.current()
     
-    init(verbsService: VerbsService) {
+    init(verbsService: VerbsService,
+         calendarService: CalendarService) {
         self.verbsService = verbsService
+        self.calendarService = calendarService
     }
     
     func checkAvailability(availabilityBlock: @escaping BoolBlock) {
@@ -53,47 +56,66 @@ final class NotificationService {
         clean()
         
         let currentDate = Date()
+        let resolvedNotificationsCount = 64
         
-        for i in 0...64 {
-            guard let verb = verbsService.randomItem,
-                  let missed = (0...2).randomElement(),
-                  let date = currentDate.adding(days: i) else { continue }
+        let frequency = UserDefaults.shared.integer(for: .frequency)
+        
+        let since = UserDefaults.shared.integer(for: .since)
+        guard let sinceDate = calendarService.date(from: since) else { return }
+        
+        let to = UserDefaults.shared.integer(for: .to)
+        guard let toDate = calendarService.date(from: to) else { return }
+        
+        var i = 0
+        
+        while i < resolvedNotificationsCount {
+            guard let date = currentDate.adding(days: i) else { continue }
             
-            let infinitive = verb.infinitive.value
-            let simplePast = verb.simplePast?.first?.value ?? "..."
-            let pastParticiple = verb.pastParticiple?.first?.value ?? "..."
+            let dates = calendarService.schedule(count: frequency, startDate: sinceDate, endDate: toDate)
             
-            let body: String
-            switch missed {
-            case 0:
-                body = "... | \(simplePast) | \(pastParticiple)"
-            case 1:
-                body = "\(infinitive) | ... | \(pastParticiple)"
-            case 2:
-                body = "\(infinitive) | \(simplePast) | ..."
-            default:
-                body = "Not Supported"
-            }
-            
-            let content = UNMutableNotificationContent()
-            content.title = NSString.localizedUserNotificationString(forKey: "what_is", arguments: nil)
-            content.body = body
-            content.sound = UNNotificationSound.default
-            
-            let components: Set<Calendar.Component> = [.day, .month, .year, .hour, .minute, .second]
-            var dateInfo = Calendar.autoupdatingCurrent.dateComponents(components, from: date)
-            dateInfo.hour = 9
-            dateInfo.minute = 0
-            dateInfo.second = 0
-            
-            let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: false)
-            let request = UNNotificationRequest(identifier: verb.infinitive.value,
-                                                content: content,
-                                                trigger: trigger)
-            
-            center.add(request) {
-                guard let error = $0 else { return }
-                print(error)
+            for frequencyDate in dates {
+                guard let verb = verbsService.randomItem,
+                      let missed = (0...2).randomElement() else { continue }
+                
+                let infinitive = verb.infinitive.value
+                let simplePast = verb.simplePast?.first?.value ?? "..."
+                let pastParticiple = verb.pastParticiple?.first?.value ?? "..."
+                
+                let body: String
+                switch missed {
+                case 0:
+                    body = "... | \(simplePast) | \(pastParticiple)"
+                case 1:
+                    body = "\(infinitive) | ... | \(pastParticiple)"
+                case 2:
+                    body = "\(infinitive) | \(simplePast) | ..."
+                default:
+                    body = "Not Supported"
+                }
+                
+                let content = UNMutableNotificationContent()
+                content.title = NSString.localizedUserNotificationString(forKey: "what_is", arguments: nil)
+                content.body = body
+                content.sound = UNNotificationSound.default
+                
+                let components: Set<Calendar.Component> = [.day, .month, .year, .hour, .minute, .second]
+                let frequencyInfo = Calendar.autoupdatingCurrent.dateComponents(components, from: frequencyDate)
+                var dateInfo = Calendar.autoupdatingCurrent.dateComponents(components, from: date)
+                dateInfo.hour = frequencyInfo.hour
+                dateInfo.minute = frequencyInfo.minute
+                dateInfo.second = frequencyInfo.second
+                
+                let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: false)
+                let request = UNNotificationRequest(identifier: verb.infinitive.value,
+                                                    content: content,
+                                                    trigger: trigger)
+                
+                center.add(request) {
+                    guard let error = $0 else { return }
+                    print(error)
+                }
+                
+                i += 1
             }
         }
     }
@@ -113,4 +135,6 @@ private extension Date {
 
         return Calendar.current.date(byAdding: dateComponents, to: self)
     }
+    
+    
 }

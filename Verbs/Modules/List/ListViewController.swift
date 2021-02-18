@@ -14,9 +14,20 @@ final class ListViewController: UIViewController {
     private let searchController = UISearchController(searchResultsController: nil)
     private var keyboardService: KeyboardService?
     private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
+    private var state: ListState = .data
     private var tableView: UITableView?
     private var moreButton: UIBarButtonItem?
     private var listMenu: ListMenu?
+    
+    private let noDataLabel: UILabel = {
+        let label = UILabel()
+        label.adjustsFontForContentSizeCategory = true
+        label.font = .preferredFont(forTextStyle: .body)
+        label.textAlignment = .center
+        label.textColor = .secondaryLabel
+        label.numberOfLines = 0
+        return label
+    }()
     
     private var topInset: CGFloat = 0
     
@@ -37,6 +48,7 @@ final class ListViewController: UIViewController {
         setupMenu()
         setupTableView()
         setupSearchController()
+        setupNoDataLabel()
         setupKeyboardService()
         presenter.selectWhenRegular()
     }
@@ -95,6 +107,25 @@ final class ListViewController: UIViewController {
         searchController.searchBar.becomeFirstResponder()
         searchController.searchBar.text = text
         presenter.updateSearchResults(for: searchController)
+    }
+    
+    func setState(_ state: ListState) {
+        switch state {
+        case .data:
+            tableView?.isScrollEnabled = true
+            noDataLabel.isHidden = true
+        case .empty(let text), .searchNotFound(let text), .searchStarted(let text):
+            tableView?.isScrollEnabled = false
+            noDataLabel.isHidden = false
+            
+            UIView.transition(with: noDataLabel,
+                              duration: 0.25,
+                              options: .transitionCrossDissolve,
+                              animations: { self.noDataLabel.text = text },
+                              completion: nil)
+        }
+        
+        self.state = state
     }
 }
 
@@ -160,6 +191,17 @@ private extension ListViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         
         navigationItem.searchController = searchController
+    }
+    
+    func setupNoDataLabel() {
+        view.addSubview(noDataLabel)
+        noDataLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            noDataLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            noDataLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            noDataLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 2 / 3)
+        ])
     }
 }
 

@@ -10,7 +10,7 @@ import UIKit
 
 final class ListPresenter: NSObject {
     
-    let dataSource: VerbsSectionDataSource
+    var dataSource: VerbsSectionDataSource?
     weak var viewController: ListViewController?
     var router: ListRouter?
     
@@ -22,16 +22,23 @@ final class ListPresenter: NSObject {
     
     private var infinitive: String?
     
+    private var isSearchActive: Bool {
+        get { dataSource?.isSearchActive ?? false }
+        set { dataSource?.isSearchActive = newValue }
+    }
+    
     init(languageService: LanguageService,
          verbsService: VerbsServiceProtocol,
          printService: PrintService) {
         self.languageService = languageService
         self.verbsService = verbsService
         self.printService = printService
-        self.dataSource = .init(verbsService: verbsService,
-                                hasTranslation: languageService.hasTranslation)
         
         super.init()
+        
+        self.dataSource = .init(verbsService: verbsService,
+                                hasTranslation: languageService.hasTranslation,
+                                setStateBlock: setState)
         
         loadSettings()
         subscribe()
@@ -61,6 +68,22 @@ final class ListPresenter: NSObject {
         printService.print(verbsService.items,
                            hasTranslation: languageService.hasTranslation)
     }
+    
+    func setState() {
+        let state: ListState
+        switch (isSearchActive, verbsService.searchText.isEmpty, items.isEmpty) {
+        case (true, false, true):
+            state = .searchNotFound("Ничего не найдено".localized)
+        case (true, true, true):
+            state = .searchStarted("Начните набирать неправильный глагол в любой из форм или его перевод, чтобы увидеть результаты поиска".localized)
+        case (_, _, false):
+            state = .data
+        case (false, _, true):
+            state = .empty("empty_favorites".localized)
+        }
+        
+        viewController?.setState(state)
+    }
 }
 
 // MARK: - Private
@@ -89,7 +112,7 @@ private extension ListPresenter {
     }
     
     func didSelectedItemSet() {
-        guard !dataSource.isSearchActive,
+        guard !isSearchActive,
               viewController?.splitViewController?.isCollapsed == false else { return }
         
         let indexPath = verbsService.indexPath(of: infinitive)
@@ -138,12 +161,16 @@ private extension ListPresenter {
 
 extension ListPresenter: UITableViewDelegate {
     
+    var items: [Verb] {
+        !isSearchActive ? verbsService.items : verbsService.searchedItems
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if dataSource.isSearchActive {
+        if isSearchActive {
             tableView.deselectRow(at: indexPath, animated: true)
         }
 
-        let verb = !dataSource.isSearchActive
+        let verb = !isSearchActive
             ? verbsService.groupedItems[indexPath.section][indexPath.row]
             : verbsService.searchedItems[indexPath.row]
         
@@ -154,7 +181,7 @@ extension ListPresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    contextMenuConfigurationForRowAt indexPath: IndexPath,
                    point: CGPoint) -> UIContextMenuConfiguration? {
-        guard !dataSource.isSearchActive else { return nil }
+        guard !isSearchActive else { return nil }
         let verb = verbsService.groupedItems[indexPath.section][indexPath.row]
         let isFavorite = Locator.favorites.verbs.contains(verb)
         
@@ -206,7 +233,7 @@ extension ListPresenter: UITableViewDragDelegate {
     func tableView(_ tableView: UITableView,
                    itemsForBeginning session: UIDragSession,
                    at indexPath: IndexPath) -> [UIDragItem] {
-        guard !dataSource.isSearchActive,
+        guard !isSearchActive,
               viewController?.splitViewController?.isCollapsed == false else { return [] }
         session.localContext = tableView
         return dragItems(at: indexPath)
@@ -216,7 +243,7 @@ extension ListPresenter: UITableViewDragDelegate {
                    itemsForAddingTo session: UIDragSession,
                    at indexPath: IndexPath,
                    point: CGPoint) -> [UIDragItem] {
-        guard !dataSource.isSearchActive,
+        guard !isSearchActive,
               viewController?.splitViewController?.isCollapsed == false else { return [] }
         return dragItems(at: indexPath)
     }
@@ -238,11 +265,11 @@ extension ListPresenter: UISearchResultsUpdating {
 extension ListPresenter: UISearchControllerDelegate {
     
     func willPresentSearchController(_ searchController: UISearchController) {
-        dataSource.isSearchActive = true
+        isSearchActive = true
     }
     
     func willDismissSearchController(_ searchController: UISearchController) {
-        dataSource.isSearchActive = false
+        isSearchActive = false
     }
     
     func didDismissSearchController(_ searchController: UISearchController) {

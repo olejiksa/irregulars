@@ -17,16 +17,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fb4-MN-WpJ">
-                        <rect key="frame" x="20" y="17" width="280" height="20.5"/>
+                        <rect key="frame" x="16" y="17" width="288" height="20.5"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Fb4-MN-WpJ" secondAttribute="trailing" constant="20" id="55u-AO-h4d"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Fb4-MN-WpJ" secondAttribute="trailing" id="55u-AO-h4d"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Fb4-MN-WpJ" secondAttribute="bottom" constant="17" id="BG8-Rd-m1R"/>
-                    <constraint firstItem="Fb4-MN-WpJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="JdJ-ey-h84"/>
+                    <constraint firstItem="Fb4-MN-WpJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="JdJ-ey-h84"/>
                     <constraint firstItem="Fb4-MN-WpJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="bux-ag-32s"/>
                 </constraints>
             </tableViewCellContentView>

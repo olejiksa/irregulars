@@ -27,7 +27,6 @@ final class FavoritesViewController: UIViewController {
         let label = UILabel()
         label.adjustsFontForContentSizeCategory = true
         label.font = .preferredFont(forTextStyle: .body)
-        label.text = "empty_favorites".localized
         label.textAlignment = .center
         label.textColor = .secondaryLabel
         label.numberOfLines = 0
@@ -105,9 +104,15 @@ final class FavoritesViewController: UIViewController {
         case .data:
             tableView?.isScrollEnabled = true
             noDataLabel.isHidden = true
-        case .empty:
+        case .empty(let text), .searchNotFound(let text), .searchStarted(let text):
             tableView?.isScrollEnabled = false
             noDataLabel.isHidden = false
+           
+            UIView.transition(with: noDataLabel,
+                              duration: 0.25,
+                              options: .transitionCrossDissolve,
+                              animations: { self.noDataLabel.text = text },
+                              completion: nil)
         }
         
         self.state = state

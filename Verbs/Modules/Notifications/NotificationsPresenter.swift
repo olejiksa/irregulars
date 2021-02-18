@@ -54,6 +54,7 @@ private extension NotificationsPresenter {
                                             text: "Когда у Вас начинается утро?".localized))
             timeItems.append(TimePickerItem(title: "since".localized,
                                             action: didSinceTimeChange,
+                                            scrollingBlock: didScroll,
                                             value: since,
                                             isEnabled: true))
             let to = UserDefaults.shared.integer(for: .to)
@@ -62,6 +63,7 @@ private extension NotificationsPresenter {
                                             text: "В каком часу Вы ложитесь спать?".localized))
             timeItems.append(TimePickerItem(title: "to".localized,
                                             action: didToTimeChange,
+                                            scrollingBlock: didScroll,
                                             value: to,
                                             isEnabled: true))
             let frequency = UserDefaults.shared.integer(for: .frequency)
@@ -72,11 +74,10 @@ private extension NotificationsPresenter {
                                                action: didFrequencyChange))
         }
         
-        let contentItems = [PlainDetailItem(text: "Настройте удобные для Вас время и частоту напоминаний слов в течение дня".localized,
-                                            textStyle: .secondary)]
+        let contentItem = PlainDetailItem(text: "Настройте удобные для Вас время и частоту напоминаний слов в течение дня".localized,
+                                          textStyle: .secondary)
         
-        dataSource.setup([Section(items: contentItems),
-                          Section(items: [notificationItem]),
+        dataSource.setup([Section(items: [contentItem, notificationItem]),
                           Section(header: "time".localized, items: timeItems),
                           Section(header: "frequency".localized, items: repetitionItems)])
     }
@@ -92,14 +93,17 @@ private extension NotificationsPresenter {
     
     func didFrequencyChange(_ value: Int) {
         UserDefaults.shared.set(value, for: .frequency)
+        notificationService.schedule()
     }
     
     func didSinceTimeChange(_ value: Int) {
         UserDefaults.shared.set(value, for: .since)
+        notificationService.schedule()
     }
     
     func didToTimeChange(_ value: Int) {
         UserDefaults.shared.set(value, for: .to)
+        notificationService.schedule()
     }
     
     func willShowSystemAppSettings(_ sender: ItemProtocol) {
@@ -124,6 +128,10 @@ private extension NotificationsPresenter {
                 self.viewController?.reloadData()
             }
         }
+    }
+    
+    func didScroll(cell: UITableViewCell) {
+        viewController?.scrollToBottom(cell: cell)
     }
 }
 

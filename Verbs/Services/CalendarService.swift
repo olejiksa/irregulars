@@ -36,4 +36,11 @@ final class CalendarService {
             return ([startDate] + otherDates + [endDate]).sorted()
         }
     }
+    
+    func date(from value: Int) -> Date? {
+        let hour = value / 60
+        let minute = value % 60
+        let components = DateComponents(hour: hour, minute: minute)
+        return Calendar.autoupdatingCurrent.date(from: components)
+    }
 }

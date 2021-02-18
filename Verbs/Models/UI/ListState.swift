@@ -8,6 +8,8 @@
 
 enum ListState {
     
-    case empty
+    case empty(String)
     case data
+    case searchNotFound(String)
+    case searchStarted(String)
 }

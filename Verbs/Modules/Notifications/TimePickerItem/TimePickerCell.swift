@@ -14,11 +14,19 @@ final class TimePickerCell: UITableViewCell {
     @IBOutlet private weak var timePicker: UIDatePicker!
     
     private var action: IntBlock?
+    private var scrollingBlock: CellBlock?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         selectionStyle = .none
+    }
+    
+    @IBAction func didEditingBegin(_ sender: UIDatePicker) {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(autoScroll),
+                                               name: UIResponder.keyboardDidShowNotification,
+                                               object: nil)
     }
 }
 
@@ -32,6 +40,11 @@ private extension TimePickerCell {
         let value = hour * 60 + minute
         action?(value)
     }
+    
+    @objc func autoScroll() {
+        scrollingBlock?(self)
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
 // MARK: - CellProtocol
@@ -43,11 +56,9 @@ extension TimePickerCell: CellProtocol {
     func setup(with item: ItemProtocol) {
         guard let item = item as? TimePickerItem else { return }
         
-        let hour = item.value / 60
-        let minute = item.value % 60
-        let components = DateComponents(hour: hour, minute: minute)
-        guard let date = Calendar.autoupdatingCurrent.date(from: components) else { return }
-        timePicker.date = date
+        if let date = CalendarService().date(from: item.value) {
+            timePicker.date = date
+        }
         
         titleLabel?.text = item.title
         
@@ -55,5 +66,6 @@ extension TimePickerCell: CellProtocol {
         titleLabel?.isEnabled = item.isEnabled
         
         action = item.action
+        scrollingBlock = item.scrollingBlock
     }
 }

@@ -22,10 +22,11 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="yNd-nz-DS9">
+                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="yNd-nz-DS9">
                         <rect key="frame" x="162.33333333333337" y="0.0" width="196.66666666666663" height="141"/>
                         <connections>
-                            <action selector="didValueChange:" destination="KGk-i7-Jjw" eventType="valueChanged" id="3Xv-yY-mTH"/>
+                            <action selector="didEditingBegin:" destination="KGk-i7-Jjw" eventType="editingDidBegin" id="qdV-Z5-QQf"/>
+                            <action selector="didValueChange:" destination="KGk-i7-Jjw" eventType="valueChanged" id="fbl-I5-VpK"/>
                         </connections>
                     </datePicker>
                 </subviews>
@@ -40,7 +41,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="timePicker" destination="yNd-nz-DS9" id="DG6-cS-Glj"/>
+                <outlet property="timePicker" destination="yNd-nz-DS9" id="F9G-mI-1wH"/>
                 <outlet property="titleLabel" destination="dY3-Ea-8ZE" id="H2q-Wr-No2"/>
             </connections>
             <point key="canvasLocation" x="105.07246376811595" y="118.86160714285714"/>

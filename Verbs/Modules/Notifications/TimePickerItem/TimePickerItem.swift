@@ -10,15 +10,18 @@ final class TimePickerItem {
     
     let title: String
     let action: IntBlock
+    let scrollingBlock: CellBlock
     let value: Int
     let isEnabled: Bool
     
     init(title: String,
          action: @escaping IntBlock,
+         scrollingBlock: @escaping CellBlock,
          value: Int,
          isEnabled: Bool = true) {
         self.title = title
         self.action = action
+        self.scrollingBlock = scrollingBlock
         self.value = value
         self.isEnabled = isEnabled
     }

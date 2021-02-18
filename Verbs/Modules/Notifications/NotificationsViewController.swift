@@ -12,6 +12,8 @@ final class NotificationsViewController: UIViewController {
     
     private let presenter: NotificationsPresenter
     private var tableView: UITableView?
+    private var keyboardService: KeyboardService?
+    private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     
     init(presenter: NotificationsPresenter) {
         self.presenter = presenter
@@ -28,6 +30,7 @@ final class NotificationsViewController: UIViewController {
 
         setupNavigationBar()
         setupTableView()
+        setupKeyboardService()
         setupView()
     }
     
@@ -35,6 +38,13 @@ final class NotificationsViewController: UIViewController {
         DispatchQueue.main.async {
             self.tableView?.reloadData()
         }
+    }
+    
+    func scrollToBottom(cell: UITableViewCell) {
+        guard let tableView = tableView,
+              let indexPath = tableView.indexPath(for: cell) else { return }
+        
+        tableView.scrollToRow(at: indexPath, at: .none, animated: true)
     }
 }
 
@@ -69,11 +79,13 @@ private extension NotificationsViewController {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
+        let keyboardHeightLayoutConstraint = tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            keyboardHeightLayoutConstraint
         ])
         
         tableView.dataSource = presenter.dataSource
@@ -88,7 +100,12 @@ private extension NotificationsViewController {
                            PlainDetailCell.self,
                            IconDetailCell.self)
         
+        self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.tableView = tableView
+    }
+    
+    func setupKeyboardService() {
+        keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
     }
     
     func setupView() {

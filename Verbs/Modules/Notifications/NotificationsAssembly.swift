@@ -9,7 +9,8 @@
 final class NotificationsAssembly: AssemblyProtocol {
     
     func viewController() -> some NotificationsViewController {
-        let presenter = NotificationsPresenter(notificationService: .init(verbsService: .init()))
+        let presenter = NotificationsPresenter(notificationService: .init(verbsService: .init(),
+                                                                          calendarService: .init()))
         let viewConroller = NotificationsViewController(presenter: presenter)
         let router = NotificationsRouter(viewController: viewConroller)
         presenter.viewController = viewConroller
