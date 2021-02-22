@@ -42,8 +42,8 @@ private extension SwitchCell {
     }
     
     @IBAction func switchValueChanged() {
-        item?.actionBlock(toggleSwitch.isOn)
         item?.isOn = toggleSwitch.isOn
+        item?.actionBlock(toggleSwitch.isOn)
     }
 }
 
