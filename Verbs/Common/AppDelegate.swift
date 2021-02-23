@@ -11,9 +11,35 @@ import StoreKit
 import NotificationCenter
 
 @UIApplicationMain
-final class AppDelegate: UIResponder, UIApplicationDelegate {
+final class AppDelegate: UIResponder {
 
     private let deeplinkService = DeeplinkService()
+    private let menuService = MenuService()
+    
+    override func buildMenu(with builder: UIMenuBuilder) {
+        super.buildMenu(with: builder)
+        menuService.buildMenu(with: builder)
+    }
+    
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        let canPerform = super.canPerformAction(action, withSender: sender)
+        let menuCanPerform = menuService.canPerformAction(action, with: sender)
+        
+        return canPerform || menuCanPerform
+    }
+
+    // MARK: UISceneSession Lifecycle
+
+    func application(_ application: UIApplication,
+                     configurationForConnecting connectingSceneSession: UISceneSession,
+                     options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        .init(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    }
+}
+
+// MARK: - UIApplicationDelegate
+
+extension AppDelegate: UIApplicationDelegate {
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -24,14 +50,6 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillTerminate(_ application: UIApplication) {
         SKPaymentQueue.default().remove(Locator.purchaseService)
-    }
-
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication,
-                     configurationForConnecting connectingSceneSession: UISceneSession,
-                     options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        .init(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 }
 

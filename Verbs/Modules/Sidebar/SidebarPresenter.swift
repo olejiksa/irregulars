@@ -36,29 +36,22 @@ final class SidebarPresenter: NSObject {
         guard let collectionView = collectionView else { return }
         
         let headerRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, SidebarItem> {
-            (cell, indexPath, item) in
+            (cell, _, item) in
             
             var contentConfiguration = UIListContentConfiguration.sidebarHeader()
             contentConfiguration.text = item.title
             
             cell.contentConfiguration = contentConfiguration
             cell.accessories = item.isExpandable ? [.outlineDisclosure()] : []
-            cell.tintColor = AccentColor.current.color
             
             cell.accessibilityIdentifier = item.accessibilityIdentifier?.rawValue
         }
         
         let rowRegistration = UICollectionView.CellRegistration<SidebarCell, SidebarItem> {
-            (cell, indexPath, item) in
+            (cell, _, item) in
             
-            var contentConfiguration = UIListContentConfiguration.sidebarSubtitleCell()
-            contentConfiguration.text = item.title
-            contentConfiguration.secondaryText = item.subtitle
-            contentConfiguration.image = item.image
-            
-            cell.contentConfiguration = contentConfiguration
+            cell.item = item
             cell.accessories = item.isExpandable ? [.outlineDisclosure()] : []
-            cell.tintColor = AccentColor.current.color
             
             cell.accessibilityIdentifier = item.accessibilityIdentifier?.rawValue
         }
@@ -132,7 +125,9 @@ private extension SidebarPresenter {
     
     func applyInitialSnapshot() {
         dataSource?.apply(verbsSnapshot(), to: .verbs, animatingDifferences: false)
+        #if !targetEnvironment(macCatalyst)
         dataSource?.apply(moreSnapshot(), to: .more, animatingDifferences: false)
+        #endif
         
         viewController?.select(at: selectedIndexPath)
     }

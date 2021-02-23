@@ -73,9 +73,9 @@ final class ListPresenter: NSObject {
         let state: ListState
         switch (isSearchActive, verbsService.searchText.isEmpty, items.isEmpty) {
         case (true, false, true):
-            state = .searchNotFound("Ничего не найдено".localized)
+            state = .searchNotFound("not_found".localized)
         case (true, true, true):
-            state = .searchStarted("Начните набирать неправильный глагол в любой из форм или его перевод, чтобы увидеть результаты поиска".localized)
+            state = .searchStarted("search_hint".localized)
         case (_, _, false):
             state = .data
         case (false, _, true):

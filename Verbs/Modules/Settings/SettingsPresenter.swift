@@ -14,7 +14,8 @@ final class SettingsPresenter: NSObject {
     var router: SettingsRouter?
     weak var viewController: SettingsViewController?
     
-    private let productURL = URL(string: "https://apps.apple.com/app/id1540487254")
+    private let webURL = URL(string: "https://apps.apple.com/app/id1540487254")
+    private let appStoreURL = URL(string: "itms-apps://apps.apple.com/app/id1540487254")
     private let developerURL = URL(string: "itms-apps://apps.apple.com/developer/id1460125465")
     private let languageService: LanguageService
     private let mailService: MailService
@@ -53,6 +54,20 @@ private extension SettingsPresenter {
     }
     
     func setupItems() {
+        #if targetEnvironment(macCatalyst)
+        dataSource.setup(
+            [itemsFactory.setupActivationSection(upgradeBlock: willUpgrade,
+                                                 resetBlock: willReset),
+             itemsFactory.setupGeneralSection(languageBlock: willShowSystemAppSettings,
+                                              accentColorBlock: willGoToAccentColor,
+                                              voiceBlock: willGoToVoice,
+                                              notificationsBlock: willGoToNotifications),
+             itemsFactory.setupAboutSection(areAllAppsAvailable: areAllAppsAvailable,
+                                            acknowledgementsBlock: willGoToAcknowledgements,
+                                            allAppsBlock: willOverviewAllApps,
+                                            upgradeBlock: willUpgrade)]
+        )
+        #else
         dataSource.setup(
             [itemsFactory.setupActivationSection(upgradeBlock: willUpgrade,
                                                  resetBlock: willReset),
@@ -70,6 +85,7 @@ private extension SettingsPresenter {
                                             allAppsBlock: willOverviewAllApps,
                                             upgradeBlock: willUpgrade)]
         )
+        #endif
     }
     
     func didPlaybackSpeedChange(_ value: Int) {
@@ -82,7 +98,7 @@ private extension SettingsPresenter {
     }
     
     func willRate(_ sender: ItemProtocol) {
-        guard let productURL = productURL else { return }
+        guard let productURL = appStoreURL else { return }
         var components = URLComponents(url: productURL, resolvingAgainstBaseURL: false)
         components?.queryItems = [URLQueryItem(name: "action", value: "write-review")]
         guard let writeReviewURL = components?.url else { return }
@@ -129,7 +145,7 @@ private extension SettingsPresenter {
     }
     
     func willShare(_ sender: ItemProtocol) {
-        guard let productURL = productURL, let view = viewController?.view else { return }
+        guard let productURL = webURL, let view = viewController?.view else { return }
         router?.share(productURL, in: view)
     }
     

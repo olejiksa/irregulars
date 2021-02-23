@@ -1,0 +1,138 @@
+//
+//  MenuService.swift
+//  Verbs
+//
+//  Created by Oleg Samoylov on 23.02.2021.
+//  Copyright © 2021 Oleg Samoylov. All rights reserved.
+//
+
+import SafariServices
+import UIKit
+
+final class MenuService {
+    
+    private let webURL = URL(string: "https://apps.apple.com/app/id1540487254")
+    private let appStoreURL = URL(string: "itms-apps://apps.apple.com/app/id1540487254")
+    private let developerURL = URL(string: "itms-apps://apps.apple.com/developer/id1460125465")
+
+    private let languageService = LanguageService()
+    private let mailService = MailService()
+    
+    private var viewController: SplitViewController? {
+        let scene = UIApplication.shared.connectedScenes.first
+        let sd = scene?.delegate as? SceneDelegate
+        return sd?.window?.rootViewController as? SplitViewController
+    }
+    
+    func buildMenu(with builder: UIMenuBuilder) {
+        guard builder.system == UIMenuSystem.main else { return }
+        
+        let privacyPolicyCommand = UIAction(title: .localized(.privacyPolicy), handler: goToPrivacyPolicy)
+        let termsOfUseCommand = UIAction(title: .localized(.terms), handler: goToTermsOfUse)
+        let contactUsCommand = UIAction(title: .localized(.contactUs), handler: goToMail)
+        let helpSubmenu = UIMenu(options: .displayInline, children: [privacyPolicyCommand,
+                                                                     termsOfUseCommand,
+                                                                     contactUsCommand])
+        builder.insertChild(helpSubmenu, atEndOfMenu: .help)
+        
+        let acknowledgementsCommand = UIAction(title: .localized(.acknowledgements), handler: goToAcknowledgements)
+        let acknowledgementsSubmenu = UIMenu(options: .displayInline, children: [acknowledgementsCommand])
+        builder.insertChild(acknowledgementsSubmenu, atEndOfMenu: .help)
+        
+        let settingsCommand = UIAction(title: "settings".localized, handler: goToSettings)
+        let settingsSubmenu = UIMenu(options: .displayInline, children: [settingsCommand])
+        builder.insertSibling(settingsSubmenu, afterMenu: .preferences)
+        
+        let rateAndReviewCommand = UIAction(title: .localized(.rateAndReview), handler: rateAndReview)
+        let shareAppCommand = UIAction(title: .localized(.shareApp), handler: shareApp)
+        let aboutSubmenu = UIMenu(options: .displayInline, children: [rateAndReviewCommand, shareAppCommand])
+        builder.insertSibling(aboutSubmenu, afterMenu: .about)
+    }
+    
+    func canPerformAction(_ action: Selector, with sender: Any?) -> Bool {
+        if [#selector(goToPrivacyPolicy),
+            #selector(goToTermsOfUse),
+            #selector(rateAndReview),
+            #selector(shareApp)].contains(action) {
+            return true
+        } else if action == #selector(goToMail) {
+            return mailService.isMailAvailable
+        }
+        
+        return false
+    }
+}
+
+// MARK: - Private
+
+private extension MenuService {
+    
+    @objc func goToPrivacyPolicy(_ action: UIAction) {
+        let code = languageService.legal.rawValue
+        guard let url = URL(string: "https://github.com/olejiksa/legal/blob/master/privacy-\(code).md")
+        else { return }
+        goToURL(url)
+    }
+    
+    @objc func goToTermsOfUse(_ action: UIAction) {
+        let code = languageService.legal.rawValue
+        guard let url = URL(string: "https://github.com/olejiksa/legal/blob/master/terms-\(code).md")
+        else { return }
+        goToURL(url)
+    }
+    
+    @objc func goToMail(_ action: UIAction) {
+        mailService.present(in: viewController)
+    }
+    
+    @objc func goToAcknowledgements(_ action: UIAction) {
+        guard let top = viewController?.secondaryViewController?.topViewController,
+              !(top is AcknowledgementsViewController) else { return }
+        
+        let vc = AcknowledgementsAssembly().viewController()
+        viewController?.navigationController?.view?.backgroundColor = .systemBackground
+        viewController?.secondaryViewController?.push(vc)
+    }
+    
+    @objc func rateAndReview(_ action: UIAction) {
+        guard let productURL = appStoreURL else { return }
+        var components = URLComponents(url: productURL, resolvingAgainstBaseURL: false)
+        components?.queryItems = [URLQueryItem(name: "action", value: "write-review")]
+        guard let writeReviewURL = components?.url else { return }
+        open(writeReviewURL)
+    }
+    
+    @objc func shareApp(_ action: UIAction) {
+        guard let productURL = webURL, let view = viewController?.view else { return }
+        share(productURL, in: view)
+    }
+    
+    @objc func goToSettings(_ action: UIAction) {
+        guard let top = viewController?.secondaryViewController?.topViewController,
+              !(top is SettingsViewController) else { return }
+        
+        let settingsVC = SettingsAssembly().viewController()
+        viewController?.secondaryViewController?.push(settingsVC)
+    }
+    
+    func goToURL(_ url: URL) {
+        let configuration = SFSafariViewController.Configuration()
+        configuration.entersReaderIfAvailable = true
+        let vc = SFSafariViewController(url: url, configuration: configuration)
+        vc.preferredControlTintColor = AccentColor.current.color
+        vc.modalPresentationStyle = .pageSheet
+        viewController?.present(vc, animated: true)
+    }
+    
+    func open(_ url: URL) {
+        guard UIApplication.shared.canOpenURL(url) else { return }
+        UIApplication.shared.open(url)
+    }
+    
+    func share(_ url: URL, in view: UIView) {
+        let activityViewController = UIActivityViewController(activityItems: [url],
+                                                              applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = view
+        viewController?.present(activityViewController, animated: true)
+    }
+}

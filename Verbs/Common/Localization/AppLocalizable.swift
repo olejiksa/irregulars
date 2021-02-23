@@ -88,7 +88,7 @@ extension Localizable {
     static let accentColor = Localizable(
         NSLocalizedString("accent_color", comment: "Refers to both the Settings section and the title of the accent colors list page"))
     static let matchAppIconWithAccentColor = Localizable(
-        NSLocalizedString("match_app_icon_with_accent_color", comment: "Referts to the app icon color matching action button"))
+        NSLocalizedString("match_app_icon_with_accent_color", comment: "Refers to the app icon color matching action button"))
 }
 
 // MARK: - Test

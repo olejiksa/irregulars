@@ -24,6 +24,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let secondaryViewController = EmptyViewController()
         let secondaryNavigationController = UINavigationController(rootViewController: secondaryViewController)
         let tabbarViewController = TabBarController(splitViewController: splitViewController)
+        splitViewController.primaryBackgroundStyle = .sidebar
         splitViewController.setViewController(sidebarNavigationController, for: .primary)
         splitViewController.setViewController(supplementaryViewController.navigationController, for: .supplementary)
         splitViewController.setViewController(secondaryNavigationController, for: .secondary)
@@ -60,6 +61,13 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         for userActivity in connectionOptions.userActivities {
             self.scene(scene, continue: userActivity)
         }
+        
+        #if targetEnvironment(macCatalyst)
+        if let titlebar = windowScene.titlebar {
+            titlebar.titleVisibility = .hidden
+            titlebar.toolbar = nil
+        }
+        #endif
         
         shortcutItemToProcess = connectionOptions.shortcutItem
     }

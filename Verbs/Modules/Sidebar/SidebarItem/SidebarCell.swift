@@ -10,13 +10,33 @@ import UIKit
 
 final class SidebarCell: UICollectionViewListCell {
     
-    override func updateConfiguration(using state: UICellConfigurationState) {
-        var newBackgroundConfiguration = UIBackgroundConfiguration.listSidebarCell()
-        
-        if state.isSelected {
-            newBackgroundConfiguration.backgroundColor = nil
+    var item: SidebarItem? {
+        didSet {
+            setNeedsUpdateConfiguration()
         }
+    }
+    
+    override func updateConfiguration(using state: UICellConfigurationState) {
+        updateBackgroundConfiguration(using: state)
+        updateContentConfiguration(using: state)
+    }
+}
+
+// MARK: - Private
+
+private extension SidebarCell {
+    
+    func updateBackgroundConfiguration(using state: UICellConfigurationState) {
+        backgroundConfiguration = .listSidebarCell()
+    }
+    
+    func updateContentConfiguration(using state: UICellConfigurationState) {
+        var newContentConfiguration = UIListContentConfiguration.sidebarCell()
         
-        backgroundConfiguration = newBackgroundConfiguration
+        newContentConfiguration.text = item?.title
+        newContentConfiguration.secondaryText = item?.subtitle
+        newContentConfiguration.image = item?.image
+        
+        contentConfiguration = newContentConfiguration
     }
 }
