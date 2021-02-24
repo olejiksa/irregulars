@@ -30,7 +30,11 @@ private extension ActionCell {
     func applyStyle() {
         switch (style, tintAdjustmentMode, isUserInteractionEnabled) {
         case (.standard, .normal, true):
+            #if targetEnvironment(macCatalyst)
+            textLabel?.textColor = UIButton().tintColor
+            #else
             textLabel?.textColor = AccentColor.current.color
+            #endif
         case (.destructive, .normal, true):
             textLabel?.textColor = .systemRed
         case (_, _, _):

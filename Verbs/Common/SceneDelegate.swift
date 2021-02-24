@@ -41,7 +41,11 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = splitViewController
+        
+        #if !targetEnvironment(macCatalyst)
         window?.tintColor = AccentColor.current.color
+        #endif
+
         window?.makeKeyAndVisible()
         
 //        #if DEBUG

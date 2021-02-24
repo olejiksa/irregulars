@@ -54,21 +54,7 @@ private extension SettingsPresenter {
     }
     
     func setupItems() {
-        #if targetEnvironment(macCatalyst)
-        dataSource.setup(
-            [itemsFactory.setupActivationSection(upgradeBlock: willUpgrade,
-                                                 resetBlock: willReset),
-             itemsFactory.setupGeneralSection(languageBlock: willShowSystemAppSettings,
-                                              accentColorBlock: willGoToAccentColor,
-                                              voiceBlock: willGoToVoice,
-                                              notificationsBlock: willGoToNotifications),
-             itemsFactory.setupAboutSection(areAllAppsAvailable: areAllAppsAvailable,
-                                            acknowledgementsBlock: willGoToAcknowledgements,
-                                            allAppsBlock: willOverviewAllApps,
-                                            upgradeBlock: willUpgrade)]
-        )
-        #else
-        dataSource.setup(
+       dataSource.setup(
             [itemsFactory.setupActivationSection(upgradeBlock: willUpgrade,
                                                  resetBlock: willReset),
              itemsFactory.setupGeneralSection(languageBlock: willShowSystemAppSettings,
@@ -85,7 +71,6 @@ private extension SettingsPresenter {
                                             allAppsBlock: willOverviewAllApps,
                                             upgradeBlock: willUpgrade)]
         )
-        #endif
     }
     
     func didPlaybackSpeedChange(_ value: Int) {

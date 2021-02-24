@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct FeatureToggle {
     
@@ -17,6 +18,7 @@ struct FeatureToggle {
         set {
             UserDefaults.shared.set(newValue, for: .isPaid)
             NotificationCenter.default.post(name: .reload, object: nil)
+            UIMenuSystem.main.setNeedsRebuild()
         }
     }
     

@@ -54,7 +54,7 @@ extension Localizable {
     static let links = Localizable(
         NSLocalizedString("links", comment: "The Links section title on the Settings page"))
     static let rateAndReview = Localizable(
-        NSLocalizedString("rate_and_review", comment: "The App Store Rate and Review redirection link text"))
+        NSLocalizedString("rate_and_review", comment: "The App Store Rate and Review link text"))
     static let privacyPolicy = Localizable(
         NSLocalizedString("privacy_policy", comment: "The Privacy Policy link text"))
     static let terms = Localizable(
@@ -65,6 +65,23 @@ extension Localizable {
         NSLocalizedString("share_app", comment: "Lets a user to tell a friend about the app"))
     static let acknowledgements = Localizable(
         NSLocalizedString("acknowledgements", comment: "The title of the acknowledgements page as well as the corresponding link text"))
+    
+    static let rateAndReviewCapitalized = Localizable(
+        NSLocalizedString("rate_and_review_capitalized", comment: "The App Store Rate and Review link text capitalized for the Mac menu"))
+    static let privacyPolicyCapitalized = Localizable(
+        NSLocalizedString("privacy_policy_capitalized", comment: "The Privacy Policy link text capitalized for the Mac menu"))
+    static let termsOfUseCapitalized = Localizable(
+        NSLocalizedString("terms_of_use_capitalized", comment: "The Terms of Use link text capitalized for the Mac menu"))
+    static let contactUsCapitalized = Localizable(
+        NSLocalizedString("contact_support_capitalized", comment: "The Contact Support link text capitalized for the Mac menu"))
+    static let shareAppCapitalized = Localizable(
+        NSLocalizedString("share_app_capitalized", comment: "Lets a user to tell a friend about the app capitalized for the Mac menu"))
+    static let acknowledgementsCapitalized = Localizable(
+        NSLocalizedString("acknowledgements_capitalized", comment: "The title of the acknowledgements page as well as the corresponding link text capitalized for the Mac menu"))
+    static let allOurAppsCapitalized = Localizable(
+        NSLocalizedString("all_our_apps_capitalized", comment: "The All Our Apps link text capitalized for the Mac menu"))
+    static let upgradeToProCapitalized = Localizable(
+        NSLocalizedString("upgrade_to_pro_capitalized", comment: "The Upgrade to Pro link text capitalized for the Mac menu"))
     
     static let about = Localizable(
         NSLocalizedString("about", comment: "The About section title on the Settings page"))

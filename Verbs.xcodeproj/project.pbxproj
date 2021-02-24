@@ -156,7 +156,6 @@
 		EB8B2BA925AF5DD5008E0118 /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B2BA825AF5DD5008E0118 /* HapticService.swift */; };
 		EB8B2BAE25AF5E83008E0118 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B2BAD25AF5E83008E0118 /* HapticFeedback.swift */; };
 		EB8B2BC325B33A0D008E0118 /* VerbsSectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B2BC225B33A0D008E0118 /* VerbsSectionDataSource.swift */; };
-		EB995ADE25E3EC7F0082DE32 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EB995ADD25E3EC7F0082DE32 /* Settings.bundle */; };
 		EB995B5025E5177F0082DE32 /* MenuService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB995B4F25E5177F0082DE32 /* MenuService.swift */; };
 		EB995B6025E518BC0082DE32 /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325A52556EFF0005E02C1 /* FavoritesService.swift */; };
 		EB995B6625E518C80082DE32 /* PurchaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF97C8D256235AF009FFFBA /* PurchaseService.swift */; };
@@ -517,7 +516,6 @@
 		EB8B2BBC25B3321A008E0118 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.stringsdict"; sourceTree = "<group>"; };
 		EB8B2BBD25B3321A008E0118 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Intents.strings"; sourceTree = "<group>"; };
 		EB8B2BC225B33A0D008E0118 /* VerbsSectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbsSectionDataSource.swift; sourceTree = "<group>"; };
-		EB995ADD25E3EC7F0082DE32 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		EB995B4F25E5177F0082DE32 /* MenuService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuService.swift; sourceTree = "<group>"; };
 		EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkService.swift; sourceTree = "<group>"; };
 		EB9C5B99258295C70086A3D5 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
@@ -1393,7 +1391,6 @@
 				EBF593D22588679F0091FCE0 /* Verbs.entitlements */,
 				EB13942725B7254D0001CE8C /* Info.plist */,
 				EB13943925B727A70001CE8C /* InfoPlist.strings */,
-				EB995ADD25E3EC7F0082DE32 /* Settings.bundle */,
 			);
 			path = Verbs;
 			sourceTree = "<group>";
@@ -1763,7 +1760,6 @@
 				EBF5948B2589030E0091FCE0 /* purple@3x~ipad.png in Resources */,
 				EBF594882589030E0091FCE0 /* orange@2x~ipad.png in Resources */,
 				EB2E4B9425741832005B343A /* pink@3x.png in Resources */,
-				EB995ADE25E3EC7F0082DE32 /* Settings.bundle in Resources */,
 				EBDF00A22562EF090041F458 /* InputCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

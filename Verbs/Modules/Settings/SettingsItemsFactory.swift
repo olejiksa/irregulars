@@ -51,6 +51,18 @@ final class SettingsItemsFactory {
             notificationsSubtitle = "not_allowed".localized
         }
         
+        #if targetEnvironment(macCatalyst)
+        let items: [ItemProtocol] = [RightDetailItem(title: "language".localized,
+                                                     subtitle: languageService.current.description,
+                                                     actionBlock: languageBlock),
+                                     RightDetailItem(title: "voice".localized,
+                                                     subtitle: voiceName,
+                                                     actionBlock: voiceBlock,
+                                                     accessibilityIdentifier: .voiceCell),
+                                     RightDetailItem(title: .localized(.notifications),
+                                                     subtitle: notificationsSubtitle,
+                                                     actionBlock: notificationsBlock)].compactMap { $0 }
+        #else
         let items: [ItemProtocol] = [RightDetailItem(title: "language".localized,
                                                      subtitle: languageService.current.description,
                                                      actionBlock: languageBlock),
@@ -65,6 +77,7 @@ final class SettingsItemsFactory {
                                      RightDetailItem(title: .localized(.notifications),
                                                      subtitle: notificationsSubtitle,
                                                      actionBlock: notificationsBlock)].compactMap { $0 }
+        #endif
         
         return .init(header: "general".localized, items: items)
     }
@@ -96,18 +109,6 @@ final class SettingsItemsFactory {
         let name = Bundle.main.productName ?? ""
         let fullEditionName = "\(name) \(FeatureToggle.editionName)"
         
-        #if targetEnvironment(macCatalyst)
-        return .init(header: .localized(.about),
-                     items: [RightDetailItem(title: .localized(.developer),
-                                             subtitle: .localized(.olegSamoylov),
-                                             actionBlock: allAppsBlock,
-                                             hasDisclosureIndicator: true,
-                                             isEnabled: areAllAppsAvailable),
-                             RightDetailItem(title: .localized(.edition),
-                                             subtitle: fullEditionName,
-                                             actionBlock: upgradeBlock,
-                                             hasDisclosureIndicator: true)])
-        #else
         return .init(header: .localized(.about),
                      items: [RightDetailItem(title: .localized(.developer),
                                              subtitle: .localized(.olegSamoylov),
@@ -122,6 +123,5 @@ final class SettingsItemsFactory {
                                              subtitle: version),
                              DisclosureItem(text: .localized(.acknowledgements),
                                             actionBlock: acknowledgementsBlock)])
-        #endif
     }
 }

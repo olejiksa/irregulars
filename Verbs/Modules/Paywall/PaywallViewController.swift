@@ -70,19 +70,35 @@ private extension PaywallViewController {
     
     func setupView() {
         buyButton.setTitle("buy_button".localized, for: .normal)
+        #if !targetEnvironment(macCatalyst)
+        thanksLabel.textColor = AccentColor.current.color
         buyButton.backgroundColor = AccentColor.current.color
+        #else
+        let button = UIButton()
+        thanksLabel.textColor = button.tintColor
+        buyButton.backgroundColor = button.tintColor
+        #endif
         buyButton.titleLabel?.numberOfLines = 1
         buyButton.titleLabel?.adjustsFontSizeToFitWidth = true
         buyButton.titleLabel?.lineBreakMode = .byClipping
         
         restoreButton.setTitle("restore_purchases".localized, for: .normal)
+        #if !targetEnvironment(macCatalyst)
         restoreButton.setTitleColor(AccentColor.current.color, for: .normal)
+        #else
+        restoreButton.setTitleColor(UIButton().tintColor, for: .normal)
+        #endif
         restoreButton.titleLabel?.numberOfLines = 1
         restoreButton.titleLabel?.adjustsFontSizeToFitWidth = true
         restoreButton.titleLabel?.lineBreakMode = .byClipping
         
         thanksLabel.text = "thank_you".localized
+        
+        #if !targetEnvironment(macCatalyst)
         thanksLabel.textColor = AccentColor.current.color
+        #else
+        thanksLabel.textColor = UIButton().tintColor
+        #endif
         
         thanksLabel.isHidden = !FeatureToggle.isPaid
         buyButton.isHidden = FeatureToggle.isPaid && purchaseService.canMakePayments

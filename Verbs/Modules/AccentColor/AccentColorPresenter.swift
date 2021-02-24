@@ -32,15 +32,10 @@ private extension AccentColorPresenter {
         let accentColorItems = accentColors.map(AccentColorItem.init)
         let index = accentColors.firstIndex { $0 == AccentColor.current } ?? 0
         dataSource.selectedIndexPath = IndexPath(row: index, section: 0)
-        
-        #if targetEnvironment(macCatalyst)
-        dataSource.setup([Section(items: accentColorItems)])
-        #else
         dataSource.setup([Section(items: accentColorItems),
                           Section(items: [ActionItem(text: .localized(.matchAppIconWithAccentColor),
                                                      style: .standard,
                                                      actionBlock: nil)])])
-        #endif
     }
 }
 

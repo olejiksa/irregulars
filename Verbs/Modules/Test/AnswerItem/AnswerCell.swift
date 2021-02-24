@@ -27,9 +27,15 @@ final class AnswerCell: UITableViewCell {
         
         if item.isCorrect {
             let attributeString = NSMutableAttributedString(string: item.text)
+            #if targetEnvironment(macCatalyst)
+            attributeString.addAttribute(.foregroundColor,
+                                         value: UIButton().tintColor ?? AccentColor.current.color,
+                                         range: NSMakeRange(0, attributeString.length))
+            #else
             attributeString.addAttribute(.foregroundColor,
                                          value: AccentColor.current.color,
                                          range: NSMakeRange(0, attributeString.length))
+            #endif
             titleLabel.attributedText = attributeString
         } else {
             let attributeString = NSMutableAttributedString(string: item.text)

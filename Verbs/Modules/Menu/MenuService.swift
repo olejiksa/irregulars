@@ -27,36 +27,65 @@ final class MenuService {
     func buildMenu(with builder: UIMenuBuilder) {
         guard builder.system == UIMenuSystem.main else { return }
         
-        let privacyPolicyCommand = UIAction(title: .localized(.privacyPolicy), handler: goToPrivacyPolicy)
-        let termsOfUseCommand = UIAction(title: .localized(.terms), handler: goToTermsOfUse)
-        let contactUsCommand = UIAction(title: .localized(.contactUs), handler: goToMail)
+        let privacyPolicyCommand = UIAction(title: .localized(.privacyPolicyCapitalized), handler: goToPrivacyPolicy)
+        let termsOfUseCommand = UIAction(title: String.localized(.termsOfUseCapitalized), handler: goToTermsOfUse)
+        let contactUsCommand = UIAction(title: .localized(.contactUsCapitalized), handler: goToMail)
         let helpSubmenu = UIMenu(options: .displayInline, children: [privacyPolicyCommand,
                                                                      termsOfUseCommand,
                                                                      contactUsCommand])
         builder.insertChild(helpSubmenu, atEndOfMenu: .help)
         
-        let acknowledgementsCommand = UIAction(title: .localized(.acknowledgements), handler: goToAcknowledgements)
-        let acknowledgementsSubmenu = UIMenu(options: .displayInline, children: [acknowledgementsCommand])
-        builder.insertChild(acknowledgementsSubmenu, atEndOfMenu: .help)
+        let allOurAppsCommand = UIAction(title: .localized(.allOurAppsCapitalized), handler: goToAllApps)
+        let acknowledgementsCommand = UIAction(title: .localized(.acknowledgementsCapitalized),
+                                               handler: goToAcknowledgements)
+        let secondHelpSubmenu = UIMenu(options: .displayInline, children: [allOurAppsCommand,
+                                                                           acknowledgementsCommand])
+        builder.insertChild(secondHelpSubmenu, atEndOfMenu: .help)
         
-        let settingsCommand = UIAction(title: "settings".localized, handler: goToSettings)
-        let settingsSubmenu = UIMenu(options: .displayInline, children: [settingsCommand])
+        let voiceCommand = UIAction(title: .localized(.voice), handler: goToVoice)
+        let notificationsCommand = UIAction(title: .localized(.notifications), handler: goToNotifications)
+        let settingsSubmenu = UIMenu(options: .displayInline, children: [voiceCommand,
+                                                                         notificationsCommand])
         builder.insertSibling(settingsSubmenu, afterMenu: .preferences)
         
-        let rateAndReviewCommand = UIAction(title: .localized(.rateAndReview), handler: rateAndReview)
-        let shareAppCommand = UIAction(title: .localized(.shareApp), handler: shareApp)
-        let aboutSubmenu = UIMenu(options: .displayInline, children: [rateAndReviewCommand, shareAppCommand])
-        builder.insertSibling(aboutSubmenu, afterMenu: .about)
+        let upgradeToProCommand = UIAction(title: .localized(.upgradeToProCapitalized), handler: upgradeToPro)
+        let downgradeToLiteCommand = FeatureToggle.isDebug ?
+            UIAction(title: "downgrade_to".localized, handler: downgrade)
+            : nil
+        
+        let licenseSubmenuID = UIMenu.Identifier(rawValue: "licenseSubmenu")
+        let licenseSubmenu = UIMenu(identifier: licenseSubmenuID,
+                                    options: .displayInline,
+                                    children: FeatureToggle.isPaid
+                                        ? [downgradeToLiteCommand].compactMap { $0 }
+                                        : [upgradeToProCommand])
+        builder.insertSibling(licenseSubmenu, afterMenu: .about)
+        
+        let preferencesSubmenuID = UIMenu.Identifier(rawValue: "preferencesSubmenu")
+        let preferencesCommand = UIKeyCommand(input: ",", modifierFlags: .command, action: #selector(goToPreferences))
+        preferencesCommand.title = "Preferences..."
+        let preferencesSubmenu = UIMenu(identifier: preferencesSubmenuID,
+                                        options: .displayInline,
+                                        children: [preferencesCommand])
+        builder.insertSibling(preferencesSubmenu, beforeMenu: licenseSubmenuID)
+        
+        let rateAndReviewCommand = UIAction(title: .localized(.rateAndReviewCapitalized), handler: rateAndReview)
+        let shareAppCommand = UIAction(title: .localized(.shareAppCapitalized), handler: shareApp)
+        let socialSubmenu = UIMenu(options: .displayInline, children: [rateAndReviewCommand, shareAppCommand])
+        builder.insertSibling(socialSubmenu, afterMenu: licenseSubmenuID)
     }
     
     func canPerformAction(_ action: Selector, with sender: Any?) -> Bool {
         if [#selector(goToPrivacyPolicy),
             #selector(goToTermsOfUse),
             #selector(rateAndReview),
-            #selector(shareApp)].contains(action) {
+            #selector(shareApp),
+            #selector(goToPreferences)].contains(action) {
             return true
         } else if action == #selector(goToMail) {
             return mailService.isMailAvailable
+        } else if action == #selector(goToAllApps) {
+            return areAllAppsAvailable
         }
         
         return false
@@ -66,6 +95,12 @@ final class MenuService {
 // MARK: - Private
 
 private extension MenuService {
+    
+    var areAllAppsAvailable: Bool {
+        guard !FeatureToggle.isDebug,
+              let value = developerURL.map(UIApplication.shared.canOpenURL) else { return false }
+        return value
+    }
     
     @objc func goToPrivacyPolicy(_ action: UIAction) {
         let code = languageService.legal.rawValue
@@ -83,6 +118,13 @@ private extension MenuService {
     
     @objc func goToMail(_ action: UIAction) {
         mailService.present(in: viewController)
+    }
+    
+    @objc func upgradeToPro(_ action: UIAction) {
+        let vc = PaywallAssembly().viewController()
+        let nvc = UINavigationController(rootViewController: vc)
+        nvc.modalPresentationStyle = .formSheet
+        viewController?.present(nvc, animated: true)
     }
     
     @objc func goToAcknowledgements(_ action: UIAction) {
@@ -107,12 +149,38 @@ private extension MenuService {
         share(productURL, in: view)
     }
     
-    @objc func goToSettings(_ action: UIAction) {
+    @objc func goToVoice(_ action: UIAction) {
         guard let top = viewController?.secondaryViewController?.topViewController,
-              !(top is SettingsViewController) else { return }
+              !(top is VoiceViewController) else { return }
         
-        let settingsVC = SettingsAssembly().viewController()
-        viewController?.secondaryViewController?.push(settingsVC)
+        let vc = VoiceAssembly().viewController()
+        let nvc = UINavigationController(rootViewController: vc)
+        nvc.modalPresentationStyle = .pageSheet
+        viewController?.present(nvc, animated: true)
+    }
+    
+    @objc func goToNotifications(_ action: UIAction) {
+        guard let top = viewController?.secondaryViewController?.topViewController,
+              !(top is NotificationsViewController) else { return }
+        
+        let vc = NotificationsAssembly().viewController()
+        let nvc = UINavigationController(rootViewController: vc)
+        nvc.modalPresentationStyle = .pageSheet
+        viewController?.present(nvc, animated: true)
+    }
+    
+    @objc func goToPreferences() {
+        
+    }
+    
+    @objc func goToAllApps(_ action: UIAction) {
+        guard let developerURL = developerURL else { return }
+        open(developerURL)
+    }
+    
+    @objc func downgrade(_ action: UIAction) {
+        FeatureToggle.isPaid = false
+        UIMenuSystem.main.setNeedsRebuild()
     }
     
     func goToURL(_ url: URL) {

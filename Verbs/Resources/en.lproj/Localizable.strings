@@ -128,13 +128,21 @@
 "julian_eduardo_couoh_pablo" = "Julián Eduardo Couoh Pablo";
 "frequency" = "Frequency";
 "count" = "Quantity";
-"setup_notifications" = "Set up a convenient time and frequency of reminders for you during the day";
+"setup_notifications" = "Set up a convenient time and frequency of reminders of words for you during the day";
 "sunrise_question" = "When does your morning start?";
 "sunset_question" = "What time do you go to bed?";
 "not_found" = "Nothing found";
 "search_hint" = "Start typing any irregular verb or its translation to see the search results";
 "sunrise" = "Sunrise";
 "sunset" = "Sunset";
+"contact_support_capitalized" = "Contact Support";
+"rate_and_review_capitalized" = "Rate and Review";
+"privacy_policy_capitalized" = "Privacy Policy";
+"share_app_capitalized" = "Share App";
+"terms_of_use_capitalized" = "Terms of Use";
+"acknowledgements_capitalized" = "Acknowledgments";
+"all_our_apps_capitalized" = "All Our Apps";
+"upgrade_to_pro_capitalized" = "Upgrade to Pro";
 
 "abide" = "abide";
 "alight" = "alight";

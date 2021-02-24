@@ -128,13 +128,21 @@
 "disabled" = "Выключены";
 "frequency" = "Частота";
 "count" = "Количество";
-"setup_notifications" = "Настройте удобные для Вас время и частоту напоминаний в течение дня";
+"setup_notifications" = "Настройте удобные для Вас время и частоту напоминаний слов в течение дня";
 "sunrise_question" = "Когда у Вас начинается утро?";
 "sunset_question" = "В каком часу Вы ложитесь спать?";
 "not_found" = "Ничего не найдено";
 "search_hint" = "Начните набирать неправильный глагол в любой из форм или его перевод, чтобы увидеть результаты поиска";
 "sunrise" = "Восход";
 "sunset" = "Закат";
+"contact_support_capitalized" = "Связаться с поддержкой";
+"rate_and_review_capitalized" = "Оценить и дать отзыв";
+"privacy_policy_capitalized" = "Политика конфиденциальности";
+"share_app_capitalized" = "Поделиться приложением";
+"terms_of_use_capitalized" = "Условия использования";
+"acknowledgements_capitalized" = "Благодарности";
+"all_our_apps_capitalized" = "Все наши приложения";
+"upgrade_to_pro_capitalized" = "Купить Pro-версию";
 
 "abide" = "выносить, терпеть";
 "alight" = "выходить из транспорта";

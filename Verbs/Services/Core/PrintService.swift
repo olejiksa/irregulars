@@ -29,7 +29,11 @@ final class PrintService {
 private extension PrintService {
     
     func buildHTMLTable(_ verbs: [Verb], hasTranslation: Bool) -> String {
+        #if targetEnvironment(macCatalyst)
+        let color = UIButton().tintColor ?? AccentColor.current.color
+        #else
         let color = AccentColor.current.color
+        #endif
         
         var string = "<!DOCTYPE html>"
         

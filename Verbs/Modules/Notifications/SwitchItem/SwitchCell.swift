@@ -37,7 +37,11 @@ private extension SwitchCell {
         case .dimmed:
             toggleSwitch.onTintColor = .systemGray
         default:
+            #if targetEnvironment(macCatalyst)
+            toggleSwitch.onTintColor = UIButton().tintColor
+            #else
             toggleSwitch.onTintColor = AccentColor.current.color
+            #endif
         }
     }
     

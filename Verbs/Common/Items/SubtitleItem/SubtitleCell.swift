@@ -35,7 +35,11 @@ private extension SubtitleCell {
         
         switch (isSelected, tintAdjustmentMode) {
         case (true, .normal):
+            #if !targetEnvironment(macCatalyst)
             contentView.backgroundColor = AccentColor.current.color
+            #else
+            contentView.backgroundColor = UIButton().tintColor
+            #endif
             [textLabel, detailTextLabel].forEach { $0?.textColor = .white }
         case (true, _):
             contentView.backgroundColor = .systemGray
