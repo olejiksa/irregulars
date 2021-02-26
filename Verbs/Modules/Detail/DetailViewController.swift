@@ -42,6 +42,7 @@ final class DetailViewController: UIViewController {
         setupTableView()
         setupDelegate()
         setupKeyboardService()
+        updateFavoriteButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,7 +56,7 @@ final class DetailViewController: UIViewController {
     }
     
     func updateFavoriteButton() {
-        favoriteButton?.image = !favorites.verbs.contains(verb) ?
+        favoriteButton?.image = !Locator.favorites.verbs.contains(verb) ?
             SystemIcon.star.image :
             SystemIcon.starFill.image
     }
@@ -74,7 +75,7 @@ private extension DetailViewController {
                                          target: self,
                                          action: #selector(didMoreButtonTap))
         
-        let isFavorite = favorites.verbs.contains(verb)
+        let isFavorite = Locator.favorites.verbs.contains(verb)
         let image = isFavorite ? SystemIcon.starFill.image : SystemIcon.star.image
         favoriteButton = UIBarButtonItem(image: image,
                                          style: .plain,
@@ -122,15 +123,15 @@ private extension DetailViewController {
     @objc func didFavoriteTap() {
         updateFavoriteButton()
 
-        if !favorites.verbs.contains(verb) {
-            guard !favorites.shouldPaywallBeShown else {
+        if !Locator.favorites.verbs.contains(verb) {
+            guard !Locator.favorites.shouldPaywallBeShown else {
                 presenter.router?.goToPaywall()
                 return
             }
             
-            favorites.add(verb)
+            Locator.favorites.add(verb)
         } else {
-            favorites.remove(verb)
+            Locator.favorites.remove(verb)
         }
     }
     

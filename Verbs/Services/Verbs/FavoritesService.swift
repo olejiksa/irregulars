@@ -11,7 +11,6 @@ import Foundation
 final class FavoritesService: VerbsServiceProtocol {
     
     private let parser = JSONParser<Verb>()
-    private var favorites: Favorites?
     
     var favoritesOnly: Bool { true }
     
@@ -70,17 +69,15 @@ final class FavoritesService: VerbsServiceProtocol {
 private extension FavoritesService {
     
     func setupFavorites() {
-        favorites = Locator.favorites
-        favorites?.didUpdateBlock = { [weak self] in
+        Locator.favorites.didUpdateBlock = { [weak self] in
             self?.setItems()
             self?.setGroupedItems()
         }
     }
     
     func setItems() {
-        guard let favorites = favorites else { return }
         let set = Set(parser.read(from: .irregulars))
-        items = Array(set.intersection(favorites.verbs)).sorted(by: <)
+        items = Array(set.intersection(Locator.favorites.verbs)).sorted(by: <)
     }
     
     func setGroupedItems() {

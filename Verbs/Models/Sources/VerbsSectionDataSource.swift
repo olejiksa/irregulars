@@ -39,7 +39,7 @@ final class VerbsSectionDataSource: SectionDataSource {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let verb = !isSearchActive
-            ? verbsService.groupedItems[safe: indexPath.section]?[indexPath.row]
+            ? verbsService.groupedItems[safe: indexPath.section]?[safe: indexPath.row]
             : verbsService.searchedItems[indexPath.row] else { return .init() }
         let item: ItemProtocol = !verbsService.shouldTranslationBeShown || !hasTranslation ?
             ListItem(verb: verb) :

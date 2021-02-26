@@ -409,12 +409,6 @@
 "search_hint" = "Start typing any irregular verb or its translation to see the search results";
 "sunrise" = "Sunrise";
 "sunset" = "Sunset";
-//"contact_support_capitalized" = "Kontaktieren Sie uns";
-//"rate_and_review_capitalized" = "Bewerten und Rezension schreiben";
-//"privacy_policy_capitalized" = "Datenschutz";
-//"share_app_capitalized" = "Die App teilen";
-//"terms_of_use_capitalized" = "Nutzungsbedingungen";
-//"acknowledgements_capitalized" = "Dankbarkeiten";
-//"all_our_apps_capitalized" = "All Our Apps";
-//"upgrade_to_pro_capitalized" = "Pro-Version kaufen";
 "search" = "Suchen";
+"frequent_mistakes" = "Frequent mistakes";
+"frequent_mistakes_footer" = "Add these verbs to Favorites and check yourself again by passing the test on them: Tests → three dots → Favorites";

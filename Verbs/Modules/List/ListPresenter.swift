@@ -183,8 +183,8 @@ extension ListPresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    contextMenuConfigurationForRowAt indexPath: IndexPath,
                    point: CGPoint) -> UIContextMenuConfiguration? {
-        guard !isSearchActive else { return nil }
-        let verb = verbsService.groupedItems[indexPath.section][indexPath.row]
+        guard !isSearchActive,
+              let verb = verbsService.groupedItems[safe: indexPath.section]?[safe: indexPath.row] else { return nil }
         let isFavorite = Locator.favorites.verbs.contains(verb)
         
         let actionProvider: UIContextMenuActionProvider = { [weak self] _ in

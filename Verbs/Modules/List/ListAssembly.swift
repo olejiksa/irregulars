@@ -19,7 +19,7 @@ final class ListAssembly {
     }
     
     func viewController() -> some ListViewController {
-        let verbsService: VerbsServiceProtocol = favoritesOnly ? FavoritesService() : VerbsService()
+        let verbsService: VerbsServiceProtocol = favoritesOnly ? Locator.favoritesService : VerbsService()
         let presenter = ListPresenter(languageService: .init(),
                                       verbsService: verbsService,
                                       printService: .init())
