@@ -135,14 +135,15 @@
 "search_hint" = "Start typing any irregular verb or its translation to see the search results";
 "sunrise" = "Sunrise";
 "sunset" = "Sunset";
-"contact_support_capitalized" = "Contact Support";
-"rate_and_review_capitalized" = "Rate and Review";
-"privacy_policy_capitalized" = "Privacy Policy";
-"share_app_capitalized" = "Share App";
-"terms_of_use_capitalized" = "Terms of Use";
-"acknowledgements_capitalized" = "Acknowledgments";
-"all_our_apps_capitalized" = "All Our Apps";
-"upgrade_to_pro_capitalized" = "Upgrade to Pro";
+//"contact_support_capitalized" = "Contact Support";
+//"rate_and_review_capitalized" = "Rate and Review";
+//"privacy_policy_capitalized" = "Privacy Policy";
+//"share_app_capitalized" = "Share App";
+//"terms_of_use_capitalized" = "Terms of Use";
+//"acknowledgements_capitalized" = "Acknowledgments";
+//"all_our_apps_capitalized" = "All Our Apps";
+//"upgrade_to_pro_capitalized" = "Upgrade to Pro";
+"search" = "Search";
 
 "abide" = "abide";
 "alight" = "alight";

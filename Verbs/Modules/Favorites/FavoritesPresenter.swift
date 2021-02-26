@@ -54,7 +54,7 @@ final class FavoritesPresenter: NSObject {
         didSelectedItemSet()
     }
     
-    func print() {
+    @objc func print() {
         printService.print(favoritesService.items,
                            hasTranslation: languageService.hasTranslation)
     }

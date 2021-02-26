@@ -10,6 +10,19 @@ import UIKit
 
 final class SplitViewController: UISplitViewController {
     
+    // MARK: Keyboard Shortcuts
+    
+    override var canBecomeFirstResponder: Bool { true }
+    
+    override var keyCommands: [UIKeyCommand]? {
+        let defaultKeyCommands = super.keyCommands ?? []
+        let customKeyCommands = supplementaryViewController?.keyCommands ?? []
+        
+        return defaultKeyCommands + customKeyCommands
+    }
+    
+    // MARK: Private Properties
+    
     private let splitStateManager = SplitStateManager()
     
     init() {

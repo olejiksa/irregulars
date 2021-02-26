@@ -42,12 +42,6 @@ final class MenuService {
                                                                            acknowledgementsCommand])
         builder.insertChild(secondHelpSubmenu, atEndOfMenu: .help)
         
-        let voiceCommand = UIAction(title: .localized(.voice), handler: goToVoice)
-        let notificationsCommand = UIAction(title: .localized(.notifications), handler: goToNotifications)
-        let settingsSubmenu = UIMenu(options: .displayInline, children: [voiceCommand,
-                                                                         notificationsCommand])
-        builder.insertSibling(settingsSubmenu, afterMenu: .preferences)
-        
         let upgradeToProCommand = UIAction(title: .localized(.upgradeToProCapitalized), handler: upgradeToPro)
         let downgradeToLiteCommand = FeatureToggle.isDebug ?
             UIAction(title: "downgrade_to".localized, handler: downgrade)
@@ -61,13 +55,11 @@ final class MenuService {
                                         : [upgradeToProCommand])
         builder.insertSibling(licenseSubmenu, afterMenu: .about)
         
-        let preferencesSubmenuID = UIMenu.Identifier(rawValue: "preferencesSubmenu")
-        let preferencesCommand = UIKeyCommand(input: ",", modifierFlags: .command, action: #selector(goToPreferences))
-        preferencesCommand.title = "Preferences..."
-        let preferencesSubmenu = UIMenu(identifier: preferencesSubmenuID,
-                                        options: .displayInline,
-                                        children: [preferencesCommand])
-        builder.insertSibling(preferencesSubmenu, beforeMenu: licenseSubmenuID)
+        let voiceCommand = UIAction(title: .localized(.voice), handler: goToVoice)
+        let notificationsCommand = UIAction(title: .localized(.notifications), handler: goToNotifications)
+        let settingsSubmenu = UIMenu(options: .displayInline, children: [voiceCommand,
+                                                                         notificationsCommand])
+        builder.insertSibling(settingsSubmenu, beforeMenu: licenseSubmenuID)
         
         let rateAndReviewCommand = UIAction(title: .localized(.rateAndReviewCapitalized), handler: rateAndReview)
         let shareAppCommand = UIAction(title: .localized(.shareAppCapitalized), handler: shareApp)
@@ -79,8 +71,7 @@ final class MenuService {
         if [#selector(goToPrivacyPolicy),
             #selector(goToTermsOfUse),
             #selector(rateAndReview),
-            #selector(shareApp),
-            #selector(goToPreferences)].contains(action) {
+            #selector(shareApp)].contains(action) {
             return true
         } else if action == #selector(goToMail) {
             return mailService.isMailAvailable
@@ -154,9 +145,7 @@ private extension MenuService {
               !(top is VoiceViewController) else { return }
         
         let vc = VoiceAssembly().viewController()
-        let nvc = UINavigationController(rootViewController: vc)
-        nvc.modalPresentationStyle = .pageSheet
-        viewController?.present(nvc, animated: true)
+        viewController?.secondaryViewController?.push(vc)
     }
     
     @objc func goToNotifications(_ action: UIAction) {
@@ -164,13 +153,7 @@ private extension MenuService {
               !(top is NotificationsViewController) else { return }
         
         let vc = NotificationsAssembly().viewController()
-        let nvc = UINavigationController(rootViewController: vc)
-        nvc.modalPresentationStyle = .pageSheet
-        viewController?.present(nvc, animated: true)
-    }
-    
-    @objc func goToPreferences() {
-        
+        viewController?.secondaryViewController?.push(vc)
     }
     
     @objc func goToAllApps(_ action: UIAction) {

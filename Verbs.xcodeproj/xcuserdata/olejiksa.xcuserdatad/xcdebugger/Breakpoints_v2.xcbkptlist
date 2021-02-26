@@ -112,7 +112,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "151"
                   endingLineNumber = "151"
-                  offsetFromSymbolStart = "186">
+                  offsetFromSymbolStart = "158">
                </Location>
                <Location
                   uuid = "C27FF917-DF8C-424A-AEB3-D58F0615FF15 - 1fc64d86833a3ecc"
@@ -145,6 +145,22 @@
             startingLineNumber = "152"
             endingLineNumber = "152"
             landmarkName = "didBuy(error:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "457876F8-6263-4692-8F19-FD924B3C0255"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Verbs/Modules/Favorites/FavoritesPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "print()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

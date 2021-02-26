@@ -63,19 +63,19 @@ private extension VoiceViewController {
         navigationItem.title = .localized(.voice)
         navigationItem.largeTitleDisplayMode = .never
         
-        self.moreButton = UIBarButtonItem(image: SystemIcon.ellipsis.image,
-                                         style: .plain,
-                                         target: self,
-                                         action: #selector(didMoreButtonTap))
-        self.playButton = UIBarButtonItem(image: image(for: .play),
-                                          style: .plain,
-                                          target: self,
-                                          action: #selector(didPlayTap))
-        self.stopButton = UIBarButtonItem(image: image(for: .stop),
-                                          style: .plain,
-                                          target: self,
-                                          action: #selector(didPlayTap))
-        navigationItem.rightBarButtonItems = [self.playButton, self.moreButton].compactMap { $0 }
+        moreButton = .init(image: SystemIcon.ellipsis.image,
+                           style: .plain,
+                           target: self,
+                           action: #selector(didMoreButtonTap))
+        playButton = .init(image: image(for: .play),
+                           style: .plain,
+                           target: self,
+                           action: #selector(didPlayTap))
+        stopButton = .init(image: image(for: .stop),
+                           style: .plain,
+                           target: self,
+                           action: #selector(didPlayTap))
+        navigationItem.rightBarButtonItems = [playButton, moreButton].compactMap { $0 }
     }
     
     func setupTableView() {
@@ -138,5 +138,9 @@ private extension VoiceViewController {
         popoverViewController.barButtonItem = sender
         popoverViewController.delegate = viewController
         present(viewController, animated: true)
+    }
+    
+    @objc func didCloseTap() {
+        dismiss(animated: true)
     }
 }

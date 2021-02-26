@@ -9,6 +9,28 @@
 import UIKit
 
 final class FavoritesViewController: UIViewController {
+    
+    // MARK: Keyboard Shortcuts
+    
+    override var canBecomeFirstResponder: Bool { true }
+    
+    override var keyCommands: [UIKeyCommand]? {
+        let defaultKeyCommands = super.keyCommands ?? []
+        let customKeyCommands: [UIKeyCommand] = [.init(title: "search".localized,
+                                                       action: #selector(didSearchPress),
+                                                       input: "F",
+                                                       modifierFlags: .command,
+                                                       discoverabilityTitle: "search".localized),
+                                                 .init(title: "print".localized,
+                                                       action: #selector(didPrintPress),
+                                                       input: "P",
+                                                       modifierFlags: .command,
+                                                       discoverabilityTitle: "print".localized)]
+        
+        return defaultKeyCommands + customKeyCommands
+    }
+    
+    // MARK: Private Properties
 
     private let presenter: FavoritesPresenter
     private let searchController = UISearchController(searchResultsController: nil)
@@ -222,6 +244,17 @@ private extension FavoritesViewController {
             presenter.isEditing = true
             navigationItem.leftBarButtonItem = doneButton
         }
+    }
+    
+    // MARK: Keyboard Shortcuts
+    
+    @objc func didPrintPress() {
+        presenter.print()
+    }
+    
+    @objc func didSearchPress() {
+        searchController.isActive = true
+        searchController.searchBar.becomeFirstResponder()
     }
 }
 

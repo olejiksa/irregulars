@@ -111,4 +111,8 @@ private extension NotificationsViewController {
     func setupView() {
         view.backgroundColor = .systemBackground
     }
+    
+    @objc func didCloseTap() {
+        dismiss(animated: true)
+    }
 }
