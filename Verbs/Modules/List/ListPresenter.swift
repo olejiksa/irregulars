@@ -65,24 +65,7 @@ final class ListPresenter: NSObject {
     }
     
     func print() {
-        printService.print(verbsService.items,
-                           hasTranslation: languageService.hasTranslation)
-    }
-    
-    func setState() {
-        let state: ListState
-        switch (isSearchActive, verbsService.searchText.isEmpty, items.isEmpty) {
-        case (true, false, true):
-            state = .searchNotFound("not_found".localized)
-        case (true, true, true):
-            state = .searchStarted("search_hint".localized)
-        case (_, _, false):
-            state = .data
-        case (false, _, true):
-            state = .empty("empty_favorites".localized)
-        }
-        
-        viewController?.setState(state)
+        printService.print(verbsService.items, hasTranslation: languageService.hasTranslation)
     }
 }
 
@@ -154,6 +137,13 @@ private extension ListPresenter {
         let dragItem = UIDragItem(itemProvider: NSItemProvider(object: VerbDragItem(verb: verb)))
         dragItem.localObject = verb
         return [dragItem]
+    }
+    
+    func setState() {
+        let state = ListState(isSearchActive: isSearchActive,
+                              isSearchTextEmpty: verbsService.searchText.isEmpty,
+                              areItemsEmpty: items.isEmpty)
+        viewController?.setState(state)
     }
 }
 
@@ -270,6 +260,7 @@ extension ListPresenter: UISearchControllerDelegate {
     
     func willDismissSearchController(_ searchController: UISearchController) {
         isSearchActive = false
+        searchController.searchBar.resignFirstResponder()
     }
     
     func didDismissSearchController(_ searchController: UISearchController) {

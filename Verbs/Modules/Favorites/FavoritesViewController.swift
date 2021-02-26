@@ -46,15 +46,7 @@ final class FavoritesViewController: UIViewController {
     private var editButton: UIBarButtonItem?
     private var doneButton: UIBarButtonItem?
     
-    private let noDataLabel: UILabel = {
-        let label = UILabel()
-        label.adjustsFontForContentSizeCategory = true
-        label.font = .preferredFont(forTextStyle: .body)
-        label.textAlignment = .center
-        label.textColor = .secondaryLabel
-        label.numberOfLines = 0
-        return label
-    }()
+    private let noDataLabel = UILabel.noDataLabel
     
     init(presenter: FavoritesPresenter) {
         self.presenter = presenter

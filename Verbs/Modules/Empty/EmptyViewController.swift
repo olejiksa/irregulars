@@ -10,16 +10,7 @@ import UIKit
 
 final class EmptyViewController: UIViewController {
     
-    private let noDataLabel: UILabel = {
-        let label = UILabel()
-        label.adjustsFontForContentSizeCategory = true
-        label.font = .preferredFont(forTextStyle: .body)
-        label.text = .localized(.emptyVerbs)
-        label.textAlignment = .center
-        label.textColor = .secondaryLabel
-        label.numberOfLines = 0
-        return label
-    }()
+    private let noDataLabel = UILabel.noDataLabel
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -61,6 +52,7 @@ private extension EmptyViewController {
     
     func setupNoDataLabel() {
         view.addSubview(noDataLabel)
+        noDataLabel.text = .localized(.emptyVerbs)
         noDataLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([

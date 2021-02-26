@@ -18,7 +18,7 @@ final class FavoritesPresenter: NSObject {
     var hasTranslation: Bool { languageService.hasTranslation }
     
     private let languageService: LanguageService
-    private let favoritesService: VerbsServiceProtocol
+    private let verbsService: VerbsServiceProtocol
     private let printService: PrintService
     private var favorites = Locator.favorites
     
@@ -30,15 +30,15 @@ final class FavoritesPresenter: NSObject {
     private var infinitive: String?
     
     init(languageService: LanguageService,
-         favoritesService: VerbsServiceProtocol,
+         verbsService: VerbsServiceProtocol,
          printService: PrintService) {
         self.languageService = languageService
-        self.favoritesService = favoritesService
+        self.verbsService = verbsService
         self.printService = printService
         
         super.init()
         
-        self.dataSource = .init(verbsService: favoritesService,
+        self.dataSource = .init(verbsService: verbsService,
                                 hasTranslation: languageService.hasTranslation,
                                 setStateBlock: setState)
         
@@ -54,9 +54,8 @@ final class FavoritesPresenter: NSObject {
         didSelectedItemSet()
     }
     
-    @objc func print() {
-        printService.print(favoritesService.items,
-                           hasTranslation: languageService.hasTranslation)
+    func print() {
+        printService.print(verbsService.items, hasTranslation: languageService.hasTranslation)
     }
 }
 
@@ -65,11 +64,11 @@ final class FavoritesPresenter: NSObject {
 private extension FavoritesPresenter {
     
     var items: [Verb] {
-        !isSearchActive ? favoritesService.items : favoritesService.searchedItems
+        !isSearchActive ? verbsService.items : verbsService.searchedItems
     }
     
     func loadSettings() {
-        favoritesService.shouldTranslationBeShown = UserDefaults.shared.bool(for: .shouldTranslationBeShown)
+        verbsService.shouldTranslationBeShown = UserDefaults.shared.bool(for: .shouldTranslationBeShown)
     }
     
     func subscribe() {
@@ -92,18 +91,9 @@ private extension FavoritesPresenter {
     }
     
     func setState() {
-        let state: ListState
-        switch (isSearchActive, favoritesService.searchText.isEmpty, items.isEmpty) {
-        case (true, false, true):
-            state = .searchNotFound("not_found".localized)
-        case (true, true, true):
-            state = .searchStarted("search_hint".localized)
-        case (_, _, false):
-            state = .data
-        case (false, _, true):
-            state = .empty("empty_favorites".localized)
-        }
-        
+        let state = ListState(isSearchActive: isSearchActive,
+                              isSearchTextEmpty: verbsService.searchText.isEmpty,
+                              areItemsEmpty: items.isEmpty)
         viewController?.setState(state)
     }
     
@@ -111,7 +101,7 @@ private extension FavoritesPresenter {
         guard !isSearchActive,
               viewController?.splitViewController?.isCollapsed == false else { return }
         
-        let indexPath = favoritesService.indexPath(of: infinitive)
+        let indexPath = verbsService.indexPath(of: infinitive)
         viewController?.selectRow(at: indexPath)
     }
     
@@ -126,7 +116,7 @@ private extension FavoritesPresenter {
     
     @objc func willUpdateList(_ notification: Notification) {
         let value = notification.userInfo?[Notification.Name.list] as? Bool ?? false
-        favoritesService.shouldTranslationBeShown = value
+        verbsService.shouldTranslationBeShown = value
         viewController?.reloadData()
         didSelectedItemSet()
     }
@@ -160,8 +150,8 @@ extension FavoritesPresenter: UITableViewDelegate {
         }
 
         let verb = !isSearchActive
-            ? favoritesService.groupedItems[indexPath.section][indexPath.row]
-            : favoritesService.searchedItems[indexPath.row]
+            ? verbsService.groupedItems[indexPath.section][indexPath.row]
+            : verbsService.searchedItems[indexPath.row]
         
         guard infinitive != verb.infinitive.value else { return }
         router?.goToDetail(with: verb)
@@ -171,7 +161,7 @@ extension FavoritesPresenter: UITableViewDelegate {
                    contextMenuConfigurationForRowAt indexPath: IndexPath,
                    point: CGPoint) -> UIContextMenuConfiguration? {
         guard !isSearchActive, !isEditing else { return nil }
-        let verb = favoritesService.groupedItems[indexPath.section][indexPath.row]
+        let verb = verbsService.groupedItems[indexPath.section][indexPath.row]
         let isFavorite = Locator.favorites.verbs.contains(verb)
         
         let actionProvider: UIContextMenuActionProvider = { _ in
@@ -203,7 +193,7 @@ extension FavoritesPresenter: UITableViewDelegate {
         let svc = viewController?.splitViewController
         let isCompact = svc?.traitCollection.horizontalSizeClass == .compact
         guard isCompact, let indexPath = configuration.identifier as? IndexPath else { return }
-        let verb = favoritesService.groupedItems[indexPath.section][indexPath.row]
+        let verb = verbsService.groupedItems[indexPath.section][indexPath.row]
         animator.addAnimations {
             self.router?.goToDetail(with: verb)
         }
@@ -215,7 +205,7 @@ extension FavoritesPresenter: UITableViewDelegate {
                                               title: "remove".localized) { [weak self] _, _, _ in
             guard let self = self,
                   !self.isSearchActive,
-                  let verb = self.favoritesService.groupedItems[safe: indexPath.section]?[indexPath.row]
+                  let verb = self.verbsService.groupedItems[safe: indexPath.section]?[indexPath.row]
             else { return }
             
             self.favorites.remove(verb)
@@ -235,7 +225,7 @@ extension FavoritesPresenter: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else { return }
-        favoritesService.searchText = searchText
+        verbsService.searchText = searchText
         viewController?.reloadData()
     }
 }
@@ -250,6 +240,7 @@ extension FavoritesPresenter: UISearchControllerDelegate {
     
     func willDismissSearchController(_ searchController: UISearchController) {
         isSearchActive = false
+        searchController.searchBar.resignFirstResponder()
     }
     
     func didDismissSearchController(_ searchController: UISearchController) {

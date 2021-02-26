@@ -12,4 +12,17 @@ enum ListState {
     case data
     case searchNotFound(String)
     case searchStarted(String)
+    
+    init(isSearchActive: Bool, isSearchTextEmpty: Bool, areItemsEmpty: Bool) {
+        switch (isSearchActive, isSearchTextEmpty, areItemsEmpty) {
+        case (true, false, true):
+            self = .searchNotFound("not_found".localized)
+        case (true, true, true):
+            self = .searchStarted("search_hint".localized)
+        case (_, _, false):
+            self = .data
+        case (false, _, true):
+            self = .empty("empty_favorites".localized)
+        }
+    }
 }

@@ -36,22 +36,15 @@ final class ListViewController: UIViewController {
     private let searchController = UISearchController(searchResultsController: nil)
     private var keyboardService: KeyboardService?
     private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
-    private var state: ListState = .data
+    
     private var tableView: UITableView?
-    private var moreButton: UIBarButtonItem?
+    private var state: ListState = .data
+    private var topInset: CGFloat = 0
     private var listMenu: ListMenu?
     
-    private let noDataLabel: UILabel = {
-        let label = UILabel()
-        label.adjustsFontForContentSizeCategory = true
-        label.font = .preferredFont(forTextStyle: .body)
-        label.textAlignment = .center
-        label.textColor = .secondaryLabel
-        label.numberOfLines = 0
-        return label
-    }()
+    private var moreButton: UIBarButtonItem?
     
-    private var topInset: CGFloat = 0
+    private let noDataLabel = UILabel.noDataLabel
     
     init(presenter: ListPresenter) {
         self.presenter = presenter
@@ -71,6 +64,7 @@ final class ListViewController: UIViewController {
         setupTableView()
         setupSearchController()
         setupNoDataLabel()
+        setupView()
         setupKeyboardService()
         presenter.selectWhenRegular()
     }
@@ -205,6 +199,10 @@ private extension ListViewController {
         
         self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.tableView = tableView
+    }
+    
+    func setupView() {
+        view.backgroundColor = .systemBackground
     }
     
     func setupSearchController() {

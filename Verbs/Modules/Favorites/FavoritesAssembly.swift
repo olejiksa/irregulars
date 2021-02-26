@@ -18,7 +18,7 @@ final class FavoritesAssembly: AssemblyProtocol {
     
     func viewController() -> some FavoritesViewController {
         let presenter = FavoritesPresenter(languageService: .init(),
-                                           favoritesService: Locator.favoritesService,
+                                           verbsService: Locator.favoritesService,
                                            printService: .init())
         let viewController = FavoritesViewController(presenter: presenter)
         let navigationController = UINavigationController(rootViewController: viewController)
