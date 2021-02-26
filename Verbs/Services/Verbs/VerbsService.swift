@@ -1,17 +1,19 @@
 //
-//  FavoritesService.swift
+//  VerbsService.swift
 //  Verbs
 //
-//  Created by Oleg Samoylov on 08.11.2020.
+//  Created by Oleg Samoylov on 26.09.2020.
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
 import Foundation
 
-final class FavoritesService: VerbsServiceProtocol {
+final class VerbsService: VerbsServiceProtocol {
     
     private let parser = JSONParser<Verb>()
-    private var favorites: Favorites?
+    private let spotlightService = SpotlightService()
+    
+    var favoritesOnly: Bool { false }
     
     var searchText = ""
     
@@ -29,18 +31,27 @@ final class FavoritesService: VerbsServiceProtocol {
     private(set) var items: [Verb] = []
     private(set) var groupedItems: [[Verb]] = []
     
-    var shouldTranslationBeShown: Bool = false {
+    var shouldRegularVerbsBeShown: Bool = true {
         didSet {
             setItems()
             setGroupedItems()
         }
     }
     
-    var shouldDerivativesBeShown: Bool = false
-    var shouldRegularVerbsBeShown: Bool = false
+    var shouldDerivativesBeShown: Bool = true {
+        didSet {
+            setItems()
+            setGroupedItems()
+        }
+    }
+    
+    var shouldTranslationBeShown: Bool = false {
+        didSet {
+            setGroupedItems()
+        }
+    }
     
     init() {
-        setupFavorites()
         setItems()
         setGroupedItems()
     }
@@ -65,20 +76,23 @@ final class FavoritesService: VerbsServiceProtocol {
 
 // MARK: - Private
 
-private extension FavoritesService {
-    
-    func setupFavorites() {
-        favorites = Locator.favorites
-        favorites?.didUpdateBlock = { [weak self] in
-            self?.setItems()
-            self?.setGroupedItems()
-        }
-    }
+private extension VerbsService {
     
     func setItems() {
-        guard let favorites = favorites else { return }
-        let set = Set(parser.read(from: .irregulars))
-        items = Array(set.intersection(favorites.verbs)).sorted(by: <)
+        var set = Set(parser.read(from: .irregulars))
+       
+        if !shouldRegularVerbsBeShown {
+            let elements = set.filter(\.hasRegular)
+            elements.forEach { set.remove($0) }
+        }
+        
+        if !shouldDerivativesBeShown {
+            let elements = set.filter(\.isDerived)
+            elements.forEach { set.remove($0) }
+        }
+        
+        items = Array(set).sorted(by: <)
+        spotlightService.setupSpotlight(with: items)
     }
     
     func setGroupedItems() {

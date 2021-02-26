@@ -14,11 +14,13 @@ final class ListPresenter: NSObject {
     weak var viewController: ListViewController?
     var router: ListRouter?
     
+    var isEditing = false
     var hasTranslation: Bool { languageService.hasTranslation }
+    var favoritesOnly: Bool { verbsService.favoritesOnly }
     
     private let languageService: LanguageService
     private let verbsService: VerbsServiceProtocol
-    private var printService: PrintService
+    private let printService: PrintService
     
     private var infinitive: String?
     
@@ -42,6 +44,7 @@ final class ListPresenter: NSObject {
         
         loadSettings()
         subscribe()
+        setState()
     }
     
     func selectWhenRegular() {
@@ -73,6 +76,10 @@ final class ListPresenter: NSObject {
 
 private extension ListPresenter {
     
+    var items: [Verb] {
+        !isSearchActive ? verbsService.items : verbsService.searchedItems
+    }
+    
     func loadSettings() {
         verbsService.shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .regularVerbs)
         verbsService.shouldDerivativesBeShown = UserDefaults.shared.bool(for: .derivatives)
@@ -92,6 +99,17 @@ private extension ListPresenter {
                                                selector: #selector(willUpdateList),
                                                name: .list,
                                                object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(willReloadData),
+                                               name: .favorites,
+                                               object: nil)
+    }
+    
+    func setState() {
+        let state = ListState(isSearchActive: isSearchActive,
+                              isSearchTextEmpty: verbsService.searchText.isEmpty,
+                              areItemsEmpty: items.isEmpty)
+        viewController?.setState(state)
     }
     
     func didSelectedItemSet() {
@@ -118,6 +136,11 @@ private extension ListPresenter {
         didSelectedItemSet()
     }
     
+    @objc func willReloadData(_ notification: Notification) {
+        viewController?.reloadData()
+        didSelectedItemSet()
+    }
+    
     func handleMenuAction(verb: Verb, isFavorite: Bool) {
         if isFavorite {
             Locator.favorites.remove(verb)
@@ -138,22 +161,11 @@ private extension ListPresenter {
         dragItem.localObject = verb
         return [dragItem]
     }
-    
-    func setState() {
-        let state = ListState(isSearchActive: isSearchActive,
-                              isSearchTextEmpty: verbsService.searchText.isEmpty,
-                              areItemsEmpty: items.isEmpty)
-        viewController?.setState(state)
-    }
 }
 
 // MARK: - UITableViewDelegate
 
 extension ListPresenter: UITableViewDelegate {
-    
-    var items: [Verb] {
-        !isSearchActive ? verbsService.items : verbsService.searchedItems
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isSearchActive {
@@ -175,16 +187,24 @@ extension ListPresenter: UITableViewDelegate {
         let verb = verbsService.groupedItems[indexPath.section][indexPath.row]
         let isFavorite = Locator.favorites.verbs.contains(verb)
         
-        let actionProvider: UIContextMenuActionProvider = { _ in
-            let action = !isFavorite ?
-                UIAction(title: "add_to_favorites".localized,
-                         image: SystemIcon.star.image) { [weak self] _ in
-                    self?.handleMenuAction(verb: verb, isFavorite: isFavorite)
-                } :
-                UIAction(title: "remove_from_favorites".localized,
-                         image: SystemIcon.starSlash.image) { [weak self] _ in
+        let actionProvider: UIContextMenuActionProvider = { [weak self] _ in
+            let action: UIAction
+                
+            switch (self?.favoritesOnly, isFavorite) {
+            case (true, _):
+                action =  .init(title: "remove".localized, image: SystemIcon.starSlash.image) { [weak self] _ in
                     self?.handleMenuAction(verb: verb, isFavorite: isFavorite)
                 }
+            case (_, true):
+                action = .init(title: "remove_from_favorites".localized, image: SystemIcon.starSlash.image) { [weak self] _ in
+                    self?.handleMenuAction(verb: verb, isFavorite: isFavorite)
+                }
+            case (_, false):
+                action = .init(title: "add_to_favorites".localized, image: SystemIcon.star.image) { [weak self] _ in
+                    self?.handleMenuAction(verb: verb, isFavorite: isFavorite)
+                }
+            }
+                
             return .init(children: [action])
         }
         
@@ -210,9 +230,24 @@ extension ListPresenter: UITableViewDelegate {
         let isCompact = svc?.traitCollection.horizontalSizeClass == .compact
         guard isCompact, let indexPath = configuration.identifier as? IndexPath else { return }
         let verb = verbsService.groupedItems[indexPath.section][indexPath.row]
-        animator.addAnimations {
-            self.router?.goToDetail(with: verb)
+        animator.addAnimations { self.router?.goToDetail(with: verb) }
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        guard favoritesOnly else { return nil }
+        
+        let removeAction = UIContextualAction(style: .destructive, title: "remove".localized) { [weak self] _, _, _ in
+            guard let self = self, !self.isSearchActive,
+                  let verb = self.verbsService.groupedItems[safe: indexPath.section]?[indexPath.row]
+            else { return }
+            
+            Locator.favorites.remove(verb)
+            tableView.reloadData()
         }
+        
+        removeAction.backgroundColor = tableView.tintAdjustmentMode != .dimmed ? .systemRed : .systemGray
+        return .init(actions: [removeAction])
     }
 }
 
@@ -223,7 +258,8 @@ extension ListPresenter: UITableViewDragDelegate {
     func tableView(_ tableView: UITableView,
                    itemsForBeginning session: UIDragSession,
                    at indexPath: IndexPath) -> [UIDragItem] {
-        guard !isSearchActive,
+        guard !favoritesOnly,
+              !isSearchActive,
               viewController?.splitViewController?.isCollapsed == false else { return [] }
         session.localContext = tableView
         return dragItems(at: indexPath)
@@ -233,7 +269,8 @@ extension ListPresenter: UITableViewDragDelegate {
                    itemsForAddingTo session: UIDragSession,
                    at indexPath: IndexPath,
                    point: CGPoint) -> [UIDragItem] {
-        guard !isSearchActive,
+        guard !favoritesOnly,
+              !isSearchActive,
               viewController?.splitViewController?.isCollapsed == false else { return [] }
         return dragItems(at: indexPath)
     }

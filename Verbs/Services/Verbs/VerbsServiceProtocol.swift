@@ -10,6 +10,8 @@ import Foundation
 
 protocol VerbsServiceProtocol: class {
     
+    var favoritesOnly: Bool { get }
+    
     var items: [Verb] { get }
     var searchedItems: [Verb] { get }
     var groupedItems: [[Verb]] { get }

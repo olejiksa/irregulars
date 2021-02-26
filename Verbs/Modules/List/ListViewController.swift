@@ -10,6 +10,8 @@ import UIKit
 
 final class ListViewController: UIViewController {
     
+    var favoritesOnly: Bool { presenter.favoritesOnly }
+    
     // MARK: Keyboard Shortcuts
     
     override var canBecomeFirstResponder: Bool { true }
@@ -43,6 +45,8 @@ final class ListViewController: UIViewController {
     private var listMenu: ListMenu?
     
     private var moreButton: UIBarButtonItem?
+    private var editButton: UIBarButtonItem?
+    private var doneButton: UIBarButtonItem?
     
     private let noDataLabel = UILabel.noDataLabel
     
@@ -149,29 +153,33 @@ final class ListViewController: UIViewController {
 
 private extension ListViewController {
     
-    func setupKeyboardService() {
-        keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
-    }
-    
     func setupNavigationBar() {
-        if splitViewController?.isCollapsed == true {
+        switch (favoritesOnly, splitViewController?.isCollapsed) {
+        case (true, _):
+            navigationItem.title = "favorites".localized
+        case (false, true):
             navigationItem.title = "verbs".localized
-        } else {
+        case (false, _):
             navigationItem.title = "all".localized
         }
         
         moreButton = .init(icon: .ellipsis)
         navigationItem.rightBarButtonItem = moreButton
-    }
-    
-    func setupMenu() {
-        listMenu = .init(barButtonItem: moreButton,
-                         hasTranslation: presenter.hasTranslation,
-                         favoritesOnly: false,
-                         printInfoBlock: presenter.print,
-                         updateDerivativesBlock: presenter.updateDerivatives,
-                         updateRegularsBlock: presenter.updateRegulars)
-        listMenu?.build()
+        
+        if favoritesOnly {
+            editButton = .init(barButtonSystemItem: .edit,
+                               target: self,
+                               action: #selector(didEditTap))
+            doneButton = .init(barButtonSystemItem: .done,
+                               target: self,
+                               action: #selector(didEditTap))
+            
+            navigationItem.leftBarButtonItem = editButton
+            navigationItem.rightBarButtonItem = moreButton
+            
+            editButton?.accessibilityIdentifier = AccessibilityIdentifier.editButton.rawValue
+            doneButton?.accessibilityIdentifier = AccessibilityIdentifier.doneButton.rawValue
+        }
     }
     
     func setupTableView() {
@@ -201,6 +209,17 @@ private extension ListViewController {
         self.tableView = tableView
     }
     
+    func setupNoDataLabel() {
+        view.addSubview(noDataLabel)
+        noDataLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            noDataLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            noDataLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            noDataLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 2 / 3)
+        ])
+    }
+    
     func setupView() {
         view.backgroundColor = .systemBackground
     }
@@ -213,15 +232,32 @@ private extension ListViewController {
         navigationItem.searchController = searchController
     }
     
-    func setupNoDataLabel() {
-        view.addSubview(noDataLabel)
-        noDataLabel.translatesAutoresizingMaskIntoConstraints = false
+    func setupMenu() {
+        listMenu = .init(barButtonItem: moreButton,
+                         hasTranslation: presenter.hasTranslation,
+                         favoritesOnly: favoritesOnly,
+                         printInfoBlock: presenter.print,
+                         updateDerivativesBlock: favoritesOnly ? nil : presenter.updateDerivatives,
+                         updateRegularsBlock: favoritesOnly ? nil : presenter.updateRegulars)
+        listMenu?.build()
+    }
+    
+    func setupKeyboardService() {
+        keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
+    }
+    
+    @objc func didEditTap() {
+        guard let tableView = tableView else { return }
         
-        NSLayoutConstraint.activate([
-            noDataLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            noDataLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            noDataLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 2 / 3)
-        ])
+        if tableView.isEditing {
+            tableView.setEditing(false, animated: true)
+            presenter.isEditing = false
+            navigationItem.leftBarButtonItem = editButton
+        } else {
+            tableView.setEditing(true, animated: true)
+            presenter.isEditing = true
+            navigationItem.leftBarButtonItem = doneButton
+        }
     }
     
     // MARK: Keyboard Shortcuts

@@ -146,10 +146,6 @@
 		EB7DFF89252B1CD7000B711D /* Verb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB1D93251F15D30019972C /* Verb.swift */; };
 		EB7DFF8C252B1CE6000B711D /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3BC16251F4D60006E0DC7 /* JSONParser.swift */; };
 		EB7DFF95252B25DD000B711D /* irregulars.json in Resources */ = {isa = PBXBuildFile; fileRef = EBB3BC14251F4BAA006E0DC7 /* irregulars.json */; };
-		EB83258B2556EAEB005E02C1 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325892556EAEB005E02C1 /* FavoritesViewController.swift */; };
-		EB8325922556EB60005E02C1 /* FavoritesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325912556EB60005E02C1 /* FavoritesAssembly.swift */; };
-		EB8325982556EB6B005E02C1 /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325972556EB6B005E02C1 /* FavoritesPresenter.swift */; };
-		EB83259C2556EBE9005E02C1 /* FavoritesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83259B2556EBE9005E02C1 /* FavoritesRouter.swift */; };
 		EB8325A22556EC9F005E02C1 /* AssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325A12556EC9F005E02C1 /* AssemblyProtocol.swift */; };
 		EB8325A62556EFF0005E02C1 /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325A52556EFF0005E02C1 /* FavoritesService.swift */; };
 		EB8B2BA125AF5A5C008E0118 /* BarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B2BA025AF5A5C008E0118 /* BarButtonItem.swift */; };
@@ -504,10 +500,6 @@
 		EB7DFF68252451D2000B711D /* VerbsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbsWidget.swift; sourceTree = "<group>"; };
 		EB7DFF6B252451D4000B711D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB7DFF6D252451D4000B711D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EB8325892556EAEB005E02C1 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
-		EB8325912556EB60005E02C1 /* FavoritesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesAssembly.swift; sourceTree = "<group>"; };
-		EB8325972556EB6B005E02C1 /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
-		EB83259B2556EBE9005E02C1 /* FavoritesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRouter.swift; sourceTree = "<group>"; };
 		EB8325A12556EC9F005E02C1 /* AssemblyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyProtocol.swift; sourceTree = "<group>"; };
 		EB8325A52556EFF0005E02C1 /* FavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesService.swift; sourceTree = "<group>"; };
 		EB8B2BA025AF5A5C008E0118 /* BarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonItem.swift; sourceTree = "<group>"; };
@@ -817,7 +809,6 @@
 				EB5D6E1525A0191A00CCCA85 /* Acknowledgements */,
 				EB2F5E0A251F5407007DCF60 /* Detail */,
 				EB7DFF5225244378000B711D /* Empty */,
-				EB8325882556EACF005E02C1 /* Favorites */,
 				EB2F5E09251F53FD007DCF60 /* List */,
 				EB995B8425E521DC0082DE32 /* Menu */,
 				EB68F73325D5849500D6DF63 /* Notifications */,
@@ -1076,17 +1067,6 @@
 			path = VerbsWidget;
 			sourceTree = "<group>";
 		};
-		EB8325882556EACF005E02C1 /* Favorites */ = {
-			isa = PBXGroup;
-			children = (
-				EB8325912556EB60005E02C1 /* FavoritesAssembly.swift */,
-				EB8325972556EB6B005E02C1 /* FavoritesPresenter.swift */,
-				EB83259B2556EBE9005E02C1 /* FavoritesRouter.swift */,
-				EB8325892556EAEB005E02C1 /* FavoritesViewController.swift */,
-			);
-			path = Favorites;
-			sourceTree = "<group>";
-		};
 		EB8B2BC125B339F6008E0118 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1102,11 +1082,9 @@
 			children = (
 				EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */,
 				EBF593C82588526E0091FCE0 /* DemoService.swift */,
-				EB8325A52556EFF0005E02C1 /* FavoritesService.swift */,
 				EBB95BFD25335C3E00376C3F /* LanguageService.swift */,
 				EBF97C8D256235AF009FFFBA /* PurchaseService.swift */,
 				EBD2C502257FDA4A0023AED4 /* SentencesService.swift */,
-				EBEB1D91251F15B40019972C /* VerbsService.swift */,
 				EB59F026258FE7F2004676D2 /* VoiceService.swift */,
 			);
 			path = App;
@@ -1215,7 +1193,7 @@
 			children = (
 				EB995AE925E516E70082DE32 /* App */,
 				EB995AEA25E516F90082DE32 /* Core */,
-				EBE4AD052582AF1F001E9E4A /* Protocols */,
+				EBE4AD052582AF1F001E9E4A /* Verbs */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1315,12 +1293,14 @@
 			path = VerbsUITests;
 			sourceTree = "<group>";
 		};
-		EBE4AD052582AF1F001E9E4A /* Protocols */ = {
+		EBE4AD052582AF1F001E9E4A /* Verbs */ = {
 			isa = PBXGroup;
 			children = (
+				EB8325A52556EFF0005E02C1 /* FavoritesService.swift */,
+				EBEB1D91251F15B40019972C /* VerbsService.swift */,
 				EBE4AD062582AF33001E9E4A /* VerbsServiceProtocol.swift */,
 			);
-			path = Protocols;
+			path = Verbs;
 			sourceTree = "<group>";
 		};
 		EBE605A525B866A500EB1CB3 /* Settings */ = {
@@ -1956,9 +1936,7 @@
 				EB59F03C258FF0D6004676D2 /* VoiceItem.swift in Sources */,
 				EB59F00A258FE35E004676D2 /* VoiceAssembly.swift in Sources */,
 				EBA644DF255ADC910012B973 /* SidebarAssembly.swift in Sources */,
-				EB8325982556EB6B005E02C1 /* FavoritesPresenter.swift in Sources */,
 				EBF5949D258918290091FCE0 /* ExampleCell.swift in Sources */,
-				EB83259C2556EBE9005E02C1 /* FavoritesRouter.swift in Sources */,
 				EB39619925A1A42F00E3B65F /* VerbDragItem.swift in Sources */,
 				EB5547542553CB22001C5585 /* SidebarCell.swift in Sources */,
 				EBB01C1F25218BAB00BB646B /* ItemProtocol.swift in Sources */,
@@ -1979,7 +1957,6 @@
 				EB69F8B52569DB6800759BAA /* TestsRouter.swift in Sources */,
 				EBF593792583C5090091FCE0 /* StatisticsHeaderCell.swift in Sources */,
 				EBEB1D78251F11900019972C /* SceneDelegate.swift in Sources */,
-				EB83258B2556EAEB005E02C1 /* FavoritesViewController.swift in Sources */,
 				EBD2C509257FDC780023AED4 /* Sentence.swift in Sources */,
 				EBF593CF258865680091FCE0 /* MenuAction.swift in Sources */,
 				EB8325A22556EC9F005E02C1 /* AssemblyProtocol.swift in Sources */,
@@ -2011,7 +1988,6 @@
 				EBD476E32553AED70033067B /* SidebarViewController.swift in Sources */,
 				EBB01C192521870200BB646B /* DetailItem.swift in Sources */,
 				EB5D6E1C25A0195D00CCCA85 /* AcknowledgementsViewController.swift in Sources */,
-				EB8325922556EB60005E02C1 /* FavoritesAssembly.swift in Sources */,
 				EB45097B253B630900D31858 /* SectionArray.swift in Sources */,
 				EBA644C8255AD4F90012B973 /* DetailRouter.swift in Sources */,
 				EBF4A13B252EA2F6003E3A44 /* FeatureToggle.swift in Sources */,

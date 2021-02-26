@@ -19,10 +19,8 @@ enum TabBarItem: Int {
         case (_, is SettingsViewController),
              (_, is SettingsChildViewControllerProtocol):
             self = .settings
-        case (is ListViewController, _):
-            self = .all
-        case (is FavoritesViewController, _):
-            self = .favorites
+        case (let vc as ListViewController, _):
+            self = vc.favoritesOnly ? .favorites : .all
         case (is TestsViewController, _):
             self = .tests
         default:

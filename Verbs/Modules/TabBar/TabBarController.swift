@@ -49,8 +49,10 @@ private extension TabBarController {
     func build(in splitViewController: UISplitViewController?) {
         guard let svc = splitViewController else { return }
         
-        let listViewController = ListAssembly(splitViewController: svc).viewController().navigationController
-        let favoritesViewController = FavoritesAssembly(splitViewController: svc).viewController().navigationController
+        let listViewController = ListAssembly(splitViewController: svc,
+                                              favoritesOnly: false).viewController().navigationController
+        let favoritesViewController = ListAssembly(splitViewController: svc,
+                                                   favoritesOnly: true).viewController().navigationController
         let testsViewController = TestsAssembly(splitViewController: svc).viewController().navigationController
         let settingsViewController = SettingsAssembly().viewController().navigationController
         

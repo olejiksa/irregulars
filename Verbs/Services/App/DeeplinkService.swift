@@ -152,9 +152,11 @@ private extension DeeplinkService {
         case .detail:
             guard !(nvc?.topViewController is DetailViewController) else { return }
         case .favorites:
-            guard !(nvc?.topViewController is FavoritesViewController) else { return }
+            let vc = nvc?.topViewController as? ListViewController
+            guard vc == nil || vc?.favoritesOnly == false else { return }
         case .search:
-            guard !(nvc?.topViewController is ListViewController) else { return }
+            let vc = nvc?.topViewController as? ListViewController
+            guard vc == nil || vc?.favoritesOnly == true else { return }
         case .statistics:
             guard !(nvc?.topViewController is StatisticsViewController) else { return }
         case .tests:

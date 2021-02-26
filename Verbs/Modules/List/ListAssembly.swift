@@ -11,14 +11,17 @@ import UIKit
 final class ListAssembly {
     
     private let splitViewController: UISplitViewController
+    private let favoritesOnly: Bool
     
-    init(splitViewController: UISplitViewController) {
+    init(splitViewController: UISplitViewController, favoritesOnly: Bool) {
         self.splitViewController = splitViewController
+        self.favoritesOnly = favoritesOnly
     }
     
     func viewController() -> some ListViewController {
+        let verbsService: VerbsServiceProtocol = favoritesOnly ? FavoritesService() : VerbsService()
         let presenter = ListPresenter(languageService: .init(),
-                                      verbsService: VerbsService(),
+                                      verbsService: verbsService,
                                       printService: .init())
         let viewController = ListViewController(presenter: presenter)
         let navigationController = UINavigationController(rootViewController: viewController)
