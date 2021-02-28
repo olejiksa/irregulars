@@ -36,6 +36,15 @@ extension Verb: Comparable {
     }
 }
 
+// MARK: - Equatable
+
+extension Verb: Equatable {
+    
+    static func ==(lhs: Verb, rhs: Verb) -> Bool {
+        lhs.infinitive.value == rhs.infinitive.value
+    }
+}
+
 // MARK: - Hashable
 
 extension Verb: Hashable {

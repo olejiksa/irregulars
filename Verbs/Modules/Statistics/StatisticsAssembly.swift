@@ -11,7 +11,9 @@ import UIKit
 final class StatisticsAssembly: AssemblyProtocol {
     
     func viewController() -> some StatisticsViewController {
-        let presenter = StatisticsPresenter(languageService: .init(), hapticService: .init())
+        let presenter = StatisticsPresenter(languageService: .init(),
+                                            hapticService: .init(),
+                                            verbsService: .init())
         let viewConroller = StatisticsViewController(presenter: presenter)
         let router = StatisticsRouter(viewController: viewConroller)
         let navigationController = UINavigationController(rootViewController: viewConroller)

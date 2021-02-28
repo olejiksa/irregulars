@@ -164,6 +164,6 @@ private extension TestItemsFactory {
             index += 1
         }
         
-        return Array(answerItems)
+        return .init(answerItems)
     }
 }

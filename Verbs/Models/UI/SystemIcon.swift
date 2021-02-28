@@ -34,6 +34,7 @@ enum SystemIcon: String {
     case bookFill = "book.fill"
     case sentences = "scroll"
     case chart = "chart.bar.xaxis"
+    case pieChart = "chart.pie"
     case play = "play.circle"
     case stop = "stop.circle"
     case pencil = "pencil.and.outline"

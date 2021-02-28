@@ -37,6 +37,7 @@ extension UserDefaults {
         case frequency
         case since
         case to
+        case mistakes
     }
     
     func bool(for key: Key) -> Bool { bool(forKey: key.rawValue) }

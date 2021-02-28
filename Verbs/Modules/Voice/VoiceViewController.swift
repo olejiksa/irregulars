@@ -68,11 +68,12 @@ private extension VoiceViewController {
                            target: self,
                            action: #selector(didMoreButtonTap))
         playButton = .init(image: image(for: .play),
-                           style: .plain,
+                           style: .done,
                            target: self,
                            action: #selector(didPlayTap))
+        playButton?.accessibilityTraits = [.button, .playsSound]
         stopButton = .init(image: image(for: .stop),
-                           style: .plain,
+                           style: .done,
                            target: self,
                            action: #selector(didPlayTap))
         navigationItem.rightBarButtonItems = [playButton, moreButton].compactMap { $0 }
@@ -126,8 +127,7 @@ private extension VoiceViewController {
     }
     
     func image(for playbackIcon: SystemIcon) -> UIImage? {
-        let configuration = UIImage.SymbolConfiguration(weight: .semibold)
-        return UIImage(systemName: playbackIcon.rawValue, withConfiguration: configuration)
+        playbackIcon.image
     }
     
     @objc func didMoreButtonTap(_ sender: UIBarButtonItem) {

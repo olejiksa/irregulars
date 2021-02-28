@@ -12,4 +12,9 @@ extension Array {
         guard index < count else { return nil }
         return self[index]
     }
+    
+    func first(count: Int) -> [Element] {
+        let minimum = Swift.min(count, self.count)
+        return .init(self[0..<minimum])
+    }
 }

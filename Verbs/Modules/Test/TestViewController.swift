@@ -51,6 +51,7 @@ final class TestViewController: UIViewController {
         
         tableView?.layer.add(transition, forKey: kCATransition)
         tableView?.reloadData()
+        UIAccessibility.post(notification: .screenChanged, argument: tableView)
     }
     
     func endEditing() {

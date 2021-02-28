@@ -43,6 +43,7 @@ final class AnswerCell: UITableViewCell {
                                          value: 2,
                                          range: NSMakeRange(0, attributeString.length))
             titleLabel.attributedText = attributeString
+            titleLabel.accessibilityLabel = "\(item.text), \("wrong_answer".localized)"
         }
     }
     
@@ -50,7 +51,7 @@ final class AnswerCell: UITableViewCell {
         super.prepareForReuse()
         
         item = nil
-        titleLabel.attributedText = NSAttributedString(string: "")
+        titleLabel.attributedText = .init(string: "")
     }
 }
 

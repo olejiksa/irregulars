@@ -16,6 +16,8 @@ final class StatisticsPresenter: NSObject {
     
     private let languageService: LanguageService
     private let hapticService: HapticService
+    private let verbsService: VerbsService
+    
     private var items: [String] = []
     private let keys: [UserDefaults.Key] = [.translationAnswers,
                                             .writingAnswers,
@@ -23,9 +25,11 @@ final class StatisticsPresenter: NSObject {
                                             .listeningAnswers]
     
     init(languageService: LanguageService,
-         hapticService: HapticService) {
+         hapticService: HapticService,
+         verbsService: VerbsService) {
         self.languageService = languageService
         self.hapticService = hapticService
+        self.verbsService = verbsService
         super.init()
         setupSections()
         subscribe()
@@ -62,7 +66,22 @@ private extension StatisticsPresenter {
         
         let learnedCount = Locator.statistics.info.filter { $0.value >= 3 }.count
         let inProgressCount = Locator.statistics.info.filter { $0.value > 0 && $0.value < 3 }.count
-        let verbsCount = VerbsService().items.count
+        
+        let verbsCount = verbsService.items.count
+        
+        let mistakes = verbsService.items
+            .filter { !Locator.favorites.verbs.contains($0) &&
+                (Locator.mistakes.info[$0.infinitive.value] ?? 0) > 0 }
+            .first(count: 5)
+        let mistakeItems = mistakes.map { verb in MistakeItem(verb: verb) { isFavorite in
+            if isFavorite {
+                Locator.favorites.add(verb)
+                Locator.mistakes.remove(verb)
+            } else {
+                Locator.favorites.remove(verb)
+                Locator.mistakes.add(verb)
+            }
+        }}
         
         dataSource.setup([setupActivationSection(upgradeBlock: willBuy),
                           Section(header: "learned_verbs".localized,
@@ -71,7 +90,7 @@ private extension StatisticsPresenter {
                           Section(header: "in_progress".localized,
                                   items: [ProgressItem(value: inProgressCount, maximum: verbsCount - learnedCount)]),
                           Section(header: "frequent_mistakes".localized,
-                                  items: [ProgressItem(value: inProgressCount, maximum: verbsCount - learnedCount)],
+                                  items: mistakeItems,
                                   footer: "frequent_mistakes_footer".localized),
                           Section(header: "your_efforts".localized,
                                   items: [StatisticsHeaderItem(title: String(answeredCorrectlyTotal),
@@ -99,7 +118,7 @@ private extension StatisticsPresenter {
                                                              style: .standard,
                                                              actionBlock: upgradeBlock) : nil
         let footer = "pro_suggestion_statistics".localized(with: [DemoService().items.count,
-                                                                  VerbsService().items.count])
+                                                                  verbsService.items.count])
         return Section(header: "activation".localized,
                        items: [upgradeItem].compactMap { $0 },
                        footer: footer)

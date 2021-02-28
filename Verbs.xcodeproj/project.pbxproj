@@ -13,6 +13,11 @@
 		EB1EC44F25DC378300F6299B /* IconDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1EC44E25DC378300F6299B /* IconDetailItem.swift */; };
 		EB1EC45925DD88BE00F6299B /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1EC45825DD88BE00F6299B /* CalendarService.swift */; };
 		EB1EC46525DD8B3300F6299B /* CalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1EC46425DD8B3300F6299B /* CalendarTests.swift */; };
+		EB23924225EB92A3009BE502 /* MistakeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB23924125EB92A3009BE502 /* MistakeItem.swift */; };
+		EB23924B25EB9381009BE502 /* MistakeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB23924925EB9381009BE502 /* MistakeCell.swift */; };
+		EB23924C25EB9381009BE502 /* MistakeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB23924A25EB9381009BE502 /* MistakeCell.xib */; };
+		EB23925425EBA201009BE502 /* Mistakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB23925325EBA201009BE502 /* Mistakes.swift */; };
+		EB23925B25EBA3BE009BE502 /* Mistakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB23925325EBA201009BE502 /* Mistakes.swift */; };
 		EB269962256CF0EF007CCF2E /* PlainDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269961256CF0EF007CCF2E /* PlainDetailItem.swift */; };
 		EB269967256CF10C007CCF2E /* PlainDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269965256CF10C007CCF2E /* PlainDetailCell.swift */; };
 		EB269968256CF10C007CCF2E /* PlainDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB269966256CF10C007CCF2E /* PlainDetailCell.xib */; };
@@ -368,6 +373,10 @@
 		EB1EC46225DD8B3300F6299B /* VerbsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VerbsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1EC46425DD8B3300F6299B /* CalendarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTests.swift; sourceTree = "<group>"; };
 		EB1EC46625DD8B3300F6299B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB23924125EB92A3009BE502 /* MistakeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MistakeItem.swift; sourceTree = "<group>"; };
+		EB23924925EB9381009BE502 /* MistakeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MistakeCell.swift; sourceTree = "<group>"; };
+		EB23924A25EB9381009BE502 /* MistakeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MistakeCell.xib; sourceTree = "<group>"; };
+		EB23925325EBA201009BE502 /* Mistakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mistakes.swift; sourceTree = "<group>"; };
 		EB269961256CF0EF007CCF2E /* PlainDetailItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainDetailItem.swift; sourceTree = "<group>"; };
 		EB269965256CF10C007CCF2E /* PlainDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainDetailCell.swift; sourceTree = "<group>"; };
 		EB269966256CF10C007CCF2E /* PlainDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlainDetailCell.xib; sourceTree = "<group>"; };
@@ -723,6 +732,16 @@
 				EB1EC46625DD8B3300F6299B /* Info.plist */,
 			);
 			path = VerbsTests;
+			sourceTree = "<group>";
+		};
+		EB23924025EB9295009BE502 /* MistakeItem */ = {
+			isa = PBXGroup;
+			children = (
+				EB23924125EB92A3009BE502 /* MistakeItem.swift */,
+				EB23924925EB9381009BE502 /* MistakeCell.swift */,
+				EB23924A25EB9381009BE502 /* MistakeCell.xib */,
+			);
+			path = MistakeItem;
 			sourceTree = "<group>";
 		};
 		EB269960256CF0DB007CCF2E /* PlainDetailItem */ = {
@@ -1421,6 +1440,7 @@
 				EB3217A4258BCDAC00023F0B /* Statistics.swift */,
 				EBEB1D93251F15D30019972C /* Verb.swift */,
 				EB7B85642537FAE000542D3C /* Word.swift */,
+				EB23925325EBA201009BE502 /* Mistakes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1475,6 +1495,7 @@
 		EBF593612583B27B0091FCE0 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				EB23924025EB9295009BE502 /* MistakeItem */,
 				EB3217BB258BE41300023F0B /* ProgressItem */,
 				EBF593722583C3A40091FCE0 /* StatisticsHeaderItem */,
 				EBF5936C2583B3230091FCE0 /* StatisticsAssembly.swift */,
@@ -1777,6 +1798,7 @@
 				EB2E4B9925741832005B343A /* indigo@2x.png in Resources */,
 				EBF593BF258851CD0091FCE0 /* demo.json in Resources */,
 				EBD2C23B25D5A3E80075399B /* StepperCell.xib in Resources */,
+				EB23924C25EB9381009BE502 /* MistakeCell.xib in Resources */,
 				EBF594852589030E0091FCE0 /* teal@2x~ipad.png in Resources */,
 				EBEB1D7F251F11910019972C /* Assets.xcassets in Resources */,
 				EB2E4B9025741832005B343A /* green@3x.png in Resources */,
@@ -1851,6 +1873,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB23925B25EBA3BE009BE502 /* Mistakes.swift in Sources */,
 				EB995B7E25E518F70082DE32 /* SpotlightService.swift in Sources */,
 				EBE605C325B86B7D00EB1CB3 /* FeatureToggle.swift in Sources */,
 				EB7DFF69252451D2000B711D /* VerbsWidget.swift in Sources */,
@@ -1956,6 +1979,7 @@
 				EB3217BD258BE42300023F0B /* ProgressItem.swift in Sources */,
 				EB1EC44F25DC378300F6299B /* IconDetailItem.swift in Sources */,
 				EB59F014258FE394004676D2 /* VoiceViewController.swift in Sources */,
+				EB23924B25EB9381009BE502 /* MistakeCell.swift in Sources */,
 				EB59F02C258FE9E1004676D2 /* Gender.swift in Sources */,
 				EBB01C252521903A00BB646B /* Identifiable.swift in Sources */,
 				EB717DE42530C04A007791AD /* ListPresenter.swift in Sources */,
@@ -1979,6 +2003,7 @@
 				EB450973253B5CB300D31858 /* Section.swift in Sources */,
 				EBDF00A62562F1160041F458 /* FormTextField.swift in Sources */,
 				EB26996C256CFAC7007CCF2E /* RateService.swift in Sources */,
+				EB23924225EB92A3009BE502 /* MistakeItem.swift in Sources */,
 				EBB01C0C2521825000BB646B /* TranslationCell.swift in Sources */,
 				EB5D6E2125A0196A00CCCA85 /* AcknowledgementsPresenter.swift in Sources */,
 				EB69F8AF2569D7AA00759BAA /* TestRouter.swift in Sources */,
@@ -2078,6 +2103,7 @@
 				EB2E4BCB2576B59F005B343A /* Test.swift in Sources */,
 				EBA644BB255A59CF0012B973 /* ActionItem.swift in Sources */,
 				EBE4AD072582AF34001E9E4A /* VerbsServiceProtocol.swift in Sources */,
+				EB23925425EBA201009BE502 /* Mistakes.swift in Sources */,
 				EBF97C8E256235AF009FFFBA /* PurchaseService.swift in Sources */,
 				EBF593742583C3BA0091FCE0 /* StatisticsHeaderItem.swift in Sources */,
 				EBF97CA5256270DB009FFFBA /* PaywallPresenter.swift in Sources */,

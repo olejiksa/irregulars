@@ -137,6 +137,7 @@ private extension TestPresenter {
         } else {
             guard let verb = verb else { return }
             Locator.statistics.decrease(verb)
+            Locator.mistakes.add(verb)
         }
         
         wasHintUsed = false

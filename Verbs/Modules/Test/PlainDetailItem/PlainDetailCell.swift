@@ -28,6 +28,7 @@ extension PlainDetailCell: CellProtocol {
     func setup(with item: ItemProtocol) {
         guard let item = item as? PlainDetailItem else { return }
         
+        titleLabel.accessibilityLabel = item.text.replacingOccurrences(of: "…", with: ", \("missed_word".localized), ")
         titleLabel.text = item.text
         
         switch item.textStyle {

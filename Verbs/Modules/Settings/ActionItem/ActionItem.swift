@@ -39,4 +39,3 @@ extension ActionItem: ItemProtocol {
 // MARK: - Actionable
 
 extension ActionItem: Actionable {}
-

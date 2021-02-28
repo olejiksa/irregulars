@@ -64,6 +64,7 @@ private extension InputCell {
                                          value: 2,
                                          range: NSRange(location: element.count + 1, length: text.count))
             textField.attributedText = attributeString
+            textField.accessibilityValue = "\(element), \(text), \("wrong_answer".localized)"
         } else {
             item?.isValid = true
         }

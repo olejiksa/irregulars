@@ -76,7 +76,11 @@ private extension StatisticsViewController {
         tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         
-        tableView.register(ActionCell.self, RightDetailCell.self, StatisticsHeaderCell.self, ProgressCell.self)
+        tableView.register(ActionCell.self,
+                           RightDetailCell.self,
+                           StatisticsHeaderCell.self,
+                           ProgressCell.self,
+                           MistakeCell.self)
         
         self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.tableView = tableView
