@@ -19,7 +19,7 @@ final class TestRouter {
     func goBack() {
         viewController?.navigationController?.popViewController(animated: true)
         
-        RateService().requestReviewIfAppropriate(minimumReviewWorthyActionCount: 15)
+        RateService().requestReviewIfAppropriate(minimumReviewWorthyActionCount: 8)
     }
     
     func show(hint: String) {

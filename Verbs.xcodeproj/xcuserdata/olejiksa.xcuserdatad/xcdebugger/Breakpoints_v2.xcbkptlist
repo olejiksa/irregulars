@@ -3,4 +3,54 @@
    uuid = "03ECE235-DA95-4A6E-A62C-B576E1E42077"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "98C3FE15-FBAD-4397-B427-930C8382ACEF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Verbs/Modules/Paywall/PaywallViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "fetchPrice()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "98C3FE15-FBAD-4397-B427-930C8382ACEF - 2b1a650307550ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Irregulars.PaywallViewController.(fetchPrice in _D70FCDD478275EF4C7D044566CC16AE9)() -&gt; ()"
+                  moduleName = "Irregulars"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/olejiksa/Developer/Verbs/Verbs/Modules/Paywall/PaywallViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "156"
+                  endingLineNumber = "156"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "98C3FE15-FBAD-4397-B427-930C8382ACEF - eac9dd0834ca67b3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #2 (Swift.String) -&gt; () in implicit closure #1 (Irregulars.PaywallViewController) -&gt; (Swift.String) -&gt; () in Irregulars.PaywallViewController.(fetchPrice in _D70FCDD478275EF4C7D044566CC16AE9)() -&gt; ()"
+                  moduleName = "Irregulars"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/olejiksa/Developer/Verbs/Verbs/Modules/Paywall/PaywallViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "156"
+                  endingLineNumber = "156"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
