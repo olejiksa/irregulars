@@ -22,8 +22,8 @@ final class PaywallPresenter {
                      PaywallItem(text: "personalize".localized,
                                  icon: .paintpalette),
                      PaywallItem(text: "one_time_payment".localized,
-                                 icon: .creditcard),]
+                                 icon: .creditcard)]
         
-        dataSource.setup([Section(items: items.compactMap { $0 })])
+        dataSource.setup([.init(items: items.compactMap { $0 })])
     }
 }

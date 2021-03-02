@@ -31,7 +31,8 @@ final class FadeTableView: UITableView, UIScrollViewDelegate {
         let scrollContentSizeHeight = contentSize.height
         let scrollOffset = contentOffset.y
 
-        let alpha: CGFloat = (scrollViewHeight >= scrollContentSizeHeight || scrollOffset + scrollViewHeight >= scrollContentSizeHeight) ? 1 : 0
+        let isAlphaFull = (scrollViewHeight >= scrollContentSizeHeight || scrollOffset + scrollViewHeight >= scrollContentSizeHeight)
+        let alpha: CGFloat = isAlphaFull ? 1 : 0
 
         let color = UIColor(white: 0, alpha: alpha)
         return color.cgColor

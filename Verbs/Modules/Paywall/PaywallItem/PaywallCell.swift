@@ -12,6 +12,12 @@ final class PaywallCell: UITableViewCell {
     
     @IBOutlet private weak var contentLabel: UILabel!
     @IBOutlet private weak var iconView: UIImageView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        selectionStyle = .none
+    }
 }
 
 // MARK: - CellProtocol

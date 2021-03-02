@@ -92,7 +92,6 @@
 		EB4509E32541E69400D31858 /* RightDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4509E12541E69400D31858 /* RightDetailCell.xib */; };
 		EB4509E72541ED4A00D31858 /* SubtitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4509E62541ED4A00D31858 /* SubtitleCell.xib */; };
 		EB450A052549D27400D31858 /* PaywallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB450A032549D27300D31858 /* PaywallViewController.swift */; };
-		EB450A062549D27400D31858 /* PaywallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB450A042549D27300D31858 /* PaywallView.xib */; };
 		EB450A20254A8BE600D31858 /* TestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB450A1E254A8BE600D31858 /* TestsViewController.swift */; };
 		EB450A27254A8D2900D31858 /* TestsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB450A26254A8D2900D31858 /* TestsPresenter.swift */; };
 		EB450A2D254A8D3300D31858 /* TestsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB450A2C254A8D3300D31858 /* TestsAssembly.swift */; };
@@ -124,6 +123,7 @@
 		EB5D6E1725A0193400CCCA85 /* AcknowledgementsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5D6E1625A0193400CCCA85 /* AcknowledgementsAssembly.swift */; };
 		EB5D6E1C25A0195D00CCCA85 /* AcknowledgementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5D6E1B25A0195D00CCCA85 /* AcknowledgementsViewController.swift */; };
 		EB5D6E2125A0196A00CCCA85 /* AcknowledgementsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5D6E2025A0196A00CCCA85 /* AcknowledgementsPresenter.swift */; };
+		EB62FECB25EE130700FFC774 /* BigButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB62FECA25EE130700FFC774 /* BigButtonItem.swift */; };
 		EB68F73525D584AA00D6DF63 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB68F73425D584AA00D6DF63 /* NotificationsViewController.swift */; };
 		EB68F73F25D584B600D6DF63 /* NotificationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB68F73E25D584B600D6DF63 /* NotificationsPresenter.swift */; };
 		EB68F74525D584C200D6DF63 /* NotificationsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB68F74425D584C200D6DF63 /* NotificationsAssembly.swift */; };
@@ -447,7 +447,6 @@
 		EB4509E12541E69400D31858 /* RightDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightDetailCell.xib; sourceTree = "<group>"; };
 		EB4509E62541ED4A00D31858 /* SubtitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubtitleCell.xib; sourceTree = "<group>"; };
 		EB450A032549D27300D31858 /* PaywallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallViewController.swift; sourceTree = "<group>"; };
-		EB450A042549D27300D31858 /* PaywallView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaywallView.xib; sourceTree = "<group>"; };
 		EB450A1E254A8BE600D31858 /* TestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsViewController.swift; sourceTree = "<group>"; };
 		EB450A26254A8D2900D31858 /* TestsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsPresenter.swift; sourceTree = "<group>"; };
 		EB450A2C254A8D3300D31858 /* TestsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsAssembly.swift; sourceTree = "<group>"; };
@@ -488,6 +487,7 @@
 		EB5D6E2E25A057C100CCCA85 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EB5D6E2F25A057C100CCCA85 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = it; path = it.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		EB5D6E3025A057C100CCCA85 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Intents.strings; sourceTree = "<group>"; };
+		EB62FECA25EE130700FFC774 /* BigButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButtonItem.swift; sourceTree = "<group>"; };
 		EB68F73425D584AA00D6DF63 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		EB68F73E25D584B600D6DF63 /* NotificationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPresenter.swift; sourceTree = "<group>"; };
 		EB68F74425D584C200D6DF63 /* NotificationsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsAssembly.swift; sourceTree = "<group>"; };
@@ -947,12 +947,12 @@
 		EB450A022549D1DE00D31858 /* Paywall */ = {
 			isa = PBXGroup;
 			children = (
+				EB62FEC925EE12F900FFC774 /* BigButtonItem */,
 				EBD476C2254BBE0B0033067B /* PaywallItem */,
 				EBF97C94256254DC009FFFBA /* PaywallAssembly.swift */,
 				EBF97CA4256270DB009FFFBA /* PaywallPresenter.swift */,
 				EBF97C9C256259A3009FFFBA /* PaywallRouter.swift */,
 				EB450A032549D27300D31858 /* PaywallViewController.swift */,
-				EB450A042549D27300D31858 /* PaywallView.xib */,
 			);
 			path = Paywall;
 			sourceTree = "<group>";
@@ -1024,6 +1024,14 @@
 				EB5D6E1B25A0195D00CCCA85 /* AcknowledgementsViewController.swift */,
 			);
 			path = Acknowledgements;
+			sourceTree = "<group>";
+		};
+		EB62FEC925EE12F900FFC774 /* BigButtonItem */ = {
+			isa = PBXGroup;
+			children = (
+				EB62FECA25EE130700FFC774 /* BigButtonItem.swift */,
+			);
+			path = BigButtonItem;
 			sourceTree = "<group>";
 		};
 		EB68F73325D5849500D6DF63 /* Notifications */ = {
@@ -1784,7 +1792,6 @@
 				EBF594862589030E0091FCE0 /* orange@3x~ipad.png in Resources */,
 				EB2E4B9525741832005B343A /* green@2x.png in Resources */,
 				EBF5937A2583C5090091FCE0 /* StatisticsHeaderCell.xib in Resources */,
-				EB450A062549D27400D31858 /* PaywallView.xib in Resources */,
 				EBB01C0D2521825000BB646B /* TranslationCell.xib in Resources */,
 				EB2E4B8D25741832005B343A /* red@2x.png in Resources */,
 				EB2E4B9225741832005B343A /* orange@2x.png in Resources */,
@@ -2020,6 +2027,7 @@
 				EBF8A62F2559172100A6265C /* Favorites.swift in Sources */,
 				EBEB1D8E251F13BA0019972C /* SubtitleCell.swift in Sources */,
 				EB2E4B482572A09F005B343A /* AccentColorCell.swift in Sources */,
+				EB62FECB25EE130700FFC774 /* BigButtonItem.swift in Sources */,
 				EBF5936D2583B3230091FCE0 /* StatisticsAssembly.swift in Sources */,
 				EBD2C503257FDA4B0023AED4 /* SentencesService.swift in Sources */,
 				EBF59497258917F30091FCE0 /* ExampleItem.swift in Sources */,

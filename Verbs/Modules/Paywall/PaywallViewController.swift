@@ -10,16 +10,63 @@ import UIKit
 
 final class PaywallViewController: UIViewController {
     
+    private enum Constants {
+        static let inset: CGFloat = 20
+        static let buttonHeight: CGFloat = 54
+    }
+    
     var router: PaywallRouter?
     
     private let presenter: PaywallPresenter
     private let purchaseService: PurchaseService
     private let hapticService: HapticService
-
-    @IBOutlet private weak var thanksLabel: UILabel!
-    @IBOutlet private weak var buyButton: BigButton!
-    @IBOutlet private weak var restoreButton: BigButton!
-    @IBOutlet private weak var tableView: FadeTableView!
+    
+    private var buyButton: BigButton = {
+        let button = BigButton()
+        button.setTitle("buy_button".localized, for: .normal)
+        button.titleLabel?.numberOfLines = 1
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
+        button.titleLabel?.lineBreakMode = .byClipping
+        button.titleLabel?.font = .preferredFont(forTextStyle: .headline)
+        button.titleLabel?.adjustsFontForContentSizeCategory = true
+        button.backgroundColor = AccentColor.current.color
+        button.cornerRadius = 10
+        button.isPrimary = true
+        return button
+    }()
+    
+    private var restoreButton: BigButton = {
+        let button = BigButton()
+        button.setTitle("restore_purchases".localized, for: .normal)
+        button.titleLabel?.numberOfLines = 1
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
+        button.titleLabel?.lineBreakMode = .byClipping
+        button.titleLabel?.font = .preferredFont(forTextStyle: .headline)
+        button.titleLabel?.adjustsFontForContentSizeCategory = true
+        button.setTitleColor(AccentColor.current.color, for: .normal)
+        button.backgroundColor = .secondarySystemBackground
+        button.cornerRadius = 10
+        return button
+    }()
+    
+    private var thanksLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = AccentColor.current.color
+        label.font = .preferredFont(forTextStyle: .headline)
+        label.text = "thank_you".localized
+        label.adjustsFontForContentSizeCategory = true
+        label.textAlignment = .center
+        return label
+    }()
+    
+    private var footerView: UIStackView = {
+        let footerView = UIStackView()
+        footerView.axis = .vertical
+        footerView.spacing = 10
+        return footerView
+    }()
+    
+    private var tableView = FadeTableView(frame: .zero, style: .plain)
     
     init(presenter: PaywallPresenter,
          purchaseService: PurchaseService,
@@ -41,8 +88,7 @@ final class PaywallViewController: UIViewController {
         setupNavigationBar()
         setupTableView()
         setupView()
-        
-        purchaseService.fetchPrice(priceHandler: didObtainPrice)
+        fetchPrice()
     }
 }
 
@@ -64,48 +110,53 @@ private extension PaywallViewController {
     
     func setupTableView() {
         tableView.contentInset = .init(top: 15, left: 0, bottom: 10, right: 0)
+        tableView.separatorStyle = .none
+        
+        [tableView, footerView].forEach {
+            view.addSubview($0)
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            
+            footerView.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: Constants.inset),
+            footerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Constants.inset),
+            footerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.inset),
+            footerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.inset),
+            
+            buyButton.heightAnchor.constraint(equalToConstant: Constants.buttonHeight),
+            restoreButton.heightAnchor.constraint(equalToConstant: Constants.buttonHeight),
+            thanksLabel.heightAnchor.constraint(equalToConstant: Constants.buttonHeight)
+        ])
+        
         tableView.dataSource = presenter.dataSource
         tableView.register(PaywallCell.self)
+        
+        footerView.addArrangedSubview(buyButton)
+        footerView.addArrangedSubview(restoreButton)
+        footerView.addArrangedSubview(thanksLabel)
     }
     
     func setupView() {
-        buyButton.setTitle("buy_button".localized, for: .normal)
-        #if !targetEnvironment(macCatalyst)
-        thanksLabel.textColor = AccentColor.current.color
-        buyButton.backgroundColor = AccentColor.current.color
-        #else
-        let button = UIButton()
-        thanksLabel.textColor = button.tintColor
-        buyButton.backgroundColor = button.tintColor
-        #endif
-        buyButton.titleLabel?.numberOfLines = 1
-        buyButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        buyButton.titleLabel?.lineBreakMode = .byClipping
-        
-        restoreButton.setTitle("restore_purchases".localized, for: .normal)
-        #if !targetEnvironment(macCatalyst)
-        restoreButton.setTitleColor(AccentColor.current.color, for: .normal)
-        #else
-        restoreButton.setTitleColor(UIButton().tintColor, for: .normal)
-        #endif
-        restoreButton.titleLabel?.numberOfLines = 1
-        restoreButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        restoreButton.titleLabel?.lineBreakMode = .byClipping
-        
-        thanksLabel.text = "thank_you".localized
-        
-        #if !targetEnvironment(macCatalyst)
-        thanksLabel.textColor = AccentColor.current.color
-        #else
-        thanksLabel.textColor = UIButton().tintColor
-        #endif
-        
         thanksLabel.isHidden = !FeatureToggle.isPaid
         buyButton.isHidden = FeatureToggle.isPaid && purchaseService.canMakePayments
         restoreButton.isHidden = FeatureToggle.isPaid
+        
+        view.backgroundColor = .systemBackground
+        
+        buyButton.addTarget(self, action: #selector(didBuyTap), for: .touchUpInside)
+        restoreButton.addTarget(self, action: #selector(didRestoreTap), for: .touchUpInside)
     }
     
-    @IBAction func didBuyTap() {
+    func fetchPrice() {
+        guard !FeatureToggle.isDebug, !FeatureToggle.isPaid else { return }
+        purchaseService.fetchPrice(priceHandler: didObtainPrice)
+    }
+    
+    @objc func didBuyTap() {
         guard !FeatureToggle.isDebug else {
             FeatureToggle.isPaid = true
             didCloseTap()
@@ -113,11 +164,10 @@ private extension PaywallViewController {
         }
         
         buyButton.showLoading()
-        purchaseService.requestProducts(activationHandler: didActivate,
-                                        errorHandler: didBuy)
+        purchaseService.requestProducts(activationHandler: didActivate, errorHandler: didBuy)
     }
     
-    @IBAction func didRestoreTap() {
+    @objc func didRestoreTap() {
         guard !FeatureToggle.isDebug else {
             FeatureToggle.isPaid = true
             didCloseTap()
@@ -125,8 +175,7 @@ private extension PaywallViewController {
         }
         
         restoreButton.showLoading()
-        purchaseService.requestProducts(activationHandler: didActivate,
-                                        errorHandler: didRestore)
+        purchaseService.requestProducts(activationHandler: didActivate, errorHandler: didRestore)
     }
     
     @objc func didCloseTap() {
