@@ -158,4 +158,6 @@ extension Localizable {
         NSLocalizedString("vladislav_plotnikov", comment: "Refers to Vladislav Plotnikov"))
     static let julianEduardo = Localizable(
         NSLocalizedString("julian_eduardo_couoh_pablo", comment: "Refers to Julián Eduardo"))
+    static let anastasiaOvcharenko = Localizable(
+        NSLocalizedString("anastasia_ovcharenko", comment: "Refers to Anastasia Ovcharenko"))
 }

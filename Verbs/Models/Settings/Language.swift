@@ -10,6 +10,7 @@ enum Language: String {
     
     case english = "en"
     case russian = "ru"
+    case ukrainian = "uk"
     case french = "fr"
     case german = "de"
     case spanish = "es"
@@ -24,6 +25,8 @@ enum Language: String {
             return "English"
         case .russian:
             return "Русский"
+        case .ukrainian:
+            return "Українська"
         case .french:
             return "Français"
         case .german:

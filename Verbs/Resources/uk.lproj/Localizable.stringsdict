@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>answered_correctly_count</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@answered_correctly_count@</string>
+		<key>answered_correctly_count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<string>правильних відповідей за весь час</string>
+			<key>one</key>
+			<string>правильна відповідь за весь час</string>
+			<key>two</key>
+			<string>правильні відповіді за весь час</string>
+			<key>few</key>
+			<string>правильні відповіді за весь час</string>
+			<key>many</key>
+			<string>правильних відповідей за весь час</string>
+			<key>other</key>
+			<string>правильних відповідей за весь час</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

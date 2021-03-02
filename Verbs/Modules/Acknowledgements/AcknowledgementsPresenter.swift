@@ -39,6 +39,8 @@ private extension AcknowledgementsPresenter {
                                           RightDetailItem(title: .localized(.julianEduardo),
                                                           subtitle: Language.spanish.description),
                                           RightDetailItem(title: .localized(.tatianaPerfilieva),
-                                                          subtitle: Language.korean.description)])])
+                                                          subtitle: Language.korean.description),
+                                          RightDetailItem(title: .localized(.anastasiaOvcharenko),
+                                                          subtitle: Language.ukrainian.description)])])
     }
 }
