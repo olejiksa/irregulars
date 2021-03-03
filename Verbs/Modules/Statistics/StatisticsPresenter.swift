@@ -48,32 +48,20 @@ private extension StatisticsPresenter {
     }
     
     func setupSections() {
-        let answeredCorrectlyTranslation = UserDefaults.shared.integer(for: .translationAnswers)
-        let answeredCorrectlyWriting = UserDefaults.shared.integer(for: .writingAnswers)
-        let answeredCorrectlySentences = UserDefaults.shared.integer(for: .sentencesAnswers)
-        let answeredCorrectlyListening = UserDefaults.shared.integer(for: .listeningAnswers)
-        let answeredCorrectlyTotal = answeredCorrectlyTranslation +
-            answeredCorrectlyWriting +
-            answeredCorrectlySentences +
-            answeredCorrectlyListening
+        #if DEBUG
+        let statisticsModel = prepareUITestsStatisticsModel()
+        #else
+        let statisticsModel = prepareStatisticsModel()
+        #endif
+        
         let answeredCorrectlyString = String(format: "answered_correctly_count".localized,
-                                             answeredCorrectlyTotal)
+                                             statisticsModel.totalAnswersCount)
         
         let hasTranslation = languageService.hasTranslation ?
             RightDetailItem(title: Test.translation.title,
-                            subtitle: String(answeredCorrectlyTranslation)) :
-            nil
+                            subtitle: String(statisticsModel.translationAnswersCount)) : nil
         
-        let learnedCount = Locator.statistics.info.filter { $0.value >= 3 }.count
-        let inProgressCount = Locator.statistics.info.filter { $0.value > 0 && $0.value < 3 }.count
-        
-        let verbsCount = verbsService.items.count
-        
-        let mistakes = verbsService.items
-            .filter { !Locator.favorites.verbs.contains($0) &&
-                (Locator.mistakes.info[$0.infinitive.value] ?? 0) > 0 }
-            .first(count: 5)
-        let mistakeItems = mistakes.map { verb in MistakeItem(verb: verb) { isFavorite in
+        let mistakeItems = statisticsModel.mistakes.map { verb in MistakeItem(verb: verb) { isFavorite in
             if isFavorite {
                 Locator.favorites.add(verb)
                 Locator.mistakes.remove(verb)
@@ -85,25 +73,28 @@ private extension StatisticsPresenter {
         
         dataSource.setup([setupActivationSection(upgradeBlock: willBuy),
                           Section(header: "learned_verbs".localized,
-                                  items: [ProgressItem(value: learnedCount, maximum: verbsCount)],
+                                  items: [ProgressItem(value: statisticsModel.learnedWordsCount,
+                                                       maximum: statisticsModel.verbsCount)],
                                   footer: "learned_verbs_footer".localized),
                           Section(header: "in_progress".localized,
-                                  items: [ProgressItem(value: inProgressCount, maximum: verbsCount - learnedCount)]),
+                                  items: [ProgressItem(value: statisticsModel.wordsInProgressCount,
+                                                       maximum: statisticsModel.verbsCount - statisticsModel.learnedWordsCount)]),
                           Section(header: "frequent_mistakes".localized,
                                   items: mistakeItems,
                                   footer: "frequent_mistakes_footer".localized),
                           Section(header: "your_efforts".localized,
-                                  items: [StatisticsHeaderItem(title: String(answeredCorrectlyTotal),
+                                  items: [StatisticsHeaderItem(title: String(statisticsModel.totalAnswersCount),
                                                                subtitle: answeredCorrectlyString)],
                                   footer: "using_hints_gives_you_no_points".localized),
                           Section(header: "including".localized,
                                   items: [hasTranslation,
                                           RightDetailItem(title: Test.writing.title,
-                                                          subtitle: String(answeredCorrectlyWriting)),
+                                                          subtitle: String(statisticsModel.formsAnswersCount)),
                                           RightDetailItem(title: Test.sentences.title,
-                                                          subtitle: String(answeredCorrectlySentences)),
+                                                          subtitle: String(statisticsModel.sentenceAnswersCount)),
                                           RightDetailItem(title: Test.listening.title,
-                                                          subtitle: String(answeredCorrectlyListening))].compactMap { $0 }),
+                                                          subtitle: String(statisticsModel.listeningAnswersCount))]
+                                    .compactMap { $0 }),
                           Section(header: "reset".localized,
                                   items: [ActionItem(text: "erase_learned_verbs".localized,
                                                      style: .destructive,
@@ -122,6 +113,63 @@ private extension StatisticsPresenter {
         return Section(header: "activation".localized,
                        items: [upgradeItem].compactMap { $0 },
                        footer: footer)
+    }
+    
+    func prepareStatisticsModel() -> StatisticsModel {
+        let answeredCorrectlyTranslation = UserDefaults.shared.integer(for: .translationAnswers)
+        let answeredCorrectlyWriting = UserDefaults.shared.integer(for: .writingAnswers)
+        let answeredCorrectlySentences = UserDefaults.shared.integer(for: .sentencesAnswers)
+        let answeredCorrectlyListening = UserDefaults.shared.integer(for: .listeningAnswers)
+        let answeredCorrectlyTotal = answeredCorrectlyTranslation +
+            answeredCorrectlyWriting +
+            answeredCorrectlySentences +
+            answeredCorrectlyListening
+        
+        let learnedCount = Locator.statistics.info.filter { $0.value >= 3 }.count
+        let inProgressCount = Locator.statistics.info.filter { $0.value > 0 && $0.value < 3 }.count
+        let verbsCount = verbsService.items.count
+
+        let mistakes = verbsService.items
+            .filter { !Locator.favorites.verbs.contains($0) &&
+                (Locator.mistakes.info[$0.infinitive.value] ?? 0) > 0 }
+            .first(count: 5)
+        
+        return .init(verbsCount: verbsCount,
+                     learnedWordsCount: learnedCount,
+                     wordsInProgressCount: inProgressCount,
+                     totalAnswersCount: answeredCorrectlyTotal,
+                     translationAnswersCount: answeredCorrectlyTranslation,
+                     formsAnswersCount: answeredCorrectlyWriting,
+                     sentenceAnswersCount: answeredCorrectlySentences,
+                     listeningAnswersCount: answeredCorrectlyListening,
+                     mistakes: mistakes)
+    }
+    
+    func prepareUITestsStatisticsModel() -> StatisticsModel {
+        let answeredCorrectlyTranslation = 10
+        let answeredCorrectlyWriting = 20
+        let answeredCorrectlySentences = 30
+        let answeredCorrectlyListening = 40
+        let answeredCorrectlyTotal = answeredCorrectlyTranslation +
+            answeredCorrectlyWriting +
+            answeredCorrectlySentences +
+            answeredCorrectlyListening
+        
+        let learnedCount = 50
+        let inProgressCount = 100
+        let verbsCount = verbsService.items.count
+
+        let mistakes = [verbsService.randomItem].compactMap { $0 }
+        
+        return .init(verbsCount: verbsCount,
+                     learnedWordsCount: learnedCount,
+                     wordsInProgressCount: inProgressCount,
+                     totalAnswersCount: answeredCorrectlyTotal,
+                     translationAnswersCount: answeredCorrectlyTranslation,
+                     formsAnswersCount: answeredCorrectlyWriting,
+                     sentenceAnswersCount: answeredCorrectlySentences,
+                     listeningAnswersCount: answeredCorrectlyListening,
+                     mistakes: mistakes)
     }
     
     func willBuy(_ sender: ItemProtocol) {

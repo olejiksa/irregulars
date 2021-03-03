@@ -56,7 +56,7 @@ final class TestsPresenter: NSObject {
                               title: "statistics".localized,
                               subtitle: "track_your_progress_in_learning_irregular_verbs".localized,
                               test: nil,
-                              accessibilityIdentifier: nil)
+                              accessibilityIdentifier: .statisticsCell)
         ].compactMap { $0 }
         dataSource.setup([Section(items: items)])
     }

@@ -71,6 +71,15 @@
         "region" : "ES",
         "userAttachmentLifetime" : "keepAlways"
       }
+    },
+    {
+      "id" : "CADBB2E9-643C-42CF-A8B4-6AE1391122A0",
+      "name" : "Ukrainian",
+      "options" : {
+        "language" : "uk",
+        "region" : "UA",
+        "userAttachmentLifetime" : "keepAlways"
+      }
     }
   ],
   "defaultOptions" : {

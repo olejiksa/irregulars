@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Verbs
+@testable import Irregulars
 
 final class CalendarTests: XCTestCase {
     

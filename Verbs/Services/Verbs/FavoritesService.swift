@@ -76,8 +76,12 @@ private extension FavoritesService {
     }
     
     func setItems() {
+        #if DEBUG
+        items = VerbsService().items.filter { ["get", "go", "make", "slit", "strew", "teach", "vex"].contains($0.infinitive.value) }
+        #else
         let set = Set(parser.read(from: .irregulars))
         items = Array(set.intersection(Locator.favorites.verbs)).sorted(by: <)
+        #endif
     }
     
     func setGroupedItems() {

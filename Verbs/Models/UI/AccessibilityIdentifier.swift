@@ -18,10 +18,12 @@ enum AccessibilityIdentifier: String {
     
     case voiceCell
     case accentColorCell
+    case notificationsCell
     
     case writingCell
     case sentencesCell
     case listeningCell
+    case statisticsCell
     
     case accentColorTable
     case notificationsTable

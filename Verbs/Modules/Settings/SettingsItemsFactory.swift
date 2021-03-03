@@ -76,7 +76,8 @@ final class SettingsItemsFactory {
                                                      accessibilityIdentifier: .voiceCell),
                                      RightDetailItem(title: .localized(.notifications),
                                                      subtitle: notificationsSubtitle,
-                                                     actionBlock: notificationsBlock)].compactMap { $0 }
+                                                     actionBlock: notificationsBlock,
+                                                     accessibilityIdentifier: .notificationsCell)].compactMap { $0 }
         #endif
         
         return .init(header: "general".localized, items: items)

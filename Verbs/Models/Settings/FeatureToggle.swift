@@ -13,7 +13,11 @@ struct FeatureToggle {
     
     static var isPaid: Bool {
         get {
+            #if DEBUG
+            return true
+            #else
             UserDefaults.shared.bool(for: .isPaid)
+            #endif
         }
         set {
             UserDefaults.shared.set(newValue, for: .isPaid)
@@ -23,7 +27,7 @@ struct FeatureToggle {
     }
     
     #if DEBUG
-    static var isDebug = false
+    static var isDebug = true
     #else
     static var isDebug = false
     #endif
