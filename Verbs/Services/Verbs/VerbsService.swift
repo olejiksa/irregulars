@@ -12,6 +12,7 @@ final class VerbsService: VerbsServiceProtocol {
     
     private let parser = JSONParser<Verb>()
     private let spotlightService = SpotlightService()
+    private let similarityService = SimilarityService()
     
     var favoritesOnly: Bool { false }
     
@@ -87,6 +88,10 @@ private extension VerbsService {
     
     func setItems() {
         var set = Set(parser.read(from: .irregulars))
+        
+        for var element in set {
+            similarityService.setSimilarity(for: &element)
+        }
        
         if !shouldRegularVerbsBeShown {
             let elements = set.filter(\.hasRegular)

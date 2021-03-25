@@ -7,7 +7,7 @@
 //
 
 /// Схожесть неправильных глаголов
-enum Similarity: Int {
+enum Similarity: Int, Codable {
     /// Все формы имеют единое написание
     case all
     /// Совпадают вторая и третья формы
@@ -29,7 +29,7 @@ enum Similarity: Int {
             return "Повторяются 1-я и 3-я формы"
         case .thirdEn:
             return "Заканчивающиеся на -en в 3-й форме"
-        case .thirdEn:
+        case .thirdOwnAndAwn:
             return "Заканчивающиеся на -own или -awn в 3-й форме"
         }
     }

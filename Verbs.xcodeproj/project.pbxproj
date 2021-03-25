@@ -72,6 +72,8 @@
 		EB355243260CA90000C7EA3C /* similars.json in Resources */ = {isa = PBXBuildFile; fileRef = EB355242260CA90000C7EA3C /* similars.json */; };
 		EB35524B260CAD4200C7EA3C /* Similarity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB35524A260CAD4200C7EA3C /* Similarity.swift */; };
 		EB355266260CAF5C00C7EA3C /* SimilarityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB355265260CAF5C00C7EA3C /* SimilarityService.swift */; };
+		EB35526D260CB40D00C7EA3C /* SimilarityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB355265260CAF5C00C7EA3C /* SimilarityService.swift */; };
+		EB355274260CB44F00C7EA3C /* Similarity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB35524A260CAD4200C7EA3C /* Similarity.swift */; };
 		EB39619925A1A42F00E3B65F /* VerbDragItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB39619825A1A42F00E3B65F /* VerbDragItem.swift */; };
 		EB3A164C25D11B6B00FCE706 /* TimePickerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3A164B25D11B6B00FCE706 /* TimePickerItem.swift */; };
 		EB3A165725D11BDD00FCE706 /* TimePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3A165525D11BDD00FCE706 /* TimePickerCell.swift */; };
@@ -542,7 +544,6 @@
 		EB9C5B9A258295C70086A3D5 /* SliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
 		EB9C5BA1258296EC0086A3D5 /* SliderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderItem.swift; sourceTree = "<group>"; };
 		EB9C5BA72582A3F00086A3D5 /* PlaybackSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackSpeed.swift; sourceTree = "<group>"; };
-		EB9F040E25E7ECB4009B1D6B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		EB9F046A25E94152009B1D6B /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		EBA644B3255988FC0012B973 /* ListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListState.swift; sourceTree = "<group>"; };
 		EBA644BA255A59CF0012B973 /* ActionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionItem.swift; sourceTree = "<group>"; };
@@ -1457,7 +1458,6 @@
 				EBF593D22588679F0091FCE0 /* Verbs.entitlements */,
 				EB13942725B7254D0001CE8C /* Info.plist */,
 				EB13943925B727A70001CE8C /* InfoPlist.strings */,
-				EB9F040E25E7ECB4009B1D6B /* Settings.bundle */,
 			);
 			path = Verbs;
 			sourceTree = "<group>";
@@ -1913,6 +1913,7 @@
 				EBE605D325B86BEB00EB1CB3 /* SectionArray.swift in Sources */,
 				EBE4AD0F2582AF7E001E9E4A /* VerbsServiceProtocol.swift in Sources */,
 				EB995B7225E518D50082DE32 /* SentencesService.swift in Sources */,
+				EB35526D260CB40D00C7EA3C /* SimilarityService.swift in Sources */,
 				EB409E4E259B8DA500E3B690 /* String.swift in Sources */,
 				EBF593E3258869C00091FCE0 /* Blocks.swift in Sources */,
 				EB409E46259B8D9D00E3B690 /* AppLocalizable.swift in Sources */,
@@ -1926,6 +1927,7 @@
 				EB26997E256D1BF1007CCF2E /* UserDefaults+Key.swift in Sources */,
 				EBF5954C258A76A20091FCE0 /* Locator.swift in Sources */,
 				EBF59446258879770091FCE0 /* Intents.intentdefinition in Sources */,
+				EB355274260CB44F00C7EA3C /* Similarity.swift in Sources */,
 				EB26998C256D40DD007CCF2E /* Notification.swift in Sources */,
 				EB995B6025E518BC0082DE32 /* FavoritesService.swift in Sources */,
 				EBE605C725B86BA800EB1CB3 /* Language.swift in Sources */,

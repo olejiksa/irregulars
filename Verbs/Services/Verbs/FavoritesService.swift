@@ -11,6 +11,7 @@ import Foundation
 final class FavoritesService: VerbsServiceProtocol {
     
     private let parser = JSONParser<Verb>()
+    private let similarityService = SimilarityService()
     
     var favoritesOnly: Bool { true }
     
@@ -83,12 +84,17 @@ private extension FavoritesService {
     }
     
     func setItems() {
-        #if DEBUG
-        items = VerbsService().items.filter { ["get", "go", "make", "slit", "strew", "teach", "vex"].contains($0.infinitive.value) }
-        #else
+//        #if DEBUG
+//        items = VerbsService().items.filter { ["get", "go", "make", "slit", "strew", "teach", "vex"].contains($0.infinitive.value) }
+//        #else
         let set = Set(parser.read(from: .irregulars))
+        
+        for var element in set {
+            similarityService.setSimilarity(for: &element)
+        }
+        
         items = Array(set.intersection(Locator.favorites.verbs)).sorted(by: <)
-        #endif
+//        #endif
     }
     
     func setGroupedItems() {
