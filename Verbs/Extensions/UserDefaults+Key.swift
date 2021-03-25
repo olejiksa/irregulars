@@ -19,6 +19,7 @@ extension UserDefaults {
         case derivatives
         case derivativesTests
         case shouldTranslationBeShown
+        case shouldSimilarBeShown
         case favorites
         case favoritesOnly
         case playbackSpeed

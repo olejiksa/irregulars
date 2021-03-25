@@ -35,6 +35,7 @@ final class ListMenu {
         let shouldTranslationBeShown = UserDefaults.shared.bool(for: .shouldTranslationBeShown)
         let shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .regularVerbs)
         let shouldDerivativesBeShown = UserDefaults.shared.bool(for: .derivatives)
+        let shouldSimilarBeShown = UserDefaults.shared.bool(for: .shouldSimilarBeShown)
         
         barButtonItem?.menu = .init(children: [
             UIMenu(options: .displayInline, children: [
@@ -46,6 +47,16 @@ final class ListMenu {
                          attributes: !hasTranslation ? .hidden : [],
                          state: shouldTranslationBeShown ? .on : .off,
                          handler: handleViewMenu)
+            ]),
+            UIMenu(options: .displayInline, children: [
+                UIAction(title: "A-Z",
+                         attributes: [],
+                         state: !shouldSimilarBeShown ? .on : .off,
+                         handler: handleSimilarityMenu),
+                UIAction(title: "by_similarity".localized,
+                         attributes: [],
+                         state: shouldSimilarBeShown ? .on : .off,
+                         handler: handleSimilarityMenu)
             ]),
             UIMenu(options: .displayInline, children: [
                 UIAction(title: "regular_verbs".localized,
@@ -80,6 +91,15 @@ private extension ListMenu {
         NotificationCenter.default.post(name: .list,
                                         object: nil,
                                         userInfo: [Notification.Name.list: newState])
+        
+        build()
+    }
+    
+    func handleSimilarityMenu(action: UIAction) {
+        let shouldSimilarBeShown = UserDefaults.shared.bool(for: .shouldSimilarBeShown)
+        let state = action.state == .on
+        let newState = shouldSimilarBeShown == state
+        UserDefaults.shared.set(newState, for: .shouldSimilarBeShown)
         
         build()
     }

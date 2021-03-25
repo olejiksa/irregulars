@@ -21,6 +21,7 @@ protocol VerbsServiceProtocol: class {
     var shouldTranslationBeShown: Bool { get set }
     var shouldRegularVerbsBeShown: Bool { get set }
     var shouldDerivativesBeShown: Bool { get set }
+    var shouldSimilarBeShown: Bool { get set }
     
     func verb(of infinitive: String?) -> Verb?
     func indexPath(of infinitive: String?) -> IndexPath?

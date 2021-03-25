@@ -51,6 +51,13 @@ final class VerbsService: VerbsServiceProtocol {
         }
     }
     
+    var shouldSimilarBeShown: Bool = false {
+        didSet {
+            setItems()
+            setGroupedItems()
+        }
+    }
+    
     init() {
         setItems()
         setGroupedItems()

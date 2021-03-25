@@ -14,6 +14,7 @@ final class JSONParser<T: Decodable> {
         case irregulars
         case sentences
         case demo
+        case similars
     }
     
     func read(from file: File) -> [T] {

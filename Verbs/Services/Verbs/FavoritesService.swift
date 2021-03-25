@@ -40,6 +40,13 @@ final class FavoritesService: VerbsServiceProtocol {
     var shouldDerivativesBeShown: Bool = false
     var shouldRegularVerbsBeShown: Bool = false
     
+    var shouldSimilarBeShown: Bool = false {
+        didSet {
+            setItems()
+            setGroupedItems()
+        }
+    }
+    
     init() {
         setupFavorites()
         setItems()
