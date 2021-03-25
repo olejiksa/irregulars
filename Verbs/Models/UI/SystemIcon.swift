@@ -42,6 +42,7 @@ enum SystemIcon: String {
     case printer
     case sunrise
     case sunset = "moon.zzz"
+    case skip = "shuffle.circle"
     
     var image: UIImage? { UIImage(systemName: rawValue) }
 }

@@ -114,7 +114,7 @@
 "elizabeth_keplin" = "Єлизавета Кеплин";
 "buy_for" = "Купити за";
 "one_time_payment" = "Одноразовий платіж, необмежений за часом доступ";
-"Ok" = "Добре";
+"ok" = "Добре";
 "paulina_litvinova" = "Поліна Литвинова";
 "tatiana_perfilieva" = "Тетяна Перфільєва";
 "notifications" = "Повідомлення";
@@ -413,3 +413,5 @@
 "oversleep" = "проспати, заспаний";
 "overtake" = "наздоганяти";
 "overthrow" = "повалити";
+
+"skip" = "Skip";

@@ -67,11 +67,19 @@ private extension TestViewController {
         navigationItem.title = title
         navigationItem.largeTitleDisplayMode = .never
         
-        let moreButton = presenter.test == .listening ? UIBarButtonItem(image: SystemIcon.ellipsis.image,
-                                                                        style: .plain,
-                                                                        target: self,
-                                                                        action: #selector(didMoreButtonTap)) : nil
-        navigationItem.rightBarButtonItem = moreButton
+        let shouldMoreButtonBeShown = [Test.listening, Test.translation].contains(presenter.test)
+        let moreButton = shouldMoreButtonBeShown ? UIBarButtonItem(image: SystemIcon.ellipsis.image,
+                                                                   style: .plain,
+                                                                   target: self,
+                                                                   action: #selector(didMoreButtonTap)) : nil
+        
+        let skipButton = FeatureToggle.is1_10 ? UIBarButtonItem(image: SystemIcon.skip.image,
+                                                                style: .plain,
+                                                                target: self,
+                                                                action: #selector(didSkipButtonTap)) : nil
+        skipButton?.accessibilityLabel = "skip".localized
+        
+        navigationItem.rightBarButtonItems = [skipButton, moreButton].compactMap { $0 }
     }
     
     func setupTableView() {
@@ -116,6 +124,10 @@ private extension TestViewController {
         popoverViewController.barButtonItem = sender
         popoverViewController.delegate = viewController
         present(viewController, animated: true)
+    }
+    
+    @objc func didSkipButtonTap() {
+        presenter.reloadData()
     }
 }
 

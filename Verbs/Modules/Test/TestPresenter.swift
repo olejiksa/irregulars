@@ -36,12 +36,12 @@ final class TestPresenter: NSObject {
         self.demoService = demoService
         switch (UserDefaults.shared.bool(for: .favoritesOnly),
                 !UserDefaults.shared.bool(for: .isPaid)) {
-        case (_, true):
-            self.items = verbsService.items.map(\.infinitive.value).filter(demoService.items.contains)
         case (true, false):
             self.items = favoritesService.items.map(\.infinitive.value)
         case (false, false):
             self.items = verbsService.items.map(\.infinitive.value)
+        case (_, true):
+            self.items = verbsService.items.map(\.infinitive.value).filter(demoService.items.contains)
         }
         self.audioService = audioService
         self.itemsFactory = itemsFactory
@@ -49,6 +49,11 @@ final class TestPresenter: NSObject {
         super.init()
         loadSettings()
         setupSections()
+    }
+    
+    func reloadData() {
+        configureRandomComposition()
+        viewController?.reloadData()
     }
 }
 

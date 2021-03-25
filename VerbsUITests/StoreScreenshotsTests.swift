@@ -139,7 +139,7 @@ final class StoreScreenshotsTests: XCTestCase {
     }
     
     func testHVerbDetail() {
-        app.launchArguments = ["dark"]
+        app.launchEnvironment = ["accent-color": "indigo"]
         app.launch()
         
         app.tables.element(boundBy: 0).cells.element(boundBy: 1).tap()
@@ -160,7 +160,7 @@ final class StoreScreenshotsTests: XCTestCase {
         let barButton = app.navigationBars.buttons.element(boundBy: 0)
         XCTAssertTrue(barButton.waitForExistence(timeout: 3))
 
-        attachScreenshot(name: "sentences")
+        attachScreenshot(name: "tests")
     }
     
     func testJAllVerbs() {

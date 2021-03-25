@@ -28,6 +28,7 @@
       }
     },
     {
+      "enabled" : false,
       "id" : "A2B573C9-607E-4C49-B086-A8868E9CECE9",
       "name" : "Italian",
       "options" : {
@@ -37,6 +38,7 @@
       }
     },
     {
+      "enabled" : false,
       "id" : "FB2D4856-1288-40F1-ACE6-4EA13EC55FD1",
       "name" : "German",
       "options" : {
@@ -46,6 +48,7 @@
       }
     },
     {
+      "enabled" : false,
       "id" : "3C3AC6DF-3874-44CC-BD05-A5D61ED70147",
       "name" : "Chinese (Simplified)",
       "options" : {
@@ -55,6 +58,7 @@
       }
     },
     {
+      "enabled" : false,
       "id" : "8843202C-9C45-4315-BA9C-F2840987D5A0",
       "name" : "Korean",
       "options" : {
@@ -64,6 +68,7 @@
       }
     },
     {
+      "enabled" : false,
       "id" : "C6F677D4-EFD5-4574-89B4-F2B1977C122C",
       "name" : "Spanish",
       "options" : {

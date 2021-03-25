@@ -49,18 +49,18 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window?.makeKeyAndVisible()
         
-//        #if DEBUG
-//        if CommandLine.arguments.contains("dark") {
-//            window?.overrideUserInterfaceStyle = .dark
-//        }
-//        
-//        guard let accentColorString = ProcessInfo.processInfo.environment["accent-color"],
-//              let accentColor = AccentColor(rawValue: accentColorString)
-//        else { return }
-//        
-//        AccentColor.current = accentColor
-//        window?.tintColor = accentColor.color
-//        #endif
+        #if DEBUG
+        if CommandLine.arguments.contains("dark") {
+            window?.overrideUserInterfaceStyle = .dark
+        }
+        
+        guard let accentColorString = ProcessInfo.processInfo.environment["accent-color"],
+              let accentColor = AccentColor(rawValue: accentColorString)
+        else { return }
+        
+        AccentColor.current = accentColor
+        window?.tintColor = accentColor.color
+        #endif
         
         self.scene(scene, openURLContexts: connectionOptions.urlContexts)
         for userActivity in connectionOptions.userActivities {

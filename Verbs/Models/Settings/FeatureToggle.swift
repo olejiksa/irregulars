@@ -13,17 +13,21 @@ struct FeatureToggle {
     
     static var isPaid: Bool {
         get {
-            #if DEBUG
-            return true
-            #else
             UserDefaults.shared.bool(for: .isPaid)
-            #endif
         }
         set {
             UserDefaults.shared.set(newValue, for: .isPaid)
             NotificationCenter.default.post(name: .reload, object: nil)
             UIMenuSystem.main.setNeedsRebuild()
         }
+    }
+    
+    static var is1_10: Bool {
+        #if DEBUG
+        return true
+        #else
+        return false
+        #endif
     }
     
     #if DEBUG
