@@ -18,6 +18,8 @@ enum Similarity: Int, Codable {
     case thirdEn
     /// Заканчивающиеся на -own, -awn в третьей форме, имеют букву -w в конце первой
     case thirdOwnAndAwn
+    /// Другие
+    case others
     
     var description: String {
         switch self {
@@ -31,6 +33,17 @@ enum Similarity: Int, Codable {
             return "Заканчивающиеся на -en в 3-й форме"
         case .thirdOwnAndAwn:
             return "Заканчивающиеся на -own или -awn в 3-й форме"
+        case .others:
+            return "Другие"
         }
+    }
+}
+
+// MARK: - Comparable
+
+extension Similarity: Comparable {
+    
+    static func <(lhs: Similarity, rhs: Similarity) -> Bool {
+        lhs.rawValue < rhs.rawValue
     }
 }

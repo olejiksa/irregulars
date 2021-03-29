@@ -43,6 +43,10 @@ enum SystemIcon: String {
     case sunrise
     case sunset = "moon.zzz"
     case skip = "shuffle.circle"
+    case filter = "line.horizontal.3.decrease.circle"
+    case unfilter = "line.horizontal.3.decrease.circle.fill"
+    case sort = "arrow.up.arrow.down.circle"
+    case unsort = "arrow.up.arrow.down.circle.fill"
     
     var image: UIImage? { UIImage(systemName: rawValue) }
 }

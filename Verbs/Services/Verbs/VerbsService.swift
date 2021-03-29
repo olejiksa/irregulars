@@ -31,6 +31,7 @@ final class VerbsService: VerbsServiceProtocol {
 
     private(set) var items: [Verb] = []
     private(set) var groupedItems: [[Verb]] = []
+    private(set) var headers: [String] = []
     
     var shouldRegularVerbsBeShown: Bool = true {
         didSet {
@@ -88,10 +89,7 @@ private extension VerbsService {
     
     func setItems() {
         var set = Set(parser.read(from: .irregulars))
-        
-        for var element in set {
-            similarityService.setSimilarity(for: &element)
-        }
+        set = Set(set.map(similarityService.similar))
        
         if !shouldRegularVerbsBeShown {
             let elements = set.filter(\.hasRegular)
@@ -108,6 +106,12 @@ private extension VerbsService {
     }
     
     func setGroupedItems() {
+        groupedItems = !shouldSimilarBeShown ?
+            groupedItemsAlphabetically() :
+            groupedItemsBySimilarity()
+    }
+    
+    func groupedItemsAlphabetically() -> [[Verb]] {
         var grouped = [[Verb]]()
         var letter: Character?
         var index = -1
@@ -120,6 +124,18 @@ private extension VerbsService {
             grouped[index].append(item)
         }
         
-        groupedItems = grouped
+        headers = grouped.map(\.first?.infinitive.value).compactMap {
+            guard let letter = $0?.first else { return nil }
+            return String(letter)
+        }
+        
+        return grouped
+    }
+    
+    func groupedItemsBySimilarity() -> [[Verb]] {
+        let grouped = Dictionary(grouping: items) { $0.similarity ?? .others }
+        let array = Array(grouped).sorted { $0.key < $1.key }
+        headers = array.map(\.key.description)
+        return array.map(\.value)
     }
 }

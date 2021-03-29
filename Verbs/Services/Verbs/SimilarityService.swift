@@ -15,9 +15,9 @@ final class SimilarityService {
         items = parser.read(from: .similars)
     }
     
-    func setSimilarity(for verb: inout Verb) {
-        guard let arrayIndex = items.firstIndex(where: { $0.contains(verb.infinitive.value) }) else { return }
-        let similarity = Similarity(rawValue: arrayIndex)
-        verb.similarity = similarity
+    func similar(basedOn verb: Verb) -> Verb {
+        guard let arrayIndex = items.firstIndex(where: { $0.contains(verb.infinitive.value) }) else { return verb }
+        let similarity = Similarity(rawValue: arrayIndex) ?? .others
+        return Verb(verb: verb, similarity: similarity)
     }
 }

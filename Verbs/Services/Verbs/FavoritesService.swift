@@ -30,6 +30,7 @@ final class FavoritesService: VerbsServiceProtocol {
 
     private(set) var items: [Verb] = []
     private(set) var groupedItems: [[Verb]] = []
+    private(set) var headers: [String] = []
     
     var shouldTranslationBeShown: Bool = false {
         didSet {
@@ -87,17 +88,20 @@ private extension FavoritesService {
 //        #if DEBUG
 //        items = VerbsService().items.filter { ["get", "go", "make", "slit", "strew", "teach", "vex"].contains($0.infinitive.value) }
 //        #else
-        let set = Set(parser.read(from: .irregulars))
-        
-        for var element in set {
-            similarityService.setSimilarity(for: &element)
-        }
+        var set = Set(parser.read(from: .irregulars))
+        set = Set(set.map(similarityService.similar))
         
         items = Array(set.intersection(Locator.favorites.verbs)).sorted(by: <)
 //        #endif
     }
     
     func setGroupedItems() {
+        groupedItems = !shouldSimilarBeShown ?
+            groupedItemsAlphabetically() :
+            groupedItemsBySimilarity()
+    }
+    
+    func groupedItemsAlphabetically() -> [[Verb]] {
         var grouped = [[Verb]]()
         var letter: Character?
         var index = -1
@@ -110,6 +114,18 @@ private extension FavoritesService {
             grouped[index].append(item)
         }
         
-        groupedItems = grouped
+        headers = grouped.map(\.first?.infinitive.value).compactMap {
+            guard let letter = $0?.first else { return nil }
+            return String(letter)
+        }
+        
+        return grouped
+    }
+    
+    func groupedItemsBySimilarity() -> [[Verb]] {
+        let grouped = Dictionary(grouping: items) { $0.similarity ?? .others }
+        let array = Array(grouped).sorted { $0.key < $1.key }
+        headers = array.map(\.key.description)
+        return array.map(\.value)
     }
 }

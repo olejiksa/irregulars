@@ -15,6 +15,7 @@ protocol VerbsServiceProtocol: class {
     var items: [Verb] { get }
     var searchedItems: [Verb] { get }
     var groupedItems: [[Verb]] { get }
+    var headers: [String] { get }
     
     var searchText: String { get set }
     

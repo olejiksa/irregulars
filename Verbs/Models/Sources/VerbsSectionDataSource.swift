@@ -49,18 +49,12 @@ final class VerbsSectionDataSource: SectionDataSource {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard !isSearchActive else { return nil }
-        let items = verbsService.groupedItems[safe: section]
-        guard let letter = items?.first?.infinitive.value.first else { return nil }
-        return letter.uppercased()
+        return verbsService.headers[safe: section]
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        guard !isSearchActive else { return nil }
-        let set = Set(verbsService.items.compactMap { item -> String? in
-            guard let character = item.infinitive.value.first else { return nil }
-            return character.uppercased()
-        })
-        
+        guard !isSearchActive, !verbsService.shouldSimilarBeShown else { return nil }
+        let set = Set(verbsService.headers.compactMap { $0.first?.uppercased() })
         return Array(set).sorted()
     }
     

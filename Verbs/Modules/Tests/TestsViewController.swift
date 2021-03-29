@@ -78,9 +78,18 @@ private extension TestsViewController {
         navigationItem.title = "tests".localized
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        moreButton = .init(icon: .ellipsis)
+        moreButton = .init(icon: .filter)
         buildMenu(for: moreButton)
         navigationItem.rightBarButtonItem = moreButton
+    }
+    
+    func setupMoreButtonIcon() {
+        let isFiltered = UserDefaults.shared.bool(for: .favoritesOnly) ||
+            !UserDefaults.shared.bool(for: .regularVerbsTests) ||
+            !UserDefaults.shared.bool(for: .derivativesTests)
+        moreButton?.image = !isFiltered
+            ? SystemIcon.filter.image
+            : SystemIcon.unfilter.image
     }
     
     func setupTableView() {
@@ -123,6 +132,8 @@ private extension TestsViewController {
     }
     
     func buildMenu(for barButtonItem: UIBarButtonItem?) {
+        setupMoreButtonIcon()
+        
         let isPaid = FeatureToggle.isPaid
         let favoritesOnly = UserDefaults.shared.bool(for: .favoritesOnly)
         let shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .regularVerbsTests)

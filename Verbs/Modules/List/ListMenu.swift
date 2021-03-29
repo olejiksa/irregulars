@@ -88,9 +88,9 @@ private extension ListMenu {
         let state = action.state == .on
         let newState = shouldTranslationBeShown == state
         UserDefaults.shared.set(newState, for: .shouldTranslationBeShown)
-        NotificationCenter.default.post(name: .list,
+        NotificationCenter.default.post(name: .listView,
                                         object: nil,
-                                        userInfo: [Notification.Name.list: newState])
+                                        userInfo: [Notification.Name.listView: newState])
         
         build()
     }
@@ -100,6 +100,9 @@ private extension ListMenu {
         let state = action.state == .on
         let newState = shouldSimilarBeShown == state
         UserDefaults.shared.set(newState, for: .shouldSimilarBeShown)
+        NotificationCenter.default.post(name: .grouping,
+                                        object: nil,
+                                        userInfo: [Notification.Name.grouping: newState])
         
         build()
     }

@@ -84,6 +84,7 @@ private extension ListPresenter {
         verbsService.shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .regularVerbs)
         verbsService.shouldDerivativesBeShown = UserDefaults.shared.bool(for: .derivatives)
         verbsService.shouldTranslationBeShown = UserDefaults.shared.bool(for: .shouldTranslationBeShown)
+        verbsService.shouldSimilarBeShown = UserDefaults.shared.bool(for: .shouldSimilarBeShown)
     }
     
     func subscribe() {
@@ -96,8 +97,12 @@ private extension ListPresenter {
                                                name: .reload,
                                                object: nil)
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(willUpdateList),
-                                               name: .list,
+                                               selector: #selector(willUpdateListView),
+                                               name: .listView,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(willUpdateGrouping),
+                                               name: .grouping,
                                                object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(willReloadData),
@@ -129,9 +134,16 @@ private extension ListPresenter {
         viewController?.getPaid()
     }
     
-    @objc func willUpdateList(_ notification: Notification) {
-        let value = notification.userInfo?[Notification.Name.list] as? Bool ?? false
+    @objc func willUpdateListView(_ notification: Notification) {
+        let value = notification.userInfo?[Notification.Name.listView] as? Bool ?? false
         verbsService.shouldTranslationBeShown = value
+        viewController?.reloadData()
+        didSelectedItemSet()
+    }
+    
+    @objc func willUpdateGrouping(_ notification: Notification) {
+        let value = notification.userInfo?[Notification.Name.grouping] as? Bool ?? false
+        verbsService.shouldSimilarBeShown = value
         viewController?.reloadData()
         didSelectedItemSet()
     }

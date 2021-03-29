@@ -13,7 +13,8 @@ extension Notification.Name {
     static let infinitive = Notification.Name("infinitive")
     static let test = Notification.Name("test")
     static let reload = Notification.Name("reload")
-    static let list = Notification.Name("list")
+    static let listView = Notification.Name("listView")
+    static let grouping = Notification.Name("grouping")
     static let favorites = Notification.Name("favorites")
     static let sidebar = Notification.Name("sidebar")
 }
