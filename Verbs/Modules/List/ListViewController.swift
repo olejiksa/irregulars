@@ -163,7 +163,6 @@ private extension ListViewController {
             navigationItem.title = "all".localized
         }
         
-//        let sortButton = UIBarButtonItem(icon: .sort)
         moreButton = .init(icon: .ellipsis)
         navigationItem.rightBarButtonItem = moreButton
         

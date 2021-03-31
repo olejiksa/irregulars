@@ -14,6 +14,10 @@ extension UIBarButtonItem {
         self.init(image: icon.image, style: .plain, target: nil, action: nil)
     }
     
+    convenience init(icon: SystemIcon, style: UIBarButtonItem.Style = .plain, target: Any?, action: Selector?) {
+        self.init(image: icon.image, style: style, target: target, action: action)
+    }
+    
     convenience init(barButtonSystemItem systemItem: SystemItem) {
         self.init(barButtonSystemItem: systemItem, target: nil, action: nil)
     }

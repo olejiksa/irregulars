@@ -48,11 +48,11 @@ private extension StatisticsPresenter {
     }
     
     func setupSections() {
-        #if DEBUG
-        let statisticsModel = prepareUITestsStatisticsModel()
-        #else
+//        #if DEBUG
+//        let statisticsModel = prepareUITestsStatisticsModel()
+//        #else
         let statisticsModel = prepareStatisticsModel()
-        #endif
+//        #endif
         
         let answeredCorrectlyString = String(format: "answered_correctly_count".localized,
                                              statisticsModel.totalAnswersCount)

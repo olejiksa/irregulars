@@ -116,7 +116,7 @@ private extension FavoritesService {
         
         headers = grouped.map(\.first?.infinitive.value).compactMap {
             guard let letter = $0?.first else { return nil }
-            return String(letter)
+            return String(letter.uppercased())
         }
         
         return grouped

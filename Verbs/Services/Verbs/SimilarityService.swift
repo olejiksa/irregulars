@@ -8,16 +8,27 @@
 
 final class SimilarityService {
     
-    private let parser = JSONParser<[String]>()
-    private(set) var items: [[String]] = []
-    
-    init() {
-        items = parser.read(from: .similars)
-    }
-    
     func similar(basedOn verb: Verb) -> Verb {
-        guard let arrayIndex = items.firstIndex(where: { $0.contains(verb.infinitive.value) }) else { return verb }
-        let similarity = Similarity(rawValue: arrayIndex) ?? .others
-        return Verb(verb: verb, similarity: similarity)
+        let secondSet = Set(arrayLiteral: verb.simplePast)
+        let thirdSet = Set(arrayLiteral: verb.pastParticiple)
+        let secondAndThirdIntersection = secondSet.intersection(thirdSet)
+        let areIntersected = !secondAndThirdIntersection.isEmpty
+        
+        let similarity: Similarity
+        if verb.simplePast?.contains(verb.infinitive) == true, areIntersected {
+            similarity = .all
+        } else if verb.pastParticiple?.contains(verb.infinitive) == true {
+            similarity = .firstAndThird
+        } else if areIntersected {
+            similarity = .secondAndThird
+        } else if verb.pastParticiple?.contains(where: { $0.value.hasSuffix("en") }) == true {
+            similarity = .thirdEn
+        } else if verb.pastParticiple?.contains(where: { $0.value.hasSuffix("own") || $0.value.hasSuffix("awn") }) == true {
+            similarity = .thirdOwnAndAwn
+        } else {
+            similarity = .others
+        }
+        
+        return .init(verb: verb, similarity: similarity)
     }
 }

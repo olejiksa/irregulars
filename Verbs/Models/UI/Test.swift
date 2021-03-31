@@ -20,6 +20,7 @@ enum Test {
     case writing
     case sentences
     case listening
+    case speaking
     
     var kinds: [Kind] {
         switch self {
@@ -29,7 +30,7 @@ enum Test {
             return [.twoForms]
         case .sentences:
             return [.sentences]
-        case .listening:
+        case .listening, .speaking:
             return [.listening]
         }
     }
@@ -44,6 +45,8 @@ enum Test {
             return .localized(.sentences)
         case .listening:
             return .localized(.listening)
+        case .speaking:
+            return "Произношение"
         }
     }
 }

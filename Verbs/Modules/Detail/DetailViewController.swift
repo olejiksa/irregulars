@@ -70,17 +70,10 @@ private extension DetailViewController {
         navigationItem.title = presenter.title
         navigationItem.largeTitleDisplayMode = .never
         
-        let moreButton = UIBarButtonItem(image: SystemIcon.ellipsis.image,
-                                         style: .plain,
-                                         target: self,
-                                         action: #selector(didMoreButtonTap))
-        
+        let moreButton = UIBarButtonItem(icon: .ellipsis, target: self, action: #selector(didMoreButtonTap))
         let isFavorite = Locator.favorites.verbs.contains(verb)
-        let image = isFavorite ? SystemIcon.starFill.image : SystemIcon.star.image
-        favoriteButton = UIBarButtonItem(image: image,
-                                         style: .plain,
-                                         target: self,
-                                         action: #selector(didFavoriteTap))
+        let icon = isFavorite ? SystemIcon.starFill : SystemIcon.star
+        favoriteButton = UIBarButtonItem(icon: icon, target: self, action: #selector(didFavoriteTap))
         navigationItem.rightBarButtonItems = [favoriteButton, moreButton].compactMap { $0 }
     }
     

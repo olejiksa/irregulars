@@ -29,14 +29,10 @@ final class PickerCell: UITableViewCell {
     override var inputAccessoryView: UIView? {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done,
-                                         target: self,
-                                         action: #selector(didDoneTap))
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didDoneTap))
         doneButton.tintColor = AccentColor.current.color
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace)
-        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel,
-                                           target: self,
-                                           action: #selector(didCancelTap))
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(didCancelTap))
         cancelButton.tintColor = AccentColor.current.color
         toolbar.items = [cancelButton, spaceButton, doneButton]
         return toolbar

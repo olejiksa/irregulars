@@ -126,7 +126,7 @@ private extension TestPresenter {
             case .translation:
                 let answeredCorrectlyCount = UserDefaults.shared.integer(for: .translationAnswers)
                 UserDefaults.shared.set(answeredCorrectlyCount + 1, for: .translationAnswers)
-            case .listening:
+            case .listening, .speaking:
                 let answeredCorrectlyCount = UserDefaults.shared.integer(for: .listeningAnswers)
                 UserDefaults.shared.set(answeredCorrectlyCount + 1, for: .listeningAnswers)
             case .sentences:

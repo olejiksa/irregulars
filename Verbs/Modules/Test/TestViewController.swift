@@ -68,16 +68,12 @@ private extension TestViewController {
         navigationItem.largeTitleDisplayMode = .never
         
         let shouldMoreButtonBeShown = [Test.listening, Test.translation].contains(presenter.test)
-        let moreButton = shouldMoreButtonBeShown ? UIBarButtonItem(image: SystemIcon.ellipsis.image,
-                                                                   style: .plain,
-                                                                   target: self,
-                                                                   action: #selector(didMoreButtonTap)) : nil
+        let moreButton = shouldMoreButtonBeShown ?
+            UIBarButtonItem(icon: .ellipsis, target: self, action: #selector(didMoreButtonTap)) :
+            nil
         
-        let skipButton = FeatureToggle.is1_10 ? UIBarButtonItem(image: SystemIcon.skip.image,
-                                                                style: .plain,
-                                                                target: self,
-                                                                action: #selector(didSkipButtonTap)) : nil
-        skipButton?.accessibilityLabel = "skip".localized
+        let skipButton = UIBarButtonItem(icon: .skip, target: self, action: #selector(didSkipButtonTap))
+        skipButton.accessibilityLabel = "skip".localized
         
         navigationItem.rightBarButtonItems = [skipButton, moreButton].compactMap { $0 }
     }

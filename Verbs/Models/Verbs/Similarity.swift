@@ -13,10 +13,10 @@ enum Similarity: Int, Codable {
     /// Совпадают вторая и третья формы
     case secondAndThird
     /// Совпадают первая и третья формы
-    case firstAndSecond
+    case firstAndThird
     /// Заканчивающиеся на -en в третьей форме
     case thirdEn
-    /// Заканчивающиеся на -own, -awn в третьей форме, имеют букву -w в конце первой
+    /// Заканчивающиеся на -own, -awn в третьей форме
     case thirdOwnAndAwn
     /// Другие
     case others
@@ -27,7 +27,7 @@ enum Similarity: Int, Codable {
             return "Все три формы повторяются"
         case .secondAndThird:
             return "Повторяются 2-я и 3-я формы"
-        case .firstAndSecond:
+        case .firstAndThird:
             return "Повторяются 1-я и 3-я формы"
         case .thirdEn:
             return "Заканчивающиеся на -en в 3-й форме"

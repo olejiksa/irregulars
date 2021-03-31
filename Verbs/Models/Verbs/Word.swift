@@ -22,6 +22,10 @@ struct Word: Codable {
     }
 }
 
+// MARK: - Hashable
+
+extension Word: Hashable {}
+
 // MARK: - Comparable
 
 extension Word: Comparable {

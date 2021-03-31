@@ -22,14 +22,6 @@ struct FeatureToggle {
         }
     }
     
-    static var is1_10: Bool {
-        #if DEBUG
-        return true
-        #else
-        return false
-        #endif
-    }
-    
     #if DEBUG
     static var isDebug = true
     #else

@@ -63,16 +63,16 @@ private extension VoiceViewController {
         navigationItem.title = .localized(.voice)
         navigationItem.largeTitleDisplayMode = .never
         
-        moreButton = .init(image: SystemIcon.ellipsis.image,
+        moreButton = .init(icon: .ellipsis,
                            style: .plain,
                            target: self,
                            action: #selector(didMoreButtonTap))
-        playButton = .init(image: image(for: .play),
+        playButton = .init(icon: .play,
                            style: .done,
                            target: self,
                            action: #selector(didPlayTap))
         playButton?.accessibilityTraits = [.button, .playsSound]
-        stopButton = .init(image: image(for: .stop),
+        stopButton = .init(icon: .stop,
                            style: .done,
                            target: self,
                            action: #selector(didPlayTap))

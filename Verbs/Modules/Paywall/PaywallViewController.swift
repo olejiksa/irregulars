@@ -102,9 +102,7 @@ private extension PaywallViewController {
         navigationItem.title = "\(productName) Pro"
         navigationItem.largeTitleDisplayMode = .never
         
-        let closeButton = UIBarButtonItem(barButtonSystemItem: .close,
-                                          target: self,
-                                          action: #selector(didCloseTap))
+        let closeButton = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(didCloseTap))
         navigationItem.rightBarButtonItem = closeButton
     }
     

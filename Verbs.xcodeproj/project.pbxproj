@@ -69,7 +69,6 @@
 		EB3217BD258BE42300023F0B /* ProgressItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3217BC258BE42300023F0B /* ProgressItem.swift */; };
 		EB3217C3258BE4B300023F0B /* ProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3217C1258BE4B300023F0B /* ProgressCell.swift */; };
 		EB3217C4258BE4B300023F0B /* ProgressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB3217C2258BE4B300023F0B /* ProgressCell.xib */; };
-		EB355243260CA90000C7EA3C /* similars.json in Resources */ = {isa = PBXBuildFile; fileRef = EB355242260CA90000C7EA3C /* similars.json */; };
 		EB35524B260CAD4200C7EA3C /* Similarity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB35524A260CAD4200C7EA3C /* Similarity.swift */; };
 		EB355266260CAF5C00C7EA3C /* SimilarityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB355265260CAF5C00C7EA3C /* SimilarityService.swift */; };
 		EB35526D260CB40D00C7EA3C /* SimilarityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB355265260CAF5C00C7EA3C /* SimilarityService.swift */; };
@@ -430,7 +429,6 @@
 		EB3217BC258BE42300023F0B /* ProgressItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressItem.swift; sourceTree = "<group>"; };
 		EB3217C1258BE4B300023F0B /* ProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCell.swift; sourceTree = "<group>"; };
 		EB3217C2258BE4B300023F0B /* ProgressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressCell.xib; sourceTree = "<group>"; };
-		EB355242260CA90000C7EA3C /* similars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = similars.json; sourceTree = "<group>"; };
 		EB35524A260CAD4200C7EA3C /* Similarity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Similarity.swift; sourceTree = "<group>"; };
 		EB355265260CAF5C00C7EA3C /* SimilarityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarityService.swift; sourceTree = "<group>"; };
 		EB39616E25A0774B00E3B65F /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -928,7 +926,6 @@
 		EB355241260CA8DB00C7EA3C /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				EB355242260CA90000C7EA3C /* similars.json */,
 				EBF593BE258851CD0091FCE0 /* demo.json */,
 				EBB3BC14251F4BAA006E0DC7 /* irregulars.json */,
 				EBD2C4F4257FD6860023AED4 /* sentences.json */,
@@ -1792,7 +1789,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB355243260CA90000C7EA3C /* similars.json in Resources */,
 				EB2E4B9A25741832005B343A /* orange@3x.png in Resources */,
 				EB13943725B727A70001CE8C /* InfoPlist.strings in Resources */,
 				EBF594822589030E0091FCE0 /* red@3x~ipad.png in Resources */,
