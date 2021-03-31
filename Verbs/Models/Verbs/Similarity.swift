@@ -24,17 +24,17 @@ enum Similarity: Int, Codable {
     var description: String {
         switch self {
         case .all:
-            return "Все три формы повторяются"
+            return "similarity_all".localized
         case .secondAndThird:
-            return "Повторяются 2-я и 3-я формы"
+            return "similarity_second_and_third".localized
         case .firstAndThird:
-            return "Повторяются 1-я и 3-я формы"
+            return "similarity_first_and_third".localized
         case .thirdEn:
-            return "Заканчивающиеся на -en в 3-й форме"
+            return "similarity_third_en".localized
         case .thirdOwnAndAwn:
-            return "Заканчивающиеся на -own или -awn в 3-й форме"
+            return "similarity_third_own_and_awn".localized
         case .others:
-            return "Другие"
+            return "similarity_others".localized
         }
     }
 }

@@ -137,11 +137,17 @@
 "sunset" = "Закат";
 "search" = "Поиск";
 "frequent_mistakes" = "Частые ошибки";
-"frequent_mistakes_footer" = "Добавьте эти глаголы в «Избранное» и проверьте себя еще раз, пройдя тест по ним: «Тесты» → три точки → «Избранное»";
+"frequent_mistakes_footer" = "Добавьте эти глаголы в «Избранное» и проверьте себя еще раз, пройдя тест по ним: «Тесты» → 􀍡 → «Избранное»";
 "wrong_answer" = "Неверный ответ";
 "anastasia_ovcharenko" = "Анастасия Овчаренко";
 "skip" = "Пропустить";
 "by_similarity" = "По сходству";
+"similarity_all" = "Все три формы повторяются";
+"similarity_second_and_third" = "Повторяются 2-я и 3-я формы";
+"similarity_first_and_third" = "Повторяются 1-я и 3-я формы";
+"similarity_third_en" = "Заканчивающиеся на -en в 3-й форме";
+"similarity_third_own_and_awn" = "Заканчивающиеся на -own или -awn в 3-й форме";
+"similarity_others" = "Другие";
 
 "abide" = "выносить, терпеть";
 "alight" = "выходить из транспорта";

@@ -9,8 +9,8 @@
 final class SimilarityService {
     
     func similar(basedOn verb: Verb) -> Verb {
-        let secondSet = Set(arrayLiteral: verb.simplePast)
-        let thirdSet = Set(arrayLiteral: verb.pastParticiple)
+        let secondSet = Set(verb.simplePast ?? [])
+        let thirdSet = Set(verb.pastParticiple ?? [])
         let secondAndThirdIntersection = secondSet.intersection(thirdSet)
         let areIntersected = !secondAndThirdIntersection.isEmpty
         
