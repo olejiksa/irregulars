@@ -137,7 +137,7 @@
 "sunset" = "Захід";
 "search" = "Пошук";
 "frequent_mistakes" = "Часті помилки";
-"frequent_mistakes_footer" = "Додайте ці дієслова в «Уподобання» і перевірте себе ще раз, пройшовши тест з них: «Тести» → 􀍡 → «Уподобання»";
+"frequent_mistakes_footer" = "Додайте ці дієслова в «Уподобання» і перевірте себе ще раз, пройшовши тест з них: «Тести» → три крапки → «Уподобання»";
 "wrong_answer" = "Неправильна відповідь";
 "anastasia_ovcharenko" = "Анастасія Овчаренко";
 
@@ -422,3 +422,5 @@
 "similarity_third_en" = "Ending in -en in 3rd form";
 "similarity_third_own_and_awn" = "Ending in -own or -awn in 3rd form";
 "similarity_others" = "Others";
+"speaking" = "Speaking";
+"speaking_subtitle" = "Compare your pronunciation with the speaker's speech";

@@ -137,7 +137,7 @@
 "sunset" = "Sunset";
 "search" = "Search";
 "frequent_mistakes" = "Frequent mistakes";
-"frequent_mistakes_footer" = "Add these verbs to Favorites and check yourself again by passing the test on them: Tests → 􀍡 → Favorites";
+"frequent_mistakes_footer" = "Add these verbs to Favorites and check yourself again by passing the test on them: Tests → three dots → Favorites";
 "wrong_answer" = "Wrong answer";
 "anastasia_ovcharenko" = "Anastasia Ovcharenko";
 "skip" = "Skip";
@@ -148,6 +148,8 @@
 "similarity_third_en" = "Ending in -en in 3rd form";
 "similarity_third_own_and_awn" = "Ending in -own or -awn in 3rd form";
 "similarity_others" = "Others";
+"speaking" = "Speaking";
+"speaking_subtitle" = "Compare your pronunciation with the speaker's speech";
 
 "abide" = "abide";
 "alight" = "alight";

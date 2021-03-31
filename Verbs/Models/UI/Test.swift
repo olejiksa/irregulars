@@ -46,7 +46,7 @@ enum Test {
         case .listening:
             return .localized(.listening)
         case .speaking:
-            return "Произношение"
+            return .localized(.speaking)
         }
     }
 }

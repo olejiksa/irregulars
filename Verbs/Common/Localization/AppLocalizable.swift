@@ -118,6 +118,8 @@ extension Localizable {
         NSLocalizedString("sentences", comment: "Refers to the section of the tests where the missed word inside the sentence should be provided as the right answer"))
     static let listening = Localizable(
         NSLocalizedString("listening", comment: "Refers to the listening section of the tests"))
+    static let speaking = Localizable(
+        NSLocalizedString("speaking", comment: "Refers to the speaking section of the tests"))
 }
 
 // MARK: - Region

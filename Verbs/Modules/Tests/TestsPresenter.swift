@@ -54,7 +54,7 @@ final class TestsPresenter: NSObject {
                               accessibilityIdentifier: .listeningCell),
                      TestItem(icon: .mic,
                               title: Test.speaking.title,
-                              subtitle: "Сравните свое произношение с речью диктора",
+                              subtitle: "speaking_subtitle".localized,
                               test: .listening,
                               accessibilityIdentifier: nil),
                      TestItem(icon: .chart,

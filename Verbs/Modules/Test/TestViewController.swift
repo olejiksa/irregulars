@@ -67,7 +67,7 @@ private extension TestViewController {
         navigationItem.title = title
         navigationItem.largeTitleDisplayMode = .never
         
-        let shouldMoreButtonBeShown = [Test.listening, Test.translation].contains(presenter.test)
+        let shouldMoreButtonBeShown = [Test.listening].contains(presenter.test)
         let moreButton = shouldMoreButtonBeShown ?
             UIBarButtonItem(icon: .ellipsis, target: self, action: #selector(didMoreButtonTap)) :
             nil
