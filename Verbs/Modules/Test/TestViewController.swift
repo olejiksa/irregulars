@@ -42,12 +42,14 @@ final class TestViewController: UIViewController {
     }
     
     func reloadData() {
+        let isExpanded = splitViewController?.isCollapsed == false
+        
         let transition = CATransition()
         transition.type = .push
         transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         transition.fillMode = .forwards
         transition.duration = 0.5
-        transition.subtype = .fromTop
+        transition.subtype = isExpanded ? .fromRight : .fromTop
         
         tableView?.layer.add(transition, forKey: kCATransition)
         tableView?.reloadData()
@@ -67,7 +69,7 @@ private extension TestViewController {
         navigationItem.title = title
         navigationItem.largeTitleDisplayMode = .never
         
-        let shouldMoreButtonBeShown = [Test.listening].contains(presenter.test)
+        let shouldMoreButtonBeShown = [Test.listening, Test.speaking].contains(presenter.test)
         let moreButton = shouldMoreButtonBeShown ?
             UIBarButtonItem(icon: .ellipsis, target: self, action: #selector(didMoreButtonTap)) :
             nil
@@ -97,7 +99,7 @@ private extension TestViewController {
         tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         
-        tableView.register(PlainDetailCell.self, InputCell.self, AnswerCell.self)
+        tableView.register(PlainDetailCell.self, InputCell.self, AnswerCell.self, RecordCell.self)
         
         self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.tableView = tableView

@@ -24,8 +24,8 @@ extension TestCell: CellProtocol {
     func setup(with item: ItemProtocol) {
         guard let item = item as? TestItem else { return }
         
-        titleLabel.text = item.title
-        subtitleLabel?.text = item.subtitle
+        titleLabel.text = item.test?.title ?? item.title
+        subtitleLabel?.text = item.test?.subtitle ?? item.subtitle
         iconImageView.image = item.icon.image
         
         accessibilityIdentifier = item.accessibilityIdentifier?.rawValue

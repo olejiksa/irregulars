@@ -150,7 +150,8 @@ private extension SidebarPresenter {
                                             object: nil,
                                             userInfo: [Notification.Name.sidebar: true])
             let nvc = splitViewController.secondaryViewController
-            guard nvc?.topViewController is TestViewController else { return }
+            guard nvc?.topViewController is TestViewController || nvc?.topViewController is SpeakingViewController
+            else { return }
             nvc?.popToRootViewController(animated: true)
         case RowIdentifier.tests:
             selectedIndexPath = indexPath

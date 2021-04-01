@@ -35,13 +35,12 @@ private extension DetailCell {
     }
     
     func play() {
-        playButton.setImage(SystemIcon.stop.image, for: .normal)
+        playButton.set(icon: .stop)
     }
     
     func stop() {
-        playButton.setImage(SystemIcon.play.image, for: .normal)
-        
-        RateService().requestReviewIfAppropriate(minimumReviewWorthyActionCount: 25)
+        playButton.set(icon: .play)
+        RateService().requestReviewIfAppropriate(minimumReviewWorthyActionCount: 20)
     }
 }
 

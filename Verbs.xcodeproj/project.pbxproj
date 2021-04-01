@@ -201,6 +201,12 @@
 		EBB3BC10251F3545006E0DC7 /* KeyboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3BC0F251F3545006E0DC7 /* KeyboardService.swift */; };
 		EBB3BC15251F4BAA006E0DC7 /* irregulars.json in Resources */ = {isa = PBXBuildFile; fileRef = EBB3BC14251F4BAA006E0DC7 /* irregulars.json */; };
 		EBB3BC17251F4D60006E0DC7 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3BC16251F4D60006E0DC7 /* JSONParser.swift */; };
+		EBB42C2426148D7E008CB9A5 /* SpeakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB42C2226148D7E008CB9A5 /* SpeakingViewController.swift */; };
+		EBB42C2526148D7E008CB9A5 /* SpeakingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBB42C2326148D7E008CB9A5 /* SpeakingView.xib */; };
+		EBB42C4F2615B5D2008CB9A5 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB42C4D2615B5D2008CB9A5 /* RecordCell.swift */; };
+		EBB42C502615B5D2008CB9A5 /* RecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBB42C4E2615B5D2008CB9A5 /* RecordCell.xib */; };
+		EBB42C582615B9C7008CB9A5 /* RecordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB42C572615B9C7008CB9A5 /* RecordItem.swift */; };
+		EBB42C662615D425008CB9A5 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB42C652615D425008CB9A5 /* Button.swift */; };
 		EBB95BE6253326CE00376C3F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBB95BE8253326CE00376C3F /* Localizable.strings */; };
 		EBB95BFE25335C3E00376C3F /* LanguageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB95BFD25335C3E00376C3F /* LanguageService.swift */; };
 		EBD2C22825D593BD0075399B /* NotificationsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD2C22725D593BD0075399B /* NotificationsRouter.swift */; };
@@ -568,6 +574,12 @@
 		EBB3BC0F251F3545006E0DC7 /* KeyboardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardService.swift; sourceTree = "<group>"; };
 		EBB3BC14251F4BAA006E0DC7 /* irregulars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = irregulars.json; sourceTree = "<group>"; };
 		EBB3BC16251F4D60006E0DC7 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		EBB42C2226148D7E008CB9A5 /* SpeakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakingViewController.swift; sourceTree = "<group>"; };
+		EBB42C2326148D7E008CB9A5 /* SpeakingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeakingView.xib; sourceTree = "<group>"; };
+		EBB42C4D2615B5D2008CB9A5 /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
+		EBB42C4E2615B5D2008CB9A5 /* RecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordCell.xib; sourceTree = "<group>"; };
+		EBB42C572615B9C7008CB9A5 /* RecordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordItem.swift; sourceTree = "<group>"; };
+		EBB42C652615D425008CB9A5 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		EBB95BE7253326CE00376C3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EBB95BEB253326F300376C3F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EBB95BFD25335C3E00376C3F /* LanguageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageService.swift; sourceTree = "<group>"; };
@@ -860,6 +872,7 @@
 				EB59AF8825AAECDA005A212C /* Popover */,
 				EBF4A144252ED2B8003E3A44 /* Settings */,
 				EBD476DD2553ADA10033067B /* Sidebar */,
+				EBB42C2126148D54008CB9A5 /* Speaking */,
 				EB7DFF592524497A000B711D /* Split */,
 				EBF593612583B27B0091FCE0 /* Statistics */,
 				EB55475925540827001C5585 /* TabBar */,
@@ -1288,6 +1301,7 @@
 				EBB01C1A2521874E00BB646B /* TableView.swift */,
 				EB269971256D1009007CCF2E /* UserDefaults+Key.swift */,
 				EB9F046A25E94152009B1D6B /* Label.swift */,
+				EBB42C652615D425008CB9A5 /* Button.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1301,6 +1315,25 @@
 				EBF593852583CC530091FCE0 /* Localizable.stringsdict */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		EBB42C2126148D54008CB9A5 /* Speaking */ = {
+			isa = PBXGroup;
+			children = (
+				EBB42C2226148D7E008CB9A5 /* SpeakingViewController.swift */,
+				EBB42C2326148D7E008CB9A5 /* SpeakingView.xib */,
+			);
+			path = Speaking;
+			sourceTree = "<group>";
+		};
+		EBB42C382615B54F008CB9A5 /* RecordItem */ = {
+			isa = PBXGroup;
+			children = (
+				EBB42C572615B9C7008CB9A5 /* RecordItem.swift */,
+				EBB42C4D2615B5D2008CB9A5 /* RecordCell.swift */,
+				EBB42C4E2615B5D2008CB9A5 /* RecordCell.xib */,
+			);
+			path = RecordItem;
 			sourceTree = "<group>";
 		};
 		EBD2C23125D5A0ED0075399B /* StepperItem */ = {
@@ -1339,6 +1372,7 @@
 			children = (
 				EBF593A3258571870091FCE0 /* AnswerItem */,
 				EB269960256CF0DB007CCF2E /* PlainDetailItem */,
+				EBB42C382615B54F008CB9A5 /* RecordItem */,
 				EBDF00942562EE230041F458 /* InputItem */,
 				EBDF00882562E8A30041F458 /* TestAssembly.swift */,
 				EBDF008C2562E9210041F458 /* TestPresenter.swift */,
@@ -1801,6 +1835,7 @@
 				EB2E4B9825741832005B343A /* teal@3x.png in Resources */,
 				EB2E4B9325741832005B343A /* purple@2x.png in Resources */,
 				EBB95BE6253326CE00376C3F /* Localizable.strings in Resources */,
+				EBB42C2526148D7E008CB9A5 /* SpeakingView.xib in Resources */,
 				EBF5948D2589030E0091FCE0 /* indigo@3x~ipad.png in Resources */,
 				EB2E4B9125741832005B343A /* yellow@3x.png in Resources */,
 				EBF594842589030E0091FCE0 /* green@3x~ipad.png in Resources */,
@@ -1824,6 +1859,7 @@
 				EB2E4B9925741832005B343A /* indigo@2x.png in Resources */,
 				EBF593BF258851CD0091FCE0 /* demo.json in Resources */,
 				EBD2C23B25D5A3E80075399B /* StepperCell.xib in Resources */,
+				EBB42C502615B5D2008CB9A5 /* RecordCell.xib in Resources */,
 				EB23924C25EB9381009BE502 /* MistakeCell.xib in Resources */,
 				EBF594852589030E0091FCE0 /* teal@2x~ipad.png in Resources */,
 				EBEB1D7F251F11910019972C /* Assets.xcassets in Resources */,
@@ -2043,6 +2079,7 @@
 				EB450A49254B1A2B00D31858 /* PlainCell.swift in Sources */,
 				EB9C5B9B258295C70086A3D5 /* SliderCell.swift in Sources */,
 				EBB3BC10251F3545006E0DC7 /* KeyboardService.swift in Sources */,
+				EBB42C582615B9C7008CB9A5 /* RecordItem.swift in Sources */,
 				EBEB1D92251F15B40019972C /* VerbsService.swift in Sources */,
 				EBD476D0254BD0BF0033067B /* FadeTableView.swift in Sources */,
 				EBF8A62F2559172100A6265C /* Favorites.swift in Sources */,
@@ -2101,6 +2138,7 @@
 				EB2F5E0D251F543A007DCF60 /* DetailViewController.swift in Sources */,
 				EB59AF8A25AAECEC005A212C /* PopoverViewControlller.swift in Sources */,
 				EBB3BC09251F2ADB006E0DC7 /* String.swift in Sources */,
+				EBB42C4F2615B5D2008CB9A5 /* RecordCell.swift in Sources */,
 				EB450A33254B157B00D31858 /* SectionDataSource.swift in Sources */,
 				EBE00C9D25C86F2900560A7D /* AccessibilityIdentifier.swift in Sources */,
 				EBF593C92588526E0091FCE0 /* DemoService.swift in Sources */,
@@ -2118,11 +2156,13 @@
 				EB59F07B259102A5004676D2 /* VoiceRouter.swift in Sources */,
 				EB2E4B34257297F4005B343A /* AccentColorPresenter.swift in Sources */,
 				EB4509E22541E69400D31858 /* RightDetailCell.swift in Sources */,
+				EBB42C662615D425008CB9A5 /* Button.swift in Sources */,
 				EB3A164C25D11B6B00FCE706 /* TimePickerItem.swift in Sources */,
 				EBF4A126252E901A003E3A44 /* NavigationController.swift in Sources */,
 				EB7B8579253B0D5900542D3C /* DisclosureCell.swift in Sources */,
 				EB68F73F25D584B600D6DF63 /* NotificationsPresenter.swift in Sources */,
 				EBB01C1B2521874E00BB646B /* TableView.swift in Sources */,
+				EBB42C2426148D7E008CB9A5 /* SpeakingViewController.swift in Sources */,
 				EB269983256D3F9F007CCF2E /* PickerItem.swift in Sources */,
 				EBF594C0258934950091FCE0 /* Intents.intentdefinition in Sources */,
 				EB717DBB252ED6B9007791AD /* SwitchItem.swift in Sources */,

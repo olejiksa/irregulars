@@ -14,6 +14,7 @@ enum Test {
         case retranslation
         case listening
         case sentences
+        case speaking
     }
     
     case translation
@@ -30,8 +31,10 @@ enum Test {
             return [.twoForms]
         case .sentences:
             return [.sentences]
-        case .listening, .speaking:
+        case .listening:
             return [.listening]
+        case .speaking:
+            return [.speaking]
         }
     }
     
@@ -47,6 +50,21 @@ enum Test {
             return .localized(.listening)
         case .speaking:
             return .localized(.speaking)
+        }
+    }
+    
+    var subtitle: String {
+        switch self {
+        case .translation:
+            return "translation_subtitle".localized
+        case .writing:
+            return "writing_subtitle".localized
+        case .sentences:
+            return "sentences_subtitle".localized
+        case .listening:
+            return "listening_subtitle".localized
+        case .speaking:
+            return "speaking_subtitle".localized
         }
     }
 }

@@ -46,7 +46,9 @@ final class TestPresenter: NSObject {
         self.audioService = audioService
         self.itemsFactory = itemsFactory
         self.test = test
+        
         super.init()
+        
         loadSettings()
         setupSections()
     }
@@ -126,7 +128,7 @@ private extension TestPresenter {
             case .translation:
                 let answeredCorrectlyCount = UserDefaults.shared.integer(for: .translationAnswers)
                 UserDefaults.shared.set(answeredCorrectlyCount + 1, for: .translationAnswers)
-            case .listening, .speaking:
+            case .listening:
                 let answeredCorrectlyCount = UserDefaults.shared.integer(for: .listeningAnswers)
                 UserDefaults.shared.set(answeredCorrectlyCount + 1, for: .listeningAnswers)
             case .sentences:
@@ -135,6 +137,8 @@ private extension TestPresenter {
             case .writing:
                 let answeredCorrectlyCount = UserDefaults.shared.integer(for: .writingAnswers)
                 UserDefaults.shared.set(answeredCorrectlyCount + 1, for: .writingAnswers)
+            case .speaking:
+                break
             }
             
             guard let verb = verb else { return }
@@ -151,9 +155,7 @@ private extension TestPresenter {
     }
     
     func play(text: String, playHandler: @escaping Block, stopHandler: @escaping Block) {
-        audioService.play(text: text,
-                          playHandler: playHandler,
-                          stopHandler: stopHandler)
+        audioService.play(text: text, playHandler: playHandler, stopHandler: stopHandler)
     }
     
     func hint(text: String) {

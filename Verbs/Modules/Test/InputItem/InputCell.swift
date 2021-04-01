@@ -69,6 +69,14 @@ private extension InputCell {
             item?.isValid = true
         }
     }
+    
+    func play() {
+        playButton.set(icon: .stop)
+    }
+    
+    func stop() {
+        playButton.set(icon: .play)
+    }
 }
 
 // MARK: - CellProtocol
@@ -86,19 +94,6 @@ extension InputCell: CellProtocol {
         textField.returnKeyType = item.returnKeyType
         expectedValues = item.words.map(\.value)
         playButton.isHidden = !item.isAudio
-    }
-}
-
-// MARK: - Private
-
-private extension InputCell {
-    
-    func play() {
-        playButton.setImage(SystemIcon.stop.image, for: .normal)
-    }
-    
-    func stop() {
-        playButton.setImage(SystemIcon.play.image, for: .normal)
     }
 }
 

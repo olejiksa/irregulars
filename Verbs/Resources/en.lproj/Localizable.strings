@@ -150,6 +150,7 @@
 "similarity_others" = "Others";
 "speaking" = "Speaking";
 "speaking_subtitle" = "Compare your pronunciation with the speaker's speech";
+"listen_and_record" = "Listen and record below, then compare the pronunciation";
 
 "abide" = "abide";
 "alight" = "alight";

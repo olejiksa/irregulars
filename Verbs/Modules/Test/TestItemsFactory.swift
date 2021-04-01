@@ -115,6 +115,22 @@ final class TestItemsFactory {
                                                        form: verbForms.0,
                                                        verbForms: verbForms.1,
                                                        actionBlock: answerActionBlock))]
+        case .speaking:
+            return [Section(items: [PlainDetailItem(text: "listen_and_record".localized,
+                                                    textStyle: .secondary)].compactMap { $0 }),
+                    Section(header: .localized(.infinitive),
+                            items: [RecordItem(word: verb.infinitive,
+                                               playActionBlock: play,
+                                               tag: 0)].compactMap { $0 }),
+                    Section(header: .localized(.pastSimple),
+                            items: simplePast.map { RecordItem(word: $0,
+                                                               playActionBlock: play,
+                                                               tag: 1) }.compactMap { $0 }),
+                    Section(header: .localized(.pastParticiple),
+                            items: pastParticiple.map { RecordItem(word: $0,
+                                                                   playActionBlock: play,
+                                                                   tag: 2,
+                                                                   returnKeyType: .done) }.compactMap { $0 })]
         }
     }
 }

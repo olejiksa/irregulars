@@ -30,37 +30,25 @@ final class TestsPresenter: NSObject {
     func setupSections() {
         let translationItem = languageService.hasTranslation
             ? TestItem(icon: .globe,
-                       title: Test.translation.title,
-                       subtitle: "translation_subtitle".localized,
                        test: .translation,
                        accessibilityIdentifier: nil)
             : nil
         
         let items = [translationItem,
                      TestItem(icon: .pencil,
-                              title: Test.writing.title,
-                              subtitle: "writing_subtitle".localized,
                               test: .writing,
                               accessibilityIdentifier: .writingCell),
                      TestItem(icon: .sentences,
-                              title: Test.sentences.title,
-                              subtitle: "sentences_subtitle".localized,
                               test: .sentences,
                               accessibilityIdentifier: .sentencesCell),
                      TestItem(icon: .headphones,
-                              title: Test.listening.title,
-                              subtitle: "listening_subtitle".localized,
                               test: .listening,
                               accessibilityIdentifier: .listeningCell),
                      TestItem(icon: .mic,
-                              title: Test.speaking.title,
-                              subtitle: "speaking_subtitle".localized,
-                              test: .listening,
-                              accessibilityIdentifier: nil),
+                              test: .speaking),
                      TestItem(icon: .chart,
                               title: "statistics".localized,
                               subtitle: "track_your_progress_in_learning_irregular_verbs".localized,
-                              test: nil,
                               accessibilityIdentifier: .statisticsCell)
         ].compactMap { $0 }
         dataSource.setup([Section(items: items)])

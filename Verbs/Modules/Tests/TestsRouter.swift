@@ -40,7 +40,8 @@ final class TestsRouter {
         let nvc = viewController?.navigationController
         let vc = StatisticsAssembly().viewController()
         if splitViewController?.secondaryViewController?.topViewController is DetailViewController ||
-           splitViewController?.secondaryViewController?.topViewController is TestViewController {
+           splitViewController?.secondaryViewController?.topViewController is TestViewController ||
+           splitViewController?.secondaryViewController?.topViewController is SpeakingViewController {
             splitViewController?.secondaryViewController?.popToRootViewController(animated: false)
         }
         nvc?.push(vc, in: splitViewController)

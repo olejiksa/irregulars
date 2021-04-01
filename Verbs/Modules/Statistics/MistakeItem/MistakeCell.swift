@@ -33,10 +33,10 @@ private extension MistakeCell {
         actionBlock?(isFavorite)
         
         if isFavorite {
-            starButton.setImage(SystemIcon.starFill.image, for: .normal)
+            starButton.set(icon: .starFill)
             starButton.accessibilityLabel = "remove_from_favorites".localized
         } else {
-            starButton.setImage(SystemIcon.star.image, for: .normal)
+            starButton.set(icon: .star)
             starButton.accessibilityLabel = "add_to_favorites".localized
         }
     }
