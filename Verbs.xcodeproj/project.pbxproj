@@ -207,6 +207,7 @@
 		EBB42C502615B5D2008CB9A5 /* RecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBB42C4E2615B5D2008CB9A5 /* RecordCell.xib */; };
 		EBB42C582615B9C7008CB9A5 /* RecordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB42C572615B9C7008CB9A5 /* RecordItem.swift */; };
 		EBB42C662615D425008CB9A5 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB42C652615D425008CB9A5 /* Button.swift */; };
+		EBB42C6E2615D6C4008CB9A5 /* RecordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB42C6D2615D6C4008CB9A5 /* RecordService.swift */; };
 		EBB95BE6253326CE00376C3F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBB95BE8253326CE00376C3F /* Localizable.strings */; };
 		EBB95BFE25335C3E00376C3F /* LanguageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB95BFD25335C3E00376C3F /* LanguageService.swift */; };
 		EBD2C22825D593BD0075399B /* NotificationsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD2C22725D593BD0075399B /* NotificationsRouter.swift */; };
@@ -580,6 +581,7 @@
 		EBB42C4E2615B5D2008CB9A5 /* RecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordCell.xib; sourceTree = "<group>"; };
 		EBB42C572615B9C7008CB9A5 /* RecordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordItem.swift; sourceTree = "<group>"; };
 		EBB42C652615D425008CB9A5 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		EBB42C6D2615D6C4008CB9A5 /* RecordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordService.swift; sourceTree = "<group>"; };
 		EBB95BE7253326CE00376C3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EBB95BEB253326F300376C3F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EBB95BFD25335C3E00376C3F /* LanguageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageService.swift; sourceTree = "<group>"; };
@@ -1194,6 +1196,7 @@
 				EB59AFBF25AB312E005A212C /* NotificationService.swift */,
 				EB59AF3F25A60318005A212C /* PrintService.swift */,
 				EB26996B256CFAC7007CCF2E /* RateService.swift */,
+				EBB42C6D2615D6C4008CB9A5 /* RecordService.swift */,
 				EB5D6DF8259ECD2400CCCA85 /* SpotlightService.swift */,
 			);
 			path = Core;
@@ -2085,6 +2088,7 @@
 				EBF8A62F2559172100A6265C /* Favorites.swift in Sources */,
 				EBEB1D8E251F13BA0019972C /* SubtitleCell.swift in Sources */,
 				EB35524B260CAD4200C7EA3C /* Similarity.swift in Sources */,
+				EBB42C6E2615D6C4008CB9A5 /* RecordService.swift in Sources */,
 				EB2E4B482572A09F005B343A /* AccentColorCell.swift in Sources */,
 				EBF5936D2583B3230091FCE0 /* StatisticsAssembly.swift in Sources */,
 				EBD2C503257FDA4B0023AED4 /* SentencesService.swift in Sources */,

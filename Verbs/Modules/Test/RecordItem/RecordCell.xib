@@ -51,6 +51,9 @@
                                 <state key="normal" image="record.circle" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
                                 </state>
+                                <connections>
+                                    <action selector="didRecordTap" destination="eVO-vS-f5F" eventType="touchUpInside" id="sZg-8L-8AY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8q-ex-h1e">
                                 <rect key="frame" x="108" y="0.0" width="54" height="54"/>

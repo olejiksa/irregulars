@@ -38,6 +38,8 @@ enum SystemIcon: String {
     case pieChart = "chart.pie"
     case play = "play.circle"
     case stop = "stop.circle"
+    case record = "record.circle"
+    case stopRecord = "record.circle.fill"
     case pencil = "pencil.and.outline"
     case twentyFive = "25.circle"
     case printer

@@ -37,15 +37,27 @@ private extension RecordCell {
     
     @IBAction func didPlayTap() {
         guard let text = item?.word.value else { return }
-        item?.playActionBlock?(text, play, stop)
+        item?.playActionBlock?(text, play, stopPlay)
+    }
+    
+    @IBAction func didRecordTap() {
+        item?.recordActionBlock?(record, stopRecord)
     }
     
     func play() {
         playButton.set(icon: .stop)
     }
     
-    func stop() {
+    func stopPlay() {
         playButton.set(icon: .play)
+    }
+    
+    func record() {
+        recordButton.set(icon: .stopRecord)
+    }
+    
+    func stopRecord() {
+        recordButton.set(icon: .record)
     }
 }
 

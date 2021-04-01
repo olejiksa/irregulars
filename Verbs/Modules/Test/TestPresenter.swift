@@ -17,6 +17,7 @@ final class TestPresenter: NSObject {
     
     private var items: [String]
     private let audioService: AudioService
+    private let recordService: RecordService
     private let verbsService: VerbsService
     private let favoritesService: FavoritesService
     private let demoService: DemoService
@@ -26,6 +27,7 @@ final class TestPresenter: NSObject {
     private var wasHintUsed = false
     
     init(audioService: AudioService,
+         recordService: RecordService,
          verbsService: VerbsService,
          favoritesService: FavoritesService,
          demoService: DemoService,
@@ -44,6 +46,7 @@ final class TestPresenter: NSObject {
             self.items = verbsService.items.map(\.infinitive.value).filter(demoService.items.contains)
         }
         self.audioService = audioService
+        self.recordService = recordService
         self.itemsFactory = itemsFactory
         self.test = test
         
@@ -99,6 +102,7 @@ private extension TestPresenter {
                                           hint: hint,
                                           didEndEntering: didEndEntering,
                                           play: play,
+                                          record: record,
                                           answerActionBlock: didAnswerTap)
         
         guard !sections.isEmpty else {
@@ -156,6 +160,10 @@ private extension TestPresenter {
     
     func play(text: String, playHandler: @escaping Block, stopHandler: @escaping Block) {
         audioService.play(text: text, playHandler: playHandler, stopHandler: stopHandler)
+    }
+    
+    func record(recordHandler: @escaping Block, stopHandler: @escaping Block) {
+        recordService.record(recordHandler: recordHandler, stopHandler: stopHandler)
     }
     
     func hint(text: String) {
