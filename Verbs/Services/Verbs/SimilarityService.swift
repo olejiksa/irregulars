@@ -9,21 +9,20 @@
 final class SimilarityService {
     
     func similar(basedOn verb: Verb) -> Verb {
-        let secondSet = Set(verb.simplePast ?? [])
-        let thirdSet = Set(verb.pastParticiple ?? [])
-        let secondAndThirdIntersection = secondSet.intersection(thirdSet)
-        let areIntersected = !secondAndThirdIntersection.isEmpty
+        let hasEnSuffix = verb.pastParticiple?.first?.value.hasSuffix("en") ?? false
+        let hasOwnSuffix = verb.pastParticiple?.first?.value.hasSuffix("own") ?? false
+        let hasAwnSuffix = verb.pastParticiple?.first?.value.hasSuffix("awn") ?? false
         
         let similarity: Similarity
-        if verb.simplePast?.contains(verb.infinitive) == true, areIntersected {
+        if verb.infinitive == verb.simplePast?.first, verb.simplePast?.first == verb.pastParticiple?.first {
             similarity = .all
-        } else if verb.pastParticiple?.contains(where: { $0.value.hasSuffix("en") }) == true {
+        } else if hasEnSuffix {
             similarity = .thirdEn
-        } else if verb.pastParticiple?.contains(verb.infinitive) == true {
+        } else if verb.pastParticiple?.first == verb.infinitive {
             similarity = .firstAndThird
-        } else if areIntersected {
+        } else if verb.simplePast?.first == verb.pastParticiple?.first {
             similarity = .secondAndThird
-        } else if verb.pastParticiple?.contains(where: { $0.value.hasSuffix("own") || $0.value.hasSuffix("awn") }) == true {
+        } else if hasOwnSuffix || hasAwnSuffix {
             similarity = .thirdOwnAndAwn
         } else {
             similarity = .others

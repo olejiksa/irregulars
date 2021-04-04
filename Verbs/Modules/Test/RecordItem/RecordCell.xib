@@ -69,6 +69,9 @@
                                 <state key="normal" image="waveform.circle" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
                                 </state>
+                                <connections>
+                                    <action selector="didCompareTap" destination="eVO-vS-f5F" eventType="touchUpInside" id="ARm-0F-b4w"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>

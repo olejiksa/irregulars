@@ -31,6 +31,7 @@ final class TestItemsFactory {
                didEndEntering: @escaping Block,
                play: @escaping AudioBlock,
                record: RecordBlock?,
+               compare: RecordBlock?,
                answerActionBlock: @escaping ItemBlock) -> [Section] {
         guard let simplePast = verb.simplePast,
               let pastParticiple = verb.pastParticiple else {
@@ -123,16 +124,19 @@ final class TestItemsFactory {
                             items: [RecordItem(word: verb.infinitive,
                                                playActionBlock: play,
                                                recordActionBlock: record,
+                                               compareActionBlock: compare,
                                                tag: 0)].compactMap { $0 }),
                     Section(header: .localized(.pastSimple),
                             items: simplePast.map { RecordItem(word: $0,
                                                                playActionBlock: play,
                                                                recordActionBlock: record,
+                                                               compareActionBlock: compare,
                                                                tag: 1) }.compactMap { $0 }),
                     Section(header: .localized(.pastParticiple),
                             items: pastParticiple.map { RecordItem(word: $0,
                                                                    playActionBlock: play,
                                                                    recordActionBlock: record,
+                                                                   compareActionBlock: compare,
                                                                    tag: 2,
                                                                    returnKeyType: .done) }.compactMap { $0 })]
         }

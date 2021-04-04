@@ -11,6 +11,7 @@ import UIKit
 struct Locator {
     
     static var areNotificationsAvailable = false
+    static var isMicrophoneAvailable = false
     
     static let favorites = Favorites()
     static let favoritesService = FavoritesService()

@@ -10,3 +10,4 @@ SEARCH = "Cerca";
 FAVORITES = "Preferiti";
 TESTS = "Test";
 STATISTICS = "Statistiche";
+NSMicrophoneUsageDescription = "Speech recording is used only for pronunciation training. The data associated with it is cleared from the cache after the application terminates.";

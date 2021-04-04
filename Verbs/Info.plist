@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleAllowMixedLocalizations</key>
+	<true/>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Speech recording is used only for pronunciation training. The data associated with it is cleared from the cache after the application terminates</string>
 	<key>CFBundleDisplayName</key>
 	<string>Irregulars</string>
 	<key>CFBundleExecutable</key>

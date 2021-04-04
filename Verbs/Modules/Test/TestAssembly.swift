@@ -23,6 +23,7 @@ final class TestAssembly: AssemblyProtocol {
         let audioService = AudioService(voiceService: .init())
         let presenter = TestPresenter(audioService: audioService,
                                       recordService: .init(),
+                                      playerService: .init(),
                                       verbsService: .init(),
                                       favoritesService: Locator.favoritesService,
                                       demoService: .init(),

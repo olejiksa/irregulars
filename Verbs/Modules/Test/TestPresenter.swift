@@ -18,6 +18,7 @@ final class TestPresenter: NSObject {
     private var items: [String]
     private let audioService: AudioService
     private let recordService: RecordService
+    private let playerService: PlayerService
     private let verbsService: VerbsService
     private let favoritesService: FavoritesService
     private let demoService: DemoService
@@ -28,6 +29,7 @@ final class TestPresenter: NSObject {
     
     init(audioService: AudioService,
          recordService: RecordService,
+         playerService: PlayerService,
          verbsService: VerbsService,
          favoritesService: FavoritesService,
          demoService: DemoService,
@@ -47,6 +49,7 @@ final class TestPresenter: NSObject {
         }
         self.audioService = audioService
         self.recordService = recordService
+        self.playerService = playerService
         self.itemsFactory = itemsFactory
         self.test = test
         
@@ -103,6 +106,7 @@ private extension TestPresenter {
                                           didEndEntering: didEndEntering,
                                           play: play,
                                           record: record,
+                                          compare: compare,
                                           answerActionBlock: didAnswerTap)
         
         guard !sections.isEmpty else {
@@ -163,7 +167,15 @@ private extension TestPresenter {
     }
     
     func record(recordHandler: @escaping Block, stopHandler: @escaping Block) {
+        recordService.checkAvailability {
+            Locator.isMicrophoneAvailable = $0
+        }
+        
         recordService.record(recordHandler: recordHandler, stopHandler: stopHandler)
+    }
+    
+    func compare(recordHandler: @escaping Block, stopHandler: @escaping Block) {
+        playerService.compare(recordHandler: recordHandler, stopHandler: stopHandler)
     }
     
     func hint(text: String) {

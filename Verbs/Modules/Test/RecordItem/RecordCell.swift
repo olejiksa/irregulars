@@ -27,7 +27,8 @@ final class RecordCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        
+        playButton.set(icon: .play)
+        recordButton.set(icon: .record)
     }
 }
 
@@ -44,6 +45,10 @@ private extension RecordCell {
         item?.recordActionBlock?(record, stopRecord)
     }
     
+    @IBAction func didCompareTap() {
+        item?.compareActionBlock?(compare, stopCompare)
+    }
+    
     func play() {
         playButton.set(icon: .stop)
     }
@@ -58,6 +63,15 @@ private extension RecordCell {
     
     func stopRecord() {
         recordButton.set(icon: .record)
+        compareButton.isEnabled = true
+    }
+    
+    func compare() {
+        compareButton.set(icon: .stopCompare)
+    }
+    
+    func stopCompare() {
+        compareButton.set(icon: .compare)
     }
 }
 

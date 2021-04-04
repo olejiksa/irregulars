@@ -39,6 +39,7 @@ extension UserDefaults {
         case since
         case to
         case mistakes
+        case microphone
     }
     
     func bool(for key: Key) -> Bool { bool(forKey: key.rawValue) }

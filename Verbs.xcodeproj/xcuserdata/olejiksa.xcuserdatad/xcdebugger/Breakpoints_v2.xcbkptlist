@@ -55,32 +55,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "41EF2571-AB65-4642-BBEF-4397F278BA0E"
+            uuid = "0F1E1DA5-CC03-4CC5-A180-86BE033FDDB7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Verbs/Services/Core/RecordService.swift"
+            filePath = "Verbs/Services/Core/PlayerService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "checkAvailability(availabilityBlock:)"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "compare(recordHandler:stopHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9DBDBA02-C718-4DF7-BB5B-A308863CAE5D"
+            uuid = "1FB835B1-586F-476E-B3A8-BC4985E83F7B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Verbs/Modules/Test/TestPresenter.swift"
+            filePath = "Verbs/Services/Core/PlayerService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
-            landmarkName = "record(recordHandler:stopHandler:)"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "compare(recordHandler:stopHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

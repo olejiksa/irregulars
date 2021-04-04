@@ -50,6 +50,8 @@ enum SystemIcon: String {
     case unfilter = "line.horizontal.3.decrease.circle.fill"
     case sort = "arrow.up.arrow.down.circle"
     case unsort = "arrow.up.arrow.down.circle.fill"
+    case compare = "waveform.circle"
+    case stopCompare = "waveform.circle.fill"
     
     var image: UIImage? { UIImage(systemName: rawValue) }
 }

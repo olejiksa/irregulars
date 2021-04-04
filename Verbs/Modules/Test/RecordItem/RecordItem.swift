@@ -13,7 +13,7 @@ final class RecordItem {
     let word: Word
     let playActionBlock: AudioBlock?
     let recordActionBlock: RecordBlock?
-    let compareActionBlock: Block?
+    let compareActionBlock: RecordBlock?
     var isFilled: Bool = false
     var isValid: Bool = false
     let tag: Int
@@ -22,7 +22,7 @@ final class RecordItem {
     init(word: Word,
          playActionBlock: AudioBlock? = nil,
          recordActionBlock: RecordBlock? = nil,
-         compareActionBlock: Block? = nil,
+         compareActionBlock: RecordBlock? = nil,
          tag: Int,
          returnKeyType: UIReturnKeyType = .next) {
         self.word = word
