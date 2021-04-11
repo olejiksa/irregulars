@@ -17,14 +17,15 @@ final class TestAssembly: AssemblyProtocol {
     }
     
     func viewController() -> some TestViewController {
+        let verbsService = VerbsService()
         let itemsFactory = TestItemsFactory(languageService: .init(),
                                             sentencesService: .init(),
-                                            verbsService: .init())
+                                            verbsService: verbsService)
         let audioService = AudioService(voiceService: .init())
         let presenter = TestPresenter(audioService: audioService,
                                       recordService: .init(),
                                       playerService: .init(),
-                                      verbsService: .init(),
+                                      verbsService: verbsService,
                                       favoritesService: Locator.favoritesService,
                                       demoService: .init(),
                                       itemsFactory: itemsFactory,

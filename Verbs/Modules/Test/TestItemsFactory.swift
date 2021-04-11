@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class TestItemsFactory {
     
@@ -118,7 +119,20 @@ final class TestItemsFactory {
                                                        verbForms: verbForms.1,
                                                        actionBlock: answerActionBlock))]
         case .speaking:
-            return [Section(items: [PlainDetailItem(text: "listen_and_record".localized,
+            var notAllowedSection: Section?
+            if !Locator.isMicrophoneAvailable {
+                let notAllowedItem = PlainDetailItem(text: "Приложение не имеет доступа к микрофону", textStyle: .primary)
+                let actionItem = ActionItem(text: "Разрешить доступ") { _ in
+                    guard let url = URL(string: UIApplication.openSettingsURLString),
+                          UIApplication.shared.canOpenURL(url) else { return }
+                    UIApplication.shared.open(url)
+                }
+                
+                notAllowedSection = .init(items: [notAllowedItem, actionItem])
+            }
+            
+            return [notAllowedSection,
+                    Section(items: [PlainDetailItem(text: "listen_and_record".localized,
                                                     textStyle: .secondary)].compactMap { $0 }),
                     Section(header: .localized(.infinitive),
                             items: [RecordItem(word: verb.infinitive,
@@ -138,7 +152,7 @@ final class TestItemsFactory {
                                                                    recordActionBlock: record,
                                                                    compareActionBlock: compare,
                                                                    tag: 2,
-                                                                   returnKeyType: .done) }.compactMap { $0 })]
+                                                                   returnKeyType: .done) }.compactMap { $0 })].compactMap { $0 }
         }
     }
 }

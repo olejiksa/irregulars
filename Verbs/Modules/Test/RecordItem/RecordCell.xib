@@ -9,28 +9,21 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="eVO-vS-f5F" customClass="RecordCell" customModule="Irregulars" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="316" height="133"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="347" id="eVO-vS-f5F" customClass="RecordCell" customModule="Irregulars" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="340" height="347"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eVO-vS-f5F" id="b8d-hi-M9m">
-                <rect key="frame" x="0.0" y="0.0" width="316" height="133"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eVO-vS-f5F" id="b8d-hi-M9m">
+                <rect key="frame" x="0.0" y="0.0" width="340" height="347"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="go" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QC4-Mr-ef1">
-                        <rect key="frame" x="16" y="0.0" width="20" height="54"/>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="mnj-SY-Djw">
-                        <rect key="frame" x="154" y="0.0" width="162" height="54"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MAd-px-r3C">
+                        <rect key="frame" x="20" y="0.0" width="320" height="54"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ymp-yC-3fQ">
-                                <rect key="frame" x="0.0" y="0.0" width="54" height="54"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Ymp-yC-3fQ" secondAttribute="height" multiplier="1:1" id="AwO-8o-UGI"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ymp-yC-3fQ">
+                                <rect key="frame" x="251" y="0.0" width="69" height="54"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="12" maxX="20" maxY="12"/>
+                                <inset key="imageEdgeInsets" minX="-20" minY="0.0" maxX="-20" maxY="0.0"/>
                                 <state key="normal" image="play.circle" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
                                 </state>
@@ -38,66 +31,92 @@
                                     <action selector="didPlayTap" destination="eVO-vS-f5F" eventType="touchUpInside" id="3bb-49-dct"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24G-bR-9bO">
-                                <rect key="frame" x="54" y="0.0" width="54" height="54"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" playsSound="YES"/>
-                                </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="3bg-Bd-aC2"/>
-                                    <constraint firstAttribute="width" secondItem="24G-bR-9bO" secondAttribute="height" multiplier="1:1" id="caX-PM-3j9"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" text="go" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QC4-Mr-ef1">
+                                <rect key="frame" x="0.0" y="16" width="20" height="22"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" image="record.circle" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
-                                </state>
-                                <connections>
-                                    <action selector="didRecordTap" destination="eVO-vS-f5F" eventType="touchUpInside" id="sZg-8L-8AY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8q-ex-h1e">
-                                <rect key="frame" x="108" y="0.0" width="54" height="54"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" playsSound="YES"/>
-                                </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="J8q-ex-h1e" secondAttribute="height" multiplier="1:1" id="UPo-Dh-fxe"/>
-                                    <constraint firstAttribute="height" constant="54" id="dx2-wm-YIC"/>
-                                </constraints>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" text="/gəʊ/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuM-GM-btw">
+                                <rect key="frame" x="40" y="17" width="39.5" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
-                                <state key="normal" image="waveform.circle" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
-                                </state>
-                                <connections>
-                                    <action selector="didCompareTap" destination="eVO-vS-f5F" eventType="touchUpInside" id="ARm-0F-b4w"/>
-                                </connections>
-                            </button>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="J8q-ex-h1e" firstAttribute="width" secondItem="J8q-ex-h1e" secondAttribute="height" multiplier="1:1" id="Mh0-rJ-sHH"/>
-                            <constraint firstItem="Ymp-yC-3fQ" firstAttribute="height" secondItem="24G-bR-9bO" secondAttribute="height" id="XJy-HH-thn"/>
+                            <constraint firstItem="OuM-GM-btw" firstAttribute="leading" secondItem="QC4-Mr-ef1" secondAttribute="trailing" constant="20" id="0j2-kE-Vpi"/>
+                            <constraint firstAttribute="trailing" secondItem="Ymp-yC-3fQ" secondAttribute="trailing" id="1FG-8q-HrH"/>
+                            <constraint firstItem="QC4-Mr-ef1" firstAttribute="leading" secondItem="MAd-px-r3C" secondAttribute="leading" id="38z-9K-3NJ"/>
+                            <constraint firstItem="Ymp-yC-3fQ" firstAttribute="top" secondItem="MAd-px-r3C" secondAttribute="top" id="Lkm-6h-B5Y"/>
+                            <constraint firstAttribute="height" constant="54" id="OWf-bV-kfj"/>
+                            <constraint firstItem="OuM-GM-btw" firstAttribute="centerY" secondItem="MAd-px-r3C" secondAttribute="centerY" id="PE9-yt-W6S"/>
+                            <constraint firstItem="Ymp-yC-3fQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OuM-GM-btw" secondAttribute="trailing" constant="20" id="TJg-5T-t5U"/>
+                            <constraint firstItem="QC4-Mr-ef1" firstAttribute="top" secondItem="MAd-px-r3C" secondAttribute="top" constant="16" id="Xia-vz-4ag"/>
+                            <constraint firstItem="QC4-Mr-ef1" firstAttribute="centerY" secondItem="Ymp-yC-3fQ" secondAttribute="centerY" id="btO-Xo-tDE"/>
+                            <constraint firstAttribute="bottom" secondItem="Ymp-yC-3fQ" secondAttribute="bottom" id="tmf-pG-kjc"/>
                         </constraints>
-                    </stackView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="/gəʊ/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuM-GM-btw">
-                        <rect key="frame" x="56" y="0.0" width="78" height="54"/>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                        <color key="textColor" systemColor="secondaryLabelColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </view>
+                    <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="5oz-Sl-cOr">
+                        <rect key="frame" x="0.0" y="54" width="340" height="72"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8RE-qr-iZF">
+                                <rect key="frame" x="101" y="4" width="138" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24G-bR-9bO">
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" button="YES" playsSound="YES"/>
+                                        </accessibility>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="3bg-Bd-aC2"/>
+                                            <constraint firstAttribute="width" secondItem="24G-bR-9bO" secondAttribute="height" multiplier="1:1" id="caX-PM-3j9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" image="record.circle" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didRecordTap" destination="eVO-vS-f5F" eventType="touchUpInside" id="sZg-8L-8AY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8q-ex-h1e">
+                                        <rect key="frame" x="74" y="0.0" width="64" height="64"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" button="YES" playsSound="YES"/>
+                                        </accessibility>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="J8q-ex-h1e" secondAttribute="height" multiplier="1:1" id="UPo-Dh-fxe"/>
+                                            <constraint firstAttribute="height" constant="64" id="dx2-wm-YIC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                        <state key="normal" image="waveform.circle" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didCompareTap" destination="eVO-vS-f5F" eventType="touchUpInside" id="ARm-0F-b4w"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="8RE-qr-iZF" firstAttribute="centerY" secondItem="5oz-Sl-cOr" secondAttribute="centerY" id="aG8-eT-jhJ"/>
+                            <constraint firstItem="8RE-qr-iZF" firstAttribute="centerX" secondItem="5oz-Sl-cOr" secondAttribute="centerX" id="v5T-nu-QSe"/>
+                            <constraint firstAttribute="height" constant="72" id="zt3-mf-FTN"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="mnj-SY-Djw" secondAttribute="trailing" id="Acp-fd-QUC"/>
-                    <constraint firstAttribute="bottom" secondItem="QC4-Mr-ef1" secondAttribute="bottom" id="EBd-6x-aGQ"/>
-                    <constraint firstItem="OuM-GM-btw" firstAttribute="top" secondItem="b8d-hi-M9m" secondAttribute="top" id="Gup-6D-HG0"/>
-                    <constraint firstAttribute="bottom" secondItem="OuM-GM-btw" secondAttribute="bottom" id="R5g-SV-HYD"/>
-                    <constraint firstItem="QC4-Mr-ef1" firstAttribute="leading" secondItem="b8d-hi-M9m" secondAttribute="leadingMargin" id="U2D-uT-VLS"/>
-                    <constraint firstItem="Ymp-yC-3fQ" firstAttribute="centerY" secondItem="b8d-hi-M9m" secondAttribute="centerY" id="ZmC-lg-CSn"/>
-                    <constraint firstItem="mnj-SY-Djw" firstAttribute="top" secondItem="b8d-hi-M9m" secondAttribute="top" id="atZ-IR-9sV"/>
-                    <constraint firstItem="OuM-GM-btw" firstAttribute="leading" secondItem="QC4-Mr-ef1" secondAttribute="trailing" constant="20" id="rji-po-F1N"/>
-                    <constraint firstItem="QC4-Mr-ef1" firstAttribute="top" secondItem="b8d-hi-M9m" secondAttribute="top" id="xv8-hP-d7J"/>
-                    <constraint firstItem="mnj-SY-Djw" firstAttribute="leading" secondItem="OuM-GM-btw" secondAttribute="trailing" constant="20" id="y3n-2s-VWi"/>
-                    <constraint firstAttribute="bottom" secondItem="mnj-SY-Djw" secondAttribute="bottom" id="zXd-SM-ca0"/>
+                    <constraint firstItem="5oz-Sl-cOr" firstAttribute="top" secondItem="MAd-px-r3C" secondAttribute="bottom" id="4va-SV-VbO"/>
+                    <constraint firstItem="5oz-Sl-cOr" firstAttribute="top" secondItem="MAd-px-r3C" secondAttribute="bottom" id="4yE-uk-j4g"/>
+                    <constraint firstAttribute="trailing" secondItem="5oz-Sl-cOr" secondAttribute="trailing" id="GIO-LS-hkK"/>
+                    <constraint firstItem="MAd-px-r3C" firstAttribute="leading" secondItem="b8d-hi-M9m" secondAttribute="leadingMargin" id="JbU-OO-fxg"/>
+                    <constraint firstAttribute="trailing" secondItem="MAd-px-r3C" secondAttribute="trailing" id="M5P-Qk-Xe8"/>
+                    <constraint firstItem="5oz-Sl-cOr" firstAttribute="leading" secondItem="b8d-hi-M9m" secondAttribute="leading" id="U7q-sz-cBI"/>
+                    <constraint firstItem="MAd-px-r3C" firstAttribute="top" secondItem="b8d-hi-M9m" secondAttribute="top" id="cVj-gv-Oo5"/>
+                    <constraint firstAttribute="bottom" secondItem="5oz-Sl-cOr" secondAttribute="bottom" id="dog-TM-5Br"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -107,7 +126,7 @@
                 <outlet property="titleLabel" destination="QC4-Mr-ef1" id="aKf-d7-KQt"/>
                 <outlet property="transcriptionLabel" destination="OuM-GM-btw" id="HJG-sO-mSr"/>
             </connections>
-            <point key="canvasLocation" x="-189.85507246376812" y="-0.33482142857142855"/>
+            <point key="canvasLocation" x="-239.13043478260872" y="-29.799107142857142"/>
         </tableViewCell>
     </objects>
     <resources>

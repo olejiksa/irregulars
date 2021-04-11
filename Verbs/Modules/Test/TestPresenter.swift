@@ -63,6 +63,12 @@ final class TestPresenter: NSObject {
         configureRandomComposition()
         viewController?.reloadData()
     }
+    
+    func checkAvailability() {
+        recordService.checkAvailability {
+            Locator.isMicrophoneAvailable = $0
+        }
+    }
 }
 
 // MARK: - Private
@@ -167,10 +173,6 @@ private extension TestPresenter {
     }
     
     func record(recordHandler: @escaping Block, stopHandler: @escaping Block) {
-        recordService.checkAvailability {
-            Locator.isMicrophoneAvailable = $0
-        }
-        
         recordService.record(recordHandler: recordHandler, stopHandler: stopHandler)
     }
     

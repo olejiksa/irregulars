@@ -88,5 +88,7 @@ extension RecordCell: CellProtocol {
         
         titleLabel?.text = item.word.value
         transcriptionLabel?.text = item.word.transcription
+        
+        recordButton.isEnabled = Locator.isMicrophoneAvailable
     }
 }

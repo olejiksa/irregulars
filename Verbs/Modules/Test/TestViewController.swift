@@ -35,6 +35,12 @@ final class TestViewController: UIViewController {
         setupDelegate()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        presenter.checkAvailability()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -99,7 +105,11 @@ private extension TestViewController {
         tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         
-        tableView.register(PlainDetailCell.self, InputCell.self, AnswerCell.self, RecordCell.self)
+        tableView.register(PlainDetailCell.self,
+                           InputCell.self,
+                           AnswerCell.self,
+                           RecordCell.self,
+                           ActionCell.self)
         
         self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
         self.tableView = tableView
@@ -151,9 +161,7 @@ extension TestViewController: UINavigationControllerDelegate {
         guard animated else { return }
         
         if viewController is EmptyViewController {
-            NotificationCenter.default.post(name: .test,
-                                            object: nil,
-                                            userInfo: [:])
+            NotificationCenter.default.post(name: .test, object: nil, userInfo: [:])
         }
     }
 }

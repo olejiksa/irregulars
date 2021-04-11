@@ -18,16 +18,12 @@ final class RecordService: NSObject {
     func checkAvailability(availabilityBlock: @escaping BoolBlock) {
         recordingSession = AVAudioSession.sharedInstance()
         
-        do {
-            try recordingSession?.setCategory(.playAndRecord, mode: .default)
-            try recordingSession?.setActive(true)
-            recordingSession?.requestRecordPermission() { allowed in
-                DispatchQueue.main.async {
-                    availabilityBlock(allowed)
-                }
+        try? recordingSession?.setCategory(.playAndRecord, mode: .default)
+        try? recordingSession?.setActive(true)
+        recordingSession?.requestRecordPermission() { allowed in
+            DispatchQueue.main.async {
+                availabilityBlock(allowed)
             }
-        } catch {
-            availabilityBlock(false)
         }
     }
     
