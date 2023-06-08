@@ -1190,3 +1190,6 @@
 "speaking" = "Speaking";
 "speaking_subtitle" = "Compare your pronunciation with the speaker's speech";
 "listen_and_record" = "Listen and record below, then compare the pronunciation";
+
+"allow_access" = "Allow access";
+"insufficient_permissions" = "The app does not have access to the microphone";

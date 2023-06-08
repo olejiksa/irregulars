@@ -424,3 +424,6 @@
 "oversleep" = "oversleep";
 "overtake" = "overtake";
 "overthrow" = "overthrow";
+
+"allow_access" = "Allow access";
+"insufficient_permissions" = "The app does not have access to the microphone";

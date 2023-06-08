@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -151,7 +151,7 @@
 		EB7DFF66252451D2000B711D /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7DFF65252451D2000B711D /* SwiftUI.framework */; };
 		EB7DFF69252451D2000B711D /* VerbsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7DFF68252451D2000B711D /* VerbsWidget.swift */; };
 		EB7DFF6C252451D4000B711D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB7DFF6B252451D4000B711D /* Assets.xcassets */; };
-		EB7DFF72252451D4000B711D /* VerbsWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EB7DFF61252451D1000B711D /* VerbsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EB7DFF72252451D4000B711D /* VerbsWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EB7DFF61252451D1000B711D /* VerbsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EB7DFF89252B1CD7000B711D /* Verb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB1D93251F15D30019972C /* Verb.swift */; };
 		EB7DFF8C252B1CE6000B711D /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3BC16251F4D60006E0DC7 /* JSONParser.swift */; };
 		EB7DFF95252B25DD000B711D /* irregulars.json in Resources */ = {isa = PBXBuildFile; fileRef = EBB3BC14251F4BAA006E0DC7 /* irregulars.json */; };
@@ -281,7 +281,7 @@
 		EBF593E3258869C00091FCE0 /* Blocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD2C4E8257E95AE0023AED4 /* Blocks.swift */; };
 		EBF593E625886A220091FCE0 /* ItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB01C1E25218BAB00BB646B /* ItemProtocol.swift */; };
 		EBF593F4258870420091FCE0 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF593F3258870420091FCE0 /* IntentHandler.swift */; };
-		EBF59409258870420091FCE0 /* VerbsWidgetIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EBF593F1258870420091FCE0 /* VerbsWidgetIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EBF59409258870420091FCE0 /* VerbsWidgetIntent.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EBF593F1258870420091FCE0 /* VerbsWidgetIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EBF59446258879770091FCE0 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = EBF59448258879770091FCE0 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
 		EBF594822589030E0091FCE0 /* red@3x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF594722589030C0091FCE0 /* red@3x~ipad.png */; };
 		EBF594832589030E0091FCE0 /* yellow@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF594732589030C0091FCE0 /* yellow@2x~ipad.png */; };
@@ -348,16 +348,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		EB7DFF76252451D4000B711D /* Embed App Extensions */ = {
+		EB7DFF76252451D4000B711D /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				EB7DFF72252451D4000B711D /* VerbsWidgetExtension.appex in Embed App Extensions */,
-				EBF59409258870420091FCE0 /* VerbsWidgetIntent.appex in Embed App Extensions */,
+				EB7DFF72252451D4000B711D /* VerbsWidgetExtension.appex in Embed Foundation Extensions */,
+				EBF59409258870420091FCE0 /* VerbsWidgetIntent.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -536,11 +536,6 @@
 		EB8B2BBC25B3321A008E0118 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.stringsdict"; sourceTree = "<group>"; };
 		EB8B2BBD25B3321A008E0118 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Intents.strings"; sourceTree = "<group>"; };
 		EB8B2BC225B33A0D008E0118 /* VerbsSectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbsSectionDataSource.swift; sourceTree = "<group>"; };
-		EB933A1A25E98931007E3891 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EB933A1C25E98933007E3891 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EB933A1F25E98933007E3891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		EB933A2125E98933007E3891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EB933A2225E98933007E3891 /* VerbsMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VerbsMac.entitlements; sourceTree = "<group>"; };
 		EB995B4F25E5177F0082DE32 /* MenuService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuService.swift; sourceTree = "<group>"; };
 		EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkService.swift; sourceTree = "<group>"; };
 		EB9C5B99258295C70086A3D5 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
@@ -1150,18 +1145,6 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		EB933A1925E98931007E3891 /* VerbsMac */ = {
-			isa = PBXGroup;
-			children = (
-				EB933A1A25E98931007E3891 /* AppDelegate.swift */,
-				EB933A1C25E98933007E3891 /* Assets.xcassets */,
-				EB933A1E25E98933007E3891 /* MainMenu.xib */,
-				EB933A2125E98933007E3891 /* Info.plist */,
-				EB933A2225E98933007E3891 /* VerbsMac.entitlements */,
-			);
-			path = VerbsMac;
-			sourceTree = "<group>";
-		};
 		EB995AE925E516E70082DE32 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -1451,7 +1434,6 @@
 				EBF593F2258870420091FCE0 /* VerbsWidgetIntent */,
 				EBE00CA925C871AE00560A7D /* VerbsUITests */,
 				EB1EC46325DD8B3300F6299B /* VerbsTests */,
-				EB933A1925E98931007E3891 /* VerbsMac */,
 				EB7DFF62252451D1000B711D /* Frameworks */,
 				EBEB1D73251F11900019972C /* Products */,
 			);
@@ -1664,7 +1646,7 @@
 				EBEB1D6E251F11900019972C /* Sources */,
 				EBEB1D6F251F11900019972C /* Frameworks */,
 				EBEB1D70251F11900019972C /* Resources */,
-				EB7DFF76252451D4000B711D /* Embed App Extensions */,
+				EB7DFF76252451D4000B711D /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -1702,8 +1684,9 @@
 		EBEB1D6A251F11900019972C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "Oleg Samoylov";
 				TargetAttributes = {
 					EB1EC46125DD8B3300F6299B = {
@@ -2175,14 +2158,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		EB933A1E25E98933007E3891 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EB933A1F25E98933007E3891 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
 		EBB95BE8253326CE00376C3F /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2249,7 +2224,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2257,6 +2232,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.VerbsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Irregulars.app/Irregulars";
@@ -2270,7 +2248,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2278,6 +2256,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.VerbsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Irregulars.app/Irregulars";
@@ -2292,15 +2273,16 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = VerbsWidget/VerbsWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 43;
+				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.8;
+				MARKETING_VERSION = 1.8.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2318,15 +2300,16 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = VerbsWidget/VerbsWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 43;
+				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.8;
+				MARKETING_VERSION = 1.8.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2342,7 +2325,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2350,6 +2333,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.VerbsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Verbs;
@@ -2362,7 +2348,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2370,6 +2356,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.VerbsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Verbs;
@@ -2508,12 +2497,12 @@
 				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9;
+				MARKETING_VERSION = 1.8.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = Irregulars;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2537,12 +2526,12 @@
 				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9;
+				MARKETING_VERSION = 1.8.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = Irregulars;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2560,16 +2549,16 @@
 				CODE_SIGN_ENTITLEMENTS = VerbsWidgetIntent/VerbsWidgetIntent.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 43;
+				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidgetIntent/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.8;
+				MARKETING_VERSION = 1.8.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidgetIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2585,16 +2574,16 @@
 				CODE_SIGN_ENTITLEMENTS = VerbsWidgetIntent/VerbsWidgetIntent.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 43;
+				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidgetIntent/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.8;
+				MARKETING_VERSION = 1.8.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidgetIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

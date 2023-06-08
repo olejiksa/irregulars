@@ -23,7 +23,7 @@ final class SpotlightService {
             let pastParticiple = $0.pastParticiple?.map(\.value).joined(separator: ", ") ?? ""
             let contentDescription = pastParticiple.isEmpty ? simplePast : simplePast + "\n" + pastParticiple
             
-            let searchableItemAttributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeText as String)
+            let searchableItemAttributeSet = CSSearchableItemAttributeSet(itemContentType: UTType.data.identifier)
             searchableItemAttributeSet.title = infinitive
             searchableItemAttributeSet.contentDescription = contentDescription
             searchableItemAttributeSet.identifier = $0.infinitive.value

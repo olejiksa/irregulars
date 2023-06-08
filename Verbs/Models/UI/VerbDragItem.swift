@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import CoreServices
+import UniformTypeIdentifiers
 
 final class VerbDragItem: NSObject, Codable {
     
@@ -23,7 +23,7 @@ final class VerbDragItem: NSObject, Codable {
 extension VerbDragItem: NSItemProviderReading {
     
     static var readableTypeIdentifiersForItemProvider: [String] {
-        [(kUTTypeData) as String]
+        [UTType.data.identifier]
     }
     
     static func object(withItemProviderData data: Data, typeIdentifier: String) throws -> VerbDragItem {
@@ -42,7 +42,7 @@ extension VerbDragItem: NSItemProviderReading {
 extension VerbDragItem: NSItemProviderWriting {
     
     static var writableTypeIdentifiersForItemProvider: [String] {
-        [(kUTTypeData) as String]
+        [UTType.data.identifier]
     }
     
     func loadData(withTypeIdentifier typeIdentifier: String,

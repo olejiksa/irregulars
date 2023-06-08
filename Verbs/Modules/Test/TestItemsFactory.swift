@@ -121,8 +121,8 @@ final class TestItemsFactory {
         case .speaking:
             var notAllowedSection: Section?
             if !Locator.isMicrophoneAvailable {
-                let notAllowedItem = PlainDetailItem(text: "Приложение не имеет доступа к микрофону", textStyle: .primary)
-                let actionItem = ActionItem(text: "Разрешить доступ") { _ in
+                let notAllowedItem = PlainDetailItem(text: "insufficient_permissions".localized, textStyle: .primary)
+                let actionItem = ActionItem(text: "allow_access".localized) { _ in
                     guard let url = URL(string: UIApplication.openSettingsURLString),
                           UIApplication.shared.canOpenURL(url) else { return }
                     UIApplication.shared.open(url)

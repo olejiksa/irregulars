@@ -424,3 +424,6 @@
 "oversleep" = "проспать, заспаться";
 "overtake" = "догонять";
 "overthrow" = "свергать";
+
+"allow_access" = "Разрешить доступ";
+"insufficient_permissions" = "Приложение не имеет доступа к микрофону";
