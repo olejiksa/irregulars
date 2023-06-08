@@ -414,14 +414,14 @@
 "overtake" = "наздоганяти";
 "overthrow" = "повалити";
 
-"skip" = "Skip";
-"by_similarity" = "By similarity";
-"similarity_all" = "All three forms are the same";
-"similarity_second_and_third" = "2nd and 3rd forms are the same";
-"similarity_first_and_third" = "1st and 3rd forms are the same";
-"similarity_third_en" = "Ending in -en in 3rd form";
-"similarity_third_own_and_awn" = "Ending in -own or -awn in 3rd form";
-"similarity_others" = "Others";
-"speaking" = "Speaking";
-"speaking_subtitle" = "Compare your pronunciation with the speaker's speech";
-"listen_and_record" = "Listen and record below, then compare the pronunciation";
+"skip" = "Пропустити";
+"by_similarity" = "За схожістю";
+"similarity_all" = "Всі три форми однакові";
+"similarity_second_and_third" = "2-я і 3-я форми однакові";
+"similarity_first_and_third" = "1-я і 3-я форми однакові";
+"similarity_third_en" = "Закінчується на -en у 3-й формі";
+"similarity_third_own_and_awn" = "Закінчується на-own або-awn у 3-й формі";
+"similarity_others" = "Інші";
+"speaking" = "Говоріння";
+"speaking_subtitle" = "Порівняйте свою вимову з промовою оратора";
+"listen_and_record" = "Послухайте та запишіть нижче, а потім порівняйте вимову";

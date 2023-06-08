@@ -161,9 +161,6 @@
 		EB8B2BA925AF5DD5008E0118 /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B2BA825AF5DD5008E0118 /* HapticService.swift */; };
 		EB8B2BAE25AF5E83008E0118 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B2BAD25AF5E83008E0118 /* HapticFeedback.swift */; };
 		EB8B2BC325B33A0D008E0118 /* VerbsSectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B2BC225B33A0D008E0118 /* VerbsSectionDataSource.swift */; };
-		EB933A1B25E98931007E3891 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB933A1A25E98931007E3891 /* AppDelegate.swift */; };
-		EB933A1D25E98933007E3891 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB933A1C25E98933007E3891 /* Assets.xcassets */; };
-		EB933A2025E98933007E3891 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB933A1E25E98933007E3891 /* MainMenu.xib */; };
 		EB995B5025E5177F0082DE32 /* MenuService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB995B4F25E5177F0082DE32 /* MenuService.swift */; };
 		EB995B6025E518BC0082DE32 /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325A52556EFF0005E02C1 /* FavoritesService.swift */; };
 		EB995B6625E518C80082DE32 /* PurchaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF97C8D256235AF009FFFBA /* PurchaseService.swift */; };
@@ -539,7 +536,6 @@
 		EB8B2BBC25B3321A008E0118 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.stringsdict"; sourceTree = "<group>"; };
 		EB8B2BBD25B3321A008E0118 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Intents.strings"; sourceTree = "<group>"; };
 		EB8B2BC225B33A0D008E0118 /* VerbsSectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbsSectionDataSource.swift; sourceTree = "<group>"; };
-		EB933A1825E98931007E3891 /* Irregulars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Irregulars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB933A1A25E98931007E3891 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB933A1C25E98933007E3891 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB933A1F25E98933007E3891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -705,13 +701,6 @@
 			files = (
 				EB7DFF66252451D2000B711D /* SwiftUI.framework in Frameworks */,
 				EB7DFF64252451D2000B711D /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB933A1525E98931007E3891 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1476,7 +1465,6 @@
 				EBF593F1258870420091FCE0 /* VerbsWidgetIntent.appex */,
 				EBE00CA825C871AE00560A7D /* VerbsUITests.xctest */,
 				EB1EC46225DD8B3300F6299B /* VerbsTests.xctest */,
-				EB933A1825E98931007E3891 /* Irregulars.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1651,23 +1639,6 @@
 			productReference = EB7DFF61252451D1000B711D /* VerbsWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		EB933A1725E98931007E3891 /* VerbsMac */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EB933A2325E98933007E3891 /* Build configuration list for PBXNativeTarget "VerbsMac" */;
-			buildPhases = (
-				EB933A1425E98931007E3891 /* Sources */,
-				EB933A1525E98931007E3891 /* Frameworks */,
-				EB933A1625E98931007E3891 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = VerbsMac;
-			productName = VerbsMac;
-			productReference = EB933A1825E98931007E3891 /* Irregulars.app */;
-			productType = "com.apple.product-type.application";
-		};
 		EBE00CA725C871AE00560A7D /* VerbsUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBE00CAF25C871AE00560A7D /* Build configuration list for PBXNativeTarget "VerbsUITests" */;
@@ -1742,9 +1713,6 @@
 					EB7DFF60252451D1000B711D = {
 						CreatedOnToolsVersion = 12.0.1;
 					};
-					EB933A1725E98931007E3891 = {
-						CreatedOnToolsVersion = 12.4;
-					};
 					EBE00CA725C871AE00560A7D = {
 						CreatedOnToolsVersion = 12.3;
 						TestTargetID = EBEB1D71251F11900019972C;
@@ -1785,7 +1753,6 @@
 				EBF593F0258870420091FCE0 /* VerbsWidgetIntent */,
 				EBE00CA725C871AE00560A7D /* VerbsUITests */,
 				EB1EC46125DD8B3300F6299B /* VerbsTests */,
-				EB933A1725E98931007E3891 /* VerbsMac */,
 			);
 		};
 /* End PBXProject section */
@@ -1805,15 +1772,6 @@
 				EB7DFF6C252451D4000B711D /* Assets.xcassets in Resources */,
 				EB4509CB2541650300D31858 /* Localizable.strings in Resources */,
 				EB7DFF95252B25DD000B711D /* irregulars.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB933A1625E98931007E3891 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EB933A1D25E98933007E3891 /* Assets.xcassets in Resources */,
-				EB933A2025E98933007E3891 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1953,14 +1911,6 @@
 				EBF594D42589357D0091FCE0 /* Favorites.swift in Sources */,
 				EB995B6C25E518D10082DE32 /* LanguageService.swift in Sources */,
 				EBF5950725893BBA0091FCE0 /* Sentence.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB933A1425E98931007E3891 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EB933A1B25E98931007E3891 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2386,56 +2336,6 @@
 			};
 			name = Release;
 		};
-		EB933A2425E98933007E3891 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = VerbsMac/VerbsMac.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 43;
-				DEVELOPMENT_TEAM = B2FMGUSH44;
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = VerbsMac/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.8;
-				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.VerbsMac;
-				PRODUCT_NAME = Irregulars;
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		EB933A2525E98933007E3891 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = VerbsMac/VerbsMac.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 43;
-				DEVELOPMENT_TEAM = B2FMGUSH44;
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = VerbsMac/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.8;
-				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.VerbsMac;
-				PRODUCT_NAME = Irregulars;
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 		EBE00CB025C871AE00560A7D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2721,15 +2621,6 @@
 			buildConfigurations = (
 				EB7DFF74252451D4000B711D /* Debug */,
 				EB7DFF75252451D4000B711D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EB933A2325E98933007E3891 /* Build configuration list for PBXNativeTarget "VerbsMac" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EB933A2425E98933007E3891 /* Debug */,
-				EB933A2525E98933007E3891 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
