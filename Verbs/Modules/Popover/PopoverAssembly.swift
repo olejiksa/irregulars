@@ -11,18 +11,14 @@ import UIKit
 final class PopoverAssembly: AssemblyProtocol {
     
     private let width: CGFloat
-    private let isCollapsed: Bool
     
-    init(width: CGFloat, isCollapsed: Bool) {
+    init(width: CGFloat) {
         self.width = width
-        self.isCollapsed = isCollapsed
     }
     
     func viewController() -> some PopoverViewController {
         let presenter = PopoverPresenter()
-        let viewController = PopoverViewController(presenter: presenter,
-                                                   width: width,
-                                                   isCollapsed: isCollapsed)
+        let viewController = PopoverViewController(presenter: presenter, width: width)
         presenter.viewController = viewController
         return viewController
     }

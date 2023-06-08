@@ -73,8 +73,7 @@ private extension NotificationsViewController {
     }
     
     func setupTableView() {
-        let tableViewStyle: UITableView.Style = splitViewController?.isCollapsed == true ? .grouped : .insetGrouped
-        let tableView = UITableView(frame: .zero, style: tableViewStyle)
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
         
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false

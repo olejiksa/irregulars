@@ -12,16 +12,13 @@ final class PopoverViewController: UIViewController {
     
     private let presenter: PopoverPresenter
     private let width: CGFloat
-    private let isCollapsed: Bool
     private var tableView: UITableView?
     private var contentSizeObserver: NSKeyValueObservation?
     
     init(presenter: PopoverPresenter,
-         width: CGFloat,
-         isCollapsed: Bool) {
+         width: CGFloat) {
         self.presenter = presenter
         self.width = width
-        self.isCollapsed = isCollapsed
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -60,7 +57,7 @@ final class PopoverViewController: UIViewController {
 private extension PopoverViewController {
     
     func setupTableView() {
-        let tableView = UITableView(frame: .zero, style: isCollapsed ? .grouped : .insetGrouped)
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
         
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false

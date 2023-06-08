@@ -51,9 +51,7 @@ private extension SettingsViewController {
     }
     
     func setupTableView() {
-        let tableViewStyle: UITableView.Style = splitViewController?.isCollapsed == true ||
-            splitViewController?.traitCollection.horizontalSizeClass == .compact ? .grouped : .insetGrouped
-        let tableView = UITableView(frame: .zero, style: tableViewStyle)
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
         
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false

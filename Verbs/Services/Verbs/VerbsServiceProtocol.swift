@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol VerbsServiceProtocol: class {
+protocol VerbsServiceProtocol: AnyObject {
     
     var favoritesOnly: Bool { get }
     

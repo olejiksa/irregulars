@@ -6,4 +6,4 @@
 //  Copyright © 2021 Oleg Samoylov. All rights reserved.
 //
 
-protocol SettingsChildViewControllerProtocol: class {}
+protocol SettingsChildViewControllerProtocol: AnyObject {}

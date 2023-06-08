@@ -80,8 +80,7 @@ private extension VoiceViewController {
     }
     
     func setupTableView() {
-        let tableViewStyle: UITableView.Style = splitViewController?.isCollapsed == true ? .grouped : .insetGrouped
-        let tableView = UITableView(frame: .zero, style: tableViewStyle)
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
         
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -131,8 +130,7 @@ private extension VoiceViewController {
     }
     
     @objc func didMoreButtonTap(_ sender: UIBarButtonItem) {
-        let viewController = PopoverAssembly(width: view.frame.width - 40,
-                                             isCollapsed: splitViewController?.isCollapsed ?? false).viewController()
+        let viewController = PopoverAssembly(width: view.frame.width - 40).viewController()
         viewController.modalPresentationStyle = .popover
         guard let popoverViewController = viewController.popoverPresentationController else { return }
         popoverViewController.barButtonItem = sender
