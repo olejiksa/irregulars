@@ -8,6 +8,7 @@
 
 import SafariServices
 import UIKit
+import SwiftUI
 
 final class MenuService {
     
@@ -120,7 +121,7 @@ private extension MenuService {
     
     @objc func goToAcknowledgements(_ action: UIAction) {
         guard let top = viewController?.secondaryViewController?.topViewController,
-              !(top is AcknowledgementsViewController) else { return }
+              !(top is UIHostingController<AcknowledgementsView>) else { return }
         
         let vc = AcknowledgementsAssembly().viewController()
         viewController?.navigationController?.view?.backgroundColor = .systemBackground

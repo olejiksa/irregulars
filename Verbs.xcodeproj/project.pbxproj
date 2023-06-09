@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E5CF0F112A329E6200627224 /* AcknowledgementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CF0F102A329E6200627224 /* AcknowledgementsView.swift */; };
 		EB13943725B727A70001CE8C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB13943925B727A70001CE8C /* InfoPlist.strings */; };
 		EB1EC44825DC376E00F6299B /* IconDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1EC44625DC376E00F6299B /* IconDetailCell.swift */; };
 		EB1EC44925DC376E00F6299B /* IconDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB1EC44725DC376E00F6299B /* IconDetailCell.xib */; };
@@ -125,8 +126,6 @@
 		EB5D6DF9259ECD2400CCCA85 /* SpotlightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5D6DF8259ECD2400CCCA85 /* SpotlightService.swift */; };
 		EB5D6E11259F33D200CCCA85 /* ListMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5D6E10259F33D100CCCA85 /* ListMenu.swift */; };
 		EB5D6E1725A0193400CCCA85 /* AcknowledgementsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5D6E1625A0193400CCCA85 /* AcknowledgementsAssembly.swift */; };
-		EB5D6E1C25A0195D00CCCA85 /* AcknowledgementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5D6E1B25A0195D00CCCA85 /* AcknowledgementsViewController.swift */; };
-		EB5D6E2125A0196A00CCCA85 /* AcknowledgementsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5D6E2025A0196A00CCCA85 /* AcknowledgementsPresenter.swift */; };
 		EB68F73525D584AA00D6DF63 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB68F73425D584AA00D6DF63 /* NotificationsViewController.swift */; };
 		EB68F73F25D584B600D6DF63 /* NotificationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB68F73E25D584B600D6DF63 /* NotificationsPresenter.swift */; };
 		EB68F74525D584C200D6DF63 /* NotificationsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB68F74425D584C200D6DF63 /* NotificationsAssembly.swift */; };
@@ -363,6 +362,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E5CF0F102A329E6200627224 /* AcknowledgementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsView.swift; sourceTree = "<group>"; };
 		EB13940525B6B5500001CE8C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EB13940625B6B5500001CE8C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = de; path = de.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		EB13940725B6B5500001CE8C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Intents.strings; sourceTree = "<group>"; };
@@ -490,8 +490,6 @@
 		EB5D6DF8259ECD2400CCCA85 /* SpotlightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightService.swift; sourceTree = "<group>"; };
 		EB5D6E10259F33D100CCCA85 /* ListMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMenu.swift; sourceTree = "<group>"; };
 		EB5D6E1625A0193400CCCA85 /* AcknowledgementsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsAssembly.swift; sourceTree = "<group>"; };
-		EB5D6E1B25A0195D00CCCA85 /* AcknowledgementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsViewController.swift; sourceTree = "<group>"; };
-		EB5D6E2025A0196A00CCCA85 /* AcknowledgementsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsPresenter.swift; sourceTree = "<group>"; };
 		EB5D6E2825A03FEB00CCCA85 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Intents.strings; sourceTree = "<group>"; };
 		EB5D6E2925A03FEB00CCCA85 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EB5D6E2A25A03FEB00CCCA85 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = es; path = es.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
@@ -1053,8 +1051,7 @@
 			isa = PBXGroup;
 			children = (
 				EB5D6E1625A0193400CCCA85 /* AcknowledgementsAssembly.swift */,
-				EB5D6E2025A0196A00CCCA85 /* AcknowledgementsPresenter.swift */,
-				EB5D6E1B25A0195D00CCCA85 /* AcknowledgementsViewController.swift */,
+				E5CF0F102A329E6200627224 /* AcknowledgementsView.swift */,
 			);
 			path = Acknowledgements;
 			sourceTree = "<group>";
@@ -1988,7 +1985,6 @@
 				EB26996C256CFAC7007CCF2E /* RateService.swift in Sources */,
 				EB23924225EB92A3009BE502 /* MistakeItem.swift in Sources */,
 				EBB01C0C2521825000BB646B /* TranslationCell.swift in Sources */,
-				EB5D6E2125A0196A00CCCA85 /* AcknowledgementsPresenter.swift in Sources */,
 				EB69F8AF2569D7AA00759BAA /* TestRouter.swift in Sources */,
 				EB59F042258FF0F0004676D2 /* VoiceCell.swift in Sources */,
 				EB59AF9225AAEDE4005A212C /* PopoverPresenter.swift in Sources */,
@@ -2069,7 +2065,6 @@
 				EBD476C5254BBE7A0033067B /* PaywallCell.swift in Sources */,
 				EBD476E32553AED70033067B /* SidebarViewController.swift in Sources */,
 				EBB01C192521870200BB646B /* DetailItem.swift in Sources */,
-				EB5D6E1C25A0195D00CCCA85 /* AcknowledgementsViewController.swift in Sources */,
 				EB45097B253B630900D31858 /* SectionArray.swift in Sources */,
 				EBA644C8255AD4F90012B973 /* DetailRouter.swift in Sources */,
 				EBF4A13B252EA2F6003E3A44 /* FeatureToggle.swift in Sources */,
@@ -2087,6 +2082,7 @@
 				EBF594C0258934950091FCE0 /* Intents.intentdefinition in Sources */,
 				EB717DBB252ED6B9007791AD /* SwitchItem.swift in Sources */,
 				EBB01C0F2521828400BB646B /* TranslationItem.swift in Sources */,
+				E5CF0F112A329E6200627224 /* AcknowledgementsView.swift in Sources */,
 				EBF4A12E252E981F003E3A44 /* ListCell.swift in Sources */,
 				EBDF00962562EEB40041F458 /* InputCell.swift in Sources */,
 				EB2E4B4D2572A456005B343A /* CircleView.swift in Sources */,

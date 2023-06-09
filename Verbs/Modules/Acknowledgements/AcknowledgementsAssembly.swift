@@ -6,12 +6,15 @@
 //  Copyright © 2021 Oleg Samoylov. All rights reserved.
 //
 
-final class AcknowledgementsAssembly: AssemblyProtocol {
+import SwiftUI
+
+final class AcknowledgementsAssembly {
     
-    func viewController() -> some AcknowledgementsViewController {
-        let presenter = AcknowledgementsPresenter()
-        let viewConroller = AcknowledgementsViewController(presenter: presenter)
-        presenter.viewController = viewConroller
-        return viewConroller
+    func viewController() -> UIHostingController<AcknowledgementsView> {
+        let view = AcknowledgementsView()
+        let viewController = UIHostingController(rootView: view)
+        viewController.title = String.localized(.acknowledgements)
+        viewController.hidesBottomBarWhenPushed = true
+        return viewController
     }
 }
