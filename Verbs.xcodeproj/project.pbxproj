@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E5CF0F112A329E6200627224 /* AcknowledgementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CF0F102A329E6200627224 /* AcknowledgementsView.swift */; };
+		E5CF0F132A32A9B200627224 /* RightDetailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CF0F122A32A9B200627224 /* RightDetailRowView.swift */; };
 		EB13943725B727A70001CE8C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB13943925B727A70001CE8C /* InfoPlist.strings */; };
 		EB1EC44825DC376E00F6299B /* IconDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1EC44625DC376E00F6299B /* IconDetailCell.swift */; };
 		EB1EC44925DC376E00F6299B /* IconDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB1EC44725DC376E00F6299B /* IconDetailCell.xib */; };
@@ -363,6 +364,7 @@
 
 /* Begin PBXFileReference section */
 		E5CF0F102A329E6200627224 /* AcknowledgementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsView.swift; sourceTree = "<group>"; };
+		E5CF0F122A32A9B200627224 /* RightDetailRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDetailRowView.swift; sourceTree = "<group>"; };
 		EB13940525B6B5500001CE8C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EB13940625B6B5500001CE8C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = de; path = de.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		EB13940725B6B5500001CE8C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Intents.strings; sourceTree = "<group>"; };
@@ -972,6 +974,7 @@
 				EB4509DA2541E68000D31858 /* RightDetailItem.swift */,
 				EB4509E02541E69400D31858 /* RightDetailCell.swift */,
 				EB4509E12541E69400D31858 /* RightDetailCell.xib */,
+				E5CF0F122A32A9B200627224 /* RightDetailRowView.swift */,
 			);
 			path = RightDetailItem;
 			sourceTree = "<group>";
@@ -1941,6 +1944,7 @@
 				EB59F00F258FE38B004676D2 /* VoicePresenter.swift in Sources */,
 				EB2E4BC52576A8DC005B343A /* Array+Safe.swift in Sources */,
 				EB269972256D1009007CCF2E /* UserDefaults+Key.swift in Sources */,
+				E5CF0F132A32A9B200627224 /* RightDetailRowView.swift in Sources */,
 				EB450A2D254A8D3300D31858 /* TestsAssembly.swift in Sources */,
 				EBF4A13F252EC9A3003E3A44 /* SystemIcon.swift in Sources */,
 				EB717DEE2530C5A4007791AD /* ListRouter.swift in Sources */,

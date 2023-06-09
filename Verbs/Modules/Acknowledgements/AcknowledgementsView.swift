@@ -22,29 +22,11 @@ struct AcknowledgementsView: View {
                       .localized(.vladislavPlotnikov)].joined(separator: ", "))
             }
             SwiftUI.Section(String.localized(.translation)) {
-                HStack {
-                    Text(String.localized(.polinaLitvinova))
-                    Spacer()
-                    Text(Language.german.description).foregroundColor(Color(.secondaryLabel))
-                }
-                HStack {
-                    Text(String.localized(.julianEduardo))
-                    Spacer()
-                    Text(Language.spanish.description).foregroundColor(Color(.secondaryLabel))
-                }
-                HStack {
-                    Text(String.localized(.tatianaPerfilieva))
-                    Spacer()
-                    Text(Language.korean.description).foregroundColor(Color(.secondaryLabel))
-                }
-                HStack {
-                    Text(String.localized(.anastasiaOvcharenko))
-                    Spacer()
-                    Text(Language.ukrainian.description).foregroundColor(Color(.secondaryLabel))
-                }
+                RightDetailRowView(title: .localized(.polinaLitvinova), subtitle: Language.german.description)
+                RightDetailRowView(title: .localized(.julianEduardo), subtitle: Language.spanish.description)
+                RightDetailRowView(title: .localized(.tatianaPerfilieva), subtitle: Language.korean.description)
+                RightDetailRowView(title: .localized(.anastasiaOvcharenko), subtitle: Language.ukrainian.description)
             }
-            .navigationBarTitle(String.localized(.acknowledgements), displayMode: .inline)
-            .toolbar(.hidden, for: .tabBar)
         }
     }
 }
