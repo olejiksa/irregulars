@@ -10,7 +10,7 @@ import SwiftUI
 
 final class AcknowledgementsAssembly {
     
-    func viewController() -> UIHostingController<AcknowledgementsView> {
+    var viewController: UIHostingController<AcknowledgementsView> {
         let view = AcknowledgementsView()
         let viewController = UIHostingController(rootView: view)
         viewController.title = String.localized(.acknowledgements)

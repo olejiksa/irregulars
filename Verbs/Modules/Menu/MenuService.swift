@@ -123,7 +123,7 @@ private extension MenuService {
         guard let top = viewController?.secondaryViewController?.topViewController,
               !(top is UIHostingController<AcknowledgementsView>) else { return }
         
-        let vc = AcknowledgementsAssembly().viewController()
+        let vc = AcknowledgementsAssembly().viewController
         viewController?.navigationController?.view?.backgroundColor = .systemBackground
         viewController?.secondaryViewController?.push(vc)
     }
