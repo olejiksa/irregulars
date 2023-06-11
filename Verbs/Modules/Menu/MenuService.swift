@@ -109,7 +109,7 @@ private extension MenuService {
     }
     
     @objc func goToMail(_ action: UIAction) {
-        mailService.present(in: viewController)
+        mailService.present()
     }
     
     @objc func upgradeToPro(_ action: UIAction) {

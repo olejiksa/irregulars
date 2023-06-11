@@ -6,33 +6,27 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
-import MessageUI
+import Foundation
+import UIKit
 
-final class MailService: NSObject {
+final class MailService {
     
-    func present(in viewController: UIViewController?) {
+    private var url: URL? {
         guard let productName = Bundle.main.productName,
-              let version = Bundle.main.releaseVersionNumber
-        else { return }
-
-        let mailComposeViewController = MFMailComposeViewController()
-        mailComposeViewController.mailComposeDelegate = self
-        mailComposeViewController.setToRecipients(["quillaur@outlook.com"])
-        mailComposeViewController.setSubject("\(productName) \(version)")
-        
-        viewController?.present(mailComposeViewController, animated: true)
+              let version = Bundle.main.releaseVersionNumber else { return nil }
+        let subject = "\(productName) \(version)"
+        let queryItems = [URLQueryItem(name: "subject", value: subject)]
+        var urlComponents = URLComponents(string: "mailto:quillaur@outlook.com")
+        urlComponents?.queryItems = queryItems
+        return urlComponents?.url
     }
-}
-
-// MARK: - MFMailComposeViewControllerDelegate
-
-extension MailService: MFMailComposeViewControllerDelegate {
     
-    var isMailAvailable: Bool { MFMailComposeViewController.canSendMail() }
+    var isMailAvailable: Bool {
+        url.map(UIApplication.shared.canOpenURL) ?? false
+    }
     
-    func mailComposeController(_ controller: MFMailComposeViewController,
-                               didFinishWith result: MFMailComposeResult,
-                               error: Error?) {
-        controller.dismiss(animated: true)
+    func present() {
+        guard let url else { return }
+        UIApplication.shared.open(url)
     }
 }

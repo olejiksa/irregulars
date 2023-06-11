@@ -96,7 +96,7 @@ private extension SettingsPresenter {
     }
     
     func willGoToMail(_ sender: ItemProtocol) {
-        mailService.present(in: viewController)
+        mailService.present()
     }
     
     func willGoToAcknowledgements(_ sender: ItemProtocol) {
