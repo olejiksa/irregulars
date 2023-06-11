@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E583A3912A35E629000C6B48 /* AccentColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E583A3902A35E629000C6B48 /* AccentColorView.swift */; };
+		E583A3932A35FF6D000C6B48 /* Paywall.swift in Sources */ = {isa = PBXBuildFile; fileRef = E583A3922A35FF6D000C6B48 /* Paywall.swift */; };
 		E5CF0F112A329E6200627224 /* AcknowledgementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CF0F102A329E6200627224 /* AcknowledgementsView.swift */; };
 		E5CF0F132A32A9B200627224 /* RightDetailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CF0F122A32A9B200627224 /* RightDetailRowView.swift */; };
 		EB13943725B727A70001CE8C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB13943925B727A70001CE8C /* InfoPlist.strings */; };
@@ -32,14 +34,8 @@
 		EB26998C256D40DD007CCF2E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB69A26825322AF900DD1827 /* Notification.swift */; };
 		EB269992256E29DA007CCF2E /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269991256E29DA007CCF2E /* TabBarItem.swift */; };
 		EB2E4B1725717A3E005B343A /* PurchaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4B1625717A3E005B343A /* PurchaseError.swift */; };
-		EB2E4B29257293C5005B343A /* AccentColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4B27257293C5005B343A /* AccentColorViewController.swift */; };
 		EB2E4B2E2572963D005B343A /* AccentColorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4B2D2572963D005B343A /* AccentColorAssembly.swift */; };
-		EB2E4B34257297F4005B343A /* AccentColorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4B33257297F4005B343A /* AccentColorPresenter.swift */; };
-		EB2E4B3B25729E2E005B343A /* AccentColorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4B3A25729E2E005B343A /* AccentColorItem.swift */; };
 		EB2E4B4125729EBE005B343A /* AccentColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4B4025729EBE005B343A /* AccentColor.swift */; };
-		EB2E4B482572A09F005B343A /* AccentColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4B462572A09F005B343A /* AccentColorCell.swift */; };
-		EB2E4B492572A09F005B343A /* AccentColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB2E4B472572A09F005B343A /* AccentColorCell.xib */; };
-		EB2E4B4D2572A456005B343A /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4B4C2572A456005B343A /* CircleView.swift */; };
 		EB2E4B532573D8A7005B343A /* SelectableSectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4B522573D8A7005B343A /* SelectableSectionDataSource.swift */; };
 		EB2E4B8D25741832005B343A /* red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB2E4B7D25741831005B343A /* red@2x.png */; };
 		EB2E4B8E25741832005B343A /* purple@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB2E4B7E25741831005B343A /* purple@3x.png */; };
@@ -122,7 +118,6 @@
 		EB59F03C258FF0D6004676D2 /* VoiceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59F03B258FF0D6004676D2 /* VoiceItem.swift */; };
 		EB59F042258FF0F0004676D2 /* VoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59F040258FF0F0004676D2 /* VoiceCell.swift */; };
 		EB59F043258FF0F0004676D2 /* VoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB59F041258FF0F0004676D2 /* VoiceCell.xib */; };
-		EB59F07325910119004676D2 /* AccentColorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59F07225910119004676D2 /* AccentColorRouter.swift */; };
 		EB59F07B259102A5004676D2 /* VoiceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59F07A259102A5004676D2 /* VoiceRouter.swift */; };
 		EB5D6DF9259ECD2400CCCA85 /* SpotlightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5D6DF8259ECD2400CCCA85 /* SpotlightService.swift */; };
 		EB5D6E11259F33D200CCCA85 /* ListMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5D6E10259F33D100CCCA85 /* ListMenu.swift */; };
@@ -363,6 +358,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E583A3902A35E629000C6B48 /* AccentColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorView.swift; sourceTree = "<group>"; };
+		E583A3922A35FF6D000C6B48 /* Paywall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paywall.swift; sourceTree = "<group>"; };
 		E5CF0F102A329E6200627224 /* AcknowledgementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsView.swift; sourceTree = "<group>"; };
 		E5CF0F122A32A9B200627224 /* RightDetailRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDetailRowView.swift; sourceTree = "<group>"; };
 		EB13940525B6B5500001CE8C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -398,14 +395,8 @@
 		EB269987256D3FB8007CCF2E /* PickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerCell.xib; sourceTree = "<group>"; };
 		EB269991256E29DA007CCF2E /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		EB2E4B1625717A3E005B343A /* PurchaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseError.swift; sourceTree = "<group>"; };
-		EB2E4B27257293C5005B343A /* AccentColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorViewController.swift; sourceTree = "<group>"; };
 		EB2E4B2D2572963D005B343A /* AccentColorAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorAssembly.swift; sourceTree = "<group>"; };
-		EB2E4B33257297F4005B343A /* AccentColorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorPresenter.swift; sourceTree = "<group>"; };
-		EB2E4B3A25729E2E005B343A /* AccentColorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorItem.swift; sourceTree = "<group>"; };
 		EB2E4B4025729EBE005B343A /* AccentColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColor.swift; sourceTree = "<group>"; };
-		EB2E4B462572A09F005B343A /* AccentColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorCell.swift; sourceTree = "<group>"; };
-		EB2E4B472572A09F005B343A /* AccentColorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccentColorCell.xib; sourceTree = "<group>"; };
-		EB2E4B4C2572A456005B343A /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		EB2E4B522573D8A7005B343A /* SelectableSectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableSectionDataSource.swift; sourceTree = "<group>"; };
 		EB2E4B7D25741831005B343A /* red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red@2x.png"; sourceTree = "<group>"; };
 		EB2E4B7E25741831005B343A /* purple@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "purple@3x.png"; sourceTree = "<group>"; };
@@ -485,7 +476,6 @@
 		EB59F03B258FF0D6004676D2 /* VoiceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceItem.swift; sourceTree = "<group>"; };
 		EB59F040258FF0F0004676D2 /* VoiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCell.swift; sourceTree = "<group>"; };
 		EB59F041258FF0F0004676D2 /* VoiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoiceCell.xib; sourceTree = "<group>"; };
-		EB59F07225910119004676D2 /* AccentColorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorRouter.swift; sourceTree = "<group>"; };
 		EB59F07A259102A5004676D2 /* VoiceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRouter.swift; sourceTree = "<group>"; };
 		EB59F0882591E78A004676D2 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		EB59F0892591E78B004676D2 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Intents.strings"; sourceTree = "<group>"; };
@@ -776,23 +766,10 @@
 		EB2E4B1E257258CA005B343A /* AccentColor */ = {
 			isa = PBXGroup;
 			children = (
-				EB2E4B3925729E1A005B343A /* AccentColorItem */,
 				EB2E4B2D2572963D005B343A /* AccentColorAssembly.swift */,
-				EB2E4B33257297F4005B343A /* AccentColorPresenter.swift */,
-				EB59F07225910119004676D2 /* AccentColorRouter.swift */,
-				EB2E4B27257293C5005B343A /* AccentColorViewController.swift */,
+				E583A3902A35E629000C6B48 /* AccentColorView.swift */,
 			);
 			path = AccentColor;
-			sourceTree = "<group>";
-		};
-		EB2E4B3925729E1A005B343A /* AccentColorItem */ = {
-			isa = PBXGroup;
-			children = (
-				EB2E4B3A25729E2E005B343A /* AccentColorItem.swift */,
-				EB2E4B462572A09F005B343A /* AccentColorCell.swift */,
-				EB2E4B472572A09F005B343A /* AccentColorCell.xib */,
-			);
-			path = AccentColorItem;
 			sourceTree = "<group>";
 		};
 		EB2E4B5825741603005B343A /* Icons */ = {
@@ -987,6 +964,7 @@
 				EBF97CA4256270DB009FFFBA /* PaywallPresenter.swift */,
 				EBF97C9C256259A3009FFFBA /* PaywallRouter.swift */,
 				EB450A032549D27300D31858 /* PaywallViewController.swift */,
+				E583A3922A35FF6D000C6B48 /* Paywall.swift */,
 			);
 			path = Paywall;
 			sourceTree = "<group>";
@@ -1080,7 +1058,6 @@
 				EB450A58254BB3F800D31858 /* BigButton.swift */,
 				EBD476CF254BD0BF0033067B /* FadeTableView.swift */,
 				EBDF00A52562F1160041F458 /* FormTextField.swift */,
-				EB2E4B4C2572A456005B343A /* CircleView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1820,7 +1797,6 @@
 				EB2E4B8F25741832005B343A /* yellow@2x.png in Resources */,
 				EB450A4A254B1A2B00D31858 /* PlainCell.xib in Resources */,
 				EBF593AB2585736B0091FCE0 /* AnswerCell.xib in Resources */,
-				EB2E4B492572A09F005B343A /* AccentColorCell.xib in Resources */,
 				EBF594872589030E0091FCE0 /* indigo@2x~ipad.png in Resources */,
 				EB4509E72541ED4A00D31858 /* SubtitleCell.xib in Resources */,
 				EBF5948F2589030E0091FCE0 /* green@2x~ipad.png in Resources */,
@@ -1919,7 +1895,6 @@
 				EBF97C9D256259A4009FFFBA /* PaywallRouter.swift in Sources */,
 				EBD2C22825D593BD0075399B /* NotificationsRouter.swift in Sources */,
 				EB68F73525D584AA00D6DF63 /* NotificationsViewController.swift in Sources */,
-				EB2E4B29257293C5005B343A /* AccentColorViewController.swift in Sources */,
 				EBB01C2D25219E9A00BB646B /* SubtitleItem.swift in Sources */,
 				EBDF009C2562EED70041F458 /* InputItem.swift in Sources */,
 				EBDF008D2562E9210041F458 /* TestPresenter.swift in Sources */,
@@ -1934,7 +1909,6 @@
 				EB2E4B2E2572963D005B343A /* AccentColorAssembly.swift in Sources */,
 				EBF00FB3257BB5B0002FA49B /* TestCell.swift in Sources */,
 				EB8B2BC325B33A0D008E0118 /* VerbsSectionDataSource.swift in Sources */,
-				EB2E4B3B25729E2E005B343A /* AccentColorItem.swift in Sources */,
 				EB450A59254BB3F800D31858 /* BigButton.swift in Sources */,
 				EB1EC44825DC376E00F6299B /* IconDetailCell.swift in Sources */,
 				EB2F5E11251F5B26007DCF60 /* DetailCell.swift in Sources */,
@@ -1951,11 +1925,11 @@
 				EB2E4BA625741970005B343A /* AppIconService.swift in Sources */,
 				EB7DFF4E25236DA4000B711D /* EmptyViewController.swift in Sources */,
 				EBEB1D76251F11900019972C /* AppDelegate.swift in Sources */,
-				EB59F07325910119004676D2 /* AccentColorRouter.swift in Sources */,
 				EB6D58EA2619F81D00FDA88F /* PlayerService.swift in Sources */,
 				EB59F027258FE7F2004676D2 /* VoiceService.swift in Sources */,
 				EB269988256D3FB9007CCF2E /* PickerCell.swift in Sources */,
 				EBA644CF255ADB3A0012B973 /* SidebarItem.swift in Sources */,
+				E583A3912A35E629000C6B48 /* AccentColorView.swift in Sources */,
 				EB269967256CF10C007CCF2E /* PlainDetailCell.swift in Sources */,
 				EBD476CA254BBEA60033067B /* PaywallItem.swift in Sources */,
 				EB450A27254A8D2900D31858 /* TestsPresenter.swift in Sources */,
@@ -1996,6 +1970,7 @@
 				EB269992256E29DA007CCF2E /* TabBarItem.swift in Sources */,
 				EBE605E325B86C7F00EB1CB3 /* AppShortcut.swift in Sources */,
 				EB450A49254B1A2B00D31858 /* PlainCell.swift in Sources */,
+				E583A3932A35FF6D000C6B48 /* Paywall.swift in Sources */,
 				EB9C5B9B258295C70086A3D5 /* SliderCell.swift in Sources */,
 				EBB3BC10251F3545006E0DC7 /* KeyboardService.swift in Sources */,
 				EBB42C582615B9C7008CB9A5 /* RecordItem.swift in Sources */,
@@ -2005,7 +1980,6 @@
 				EBEB1D8E251F13BA0019972C /* SubtitleCell.swift in Sources */,
 				EB35524B260CAD4200C7EA3C /* Similarity.swift in Sources */,
 				EBB42C6E2615D6C4008CB9A5 /* RecordService.swift in Sources */,
-				EB2E4B482572A09F005B343A /* AccentColorCell.swift in Sources */,
 				EBF5936D2583B3230091FCE0 /* StatisticsAssembly.swift in Sources */,
 				EBD2C503257FDA4B0023AED4 /* SentencesService.swift in Sources */,
 				EBF59497258917F30091FCE0 /* ExampleItem.swift in Sources */,
@@ -2073,7 +2047,6 @@
 				EBA644C8255AD4F90012B973 /* DetailRouter.swift in Sources */,
 				EBF4A13B252EA2F6003E3A44 /* FeatureToggle.swift in Sources */,
 				EB59F07B259102A5004676D2 /* VoiceRouter.swift in Sources */,
-				EB2E4B34257297F4005B343A /* AccentColorPresenter.swift in Sources */,
 				EB4509E22541E69400D31858 /* RightDetailCell.swift in Sources */,
 				EBB42C662615D425008CB9A5 /* Button.swift in Sources */,
 				EB3A164C25D11B6B00FCE706 /* TimePickerItem.swift in Sources */,
@@ -2089,7 +2062,6 @@
 				E5CF0F112A329E6200627224 /* AcknowledgementsView.swift in Sources */,
 				EBF4A12E252E981F003E3A44 /* ListCell.swift in Sources */,
 				EBDF00962562EEB40041F458 /* InputCell.swift in Sources */,
-				EB2E4B4D2572A456005B343A /* CircleView.swift in Sources */,
 				EBF4A14F252ED5A4003E3A44 /* SwitchCell.swift in Sources */,
 				EB2E4BCB2576B59F005B343A /* Test.swift in Sources */,
 				EBA644BB255A59CF0012B973 /* ActionItem.swift in Sources */,

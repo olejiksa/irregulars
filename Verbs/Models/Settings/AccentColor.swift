@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import SwiftUI
 
-enum AccentColor: String, CaseIterable {
+enum AccentColor: String, CaseIterable, Swift.Identifiable {
+    
+    var id: Self {
+        self
+    }
+    
     case blue
     case green
     case indigo
@@ -46,5 +52,9 @@ enum AccentColor: String, CaseIterable {
         case .teal: return .systemTeal
         case .yellow: return .systemYellow
         }
+    }
+    
+    var colorSwiftUI: Color {
+        Color(uiColor: color)
     }
 }

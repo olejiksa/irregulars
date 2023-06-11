@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 enum SystemIcon: String {
     case puzzle = "puzzlepiece"
@@ -16,6 +17,7 @@ enum SystemIcon: String {
     case star
     case starSlash = "star.slash"
     case creditcard
+    case checkmark
     case key
     case globe
     case headphones
@@ -54,4 +56,5 @@ enum SystemIcon: String {
     case stopCompare = "waveform.circle.fill"
     
     var image: UIImage? { UIImage(systemName: rawValue) }
+    var imageSwiftUI: Image? { Image(systemName: rawValue) }
 }

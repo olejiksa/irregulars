@@ -39,7 +39,7 @@ final class SettingsRouter {
     }
     
     func goToAccentColor() {
-        let vc = AccentColorAssembly().viewController()
+        let vc = AccentColorAssembly().viewController
         viewController?.navigationController?.push(vc)
     }
     
