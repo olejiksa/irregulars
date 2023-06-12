@@ -22,7 +22,7 @@ struct AccentColorViewSelectionRow: View {
                 .strokeBorder(item.colorSwiftUI, lineWidth: 3)
                 .background(
                     Circle().foregroundColor(item.colorSwiftUI)
-                        .frame(width: 15, height: 15)
+                        .frame(width: 12.5, height: 12.5)
                 )
                 .frame(width: 25, height: 25)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10))
