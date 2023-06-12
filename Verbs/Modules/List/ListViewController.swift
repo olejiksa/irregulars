@@ -47,6 +47,7 @@ final class ListViewController: UIViewController {
     private var moreButton: UIBarButtonItem?
     private var editButton: UIBarButtonItem?
     private var doneButton: UIBarButtonItem?
+    private var phrasalsButton: UIBarButtonItem?
     
     private let noDataLabel = UILabel.noDataLabel
     
@@ -179,6 +180,9 @@ private extension ListViewController {
             
             editButton?.accessibilityIdentifier = AccessibilityIdentifier.editButton.rawValue
             doneButton?.accessibilityIdentifier = AccessibilityIdentifier.doneButton.rawValue
+        } else if FeatureToggle.arePhrasalsAvailable {
+            phrasalsButton = .init(title: "phrasal_verbs".localized, image: nil, target: self, action: #selector(didPhrasalsTap))
+            navigationItem.leftBarButtonItem = phrasalsButton
         }
     }
     
@@ -258,6 +262,11 @@ private extension ListViewController {
             presenter.isEditing = true
             navigationItem.leftBarButtonItem = doneButton
         }
+    }
+    
+    @objc func didPhrasalsTap() {
+        let nvc = UINavigationController(rootViewController: PhrasalsAssembly().viewController)
+        present(nvc, animated: true)
     }
     
     // MARK: Keyboard Shortcuts
