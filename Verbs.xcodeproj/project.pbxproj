@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E53CA7822A374AB40058A28E /* AccentColorViewSelectionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CA7812A374AB40058A28E /* AccentColorViewSelectionRow.swift */; };
 		E583A3912A35E629000C6B48 /* AccentColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E583A3902A35E629000C6B48 /* AccentColorView.swift */; };
 		E583A3932A35FF6D000C6B48 /* Paywall.swift in Sources */ = {isa = PBXBuildFile; fileRef = E583A3922A35FF6D000C6B48 /* Paywall.swift */; };
 		E5CF0F112A329E6200627224 /* AcknowledgementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CF0F102A329E6200627224 /* AcknowledgementsView.swift */; };
@@ -358,6 +359,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E53CA7812A374AB40058A28E /* AccentColorViewSelectionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorViewSelectionRow.swift; sourceTree = "<group>"; };
 		E583A3902A35E629000C6B48 /* AccentColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorView.swift; sourceTree = "<group>"; };
 		E583A3922A35FF6D000C6B48 /* Paywall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paywall.swift; sourceTree = "<group>"; };
 		E5CF0F102A329E6200627224 /* AcknowledgementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsView.swift; sourceTree = "<group>"; };
@@ -768,6 +770,7 @@
 			children = (
 				EB2E4B2D2572963D005B343A /* AccentColorAssembly.swift */,
 				E583A3902A35E629000C6B48 /* AccentColorView.swift */,
+				E53CA7812A374AB40058A28E /* AccentColorViewSelectionRow.swift */,
 			);
 			path = AccentColor;
 			sourceTree = "<group>";
@@ -2069,6 +2072,7 @@
 				EB23925425EBA201009BE502 /* Mistakes.swift in Sources */,
 				EBF97C8E256235AF009FFFBA /* PurchaseService.swift in Sources */,
 				EBF593742583C3BA0091FCE0 /* StatisticsHeaderItem.swift in Sources */,
+				E53CA7822A374AB40058A28E /* AccentColorViewSelectionRow.swift in Sources */,
 				EBF97CA5256270DB009FFFBA /* PaywallPresenter.swift in Sources */,
 				EBEB1D8B251F13570019972C /* ListViewController.swift in Sources */,
 				EBF593A52585730E0091FCE0 /* AnswerItem.swift in Sources */,
