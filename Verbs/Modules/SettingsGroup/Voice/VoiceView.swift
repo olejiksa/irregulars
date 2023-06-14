@@ -38,7 +38,7 @@ struct VoiceView: View {
                     SystemIcon.ellipsis.imageSwiftUI
                 }
                 .popover(isPresented: $isShowingPopover) {
-                    Popover()
+                    PopoverView()
                 }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
