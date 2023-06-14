@@ -11,19 +11,22 @@ import SwiftUI
 struct AccentColorView: View {
     
     private let appIconService = AppIconService()
-    
     @State private var selectedItem: AccentColor? = .current
 
     var body: some View {
         VStack {
             List {
-                ForEach(AccentColor.allCases) { item in
-                    AccentColorViewSelectionRow(item: item, selectedItem: $selectedItem)
+                SwiftUI.Section {
+                    ForEach(AccentColor.allCases, id: \.self) { item in
+                        AccentColorSelectionRow(item: item, selectedItem: $selectedItem)
+                    }
                 }
-            }
-            
-            Button(String.localized(.matchAppIconWithAccentColor)) {
-                appIconService.setIcon(for: AccentColor.current)
+                
+                SwiftUI.Section {
+                    Button(String.localized(.matchAppIconWithAccentColor)) {
+                        appIconService.setIcon(for: AccentColor.current)
+                    }
+                }
             }
         }
     }

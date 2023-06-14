@@ -9,11 +9,7 @@
 import UIKit
 import SwiftUI
 
-enum AccentColor: String, CaseIterable, Swift.Identifiable {
-    
-    var id: Self {
-        self
-    }
+enum AccentColor: String, CaseIterable {
     
     case blue
     case green

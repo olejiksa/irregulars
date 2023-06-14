@@ -1,5 +1,5 @@
 //
-//  AccentColorViewSelectionRow.swift
+//  AccentColorSelectionRow.swift
 //  Verbs
 //
 //  Created by Oleg Samoylov on 6/12/23.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct AccentColorViewSelectionRow: View {
+struct AccentColorSelectionRow: View {
     
     private let rateService = RateService()
     

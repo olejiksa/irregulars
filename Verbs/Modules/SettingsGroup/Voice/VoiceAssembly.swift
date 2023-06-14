@@ -6,16 +6,15 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
-final class VoiceAssembly: AssemblyProtocol {
+import SwiftUI
+
+final class VoiceAssembly {
     
-    func viewController() -> some VoiceViewController {
-        let voiceService = VoiceService()
-        let audioService = AudioService(voiceService: voiceService)
-        let presenter = VoicePresenter(audioService: audioService, voiceService: voiceService)
-        let viewConroller = VoiceViewController(presenter: presenter)
-        let router = VoiceRouter(viewController: viewConroller)
-        presenter.viewController = viewConroller
-        presenter.router = router
-        return viewConroller
+    var viewController: UIHostingController<VoiceView> {
+        let view = VoiceView()
+        let viewController = UIHostingController(rootView: view)
+        viewController.title = String.localized(.voice)
+        viewController.hidesBottomBarWhenPushed = true
+        return viewController
     }
 }

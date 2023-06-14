@@ -44,7 +44,7 @@ final class SettingsRouter {
     }
     
     func goToVoice() {
-        let vc = VoiceAssembly().viewController()
+        let vc = VoiceAssembly().viewController
         viewController?.navigationController?.push(vc)
     }
     

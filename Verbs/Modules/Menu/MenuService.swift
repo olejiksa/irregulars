@@ -143,15 +143,15 @@ private extension MenuService {
     
     @objc func goToVoice(_ action: UIAction) {
         guard let top = viewController?.secondaryViewController?.topViewController,
-              !(top is VoiceViewController) else { return }
+              !(top is UIHostingController<VoiceView>) else { return }
         
-        let vc = VoiceAssembly().viewController()
+        let vc = VoiceAssembly().viewController
         viewController?.secondaryViewController?.push(vc)
     }
     
     @objc func goToNotifications(_ action: UIAction) {
         guard let top = viewController?.secondaryViewController?.topViewController,
-              !(top is NotificationsViewController) else { return }
+              !(top is UIHostingController<AcknowledgementsView>) else { return }
         
         let vc = NotificationsAssembly().viewController()
         viewController?.secondaryViewController?.push(vc)
