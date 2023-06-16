@@ -37,8 +37,7 @@ final class SettingsItemsFactory {
                              voiceBlock: @escaping ItemBlock,
                              notificationsBlock: @escaping ItemBlock) -> Section {
         let accentColor = AccentColor.current.rawValue.localized
-        let voiceID = UserDefaults.shared.string(for: .voice) ?? ""
-        let voiceName = VoiceService().voiceName(identifier: voiceID)
+        let voiceName = Voice.current?.name ?? ""
         
         let notificationsSubtitle: String
         switch (Locator.areNotificationsAvailable,

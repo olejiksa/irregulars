@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum Region: String {
+enum Region: String, Codable {
     
     case australia = "AU"
     case ireland = "IE"
@@ -32,17 +32,6 @@ enum Region: String {
             return .localized(.british)
         case .unitedStates:
             return .localized(.american)
-        }
-    }
-    
-    static var current: Region {
-        get {
-            guard let string = UserDefaults.shared.string(for: .region),
-                  let color = Region(rawValue: string) else { return .unitedStates }
-            return color
-        }
-        set {
-            UserDefaults.shared.set(newValue.rawValue, for: .region)
         }
     }
 }

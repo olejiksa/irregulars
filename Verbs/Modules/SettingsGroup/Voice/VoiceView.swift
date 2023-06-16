@@ -11,9 +11,7 @@ import SwiftUI
 struct VoiceView: View {
     
     private let viewModel = VoiceViewModel()
-    
-    @State var selectedItem: Voice?
-    @State private var isShowingPopover = false
+    @State private var selectedItem: Voice? = .current
     
     var body: some View {
         List {
@@ -28,25 +26,6 @@ struct VoiceView: View {
             SwiftUI.Section {
                 Text(String.localized(.voiceHint))
                     .foregroundColor(.secondary)
-            }
-        }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    isShowingPopover = true
-                } label: {
-                    SystemIcon.ellipsis.imageSwiftUI
-                }
-                .popover(isPresented: $isShowingPopover) {
-                    PopoverView()
-                }
-            }
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    
-                } label: {
-                    SystemIcon.play.imageSwiftUI
-                }
             }
         }
     }

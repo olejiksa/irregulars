@@ -8,7 +8,7 @@
 
 import AVFoundation
 
-enum Gender: String, CaseIterable {
+enum Gender: String, CaseIterable, Codable {
     
     case `default`
     case male
@@ -24,17 +24,6 @@ enum Gender: String, CaseIterable {
             return .male
         case .female:
             return .female
-        }
-    }
-    
-    static var current: Gender {
-        get {
-            guard let string = UserDefaults.shared.string(for: .gender),
-                  let gender = Gender(rawValue: string) else { return .default }
-            return gender
-        }
-        set {
-            UserDefaults.shared.set(newValue.rawValue, for: .gender)
         }
     }
 }

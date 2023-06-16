@@ -29,6 +29,7 @@ struct VoiceSelectionRow: View {
                     .foregroundColor(AccentColor.current.colorSwiftUI)
             }
         }
+        .contentShape(Rectangle())
         .onTapGesture {
             guard FeatureToggle.isPaid else {
                 isShowingPaywall = true
@@ -36,10 +37,7 @@ struct VoiceSelectionRow: View {
             }
             
             selectedItem = item
-            Gender.current = item.gender
-            Region.current = item.region
-            UserDefaults.shared.set(item.id, for: .voice)
-            NotificationCenter.default.post(name: .reload, object: nil)
+            Voice.current = selectedItem
         }
         .sheet(isPresented: $isShowingPaywall) {
             Paywall()
