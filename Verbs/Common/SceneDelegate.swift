@@ -124,10 +124,12 @@ private extension SceneDelegate {
     }
     
     func openOnboardingIfNeeded() {
-        guard FeatureToggle.isOnboardingAvailable else { return }
+        guard FeatureToggle.isOnboardingAvailable,
+              !UserDefaults.shared.bool(for: .hasLaunchedBefore) else { return }
         let view = OnboardingView()
         let viewController = UIHostingController(rootView: view)
         window?.rootViewController?.present(viewController, animated: true)
+        UserDefaults.shared.set(true, for: .hasLaunchedBefore)
     }
     
     func runOnMac(_ scene: UIScene, options connectionOptions: UIScene.ConnectionOptions) {

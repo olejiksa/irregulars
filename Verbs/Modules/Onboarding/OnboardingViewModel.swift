@@ -30,7 +30,7 @@ final class OnboardingViewModel: ObservableObject {
 """),
             .init(id: 4, emoji: "📒", title: "Правильные глаголы", content: "2-я и 3-я формы правильных глаголов образуются с помощью окончания -ed: close (закрывать), closed (закрыл), closed (закрыл, закрыт, закрытый)"),
             .init(id: 5, emoji: "📔", title: "Неправильные глаголы", content: "Образование 2-й и 3-й формы у неправильных глаголов нужно запоминать"),
-            .init(id: 6, emoji: "🥳", title: "Готовы начинать?", content: "Надеемся, что наше приложение станет Вашим надёжным помощником в данной теме английского языка. So... Shall we begin/began/begun?")
+            .init(id: 6, emoji: "🥳", title: "Готовы начинать?", content: "So... Shall we begin/began/begun?")
         ]
     }
 }
