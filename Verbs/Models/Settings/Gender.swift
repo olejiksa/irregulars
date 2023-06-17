@@ -10,7 +10,6 @@ import AVFoundation
 
 enum Gender: String, CaseIterable, Codable {
     
-    case `default`
     case male
     case female
     
@@ -18,8 +17,6 @@ enum Gender: String, CaseIterable, Codable {
     
     var speechGender: AVSpeechSynthesisVoiceGender {
         switch self {
-        case .default:
-            return .unspecified
         case .male:
             return .male
         case .female:

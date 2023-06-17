@@ -28,6 +28,7 @@ struct AccentColorView: View {
                     }
                 }
             }
+            .environment(\.defaultMinListRowHeight, 44)
         }
     }
 }

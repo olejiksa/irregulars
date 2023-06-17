@@ -12,6 +12,8 @@ struct VoiceView: View {
     
     private let viewModel = VoiceViewModel()
     @State private var selectedItem: Voice? = .current
+    @State private var isShowingPopover = false
+    @State private var isPlaying = false
     
     var body: some View {
         List {
@@ -26,6 +28,30 @@ struct VoiceView: View {
             SwiftUI.Section {
                 Text(String.localized(.voiceHint))
                     .foregroundColor(.secondary)
+            }
+        }
+        .environment(\.defaultMinListRowHeight, 44)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    isShowingPopover = true
+                } label: {
+                    SystemIcon.ellipsis.imageSwiftUI
+                }
+                .popover(isPresented: $isShowingPopover) {
+                    PopoverView()
+                }
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    viewModel.play {
+                        isPlaying = true
+                    } stopHandler: {
+                        isPlaying = false
+                    }
+                } label: {
+                    isPlaying ? SystemIcon.stop.imageSwiftUI : SystemIcon.play.imageSwiftUI
+                }
             }
         }
     }
