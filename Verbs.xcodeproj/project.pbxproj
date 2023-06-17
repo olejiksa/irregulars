@@ -21,6 +21,10 @@
 		E58505DC2A3DF75200071BF4 /* TestNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58505DB2A3DF75200071BF4 /* TestNewView.swift */; };
 		E58505DE2A3DF80600071BF4 /* TestNewViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58505DD2A3DF80600071BF4 /* TestNewViewRow.swift */; };
 		E58505E02A3DF8A100071BF4 /* TestNewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58505DF2A3DF8A100071BF4 /* TestNewAssembly.swift */; };
+		E58505E32A3DFFB800071BF4 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58505E22A3DFFB800071BF4 /* OnboardingView.swift */; };
+		E58505E52A3E009500071BF4 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58505E42A3E009500071BF4 /* OnboardingViewModel.swift */; };
+		E58505E72A3E00A600071BF4 /* OnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58505E62A3E00A600071BF4 /* OnboardingItem.swift */; };
+		E58505E92A3E035000071BF4 /* OnboardingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58505E82A3E035000071BF4 /* OnboardingItemView.swift */; };
 		E5CF0F112A329E6200627224 /* AcknowledgementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CF0F102A329E6200627224 /* AcknowledgementsView.swift */; };
 		E5CF0F132A32A9B200627224 /* RightDetailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CF0F122A32A9B200627224 /* RightDetailRowView.swift */; };
 		EB13943725B727A70001CE8C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB13943925B727A70001CE8C /* InfoPlist.strings */; };
@@ -378,6 +382,10 @@
 		E58505DB2A3DF75200071BF4 /* TestNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNewView.swift; sourceTree = "<group>"; };
 		E58505DD2A3DF80600071BF4 /* TestNewViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNewViewRow.swift; sourceTree = "<group>"; };
 		E58505DF2A3DF8A100071BF4 /* TestNewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNewAssembly.swift; sourceTree = "<group>"; };
+		E58505E22A3DFFB800071BF4 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		E58505E42A3E009500071BF4 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		E58505E62A3E00A600071BF4 /* OnboardingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItem.swift; sourceTree = "<group>"; };
+		E58505E82A3E035000071BF4 /* OnboardingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItemView.swift; sourceTree = "<group>"; };
 		E5CF0F102A329E6200627224 /* AcknowledgementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsView.swift; sourceTree = "<group>"; };
 		E5CF0F122A32A9B200627224 /* RightDetailRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDetailRowView.swift; sourceTree = "<group>"; };
 		EB13940525B6B5500001CE8C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -767,6 +775,25 @@
 			path = TestNew;
 			sourceTree = "<group>";
 		};
+		E58505E12A3DFFA500071BF4 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				E58505EA2A3E053D00071BF4 /* Item */,
+				E58505E22A3DFFB800071BF4 /* OnboardingView.swift */,
+				E58505E42A3E009500071BF4 /* OnboardingViewModel.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		E58505EA2A3E053D00071BF4 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				E58505E62A3E00A600071BF4 /* OnboardingItem.swift */,
+				E58505E82A3E035000071BF4 /* OnboardingItemView.swift */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
 		EB1EC44525DC375800F6299B /* IconDetailItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -881,11 +908,11 @@
 		EB2F5E07251F5359007DCF60 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				E58505D92A3DF71A00071BF4 /* TestsGroup */,
 				EB2F5E0A251F5407007DCF60 /* Detail */,
 				EB7DFF5225244378000B711D /* Empty */,
 				EB2F5E09251F53FD007DCF60 /* List */,
 				EB995B8425E521DC0082DE32 /* Menu */,
+				E58505E12A3DFFA500071BF4 /* Onboarding */,
 				EB450A022549D1DE00D31858 /* Paywall */,
 				E53CA7842A37514A0058A28E /* Phrasals */,
 				EB59AF8825AAECDA005A212C /* Popover */,
@@ -895,6 +922,7 @@
 				EB7DFF592524497A000B711D /* Split */,
 				EBF593612583B27B0091FCE0 /* Statistics */,
 				EB55475925540827001C5585 /* TabBar */,
+				E58505D92A3DF71A00071BF4 /* TestsGroup */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -2014,6 +2042,7 @@
 				E58505E02A3DF8A100071BF4 /* TestNewAssembly.swift in Sources */,
 				EBE605E325B86C7F00EB1CB3 /* AppShortcut.swift in Sources */,
 				EB450A49254B1A2B00D31858 /* PlainCell.swift in Sources */,
+				E58505E52A3E009500071BF4 /* OnboardingViewModel.swift in Sources */,
 				E583A3932A35FF6D000C6B48 /* Paywall.swift in Sources */,
 				EB9C5B9B258295C70086A3D5 /* SliderCell.swift in Sources */,
 				EBB3BC10251F3545006E0DC7 /* KeyboardService.swift in Sources */,
@@ -2038,6 +2067,7 @@
 				EB39619925A1A42F00E3B65F /* VerbDragItem.swift in Sources */,
 				EB5547542553CB22001C5585 /* SidebarCell.swift in Sources */,
 				EBB01C1F25218BAB00BB646B /* ItemProtocol.swift in Sources */,
+				E58505E32A3DFFB800071BF4 /* OnboardingView.swift in Sources */,
 				EBA644D7255ADC800012B973 /* SidebarPresenter.swift in Sources */,
 				E5059C352A39CE6400891998 /* PopoverView.swift in Sources */,
 				EB59AF9725AAEED6005A212C /* PopoverAssembly.swift in Sources */,
@@ -2069,6 +2099,7 @@
 				EBF97C95256254DC009FFFBA /* PaywallAssembly.swift in Sources */,
 				EBD2C4E5257E8ACA0023AED4 /* SettingsItemsFactory.swift in Sources */,
 				EBF593672583B3190091FCE0 /* StatisticsPresenter.swift in Sources */,
+				E58505E72A3E00A600071BF4 /* OnboardingItem.swift in Sources */,
 				EB8325A62556EFF0005E02C1 /* FavoritesService.swift in Sources */,
 				EB5D6E11259F33D200CCCA85 /* ListMenu.swift in Sources */,
 				EBFC7BE925EFDFFA00C3D43B /* StatisticsModel.swift in Sources */,
@@ -2115,6 +2146,7 @@
 				EBE4AD072582AF34001E9E4A /* VerbsServiceProtocol.swift in Sources */,
 				EB23925425EBA201009BE502 /* Mistakes.swift in Sources */,
 				EBF97C8E256235AF009FFFBA /* PurchaseService.swift in Sources */,
+				E58505E92A3E035000071BF4 /* OnboardingItemView.swift in Sources */,
 				EBF593742583C3BA0091FCE0 /* StatisticsHeaderItem.swift in Sources */,
 				E53CA7822A374AB40058A28E /* AccentColorSelectionRow.swift in Sources */,
 				EBF97CA5256270DB009FFFBA /* PaywallPresenter.swift in Sources */,

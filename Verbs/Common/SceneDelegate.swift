@@ -6,8 +6,9 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
-import UIKit
 import CoreSpotlight
+import SwiftUI
+import UIKit
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -49,32 +50,9 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window?.makeKeyAndVisible()
         
-        #if DEBUG
-        if CommandLine.arguments.contains("dark") {
-            window?.overrideUserInterfaceStyle = .dark
-        }
-        
-        guard let accentColorString = ProcessInfo.processInfo.environment["accent-color"],
-              let accentColor = AccentColor(rawValue: accentColorString)
-        else { return }
-        
-        AccentColor.current = accentColor
-        window?.tintColor = accentColor.color
-        #endif
-        
-        self.scene(scene, openURLContexts: connectionOptions.urlContexts)
-        for userActivity in connectionOptions.userActivities {
-            self.scene(scene, continue: userActivity)
-        }
-        
-        #if targetEnvironment(macCatalyst)
-        if let titlebar = windowScene.titlebar {
-            titlebar.titleVisibility = .hidden
-            titlebar.toolbar = nil
-        }
-        #endif
-        
         shortcutItemToProcess = connectionOptions.shortcutItem
+        openOnboardingIfNeeded()
+        runOnMac(scene, options: connectionOptions)
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
@@ -143,5 +121,39 @@ private extension SceneDelegate {
         UserDefaults.shared.register(1, for: .frequency)
         UserDefaults.shared.register(540, for: .since)
         UserDefaults.shared.register(1260, for: .to)
+    }
+    
+    func openOnboardingIfNeeded() {
+        guard FeatureToggle.isOnboardingAvailable else { return }
+        let view = OnboardingView()
+        let viewController = UIHostingController(rootView: view)
+        window?.rootViewController?.present(viewController, animated: true)
+    }
+    
+    func runOnMac(_ scene: UIScene, options connectionOptions: UIScene.ConnectionOptions) {
+#if DEBUG
+if CommandLine.arguments.contains("dark") {
+    window?.overrideUserInterfaceStyle = .dark
+}
+
+guard let accentColorString = ProcessInfo.processInfo.environment["accent-color"],
+      let accentColor = AccentColor(rawValue: accentColorString)
+else { return }
+
+AccentColor.current = accentColor
+window?.tintColor = accentColor.color
+#endif
+
+self.scene(scene, openURLContexts: connectionOptions.urlContexts)
+for userActivity in connectionOptions.userActivities {
+    self.scene(scene, continue: userActivity)
+}
+
+#if targetEnvironment(macCatalyst)
+if let titlebar = windowScene.titlebar {
+    titlebar.titleVisibility = .hidden
+    titlebar.toolbar = nil
+}
+#endif
     }
 }
