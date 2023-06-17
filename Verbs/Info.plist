@@ -170,6 +170,7 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>itms-apps</string>
+		<string>mailto</string>
 		<string>itms</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>

@@ -24,10 +24,12 @@ struct FeatureToggle {
     
     #if DEBUG
     static var isDebug = true
-    static var arePhrasalsAvailable = true
+    static var arePhrasalsAvailable = false
+    static var areNewTestsAvailable = false
     #else
     static var isDebug = false
     static var arePhrasalsAvailable = false
+    static var areNewTestsAvailable = false
     #endif
     
     static var editionName: String { !isPaid ? "Lite" : "Pro" }
