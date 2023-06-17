@@ -10,17 +10,14 @@ import SwiftUI
 
 struct VoiceView: View {
     
-    private let viewModel = VoiceViewModel()
-    @State private var selectedItem: Voice? = .current
-    @State private var isShowingPopover = false
-    @State private var isPlaying = false
+    @StateObject private var viewModel = VoiceViewModel()
     
     var body: some View {
         List {
             ForEach(Gender.allCases, id: \.self) { gender in
                 SwiftUI.Section(gender.description) {
                     ForEach(viewModel.items(for: gender)) { item in
-                        VoiceSelectionRow(item: item, selectedItem: $selectedItem)
+                        VoiceSelectionRow(item: item, selectedItem: $viewModel.selectedItem)
                     }
                 }
             }
@@ -30,27 +27,11 @@ struct VoiceView: View {
                     .foregroundColor(.secondary)
             }
         }
-        .environment(\.defaultMinListRowHeight, 44)
+        .environment(\.defaultMinListRowHeight, 60)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    isShowingPopover = true
-                } label: {
-                    SystemIcon.ellipsis.imageSwiftUI
-                }
-                .popover(isPresented: $isShowingPopover) {
-                    PopoverView()
-                }
-            }
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    viewModel.play {
-                        isPlaying = true
-                    } stopHandler: {
-                        isPlaying = false
-                    }
-                } label: {
-                    isPlaying ? SystemIcon.stop.imageSwiftUI : SystemIcon.play.imageSwiftUI
+                Button(action: viewModel.play) {
+                    viewModel.isPlaying ? SystemIcon.stop.imageSwiftUI : SystemIcon.play.imageSwiftUI
                 }
             }
         }

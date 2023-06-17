@@ -6,7 +6,12 @@
 //  Copyright © 2023 Oleg Samoylov. All rights reserved.
 //
 
-struct VoiceViewModel {
+import Foundation
+
+final class VoiceViewModel: ObservableObject {
+    
+    @Published var selectedItem: Voice? = .current
+    @Published var isPlaying = false
     
     private let audioService: AudioService
     private let voiceService: VoiceService
@@ -25,8 +30,12 @@ struct VoiceViewModel {
             }
     }
     
-    func play(playHandler: @escaping Block, stopHandler: @escaping Block) {
+    func play() {
         let text = "The quick brown fox jumps over the lazy dog"
-        audioService.play(text: text, playHandler: playHandler, stopHandler: stopHandler)
+        audioService.play(text: text) { [weak self] in
+            self?.isPlaying = true
+        } stopHandler: { [weak self] in
+            self?.isPlaying = false
+        }
     }
 }

@@ -2265,7 +2265,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = VerbsWidget/VerbsWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 46;
+				CURRENT_PROJECT_VERSION = 47;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
@@ -2292,7 +2292,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = VerbsWidget/VerbsWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 46;
+				CURRENT_PROJECT_VERSION = 47;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
@@ -2486,7 +2486,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 46;
+				CURRENT_PROJECT_VERSION = 47;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Irregulars;
@@ -2517,7 +2517,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 46;
+				CURRENT_PROJECT_VERSION = 47;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Irregulars;
@@ -2545,7 +2545,7 @@
 				CODE_SIGN_ENTITLEMENTS = VerbsWidgetIntent/VerbsWidgetIntent.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 46;
+				CURRENT_PROJECT_VERSION = 47;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidgetIntent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
@@ -2570,7 +2570,7 @@
 				CODE_SIGN_ENTITLEMENTS = VerbsWidgetIntent/VerbsWidgetIntent.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 46;
+				CURRENT_PROJECT_VERSION = 47;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidgetIntent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
