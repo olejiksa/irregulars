@@ -18,7 +18,7 @@ struct OnboardingView: View {
     }
     
     var body: some View {
-        VStack {
+        let view = VStack {
             TabView(selection: $viewModel.selection) {
                 ForEach(viewModel.items) { item in
                     OnboardingItemView(item: item)
@@ -53,7 +53,12 @@ struct OnboardingView: View {
         .transition(.slide)
         .preferredColorScheme(.light)
         .padding()
-        .background(AccentColor.current.colorSwiftUI)
+        
+        if #available(macCatalyst 13.2, *) {
+            view.background(Color.accentColor)
+        } else {
+            view.background(AccentColor.current.colorSwiftUI)
+        }
     }
 }
 

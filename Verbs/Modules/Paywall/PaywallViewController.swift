@@ -51,7 +51,11 @@ final class PaywallViewController: UIViewController {
     
     private var thanksLabel: UILabel = {
         let label = UILabel()
-        label.textColor = AccentColor.current.color
+        if #available(macCatalyst 13.2, *) {
+            label.textColor = UIButton().tintColor
+        } else {
+            label.textColor = AccentColor.current.color
+        }
         label.font = .preferredFont(forTextStyle: .headline)
         label.text = "thank_you".localized
         label.adjustsFontForContentSizeCategory = true

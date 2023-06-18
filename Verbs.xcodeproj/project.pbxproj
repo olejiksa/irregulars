@@ -27,6 +27,9 @@
 		E58505E92A3E035000071BF4 /* OnboardingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58505E82A3E035000071BF4 /* OnboardingItemView.swift */; };
 		E5CF0F112A329E6200627224 /* AcknowledgementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CF0F102A329E6200627224 /* AcknowledgementsView.swift */; };
 		E5CF0F132A32A9B200627224 /* RightDetailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CF0F122A32A9B200627224 /* RightDetailRowView.swift */; };
+		E5F99A182A3F74CD00E275E5 /* VerbsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F99A172A3F74CD00E275E5 /* VerbsApp.swift */; };
+		E5F99A1A2A3F75F900E275E5 /* Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F99A192A3F75F900E275E5 /* Split.swift */; };
+		E5F99A1D2A3F768300E275E5 /* SettingsMacView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F99A1C2A3F768300E275E5 /* SettingsMacView.swift */; };
 		EB13943725B727A70001CE8C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB13943925B727A70001CE8C /* InfoPlist.strings */; };
 		EB1EC44825DC376E00F6299B /* IconDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1EC44625DC376E00F6299B /* IconDetailCell.swift */; };
 		EB1EC44925DC376E00F6299B /* IconDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB1EC44725DC376E00F6299B /* IconDetailCell.xib */; };
@@ -388,6 +391,9 @@
 		E58505E82A3E035000071BF4 /* OnboardingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItemView.swift; sourceTree = "<group>"; };
 		E5CF0F102A329E6200627224 /* AcknowledgementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsView.swift; sourceTree = "<group>"; };
 		E5CF0F122A32A9B200627224 /* RightDetailRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDetailRowView.swift; sourceTree = "<group>"; };
+		E5F99A172A3F74CD00E275E5 /* VerbsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbsApp.swift; sourceTree = "<group>"; };
+		E5F99A192A3F75F900E275E5 /* Split.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Split.swift; sourceTree = "<group>"; };
+		E5F99A1C2A3F768300E275E5 /* SettingsMacView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMacView.swift; sourceTree = "<group>"; };
 		EB13940525B6B5500001CE8C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EB13940625B6B5500001CE8C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = de; path = de.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		EB13940725B6B5500001CE8C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Intents.strings; sourceTree = "<group>"; };
@@ -750,6 +756,7 @@
 				EB5D6E1525A0191A00CCCA85 /* Acknowledgements */,
 				EB68F73325D5849500D6DF63 /* Notifications */,
 				EBF4A144252ED2B8003E3A44 /* Settings */,
+				E5F99A1B2A3F767400E275E5 /* SettingsMac */,
 				EB59F008258FE311004676D2 /* Voice */,
 			);
 			path = SettingsGroup;
@@ -792,6 +799,14 @@
 				E58505E82A3E035000071BF4 /* OnboardingItemView.swift */,
 			);
 			path = Item;
+			sourceTree = "<group>";
+		};
+		E5F99A1B2A3F767400E275E5 /* SettingsMac */ = {
+			isa = PBXGroup;
+			children = (
+				E5F99A1C2A3F768300E275E5 /* SettingsMacView.swift */,
+			);
+			path = SettingsMac;
 			sourceTree = "<group>";
 		};
 		EB1EC44525DC375800F6299B /* IconDetailItem */ = {
@@ -1156,6 +1171,7 @@
 			children = (
 				EBA732B325704AF7001B69EF /* SplitStateManager.swift */,
 				EB7DFF5425244977000B711D /* SplitViewController.swift */,
+				E5F99A192A3F75F900E275E5 /* Split.swift */,
 			);
 			path = Split;
 			sourceTree = "<group>";
@@ -1512,6 +1528,7 @@
 				EBF593D22588679F0091FCE0 /* Verbs.entitlements */,
 				EB13942725B7254D0001CE8C /* Info.plist */,
 				EB13943925B727A70001CE8C /* InfoPlist.strings */,
+				E5F99A172A3F74CD00E275E5 /* VerbsApp.swift */,
 			);
 			path = Verbs;
 			sourceTree = "<group>";
@@ -1980,6 +1997,7 @@
 				EBDF00782562DD850041F458 /* TestViewController.swift in Sources */,
 				EB2E4B2E2572963D005B343A /* AccentColorAssembly.swift in Sources */,
 				EBF00FB3257BB5B0002FA49B /* TestCell.swift in Sources */,
+				E5F99A1D2A3F768300E275E5 /* SettingsMacView.swift in Sources */,
 				EB8B2BC325B33A0D008E0118 /* VerbsSectionDataSource.swift in Sources */,
 				EB450A59254BB3F800D31858 /* BigButton.swift in Sources */,
 				EB1EC44825DC376E00F6299B /* IconDetailCell.swift in Sources */,
@@ -2027,6 +2045,7 @@
 				EBDF00892562E8A30041F458 /* TestAssembly.swift in Sources */,
 				EBD2C23A25D5A3E80075399B /* StepperCell.swift in Sources */,
 				EBD2C23325D5A1080075399B /* StepperItem.swift in Sources */,
+				E5F99A1A2A3F75F900E275E5 /* Split.swift in Sources */,
 				EB8B2BA925AF5DD5008E0118 /* HapticService.swift in Sources */,
 				EBF593B9258732F00091FCE0 /* StatisticsRouter.swift in Sources */,
 				EB450973253B5CB300D31858 /* Section.swift in Sources */,
@@ -2111,6 +2130,7 @@
 				EB59AF8A25AAECEC005A212C /* PopoverViewControlller.swift in Sources */,
 				EBB3BC09251F2ADB006E0DC7 /* String.swift in Sources */,
 				EBB42C4F2615B5D2008CB9A5 /* RecordCell.swift in Sources */,
+				E5F99A182A3F74CD00E275E5 /* VerbsApp.swift in Sources */,
 				EB450A33254B157B00D31858 /* SectionDataSource.swift in Sources */,
 				EBE00C9D25C86F2900560A7D /* AccessibilityIdentifier.swift in Sources */,
 				EBF593C92588526E0091FCE0 /* DemoService.swift in Sources */,
@@ -2276,7 +2296,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2300,7 +2320,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2325,20 +2345,20 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = VerbsWidget/VerbsWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 48;
+				CURRENT_PROJECT_VERSION = 49;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.8.4;
+				MARKETING_VERSION = 1.8.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2352,20 +2372,20 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = VerbsWidget/VerbsWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 48;
+				CURRENT_PROJECT_VERSION = 49;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.8.4;
+				MARKETING_VERSION = 1.8.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2377,7 +2397,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2400,7 +2420,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2469,8 +2489,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2526,8 +2546,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2546,22 +2566,23 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 48;
+				CURRENT_PROJECT_VERSION = 49;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Irregulars;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.8.4;
+				MARKETING_VERSION = 1.8.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = Irregulars;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2577,22 +2598,23 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 48;
+				CURRENT_PROJECT_VERSION = 49;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = Verbs/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Irregulars;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.8.4;
+				MARKETING_VERSION = 1.8.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = Irregulars;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2605,20 +2627,20 @@
 				CODE_SIGN_ENTITLEMENTS = VerbsWidgetIntent/VerbsWidgetIntent.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 48;
+				CURRENT_PROJECT_VERSION = 49;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidgetIntent/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.8.4;
+				MARKETING_VERSION = 1.8.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidgetIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2630,20 +2652,20 @@
 				CODE_SIGN_ENTITLEMENTS = VerbsWidgetIntent/VerbsWidgetIntent.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 48;
+				CURRENT_PROJECT_VERSION = 49;
 				DEVELOPMENT_TEAM = B2FMGUSH44;
 				INFOPLIST_FILE = VerbsWidgetIntent/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.8.4;
+				MARKETING_VERSION = 1.8.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidgetIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -4,8 +4,6 @@
 <dict>
 	<key>CFBundleAllowMixedLocalizations</key>
 	<false/>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Speech recording is used only for pronunciation training. The data associated with it is cleared from the cache after the application terminates</string>
 	<key>CFBundleDisplayName</key>
 	<string>Irregulars</string>
 	<key>CFBundleExecutable</key>
@@ -175,6 +173,8 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Speech recording is used only for pronunciation training. The data associated with it is cleared from the cache after the application terminates</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>ConfigurationIntent</string>

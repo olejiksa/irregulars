@@ -24,9 +24,15 @@ struct VoiceSelectionRow: View {
             }
             Spacer()
             if item == selectedItem {
-                SystemIcon.checkmark.imageSwiftUI?
-                    .fontWeight(.semibold)
-                    .foregroundColor(AccentColor.current.colorSwiftUI)
+                if #available(macCatalyst 13.2, *) {
+                    SystemIcon.checkmark.imageSwiftUI?
+                        .fontWeight(.semibold)
+                        .foregroundColor(.accentColor)
+                } else {
+                    SystemIcon.checkmark.imageSwiftUI?
+                        .fontWeight(.semibold)
+                        .foregroundColor(AccentColor.current.colorSwiftUI)
+                }
             }
         }
         .contentShape(Rectangle())

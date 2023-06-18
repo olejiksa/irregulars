@@ -32,7 +32,6 @@ struct PopoverView: View {
         }
         .frame(minWidth: 250)
         .padding()
-        .presentationCompactAdaptation(.none)
     }
 }
 

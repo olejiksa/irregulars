@@ -125,9 +125,7 @@ private extension SidebarPresenter {
     
     func applyInitialSnapshot() {
         dataSource?.apply(verbsSnapshot(), to: .verbs, animatingDifferences: false)
-        #if !targetEnvironment(macCatalyst)
         dataSource?.apply(moreSnapshot(), to: .more, animatingDifferences: false)
-        #endif
         
         viewController?.select(at: selectedIndexPath)
     }

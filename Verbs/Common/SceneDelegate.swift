@@ -149,12 +149,5 @@ self.scene(scene, openURLContexts: connectionOptions.urlContexts)
 for userActivity in connectionOptions.userActivities {
     self.scene(scene, continue: userActivity)
 }
-
-#if targetEnvironment(macCatalyst)
-if let titlebar = windowScene.titlebar {
-    titlebar.titleVisibility = .hidden
-    titlebar.toolbar = nil
-}
-#endif
     }
 }
