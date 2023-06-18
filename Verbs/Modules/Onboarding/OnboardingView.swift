@@ -13,6 +13,10 @@ struct OnboardingView: View {
     @StateObject private var viewModel = OnboardingViewModel()
     @Environment(\.dismiss) var dismiss
     
+    init() {
+        UIPageControl.appearance().overrideUserInterfaceStyle = .light
+    }
+    
     var body: some View {
         VStack {
             TabView(selection: $viewModel.selection) {
@@ -33,6 +37,7 @@ struct OnboardingView: View {
             } label: {
                 Text(viewModel.isLast ? "Начать" : "Продолжить")
             }
+            .contentShape(Rectangle())
             .font(.system(size: 20,
                           weight: .bold,
                           design: .rounded))
@@ -47,7 +52,8 @@ struct OnboardingView: View {
         .animation(.easeOut(duration: 0.2), value: viewModel.selection)
         .transition(.slide)
         .preferredColorScheme(.light)
-        .background(.blue)
+        .padding()
+        .background(AccentColor.current.colorSwiftUI)
     }
 }
 

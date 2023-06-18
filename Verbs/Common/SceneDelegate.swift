@@ -124,8 +124,7 @@ private extension SceneDelegate {
     }
     
     func openOnboardingIfNeeded() {
-        guard FeatureToggle.isOnboardingAvailable,
-              !UserDefaults.shared.bool(for: .hasLaunchedBefore) else { return }
+        guard FeatureToggle.isOnboardingAvailable else { return }
         let view = OnboardingView()
         let viewController = UIHostingController(rootView: view)
         window?.rootViewController?.present(viewController, animated: true)

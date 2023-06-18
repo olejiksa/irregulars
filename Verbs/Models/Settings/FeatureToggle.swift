@@ -32,7 +32,14 @@ struct FeatureToggle {
     static var areNewTestsAvailable = false
     #endif
     
-    static var isOnboardingAvailable = LanguageService().current == .russian
+    static var isOnboardingAvailable: Bool {
+        #if DEBUG
+        LanguageService().current == .russian
+        #else
+        !UserDefaults.shared.bool(for: .hasLaunchedBefore) &&
+        LanguageService().current == .russian
+        #endif
+    }
     
     static var editionName: String { !isPaid ? "Lite" : "Pro" }
 }
