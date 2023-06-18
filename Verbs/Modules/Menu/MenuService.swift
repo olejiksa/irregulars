@@ -28,58 +28,57 @@ final class MenuService {
     func buildMenu(with builder: UIMenuBuilder) {
         guard builder.system == UIMenuSystem.main else { return }
         
-        let privacyPolicyCommand = UIAction(title: .localized(.privacyPolicyCapitalized), handler: goToPrivacyPolicy)
-        let termsOfUseCommand = UIAction(title: String.localized(.termsOfUseCapitalized), handler: goToTermsOfUse)
-        let contactUsCommand = UIAction(title: .localized(.contactUsCapitalized), handler: goToMail)
-        let helpSubmenu = UIMenu(options: .displayInline, children: [privacyPolicyCommand,
-                                                                     termsOfUseCommand,
-                                                                     contactUsCommand])
-        builder.insertChild(helpSubmenu, atEndOfMenu: .help)
-        
-        let allOurAppsCommand = UIAction(title: .localized(.allOurAppsCapitalized), handler: goToAllApps)
-        let acknowledgementsCommand = UIAction(title: .localized(.acknowledgementsCapitalized),
-                                               handler: goToAcknowledgements)
-        let secondHelpSubmenu = UIMenu(options: .displayInline, children: [allOurAppsCommand,
-                                                                           acknowledgementsCommand])
-        builder.insertChild(secondHelpSubmenu, atEndOfMenu: .help)
-        
-        let upgradeToProCommand = UIAction(title: .localized(.upgradeToProCapitalized), handler: upgradeToPro)
-        let downgradeToLiteCommand = FeatureToggle.isDebug ?
-            UIAction(title: "downgrade_to".localized, handler: downgrade)
-            : nil
-        
-        let licenseSubmenuID = UIMenu.Identifier(rawValue: "licenseSubmenu")
-        let licenseSubmenu = UIMenu(identifier: licenseSubmenuID,
-                                    options: .displayInline,
-                                    children: FeatureToggle.isPaid
-                                        ? [downgradeToLiteCommand].compactMap { $0 }
-                                        : [upgradeToProCommand])
-        builder.insertSibling(licenseSubmenu, afterMenu: .about)
-        
-        let voiceCommand = UIAction(title: .localized(.voice), handler: goToVoice)
-        let notificationsCommand = UIAction(title: .localized(.notifications), handler: goToNotifications)
-        let settingsSubmenu = UIMenu(options: .displayInline, children: [voiceCommand,
-                                                                         notificationsCommand])
-        builder.insertSibling(settingsSubmenu, beforeMenu: licenseSubmenuID)
-        
-        let rateAndReviewCommand = UIAction(title: .localized(.rateAndReviewCapitalized), handler: rateAndReview)
-        let shareAppCommand = UIAction(title: .localized(.shareAppCapitalized), handler: shareApp)
-        let socialSubmenu = UIMenu(options: .displayInline, children: [rateAndReviewCommand, shareAppCommand])
-        builder.insertSibling(socialSubmenu, afterMenu: licenseSubmenuID)
+//        let privacyPolicyCommand = UIAction(title: .localized(.privacyPolicyCapitalized), handler: goToPrivacyPolicy)
+//        let termsOfUseCommand = UIAction(title: String.localized(.termsOfUseCapitalized), handler: goToTermsOfUse)
+//        let contactUsCommand = UIAction(title: .localized(.contactUsCapitalized), handler: goToMail)
+//        let helpSubmenu = UIMenu(options: .displayInline, children: [privacyPolicyCommand,
+//                                                                     termsOfUseCommand,
+//                                                                     contactUsCommand])
+//        builder.insertChild(helpSubmenu, atEndOfMenu: .help)
+//
+//        let allOurAppsCommand = UIAction(title: .localized(.allOurAppsCapitalized), handler: goToAllApps)
+//        let acknowledgementsCommand = UIAction(title: .localized(.acknowledgementsCapitalized),
+//                                               handler: goToAcknowledgements)
+//        let secondHelpSubmenu = UIMenu(options: .displayInline, children: [allOurAppsCommand,
+//                                                                           acknowledgementsCommand])
+//        builder.insertChild(secondHelpSubmenu, atEndOfMenu: .help)
+//
+//        let upgradeToProCommand = UIAction(title: .localized(.upgradeToProCapitalized), handler: upgradeToPro)
+//        let downgradeToLiteCommand = FeatureToggle.isDebug ?
+//            UIAction(title: "downgrade_to".localized, handler: downgrade)
+//            : nil
+//
+//        let licenseSubmenuID = UIMenu.Identifier(rawValue: "licenseSubmenu")
+//        let licenseSubmenu = UIMenu(identifier: licenseSubmenuID,
+//                                    options: .displayInline,
+//                                    children: FeatureToggle.isPaid
+//                                        ? [downgradeToLiteCommand].compactMap { $0 }
+//                                        : [upgradeToProCommand])
+//        builder.insertSibling(licenseSubmenu, afterMenu: .about)
+//
+//        let voiceCommand = UIAction(title: .localized(.voice), handler: goToVoice)
+//        let notificationsCommand = UIAction(title: .localized(.notifications), handler: goToNotifications)
+//        let settingsSubmenu = UIMenu(options: .displayInline, children: [voiceCommand,
+//                                                                         notificationsCommand])
+//        builder.insertSibling(settingsSubmenu, beforeMenu: licenseSubmenuID)
+//
+//        let rateAndReviewCommand = UIAction(title: .localized(.rateAndReviewCapitalized), handler: rateAndReview)
+//        let shareAppCommand = UIAction(title: .localized(.shareAppCapitalized), handler: shareApp)
+//        let socialSubmenu = UIMenu(options: .displayInline, children: [rateAndReviewCommand, shareAppCommand])
+//        builder.insertSibling(socialSubmenu, afterMenu: licenseSubmenuID)
+        let printCommand = UIKeyCommand(title: "print".localized + "…",
+                                        action: #selector(AppDelegate.printFile),
+                                        input: "p",
+                                        modifierFlags: .command)
+        let printSubmenu = UIMenu(options: .displayInline, children: [printCommand])
+        builder.insertChild(printSubmenu, atEndOfMenu: .file)
     }
     
     func canPerformAction(_ action: Selector, with sender: Any?) -> Bool {
-        if [#selector(goToPrivacyPolicy),
-            #selector(goToTermsOfUse),
-            #selector(rateAndReview),
-            #selector(shareApp)].contains(action) {
+        if [#selector(AppDelegate.printFile)].contains(action) {
             return true
-        } else if action == #selector(goToMail) {
-            return mailService.isMailAvailable
-        } else if action == #selector(goToAllApps) {
-            return areAllAppsAvailable
         }
-        
+            
         return false
     }
 }

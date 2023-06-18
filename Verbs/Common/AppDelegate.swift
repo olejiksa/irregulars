@@ -10,21 +10,28 @@ import UIKit
 import StoreKit
 import NotificationCenter
 
+@UIApplicationMain
 final class AppDelegate: UIResponder {
 
     private let deeplinkService = DeeplinkService()
-//    private let menuService = MenuService()
+    private let menuService = MenuService()
     
-//    override func buildMenu(with builder: UIMenuBuilder) {
-//        super.buildMenu(with: builder)
-//        menuService.buildMenu(with: builder)
-//    }
+    override func buildMenu(with builder: UIMenuBuilder) {
+        super.buildMenu(with: builder)
+        menuService.buildMenu(with: builder)
+    }
     
     override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
         let canPerform = super.canPerformAction(action, withSender: sender)
-//        let menuCanPerform = menuService.canPerformAction(action, with: sender)
-        return canPerform
-//        return canPerform || menuCanPerform
+        let menuCanPerform = menuService.canPerformAction(action, with: sender)
+        return canPerform || menuCanPerform
+    }
+    
+    @objc func printFile() {
+        let printService = PrintService()
+        let verbsService = VerbsService()
+        let languageService = LanguageService()
+        printService.print(verbsService.items, hasTranslation: languageService.hasTranslation)
     }
 
     // MARK: UISceneSession Lifecycle
