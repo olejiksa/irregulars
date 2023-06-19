@@ -10,6 +10,7 @@ import UIKit
 import SwiftUI
 
 enum SystemIcon: String {
+    case close = "xmark.circle.fill"
     case puzzle = "puzzlepiece"
     case puzzleFill = "puzzlepiece.fill"
     case gear = "gearshape"

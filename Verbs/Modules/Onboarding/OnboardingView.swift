@@ -18,46 +18,57 @@ struct OnboardingView: View {
     }
     
     var body: some View {
-        let view = VStack {
-            TabView(selection: $viewModel.selection) {
-                ForEach(viewModel.items) { item in
-                    OnboardingItemView(item: item)
-                        .tag(item.id)
+        NavigationView {
+            let view = VStack {
+                TabView(selection: $viewModel.selection) {
+                    ForEach(viewModel.items) { item in
+                        OnboardingItemView(item: item)
+                            .tag(item.id)
+                    }
                 }
-            }
-            .tabViewStyle(.page)
-            .indexViewStyle(.page(backgroundDisplayMode: .always))
-            
-            Button {
-                if viewModel.isLast {
-                    dismiss()
-                } else {
-                    viewModel.selection += 1
+                .tabViewStyle(.page)
+                .indexViewStyle(.page(backgroundDisplayMode: .always))
+                
+                Button {
+                    if viewModel.isLast {
+                        dismiss()
+                    } else {
+                        viewModel.selection += 1
+                    }
+                } label: {
+                    Text(viewModel.isLast ? "Начать" : "Продолжить")
+                        .frame(width: 200)
+                        .padding()
                 }
-            } label: {
-                Text(viewModel.isLast ? "Начать" : "Продолжить")
+                .contentShape(Rectangle())
+                .font(.system(size: 20,
+                              weight: .bold,
+                              design: .rounded))
+                .background(.white,
+                            in: RoundedRectangle(cornerRadius: 10,
+                                                 style: .continuous))
+                .transition(.scale.combined(with: .opacity))
             }
-            .contentShape(Rectangle())
-            .font(.system(size: 20,
-                          weight: .bold,
-                          design: .rounded))
-            .frame(width: 200)
+            .preferredColorScheme(.light)
+            .animation(.easeOut(duration: 0.2), value: viewModel.selection)
+            .transition(.slide)
+            .preferredColorScheme(.light)
             .padding()
-            .background(.white,
-                        in: RoundedRectangle(cornerRadius: 10,
-                                             style: .continuous))
-            .transition(.scale.combined(with: .opacity))
-        }
-        .preferredColorScheme(.light)
-        .animation(.easeOut(duration: 0.2), value: viewModel.selection)
-        .transition(.slide)
-        .preferredColorScheme(.light)
-        .padding()
-        
-        if #available(macCatalyst 13.2, *) {
-            view.background(Color.accentColor)
-        } else {
-            view.background(AccentColor.current.colorSwiftUI)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        
+                    }) {
+                        SystemIcon.close.imageSwiftUI
+                    }
+                }
+            }
+            
+            if #available(macCatalyst 13.2, *) {
+                view.background(Color.accentColor)
+            } else {
+                view.background(AccentColor.current.colorSwiftUI)
+            }
         }
     }
 }

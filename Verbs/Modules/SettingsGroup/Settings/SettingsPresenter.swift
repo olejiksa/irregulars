@@ -41,8 +41,7 @@ final class SettingsPresenter: NSObject {
 private extension SettingsPresenter {
     
     var areAllAppsAvailable: Bool {
-        guard !FeatureToggle.isDebug,
-              let value = developerURL.map(UIApplication.shared.canOpenURL) else { return false }
+        guard let value = developerURL.map(UIApplication.shared.canOpenURL) else { return false }
         return value
     }
     
@@ -54,23 +53,23 @@ private extension SettingsPresenter {
     }
     
     func setupItems() {
-       dataSource.setup(
-            [itemsFactory.setupActivationSection(upgradeBlock: willUpgrade,
-                                                 resetBlock: willReset),
-             itemsFactory.setupGeneralSection(languageBlock: willShowSystemAppSettings,
-                                              accentColorBlock: willGoToAccentColor,
-                                              voiceBlock: willGoToVoice,
-                                              notificationsBlock: willGoToNotifications),
-             itemsFactory.setupLinksSection(rateBlock: willRate,
-                                            privacyBlock: willGoToPrivacyPolicy,
-                                            termsBlock: willGoToTermsOfUse,
-                                            mailBlock: willGoToMail,
-                                            shareBlock: willShare),
-             itemsFactory.setupAboutSection(areAllAppsAvailable: areAllAppsAvailable,
-                                            acknowledgementsBlock: willGoToAcknowledgements,
-                                            allAppsBlock: willOverviewAllApps,
-                                            upgradeBlock: willUpgrade)]
-        )
+        dataSource.setup([
+            itemsFactory.setupActivationSection(upgradeBlock: willUpgrade,
+                                                resetBlock: willReset),
+            itemsFactory.setupGeneralSection(languageBlock: willShowSystemAppSettings,
+                                             accentColorBlock: willGoToAccentColor,
+                                             voiceBlock: willGoToVoice,
+                                             notificationsBlock: willGoToNotifications),
+            itemsFactory.setupLinksSection(rateBlock: willRate,
+                                           privacyBlock: willGoToPrivacyPolicy,
+                                           termsBlock: willGoToTermsOfUse,
+                                           mailBlock: willGoToMail,
+                                           shareBlock: willShare),
+            itemsFactory.setupAboutSection(areAllAppsAvailable: areAllAppsAvailable,
+                                           acknowledgementsBlock: willGoToAcknowledgements,
+                                           allAppsBlock: willOverviewAllApps,
+                                           upgradeBlock: willUpgrade)
+        ])
     }
     
     func didPlaybackSpeedChange(_ value: Int) {

@@ -29,7 +29,11 @@ final class PaywallViewController: UIViewController {
         button.titleLabel?.lineBreakMode = .byClipping
         button.titleLabel?.font = .preferredFont(forTextStyle: .headline)
         button.titleLabel?.adjustsFontForContentSizeCategory = true
+#if targetEnvironment(macCatalyst)
+        button.backgroundColor = UIButton().tintColor
+#else
         button.backgroundColor = AccentColor.current.color
+#endif
         button.cornerRadius = 10
         button.isPrimary = true
         return button
@@ -43,7 +47,11 @@ final class PaywallViewController: UIViewController {
         button.titleLabel?.lineBreakMode = .byClipping
         button.titleLabel?.font = .preferredFont(forTextStyle: .headline)
         button.titleLabel?.adjustsFontForContentSizeCategory = true
+#if targetEnvironment(macCatalyst)
+        button.setTitleColor(UIButton().tintColor, for: .normal)
+#else
         button.setTitleColor(AccentColor.current.color, for: .normal)
+#endif
         button.backgroundColor = .secondarySystemBackground
         button.cornerRadius = 10
         return button
@@ -51,11 +59,11 @@ final class PaywallViewController: UIViewController {
     
     private var thanksLabel: UILabel = {
         let label = UILabel()
-        if #available(macCatalyst 13.2, *) {
-            label.textColor = UIButton().tintColor
-        } else {
-            label.textColor = AccentColor.current.color
-        }
+#if targetEnvironment(macCatalyst)
+        label.textColor = UIButton().tintColor
+#else
+        label.textColor = AccentColor.current.color
+#endif
         label.font = .preferredFont(forTextStyle: .headline)
         label.text = "thank_you".localized
         label.adjustsFontForContentSizeCategory = true

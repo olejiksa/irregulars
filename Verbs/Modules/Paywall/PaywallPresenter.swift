@@ -11,7 +11,7 @@ final class PaywallPresenter {
     let dataSource = SectionDataSource()
     
     init() {
-        let items = [PaywallItem(text: "unlock_all_verbs_in_tests".localized,
+        var items = [PaywallItem(text: "unlock_all_verbs_in_tests".localized,
                                  icon: .key),
                      PaywallItem(text: "listen_to_pronunciation".localized,
                                  icon: .speaker),
@@ -24,6 +24,10 @@ final class PaywallPresenter {
                      PaywallItem(text: "one_time_payment".localized,
                                  icon: .creditcard)]
         
-        dataSource.setup([.init(items: items.compactMap { $0 })])
+        #if targetEnvironment(macCatalyst)
+        items.remove(at: 4)
+        #endif
+        
+        dataSource.setup([.init(items: items)])
     }
 }

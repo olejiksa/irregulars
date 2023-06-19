@@ -50,36 +50,23 @@ final class SettingsItemsFactory {
             notificationsSubtitle = "not_allowed".localized
         }
         
-        #if targetEnvironment(macCatalyst)
-        let items: [ItemProtocol] = [RightDetailItem(title: "language".localized,
-                                                     subtitle: languageService.current.description,
-                                                     actionBlock: languageBlock),
-                                     RightDetailItem(title: "voice".localized,
-                                                     subtitle: voiceName,
-                                                     actionBlock: voiceBlock,
-                                                     accessibilityIdentifier: .voiceCell),
-                                     RightDetailItem(title: .localized(.notifications),
-                                                     subtitle: notificationsSubtitle,
-                                                     actionBlock: notificationsBlock)].compactMap { $0 }
-        #else
-        let items: [ItemProtocol] = [RightDetailItem(title: "language".localized,
-                                                     subtitle: languageService.current.description,
-                                                     actionBlock: languageBlock),
-                                     RightDetailItem(title: "accent_color".localized,
-                                                     subtitle: accentColor,
-                                                     actionBlock: accentColorBlock,
-                                                     accessibilityIdentifier: .accentColorCell),
-                                     RightDetailItem(title: "voice".localized,
-                                                     subtitle: voiceName,
-                                                     actionBlock: voiceBlock,
-                                                     accessibilityIdentifier: .voiceCell),
-                                     RightDetailItem(title: .localized(.notifications),
-                                                     subtitle: notificationsSubtitle,
-                                                     actionBlock: notificationsBlock,
-                                                     accessibilityIdentifier: .notificationsCell)].compactMap { $0 }
-        #endif
-        
-        return .init(header: "general".localized, items: items)
+        return .init(header: "general".localized, items: [
+            RightDetailItem(title: "language".localized,
+                            subtitle: languageService.current.description,
+                            actionBlock: languageBlock),
+            RightDetailItem(title: "accent_color".localized,
+                            subtitle: accentColor,
+                            actionBlock: accentColorBlock,
+                            accessibilityIdentifier: .accentColorCell),
+            RightDetailItem(title: "voice".localized,
+                            subtitle: voiceName,
+                            actionBlock: voiceBlock,
+                            accessibilityIdentifier: .voiceCell),
+            RightDetailItem(title: .localized(.notifications),
+                            subtitle: notificationsSubtitle,
+                            actionBlock: notificationsBlock,
+                            accessibilityIdentifier: .notificationsCell)
+        ])
     }
     
     func setupLinksSection(rateBlock: @escaping ItemBlock,
@@ -109,19 +96,25 @@ final class SettingsItemsFactory {
         let name = Bundle.main.productName ?? ""
         let fullEditionName = "\(name) \(FeatureToggle.editionName)"
         
-        return .init(header: .localized(.about),
-                     items: [RightDetailItem(title: .localized(.developer),
-                                             subtitle: .localized(.olegSamoylov),
-                                             actionBlock: allAppsBlock,
-                                             hasDisclosureIndicator: true,
-                                             isEnabled: areAllAppsAvailable),
-                             RightDetailItem(title: .localized(.edition),
-                                             subtitle: fullEditionName,
-                                             actionBlock: upgradeBlock,
-                                             hasDisclosureIndicator: true),
-                             RightDetailItem(title: .localized(.version),
-                                             subtitle: version),
-                             DisclosureItem(text: .localized(.acknowledgements),
-                                            actionBlock: acknowledgementsBlock)])
+        var items: [ItemProtocol] = [RightDetailItem(title: .localized(.developer),
+                                     subtitle: .localized(.olegSamoylov),
+                                     actionBlock: allAppsBlock,
+                                     hasDisclosureIndicator: true,
+                                     isEnabled: areAllAppsAvailable),
+                     RightDetailItem(title: .localized(.edition),
+                                     subtitle: fullEditionName,
+                                     actionBlock: upgradeBlock,
+                                     hasDisclosureIndicator: true),
+                     RightDetailItem(title: .localized(.version),
+                                     subtitle: version),
+                     DisclosureItem(text: .localized(.acknowledgements),
+                                    actionBlock: acknowledgementsBlock)]
+        
+        #if targetEnvironment(macCatalyst)
+        items.remove(at: 2)
+        items.remove(at: 2)
+        #endif
+        
+        return .init(header: .localized(.about), items: items)
     }
 }
