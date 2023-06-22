@@ -132,6 +132,8 @@ private extension SceneDelegate {
     }
     
     func runOnMac(_ scene: UIScene, options connectionOptions: UIScene.ConnectionOptions) {
+        tidyCatalystWindow()
+
 #if DEBUG
 if CommandLine.arguments.contains("dark") {
     window?.overrideUserInterfaceStyle = .dark
@@ -149,5 +151,18 @@ self.scene(scene, openURLContexts: connectionOptions.urlContexts)
 for userActivity in connectionOptions.userActivities {
     self.scene(scene, continue: userActivity)
 }
+    }
+    
+    func tidyCatalystWindow() {
+        #if targetEnvironment(macCatalyst)
+        UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
+         .forEach { ws in
+            ws.sizeRestrictions?.minimumSize = CGSize(width: 1280 + 182 + 43 + 12, height: 800)
+            ws.sizeRestrictions?.maximumSize = CGSize(width: 1280 + 182 + 43 + 12, height: 800)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                ws.sizeRestrictions?.maximumSize = CGSize(width: 1280 + 182 + 43 + 12, height: 800)
+            }
+        }
+        #endif
     }
 }

@@ -77,3 +77,12 @@ extension Verb: Hashable {
         hasher.combine(infinitive.value)
     }
 }
+
+// MARK: - Identifiable
+
+extension Verb: Swift.Identifiable {
+    
+    var id: String {
+        infinitive.value
+    }
+}

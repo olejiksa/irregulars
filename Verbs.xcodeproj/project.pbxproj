@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E50415F82A44FF5700FC1305 /* TestNewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50415F72A44FF5700FC1305 /* TestNewViewModel.swift */; };
 		E5059C332A39CC3100891998 /* VoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5059C322A39CC3100891998 /* VoiceView.swift */; };
 		E5059C352A39CE6400891998 /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5059C342A39CE6400891998 /* PopoverView.swift */; };
 		E5059C372A39D45B00891998 /* VoiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5059C362A39D45B00891998 /* VoiceViewModel.swift */; };
@@ -371,6 +372,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E50415F72A44FF5700FC1305 /* TestNewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNewViewModel.swift; sourceTree = "<group>"; };
 		E5059C322A39CC3100891998 /* VoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceView.swift; sourceTree = "<group>"; };
 		E5059C342A39CE6400891998 /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
 		E5059C362A39D45B00891998 /* VoiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceViewModel.swift; sourceTree = "<group>"; };
@@ -778,6 +780,7 @@
 				E58505DF2A3DF8A100071BF4 /* TestNewAssembly.swift */,
 				E58505DB2A3DF75200071BF4 /* TestNewView.swift */,
 				E58505DD2A3DF80600071BF4 /* TestNewViewRow.swift */,
+				E50415F72A44FF5700FC1305 /* TestNewViewModel.swift */,
 			);
 			path = TestNew;
 			sourceTree = "<group>";
@@ -2093,6 +2096,7 @@
 				EBF00FAE257BB55A002FA49B /* TestItem.swift in Sources */,
 				EB2E4B4125729EBE005B343A /* AccentColor.swift in Sources */,
 				EBA732B425704AF7001B69EF /* SplitStateManager.swift in Sources */,
+				E50415F82A44FF5700FC1305 /* TestNewViewModel.swift in Sources */,
 				EB355266260CAF5C00C7EA3C /* SimilarityService.swift in Sources */,
 				EBA644E7255AE25B0012B973 /* SettingsRouter.swift in Sources */,
 				EB9F046B25E94152009B1D6B /* Label.swift in Sources */,

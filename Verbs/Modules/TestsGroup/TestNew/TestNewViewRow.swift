@@ -17,7 +17,11 @@ struct TestNewViewRow: View {
     }
     
     var body: some View {
-        Text(text)
+        HStack {
+            Text(text)
+            Spacer()
+        }
+        .contentShape(Rectangle())
     }
 }
 

@@ -10,33 +10,37 @@ import SwiftUI
 
 struct TestNewView: View {
     
-    @State private var downloadAmount = 0.0
-    private let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+    @StateObject private var viewModel = TestNewViewModel()
+    @Environment(\.presentationMode) var presentation
     
     var body: some View {
         VStack {
-            ProgressView("Вопрос 1 из 10", value: downloadAmount, total: 100)
-                .onReceive(timer) { _ in
-                    if downloadAmount < 100 {
-                        downloadAmount += 10
-                    }
-                }
+            ProgressView(viewModel.progressInfo, value: viewModel.progress, total: viewModel.count)
                 .padding(EdgeInsets(top: 10, leading: 30, bottom: 10, trailing: 30))
             List {
-                
                 SwiftUI.Section(String.localized(.infinitive)) {
-                    TestNewViewRow("outfight")
+                    TestNewViewRow(viewModel.current?.infinitive.value ?? "")
                 }
                 SwiftUI.Section(String.localized(.translation)) {
-                    TestNewViewRow("спешить, ускорять")
-                    TestNewViewRow("встречать, знакомиться")
-                    TestNewViewRow("побеждать в бою")
-                    TestNewViewRow("догонять")
+                    ForEach(viewModel.answers) { verb in
+                        TestNewViewRow(verb.translation)
+                            .onTapGesture {
+                                viewModel.next(verb: verb)
+                            }
+                    }
                 }
             }
             .environment(\.defaultMinListRowHeight, 60)
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(String.localized(.translation))
+        }
+        .alert(viewModel.resultInfo, isPresented: $viewModel.isFinished) {
+            Button("Пройти ещё раз", role: .none) {
+                viewModel.reset()
+            }
+            Button("Закрыть тест", role: .cancel) {
+                presentation.wrappedValue.dismiss()
+            }
         }
     }
 }
