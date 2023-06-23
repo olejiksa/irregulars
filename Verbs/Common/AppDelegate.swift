@@ -9,6 +9,7 @@
 import UIKit
 import StoreKit
 import NotificationCenter
+import YandexMobileMetrica
 
 @UIApplicationMain
 final class AppDelegate: UIResponder {
@@ -51,6 +52,7 @@ extension AppDelegate: UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         SKPaymentQueue.default().add(Locator.purchaseService)
         UNUserNotificationCenter.current().delegate = self
+        AnalyticsService().start()
         return true
     }
     

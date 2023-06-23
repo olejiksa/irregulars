@@ -17,6 +17,8 @@ final class OnboardingViewModel: ObservableObject {
         selection == items.count - 1
     }
     
+    private let analyticsService = AnalyticsService()
+    
     init() {
         items = [
             .init(id: 0, emoji: "🤗", title: "Привет", content: "Спасибо за загрузку нашего приложения! Давай познакомимся поближе"),
@@ -32,5 +34,11 @@ final class OnboardingViewModel: ObservableObject {
             .init(id: 5, emoji: "📔", title: "Неправильные глаголы", content: "Образование 2-й и 3-й формы у неправильных глаголов нужно запоминать"),
             .init(id: 6, emoji: "🥳", title: "Готовы начинать?", content: "So... Shall we begin/began/begun?")
         ]
+        
+        analyticsService.send(event: .onboardingStarted)
+    }
+    
+    func finishFlow() {
+        analyticsService.send(event: .onboardingFinished)
     }
 }

@@ -31,6 +31,7 @@ struct OnboardingView: View {
                 
                 Button {
                     if viewModel.isLast {
+                        viewModel.finishFlow()
                         dismiss()
                     } else {
                         viewModel.selection += 1

@@ -19,6 +19,7 @@ final class VoiceViewModel: ObservableObject {
     init() {
         voiceService = VoiceService()
         audioService = AudioService(voiceService: voiceService)
+        AnalyticsService().send(event: .voiceOpened)
     }
     
     func items(for gender: Gender) -> [Voice] {

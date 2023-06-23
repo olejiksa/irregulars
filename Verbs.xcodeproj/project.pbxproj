@@ -12,6 +12,9 @@
 		E5059C352A39CE6400891998 /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5059C342A39CE6400891998 /* PopoverView.swift */; };
 		E5059C372A39D45B00891998 /* VoiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5059C362A39D45B00891998 /* VoiceViewModel.swift */; };
 		E5059C392A39DBBA00891998 /* VoiceSelectionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5059C382A39DBBA00891998 /* VoiceSelectionRow.swift */; };
+		E50CAFE82A462EF80090E7B1 /* YandexMobileMetrica in Frameworks */ = {isa = PBXBuildFile; productRef = E50CAFE72A462EF80090E7B1 /* YandexMobileMetrica */; };
+		E50CAFEA2A462F430090E7B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CAFE92A462F430090E7B1 /* Constants.swift */; };
+		E50CAFEC2A462F9D0090E7B1 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CAFEB2A462F9D0090E7B1 /* AnalyticsService.swift */; };
 		E53CA7822A374AB40058A28E /* AccentColorSelectionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CA7812A374AB40058A28E /* AccentColorSelectionRow.swift */; };
 		E53CA7862A3752050058A28E /* PhrasalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CA7852A3752050058A28E /* PhrasalsView.swift */; };
 		E53CA7882A37521B0058A28E /* PhrasalsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CA7872A37521B0058A28E /* PhrasalsAssembly.swift */; };
@@ -377,6 +380,8 @@
 		E5059C342A39CE6400891998 /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
 		E5059C362A39D45B00891998 /* VoiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceViewModel.swift; sourceTree = "<group>"; };
 		E5059C382A39DBBA00891998 /* VoiceSelectionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSelectionRow.swift; sourceTree = "<group>"; };
+		E50CAFE92A462F430090E7B1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E50CAFEB2A462F9D0090E7B1 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		E53CA7812A374AB40058A28E /* AccentColorSelectionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorSelectionRow.swift; sourceTree = "<group>"; };
 		E53CA7852A3752050058A28E /* PhrasalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasalsView.swift; sourceTree = "<group>"; };
 		E53CA7872A37521B0058A28E /* PhrasalsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasalsAssembly.swift; sourceTree = "<group>"; };
@@ -729,6 +734,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBF97C8A25623503009FFFBA /* StoreKit.framework in Frameworks */,
+				E50CAFE82A462EF80090E7B1 /* YandexMobileMetrica in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -984,6 +990,7 @@
 				EBB3BC16251F4D60006E0DC7 /* JSONParser.swift */,
 				EBEB1D77251F11900019972C /* SceneDelegate.swift */,
 				EBF8A6512559225D00A6265C /* Locator.swift */,
+				E50CAFE92A462F430090E7B1 /* Constants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1228,6 +1235,7 @@
 		EB995AEA25E516F90082DE32 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E50CAFEB2A462F9D0090E7B1 /* AnalyticsService.swift */,
 				EB2E4BA525741970005B343A /* AppIconService.swift */,
 				EB2F5E15251F71DD007DCF60 /* AudioService.swift */,
 				EB1EC45825DD88BE00F6299B /* CalendarService.swift */,
@@ -1723,6 +1731,7 @@
 			);
 			name = Verbs;
 			packageProductDependencies = (
+				E50CAFE72A462EF80090E7B1 /* YandexMobileMetrica */,
 			);
 			productName = Verbs;
 			productReference = EBEB1D72251F11900019972C /* Irregulars.app */;
@@ -1793,6 +1802,7 @@
 			);
 			mainGroup = EBEB1D69251F11900019972C;
 			packageReferences = (
+				E50CAFE62A462EF80090E7B1 /* XCRemoteSwiftPackageReference "metrica-sdk-ios" */,
 			);
 			productRefGroup = EBEB1D73251F11900019972C /* Products */;
 			projectDirPath = "";
@@ -1991,6 +2001,7 @@
 				EBDF009C2562EED70041F458 /* InputItem.swift in Sources */,
 				EBDF008D2562E9210041F458 /* TestPresenter.swift in Sources */,
 				EBEB1D94251F15D30019972C /* Verb.swift in Sources */,
+				E50CAFEC2A462F9D0090E7B1 /* AnalyticsService.swift in Sources */,
 				EB45099C253B6C7D00D31858 /* SettingsAssembly.swift in Sources */,
 				EBB01C1D2521897000BB646B /* CellProtocol.swift in Sources */,
 				EB717DF42530D5B7007791AD /* ListAssembly.swift in Sources */,
@@ -2042,6 +2053,7 @@
 				EB5D6DF9259ECD2400CCCA85 /* SpotlightService.swift in Sources */,
 				EBB95BFE25335C3E00376C3F /* LanguageService.swift in Sources */,
 				EB269962256CF0EF007CCF2E /* PlainDetailItem.swift in Sources */,
+				E50CAFEA2A462F430090E7B1 /* Constants.swift in Sources */,
 				E5059C332A39CC3100891998 /* VoiceView.swift in Sources */,
 				EB3217C3258BE4B300023F0B /* ProgressCell.swift in Sources */,
 				EBF4A135252E9961003E3A44 /* ListItem.swift in Sources */,
@@ -2733,6 +2745,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E50CAFE62A462EF80090E7B1 /* XCRemoteSwiftPackageReference "metrica-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yandexmobile/metrica-sdk-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E50CAFE72A462EF80090E7B1 /* YandexMobileMetrica */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E50CAFE62A462EF80090E7B1 /* XCRemoteSwiftPackageReference "metrica-sdk-ios" */;
+			productName = YandexMobileMetrica;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EBEB1D6A251F11900019972C /* Project object */;
 }

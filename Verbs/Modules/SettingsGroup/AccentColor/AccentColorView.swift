@@ -12,6 +12,10 @@ struct AccentColorView: View {
     
     private let appIconService = AppIconService()
     @State private var selectedItem: AccentColor? = .current
+    
+    init() {
+        AnalyticsService().send(event: .accentColorOpened)
+    }
 
     var body: some View {
         VStack {

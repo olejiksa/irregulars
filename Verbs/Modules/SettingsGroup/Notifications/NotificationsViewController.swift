@@ -32,6 +32,8 @@ final class NotificationsViewController: UIViewController {
         setupTableView()
         setupKeyboardService()
         setupView()
+        
+        AnalyticsService().send(event: .notificationsOpened)
     }
     
     func reloadData() {

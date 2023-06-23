@@ -101,6 +101,8 @@ final class PaywallViewController: UIViewController {
         setupTableView()
         setupView()
         fetchPrice()
+        
+        AnalyticsService().send(event: .paywallOpened)
     }
 }
 
@@ -175,6 +177,8 @@ private extension PaywallViewController {
         
         buyButton.showLoading()
         purchaseService.requestProducts(activationHandler: didActivate, errorHandler: didBuy)
+        
+        AnalyticsService().send(event: .paywallBuyTapped)
     }
     
     @objc func didRestoreTap() {
