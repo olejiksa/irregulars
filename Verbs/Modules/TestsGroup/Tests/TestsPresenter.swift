@@ -36,20 +36,16 @@ final class TestsPresenter: NSObject {
         
         let items = [translationItem,
                      TestItem(icon: .pencil,
-                              test: .writing,
-                              accessibilityIdentifier: .writingCell),
+                              test: .writing),
                      TestItem(icon: .sentences,
-                              test: .sentences,
-                              accessibilityIdentifier: .sentencesCell),
+                              test: .sentences),
                      TestItem(icon: .headphones,
-                              test: .listening,
-                              accessibilityIdentifier: .listeningCell),
+                              test: .listening),
                      TestItem(icon: .mic,
                               test: .speaking),
                      TestItem(icon: .chart,
                               title: "statistics".localized,
-                              subtitle: "track_your_progress_in_learning_irregular_verbs".localized,
-                              accessibilityIdentifier: .statisticsCell)
+                              subtitle: "track_your_progress_in_learning_irregular_verbs".localized)
         ].compactMap { $0 }
         dataSource.setup([Section(items: items)])
     }

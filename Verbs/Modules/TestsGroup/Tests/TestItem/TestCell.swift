@@ -27,7 +27,5 @@ extension TestCell: CellProtocol {
         titleLabel.text = item.test?.title ?? item.title
         subtitleLabel?.text = item.test?.subtitle ?? item.subtitle
         iconImageView.image = item.icon.image
-        
-        accessibilityIdentifier = item.accessibilityIdentifier?.rawValue
     }
 }

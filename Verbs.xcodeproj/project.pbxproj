@@ -15,6 +15,9 @@
 		E50CAFE82A462EF80090E7B1 /* YandexMobileMetrica in Frameworks */ = {isa = PBXBuildFile; productRef = E50CAFE72A462EF80090E7B1 /* YandexMobileMetrica */; };
 		E50CAFEA2A462F430090E7B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CAFE92A462F430090E7B1 /* Constants.swift */; };
 		E50CAFEC2A462F9D0090E7B1 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CAFEB2A462F9D0090E7B1 /* AnalyticsService.swift */; };
+		E50CAFEF2A46347B0090E7B1 /* TestListNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CAFEE2A46347B0090E7B1 /* TestListNewView.swift */; };
+		E50CAFF12A4635890090E7B1 /* TestListNewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CAFF02A4635890090E7B1 /* TestListNewViewModel.swift */; };
+		E50CAFF32A4638D00090E7B1 /* TestListNewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CAFF22A4638D00090E7B1 /* TestListNewAssembly.swift */; };
 		E53CA7822A374AB40058A28E /* AccentColorSelectionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CA7812A374AB40058A28E /* AccentColorSelectionRow.swift */; };
 		E53CA7862A3752050058A28E /* PhrasalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CA7852A3752050058A28E /* PhrasalsView.swift */; };
 		E53CA7882A37521B0058A28E /* PhrasalsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CA7872A37521B0058A28E /* PhrasalsAssembly.swift */; };
@@ -29,6 +32,9 @@
 		E58505E52A3E009500071BF4 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58505E42A3E009500071BF4 /* OnboardingViewModel.swift */; };
 		E58505E72A3E00A600071BF4 /* OnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58505E62A3E00A600071BF4 /* OnboardingItem.swift */; };
 		E58505E92A3E035000071BF4 /* OnboardingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58505E82A3E035000071BF4 /* OnboardingItemView.swift */; };
+		E58C831E2A4E176C00327ECE /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C831D2A4E176C00327ECE /* StatisticsView.swift */; };
+		E58C83202A4E1AD400327ECE /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C831F2A4E1AD400327ECE /* TestView.swift */; };
+		E58C83232A4E224F00327ECE /* SettingsNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C83222A4E224F00327ECE /* SettingsNewView.swift */; };
 		E5CF0F112A329E6200627224 /* AcknowledgementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CF0F102A329E6200627224 /* AcknowledgementsView.swift */; };
 		E5CF0F132A32A9B200627224 /* RightDetailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CF0F122A32A9B200627224 /* RightDetailRowView.swift */; };
 		E5F99A182A3F74CD00E275E5 /* VerbsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F99A172A3F74CD00E275E5 /* VerbsApp.swift */; };
@@ -382,6 +388,9 @@
 		E5059C382A39DBBA00891998 /* VoiceSelectionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSelectionRow.swift; sourceTree = "<group>"; };
 		E50CAFE92A462F430090E7B1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E50CAFEB2A462F9D0090E7B1 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
+		E50CAFEE2A46347B0090E7B1 /* TestListNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestListNewView.swift; sourceTree = "<group>"; };
+		E50CAFF02A4635890090E7B1 /* TestListNewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestListNewViewModel.swift; sourceTree = "<group>"; };
+		E50CAFF22A4638D00090E7B1 /* TestListNewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestListNewAssembly.swift; sourceTree = "<group>"; };
 		E53CA7812A374AB40058A28E /* AccentColorSelectionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorSelectionRow.swift; sourceTree = "<group>"; };
 		E53CA7852A3752050058A28E /* PhrasalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasalsView.swift; sourceTree = "<group>"; };
 		E53CA7872A37521B0058A28E /* PhrasalsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasalsAssembly.swift; sourceTree = "<group>"; };
@@ -396,6 +405,9 @@
 		E58505E42A3E009500071BF4 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		E58505E62A3E00A600071BF4 /* OnboardingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItem.swift; sourceTree = "<group>"; };
 		E58505E82A3E035000071BF4 /* OnboardingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItemView.swift; sourceTree = "<group>"; };
+		E58C831D2A4E176C00327ECE /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		E58C831F2A4E1AD400327ECE /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		E58C83222A4E224F00327ECE /* SettingsNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNewView.swift; sourceTree = "<group>"; };
 		E5CF0F102A329E6200627224 /* AcknowledgementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsView.swift; sourceTree = "<group>"; };
 		E5CF0F122A32A9B200627224 /* RightDetailRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDetailRowView.swift; sourceTree = "<group>"; };
 		E5F99A172A3F74CD00E275E5 /* VerbsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbsApp.swift; sourceTree = "<group>"; };
@@ -748,6 +760,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E50CAFED2A4634650090E7B1 /* TestListNew */ = {
+			isa = PBXGroup;
+			children = (
+				E50CAFF22A4638D00090E7B1 /* TestListNewAssembly.swift */,
+				E50CAFEE2A46347B0090E7B1 /* TestListNewView.swift */,
+				E50CAFF02A4635890090E7B1 /* TestListNewViewModel.swift */,
+			);
+			path = TestListNew;
+			sourceTree = "<group>";
+		};
 		E53CA7842A37514A0058A28E /* Phrasals */ = {
 			isa = PBXGroup;
 			children = (
@@ -760,6 +782,7 @@
 		E53CA7892A375A0C0058A28E /* SettingsGroup */ = {
 			isa = PBXGroup;
 			children = (
+				E58C83212A4E224300327ECE /* SettingsNew */,
 				EB2E4B1E257258CA005B343A /* AccentColor */,
 				EB5D6E1525A0191A00CCCA85 /* Acknowledgements */,
 				EB68F73325D5849500D6DF63 /* Notifications */,
@@ -773,6 +796,7 @@
 		E58505D92A3DF71A00071BF4 /* TestsGroup */ = {
 			isa = PBXGroup;
 			children = (
+				E50CAFED2A4634650090E7B1 /* TestListNew */,
 				EB2E4BF7257A0A7A005B343A /* Tests */,
 				EBDF00752562DD620041F458 /* Test */,
 				E58505DA2A3DF72600071BF4 /* TestNew */,
@@ -808,6 +832,14 @@
 				E58505E82A3E035000071BF4 /* OnboardingItemView.swift */,
 			);
 			path = Item;
+			sourceTree = "<group>";
+		};
+		E58C83212A4E224300327ECE /* SettingsNew */ = {
+			isa = PBXGroup;
+			children = (
+				E58C83222A4E224F00327ECE /* SettingsNewView.swift */,
+			);
+			path = SettingsNew;
 			sourceTree = "<group>";
 		};
 		E5F99A1B2A3F767400E275E5 /* SettingsMac */ = {
@@ -1432,6 +1464,7 @@
 				EBF5935B2583AD580091FCE0 /* TestItemsFactory.swift */,
 				EB69F8AE2569D7AA00759BAA /* TestRouter.swift */,
 				EBDF00762562DD850041F458 /* TestViewController.swift */,
+				E58C831F2A4E1AD400327ECE /* TestView.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -1614,6 +1647,7 @@
 				EBF593622583B2DD0091FCE0 /* StatisticsViewController.swift */,
 				EB3217B6258BDBE100023F0B /* StatisticsKind.swift */,
 				EBFC7BE825EFDFFA00C3D43B /* StatisticsModel.swift */,
+				E58C831D2A4E176C00327ECE /* StatisticsView.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -2018,6 +2052,7 @@
 				EB2F5E11251F5B26007DCF60 /* DetailCell.swift in Sources */,
 				EB409E36259B8CC800E3B690 /* Localizable.swift in Sources */,
 				EBF8A6522559225D00A6265C /* Locator.swift in Sources */,
+				E58C831E2A4E176C00327ECE /* StatisticsView.swift in Sources */,
 				EB68F74525D584C200D6DF63 /* NotificationsAssembly.swift in Sources */,
 				EB2E4BC52576A8DC005B343A /* Array+Safe.swift in Sources */,
 				EB269972256D1009007CCF2E /* UserDefaults+Key.swift in Sources */,
@@ -2040,6 +2075,7 @@
 				EB8B2BAE25AF5E83008E0118 /* HapticFeedback.swift in Sources */,
 				EB3217BD258BE42300023F0B /* ProgressItem.swift in Sources */,
 				EB1EC44F25DC378300F6299B /* IconDetailItem.swift in Sources */,
+				E50CAFF32A4638D00090E7B1 /* TestListNewAssembly.swift in Sources */,
 				EB23924B25EB9381009BE502 /* MistakeCell.swift in Sources */,
 				EB59F02C258FE9E1004676D2 /* Gender.swift in Sources */,
 				EBB01C252521903A00BB646B /* Identifiable.swift in Sources */,
@@ -2061,6 +2097,7 @@
 				EBD2C23A25D5A3E80075399B /* StepperCell.swift in Sources */,
 				EBD2C23325D5A1080075399B /* StepperItem.swift in Sources */,
 				E5F99A1A2A3F75F900E275E5 /* Split.swift in Sources */,
+				E50CAFEF2A46347B0090E7B1 /* TestListNewView.swift in Sources */,
 				EB8B2BA925AF5DD5008E0118 /* HapticService.swift in Sources */,
 				EBF593B9258732F00091FCE0 /* StatisticsRouter.swift in Sources */,
 				EB450973253B5CB300D31858 /* Section.swift in Sources */,
@@ -2071,6 +2108,7 @@
 				EB69F8AF2569D7AA00759BAA /* TestRouter.swift in Sources */,
 				EB59AF9225AAEDE4005A212C /* PopoverPresenter.swift in Sources */,
 				E53CA78D2A375BE90058A28E /* PhrasalsService.swift in Sources */,
+				E58C83232A4E224F00327ECE /* SettingsNewView.swift in Sources */,
 				EBB01C0925217F5400BB646B /* Language.swift in Sources */,
 				EB269992256E29DA007CCF2E /* TabBarItem.swift in Sources */,
 				E58505E02A3DF8A100071BF4 /* TestNewAssembly.swift in Sources */,
@@ -2089,6 +2127,7 @@
 				EBB42C6E2615D6C4008CB9A5 /* RecordService.swift in Sources */,
 				EBF5936D2583B3230091FCE0 /* StatisticsAssembly.swift in Sources */,
 				EBD2C503257FDA4B0023AED4 /* SentencesService.swift in Sources */,
+				E50CAFF12A4635890090E7B1 /* TestListNewViewModel.swift in Sources */,
 				EBF59497258917F30091FCE0 /* ExampleItem.swift in Sources */,
 				EBA644B4255988FC0012B973 /* ListState.swift in Sources */,
 				EB69A26925322AFA00DD1827 /* Notification.swift in Sources */,
@@ -2149,6 +2188,7 @@
 				E5F99A182A3F74CD00E275E5 /* VerbsApp.swift in Sources */,
 				EB450A33254B157B00D31858 /* SectionDataSource.swift in Sources */,
 				EBE00C9D25C86F2900560A7D /* AccessibilityIdentifier.swift in Sources */,
+				E58C83202A4E1AD400327ECE /* TestView.swift in Sources */,
 				EBF593C92588526E0091FCE0 /* DemoService.swift in Sources */,
 				EB2E4B1725717A3E005B343A /* PurchaseError.swift in Sources */,
 				EB45098A253B67FA00D31858 /* DetailAssembly.swift in Sources */,
@@ -2587,7 +2627,7 @@
 				INFOPLIST_FILE = Verbs/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Irregulars;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2619,7 +2659,7 @@
 				INFOPLIST_FILE = Verbs/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Irregulars;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

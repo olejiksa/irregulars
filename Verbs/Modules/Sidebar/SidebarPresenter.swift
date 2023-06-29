@@ -155,7 +155,9 @@ private extension SidebarPresenter {
             nvc?.popToRootViewController(animated: true)
         case RowIdentifier.tests:
             selectedIndexPath = indexPath
-            let vc = TestsAssembly(splitViewController: splitViewController).viewController()
+            let vc = !FeatureToggle.isNewTestListAvailable
+                ? TestsAssembly(splitViewController: splitViewController).viewController()
+                : TestListNewAssembly().viewController
             splitViewController.setViewController(vc.navigationController, for: .supplementary)
             
             NotificationCenter.default.post(name: .sidebar,
