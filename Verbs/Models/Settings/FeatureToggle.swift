@@ -38,10 +38,10 @@ struct FeatureToggle {
     
     static var isOnboardingAvailable: Bool {
         #if DEBUG
-        false
+        true
         #else
         !UserDefaults.shared.bool(for: .hasLaunchedBefore) &&
-        LanguageService().current == .russian
+        (LanguageService().current == .russian || LanguageService().current == .english)
         #endif
     }
     

@@ -12,6 +12,8 @@ struct AnalyticsService {
     
     enum Event: String {
         case onboardingStarted
+        case onboardingClosed
+        case onboardingContinueTapped
         case onboardingFinished
         
         case appOpened

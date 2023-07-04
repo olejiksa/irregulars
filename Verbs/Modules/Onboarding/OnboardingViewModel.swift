@@ -21,24 +21,48 @@ final class OnboardingViewModel: ObservableObject {
     
     init() {
         items = [
-            .init(id: 0, emoji: "🤗", title: "Привет", content: "Спасибо за загрузку нашего приложения! Давай познакомимся поближе"),
-            .init(id: 1, emoji: "🤔", title: "Зачем и почему", content: "Таблица неправильных глаголов в английском — как таблица умножения в математике. Неправильные глаголы появляются уже на ранних этапах обучения языку"),
-            .init(id: 2, emoji: "🧐", title: "Представляете?", content: "10 глаголов, которые чаще всего употребляются в речи — неправильные! (be, get, go, say и так далее)"),
-            .init(id: 3, emoji: "📖", title: "Три формы глагола", content: """
-Чтобы не допускать ошибок в английских временах, необходимо знать три формы глагола:
-начальную, или инфинитив,
-форму прошедшего времени
-и третью форму, или причастие прошедшего времени
-"""),
-            .init(id: 4, emoji: "📒", title: "Правильные глаголы", content: "2-я и 3-я формы правильных глаголов образуются с помощью окончания -ed: close (закрывать), closed (закрыл), closed (закрыл, закрыт, закрытый)"),
-            .init(id: 5, emoji: "📔", title: "Неправильные глаголы", content: "Образование 2-й и 3-й формы у неправильных глаголов нужно запоминать"),
-            .init(id: 6, emoji: "🥳", title: "Готовы начинать?", content: "So... Shall we begin/began/begun?")
+            .init(id: 0,
+                  emoji: "🤗",
+                  title: "onboarding.hello".localized,
+                  content: "onboarding.hello.description".localized),
+            .init(id: 1,
+                  emoji: "🤔",
+                  title: "onboarding.why".localized,
+                  content: "onboarding.why.description".localized),
+            .init(id: 2,
+                  emoji: "🧐",
+                  title: "onboarding.imagine".localized,
+                  content: "onboarding.imagine.description".localized),
+            .init(id: 3,
+                  emoji: "📖",
+                  title: "onboarding.three_forms".localized,
+                  content: "onboarding.three_forms.description".localized),
+            .init(id: 4,
+                  emoji: "📒",
+                  title: "onboarding.regular_verbs".localized,
+                  content: "onboarding.regular_verbs.description".localized),
+            .init(id: 5,
+                  emoji: "📔",
+                  title: "onboarding.irregular_verbs".localized,
+                  content: "onboarding.irregular_verbs.description".localized),
+            .init(id: 6,
+                  emoji: "🥳",
+                  title: "onboarding.are_you_ready_for_it".localized,
+                  content: "onboarding.are_you_ready_for_it.description".localized)
         ]
         
         analyticsService.send(event: .onboardingStarted)
     }
     
-    func finishFlow() {
+    func close() {
+        analyticsService.send(event: .onboardingClosed)
+    }
+    
+    func `continue`() {
+        analyticsService.send(event: .onboardingContinueTapped)
+    }
+    
+    func finish() {
         analyticsService.send(event: .onboardingFinished)
     }
 }

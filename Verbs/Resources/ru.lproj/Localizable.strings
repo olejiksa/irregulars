@@ -428,3 +428,28 @@
 "allow_access" = "Разрешить доступ";
 "insufficient_permissions" = "Приложение не имеет доступа к микрофону";
 "phrasal_verbs" = "Фразовые глаголы";
+
+"start" = "Начать";
+"continue" = "Продолжить";
+"welcome" = "Добро пожаловать";
+
+"onboarding.hello" = "Привет";
+"onboarding.why" = "Зачем и почему";
+"onboarding.imagine" = "Представляете?";
+"onboarding.three_forms" = "3 формы глагола";
+"onboarding.regular_verbs" = "Правильные глаголы";
+"onboarding.irregular_verbs" = "Неправильные глаголы";
+"onboarding.are_you_ready_for_it" = "Готовы начать?";
+
+"onboarding.hello.description" = "Спасибо за загрузку нашего приложения! Давай познакомимся поближе";
+"onboarding.why.description" = "Таблица неправильных глаголов в английском — как таблица умножения в математике. Неправильные глаголы появляются уже на ранних этапах обучения языку";
+"onboarding.imagine.description" = "10 глаголов, которые чаще всего употребляются в речи — неправильные! (be, get, go, say и так далее)";
+"onboarding.three_forms.description" = "
+Чтобы не допускать ошибок в английских временах, необходимо знать 3 формы глагола:
+начальную, или инфинитив,
+форму прошедшего времени
+и третью форму, или причастие прошедшего времени
+";
+"onboarding.regular_verbs.description" = "2-я и 3-я формы правильных глаголов образуются с помощью окончания -ed: close (закрывать), closed (закрыл), closed (закрыл, закрыт, закрытый)";
+"onboarding.irregular_verbs.description" = "Образование 2-й и 3-й формы у неправильных глаголов нужно запоминать";
+"onboarding.are_you_ready_for_it.description" = "So... Shall we begin/began/begun?";

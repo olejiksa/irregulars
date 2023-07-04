@@ -429,3 +429,28 @@
 "allow_access" = "Allow access";
 "insufficient_permissions" = "The app does not have access to the microphone";
 "phrasal_verbs" = "Phrasal verbs";
+
+"start" = "Start";
+"continue" = "Continue";
+"welcome" = "Welcome";
+
+"onboarding.hello" = "Hello";
+"onboarding.why" = "How and why";
+"onboarding.imagine" = "Can you imagine?";
+"onboarding.three_forms" = "3 verb forms";
+"onboarding.regular_verbs" = "Regular verbs";
+"onboarding.irregular_verbs" = "Irregular verbs";
+"onboarding.are_you_ready_for_it" = "Ready to get started?";
+
+"onboarding.hello.description" = "Thank you for downloading our app! Let's get to know each other better";
+"onboarding.why.description" = "The table of irregular verbs in English is like a multiplication table in math. Irregular verbs appear at the early stages of language learning";
+"onboarding.imagine.description" = "10 verbs that are most often used in speech are irregular! (be, get, go, say and so on)";
+"onboarding.three_forms.description" = "
+In order to avoid mistakes in English tenses, it is necessary to know three forms of the verb:
+infinitive,
+past tense,
+past participle
+";
+"onboarding.regular_verbs.description" = "The 2nd and 3rd forms of regular verbs are formed using the endings -ed: close, closed, closed";
+"onboarding.irregular_verbs.description" = "The 2nd and 3rd forms of irregular verbs must be remembered";
+"onboarding.are_you_ready_for_it.description" = "So... Shall we begin/began/begun?";

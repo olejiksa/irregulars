@@ -31,13 +31,14 @@ struct OnboardingView: View {
                 
                 Button {
                     if viewModel.isLast {
-                        viewModel.finishFlow()
+                        viewModel.finish()
                         dismiss()
                     } else {
+                        viewModel.continue()
                         viewModel.selection += 1
                     }
                 } label: {
-                    Text(viewModel.isLast ? "Начать" : "Продолжить")
+                    Text(viewModel.isLast ? "start" : "continue")
                         .frame(width: 200)
                         .padding()
                 }
@@ -53,14 +54,17 @@ struct OnboardingView: View {
             .preferredColorScheme(.light)
             .animation(.easeOut(duration: 0.2), value: viewModel.selection)
             .transition(.slide)
-            .preferredColorScheme(.light)
+            .preferredColorScheme(.dark)
             .padding()
+//            .navigationTitle("welcome")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-                        
+                        viewModel.close()
+                        dismiss()
                     }) {
-                        SystemIcon.close.imageSwiftUI
+                        SystemIcon.close.imageSwiftUI?.foregroundColor(.white)
                     }
                 }
             }
