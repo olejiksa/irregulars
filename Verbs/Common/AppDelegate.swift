@@ -50,14 +50,9 @@ extension AppDelegate: UIApplicationDelegate {
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        SKPaymentQueue.default().add(Locator.purchaseService)
         UNUserNotificationCenter.current().delegate = self
         AnalyticsService().start()
         return true
-    }
-    
-    func applicationWillTerminate(_ application: UIApplication) {
-        SKPaymentQueue.default().remove(Locator.purchaseService)
     }
 }
 
@@ -67,7 +62,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
-                                withCompletionHandler completionHandler: @escaping () -> Void) {
+                                withCompletionHandler completionHandler: @escaping Block) {
         let scene = UIApplication.shared.connectedScenes.first
         let sd = scene?.delegate as? SceneDelegate
         guard let splitViewController = sd?.window?.rootViewController as? SplitViewController else { return }

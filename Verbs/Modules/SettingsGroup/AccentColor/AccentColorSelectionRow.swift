@@ -46,7 +46,7 @@ struct AccentColorSelectionRow: View {
             rateService.requestReviewIfAppropriate(minimumReviewWorthyActionCount: 10)
         }
         .sheet(isPresented: $isShowingPaywall) {
-            Paywall()
+            PaywallView()
         }
     }
 }

@@ -6,6 +6,7 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
+import SwiftUI
 import UIKit
 
 final class ListRouter {
@@ -28,10 +29,9 @@ final class ListRouter {
     }
     
     func goToPaywall() {
-        let vc = PaywallAssembly().viewController()
-        let nvc = UINavigationController(rootViewController: vc)
-        nvc.modalPresentationStyle = .formSheet
-        navigationController?.present(nvc, animated: true)
+        let vc = UIHostingController(rootView: PaywallView())
+        vc.modalPresentationStyle = .formSheet
+        navigationController?.present(vc, animated: true)
     }
 }
 

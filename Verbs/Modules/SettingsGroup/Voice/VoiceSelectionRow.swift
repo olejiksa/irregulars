@@ -46,7 +46,7 @@ struct VoiceSelectionRow: View {
             Voice.current = selectedItem
         }
         .sheet(isPresented: $isShowingPaywall) {
-            Paywall()
+            PaywallView()
         }
     }
 }

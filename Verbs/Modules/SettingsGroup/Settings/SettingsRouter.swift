@@ -7,6 +7,7 @@
 //
 
 import SafariServices
+import SwiftUI
 import UIKit
 
 final class SettingsRouter {
@@ -32,10 +33,9 @@ final class SettingsRouter {
     }
     
     func goToPaywall() {
-        let vc = PaywallAssembly().viewController()
-        let nvc = UINavigationController(rootViewController: vc)
-        nvc.modalPresentationStyle = .formSheet
-        viewController?.present(nvc, animated: true)
+        let vc = UIHostingController(rootView: PaywallView())
+        vc.modalPresentationStyle = .formSheet
+        viewController?.present(vc, animated: true)
     }
     
     func goToAccentColor() {

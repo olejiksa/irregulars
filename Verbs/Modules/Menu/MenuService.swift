@@ -119,10 +119,9 @@ private extension MenuService {
     }
     
     @objc func upgradeToPro(_ action: UIAction) {
-        let vc = PaywallAssembly().viewController()
-        let nvc = UINavigationController(rootViewController: vc)
-        nvc.modalPresentationStyle = .formSheet
-        viewController?.present(nvc, animated: true)
+        let vc = UIHostingController(rootView: PaywallView())
+        vc.modalPresentationStyle = .formSheet
+        viewController?.present(vc, animated: true)
     }
     
     @objc func goToAcknowledgements(_ action: UIAction) {

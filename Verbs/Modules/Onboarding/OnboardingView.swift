@@ -56,7 +56,6 @@ struct OnboardingView: View {
             .transition(.slide)
             .preferredColorScheme(.dark)
             .padding()
-//            .navigationTitle("welcome")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

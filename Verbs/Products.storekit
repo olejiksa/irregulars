@@ -1,0 +1,50 @@
+{
+  "identifier" : "78E09FAB",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : true,
+      "internalID" : "1540491002",
+      "localizations" : [
+        {
+          "description" : "Tutte le funzioni a un prezzo accessibile",
+          "displayName" : "Pro",
+          "locale" : "it"
+        },
+        {
+          "description" : "Розблокуйте всі функції за доступною ціною",
+          "displayName" : "Pro",
+          "locale" : "uk"
+        },
+        {
+          "description" : "Unlock all features at an affordable price",
+          "displayName" : "Pro",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Разблокируйте все функции по доступной цене",
+          "displayName" : "Pro",
+          "locale" : "ru"
+        }
+      ],
+      "productID" : "com.olejiksa.Verbs.Pro",
+      "referenceName" : "Pro",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "1540487254",
+    "_developerTeamID" : "B2FMGUSH44",
+    "_lastSynchronizedDate" : 710274643.16972601
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}

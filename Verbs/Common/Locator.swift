@@ -15,7 +15,6 @@ struct Locator {
     
     static let favorites = Favorites()
     static let favoritesService = FavoritesService()
-    static let purchaseService = PurchaseService()
     static let statistics = Statistics()
     static let mistakes = Mistakes()
 }

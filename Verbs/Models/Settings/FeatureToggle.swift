@@ -23,7 +23,7 @@ struct FeatureToggle {
     }
     
     #if DEBUG
-    static var isDebug = true
+    static var isDebug = false
     static var arePhrasalsAvailable = false
     static var areNewTestsAvailable = false
     static var isNewTestListAvailable = false
@@ -38,7 +38,7 @@ struct FeatureToggle {
     
     static var isOnboardingAvailable: Bool {
         #if DEBUG
-        true
+        false
         #else
         !UserDefaults.shared.bool(for: .hasLaunchedBefore) &&
         (LanguageService().current == .russian || LanguageService().current == .english)
