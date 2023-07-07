@@ -16,7 +16,7 @@ final class PaywallViewModel: ObservableObject {
     private let hapticService = HapticService()
     
     @Published
-    var purchaseService = PurchaseService()
+    var purchaseService = Locator.purchaseService
     
     @Published
     var isBuyingPurchaseNotInProgress = true
@@ -47,9 +47,9 @@ final class PaywallViewModel: ObservableObject {
             
             do {
                 try await self?.purchaseService.purchase(product)
-                FeatureToggle.isPaid = true
             } catch {
                 self?.hapticService.generateHapticFeedback(for: .notification(.error))
+                print(error)
                 // self.router?.show(error: error)
             }
             
@@ -73,6 +73,7 @@ final class PaywallViewModel: ObservableObject {
                 try await self?.purchaseService.restorePurchases()
             } catch {
                 self?.hapticService.generateHapticFeedback(for: .notification(.error))
+                print(error)
                 // self.router?.show(error: error)
             }
             

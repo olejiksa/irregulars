@@ -18,17 +18,11 @@ final class AppIconService {
         let appIcon = AppIcon(color: color)
         
         guard UIApplication.shared.supportsAlternateIcons,
-              current != appIcon,
-              let name = appIcon.name else { return }
+              current != appIcon else { return }
         
         Task { @MainActor in
             do {
-                switch color {
-                case .blue:
-                    try await UIApplication.shared.setAlternateIconName(nil)
-                default:
-                    try await UIApplication.shared.setAlternateIconName(name)
-                }
+                try await UIApplication.shared.setAlternateIconName(appIcon.name)
             } catch {
                 print(error)
             }

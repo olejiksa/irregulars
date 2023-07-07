@@ -8,15 +8,13 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 struct FeatureToggle {
     
-    static var isPaid: Bool {
-        get {
-            UserDefaults.shared.bool(for: .isPaid)
-        }
-        set {
-            UserDefaults.shared.set(newValue, for: .isPaid)
+    @AppStorage(UserDefaults.Key.isPaid.rawValue, store: UserDefaults.shared)
+    static var isPaid: Bool = false {
+        didSet {
             NotificationCenter.default.post(name: .reload, object: nil)
             UIMenuSystem.main.setNeedsRebuild()
         }

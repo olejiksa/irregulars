@@ -18,6 +18,7 @@
 		E50CAFEF2A46347B0090E7B1 /* TestListNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CAFEE2A46347B0090E7B1 /* TestListNewView.swift */; };
 		E50CAFF12A4635890090E7B1 /* TestListNewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CAFF02A4635890090E7B1 /* TestListNewViewModel.swift */; };
 		E50CAFF32A4638D00090E7B1 /* TestListNewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CAFF22A4638D00090E7B1 /* TestListNewAssembly.swift */; };
+		E511C4912A5877B000A175FB /* PurchaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A249442A55F08300F43830 /* PurchaseService.swift */; };
 		E53CA7822A374AB40058A28E /* AccentColorSelectionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CA7812A374AB40058A28E /* AccentColorSelectionRow.swift */; };
 		E53CA7862A3752050058A28E /* PhrasalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CA7852A3752050058A28E /* PhrasalsView.swift */; };
 		E53CA7882A37521B0058A28E /* PhrasalsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53CA7872A37521B0058A28E /* PhrasalsAssembly.swift */; };
@@ -1970,6 +1971,7 @@
 				EBF59446258879770091FCE0 /* Intents.intentdefinition in Sources */,
 				EB355274260CB44F00C7EA3C /* Similarity.swift in Sources */,
 				EB26998C256D40DD007CCF2E /* Notification.swift in Sources */,
+				E511C4912A5877B000A175FB /* PurchaseService.swift in Sources */,
 				EB995B6025E518BC0082DE32 /* FavoritesService.swift in Sources */,
 				EBE605C725B86BA800EB1CB3 /* Language.swift in Sources */,
 				EBE605DE25B86C5600EB1CB3 /* Array+Safe.swift in Sources */,

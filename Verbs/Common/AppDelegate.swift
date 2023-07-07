@@ -14,8 +14,13 @@ import YandexMobileMetrica
 @UIApplicationMain
 final class AppDelegate: UIResponder {
 
+    private let analyticsService = AnalyticsService()
     private let deeplinkService = DeeplinkService()
     private let menuService = MenuService()
+    private let printService = PrintService()
+    private let purchaseService = Locator.purchaseService
+    private let verbsService = VerbsService()
+    private let languageService = LanguageService()
     
     override func buildMenu(with builder: UIMenuBuilder) {
         super.buildMenu(with: builder)
@@ -29,9 +34,6 @@ final class AppDelegate: UIResponder {
     }
     
     @objc func printFile() {
-        let printService = PrintService()
-        let verbsService = VerbsService()
-        let languageService = LanguageService()
         printService.print(verbsService.items, hasTranslation: languageService.hasTranslation)
     }
 
@@ -44,6 +46,22 @@ final class AppDelegate: UIResponder {
     }
 }
 
+// MARK: - Private
+
+private extension AppDelegate {
+    
+    func initializePurchaseActivity() {
+        Task {
+            do {
+                await purchaseService.updatePurchasedProducts()
+                try await purchaseService.loadProducts()
+            } catch {
+                print(error)
+            }
+        }
+    }
+}
+
 // MARK: - UIApplicationDelegate
 
 extension AppDelegate: UIApplicationDelegate {
@@ -51,7 +69,8 @@ extension AppDelegate: UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UNUserNotificationCenter.current().delegate = self
-        AnalyticsService().start()
+        initializePurchaseActivity()
+        analyticsService.start()
         return true
     }
 }

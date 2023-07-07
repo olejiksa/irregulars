@@ -60,6 +60,7 @@ struct PaywallView: View {
                         Text("thank_you")
                             .font(.headline)
                             .foregroundColor(.accentColor)
+                            .padding()
                     } else {
                         if viewModel.canMakePayments {
                             ForEach(viewModel.purchaseService.products) { product in
@@ -115,15 +116,7 @@ struct PaywallView: View {
                     }
                 }
             }
-        }.task {
-            Task {
-                do {
-                    try await viewModel.purchaseService.loadProducts()
-                } catch {
-                    print(error)
-                }
-            }
-       }
+        }
     }
 }
 

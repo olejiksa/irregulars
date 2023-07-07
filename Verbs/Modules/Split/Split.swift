@@ -10,6 +10,9 @@ import SwiftUI
 
 struct Split: UIViewControllerRepresentable {
     
+    @EnvironmentObject
+    private var purchaseService: PurchaseService
+    
     func makeUIViewController(context: Context) -> SplitViewController {
         let splitViewController = SplitViewController()
         let sidebarViewController = SidebarAssembly().viewController()
