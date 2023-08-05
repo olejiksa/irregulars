@@ -43,4 +43,10 @@ final class CalendarService {
         let components = DateComponents(hour: hour, minute: minute)
         return Calendar.autoupdatingCurrent.date(from: components)
     }
+    
+    func minutes(from date: Date) -> Int? {
+        let components = Calendar.autoupdatingCurrent.dateComponents([.hour, .minute], from: date)
+        guard let hour = components.hour, let minute = components.minute else { return nil }
+        return hour * 60 + minute
+    }
 }

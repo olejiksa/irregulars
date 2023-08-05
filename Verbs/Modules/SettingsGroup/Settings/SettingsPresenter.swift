@@ -72,10 +72,6 @@ private extension SettingsPresenter {
         ])
     }
     
-    func didPlaybackSpeedChange(_ value: Int) {
-        UserDefaults.shared.set(value, for: .playbackSpeed)
-    }
-    
     func willShowSystemAppSettings(_ sender: ItemProtocol) {
         guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
         router?.open(url)
@@ -151,10 +147,12 @@ private extension SettingsPresenter {
     }
     
     func updateNotificationsAvailability() {
-        notificationService.checkAvailability { [weak self] result in
-            guard let self = self else { return }
-            Locator.areNotificationsAvailable = result
-            DispatchQueue.main.async {
+        Task { [weak self] in
+            guard let self else { return }
+            
+            Locator.areNotificationsAvailable = await self.notificationService.isAvailable
+            
+            Task { @MainActor in
                 self.setupItems()
                 self.viewController?.reloadData()
             }

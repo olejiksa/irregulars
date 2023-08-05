@@ -49,7 +49,7 @@ final class SettingsRouter {
     }
     
     func goToNotifications() {
-        let vc = NotificationsAssembly().viewController()
+        let vc = UIHostingController(rootView: NotificationsView())
         viewController?.navigationController?.push(vc)
     }
     

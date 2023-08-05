@@ -21,33 +21,41 @@ final class NotificationService {
         self.calendarService = calendarService
     }
     
-    func checkAvailability(availabilityBlock: @escaping BoolBlock) {
-        center.getNotificationSettings { [weak self] in
-            switch $0.authorizationStatus {
+    var isAvailable: Bool {
+        get async {
+            let settings = await center.notificationSettings()
+            
+            switch settings.authorizationStatus {
             case .authorized, .notDetermined:
-                availabilityBlock(true)
+                defer {
+                    if UserDefaults.shared.bool(for: .notifications) {
+                        schedule()
+                    } else {
+                        clean()
+                    }
+                }
                 
-                UserDefaults.shared.bool(for: .notifications) ?
-                    self?.schedule() :
-                    self?.clean()
+                return true
             default:
-                availabilityBlock(false)
+                return false
             }
         }
     }
     
-    func authorize() {
-        DispatchQueue.main.async {
-            self.center.requestAuthorization(options: [.alert, .sound]) { [weak self] in
-                guard let self = self, $0, $1 == nil else { return }
-                UserDefaults.shared.set(true, for: .notifications)
-                self.schedule()
-            }
+    func authorize() async -> Bool {
+        let result = try? await self.center.requestAuthorization(options: [.alert, .sound])
+        
+        if result == true {
+            UserDefaults.shared.set(true, for: .notifications)
+            schedule()
+            return true
+        } else {
+            return false
         }
     }
     
     func deauthorize() {
-        DispatchQueue.main.async {
+       Task {
             UserDefaults.shared.set(false, for: .notifications)
         }
     }
@@ -133,8 +141,6 @@ private extension Date {
         var dateComponents = DateComponents()
         dateComponents.day = days
 
-        return Calendar.current.date(byAdding: dateComponents, to: self)
+        return Calendar.autoupdatingCurrent.date(byAdding: dateComponents, to: self)
     }
-    
-    
 }

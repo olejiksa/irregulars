@@ -16,26 +16,37 @@ struct SettingsView: View {
         NavigationStack {
             List {
                 Section("general") {
-                    Link("language", destination: URL(string: UIApplication.openSettingsURLString)!)
+                    Link(destination: URL(string: UIApplication.openSettingsURLString)!) {
+                        RightDetailRowView(title: "language".localized, subtitle: viewModel.language)
+                    }
                     NavigationLink("accent_color") {
                         AccentColorView()
                     }
                     NavigationLink("voice") {
                         VoiceView()
                     }
-//                    NavigationLink("notifications") {
-//                        NotificationsView()
-//                    }
+                    NavigationLink("notifications") {
+                        NotificationsView()
+                    }
                 }
                 Section("links") {
-                    // Link("rate_and_review", destination: viewModel.rateURL!)
-                    // Text("share_app")
                     Link("privacy_policy", destination: viewModel.privacyPolicyURL!)
                     Link("terms", destination: viewModel.termsURL!)
-                    // Link("contact_us", destination: viewModel.rateURL!)
+                    Button("contact_us") {
+                        viewModel.openMail()
+                    }
+                    .disabled(!viewModel.canOpenMail)
+                    Button("rate_and_review") {
+                        viewModel.rateAndReview()
+                    }
+                    .disabled(!viewModel.canOpenRateAndReview)
+                    ShareLink("share_app", item: viewModel.webURL!)
                 }
                 Section("about") {
-                    RightDetailRowView(title: "developer".localized, subtitle: "oleg_samoylov".localized)
+                    Link(destination: viewModel.developerURL!) {
+                        RightDetailRowView(title: "developer".localized, subtitle: "oleg_samoylov".localized)
+                    }
+                    .disabled(!viewModel.canOpenAllApps)
                     RightDetailRowView(title: "edition".localized, subtitle: viewModel.edition)
                     RightDetailRowView(title: "version".localized, subtitle: viewModel.version)
                     NavigationLink("acknowledgements") {

@@ -158,7 +158,7 @@ private extension MenuService {
         guard let top = viewController?.secondaryViewController?.topViewController,
               !(top is UIHostingController<AcknowledgementsView>) else { return }
         
-        let vc = NotificationsAssembly().viewController()
+        let vc = UIHostingController(rootView: NotificationsView())
         viewController?.secondaryViewController?.push(vc)
     }
     

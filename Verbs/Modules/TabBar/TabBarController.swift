@@ -18,7 +18,6 @@ final class TabBarController: UITabBarController {
         
     init(splitViewController: UISplitViewController?) {
         super.init(nibName: nil, bundle: nil)
-        UITabBar.appearance().scrollEdgeAppearance = .init(idiom: .unspecified)
         build(in: splitViewController)
         delegate = self
     }

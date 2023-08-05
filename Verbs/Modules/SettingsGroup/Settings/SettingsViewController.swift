@@ -68,10 +68,8 @@ private extension SettingsViewController {
         tableView.dataSource = presenter.dataSource
         tableView.delegate = presenter
         
-        tableView.register(SwitchCell.self,
-                           DisclosureCell.self,
+        tableView.register(DisclosureCell.self,
                            RightDetailCell.self,
-                           TimePickerCell.self,
                            ActionCell.self,
                            SliderCell.self)
         
