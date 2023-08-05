@@ -12,6 +12,8 @@ struct VoiceSelectionRow: View {
     
     let item: Voice
     @Binding var selectedItem: Voice?
+    let onTap: (Voice) -> Void
+    
     @State private var isShowingPaywall = false
     
     var body: some View {
@@ -43,7 +45,7 @@ struct VoiceSelectionRow: View {
             }
             
             selectedItem = item
-            Voice.current = selectedItem
+            onTap(item)
         }
         .sheet(isPresented: $isShowingPaywall) {
             PaywallView()

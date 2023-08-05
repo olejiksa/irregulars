@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 enum TabBarItem: Int {
     case all
@@ -16,8 +17,7 @@ enum TabBarItem: Int {
     
     init?(supplementary: UIViewController, secondary: UIViewController) {
         switch (supplementary, secondary) {
-        case (_, is SettingsViewController),
-             (_, is SettingsChildViewControllerProtocol):
+        case (_, is UIHostingController<SettingsView>):
             self = .settings
         case (let vc as ListViewController, _):
             self = vc.favoritesOnly ? .favorites : .all

@@ -10,6 +10,8 @@ import SwiftUI
 
 struct VoiceView: View {
     
+    @StateObject var settingsViewModel: SettingsViewModel
+    
     @StateObject private var viewModel = VoiceViewModel()
     
     var body: some View {
@@ -17,7 +19,10 @@ struct VoiceView: View {
             ForEach(Gender.allCases, id: \.self) { gender in
                 Section(gender.description) {
                     ForEach(viewModel.items(for: gender)) { item in
-                        VoiceSelectionRow(item: item, selectedItem: $viewModel.selectedItem)
+                        VoiceSelectionRow(item: item, selectedItem: $viewModel.selectedItem) {
+                            Voice.current = $0
+                            settingsViewModel.voice = $0
+                        }
                     }
                 }
             }
@@ -44,7 +49,7 @@ struct VoiceView_Previews: PreviewProvider {
     
     static var previews: some View {
         NavigationView {
-            VoiceView()
+            VoiceView(settingsViewModel: .init())
         }
     }
 }

@@ -10,11 +10,16 @@ import SwiftUI
 
 struct AccentColorView: View {
     
+    @StateObject var settingsViewModel: SettingsViewModel
+    
     private let appIconService = AppIconService()
+    private let rateService = RateService()
+    
     @State private var selectedItem: AccentColor? = .current
     
-    init() {
+    init(settingsViewModel: SettingsViewModel) {
         AnalyticsService().send(event: .accentColorOpened)
+        _settingsViewModel = StateObject(wrappedValue: settingsViewModel)
     }
 
     var body: some View {
@@ -22,7 +27,11 @@ struct AccentColorView: View {
             List {
                 Section {
                     ForEach(AccentColor.allCases, id: \.self) { item in
-                        AccentColorSelectionRow(item: item, selectedItem: $selectedItem)
+                        AccentColorSelectionRow(item: item, selectedItem: $selectedItem) {
+                            AccentColor.current = $0
+                            settingsViewModel.accentColor = $0
+                            rateService.requestReviewIfAppropriate(minimumReviewWorthyActionCount: 10)
+                        }
                     }
                 }
                 
@@ -44,7 +53,7 @@ struct AccentColorView_Previews: PreviewProvider {
     
     static var previews: some View {
         NavigationView {
-            AccentColorView()
+            AccentColorView(settingsViewModel: .init())
         }
     }
 }

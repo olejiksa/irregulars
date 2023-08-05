@@ -128,7 +128,10 @@ private extension MenuService {
         guard let top = viewController?.secondaryViewController?.topViewController,
               !(top is UIHostingController<AcknowledgementsView>) else { return }
         
-        let vc = AcknowledgementsAssembly().viewController
+        let view = AcknowledgementsView()
+        let vc = UIHostingController(rootView: view)
+        vc.title = String.localized(.acknowledgements)
+        vc.hidesBottomBarWhenPushed = true
         viewController?.navigationController?.view?.backgroundColor = .systemBackground
         viewController?.secondaryViewController?.push(vc)
     }
@@ -150,7 +153,10 @@ private extension MenuService {
         guard let top = viewController?.secondaryViewController?.topViewController,
               !(top is UIHostingController<VoiceView>) else { return }
         
-        let vc = VoiceAssembly().viewController
+        let view = VoiceView(settingsViewModel: .init())
+        let vc = UIHostingController(rootView: view)
+        vc.title = String.localized(.voice)
+        vc.hidesBottomBarWhenPushed = true
         viewController?.secondaryViewController?.push(vc)
     }
     
@@ -158,7 +164,7 @@ private extension MenuService {
         guard let top = viewController?.secondaryViewController?.topViewController,
               !(top is UIHostingController<AcknowledgementsView>) else { return }
         
-        let vc = UIHostingController(rootView: NotificationsView())
+        let vc = UIHostingController(rootView: NotificationsView(settingsViewModel: .init()))
         viewController?.secondaryViewController?.push(vc)
     }
     

@@ -16,20 +16,20 @@ struct AcknowledgementsView: View {
     
     var body: some View {
         List {
-            Section(String.localized(.sentences)) {
-                Text(String.localized(.sofiaSokolova))
+            Section("sentences") {
+                Text("sofia_sokolova")
             }
-            Section(String.localized(.betaTesting)) {
+            Section("beta_testing") {
                 Text([.localized(.sofiaSokolova),
                       .localized(.artemShumilov),
                       .localized(.elizabethKeplin),
                       .localized(.vladislavPlotnikov)].joined(separator: ", "))
             }
             Section(String.localized(.translation)) {
-                RightDetailRowView(title: .localized(.polinaLitvinova), subtitle: Language.german.description)
-                RightDetailRowView(title: .localized(.julianEduardo), subtitle: Language.spanish.description)
-                RightDetailRowView(title: .localized(.tatianaPerfilieva), subtitle: Language.korean.description)
-                RightDetailRowView(title: .localized(.anastasiaOvcharenko), subtitle: Language.ukrainian.description)
+                RightDetailRow(title: "paulina_litvinova", subtitle: Language.german.description)
+                RightDetailRow(title: "julian_eduardo_couoh_pablo", subtitle: Language.spanish.description)
+                RightDetailRow(title: "tatiana_perfilieva", subtitle: Language.korean.description)
+                RightDetailRow(title: "anastasia_ovcharenko", subtitle: Language.ukrainian.description)
             }
         }
         .navigationTitle("acknowledgements")

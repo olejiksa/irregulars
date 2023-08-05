@@ -10,6 +10,8 @@ import SwiftUI
 
 struct NotificationsView: View {
     
+    @StateObject var settingsViewModel: SettingsViewModel
+    
     @StateObject private var viewModel = NotificationsViewModel()
     
     var body: some View {
@@ -20,9 +22,12 @@ struct NotificationsView: View {
                 if viewModel.areNotificationsAvailable {
                     Toggle("notifications", isOn: $viewModel.areNotificationsEnabled)
                         .tint(AccentColor.current.colorSwiftUI)
+                        .onChange(of: viewModel.areNotificationsEnabled) { newValue in
+                            settingsViewModel.notificationsAvailability = newValue ? .enabled : .disabled
+                        }
                 } else {
                     Link(destination: URL(string: UIApplication.openNotificationSettingsURLString)!) {
-                        RightDetailRowView(title: "notifications".localized, subtitle: "not_allowed".localized)
+                        RightDetailRow(title: "notifications", subtitle: "not_allowed".localized)
                     }
                 }
             }
@@ -60,7 +65,7 @@ struct NotificationsView_Previews: PreviewProvider {
     
     static var previews: some View {
         NavigationView {
-            NotificationsView()
+            NotificationsView(settingsViewModel: .init())
         }
     }
 }

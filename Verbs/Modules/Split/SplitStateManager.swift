@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 final class SplitStateManager: UISplitViewControllerDelegate {
     
@@ -46,7 +47,7 @@ final class SplitStateManager: UISplitViewControllerDelegate {
         (secondaryViewController as? Restorable)?.restore()
         
         switch secondaryViewController {
-        case is SettingsViewController:
+        case is UIHostingController<SettingsView>:
             let navigationController = UINavigationController(rootViewController: secondaryViewController)
             navigationController.tabBarItem = .init(title: "settings".localized,
                                                     image: SystemIcon.gearFill.image,

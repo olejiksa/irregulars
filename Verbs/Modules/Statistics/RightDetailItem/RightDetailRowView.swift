@@ -1,5 +1,5 @@
 //
-//  RightDetailRowView.swift
+//  RightDetailRow.swift
 //  Verbs
 //
 //  Created by Oleg Samoylov on 6/9/23.
@@ -8,9 +8,9 @@
 
 import SwiftUI
 
-struct RightDetailRowView: View {
+struct RightDetailRow: View {
     
-    let title: String
+    let title: LocalizedStringKey
     let subtitle: String
     
     var body: some View {

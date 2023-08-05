@@ -9,10 +9,25 @@
 import Foundation
 import UIKit
 
-struct SettingsViewModel {
+final class SettingsViewModel: ObservableObject {
+    
+    init() {
+        updateNotificationsAvailability()
+    }
+    
+    // MARK: Services
     
     private let languageService = LanguageService()
     private let mailService = MailService()
+    private let notificationService = NotificationService(verbsService: .init(), calendarService: .init())
+    
+    // MARK: Published
+    
+    @Published var notificationsAvailability: NotificationsAvailability = .notAllowed
+    @Published var accentColor: AccentColor = .current
+    @Published var voice: Voice? = .current
+    
+    // MARK: Links
     
     let developerURL = URL(string: "itms-apps://apps.apple.com/developer/id1460125465")
     let webURL = URL(string: "https://apps.apple.com/app/id1540487254")
@@ -34,6 +49,8 @@ struct SettingsViewModel {
         return components?.url
     }
     
+    // MARK: Properties
+    
     var edition: String {
         "\(Bundle.main.productName ?? "") \(FeatureToggle.editionName)"
     }
@@ -45,6 +62,8 @@ struct SettingsViewModel {
     var language: String {
         languageService.current.description
     }
+    
+    // MARK: - Can open
     
     var canOpenMail: Bool {
         mailService.isMailAvailable
@@ -58,6 +77,8 @@ struct SettingsViewModel {
         UIApplication.shared.canOpenURL(rateURL!)
     }
     
+    // MARK: - Methods
+    
     func openMail() {
         mailService.present()
     }
@@ -66,6 +87,20 @@ struct SettingsViewModel {
         Task { @MainActor in
             guard let rateURL else { return }
             await UIApplication.shared.open(rateURL)
+        }
+    }
+    
+    func updateNotificationsAvailability() {
+        Task { @MainActor [weak self] in
+            guard let self else { return }
+            
+            let result = await self.notificationService.isAvailable
+            
+            if result {
+                self.notificationsAvailability = UserDefaults.shared.bool(for: .notifications) ? .enabled : .disabled
+            } else {
+                self.notificationsAvailability = .notAllowed
+            }
         }
     }
 }

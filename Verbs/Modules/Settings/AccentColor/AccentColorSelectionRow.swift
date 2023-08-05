@@ -10,10 +10,10 @@ import SwiftUI
 
 struct AccentColorSelectionRow: View {
     
-    private let rateService = RateService()
-    
     let item: AccentColor
     @Binding var selectedItem: AccentColor?
+    let onTap: (AccentColor) -> Void
+    
     @State private var isShowingPaywall = false
     
     var body: some View {
@@ -42,8 +42,7 @@ struct AccentColorSelectionRow: View {
             }
             
             selectedItem = item
-            AccentColor.current = selectedItem ?? .blue
-            rateService.requestReviewIfAppropriate(minimumReviewWorthyActionCount: 10)
+            onTap(item)
         }
         .sheet(isPresented: $isShowingPaywall) {
             PaywallView()
