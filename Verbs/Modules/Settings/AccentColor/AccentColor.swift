@@ -11,15 +11,18 @@ import SwiftUI
 
 enum AccentColor: String, CaseIterable {
     
-    case blue
+    case red
     case green
-    case indigo
+    case blue
     case orange
+    case yellow
     case pink
     case purple
-    case red
     case teal
-    case yellow
+    case indigo
+    case brown
+    case mint
+    case cyan
     
     static var current: AccentColor {
         get {
@@ -47,6 +50,9 @@ enum AccentColor: String, CaseIterable {
         case .red: return .systemRed
         case .teal: return .systemTeal
         case .yellow: return .systemYellow
+        case .brown: return .systemBrown
+        case .mint: return .systemMint
+        case .cyan: return .systemCyan
         }
     }
     

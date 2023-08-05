@@ -1170,3 +1170,7 @@
 "allow_access" = "Allow access";
 "insufficient_permissions" = "The app does not have access to the microphone";
 "phrasal_verbs" = "Phrasal verbs";
+
+"cyan" = "Cyan";
+"brown" = "Brown";
+"mint" = "Mint";

@@ -454,3 +454,7 @@ past participle
 "onboarding.regular_verbs.description" = "The 2nd and 3rd forms of regular verbs are formed using the endings -ed: close, closed, closed";
 "onboarding.irregular_verbs.description" = "The 2nd and 3rd forms of irregular verbs must be remembered";
 "onboarding.are_you_ready_for_it.description" = "So... Shall we begin/began/begun?";
+
+"cyan" = "Cyan";
+"brown" = "Brown";
+"mint" = "Mint";

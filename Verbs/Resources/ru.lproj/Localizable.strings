@@ -453,3 +453,7 @@
 "onboarding.regular_verbs.description" = "2-я и 3-я формы правильных глаголов образуются с помощью окончания -ed: close (закрывать), closed (закрыл), closed (закрыл, закрыт, закрытый)";
 "onboarding.irregular_verbs.description" = "Образование 2-й и 3-й формы у неправильных глаголов нужно запоминать";
 "onboarding.are_you_ready_for_it.description" = "So... Shall we begin/began/begun?";
+
+"cyan" = "Бирюзовый";
+"brown" = "Коричневый";
+"mint" = "Мятный";
