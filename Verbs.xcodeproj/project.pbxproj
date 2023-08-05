@@ -219,8 +219,6 @@
 		EBB3BC10251F3545006E0DC7 /* KeyboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3BC0F251F3545006E0DC7 /* KeyboardService.swift */; };
 		EBB3BC15251F4BAA006E0DC7 /* irregulars.json in Resources */ = {isa = PBXBuildFile; fileRef = EBB3BC14251F4BAA006E0DC7 /* irregulars.json */; };
 		EBB3BC17251F4D60006E0DC7 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3BC16251F4D60006E0DC7 /* JSONParser.swift */; };
-		EBB42C2426148D7E008CB9A5 /* SpeakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB42C2226148D7E008CB9A5 /* SpeakingViewController.swift */; };
-		EBB42C2526148D7E008CB9A5 /* SpeakingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBB42C2326148D7E008CB9A5 /* SpeakingView.xib */; };
 		EBB42C4F2615B5D2008CB9A5 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB42C4D2615B5D2008CB9A5 /* RecordCell.swift */; };
 		EBB42C502615B5D2008CB9A5 /* RecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBB42C4E2615B5D2008CB9A5 /* RecordCell.xib */; };
 		EBB42C582615B9C7008CB9A5 /* RecordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB42C572615B9C7008CB9A5 /* RecordItem.swift */; };
@@ -599,8 +597,6 @@
 		EBB3BC0F251F3545006E0DC7 /* KeyboardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardService.swift; sourceTree = "<group>"; };
 		EBB3BC14251F4BAA006E0DC7 /* irregulars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = irregulars.json; sourceTree = "<group>"; };
 		EBB3BC16251F4D60006E0DC7 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
-		EBB42C2226148D7E008CB9A5 /* SpeakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakingViewController.swift; sourceTree = "<group>"; };
-		EBB42C2326148D7E008CB9A5 /* SpeakingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeakingView.xib; sourceTree = "<group>"; };
 		EBB42C4D2615B5D2008CB9A5 /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
 		EBB42C4E2615B5D2008CB9A5 /* RecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordCell.xib; sourceTree = "<group>"; };
 		EBB42C572615B9C7008CB9A5 /* RecordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordItem.swift; sourceTree = "<group>"; };
@@ -962,7 +958,6 @@
 				EB59AF8825AAECDA005A212C /* Popover */,
 				E53CA7892A375A0C0058A28E /* SettingsGroup */,
 				EBD476DD2553ADA10033067B /* Sidebar */,
-				EBB42C2126148D54008CB9A5 /* Speaking */,
 				EB7DFF592524497A000B711D /* Split */,
 				EBF593612583B27B0091FCE0 /* Statistics */,
 				EB55475925540827001C5585 /* TabBar */,
@@ -1383,15 +1378,6 @@
 				EBF593852583CC530091FCE0 /* Localizable.stringsdict */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		EBB42C2126148D54008CB9A5 /* Speaking */ = {
-			isa = PBXGroup;
-			children = (
-				EBB42C2226148D7E008CB9A5 /* SpeakingViewController.swift */,
-				EBB42C2326148D7E008CB9A5 /* SpeakingView.xib */,
-			);
-			path = Speaking;
 			sourceTree = "<group>";
 		};
 		EBB42C382615B54F008CB9A5 /* RecordItem */ = {
@@ -1865,7 +1851,6 @@
 				EB2E4B9825741832005B343A /* teal@3x.png in Resources */,
 				EB2E4B9325741832005B343A /* purple@2x.png in Resources */,
 				EBB95BE6253326CE00376C3F /* Localizable.strings in Resources */,
-				EBB42C2526148D7E008CB9A5 /* SpeakingView.xib in Resources */,
 				EBF5948D2589030E0091FCE0 /* indigo@3x~ipad.png in Resources */,
 				EB2E4B9125741832005B343A /* yellow@3x.png in Resources */,
 				EBF594842589030E0091FCE0 /* green@3x~ipad.png in Resources */,
@@ -2176,7 +2161,6 @@
 				EB7B8579253B0D5900542D3C /* DisclosureCell.swift in Sources */,
 				EB68F73F25D584B600D6DF63 /* NotificationsPresenter.swift in Sources */,
 				EBB01C1B2521874E00BB646B /* TableView.swift in Sources */,
-				EBB42C2426148D7E008CB9A5 /* SpeakingViewController.swift in Sources */,
 				E5059C372A39D45B00891998 /* VoiceViewModel.swift in Sources */,
 				EB269983256D3F9F007CCF2E /* PickerItem.swift in Sources */,
 				EBF594C0258934950091FCE0 /* Intents.intentdefinition in Sources */,
@@ -2378,7 +2362,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.8.8;
+				MARKETING_VERSION = 1.8.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2405,7 +2389,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.8.8;
+				MARKETING_VERSION = 1.8.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2600,7 +2584,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.8.8;
+				MARKETING_VERSION = 1.8.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = Irregulars;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2632,7 +2616,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.8.8;
+				MARKETING_VERSION = 1.8.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs;
 				PRODUCT_NAME = Irregulars;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2660,7 +2644,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.8.8;
+				MARKETING_VERSION = 1.8.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidgetIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2685,7 +2669,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.8.8;
+				MARKETING_VERSION = 1.8.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olejiksa.Verbs.VerbsWidgetIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

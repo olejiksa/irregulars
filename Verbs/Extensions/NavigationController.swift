@@ -23,7 +23,6 @@ extension UINavigationController {
         let secondaryVc = splitViewController.secondaryViewController
         if secondaryVc?.topViewController is SettingsViewController ||
             secondaryVc?.topViewController is TestViewController ||
-            secondaryVc?.topViewController is SpeakingViewController ||
             secondaryVc?.topViewController is StatisticsViewController ||
             secondaryVc?.topViewController is SettingsChildViewControllerProtocol {
             secondaryVc?.popToRootViewController(animated: false)
