@@ -10,27 +10,48 @@ import SwiftUI
 
 struct SettingsView: View {
     
+    private let viewModel = SettingsViewModel()
+    
     var body: some View {
-        List {
-            Section("deactivation".localized) {
-                Text("downgrade_to".localized)
+        NavigationStack {
+            List {
+                Section("general") {
+                    Link("language", destination: URL(string: UIApplication.openSettingsURLString)!)
+                    NavigationLink("accent_color") {
+                        AccentColorView()
+                    }
+                    NavigationLink("voice") {
+                        VoiceView()
+                    }
+//                    NavigationLink("notifications") {
+//                        NotificationsView()
+//                    }
+                }
+                Section("links") {
+                    // Link("rate_and_review", destination: viewModel.rateURL!)
+                    // Text("share_app")
+                    Link("privacy_policy", destination: viewModel.privacyPolicyURL!)
+                    Link("terms", destination: viewModel.termsURL!)
+                    // Link("contact_us", destination: viewModel.rateURL!)
+                }
+                Section("about") {
+                    RightDetailRowView(title: "developer".localized, subtitle: "oleg_samoylov".localized)
+                    RightDetailRowView(title: "edition".localized, subtitle: viewModel.edition)
+                    RightDetailRowView(title: "version".localized, subtitle: viewModel.version)
+                    NavigationLink("acknowledgements") {
+                        AcknowledgementsView()
+                    }
+                }
             }
-            Section("general".localized) {
-                Text("language".localized)
-                Text("accent_color".localized)
-                Text("voice".localized)
-                Text("notifications".localized)
-            }
-            Section("links".localized) {
-                Text("rate_and_review".localized)
-                Text("rate_and_review".localized)
-                Text("rate_and_review".localized)
-                Text("terms_of_service".localized)
-                Text("contacts_us".localized)
-            }
-            Section("about".localized) {
-                Text("developer".localized)
-            }
+            .navigationTitle("settings")
+            .navigationBarTitleDisplayMode(.inline)
         }
+    }
+}
+
+struct SettingsView_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        SettingsView()
     }
 }

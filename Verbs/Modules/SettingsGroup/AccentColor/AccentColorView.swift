@@ -32,7 +32,19 @@ struct AccentColorView: View {
                     }
                 }
             }
+            .navigationTitle("accent_color")
+            .navigationBarTitleDisplayMode(.inline)
+            .listStyle(.insetGrouped)
             .environment(\.defaultMinListRowHeight, 44)
+        }
+    }
+}
+
+struct AccentColorView_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        NavigationView {
+            AccentColorView()
         }
     }
 }

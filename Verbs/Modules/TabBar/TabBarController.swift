@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 protocol Scrollable {
     
@@ -17,6 +18,7 @@ final class TabBarController: UITabBarController {
         
     init(splitViewController: UISplitViewController?) {
         super.init(nibName: nil, bundle: nil)
+        UITabBar.appearance().scrollEdgeAppearance = .init(idiom: .unspecified)
         build(in: splitViewController)
         delegate = self
     }
@@ -56,7 +58,7 @@ private extension TabBarController {
         let testsViewController = !FeatureToggle.isNewTestListAvailable
         ? TestsAssembly(splitViewController: svc).viewController().navigationController
         : TestListNewAssembly().viewController
-        let settingsViewController = SettingsAssembly().viewController().navigationController
+        let settingsViewController = UIHostingController(rootView: SettingsView())
         
         compound(items: [(listViewController, "verbs".localized, .bookFill, .verbsTab),
                          (favoritesViewController, "favorites".localized, .starFill, .favoritesTab),

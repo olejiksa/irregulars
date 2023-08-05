@@ -11,10 +11,12 @@ final class NotificationsAssembly: AssemblyProtocol {
     func viewController() -> some NotificationsViewController {
         let presenter = NotificationsPresenter(notificationService: .init(verbsService: .init(),
                                                                           calendarService: .init()))
-        let viewConroller = NotificationsViewController(presenter: presenter)
-        let router = NotificationsRouter(viewController: viewConroller)
-        presenter.viewController = viewConroller
+        let viewController = NotificationsViewController(presenter: presenter)
+        viewController.title = String.localized(.accentColor)
+        viewController.hidesBottomBarWhenPushed = true
+        let router = NotificationsRouter(viewController: viewController)
+        presenter.viewController = viewController
         presenter.router = router
-        return viewConroller
+        return viewController
     }
 }

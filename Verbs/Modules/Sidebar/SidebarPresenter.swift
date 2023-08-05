@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 final class SidebarPresenter: NSObject {
     
@@ -164,11 +165,8 @@ private extension SidebarPresenter {
                                             userInfo: [Notification.Name.sidebar: false])
         case RowIdentifier.settings:
             viewController?.select(at: selectedIndexPath)
-            let nvc = splitViewController.secondaryViewController
-            let vc = SettingsAssembly(navigationController: nvc).viewController()
-            guard !(nvc?.topViewController is SettingsViewController) else { return }
-            nvc?.popToRootViewController(animated: false)
-            nvc?.pushViewController(vc, animated: true)
+            let vc = CustonHostingController(shouldShowNavigationBar: false, rootView: SettingsView())
+            splitViewController.setViewController(vc, for: .secondary)
         default:
             break
         }
@@ -227,5 +225,16 @@ extension SidebarPresenter: UICollectionViewDropDelegate {
               destinationIndexPath.section == SidebarSection.verbs.rawValue,
               sidebarItem.id == RowIdentifier.favorites else { return .init(operation: .forbidden) }
         return .init(operation: .copy, intent: .insertIntoDestinationIndexPath)
+    }
+}
+
+final class CustonHostingController<Content>: UIHostingController<AnyView> where Content : View {
+    
+    public init(shouldShowNavigationBar: Bool, rootView: Content) {
+        super.init(rootView: AnyView(rootView.navigationBarHidden(!shouldShowNavigationBar)))
+    }
+    
+    @objc required dynamic init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

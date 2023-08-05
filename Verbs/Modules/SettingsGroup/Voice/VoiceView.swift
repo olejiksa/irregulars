@@ -27,6 +27,8 @@ struct VoiceView: View {
                     .foregroundColor(.secondary)
             }
         }
+        .navigationTitle("voice")
+        .navigationBarTitleDisplayMode(.inline)
         .environment(\.defaultMinListRowHeight, 60)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -34,6 +36,15 @@ struct VoiceView: View {
                     viewModel.isPlaying ? SystemIcon.stop.imageSwiftUI : SystemIcon.play.imageSwiftUI
                 }
             }
+        }
+    }
+}
+
+struct VoiceView_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        NavigationView {
+            VoiceView()
         }
     }
 }

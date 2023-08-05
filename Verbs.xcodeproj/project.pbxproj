@@ -40,6 +40,8 @@
 		E5A249412A55E57400F43830 /* PaywallItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A249402A55E57400F43830 /* PaywallItem.swift */; };
 		E5A249432A55EE4F00F43830 /* Products.storekit in Resources */ = {isa = PBXBuildFile; fileRef = E5A249422A55EE4F00F43830 /* Products.storekit */; };
 		E5A249452A55F08300F43830 /* PurchaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A249442A55F08300F43830 /* PurchaseService.swift */; };
+		E5A737D02A7E956600F2F6BF /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A737CF2A7E956600F2F6BF /* NotificationsView.swift */; };
+		E5A737D22A7E96FC00F2F6BF /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A737D12A7E96FC00F2F6BF /* SettingsViewModel.swift */; };
 		E5CF0F112A329E6200627224 /* AcknowledgementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CF0F102A329E6200627224 /* AcknowledgementsView.swift */; };
 		E5CF0F132A32A9B200627224 /* RightDetailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CF0F122A32A9B200627224 /* RightDetailRowView.swift */; };
 		E5F99A182A3F74CD00E275E5 /* VerbsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F99A172A3F74CD00E275E5 /* VerbsApp.swift */; };
@@ -403,6 +405,8 @@
 		E5A249402A55E57400F43830 /* PaywallItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallItem.swift; sourceTree = "<group>"; };
 		E5A249422A55EE4F00F43830 /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
 		E5A249442A55F08300F43830 /* PurchaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseService.swift; sourceTree = "<group>"; };
+		E5A737CF2A7E956600F2F6BF /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		E5A737D12A7E96FC00F2F6BF /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		E5CF0F102A329E6200627224 /* AcknowledgementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsView.swift; sourceTree = "<group>"; };
 		E5CF0F122A32A9B200627224 /* RightDetailRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDetailRowView.swift; sourceTree = "<group>"; };
 		E5F99A172A3F74CD00E275E5 /* VerbsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbsApp.swift; sourceTree = "<group>"; };
@@ -1136,6 +1140,7 @@
 				EB68F73E25D584B600D6DF63 /* NotificationsPresenter.swift */,
 				EBD2C22725D593BD0075399B /* NotificationsRouter.swift */,
 				EB68F73425D584AA00D6DF63 /* NotificationsViewController.swift */,
+				E5A737CF2A7E956600F2F6BF /* NotificationsView.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -1562,6 +1567,7 @@
 				EBA644E6255AE25B0012B973 /* SettingsRouter.swift */,
 				EBF4A145252ED2CA003E3A44 /* SettingsViewController.swift */,
 				E58C83222A4E224F00327ECE /* SettingsView.swift */,
+				E5A737D12A7E96FC00F2F6BF /* SettingsViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1962,6 +1968,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB5547632554089F001C5585 /* TabBarController.swift in Sources */,
+				E5A737D02A7E956600F2F6BF /* NotificationsView.swift in Sources */,
 				EB4509A4253B6EB600D31858 /* Actionable.swift in Sources */,
 				E5A249452A55F08300F43830 /* PurchaseService.swift in Sources */,
 				EB68F75925D586A500D6DF63 /* SettingsChildViewControllerProtocol.swift in Sources */,
@@ -1971,6 +1978,7 @@
 				E53CA7862A3752050058A28E /* PhrasalsView.swift in Sources */,
 				EBD2C22825D593BD0075399B /* NotificationsRouter.swift in Sources */,
 				EB68F73525D584AA00D6DF63 /* NotificationsViewController.swift in Sources */,
+				E5A737D22A7E96FC00F2F6BF /* SettingsViewModel.swift in Sources */,
 				EBB01C2D25219E9A00BB646B /* SubtitleItem.swift in Sources */,
 				EBDF009C2562EED70041F458 /* InputItem.swift in Sources */,
 				EBDF008D2562E9210041F458 /* TestPresenter.swift in Sources */,

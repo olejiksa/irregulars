@@ -32,5 +32,16 @@ struct AcknowledgementsView: View {
                 RightDetailRowView(title: .localized(.anastasiaOvcharenko), subtitle: Language.ukrainian.description)
             }
         }
+        .navigationTitle("acknowledgements")
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+struct AcknowledgementsView_Preview: PreviewProvider {
+    
+    static var previews: some View {
+        NavigationView {
+            AcknowledgementsView()
+        }
     }
 }
