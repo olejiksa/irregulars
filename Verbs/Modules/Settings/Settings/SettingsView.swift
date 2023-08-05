@@ -57,12 +57,25 @@ struct SettingsView: View {
                         RightDetailRow(title: "developer", subtitle: "oleg_samoylov".localized)
                     }
                     .disabled(!viewModel.canOpenAllApps)
-                    RightDetailRow(title: "edition", subtitle: viewModel.edition)
+                    Button {
+                        viewModel.isShowingPaywall = true
+                    } label: {
+                        RightDetailRow(title: "edition", subtitle: viewModel.edition)
+                    }
+                    Button("FAQ") {
+                        viewModel.isShowingFAQ = true
+                    }
                     RightDetailRow(title: "version", subtitle: viewModel.version)
                     NavigationLink("acknowledgements") {
                         AcknowledgementsView()
                     }
                 }
+            }
+            .sheet(isPresented: $viewModel.isShowingPaywall) {
+                PaywallView()
+            }
+            .sheet(isPresented: $viewModel.isShowingFAQ) {
+                OnboardingView()
             }
             .navigationTitle("settings")
             .navigationBarTitleDisplayMode(.inline)

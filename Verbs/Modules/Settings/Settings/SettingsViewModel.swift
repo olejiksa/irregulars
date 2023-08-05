@@ -26,6 +26,8 @@ final class SettingsViewModel: ObservableObject {
     @Published var notificationsAvailability: NotificationsAvailability = .notAllowed
     @Published var accentColor: AccentColor = .current
     @Published var voice: Voice? = .current
+    @Published var isShowingPaywall = false
+    @Published var isShowingFAQ = false
     
     // MARK: Links
     

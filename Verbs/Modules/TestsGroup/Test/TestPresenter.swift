@@ -65,6 +65,8 @@ final class TestPresenter: NSObject {
     }
     
     func checkAvailability() {
+        guard test == .speaking else { return }
+        
         recordService.checkAvailability {
             Locator.isMicrophoneAvailable = $0
         }
