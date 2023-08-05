@@ -57,17 +57,17 @@ private extension DetailPresenter {
             .filter { $0.word == verb.infinitive.value }
             .flatMap(\.sentences)
         let examples = sentences.map { ExampleItem(sentence: $0, verb: verb) }
-        dataSource.setup([Section(header: .localized(.infinitive),
+        dataSource.setup([TableViewSection(header: .localized(.infinitive),
                                   items: [DetailItem(word: verb.infinitive,
                                                      actionBlock: play)].compactMap { $0 }),
-                          Section(header: .localized(.pastSimple),
+                          TableViewSection(header: .localized(.pastSimple),
                                   items: verb.simplePast?.compactMap { DetailItem(word: $0,
                                                                                   actionBlock: play) } ?? []),
-                          Section(header: .localized(.pastParticiple),
+                          TableViewSection(header: .localized(.pastParticiple),
                                   items: verb.pastParticiple?.compactMap { DetailItem(word: $0,
                                                                                       actionBlock: play) } ?? []),
-                          Section(header: .localized(.translation), items: translationItems),
-                          Section(header: .localized(.examples),
+                          TableViewSection(header: .localized(.translation), items: translationItems),
+                          TableViewSection(header: .localized(.examples),
                                   items: examples)])
     }
     

@@ -77,9 +77,9 @@ private extension NotificationsPresenter {
         let contentItem = PlainDetailItem(text: "setup_notifications".localized,
                                           textStyle: .secondary)
         
-        dataSource.setup([Section(items: [contentItem, notificationItem]),
-                          Section(header: "time".localized, items: timeItems),
-                          Section(header: "frequency".localized, items: repetitionItems)])
+        dataSource.setup([TableViewSection(items: [contentItem, notificationItem]),
+                          TableViewSection(header: "time".localized, items: timeItems),
+                          TableViewSection(header: "frequency".localized, items: repetitionItems)])
     }
     
     func didNotificationsEnabled(_ value: Bool) {

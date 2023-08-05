@@ -33,7 +33,7 @@ final class TestItemsFactory {
                play: @escaping AudioBlock,
                record: RecordBlock?,
                compare: RecordBlock?,
-               answerActionBlock: @escaping ItemBlock) -> [Section] {
+               answerActionBlock: @escaping ItemBlock) -> [TableViewSection] {
         guard let simplePast = verb.simplePast,
               let pastParticiple = verb.pastParticiple else {
             return []
@@ -41,15 +41,15 @@ final class TestItemsFactory {
         
         switch testKind {
         case .twoForms:
-            return [Section(header: .localized(.infinitive),
+            return [TableViewSection(header: .localized(.infinitive),
                             items: [PlainDetailItem(text: verb.infinitive.value)]),
-                    Section(header: .localized(.pastSimple),
+                    TableViewSection(header: .localized(.pastSimple),
                             items: [InputItem(words: simplePast,
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
                                               hintActionBlock: hint,
                                               tag: 0)].compactMap { $0 }),
-                    Section(header: .localized(.pastParticiple),
+                    TableViewSection(header: .localized(.pastParticiple),
                             items: [InputItem(words: pastParticiple,
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
@@ -63,9 +63,9 @@ final class TestItemsFactory {
                                             verbForms: [verb.translation],
                                             actionBlock: answerActionBlock)
             
-            return [Section(header: .localized(.infinitive),
+            return [TableViewSection(header: .localized(.infinitive),
                             items: [PlainDetailItem(text: verb.infinitive.value)].compactMap { $0 }),
-                    Section(header: .localized(.translation),
+                    TableViewSection(header: .localized(.translation),
                             items: items.compactMap { $0 })]
         case .retranslation:
             guard languageService.hasTranslation else { return [] }
@@ -74,28 +74,28 @@ final class TestItemsFactory {
                                             verbForms: [verb.infinitive.value],
                                             actionBlock: answerActionBlock)
             
-            return [Section(header: .localized(.translation),
+            return [TableViewSection(header: .localized(.translation),
                             items: [PlainDetailItem(text: verb.translation)].compactMap { $0 }),
-                    Section(header: .localized(.infinitive),
+                    TableViewSection(header: .localized(.infinitive),
                             items: items.compactMap { $0 })]
         case .listening:
-            return [Section(items: [PlainDetailItem(text: "listen_and_write".localized,
+            return [TableViewSection(items: [PlainDetailItem(text: "listen_and_write".localized,
                                                     textStyle: .secondary)].compactMap { $0 }),
-                    Section(header: .localized(.infinitive),
+                    TableViewSection(header: .localized(.infinitive),
                             items: [InputItem(words: [verb.infinitive],
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
                                               hintActionBlock: hint,
                                               isAudio: true,
                                               tag: 0)].compactMap { $0 }),
-                    Section(header: .localized(.pastSimple),
+                    TableViewSection(header: .localized(.pastSimple),
                             items: [InputItem(words: simplePast,
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
                                               hintActionBlock: hint,
                                               isAudio: true,
                                               tag: 1)].compactMap { $0 }),
-                    Section(header: .localized(.pastParticiple),
+                    TableViewSection(header: .localized(.pastParticiple),
                             items: [InputItem(words: pastParticiple,
                                               playActionBlock: play,
                                               successActionBlock: didEndEntering,
@@ -110,16 +110,16 @@ final class TestItemsFactory {
             
             let replacedSentence = sentencesService.replaceSentence(randomSentenceString, using: verb)
             
-            return [Section(header: "sentence".localized,
+            return [TableViewSection(header: "sentence".localized,
                             items: [PlainDetailItem(text: replacedSentence)]),
-                    Section(header: "missed_word".localized,
+                    TableViewSection(header: "missed_word".localized,
                             items: generateAnswerItems(count: 4,
                                                        verb: verb,
                                                        form: verbForms.0,
                                                        verbForms: verbForms.1,
                                                        actionBlock: answerActionBlock))]
         case .speaking:
-            var notAllowedSection: Section?
+            var notAllowedSection: TableViewSection?
             if !Locator.isMicrophoneAvailable {
                 let notAllowedItem = PlainDetailItem(text: "insufficient_permissions".localized, textStyle: .primary)
                 let actionItem = ActionItem(text: "allow_access".localized) { _ in
@@ -132,21 +132,21 @@ final class TestItemsFactory {
             }
             
             return [notAllowedSection,
-                    Section(items: [PlainDetailItem(text: "listen_and_record".localized,
+                    TableViewSection(items: [PlainDetailItem(text: "listen_and_record".localized,
                                                     textStyle: .secondary)].compactMap { $0 }),
-                    Section(header: .localized(.infinitive),
+                    TableViewSection(header: .localized(.infinitive),
                             items: [RecordItem(word: verb.infinitive,
                                                playActionBlock: play,
                                                recordActionBlock: record,
                                                compareActionBlock: compare,
                                                tag: 0)].compactMap { $0 }),
-                    Section(header: .localized(.pastSimple),
+                    TableViewSection(header: .localized(.pastSimple),
                             items: simplePast.map { RecordItem(word: $0,
                                                                playActionBlock: play,
                                                                recordActionBlock: record,
                                                                compareActionBlock: compare,
                                                                tag: 1) }.compactMap { $0 }),
-                    Section(header: .localized(.pastParticiple),
+                    TableViewSection(header: .localized(.pastParticiple),
                             items: pastParticiple.map { RecordItem(word: $0,
                                                                    playActionBlock: play,
                                                                    recordActionBlock: record,

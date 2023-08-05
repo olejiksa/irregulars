@@ -72,21 +72,21 @@ private extension StatisticsPresenter {
         }}
         
         dataSource.setup([setupActivationSection(upgradeBlock: willBuy),
-                          Section(header: "learned_verbs".localized,
+                          TableViewSection(header: "learned_verbs".localized,
                                   items: [ProgressItem(value: statisticsModel.learnedWordsCount,
                                                        maximum: statisticsModel.verbsCount)],
                                   footer: "learned_verbs_footer".localized),
-                          Section(header: "in_progress".localized,
+                          TableViewSection(header: "in_progress".localized,
                                   items: [ProgressItem(value: statisticsModel.wordsInProgressCount,
                                                        maximum: statisticsModel.verbsCount - statisticsModel.learnedWordsCount)]),
-                          Section(header: "frequent_mistakes".localized,
+                          TableViewSection(header: "frequent_mistakes".localized,
                                   items: mistakeItems,
                                   footer: "frequent_mistakes_footer".localized),
-                          Section(header: "your_efforts".localized,
+                          TableViewSection(header: "your_efforts".localized,
                                   items: [StatisticsHeaderItem(title: String(statisticsModel.totalAnswersCount),
                                                                subtitle: answeredCorrectlyString)],
                                   footer: "using_hints_gives_you_no_points".localized),
-                          Section(header: "including".localized,
+                          TableViewSection(header: "including".localized,
                                   items: [hasTranslation,
                                           RightDetailItem(title: Test.writing.title,
                                                           subtitle: String(statisticsModel.formsAnswersCount)),
@@ -95,7 +95,7 @@ private extension StatisticsPresenter {
                                           RightDetailItem(title: Test.listening.title,
                                                           subtitle: String(statisticsModel.listeningAnswersCount))]
                                     .compactMap { $0 }),
-                          Section(header: "reset".localized,
+                          TableViewSection(header: "reset".localized,
                                   items: [ActionItem(text: "erase_learned_verbs".localized,
                                                      style: .destructive,
                                                      actionBlock: didResetTap),
@@ -104,13 +104,13 @@ private extension StatisticsPresenter {
                                                      actionBlock: didResetTap)])])
     }
     
-    func setupActivationSection(upgradeBlock: @escaping ItemBlock) -> Section {
+    func setupActivationSection(upgradeBlock: @escaping ItemBlock) -> TableViewSection {
         let upgradeItem = !FeatureToggle.isPaid ? ActionItem(text: "upgrade_to_pro".localized,
                                                              style: .standard,
                                                              actionBlock: upgradeBlock) : nil
         let footer = "pro_suggestion_statistics".localized(with: [DemoService().items.count,
                                                                   verbsService.items.count])
-        return Section(header: "activation".localized,
+        return TableViewSection(header: "activation".localized,
                        items: [upgradeItem].compactMap { $0 },
                        footer: footer)
     }

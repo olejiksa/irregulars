@@ -10,7 +10,7 @@ import Foundation
 
 struct SectionArray {
     
-    private var sections: [Section] = []
+    private var sections: [TableViewSection] = []
     
     var count: Int {
         sections.filter { !$0.items.isEmpty }.count
@@ -37,7 +37,7 @@ struct SectionArray {
         return items.filter { $0 is T }
     }
     
-    mutating func setup(_ sections: [Section]) {
+    mutating func setup(_ sections: [TableViewSection]) {
         self.sections = sections
     }
 }

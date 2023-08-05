@@ -29,7 +29,7 @@ private extension PopoverPresenter {
         )
     }
     
-    func setupPlaybackSpeedSection(playbackSpeedBlock: @escaping IntBlock) -> Section {
+    func setupPlaybackSpeedSection(playbackSpeedBlock: @escaping IntBlock) -> TableViewSection {
         let index = UserDefaults.shared.integer(for: .playbackSpeed)
         return .init(header: "speaking_rate".localized,
                      items: [SliderItem(leadingIcon: .tortoise,

@@ -15,14 +15,14 @@ struct VoiceView: View {
     var body: some View {
         List {
             ForEach(Gender.allCases, id: \.self) { gender in
-                SwiftUI.Section(gender.description) {
+                Section(gender.description) {
                     ForEach(viewModel.items(for: gender)) { item in
                         VoiceSelectionRow(item: item, selectedItem: $viewModel.selectedItem)
                     }
                 }
             }
             
-            SwiftUI.Section {
+            Section {
                 Text(String.localized(.voiceHint))
                     .foregroundColor(.secondary)
             }

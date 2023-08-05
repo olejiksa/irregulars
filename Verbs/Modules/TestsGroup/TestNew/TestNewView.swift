@@ -18,10 +18,10 @@ struct TestNewView: View {
             ProgressView(viewModel.progressInfo, value: viewModel.progress, total: viewModel.count)
                 .padding(EdgeInsets(top: 10, leading: 30, bottom: 10, trailing: 30))
             List {
-                SwiftUI.Section(String.localized(.infinitive)) {
+                Section(String.localized(.infinitive)) {
                     TestNewViewRow(viewModel.current?.infinitive.value ?? "")
                 }
-                SwiftUI.Section(String.localized(.translation)) {
+                Section(String.localized(.translation)) {
                     ForEach(viewModel.answers) { verb in
                         TestNewViewRow(verb.translation)
                             .onTapGesture {

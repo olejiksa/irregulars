@@ -20,7 +20,7 @@ final class SettingsItemsFactory {
     }
     
     func setupActivationSection(upgradeBlock: @escaping ItemBlock,
-                                resetBlock: @escaping ItemBlock) -> Section {
+                                resetBlock: @escaping ItemBlock) -> TableViewSection {
         let upgradeItem = !FeatureToggle.isPaid ? ActionItem(text: "upgrade_to_pro".localized,
                                                              style: .standard,
                                                              actionBlock: upgradeBlock) : nil
@@ -35,7 +35,7 @@ final class SettingsItemsFactory {
     func setupGeneralSection(languageBlock: @escaping ItemBlock,
                              accentColorBlock: @escaping ItemBlock,
                              voiceBlock: @escaping ItemBlock,
-                             notificationsBlock: @escaping ItemBlock) -> Section {
+                             notificationsBlock: @escaping ItemBlock) -> TableViewSection {
         let accentColor = AccentColor.current.rawValue.localized
         let voiceName = Voice.current?.name ?? ""
         
@@ -73,7 +73,7 @@ final class SettingsItemsFactory {
                            privacyBlock: @escaping ItemBlock,
                            termsBlock: @escaping ItemBlock,
                            mailBlock: @escaping ItemBlock,
-                           shareBlock: @escaping ItemBlock) -> Section {
+                           shareBlock: @escaping ItemBlock) -> TableViewSection {
         .init(header: .localized(.links),
               items: [ActionItem(text: .localized(.rateAndReview),
                                  actionBlock: rateBlock),
@@ -91,7 +91,7 @@ final class SettingsItemsFactory {
     func setupAboutSection(areAllAppsAvailable: Bool,
                            acknowledgementsBlock: @escaping ItemBlock,
                            allAppsBlock: @escaping ItemBlock,
-                           upgradeBlock: @escaping ItemBlock) -> Section {
+                           upgradeBlock: @escaping ItemBlock) -> TableViewSection {
         let version = Bundle.main.releaseVersionNumber ?? ""
         let name = Bundle.main.productName ?? ""
         let fullEditionName = "\(name) \(FeatureToggle.editionName)"

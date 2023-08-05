@@ -1,5 +1,5 @@
 //
-//  SettingsNewView.swift
+//  SettingsView.swift
 //  Verbs
 //
 //  Created by Oleg Samoylov on 6/29/23.
@@ -8,27 +8,27 @@
 
 import SwiftUI
 
-struct SettingsNewView: View {
+struct SettingsView: View {
     
     var body: some View {
         List {
-            SwiftUI.Section("deactivation".localized) {
+            Section("deactivation".localized) {
                 Text("downgrade_to".localized)
             }
-            SwiftUI.Section("general".localized) {
+            Section("general".localized) {
                 Text("language".localized)
                 Text("accent_color".localized)
                 Text("voice".localized)
                 Text("notifications".localized)
             }
-            SwiftUI.Section("links".localized) {
+            Section("links".localized) {
                 Text("rate_and_review".localized)
                 Text("rate_and_review".localized)
                 Text("rate_and_review".localized)
                 Text("terms_of_service".localized)
                 Text("contacts_us".localized)
             }
-            SwiftUI.Section("about".localized) {
+            Section("about".localized) {
                 Text("developer".localized)
             }
         }

@@ -47,7 +47,7 @@ final class TestsPresenter: NSObject {
                               title: "statistics".localized,
                               subtitle: "track_your_progress_in_learning_irregular_verbs".localized)
         ].compactMap { $0 }
-        dataSource.setup([Section(items: items)])
+        dataSource.setup([TableViewSection(items: items)])
     }
 }
 

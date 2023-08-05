@@ -13,7 +13,7 @@ class SectionDataSource: NSObject {
     
     private var sectionArray = SectionArray()
     
-    func setup(_ array: [Section]) {
+    func setup(_ array: [TableViewSection]) {
         sectionArray.setup(array)
     }
     
