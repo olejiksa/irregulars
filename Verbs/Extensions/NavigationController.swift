@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 extension UINavigationController {
     
@@ -22,7 +23,7 @@ extension UINavigationController {
         
         let secondaryVc = splitViewController.secondaryViewController
         if secondaryVc?.topViewController is TestViewController ||
-            secondaryVc?.topViewController is StatisticsViewController {
+            secondaryVc?.topViewController is UIHostingController<StatisticsView> {
             secondaryVc?.popToRootViewController(animated: false)
         }
         

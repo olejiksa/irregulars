@@ -10,25 +10,27 @@ import AVFoundation
 
 final class VoiceService {
     
+    let voices: [Voice]
     private let englishVoices: [AVSpeechSynthesisVoice]
     
     init() {
         let voices = AVSpeechSynthesisVoice.speechVoices()
         englishVoices = voices.filter { $0.language.hasPrefix(Language.english.rawValue) }
-    }
-    
-    func voices(gender: Gender) -> [(language: String, name: String, identifier: String)] {
-        englishVoices.filter { $0.gender == gender.speechGender }.map { ($0.language,
-                                                                         $0.name,
-                                                                         $0.identifier) }
+        self.voices = englishVoices.compactMap {
+            guard let region = Region(rawValue: String($0.language.suffix(2))),
+                  let gender = Gender(speechGender: $0.gender) else { return nil }
+            
+            return Voice(
+                name: $0.name,
+                id: $0.identifier,
+                gender: gender,
+                region: region
+            )
+        }
     }
     
     func voice(identifier: String) -> AVSpeechSynthesisVoice? {
         englishVoices.first { $0.identifier == identifier } ??
             englishVoices.first { $0.language.suffix(2) == Region.unitedStates.rawValue }
-    }
-    
-    func voiceName(identifier: String) -> String {
-        voice(identifier: identifier)?.name ?? ""
     }
 }

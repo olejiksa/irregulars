@@ -37,6 +37,7 @@ struct VoiceSelectionRow: View {
                 }
             }
         }
+        .padding(.vertical, 5)
         .contentShape(Rectangle())
         .onTapGesture {
             guard FeatureToggle.isPaid else {

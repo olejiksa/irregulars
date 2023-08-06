@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum Region: String, Codable {
+enum Region: String {
     
     case australia = "AU"
     case ireland = "IE"

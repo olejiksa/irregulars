@@ -11,7 +11,6 @@ import StoreKit
 import NotificationCenter
 import YandexMobileMetrica
 
-@UIApplicationMain
 final class AppDelegate: UIResponder {
 
     private let analyticsService = AnalyticsService()

@@ -8,12 +8,25 @@
 
 import AVFoundation
 
-enum Gender: String, CaseIterable, Codable {
+enum Gender: String, CaseIterable {
     
     case male
     case female
     
     var description: String { rawValue.localized }
+    
+    init?(speechGender: AVSpeechSynthesisVoiceGender) {
+        switch speechGender {
+        case .male:
+            self = .male
+        case .female:
+            self = .female
+        case .unspecified:
+            return nil
+        @unknown default:
+            return nil
+        }
+    }
     
     var speechGender: AVSpeechSynthesisVoiceGender {
         switch self {

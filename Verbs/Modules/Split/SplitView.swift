@@ -1,5 +1,5 @@
 //
-//  Split.swift
+//  SplitView.swift
 //  Verbs
 //
 //  Created by Oleg Samoylov on 6/18/23.
@@ -8,10 +8,7 @@
 
 import SwiftUI
 
-struct Split: UIViewControllerRepresentable {
-    
-    @EnvironmentObject
-    private var purchaseService: PurchaseService
+struct SplitView: UIViewControllerRepresentable {
     
     func makeUIViewController(context: Context) -> SplitViewController {
         let splitViewController = SplitViewController()

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct OnboardingItem: Swift.Identifiable, Equatable {
+struct OnboardingItem: Identifiable, Equatable {
     
     let id: Int
     let emoji: String

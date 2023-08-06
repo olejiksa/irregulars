@@ -10,7 +10,7 @@ import UIKit
 
 extension UITableView {
     
-    func register(_ cells: Identifiable.Type...) {
+    func register(_ cells: CellProtocol.Type...) {
         for cell in cells {
             let nib = UINib(nibName: cell.identifier, bundle: .main)
             register(nib, forCellReuseIdentifier: cell.identifier)

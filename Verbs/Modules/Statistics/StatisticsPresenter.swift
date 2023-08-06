@@ -11,18 +11,12 @@ import UIKit
 final class StatisticsPresenter: NSObject {
     
     let dataSource = SectionDataSource()
-    var router: StatisticsRouter?
-    weak var viewController: StatisticsViewController?
     
     private let languageService: LanguageService
     private let hapticService: HapticService
     private let verbsService: VerbsService
     
     private var items: [String] = []
-    private let keys: [UserDefaults.Key] = [.translationAnswers,
-                                            .writingAnswers,
-                                            .sentencesAnswers,
-                                            .listeningAnswers]
     
     init(languageService: LanguageService,
          hapticService: HapticService,
@@ -72,36 +66,9 @@ private extension StatisticsPresenter {
         }}
         
         dataSource.setup([setupActivationSection(upgradeBlock: willBuy),
-                          TableViewSection(header: "learned_verbs".localized,
-                                  items: [ProgressItem(value: statisticsModel.learnedWordsCount,
-                                                       maximum: statisticsModel.verbsCount)],
-                                  footer: "learned_verbs_footer".localized),
-                          TableViewSection(header: "in_progress".localized,
-                                  items: [ProgressItem(value: statisticsModel.wordsInProgressCount,
-                                                       maximum: statisticsModel.verbsCount - statisticsModel.learnedWordsCount)]),
                           TableViewSection(header: "frequent_mistakes".localized,
                                   items: mistakeItems,
-                                  footer: "frequent_mistakes_footer".localized),
-                          TableViewSection(header: "your_efforts".localized,
-                                  items: [StatisticsHeaderItem(title: String(statisticsModel.totalAnswersCount),
-                                                               subtitle: answeredCorrectlyString)],
-                                  footer: "using_hints_gives_you_no_points".localized),
-                          TableViewSection(header: "including".localized,
-                                  items: [hasTranslation,
-                                          RightDetailItem(title: Test.writing.title,
-                                                          subtitle: String(statisticsModel.formsAnswersCount)),
-                                          RightDetailItem(title: Test.sentences.title,
-                                                          subtitle: String(statisticsModel.sentenceAnswersCount)),
-                                          RightDetailItem(title: Test.listening.title,
-                                                          subtitle: String(statisticsModel.listeningAnswersCount))]
-                                    .compactMap { $0 }),
-                          TableViewSection(header: "reset".localized,
-                                  items: [ActionItem(text: "erase_learned_verbs".localized,
-                                                     style: .destructive,
-                                                     actionBlock: didResetTap),
-                                          ActionItem(text: "erase_correct_answers".localized,
-                                                     style: .destructive,
-                                                     actionBlock: didResetTap)])])
+                                  footer: "frequent_mistakes_footer".localized)])
     }
     
     func setupActivationSection(upgradeBlock: @escaping ItemBlock) -> TableViewSection {
@@ -173,57 +140,14 @@ private extension StatisticsPresenter {
     }
     
     func willBuy(_ sender: ItemProtocol) {
-        router?.goToPaywall()
+        
     }
     
     func didResetTap(_ sender: ItemProtocol) {
-        guard let actionItem = sender as? ActionItem else { return }
         
-        let statisticsKind: StatisticsKind
-        switch actionItem.text {
-        case "erase_learned_verbs".localized:
-            statisticsKind = .learnedVerbs
-        case "erase_correct_answers".localized:
-            statisticsKind = .correctAnswers
-        default:
-            statisticsKind = .correctAnswers
-        }
-        
-        hapticService.generateHapticFeedback(for: .notification(.warning))
-        router?.reset(statisticsKind: statisticsKind) { [weak self] in
-            guard let self = self else { return }
-            
-            switch statisticsKind {
-            case .learnedVerbs:
-                Locator.statistics.clear()
-            case .correctAnswers:
-                [.translationAnswers,
-                 .writingAnswers,
-                 .sentencesAnswers,
-                 .listeningAnswers].forEach { UserDefaults.shared.set(0, for: $0) }
-            }
-            
-            self.setupSections()
-            self.viewController?.reloadData()
-        }
     }
     
     @objc func didPay(_ notification: Notification) {
         setupSections()
-        viewController?.reloadData()
-    }
-}
-
-// MARK: - UITableViewDelegate
-
-extension StatisticsPresenter: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        if let actionableItem = dataSource.item(at: indexPath) as? Actionable,
-           let item = actionableItem as? ItemProtocol {
-            actionableItem.actionBlock?(item)
-        }
     }
 }

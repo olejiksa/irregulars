@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct SidebarItem: Hashable, Swift.Identifiable {
+struct SidebarItem: Hashable, Identifiable {
     let id: UUID
     let type: SidebarItemType
     let title: String

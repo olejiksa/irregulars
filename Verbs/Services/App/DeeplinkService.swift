@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 final class DeeplinkService {
     
@@ -113,7 +114,7 @@ final class DeeplinkService {
                                        endpoint: .statistics)
         case .regular:
             splitViewController.sidebarViewController?.restore(at: IndexPath(row: 3, section: 0))
-            let vc = StatisticsAssembly().viewController()
+            let vc = UIHostingController(rootView: StatisticsView())
             splitViewController.secondaryViewController?.push(vc, in: splitViewController)
         case .unspecified:
             break
@@ -158,7 +159,7 @@ private extension DeeplinkService {
             let vc = nvc?.topViewController as? ListViewController
             guard vc == nil || vc?.favoritesOnly == true else { return }
         case .statistics:
-            guard !(nvc?.topViewController is StatisticsViewController) else { return }
+            guard !(nvc?.topViewController is UIHostingController<StatisticsView>) else { return }
         case .tests:
             guard !(nvc?.topViewController is TestsViewController) else { return }
         }
@@ -170,7 +171,7 @@ private extension DeeplinkService {
         }
         
         if endpoint == .statistics {
-            let vc = StatisticsAssembly().viewController()
+            let vc = UIHostingController(rootView: StatisticsView())
             nvc?.push(vc, in: svc)
         }
     }

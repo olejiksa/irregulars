@@ -80,7 +80,7 @@ extension Verb: Hashable {
 
 // MARK: - Identifiable
 
-extension Verb: Swift.Identifiable {
+extension Verb: Identifiable {
     
     var id: String {
         infinitive.value

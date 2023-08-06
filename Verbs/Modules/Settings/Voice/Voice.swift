@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Voice: Swift.Identifiable, Equatable, Codable {
+struct Voice: Identifiable, Equatable {
     
     let name: String
     let id: String
@@ -17,15 +17,12 @@ struct Voice: Swift.Identifiable, Equatable, Codable {
     
     static var current: Voice? {
         get {
-            guard let data = UserDefaults.shared.data(for: .voice),
-                  let voice = try? JSONDecoder().decode(Voice.self, from: data)
-            else { return nil }
-            return voice
+            let id = UserDefaults.shared.string(for: .voice)
+            return VoiceService().voices.first { $0.id == id }
         }
         set {
-            guard let data = try? JSONEncoder().encode(newValue) else { return }
-            UserDefaults.shared.set(data, for: .voice)
-            NotificationCenter.default.post(name: .reload, object: nil)
+            guard let id = newValue?.id else { return }
+            UserDefaults.shared.set(id, for: .voice)
         }
     }
 }

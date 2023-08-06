@@ -12,23 +12,22 @@ final class VoiceViewModel: ObservableObject {
     
     @Published var selectedItem: Voice? = .current
     @Published var isPlaying = false
+    @Published var isShowingSpeakingRate = false
     
     private let audioService: AudioService
     private let voiceService: VoiceService
+    private let analyticsService = AnalyticsService()
     
     init() {
         voiceService = VoiceService()
         audioService = AudioService(voiceService: voiceService)
-        AnalyticsService().send(event: .voiceOpened)
+        analyticsService.send(event: .voiceOpened)
     }
     
     func items(for gender: Gender) -> [Voice] {
-        voiceService.voices(gender: gender)
+        voiceService.voices
+            .filter { $0.gender == gender }
             .sorted { $0.name < $1.name }
-            .map { voice in
-                let region = Region(rawValue: String(voice.language.suffix(2))) ?? .unitedStates
-                return Voice(name: voice.name, id: voice.identifier, gender: gender, region: region)
-            }
     }
     
     func play() {

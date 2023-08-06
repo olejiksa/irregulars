@@ -28,10 +28,9 @@ final class TestsRouter {
     
     func goTo(test: Test) {
         let nvc = viewController?.navigationController
-        let isNewTest = FeatureToggle.areNewTestsAvailable && test == .translation
-        let vc = isNewTest ? TestNewAssembly().viewController : TestAssembly(test: test).viewController()
+        let vc = TestAssembly(test: test).viewController()
         if splitViewController?.secondaryViewController?.topViewController is DetailViewController ||
-            splitViewController?.secondaryViewController?.topViewController is StatisticsViewController {
+            splitViewController?.secondaryViewController?.topViewController is UIHostingController<StatisticsView> {
             splitViewController?.secondaryViewController?.popToRootViewController(animated: false)
         }
         nvc?.push(vc, in: splitViewController)
@@ -39,7 +38,7 @@ final class TestsRouter {
     
     func goToStatistics() {
         let nvc = viewController?.navigationController
-        let vc = StatisticsAssembly().viewController()
+        let vc = UIHostingController(rootView: StatisticsView())
         if splitViewController?.secondaryViewController?.topViewController is DetailViewController ||
            splitViewController?.secondaryViewController?.topViewController is TestViewController {
             splitViewController?.secondaryViewController?.popToRootViewController(animated: false)

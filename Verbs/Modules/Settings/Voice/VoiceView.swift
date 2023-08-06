@@ -34,11 +34,22 @@ struct VoiceView: View {
         }
         .navigationTitle("voice")
         .navigationBarTitleDisplayMode(.inline)
-        .environment(\.defaultMinListRowHeight, 60)
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                Button {
+                    viewModel.isShowingSpeakingRate = true
+                } label: {
+                    SystemIcon.ellipsis.imageSwiftUI
+                }
                 Button(action: viewModel.play) {
                     viewModel.isPlaying ? SystemIcon.stop.imageSwiftUI : SystemIcon.play.imageSwiftUI
+                }
+                .popover(isPresented: $viewModel.isShowingSpeakingRate) {
+                    PopoverView()
+                        .presentationCompactAdaptation(
+                            horizontal: .popover,
+                            vertical: .sheet
+                        )
                 }
             }
         }

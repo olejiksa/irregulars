@@ -6,7 +6,9 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
-protocol CellProtocol: Identifiable {
+protocol CellProtocol {
+    
+    static var identifier: String { get }
     
     func setup(with: ItemProtocol)
 }

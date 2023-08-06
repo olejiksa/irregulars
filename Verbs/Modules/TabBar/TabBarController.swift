@@ -54,9 +54,7 @@ private extension TabBarController {
                                               favoritesOnly: false).viewController().navigationController
         let favoritesViewController = ListAssembly(splitViewController: svc,
                                                    favoritesOnly: true).viewController().navigationController
-        let testsViewController = !FeatureToggle.isNewTestListAvailable
-        ? TestsAssembly(splitViewController: svc).viewController().navigationController
-        : TestListNewAssembly().viewController
+        let testsViewController = TestsAssembly(splitViewController: svc).viewController().navigationController
         let settingsViewController = UIHostingController(rootView: SettingsView())
         
         compound(items: [(listViewController, "verbs".localized, .bookFill, .verbsTab),

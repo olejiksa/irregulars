@@ -10,7 +10,7 @@ import SwiftUI
 
 struct PopoverView: View {
     
-    @State private var sliderValue: Double = 3
+    @State private var sliderValue = Double(UserDefaults.shared.integer(for: .playbackSpeed))
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -18,16 +18,21 @@ struct PopoverView: View {
                 .fontWeight(.semibold)
                 .font(.subheadline)
                 .foregroundColor(.secondary)
-            HStack {
+            Slider(value: $sliderValue, in: 0...4, step: 1) {
+                
+            } minimumValueLabel: {
                 SystemIcon.tortoise.imageSwiftUI?
                     .accessibilityLabel("slower".localized)
                     .foregroundColor(.secondary)
                     .font(.title3)
-                Slider(value: $sliderValue, in: 1...5)
+            } maximumValueLabel: {
                 SystemIcon.hare.imageSwiftUI?
                     .accessibilityLabel("faster".localized)
                     .foregroundColor(.secondary)
                     .font(.title3)
+            } onEditingChanged: { _ in
+                let roundedValue = Int(sliderValue.rounded())
+                UserDefaults.shared.set(roundedValue, for: .playbackSpeed)
             }
         }
         .frame(minWidth: 250)

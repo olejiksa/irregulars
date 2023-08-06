@@ -36,7 +36,7 @@ extension TestItem: ItemProtocol {
 
 // MARK: - Identifiable
 
-extension TestItem: Swift.Identifiable {
+extension TestItem: Identifiable {
     
     var id: String { icon.rawValue }
 }
