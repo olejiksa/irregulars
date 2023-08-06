@@ -15,6 +15,13 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             List {
+                if !viewModel.isPaid {
+                    Section("activation") {
+                        Button("upgrade_to_pro") {
+                            viewModel.isShowingPaywall = true
+                        }
+                    }
+                }
                 Section("general") {
                     Link(destination: URL(string: UIApplication.openSettingsURLString)!) {
                         RightDetailRow(title: "language", subtitle: viewModel.language)

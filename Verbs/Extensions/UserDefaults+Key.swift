@@ -48,3 +48,15 @@ extension UserDefaults {
     func set(_ value: Any?, for key: Key) { setValue(value, forKey: key.rawValue) }
     func register(_ value: Any, for key: Key) { register(defaults: [key.rawValue: value]) }
 }
+
+extension UserDefaults {
+    
+    @objc dynamic private(set) var isPaid: Bool {
+        get {
+            UserDefaults.shared.bool(for: .isPaid)
+        }
+        set {
+            UserDefaults.shared.set(newValue, for: .isPaid)
+        }
+    }
+}

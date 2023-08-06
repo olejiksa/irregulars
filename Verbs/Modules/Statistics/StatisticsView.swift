@@ -14,6 +14,17 @@ struct StatisticsView: View {
     
     var body: some View {
         List {
+            if !viewModel.isPaid {
+                Section {
+                    Button("upgrade_to_pro") {
+                        viewModel.isShowingPaywall = true
+                    }
+                } header: {
+                    Text("activation")
+                } footer: {
+                    Text("pro_suggestion_statistics".localized(with: viewModel.counts))
+                }
+            }
             Section {
                 ProgressRow(value: viewModel.learnedVerbsCount, maximum: viewModel.versbCount)
             } header: {
@@ -92,6 +103,9 @@ struct StatisticsView: View {
             }
         } message: {
             Text("reset_statistics_correct_answers")
+        }
+        .sheet(isPresented: $viewModel.isShowingPaywall) {
+            PaywallView()
         }
     }
 }

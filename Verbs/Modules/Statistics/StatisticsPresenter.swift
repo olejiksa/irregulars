@@ -26,20 +26,12 @@ final class StatisticsPresenter: NSObject {
         self.verbsService = verbsService
         super.init()
         setupSections()
-        subscribe()
     }
 }
 
 // MARK: - Private
 
 private extension StatisticsPresenter {
-    
-    func subscribe() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(didPay),
-                                               name: .reload,
-                                               object: nil)
-    }
     
     func setupSections() {
 //        #if DEBUG
@@ -51,9 +43,9 @@ private extension StatisticsPresenter {
         let answeredCorrectlyString = String(format: "answered_correctly_count".localized,
                                              statisticsModel.totalAnswersCount)
         
-        let hasTranslation = languageService.hasTranslation ?
-            RightDetailItem(title: Test.translation.title,
-                            subtitle: String(statisticsModel.translationAnswersCount)) : nil
+//        let hasTranslation = languageService.hasTranslation ?
+//            RightDetailItem(title: Test.translation.title,
+//                            subtitle: String(statisticsModel.translationAnswersCount)) : nil
         
         let mistakeItems = statisticsModel.mistakes.map { verb in MistakeItem(verb: verb) { isFavorite in
             if isFavorite {

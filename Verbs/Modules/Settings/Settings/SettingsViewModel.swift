@@ -12,6 +12,9 @@ import UIKit
 final class SettingsViewModel: ObservableObject {
     
     init() {
+        publisher
+            .receive(on: RunLoop.main)
+            .assign(to: &$isPaid)
         updateNotificationsAvailability()
     }
     
@@ -21,6 +24,11 @@ final class SettingsViewModel: ObservableObject {
     private let mailService = MailService()
     private let notificationService = NotificationService(verbsService: .init(), calendarService: .init())
     
+    // MARK: Publishers
+    
+    let publisher = UserDefaults.shared
+        .publisher(for: \.isPaid)
+    
     // MARK: Published
     
     @Published var notificationsAvailability: NotificationsAvailability = .notAllowed
@@ -28,6 +36,7 @@ final class SettingsViewModel: ObservableObject {
     @Published var voice: Voice? = .current
     @Published var isShowingPaywall = false
     @Published var isShowingFAQ = false
+    @Published var isPaid = FeatureToggle.isPaid
     
     // MARK: Links
     

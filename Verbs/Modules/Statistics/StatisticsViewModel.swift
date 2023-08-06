@@ -10,9 +10,34 @@ import Foundation
 
 final class StatisticsViewModel: ObservableObject {
     
+    init() {
+        publisher
+            .receive(on: RunLoop.main)
+            .assign(to: &$isPaid)
+        rateService.requestReviewIfAppropriate(minimumReviewWorthyActionCount: 10)
+        setup()
+    }
+    
+    var counts: [Int] {
+        [demoService.items.count, verbsService.items.count]
+    }
+    
+    // MARK: Services
+    
+    private let demoService = DemoService()
     private let hapticService = HapticService()
     private let rateService = RateService()
     private let verbsService = VerbsService()
+    
+    // MARK: Publishers
+    
+    let publisher = UserDefaults.shared
+        .publisher(for: \.isPaid)
+    
+    // MARK: Published
+    
+    @Published var isPaid = FeatureToggle.isPaid
+    @Published var isShowingPaywall = false
     
     @Published var learnedVerbsCount = 0
     @Published var versbCount = 0
@@ -27,10 +52,7 @@ final class StatisticsViewModel: ObservableObject {
     @Published var isShowingEraseLearnedVerbsAlert = false
     @Published var isShowingEraseCorrectAnswersAlert = false
     
-    init() {
-        rateService.requestReviewIfAppropriate(minimumReviewWorthyActionCount: 10)
-        setup()
-    }
+    // MARK: Methods
     
     func startErasing(_ statisticsKind: StatisticsKind) {
         hapticService.generateHapticFeedback(for: .notification(.warning))
