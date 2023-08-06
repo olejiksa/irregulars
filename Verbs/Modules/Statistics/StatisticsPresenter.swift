@@ -34,18 +34,7 @@ final class StatisticsPresenter: NSObject {
 private extension StatisticsPresenter {
     
     func setupSections() {
-//        #if DEBUG
-//        let statisticsModel = prepareUITestsStatisticsModel()
-//        #else
         let statisticsModel = prepareStatisticsModel()
-//        #endif
-        
-        let answeredCorrectlyString = String(format: "answered_correctly_count".localized,
-                                             statisticsModel.totalAnswersCount)
-        
-//        let hasTranslation = languageService.hasTranslation ?
-//            RightDetailItem(title: Test.translation.title,
-//                            subtitle: String(statisticsModel.translationAnswersCount)) : nil
         
         let mistakeItems = statisticsModel.mistakes.map { verb in MistakeItem(verb: verb) { isFavorite in
             if isFavorite {
@@ -57,21 +46,9 @@ private extension StatisticsPresenter {
             }
         }}
         
-        dataSource.setup([setupActivationSection(upgradeBlock: willBuy),
-                          TableViewSection(header: "frequent_mistakes".localized,
+        dataSource.setup([TableViewSection(header: "frequent_mistakes".localized,
                                   items: mistakeItems,
                                   footer: "frequent_mistakes_footer".localized)])
-    }
-    
-    func setupActivationSection(upgradeBlock: @escaping ItemBlock) -> TableViewSection {
-        let upgradeItem = !FeatureToggle.isPaid ? ActionItem(text: "upgrade_to_pro".localized,
-                                                             style: .standard,
-                                                             actionBlock: upgradeBlock) : nil
-        let footer = "pro_suggestion_statistics".localized(with: [DemoService().items.count,
-                                                                  verbsService.items.count])
-        return TableViewSection(header: "activation".localized,
-                       items: [upgradeItem].compactMap { $0 },
-                       footer: footer)
     }
     
     func prepareStatisticsModel() -> StatisticsModel {
@@ -92,33 +69,6 @@ private extension StatisticsPresenter {
             .filter { !Locator.favorites.verbs.contains($0) &&
                 (Locator.mistakes.info[$0.infinitive.value] ?? 0) > 0 }
             .first(count: 5)
-        
-        return .init(verbsCount: verbsCount,
-                     learnedWordsCount: learnedCount,
-                     wordsInProgressCount: inProgressCount,
-                     totalAnswersCount: answeredCorrectlyTotal,
-                     translationAnswersCount: answeredCorrectlyTranslation,
-                     formsAnswersCount: answeredCorrectlyWriting,
-                     sentenceAnswersCount: answeredCorrectlySentences,
-                     listeningAnswersCount: answeredCorrectlyListening,
-                     mistakes: mistakes)
-    }
-    
-    func prepareUITestsStatisticsModel() -> StatisticsModel {
-        let answeredCorrectlyTranslation = 10
-        let answeredCorrectlyWriting = 20
-        let answeredCorrectlySentences = 30
-        let answeredCorrectlyListening = 40
-        let answeredCorrectlyTotal = answeredCorrectlyTranslation +
-            answeredCorrectlyWriting +
-            answeredCorrectlySentences +
-            answeredCorrectlyListening
-        
-        let learnedCount = 50
-        let inProgressCount = 100
-        let verbsCount = verbsService.items.count
-
-        let mistakes = [verbsService.randomItem].compactMap { $0 }
         
         return .init(verbsCount: verbsCount,
                      learnedWordsCount: learnedCount,

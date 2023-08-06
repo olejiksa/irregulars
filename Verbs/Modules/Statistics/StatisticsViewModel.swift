@@ -18,6 +18,10 @@ final class StatisticsViewModel: ObservableObject {
         setup()
     }
     
+    var hasTranslation: Bool {
+        languageService.hasTranslation
+    }
+    
     var counts: [Int] {
         [demoService.items.count, verbsService.items.count]
     }
@@ -25,6 +29,7 @@ final class StatisticsViewModel: ObservableObject {
     // MARK: Services
     
     private let demoService = DemoService()
+    private let languageService = LanguageService()
     private let hapticService = HapticService()
     private let rateService = RateService()
     private let verbsService = VerbsService()

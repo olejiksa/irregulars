@@ -40,7 +40,7 @@ struct StatisticsView: View {
 //                    Text("tell")
 //                    Spacer()
 //                    Button {
-//                        
+//
 //                    } label: {
 //                        SystemIcon.star.imageSwiftUI?
 //                            .foregroundColor(AccentColor.current.colorSwiftUI)
@@ -72,7 +72,9 @@ struct StatisticsView: View {
                 Text("using_hints_gives_you_no_points")
             }
             Section("including") {
-                RightDetailRow(title: "translation", subtitle: "\(viewModel.answeredCorrectlyTranslation)")
+                if viewModel.hasTranslation {
+                    RightDetailRow(title: "translation", subtitle: "\(viewModel.answeredCorrectlyTranslation)")
+                }
                 RightDetailRow(title: "forms", subtitle: "\(viewModel.answeredCorrectlyWriting)")
                 RightDetailRow(title: "sentences", subtitle: "\(viewModel.answeredCorrectlySentences)")
                 RightDetailRow(title: "listening", subtitle: "\(viewModel.answeredCorrectlyListening)")
