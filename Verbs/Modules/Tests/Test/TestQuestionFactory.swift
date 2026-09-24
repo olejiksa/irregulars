@@ -14,6 +14,7 @@ final class TestQuestionFactory {
     private let languageService: LanguageService
     private let sentencesService: SentencesService
     private let verbs: [Verb]
+    private let preferences = Preferences.shared
     
     init(catalogue: VerbCatalogue,
          languageService: LanguageService = .init(),
@@ -22,8 +23,8 @@ final class TestQuestionFactory {
         self.sentencesService = sentencesService
         
         // The wrong answers are drawn from whatever the tests are set to cover.
-        verbs = catalogue.verbs(includingRegular: UserDefaults.shared.bool(for: .regularVerbsTests),
-                                includingDerived: UserDefaults.shared.bool(for: .derivativesTests))
+        verbs = catalogue.verbs(includingRegular: preferences.testsIncludeRegularVerbs,
+                                includingDerived: preferences.testsIncludeDerivatives)
     }
     
     func build(with testKind: Test.Kind, verb: Verb) -> [TestSection] {

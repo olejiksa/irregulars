@@ -125,7 +125,7 @@ final class SettingsViewModel {
             let result = await self.notificationService.isAvailable
             
             if result {
-                self.notificationsAvailability = UserDefaults.shared.bool(for: .notifications) ? .enabled : .disabled
+                self.notificationsAvailability = Preferences.shared.areNotificationsEnabled ? .enabled : .disabled
             } else {
                 self.notificationsAvailability = .notAllowed
             }

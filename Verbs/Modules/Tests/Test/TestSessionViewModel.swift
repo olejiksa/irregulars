@@ -32,6 +32,7 @@ final class TestSessionViewModel {
     private let recordService: RecordService
     private let playerService: PlayerService
     private let catalogue: VerbCatalogue
+    private let preferences = Preferences.shared
     private let factory: TestQuestionFactory
     
     private var verb: Verb?
@@ -53,9 +54,9 @@ final class TestSessionViewModel {
         self.test = test
         
         // The filters have to be applied before the pool is taken, not after.
-        let pool = catalogue.verbs(favoritesOnly: UserDefaults.shared.bool(for: .favoritesOnly),
-                                   includingRegular: UserDefaults.shared.bool(for: .regularVerbsTests),
-                                   includingDerived: UserDefaults.shared.bool(for: .derivativesTests))
+        let pool = catalogue.verbs(favoritesOnly: preferences.testsUseFavoritesOnly,
+                                   includingRegular: preferences.testsIncludeRegularVerbs,
+                                   includingDerived: preferences.testsIncludeDerivatives)
             .map(\.infinitive.value)
         
         items = FeatureToggle.isPaid ? pool : pool.filter(demoService.items.contains)
@@ -231,13 +232,13 @@ private extension TestSessionViewModel {
         if !wasHintUsed {
             switch test {
             case .translation:
-                increase(.translationAnswers)
+                preferences.translationAnswers += 1
             case .listening:
-                increase(.listeningAnswers)
+                preferences.listeningAnswers += 1
             case .sentences:
-                increase(.sentencesAnswers)
+                preferences.sentencesAnswers += 1
             case .writing:
-                increase(.writingAnswers)
+                preferences.writingAnswers += 1
             case .speaking:
                 break
             }
@@ -253,7 +254,4 @@ private extension TestSessionViewModel {
         nextQuestion()
     }
     
-    func increase(_ key: UserDefaults.Key) {
-        UserDefaults.shared.set(UserDefaults.shared.integer(for: key) + 1, for: key)
-    }
 }

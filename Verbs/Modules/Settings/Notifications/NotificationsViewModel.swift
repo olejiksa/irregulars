@@ -14,13 +14,14 @@ import SwiftUI
 final class NotificationsViewModel {
     
     private let calendarService = CalendarService()
+    private let preferences = Preferences.shared
     private let notificationService = NotificationService(calendarService: .init())
     
     var areNotificationsAvailable = false
     
     var areNotificationsEnabled: Bool {
         didSet {
-            UserDefaults.shared.set(areNotificationsEnabled, for: .notifications)
+            preferences.areNotificationsEnabled = areNotificationsEnabled
             
             if areNotificationsEnabled {
                 Task { @MainActor [weak self] in
@@ -37,7 +38,7 @@ final class NotificationsViewModel {
     var startDate: Date {
         didSet {
             guard let minutes = calendarService.minutes(from: startDate) else { return }
-            UserDefaults.shared.set(minutes, for: .since)
+            preferences.notificationsSince = minutes
             notificationService.schedule()
         }
     }
@@ -45,14 +46,14 @@ final class NotificationsViewModel {
     var endDate: Date {
         didSet {
             guard let minutes = calendarService.minutes(from: endDate) else { return }
-            UserDefaults.shared.set(minutes, for: .to)
+            preferences.notificationsUntil = minutes
             notificationService.schedule()
         }
     }
     
     var frequency: Int {
         didSet {
-            UserDefaults.shared.set(frequency, for: .frequency)
+            preferences.notificationsPerDay = frequency
             notificationService.schedule()
         }
     }
@@ -60,11 +61,11 @@ final class NotificationsViewModel {
     let frequencyRange = 1...6
     
     init() {
-        areNotificationsEnabled = UserDefaults.shared.bool(for: .notifications)
-        frequency = UserDefaults.shared.integer(for: .frequency)
+        areNotificationsEnabled = Preferences.shared.areNotificationsEnabled
+        frequency = Preferences.shared.notificationsPerDay
         
-        let since = UserDefaults.shared.integer(for: .since)
-        let to = UserDefaults.shared.integer(for: .to)
+        let since = Preferences.shared.notificationsSince
+        let to = Preferences.shared.notificationsUntil
         
         startDate = calendarService.date(from: since) ?? .now
         endDate = calendarService.date(from: to) ?? .now

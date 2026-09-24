@@ -79,7 +79,7 @@ struct RootView: View {
         }
         .fullScreenCover(isPresented: $isShowingOnboarding) {
             OnboardingView()
-                .onDisappear { UserDefaults.shared.set(true, for: .hasLaunchedBefore) }
+                .onDisappear { Preferences.shared.hasLaunchedBefore = true }
         }
         .tint(accentColor.colorSwiftUI)
         .onReceive(NotificationCenter.default.publisher(for: .reload)) { _ in

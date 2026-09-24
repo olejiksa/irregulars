@@ -40,8 +40,8 @@ struct Provider: AppIntentTimelineProvider {
         switch displayOption {
         case .all:
             let verbs = VerbCatalogue()
-                .verbs(includingRegular: UserDefaults.shared.bool(for: .regularVerbs),
-                       includingDerived: UserDefaults.shared.bool(for: .derivatives))
+                .verbs(includingRegular: Preferences.shared.showsRegularVerbs,
+                       includingDerived: Preferences.shared.showsDerivatives)
             
             for index in 0..<8 {
                 guard let verb = verbs.randomElement() else { continue }

@@ -33,7 +33,7 @@ struct FeatureToggle {
         #if DEBUG
         false
         #else
-        !UserDefaults.shared.bool(for: .hasLaunchedBefore) &&
+        !Preferences.shared.hasLaunchedBefore &&
         (LanguageService().current == .russian || LanguageService().current == .english)
         #endif
     }

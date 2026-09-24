@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F26B5EA6D2984321804A2C3E /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580FC00B9CA21978631E1F4F /* Preferences.swift */; };
+		4A6232502B4200FE6C15B1C2 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580FC00B9CA21978631E1F4F /* Preferences.swift */; };
 		D1A615D6D3CA6D5420B764D9 /* VerbCatalogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E9F3BA5BA1B6688284F802 /* VerbCatalogue.swift */; };
 		682875FCDEF9F13E78201B67 /* VerbCatalogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E9F3BA5BA1B6688284F802 /* VerbCatalogue.swift */; };
 		5A8FCEBA482C4F7975554A4A /* VerbsCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0259FE33FE675C077856B391 /* VerbsCommands.swift */; };
@@ -226,6 +228,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		580FC00B9CA21978631E1F4F /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		96E9F3BA5BA1B6688284F802 /* VerbCatalogue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbCatalogue.swift; sourceTree = "<group>"; };
 		0259FE33FE675C077856B391 /* VerbsCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbsCommands.swift; sourceTree = "<group>"; };
 		0C5858B33E1415D1CEBA5D57 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
@@ -842,6 +845,7 @@
 		EBE605A525B866A500EB1CB3 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				580FC00B9CA21978631E1F4F /* Preferences.swift */,
 				EB2E4B9F25741880005B343A /* AppIcon.swift */,
 				EB59F02B258FE9E1004676D2 /* Gender.swift */,
 				EBF4A13A252EA2F6003E3A44 /* FeatureToggle.swift */,
@@ -1163,6 +1167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F26B5EA6D2984321804A2C3E /* Preferences.swift in Sources */,
 				D1A615D6D3CA6D5420B764D9 /* VerbCatalogue.swift in Sources */,
 				6217C04232432D0B1F7C02DE /* VerbsStore.swift in Sources */,
 				484C281E194D6D858C66B773 /* VerbsWidgetConfigurationIntent.swift in Sources */,
@@ -1207,6 +1212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A6232502B4200FE6C15B1C2 /* Preferences.swift in Sources */,
 				682875FCDEF9F13E78201B67 /* VerbCatalogue.swift in Sources */,
 				5A8FCEBA482C4F7975554A4A /* VerbsCommands.swift in Sources */,
 				8203438820DA509C80050329 /* AppRouter.swift in Sources */,

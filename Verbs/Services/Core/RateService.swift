@@ -11,24 +11,26 @@ import StoreKit
 @MainActor
 final class RateService {
     
+    private let preferences = Preferences.shared
+    
     func requestReviewIfAppropriate(minimumReviewWorthyActionCount: Int) {
-        var actionCount = UserDefaults.shared.integer(for: .reviewWorthyActionCount)
+        var actionCount = preferences.reviewWorthyActionCount
         actionCount += 1
         
-        UserDefaults.shared.set(actionCount, for: .reviewWorthyActionCount)
+        preferences.reviewWorthyActionCount = actionCount
         
         guard actionCount >= minimumReviewWorthyActionCount else { return }
         
         let bundleVersionKey = kCFBundleVersionKey as String
         let currentVersion = Bundle.main.object(forInfoDictionaryKey: bundleVersionKey) as? String
-        let lastVersion = UserDefaults.shared.string(for: .lastReviewRequestAppVersion)
+        let lastVersion = preferences.lastReviewRequestAppVersion
         
         guard lastVersion == nil || lastVersion != currentVersion else { return }
         
         requestReview()
         
-        UserDefaults.shared.set(0, for: .reviewWorthyActionCount)
-        UserDefaults.shared.set(currentVersion, for: .lastReviewRequestAppVersion)
+        preferences.reviewWorthyActionCount = 0
+        preferences.lastReviewRequestAppVersion = currentVersion
     }
 }
 

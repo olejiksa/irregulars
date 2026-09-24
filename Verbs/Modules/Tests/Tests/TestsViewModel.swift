@@ -36,6 +36,7 @@ final class TestsViewModel {
     
     private let languageService: LanguageService
     private var cancellables = Set<AnyCancellable>()
+    private let preferences = Preferences.shared
     
     
     init(languageService: LanguageService) {
@@ -47,7 +48,7 @@ final class TestsViewModel {
     
     func select(_ row: Row) {
         if row.test != nil,
-           UserDefaults.shared.bool(for: .favoritesOnly),
+           preferences.testsUseFavoritesOnly,
            Locator.favorites.verbs.isEmpty {
             errorFeedback += 1
             onEmptyFavorites?()
@@ -70,9 +71,9 @@ final class TestsViewModel {
     /// Mirrored into real state: observation cannot see through a computed property
     /// that reads the defaults.
     private(set) var isPaid = FeatureToggle.isPaid
-    private(set) var favoritesOnly = UserDefaults.shared.bool(for: .favoritesOnly)
-    private(set) var showsRegulars = UserDefaults.shared.bool(for: .regularVerbsTests)
-    private(set) var showsDerivatives = UserDefaults.shared.bool(for: .derivativesTests)
+    private(set) var favoritesOnly = Preferences.shared.testsUseFavoritesOnly
+    private(set) var showsRegulars = Preferences.shared.testsIncludeRegularVerbs
+    private(set) var showsDerivatives = Preferences.shared.testsIncludeDerivatives
     
     var isFiltered: Bool { favoritesOnly || !showsRegulars || !showsDerivatives }
     
@@ -90,7 +91,7 @@ final class TestsViewModel {
                       return
                   }
                   
-                  UserDefaults.shared.set(scope == .favorites, for: .favoritesOnly)
+                  preferences.testsUseFavoritesOnly = scope == .favorites
                   refreshFilter()
               })
     }
@@ -107,16 +108,21 @@ final class TestsViewModel {
                       return
                   }
                   
-                  UserDefaults.shared.set(value, for: key)
+                  if key == .regularVerbsTests {
+                      preferences.testsIncludeRegularVerbs = value
+                  } else {
+                      preferences.testsIncludeDerivatives = value
+                  }
+                  
                   refreshFilter()
               })
     }
     
     func refreshFilter() {
         isPaid = FeatureToggle.isPaid
-        favoritesOnly = UserDefaults.shared.bool(for: .favoritesOnly)
-        showsRegulars = UserDefaults.shared.bool(for: .regularVerbsTests)
-        showsDerivatives = UserDefaults.shared.bool(for: .derivativesTests)
+        favoritesOnly = preferences.testsUseFavoritesOnly
+        showsRegulars = preferences.testsIncludeRegularVerbs
+        showsDerivatives = preferences.testsIncludeDerivatives
     }
 }
 

@@ -82,7 +82,7 @@ final class StatisticsViewModel {
         switch statisticsKind {
         case .correctAnswers:
             [.translationAnswers, .writingAnswers, .sentencesAnswers, .listeningAnswers].forEach {
-                UserDefaults.shared.set(0, for: $0)
+                Preferences.shared.setAnswers(0, for: $0)
             }
         case .learnedVerbs:
             Locator.statistics.clear()
@@ -110,10 +110,10 @@ private extension StatisticsViewModel {
     }
     
     func prepareStatisticsModel() -> StatisticsModel {
-        let answeredCorrectlyTranslation = UserDefaults.shared.integer(for: .translationAnswers)
-        let answeredCorrectlyWriting = UserDefaults.shared.integer(for: .writingAnswers)
-        let answeredCorrectlySentences = UserDefaults.shared.integer(for: .sentencesAnswers)
-        let answeredCorrectlyListening = UserDefaults.shared.integer(for: .listeningAnswers)
+        let answeredCorrectlyTranslation = Preferences.shared.translationAnswers
+        let answeredCorrectlyWriting = Preferences.shared.writingAnswers
+        let answeredCorrectlySentences = Preferences.shared.sentencesAnswers
+        let answeredCorrectlyListening = Preferences.shared.listeningAnswers
         let answeredCorrectlyTotal = answeredCorrectlyTranslation +
             answeredCorrectlyWriting +
             answeredCorrectlySentences +

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct PopoverView: View {
     
-    @State private var sliderValue = Double(UserDefaults.shared.integer(for: .playbackSpeed))
+    @State private var sliderValue = Double(Preferences.shared.playbackSpeed)
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -31,8 +31,7 @@ struct PopoverView: View {
                     .foregroundColor(.secondary)
                     .font(.title3)
             } onEditingChanged: { _ in
-                let roundedValue = Int(sliderValue.rounded())
-                UserDefaults.shared.set(roundedValue, for: .playbackSpeed)
+                Preferences.shared.playbackSpeed = Int(sliderValue.rounded())
             }
         }
         .frame(minWidth: 250)

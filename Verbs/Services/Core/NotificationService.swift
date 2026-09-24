@@ -28,7 +28,7 @@ final class NotificationService {
             switch settings.authorizationStatus {
             case .authorized, .notDetermined:
                 defer {
-                    if UserDefaults.shared.bool(for: .notifications) {
+                    if Preferences.shared.areNotificationsEnabled {
                         schedule()
                     } else {
                         clean()
@@ -46,7 +46,7 @@ final class NotificationService {
         let result = try? await self.center.requestAuthorization(options: [.alert, .sound])
         
         if result == true {
-            UserDefaults.shared.set(true, for: .notifications)
+            Preferences.shared.areNotificationsEnabled = true
             schedule()
             return true
         } else {
@@ -56,7 +56,7 @@ final class NotificationService {
     
     func deauthorize() {
        Task {
-            UserDefaults.shared.set(false, for: .notifications)
+            Preferences.shared.areNotificationsEnabled = false
         }
     }
     
@@ -66,12 +66,12 @@ final class NotificationService {
         let currentDate = Date()
         let resolvedNotificationsCount = 64
         
-        let frequency = UserDefaults.shared.integer(for: .frequency)
+        let frequency = Preferences.shared.notificationsPerDay
         
-        let since = UserDefaults.shared.integer(for: .since)
+        let since = Preferences.shared.notificationsSince
         guard let sinceDate = calendarService.date(from: since) else { return }
         
-        let to = UserDefaults.shared.integer(for: .to)
+        let to = Preferences.shared.notificationsUntil
         guard let toDate = calendarService.date(from: to) else { return }
         
         var i = 0

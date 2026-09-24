@@ -44,6 +44,7 @@ final class ListViewModel {
     var onSelect: ((Verb) -> Void)?
     
     private let catalogue: VerbCatalogue
+    private let preferences: Preferences
     private let printService: PrintService
     private var cancellables = Set<AnyCancellable>()
     
@@ -55,10 +56,12 @@ final class ListViewModel {
     
     init(favoritesOnly: Bool,
          catalogue: VerbCatalogue,
+         preferences: Preferences = .shared,
          languageService: LanguageService = .init(),
          printService: PrintService = .init()) {
         self.favoritesOnly = favoritesOnly
         self.catalogue = catalogue
+        self.preferences = preferences
         self.printService = printService
         
         hasTranslation = languageService.hasTranslation
@@ -141,7 +144,7 @@ final class ListViewModel {
     var showsTranslationBinding: Binding<Bool> {
         .init(get: { [weak self] in self?.showsTranslation ?? false },
               set: { [weak self] value in
-                  UserDefaults.shared.set(value, for: .shouldTranslationBeShown)
+                  self?.preferences.showsTranslation = value
                   self?.showsTranslation = value && (self?.hasTranslation ?? false)
                   self?.rebuild()
               })
@@ -150,7 +153,7 @@ final class ListViewModel {
     var groupsBySimilarityBinding: Binding<Bool> {
         .init(get: { [weak self] in self?.groupsBySimilarity ?? false },
               set: { [weak self] value in
-                  UserDefaults.shared.set(value, for: .shouldSimilarBeShown)
+                  self?.preferences.groupsBySimilarity = value
                   self?.groupsBySimilarity = value
                   self?.rebuild()
               })
@@ -159,7 +162,7 @@ final class ListViewModel {
     var showsRegularsBinding: Binding<Bool> {
         .init(get: { [weak self] in self?.showsRegulars ?? false },
               set: { [weak self] value in
-                  UserDefaults.shared.set(value, for: .regularVerbs)
+                  self?.preferences.showsRegularVerbs = value
                   self?.updateRegulars(value)
               })
     }
@@ -167,7 +170,7 @@ final class ListViewModel {
     var showsDerivativesBinding: Binding<Bool> {
         .init(get: { [weak self] in self?.showsDerivatives ?? false },
               set: { [weak self] value in
-                  UserDefaults.shared.set(value, for: .derivatives)
+                  self?.preferences.showsDerivatives = value
                   self?.updateDerivatives(value)
               })
     }
@@ -187,10 +190,10 @@ final class ListViewModel {
 extension ListViewModel {
     
     fileprivate func loadSettings() {
-        showsRegulars = UserDefaults.shared.bool(for: .regularVerbs)
-        showsDerivatives = UserDefaults.shared.bool(for: .derivatives)
-        showsTranslation = UserDefaults.shared.bool(for: .shouldTranslationBeShown) && hasTranslation
-        groupsBySimilarity = UserDefaults.shared.bool(for: .shouldSimilarBeShown)
+        showsRegulars = preferences.showsRegularVerbs
+        showsDerivatives = preferences.showsDerivatives
+        showsTranslation = preferences.showsTranslation && hasTranslation
+        groupsBySimilarity = preferences.groupsBySimilarity
     }
     
     /// The verbs this list shows, before searching.

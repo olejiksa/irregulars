@@ -38,7 +38,7 @@ final class AudioService: NSObject {
         } else {
             try? AVAudioSession.sharedInstance().setCategory(.playback)
             let utterance = AVSpeechUtterance(string: text)
-            let playbackSpeed = PlaybackSpeed(UserDefaults.shared.integer(for: .playbackSpeed))
+            let playbackSpeed = PlaybackSpeed(Preferences.shared.playbackSpeed)
             utterance.rate = playbackSpeed.rawValue
             utterance.voice = voiceService.voice(identifier: Voice.current?.id ?? "")
             synthesizer.speak(utterance)
