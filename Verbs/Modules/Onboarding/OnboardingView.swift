@@ -11,68 +11,53 @@ import SwiftUI
 struct OnboardingView: View {
     
     @State private var viewModel = OnboardingViewModel()
-    @Environment(\.dismiss) var dismiss
-    
-    init() {
-        UIPageControl.appearance().overrideUserInterfaceStyle = .light
-    }
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        NavigationView {
-            let view = VStack {
-                TabView(selection: $viewModel.selection) {
-                    ForEach(viewModel.items) { item in
-                        OnboardingItemView(item: item)
-                            .tag(item.id)
-                    }
+        NavigationStack {
+            TabView(selection: $viewModel.selection) {
+                ForEach(viewModel.items) { item in
+                    OnboardingItemView(item: item)
+                        .tag(item.id)
                 }
-                .tabViewStyle(.page)
-                .indexViewStyle(.page(backgroundDisplayMode: .always))
-                
-                Button {
-                    if viewModel.isLast {
-                        dismiss()
-                    } else {
-                        viewModel.selection += 1
-                    }
-                } label: {
-                    Text(viewModel.isLast ? "start" : "continue")
-                        .frame(width: 200)
-                        .padding()
-                }
-                .contentShape(Rectangle())
-                .font(.system(size: 20,
-                              weight: .bold,
-                              design: .rounded))
-                .background(.white,
-                            in: RoundedRectangle(cornerRadius: 10,
-                                                 style: .continuous))
-                .transition(.scale.combined(with: .opacity))
             }
-            .preferredColorScheme(.light)
+            .tabViewStyle(.page)
             .animation(.easeOut(duration: 0.2), value: viewModel.selection)
-            .transition(.slide)
-            .preferredColorScheme(.dark)
-            .padding()
+            .safeAreaInset(edge: .bottom) { action }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        dismiss()
-                    }) {
-                        SystemIcon.close.imageSwiftUI?.foregroundColor(.white)
-                    }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button(role: .close) { dismiss() }
                 }
             }
-            
-            view.background(Color.accentColor)
         }
     }
 }
 
-struct OnboardingView_Previews: PreviewProvider {
+// MARK: - Private
+
+private extension OnboardingView {
     
-    static var previews: some View {
-        OnboardingView()
+    var action: some View {
+        Button {
+            if viewModel.isLast {
+                dismiss()
+            } else {
+                viewModel.selection += 1
+            }
+        } label: {
+            Text(viewModel.isLast ? "start" : "continue")
+                .font(.headline)
+                .fontDesign(.rounded)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 4)
+        }
+        .buttonStyle(.glassProminent)
+        .controlSize(.large)
+        .padding()
     }
+}
+
+#Preview {
+    OnboardingView()
 }

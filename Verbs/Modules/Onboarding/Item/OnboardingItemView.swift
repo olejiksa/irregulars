@@ -12,37 +12,31 @@ struct OnboardingItemView: View {
     
     let item: OnboardingItem
     
+    /// Big enough to carry the page, and still grows with the reader's text size.
+    @ScaledMetric(relativeTo: .largeTitle) private var emojiSize: CGFloat = 120
+    
     var body: some View {
-        VStack(spacing: 0) {
+        VStack(spacing: 16) {
             Text(item.emoji)
-                .font(.system(size: 150))
+                .font(.system(size: emojiSize))
+                .accessibilityHidden(true)
             Text(item.title)
-                .font(.system(size: 35,
-                              weight: .heavy,
-                              design: .rounded))
-                .padding(.bottom, 12)
+                .font(.largeTitle)
+                .fontWeight(.bold)
             Text(item.content)
-                .font(.system(size: 18,
-                              weight: .semibold,
-                              design: .rounded))
-                .padding(.bottom, 12)
+                .font(.body)
+                .foregroundStyle(.secondary)
         }
+        .fontDesign(.rounded)
         .multilineTextAlignment(.center)
-        .foregroundColor(.white)
         .padding()
     }
 }
 
-struct OnboardingItemView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        let item = OnboardingItem(
-            id: 0,
-            emoji: "🤝",
-            title: "Join the crew",
-            content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry")
-        OnboardingItemView(item: item)
-            .previewLayout(.sizeThatFits)
-            .background(.blue)
-    }
+#Preview {
+    OnboardingItemView(item: OnboardingItem(
+        id: 0,
+        emoji: "🤝",
+        title: "Join the crew",
+        content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry"))
 }
