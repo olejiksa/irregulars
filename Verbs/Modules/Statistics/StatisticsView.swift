@@ -10,7 +10,7 @@ import SwiftUI
 
 struct StatisticsView: View {
     
-    @StateObject private var viewModel = StatisticsViewModel()
+    @State private var viewModel = StatisticsViewModel()
     
     var body: some View {
         List {

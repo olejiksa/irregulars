@@ -10,7 +10,7 @@ import SwiftUI
 
 struct DetailView: View {
     
-    @ObservedObject var viewModel: DetailViewModel
+    @Bindable var viewModel: DetailViewModel
     
     @AppStorage(UserDefaults.Key.isPaid.rawValue, store: .shared)
     private var isPaid = false

@@ -10,17 +10,17 @@ import SwiftUI
 
 struct RootView: View {
     
-    @ObservedObject var router: AppRouter
+    @Bindable var router: AppRouter
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     
-    @StateObject private var allVerbs = ListViewModel(languageService: .init(),
+    @State private var allVerbs = ListViewModel(languageService: .init(),
                                                       verbsService: VerbsService(),
                                                       printService: .init())
-    @StateObject private var favorites = ListViewModel(languageService: .init(),
+    @State private var favorites = ListViewModel(languageService: .init(),
                                                        verbsService: Locator.favoritesService,
                                                        printService: .init())
-    @StateObject private var tests = TestsViewModel(languageService: .init(), hapticService: .init())
+    @State private var tests = TestsViewModel(languageService: .init(), hapticService: .init())
     
     @State private var isShowingEmptyFavorites = false
     @State private var isShowingPaywall = false
@@ -240,10 +240,10 @@ private extension RootView {
 /// throw away what the reader has typed or recorded.
 private struct DetailScreen: View {
     
-    @StateObject private var viewModel: DetailViewModel
+    @State private var viewModel: DetailViewModel
     
     init(verb: Verb) {
-        _viewModel = StateObject(wrappedValue: DetailViewModel(verb: verb))
+        _viewModel = State(wrappedValue: DetailViewModel(verb: verb))
     }
     
     var body: some View {
@@ -255,11 +255,11 @@ private struct TestSessionScreen: View {
     
     private let onFinish: () -> Void
     
-    @StateObject private var viewModel: TestSessionViewModel
+    @State private var viewModel: TestSessionViewModel
     
     init(test: Test, onFinish: @escaping () -> Void) {
         self.onFinish = onFinish
-        _viewModel = StateObject(wrappedValue: TestAssembly(test: test).viewModel())
+        _viewModel = State(wrappedValue: TestAssembly(test: test).viewModel())
     }
     
     var body: some View {

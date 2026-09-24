@@ -10,9 +10,9 @@ import SwiftUI
 
 struct NotificationsView: View {
     
-    @StateObject var settingsViewModel: SettingsViewModel
+    @State var settingsViewModel: SettingsViewModel
     
-    @StateObject private var viewModel = NotificationsViewModel()
+    @State private var viewModel = NotificationsViewModel()
     
     var body: some View {
         List {

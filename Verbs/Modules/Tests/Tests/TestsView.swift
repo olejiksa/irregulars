@@ -10,7 +10,7 @@ import SwiftUI
 
 struct TestsView: View {
     
-    @ObservedObject var viewModel: TestsViewModel
+    var viewModel: TestsViewModel
     
     var body: some View {
         ScrollViewReader { proxy in

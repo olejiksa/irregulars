@@ -7,20 +7,19 @@
 //
 
 import Foundation
+import Observation
 import StoreKit
 
 @MainActor
-final class PaywallViewModel: ObservableObject {
+@Observable
+final class PaywallViewModel {
     
     private let hapticService = HapticService()
     
-    @Published
     var purchaseService = Locator.purchaseService
     
-    @Published
     var isBuyingPurchaseNotInProgress = true
     
-    @Published
     var isRestoringPurchaseNotInProgress = true
     
     let title: String

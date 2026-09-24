@@ -10,7 +10,8 @@ import Combine
 import SwiftUI
 
 @MainActor
-final class TestsViewModel: ObservableObject {
+@Observable
+final class TestsViewModel {
     
     struct Row: Identifiable {
         let id: String
@@ -22,8 +23,8 @@ final class TestsViewModel: ObservableObject {
         let accessibilityIdentifier: AccessibilityIdentifier?
     }
     
-    @Published private(set) var rows: [Row] = []
-    @Published private(set) var scrollToTopToken = 0
+    private(set) var rows: [Row] = []
+    private(set) var scrollToTopToken = 0
     
     /// Set by the view controller, which owns the navigation.
     var onSelect: ((Test?) -> Void)?
@@ -70,43 +71,56 @@ final class TestsViewModel: ObservableObject {
         case demo, all, favorites
     }
     
-    var isPaid: Bool { FeatureToggle.isPaid }
+    /// Mirrored into real state: observation cannot see through a computed property
+    /// that reads the defaults.
+    private(set) var isPaid = FeatureToggle.isPaid
+    private(set) var favoritesOnly = UserDefaults.shared.bool(for: .favoritesOnly)
+    private(set) var showsRegulars = UserDefaults.shared.bool(for: .regularVerbsTests)
+    private(set) var showsDerivatives = UserDefaults.shared.bool(for: .derivativesTests)
     
-    var isFiltered: Bool {
-        UserDefaults.shared.bool(for: .favoritesOnly) ||
-        !UserDefaults.shared.bool(for: .regularVerbsTests) ||
-        !UserDefaults.shared.bool(for: .derivativesTests)
+    var isFiltered: Bool { favoritesOnly || !showsRegulars || !showsDerivatives }
+    
+    var scope: Scope {
+        guard isPaid else { return .demo }
+        return favoritesOnly ? .favorites : .all
     }
     
     var scopeBinding: Binding<Scope> {
-        .init(get: {
-            guard FeatureToggle.isPaid else { return .demo }
-            return UserDefaults.shared.bool(for: .favoritesOnly) ? .favorites : .all
-        }, set: { [weak self] scope in
-            guard FeatureToggle.isPaid else {
-                self?.onPaywall?()
-                return
-            }
-            
-            UserDefaults.shared.set(scope == .favorites, for: .favoritesOnly)
-            self?.objectWillChange.send()
-        })
+        .init(get: { [weak self] in self?.scope ?? .demo },
+              set: { [weak self] scope in
+                  guard let self = self else { return }
+                  guard isPaid else {
+                      onPaywall?()
+                      return
+                  }
+                  
+                  UserDefaults.shared.set(scope == .favorites, for: .favoritesOnly)
+                  refreshFilter()
+              })
     }
     
     var showsRegularsBinding: Binding<Bool> { toggle(for: .regularVerbsTests) }
     var showsDerivativesBinding: Binding<Bool> { toggle(for: .derivativesTests) }
     
     private func toggle(for key: UserDefaults.Key) -> Binding<Bool> {
-        .init(get: { UserDefaults.shared.bool(for: key) },
+        .init(get: { key == .regularVerbsTests ? self.showsRegulars : self.showsDerivatives },
               set: { [weak self] value in
-                  guard FeatureToggle.isPaid else {
-                      self?.onPaywall?()
+                  guard let self = self else { return }
+                  guard isPaid else {
+                      onPaywall?()
                       return
                   }
                   
                   UserDefaults.shared.set(value, for: key)
-                  self?.objectWillChange.send()
+                  refreshFilter()
               })
+    }
+    
+    func refreshFilter() {
+        isPaid = FeatureToggle.isPaid
+        favoritesOnly = UserDefaults.shared.bool(for: .favoritesOnly)
+        showsRegulars = UserDefaults.shared.bool(for: .regularVerbsTests)
+        showsDerivatives = UserDefaults.shared.bool(for: .derivativesTests)
     }
 }
 
@@ -149,7 +163,7 @@ private extension TestsViewModel {
         
         NotificationCenter.default.publisher(for: .reload)
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in self?.objectWillChange.send() }
+            .sink { [weak self] _ in self?.refreshFilter() }
             .store(in: &cancellables)
     }
 }

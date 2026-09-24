@@ -7,11 +7,13 @@
 //
 
 import Foundation
+import Observation
 
-final class OnboardingViewModel: ObservableObject {
+@Observable
+final class OnboardingViewModel {
     
-    @Published private(set) var items: [OnboardingItem] = []
-    @Published var selection = 0
+    private(set) var items: [OnboardingItem] = []
+    var selection = 0
     
     var isLast: Bool {
         selection == items.count - 1

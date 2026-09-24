@@ -10,7 +10,7 @@ import SwiftUI
 
 struct PaywallView: View {
     
-    @StateObject private var viewModel = PaywallViewModel()
+    @State private var viewModel = PaywallViewModel()
     
     @Environment(\.dismiss) var dismiss
     

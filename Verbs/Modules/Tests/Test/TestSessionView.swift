@@ -10,7 +10,7 @@ import SwiftUI
 
 struct TestSessionView: View {
     
-    @ObservedObject var viewModel: TestSessionViewModel
+    @Bindable var viewModel: TestSessionViewModel
     
     @FocusState private var focusedField: Int?
     
@@ -144,7 +144,7 @@ private extension TestSessionView {
 
 private struct InputRow: View {
     
-    @ObservedObject var field: InputField
+    @Bindable var field: InputField
     let viewModel: TestSessionViewModel
     var focusedField: FocusState<Int?>.Binding
     let onSubmit: (InputField) -> Void
@@ -201,7 +201,7 @@ private struct InputRow: View {
 
 private struct RecordRow: View {
     
-    @ObservedObject var field: RecordField
+    @Bindable var field: RecordField
     let viewModel: TestSessionViewModel
     
     var body: some View {

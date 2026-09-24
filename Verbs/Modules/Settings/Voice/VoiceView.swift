@@ -10,9 +10,9 @@ import SwiftUI
 
 struct VoiceView: View {
     
-    @StateObject var settingsViewModel: SettingsViewModel
+    @State var settingsViewModel: SettingsViewModel
     
-    @StateObject private var viewModel = VoiceViewModel()
+    @State private var viewModel = VoiceViewModel()
     
     var body: some View {
         List {

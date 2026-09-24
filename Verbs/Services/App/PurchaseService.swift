@@ -9,7 +9,8 @@
 import StoreKit
 
 @MainActor
-final class PurchaseService: ObservableObject {
+@Observable
+final class PurchaseService {
     
     var canMakePayments: Bool {
         AppStore.canMakePayments
@@ -17,13 +18,13 @@ final class PurchaseService: ObservableObject {
     
     private let productIDs = ["com.olejiksa.Verbs.Pro"]
     
-    @Published
     private(set) var products: [Product] = []
     
     private var purchasedProductIDs = Set<String>()
     private var areProductsLoaded = false
-    private var updates: Task<Void, Never>? = nil
-    private var purchaseIntents: Task<Void, Never>? = nil
+    // Not observable state, and deinit is nonisolated, so it has to reach them from there.
+    @ObservationIgnored nonisolated(unsafe) private var updates: Task<Void, Never>?
+    @ObservationIgnored nonisolated(unsafe) private var purchaseIntents: Task<Void, Never>?
     
     init() {
         updates = observeTransactionUpdates()

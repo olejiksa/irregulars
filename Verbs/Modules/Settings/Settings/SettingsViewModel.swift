@@ -7,14 +7,19 @@
 //
 
 import Foundation
+import Combine
+import Observation
 import UIKit
 
-final class SettingsViewModel: ObservableObject {
+@Observable
+final class SettingsViewModel {
+    
+    @ObservationIgnored private var cancellable: AnyCancellable?
     
     init() {
-        publisher
+        cancellable = publisher
             .receive(on: RunLoop.main)
-            .assign(to: &$isPaid)
+            .sink { [weak self] isPaid in self?.isPaid = isPaid }
         updateNotificationsAvailability()
     }
     
@@ -31,12 +36,12 @@ final class SettingsViewModel: ObservableObject {
     
     // MARK: Published
     
-    @Published var notificationsAvailability: NotificationsAvailability = .notAllowed
-    @Published var accentColor: AccentColor = .current
-    @Published var voice: Voice? = .current
-    @Published var isShowingPaywall = false
-    @Published var isShowingFAQ = false
-    @Published var isPaid = FeatureToggle.isPaid
+    var notificationsAvailability: NotificationsAvailability = .notAllowed
+    var accentColor: AccentColor = .current
+    var voice: Voice? = .current
+    var isShowingPaywall = false
+    var isShowingFAQ = false
+    var isPaid = FeatureToggle.isPaid
     
     // MARK: Links
     

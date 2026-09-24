@@ -10,7 +10,8 @@ import Combine
 import SwiftUI
 
 @MainActor
-final class ListViewModel: ObservableObject {
+@Observable
+final class ListViewModel {
     
     struct VerbSection: Identifiable {
         let id: Int
@@ -18,23 +19,23 @@ final class ListViewModel: ObservableObject {
         let verbs: [Verb]
     }
     
-    @Published private(set) var sections: [VerbSection] = []
-    @Published private(set) var searchResults: [Verb] = []
-    @Published private(set) var state: ListState = .data
-    @Published private(set) var showsTranslation = false
-    @Published private(set) var showsSectionIndex = true
-    @Published private(set) var scrollToTopToken = 0
+    private(set) var sections: [VerbSection] = []
+    private(set) var searchResults: [Verb] = []
+    private(set) var state: ListState = .data
+    private(set) var showsTranslation = false
+    private(set) var showsSectionIndex = true
+    private(set) var scrollToTopToken = 0
     
-    @Published var isSearchActive = false
-    @Published var searchText = "" {
+    var isSearchActive = false
+    var searchText = "" {
         didSet {
             guard searchText != oldValue else { return }
             updateSearch(text: searchText)
         }
     }
-    @Published var isEditing = false
-    @Published var selectedVerb: Verb?
-    @Published var isShowingPaywall = false
+    var isEditing = false
+    var selectedVerb: Verb?
+    var isShowingPaywall = false
     
     let favoritesOnly: Bool
     let hasTranslation: Bool
@@ -172,7 +173,7 @@ final class ListViewModel: ObservableObject {
     
     /// Set by the container: the all-verbs list is called "verbs" next to a tab bar
     /// and "all" next to the sidebar.
-    @Published var title = ""
+    var title = ""
     
     func clearSelection() {
         selectedVerb = nil

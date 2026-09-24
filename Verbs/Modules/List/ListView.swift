@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ListView: View {
     
-    @ObservedObject var viewModel: ListViewModel
+    @Bindable var viewModel: ListViewModel
     
     var body: some View {
         content

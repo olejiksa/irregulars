@@ -23,21 +23,22 @@ enum TestsRoute: Hashable {
 /// The whole navigation state of the app. The scene delegate writes to it when a
 /// deep link, a Spotlight result or a home screen shortcut arrives; the views read it.
 @MainActor
-final class AppRouter: ObservableObject {
+@Observable
+final class AppRouter {
     
     /// The delegates are created by UIKit and the views by SwiftUI, so they meet here.
     static let shared = AppRouter()
     
-    @Published var destination: SidebarDestination = .all
+    var destination: SidebarDestination = .all
     
-    @Published var verbsRoute: VerbsRoute?
-    @Published var testsRoute: TestsRoute?
+    var verbsRoute: VerbsRoute?
+    var testsRoute: TestsRoute?
     
     /// Screens the Mac menu bar opens, which has no column of its own to push into.
-    @Published var menuScreen: MenuScreen?
+    var menuScreen: MenuScreen?
     
     /// Text handed over by Spotlight or by the search shortcut.
-    @Published var pendingSearch: String?
+    var pendingSearch: String?
     
     var verbsPath: Binding<[VerbsRoute]> {
         .init(get: { [weak self] in self?.verbsRoute.map { [$0] } ?? [] },

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Observation
 
 struct TestSection: Identifiable {
     
@@ -62,7 +63,8 @@ struct ActionRow: Identifiable {
 /// A word the reader types in. Holds the state the row edits, so the view model can
 /// ask whether every field of the question has been answered.
 @MainActor
-final class InputField: ObservableObject, Identifiable {
+@Observable
+final class InputField: Identifiable {
     
     let id: Int
     let words: [Word]
@@ -70,9 +72,9 @@ final class InputField: ObservableObject, Identifiable {
     let isAudio: Bool
     let isLast: Bool
     
-    @Published var text = ""
-    @Published private(set) var isSubmitted = false
-    @Published private(set) var isPlaying = false
+    var text = ""
+    private(set) var isSubmitted = false
+    private(set) var isPlaying = false
     
     private(set) var isValid = false
     
@@ -100,15 +102,16 @@ final class InputField: ObservableObject, Identifiable {
 
 /// A word the reader says out loud, then plays back against the original.
 @MainActor
-final class RecordField: ObservableObject, Identifiable {
+@Observable
+final class RecordField: Identifiable {
     
     let id: String
     let word: Word
     
-    @Published private(set) var isPlaying = false
-    @Published private(set) var isRecording = false
-    @Published private(set) var isComparing = false
-    @Published private(set) var hasRecording = false
+    private(set) var isPlaying = false
+    private(set) var isRecording = false
+    private(set) var isComparing = false
+    private(set) var hasRecording = false
     
     init(word: Word, tag: Int, index: Int) {
         id = "\(tag)-\(index)-\(word.value)"

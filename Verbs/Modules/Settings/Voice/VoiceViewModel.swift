@@ -7,13 +7,15 @@
 //
 
 import Foundation
+import Observation
 
 @MainActor
-final class VoiceViewModel: ObservableObject {
+@Observable
+final class VoiceViewModel {
     
-    @Published var selectedItem: Voice? = .current
-    @Published var isPlaying = false
-    @Published var isShowingSpeakingRate = false
+    var selectedItem: Voice? = .current
+    var isPlaying = false
+    var isShowingSpeakingRate = false
     
     private let audioService: AudioService
     private let voiceService: VoiceService

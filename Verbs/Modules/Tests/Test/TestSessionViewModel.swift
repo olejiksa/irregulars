@@ -7,20 +7,22 @@
 //
 
 import Foundation
+import Observation
 import UIKit
 
 @MainActor
-final class TestSessionViewModel: ObservableObject {
+@Observable
+final class TestSessionViewModel {
     
     let test: Test
     
-    @Published private(set) var sections: [TestSection] = []
-    @Published private(set) var answeredIDs: Set<String> = []
-    @Published var hint: String?
-    @Published var isShowingPlaybackSpeed = false
+    private(set) var sections: [TestSection] = []
+    private(set) var answeredIDs: Set<String> = []
+    var hint: String?
+    var isShowingPlaybackSpeed = false
     
     /// Bumped whenever a new verb is drawn, so the view can announce the change.
-    @Published private(set) var questionToken = 0
+    private(set) var questionToken = 0
     
     /// Called when the pool runs dry and there is nothing left to ask.
     var onFinish: (() -> Void)?

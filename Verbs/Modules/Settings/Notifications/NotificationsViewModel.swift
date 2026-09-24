@@ -9,14 +9,15 @@
 import Foundation
 import SwiftUI
 
-final class NotificationsViewModel: ObservableObject {
+@Observable
+final class NotificationsViewModel {
     
     private let calendarService = CalendarService()
     private let notificationService = NotificationService(verbsService: .init(), calendarService: .init())
     
-    @Published var areNotificationsAvailable = false
+    var areNotificationsAvailable = false
     
-    @Published var areNotificationsEnabled: Bool {
+    var areNotificationsEnabled: Bool {
         didSet {
             UserDefaults.shared.set(areNotificationsEnabled, for: .notifications)
             
@@ -32,7 +33,7 @@ final class NotificationsViewModel: ObservableObject {
         }
     }
     
-    @Published var startDate: Date {
+    var startDate: Date {
         didSet {
             guard let minutes = calendarService.minutes(from: startDate) else { return }
             UserDefaults.shared.set(minutes, for: .since)
@@ -40,7 +41,7 @@ final class NotificationsViewModel: ObservableObject {
         }
     }
     
-    @Published var endDate: Date {
+    var endDate: Date {
         didSet {
             guard let minutes = calendarService.minutes(from: endDate) else { return }
             UserDefaults.shared.set(minutes, for: .to)
@@ -48,7 +49,7 @@ final class NotificationsViewModel: ObservableObject {
         }
     }
     
-    @Published var frequency: Int {
+    var frequency: Int {
         didSet {
             UserDefaults.shared.set(frequency, for: .frequency)
             notificationService.schedule()

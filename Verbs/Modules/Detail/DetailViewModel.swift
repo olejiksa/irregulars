@@ -8,18 +8,20 @@
 
 import Combine
 import Foundation
+import Observation
 
 @MainActor
-final class DetailViewModel: ObservableObject {
+@Observable
+final class DetailViewModel {
     
     let verb: Verb
     let sentences: [String]
     let hasTranslation: Bool
     
-    @Published private(set) var isFavorite: Bool
-    @Published private(set) var speakingWord: String?
-    @Published var isShowingPaywall = false
-    @Published var isShowingPlaybackSpeed = false
+    private(set) var isFavorite: Bool
+    private(set) var speakingWord: String?
+    var isShowingPaywall = false
+    var isShowingPlaybackSpeed = false
     
     private let audioService: AudioService
     private let favorites = Locator.favorites

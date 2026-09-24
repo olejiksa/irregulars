@@ -10,7 +10,7 @@ import SwiftUI
 
 struct AccentColorView: View {
     
-    @StateObject var settingsViewModel: SettingsViewModel
+    @State var settingsViewModel: SettingsViewModel
     
     private let appIconService = AppIconService()
     private let rateService = RateService()
@@ -18,7 +18,7 @@ struct AccentColorView: View {
     @State private var selectedItem: AccentColor? = .current
     
     init(settingsViewModel: SettingsViewModel) {
-        _settingsViewModel = StateObject(wrappedValue: settingsViewModel)
+        _settingsViewModel = State(wrappedValue: settingsViewModel)
     }
 
     var body: some View {

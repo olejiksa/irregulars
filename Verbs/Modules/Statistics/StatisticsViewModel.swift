@@ -7,13 +7,18 @@
 //
 
 import Foundation
+import Combine
+import Observation
 
-final class StatisticsViewModel: ObservableObject {
+@Observable
+final class StatisticsViewModel {
+    
+    @ObservationIgnored private var cancellable: AnyCancellable?
     
     init() {
-        publisher
+        cancellable = publisher
             .receive(on: RunLoop.main)
-            .assign(to: &$isPaid)
+            .sink { [weak self] isPaid in self?.isPaid = isPaid }
         rateService.requestReviewIfAppropriate(minimumReviewWorthyActionCount: 10)
         setup()
     }
@@ -41,21 +46,21 @@ final class StatisticsViewModel: ObservableObject {
     
     // MARK: Published
     
-    @Published var isPaid = FeatureToggle.isPaid
-    @Published var isShowingPaywall = false
+    var isPaid = FeatureToggle.isPaid
+    var isShowingPaywall = false
     
-    @Published var learnedVerbsCount = 0
-    @Published var versbCount = 0
-    @Published var wordsInProgressCount = 0
+    var learnedVerbsCount = 0
+    var versbCount = 0
+    var wordsInProgressCount = 0
     
-    @Published var answeredCorrectlyTranslation = 0
-    @Published var answeredCorrectlyWriting = 0
-    @Published var answeredCorrectlySentences = 0
-    @Published var answeredCorrectlyListening = 0
-    @Published var answeredCorrectlyTotal = 0
+    var answeredCorrectlyTranslation = 0
+    var answeredCorrectlyWriting = 0
+    var answeredCorrectlySentences = 0
+    var answeredCorrectlyListening = 0
+    var answeredCorrectlyTotal = 0
     
-    @Published var isShowingEraseLearnedVerbsAlert = false
-    @Published var isShowingEraseCorrectAnswersAlert = false
+    var isShowingEraseLearnedVerbsAlert = false
+    var isShowingEraseCorrectAnswersAlert = false
     
     // MARK: Methods
     
