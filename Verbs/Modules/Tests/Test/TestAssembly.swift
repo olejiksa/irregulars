@@ -18,22 +18,18 @@ final class TestAssembly: AssemblyProtocol {
     
     func viewController() -> some TestViewController {
         let verbsService = VerbsService()
-        let itemsFactory = TestItemsFactory(languageService: .init(),
-                                            sentencesService: .init(),
-                                            verbsService: verbsService)
-        let audioService = AudioService(voiceService: .init())
-        let presenter = TestPresenter(audioService: audioService,
-                                      recordService: .init(),
-                                      playerService: .init(),
-                                      verbsService: verbsService,
-                                      favoritesService: Locator.favoritesService,
-                                      demoService: .init(),
-                                      itemsFactory: itemsFactory,
-                                      test: test)
-        let viewController = TestViewController(presenter: presenter, title: test.title)
-        let router = TestRouter(viewController: viewController)
-        presenter.viewController = viewController
-        presenter.router = router
-        return viewController
+        let factory = TestQuestionFactory(languageService: .init(),
+                                          sentencesService: .init(),
+                                          verbsService: verbsService)
+        let viewModel = TestSessionViewModel(audioService: AudioService(voiceService: .init()),
+                                             recordService: .init(),
+                                             playerService: .init(),
+                                             verbsService: verbsService,
+                                             favoritesService: Locator.favoritesService,
+                                             demoService: .init(),
+                                             factory: factory,
+                                             test: test)
+        
+        return TestViewController(viewModel: viewModel, title: test.title)
     }
 }
