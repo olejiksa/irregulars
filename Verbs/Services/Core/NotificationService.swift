@@ -14,11 +14,14 @@ final class NotificationService {
     private let catalogue: VerbCatalogue
     private let calendarService: CalendarService
     private let center = UNUserNotificationCenter.current()
+    private let preferences: Preferences
     
-    init(catalogue: VerbCatalogue = .init(),
-         calendarService: CalendarService) {
+    init(catalogue: VerbCatalogue,
+         calendarService: CalendarService,
+         preferences: Preferences) {
         self.catalogue = catalogue
         self.calendarService = calendarService
+        self.preferences = preferences
     }
     
     var isAvailable: Bool {
@@ -28,7 +31,7 @@ final class NotificationService {
             switch settings.authorizationStatus {
             case .authorized, .notDetermined:
                 defer {
-                    if Preferences.shared.areNotificationsEnabled {
+                    if preferences.areNotificationsEnabled {
                         schedule()
                     } else {
                         clean()
@@ -46,7 +49,7 @@ final class NotificationService {
         let result = try? await self.center.requestAuthorization(options: [.alert, .sound])
         
         if result == true {
-            Preferences.shared.areNotificationsEnabled = true
+            preferences.areNotificationsEnabled = true
             schedule()
             return true
         } else {
@@ -56,7 +59,7 @@ final class NotificationService {
     
     func deauthorize() {
        Task {
-            Preferences.shared.areNotificationsEnabled = false
+            preferences.areNotificationsEnabled = false
         }
     }
     
@@ -66,12 +69,12 @@ final class NotificationService {
         let currentDate = Date()
         let resolvedNotificationsCount = 64
         
-        let frequency = Preferences.shared.notificationsPerDay
+        let frequency = preferences.notificationsPerDay
         
-        let since = Preferences.shared.notificationsSince
+        let since = preferences.notificationsSince
         guard let sinceDate = calendarService.date(from: since) else { return }
         
-        let to = Preferences.shared.notificationsUntil
+        let to = preferences.notificationsUntil
         guard let toDate = calendarService.date(from: to) else { return }
         
         var i = 0

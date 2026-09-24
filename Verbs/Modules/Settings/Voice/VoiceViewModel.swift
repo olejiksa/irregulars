@@ -20,9 +20,10 @@ final class VoiceViewModel {
     private let audioService: AudioService
     private let voiceService: VoiceService
     
-    init() {
-        voiceService = VoiceService()
-        audioService = AudioService(voiceService: voiceService)
+    init(dependencies: AppDependencies) {
+        let voiceService = VoiceService()
+        self.voiceService = voiceService
+        audioService = AudioService(voiceService: voiceService, preferences: dependencies.preferences)
     }
     
     func items(for gender: Gender) -> [Voice] {

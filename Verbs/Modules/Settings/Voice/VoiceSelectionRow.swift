@@ -10,6 +10,8 @@ import SwiftUI
 
 struct VoiceSelectionRow: View {
     
+    @Environment(\.dependencies) private var dependencies
+    
     let item: Voice
     @Binding var selectedItem: Voice?
     let onTap: (Voice) -> Void
@@ -43,7 +45,7 @@ struct VoiceSelectionRow: View {
             onTap(item)
         }
         .sheet(isPresented: $isShowingPaywall) {
-            PaywallView()
+            PaywallView(purchaseService: dependencies.purchaseService)
         }
     }
 }

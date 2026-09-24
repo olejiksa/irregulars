@@ -12,7 +12,7 @@ import UIKit
 /// better, which is the home screen shortcuts and the Mac window.
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
-    private let deeplinkService = DeeplinkService(router: .shared)
+    private let deeplinkService = DeeplinkService(dependencies: .shared)
     private var shortcutItemToProcess: UIApplicationShortcutItem?
     
     func scene(_ scene: UIScene,

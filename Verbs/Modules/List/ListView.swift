@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ListView: View {
     
+    @Environment(\.dependencies) private var dependencies
+    
     @Bindable var viewModel: ListViewModel
     
     var body: some View {
@@ -19,7 +21,7 @@ struct ListView: View {
             .navigationBarTitleDisplayMode(.large)
             .toolbar { toolbar }
             .sheet(isPresented: $viewModel.isShowingPaywall) {
-                PaywallView()
+                PaywallView(purchaseService: dependencies.purchaseService)
             }
     }
     

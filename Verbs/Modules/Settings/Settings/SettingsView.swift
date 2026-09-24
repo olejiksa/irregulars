@@ -10,7 +10,14 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @State private var viewModel = SettingsViewModel()
+    private let dependencies: AppDependencies
+    
+    @State private var viewModel: SettingsViewModel
+    
+    init(dependencies: AppDependencies) {
+        self.dependencies = dependencies
+        _viewModel = State(wrappedValue: SettingsViewModel(dependencies: dependencies))
+    }
     
     var body: some View {
         List {
@@ -26,12 +33,12 @@ struct SettingsView: View {
                     RightDetailRow(title: "language", subtitle: viewModel.language)
                 }
                 NavigationLink {
-                    AccentColorView(settingsViewModel: viewModel)
+                    AccentColorView(settingsViewModel: viewModel, dependencies: dependencies)
                 } label: {
                     RightDetailRow(title: "accent_color", subtitle: viewModel.accentColor.rawValue.localized)
                 }
                 NavigationLink {
-                    VoiceView(settingsViewModel: viewModel)
+                    VoiceView(settingsViewModel: viewModel, dependencies: dependencies)
                 } label: {
                     if let voiceName = viewModel.voice?.name {
                         RightDetailRow(title: "voice", subtitle: voiceName)
@@ -40,7 +47,7 @@ struct SettingsView: View {
                     }
                 }
                 NavigationLink {
-                    NotificationsView(settingsViewModel: viewModel)
+                    NotificationsView(settingsViewModel: viewModel, dependencies: dependencies)
                 } label: {
                     RightDetailRow(title: "notifications", subtitle: viewModel.notificationsAvailability.rawValue.localized)
                 }
@@ -75,7 +82,7 @@ struct SettingsView: View {
             }
         }
         .sheet(isPresented: $viewModel.isShowingPaywall) {
-            PaywallView()
+            PaywallView(purchaseService: dependencies.purchaseService)
         }
         .sheet(isPresented: $viewModel.isShowingFAQ) {
             OnboardingView()
@@ -93,6 +100,6 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     
     static var previews: some View {
-        SettingsView()
+        SettingsView(dependencies: .shared)
     }
 }

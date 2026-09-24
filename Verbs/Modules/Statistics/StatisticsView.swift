@@ -10,7 +10,14 @@ import SwiftUI
 
 struct StatisticsView: View {
     
-    @State private var viewModel = StatisticsViewModel()
+    private let dependencies: AppDependencies
+    
+    @State private var viewModel: StatisticsViewModel
+    
+    init(dependencies: AppDependencies) {
+        self.dependencies = dependencies
+        _viewModel = State(wrappedValue: StatisticsViewModel(dependencies: dependencies))
+    }
     
     var body: some View {
         List {
@@ -108,7 +115,7 @@ struct StatisticsView: View {
         }
         .sensoryFeedback(.warning, trigger: viewModel.warningFeedback)
         .sheet(isPresented: $viewModel.isShowingPaywall) {
-            PaywallView()
+            PaywallView(purchaseService: dependencies.purchaseService)
         }
     }
 }
@@ -117,7 +124,7 @@ struct StatisticsView_Previews: PreviewProvider {
     
     static var previews: some View {
         NavigationView {
-            StatisticsView()
+            StatisticsView(dependencies: .shared)
         }
     }
 }

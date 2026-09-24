@@ -17,9 +17,11 @@ final class AudioService: NSObject {
     private var stopHandler: Block?
     
     private let voiceService: VoiceService
+    private let preferences: Preferences
     
-    init(voiceService: VoiceService) {
+    init(voiceService: VoiceService, preferences: Preferences) {
         self.voiceService = voiceService
+        self.preferences = preferences
         super.init()
         synthesizer.delegate = self
     }
@@ -38,7 +40,7 @@ final class AudioService: NSObject {
         } else {
             try? AVAudioSession.sharedInstance().setCategory(.playback)
             let utterance = AVSpeechUtterance(string: text)
-            let playbackSpeed = PlaybackSpeed(Preferences.shared.playbackSpeed)
+            let playbackSpeed = PlaybackSpeed(preferences.playbackSpeed)
             utterance.rate = playbackSpeed.rawValue
             utterance.voice = voiceService.voice(identifier: Voice.current?.id ?? "")
             synthesizer.speak(utterance)

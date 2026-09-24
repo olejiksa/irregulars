@@ -23,17 +23,19 @@ final class DetailViewModel {
     var isShowingPlaybackSpeed = false
     
     private let audioService: AudioService
-    private let favorites = Locator.favorites
-    private let rateService = RateService()
+    private let favorites: Favorites
+    private let rateService: RateService
     
     var title: String { verb.infinitive.value }
     
     init(verb: Verb,
-         audioService: AudioService? = nil,
+         dependencies: AppDependencies,
          languageService: LanguageService = .init(),
          sentencesService: SentencesService = .init()) {
         self.verb = verb
-        self.audioService = audioService ?? AudioService(voiceService: .init())
+        favorites = dependencies.favorites
+        audioService = dependencies.makeAudioService()
+        rateService = dependencies.makeRateService()
         
         hasTranslation = languageService.hasTranslation
         sentences = sentencesService.items

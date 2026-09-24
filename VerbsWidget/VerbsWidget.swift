@@ -32,30 +32,33 @@ struct Provider: AppIntentTimelineProvider {
         return Timeline(entries: entries, policy: .atEnd)
     }
     
-    /// The verbs and the favourites both live on the main actor.
+    /// The verbs and the favourites both live on the main actor. The widget process is
+    /// short-lived, so it builds its own small graph rather than sharing the app's.
     @MainActor
     private func entries(for displayOption: VerbsDisplayOption) -> [VerbEntry] {
-        var entries: [VerbEntry] = []
+        let favorites = Favorites()
+        let preferences = Preferences()
+        let catalogue = VerbCatalogue(favorites: favorites)
+        
+        let verbs: [Verb]
         
         switch displayOption {
         case .all:
-            let verbs = VerbCatalogue()
-                .verbs(includingRegular: Preferences.shared.showsRegularVerbs,
-                       includingDerived: Preferences.shared.showsDerivatives)
-            
-            for index in 0..<8 {
-                guard let verb = verbs.randomElement() else { continue }
-                entries.append(VerbEntry(date: date(at: index), state: .data(verb)))
-            }
+            verbs = catalogue.verbs(includingRegular: preferences.showsRegularVerbs,
+                                    includingDerived: preferences.showsDerivatives)
         case .favorites:
-            guard !Locator.favorites.verbs.isEmpty else {
-                return [VerbEntry(date: Date(), state: .empty)]
-            }
-            
-            for index in 0..<8 {
-                guard let verb = Locator.favorites.verbs.randomElement() else { continue }
-                entries.append(VerbEntry(date: date(at: index), state: .data(verb)))
-            }
+            verbs = Array(favorites.verbs)
+        }
+        
+        guard !verbs.isEmpty else {
+            return [VerbEntry(date: Date(), state: .empty)]
+        }
+        
+        var entries: [VerbEntry] = []
+        
+        for index in 0..<8 {
+            guard let verb = verbs.randomElement() else { continue }
+            entries.append(VerbEntry(date: date(at: index), state: .data(verb)))
         }
         
         return entries

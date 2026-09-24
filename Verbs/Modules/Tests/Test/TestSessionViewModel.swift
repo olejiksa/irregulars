@@ -21,6 +21,9 @@ final class TestSessionViewModel {
     var hint: String?
     var isShowingPlaybackSpeed = false
     
+    /// Whether the microphone may be used, which the record rows read.
+    private(set) var isMicrophoneAvailable = false
+    
     /// Bumped whenever a new verb is drawn, so the view can announce the change.
     private(set) var questionToken = 0
     
@@ -32,17 +35,40 @@ final class TestSessionViewModel {
     private let recordService: RecordService
     private let playerService: PlayerService
     private let catalogue: VerbCatalogue
-    private let preferences = Preferences.shared
+    private let preferences: Preferences
+    private let statistics: Statistics
+    private let mistakes: Mistakes
     private let factory: TestQuestionFactory
     
     private var verb: Verb?
     private var currentKind: Test.Kind?
     private var wasHintUsed = false
     
+    /// What the test screen asks for. The long initializer below stays for the tests,
+    /// which hand in their own doubles.
+    convenience init(test: Test, dependencies: AppDependencies) {
+        let catalogue = dependencies.catalogue
+        let preferences = dependencies.preferences
+        
+        self.init(audioService: dependencies.makeAudioService(),
+                  recordService: .init(),
+                  playerService: .init(),
+                  catalogue: catalogue,
+                  preferences: preferences,
+                  statistics: dependencies.statistics,
+                  mistakes: dependencies.mistakes,
+                  demoService: .init(),
+                  factory: TestQuestionFactory(catalogue: catalogue, preferences: preferences),
+                  test: test)
+    }
+    
     init(audioService: AudioService,
          recordService: RecordService,
          playerService: PlayerService,
          catalogue: VerbCatalogue,
+         preferences: Preferences,
+         statistics: Statistics,
+         mistakes: Mistakes,
          demoService: DemoService,
          factory: TestQuestionFactory,
          test: Test) {
@@ -50,6 +76,9 @@ final class TestSessionViewModel {
         self.recordService = recordService
         self.playerService = playerService
         self.catalogue = catalogue
+        self.preferences = preferences
+        self.statistics = statistics
+        self.mistakes = mistakes
         self.factory = factory
         self.test = test
         
@@ -212,7 +241,7 @@ private extension TestSessionViewModel {
     func buildSections() -> Bool {
         guard let verb = verb, let kind = currentKind else { return false }
         
-        let built = factory.build(with: kind, verb: verb)
+        let built = factory.build(with: kind, verb: verb, isMicrophoneAvailable: isMicrophoneAvailable)
         guard !built.isEmpty else { return false }
         
         sections = built
@@ -222,9 +251,9 @@ private extension TestSessionViewModel {
     /// The record button and the "no access" block are built from the flag,
     /// so a change has to rebuild them.
     func updateMicrophoneAvailability(_ isAvailable: Bool) {
-        guard Locator.isMicrophoneAvailable != isAvailable else { return }
+        guard isMicrophoneAvailable != isAvailable else { return }
         
-        Locator.isMicrophoneAvailable = isAvailable
+        isMicrophoneAvailable = isAvailable
         buildSections()
     }
     
@@ -244,11 +273,11 @@ private extension TestSessionViewModel {
             }
             
             if let verb = verb {
-                Locator.statistics.increase(verb)
+                statistics.increase(verb)
             }
         } else if let verb = verb {
-            Locator.statistics.decrease(verb)
-            Locator.mistakes.add(verb)
+            statistics.decrease(verb)
+            mistakes.add(verb)
         }
         
         nextQuestion()

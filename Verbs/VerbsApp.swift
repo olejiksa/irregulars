@@ -15,12 +15,18 @@ struct VerbsApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self)
     private var appDelegate
     
-    private let router = AppRouter.shared
-    private let deeplinkService = DeeplinkService(router: AppRouter.shared)
+    private let dependencies: AppDependencies
+    private let deeplinkService: DeeplinkService
+    
+    init() {
+        let dependencies = AppDependencies.shared
+        self.dependencies = dependencies
+        deeplinkService = DeeplinkService(dependencies: dependencies)
+    }
 
     var body: some Scene {
         WindowGroup {
-            RootView()
+            RootView(dependencies: dependencies)
                 .onOpenURL { url in
                     guard let host = url.host else { return }
                     
@@ -38,6 +44,6 @@ struct VerbsApp: App {
                     deeplinkService.search(text: text)
                 }
         }
-        .commands { VerbsCommands() }
+        .commands { VerbsCommands(router: dependencies.router) }
     }
 }

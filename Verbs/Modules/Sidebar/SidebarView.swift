@@ -12,6 +12,7 @@ import UniformTypeIdentifiers
 struct SidebarView: View {
     
     @Binding var selection: SidebarDestination?
+    let favorites: Favorites
     
     var body: some View {
         List(selection: $selection) {
@@ -63,7 +64,7 @@ private extension SidebarView {
             _ = provider.loadObject(ofClass: VerbDragItem.self) { item, _ in
                 guard let verb = (item as? VerbDragItem)?.verb else { return }
                 
-                Task { @MainActor in Locator.favorites.add(verb) }
+                Task { @MainActor in favorites.add(verb) }
             }
         }
         

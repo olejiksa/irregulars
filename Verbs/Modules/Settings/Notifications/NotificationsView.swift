@@ -12,7 +12,12 @@ struct NotificationsView: View {
     
     @State var settingsViewModel: SettingsViewModel
     
-    @State private var viewModel = NotificationsViewModel()
+    @State private var viewModel: NotificationsViewModel
+    
+    init(settingsViewModel: SettingsViewModel, dependencies: AppDependencies) {
+        _settingsViewModel = State(wrappedValue: settingsViewModel)
+        _viewModel = State(wrappedValue: NotificationsViewModel(dependencies: dependencies))
+    }
     
     var body: some View {
         List {
@@ -65,7 +70,7 @@ struct NotificationsView_Previews: PreviewProvider {
     
     static var previews: some View {
         NavigationView {
-            NotificationsView(settingsViewModel: .init())
+            NotificationsView(settingsViewModel: .init(dependencies: .shared), dependencies: .shared)
         }
     }
 }

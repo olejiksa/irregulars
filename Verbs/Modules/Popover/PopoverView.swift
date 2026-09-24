@@ -10,7 +10,9 @@ import SwiftUI
 
 struct PopoverView: View {
     
-    @State private var sliderValue = Double(Preferences.shared.playbackSpeed)
+    @Environment(\.dependencies) private var dependencies
+    
+    @State private var sliderValue = 0.0
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -31,11 +33,12 @@ struct PopoverView: View {
                     .foregroundColor(.secondary)
                     .font(.title3)
             } onEditingChanged: { _ in
-                Preferences.shared.playbackSpeed = Int(sliderValue.rounded())
+                dependencies.preferences.playbackSpeed = Int(sliderValue.rounded())
             }
         }
         .frame(minWidth: 250)
         .padding()
+        .onAppear { sliderValue = Double(dependencies.preferences.playbackSpeed) }
     }
 }
 

@@ -15,7 +15,7 @@ import StoreKit
 final class PaywallViewModel {
     
     
-    var purchaseService = Locator.purchaseService
+    var purchaseService: PurchaseService
     
     var isBuyingPurchaseNotInProgress = true
     
@@ -26,7 +26,8 @@ final class PaywallViewModel {
     
     let title: String
     
-    init() {
+    init(purchaseService: PurchaseService) {
+        self.purchaseService = purchaseService
         title = Bundle.main.productName.map { "\($0) Pro" } ?? ""
     }
     

@@ -20,7 +20,7 @@ final class VerbCatalogue {
     
     @ObservationIgnored private let favorites: Favorites
     
-    init(favorites: Favorites = Locator.favorites) {
+    init(favorites: Favorites) {
         self.favorites = favorites
         allVerbs = VerbsStore.all.sorted(by: <)
     }

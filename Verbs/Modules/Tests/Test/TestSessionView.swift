@@ -223,7 +223,7 @@ private struct RecordRow: View {
             // The original cells left these two unlabelled, and there are no
             // translations to borrow, so they stay that way rather than reading a key aloud.
             button(icon: field.isRecording ? .stopRecord : .record,
-                   isEnabled: Locator.isMicrophoneAvailable) {
+                   isEnabled: viewModel.isMicrophoneAvailable) {
                 viewModel.record(field)
             }
             

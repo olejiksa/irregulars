@@ -45,6 +45,7 @@ final class ListViewModel {
     
     private let catalogue: VerbCatalogue
     private let preferences: Preferences
+    private let favorites: Favorites
     private let printService: PrintService
     private var cancellables = Set<AnyCancellable>()
     
@@ -56,12 +57,14 @@ final class ListViewModel {
     
     init(favoritesOnly: Bool,
          catalogue: VerbCatalogue,
-         preferences: Preferences = .shared,
+         preferences: Preferences,
+         favorites: Favorites,
          languageService: LanguageService = .init(),
          printService: PrintService = .init()) {
         self.favoritesOnly = favoritesOnly
         self.catalogue = catalogue
         self.preferences = preferences
+        self.favorites = favorites
         self.printService = printService
         
         hasTranslation = languageService.hasTranslation
@@ -111,24 +114,24 @@ final class ListViewModel {
     // MARK: Favorites
     
     func toggleFavorite(_ verb: Verb) {
-        if Locator.favorites.verbs.contains(verb) {
-            Locator.favorites.remove(verb)
+        if favorites.verbs.contains(verb) {
+            favorites.remove(verb)
         } else {
-            guard !Locator.favorites.shouldPaywallBeShown else {
+            guard !favorites.shouldPaywallBeShown else {
                 isShowingPaywall = true
                 return
             }
             
-            Locator.favorites.add(verb)
+            favorites.add(verb)
         }
     }
     
     func remove(_ verb: Verb) {
-        Locator.favorites.remove(verb)
+        favorites.remove(verb)
     }
     
     func isFavorite(_ verb: Verb) -> Bool {
-        Locator.favorites.verbs.contains(verb)
+        favorites.verbs.contains(verb)
     }
     
     func canDrag(_ verb: Verb) -> Bool {

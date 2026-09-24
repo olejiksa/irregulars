@@ -36,20 +36,26 @@ final class TestsViewModel {
     
     private let languageService: LanguageService
     private var cancellables = Set<AnyCancellable>()
-    private let preferences = Preferences.shared
+    private let preferences: Preferences
+    private let favorites: Favorites
     
     
-    init(languageService: LanguageService) {
+    init(languageService: LanguageService = .init(),
+         preferences: Preferences,
+         favorites: Favorites) {
+        self.preferences = preferences
+        self.favorites = favorites
         self.languageService = languageService
         
         build()
         subscribe()
+        refreshFilter()
     }
     
     func select(_ row: Row) {
         if row.test != nil,
            preferences.testsUseFavoritesOnly,
-           Locator.favorites.verbs.isEmpty {
+           favorites.verbs.isEmpty {
             errorFeedback += 1
             onEmptyFavorites?()
             return
@@ -71,9 +77,9 @@ final class TestsViewModel {
     /// Mirrored into real state: observation cannot see through a computed property
     /// that reads the defaults.
     private(set) var isPaid = FeatureToggle.isPaid
-    private(set) var favoritesOnly = Preferences.shared.testsUseFavoritesOnly
-    private(set) var showsRegulars = Preferences.shared.testsIncludeRegularVerbs
-    private(set) var showsDerivatives = Preferences.shared.testsIncludeDerivatives
+    private(set) var favoritesOnly = false
+    private(set) var showsRegulars = true
+    private(set) var showsDerivatives = true
     
     var isFiltered: Bool { favoritesOnly || !showsRegulars || !showsDerivatives }
     

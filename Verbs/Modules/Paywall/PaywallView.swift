@@ -10,7 +10,11 @@ import SwiftUI
 
 struct PaywallView: View {
     
-    @State private var viewModel = PaywallViewModel()
+    @State private var viewModel: PaywallViewModel
+    
+    init(purchaseService: PurchaseService) {
+        _viewModel = State(wrappedValue: PaywallViewModel(purchaseService: purchaseService))
+    }
     
     @Environment(\.dismiss) var dismiss
     
@@ -124,6 +128,6 @@ struct PaywallView: View {
 struct PaywallView_Previews: PreviewProvider {
     
     static var previews: some View {
-        PaywallView()
+        PaywallView(purchaseService: AppDependencies.shared.purchaseService)
     }
 }

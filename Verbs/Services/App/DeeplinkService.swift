@@ -14,10 +14,11 @@ import Foundation
 final class DeeplinkService {
     
     private let router: AppRouter
-    private let catalogue = VerbCatalogue()
+    private let catalogue: VerbCatalogue
     
-    init(router: AppRouter) {
-        self.router = router
+    init(dependencies: AppDependencies) {
+        router = dependencies.router
+        catalogue = dependencies.catalogue
     }
     
     func handle(_ host: String) {

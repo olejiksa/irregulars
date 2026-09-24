@@ -11,7 +11,11 @@ import StoreKit
 @MainActor
 final class RateService {
     
-    private let preferences = Preferences.shared
+    private let preferences: Preferences
+    
+    init(preferences: Preferences) {
+        self.preferences = preferences
+    }
     
     func requestReviewIfAppropriate(minimumReviewWorthyActionCount: Int) {
         var actionCount = preferences.reviewWorthyActionCount

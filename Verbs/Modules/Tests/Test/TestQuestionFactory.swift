@@ -14,11 +14,13 @@ final class TestQuestionFactory {
     private let languageService: LanguageService
     private let sentencesService: SentencesService
     private let verbs: [Verb]
-    private let preferences = Preferences.shared
+    private let preferences: Preferences
     
     init(catalogue: VerbCatalogue,
+         preferences: Preferences,
          languageService: LanguageService = .init(),
          sentencesService: SentencesService = .init()) {
+        self.preferences = preferences
         self.languageService = languageService
         self.sentencesService = sentencesService
         
@@ -27,7 +29,7 @@ final class TestQuestionFactory {
                                 includingDerived: preferences.testsIncludeDerivatives)
     }
     
-    func build(with testKind: Test.Kind, verb: Verb) -> [TestSection] {
+    func build(with testKind: Test.Kind, verb: Verb, isMicrophoneAvailable: Bool) -> [TestSection] {
         guard let simplePast = verb.simplePast,
               let pastParticiple = verb.pastParticiple else { return [] }
         
@@ -89,7 +91,7 @@ final class TestQuestionFactory {
         case .speaking:
             var sections: [(String?, [TestRow])] = []
             
-            if !Locator.isMicrophoneAvailable {
+            if !isMicrophoneAvailable {
                 sections.append((nil, [.plain(plain("insufficient_permissions".localized)),
                                        .action(ActionRow(id: "allow-access",
                                                          title: "allow_access".localized))]))

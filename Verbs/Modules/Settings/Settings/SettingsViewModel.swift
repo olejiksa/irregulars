@@ -17,7 +17,13 @@ final class SettingsViewModel {
     
     @ObservationIgnored private var cancellable: AnyCancellable?
     
-    init() {
+    private let preferences: Preferences
+    private let notificationService: NotificationService
+    
+    init(dependencies: AppDependencies) {
+        preferences = dependencies.preferences
+        notificationService = dependencies.makeNotificationService()
+        
         cancellable = publisher
             .receive(on: RunLoop.main)
             .sink { [weak self] isPaid in self?.isPaid = isPaid }
@@ -27,7 +33,6 @@ final class SettingsViewModel {
     // MARK: Services
     
     private let languageService = LanguageService()
-    private let notificationService = NotificationService(calendarService: .init())
     
     // MARK: Publishers
     
@@ -125,7 +130,7 @@ final class SettingsViewModel {
             let result = await self.notificationService.isAvailable
             
             if result {
-                self.notificationsAvailability = Preferences.shared.areNotificationsEnabled ? .enabled : .disabled
+                self.notificationsAvailability = preferences.areNotificationsEnabled ? .enabled : .disabled
             } else {
                 self.notificationsAvailability = .notAllowed
             }

@@ -12,8 +12,17 @@ import NotificationCenter
 
 final class AppDelegate: UIResponder {
 
-    private let deeplinkService = DeeplinkService(router: .shared)
-    private let purchaseService = Locator.purchaseService
+    private let dependencies: AppDependencies
+    private let deeplinkService: DeeplinkService
+    
+    private var purchaseService: PurchaseService { dependencies.purchaseService }
+    
+    override init() {
+        let dependencies = AppDependencies.shared
+        self.dependencies = dependencies
+        deeplinkService = DeeplinkService(dependencies: dependencies)
+        super.init()
+    }
 
     // MARK: UISceneSession Lifecycle
 
@@ -30,7 +39,7 @@ private extension AppDelegate {
     
     /// Used to happen inside the verbs service, which each screen had its own copy of.
     func indexForSpotlight() {
-        SpotlightService().setupSpotlight(with: VerbCatalogue().allVerbs)
+        SpotlightService().setupSpotlight(with: dependencies.catalogue.allVerbs)
     }
     
     func initializePurchaseActivity() {
@@ -51,7 +60,6 @@ extension AppDelegate: UIApplicationDelegate {
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        Preferences.registerDefaults()
         UNUserNotificationCenter.current().delegate = self
         initializePurchaseActivity()
         indexForSpotlight()

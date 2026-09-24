@@ -10,6 +10,8 @@ import SwiftUI
 
 struct DetailView: View {
     
+    @Environment(\.dependencies) private var dependencies
+    
     @Bindable var viewModel: DetailViewModel
     
     @AppStorage(UserDefaults.Key.isPaid.rawValue, store: .shared)
@@ -60,7 +62,7 @@ struct DetailView: View {
             }
         }
         .sheet(isPresented: $viewModel.isShowingPaywall) {
-            PaywallView()
+            PaywallView(purchaseService: dependencies.purchaseService)
         }
     }
 }
@@ -132,6 +134,7 @@ private extension DetailView {
                                                simplePast: [Word(value: "arose", transcription: "/əˈrəʊz/")],
                                                pastParticiple: [Word(value: "arisen", transcription: "/əˈrɪz(ə)n/")],
                                                hasRegular: false,
-                                               isDerived: true)))
+                                               isDerived: true),
+                                    dependencies: .shared))
     }
 }

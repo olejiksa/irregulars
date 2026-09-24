@@ -17,8 +17,12 @@ struct VerbsCommands: Commands {
     @AppStorage(UserDefaults.Key.isPaid.rawValue, store: UserDefaults.shared)
     private var isPaid = false
     
-    private let router = AppRouter.shared
+    private let router: AppRouter
     private let languageService = LanguageService()
+    
+    init(router: AppRouter) {
+        self.router = router
+    }
     
     var body: some Commands {
         CommandGroup(after: .appInfo) {

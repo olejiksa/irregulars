@@ -29,11 +29,11 @@ struct FeatureToggle {
     static let arePhrasalsAvailable = false
     #endif
     
-    static var isOnboardingAvailable: Bool {
+    static func isOnboardingAvailable(_ preferences: Preferences) -> Bool {
         #if DEBUG
         false
         #else
-        !Preferences.shared.hasLaunchedBefore &&
+        !preferences.hasLaunchedBefore &&
         (LanguageService().current == .russian || LanguageService().current == .english)
         #endif
     }

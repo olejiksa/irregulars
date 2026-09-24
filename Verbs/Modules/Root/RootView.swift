@@ -10,29 +10,42 @@ import SwiftUI
 
 struct RootView: View {
     
-    @Bindable var router = AppRouter.shared
+    private let dependencies: AppDependencies
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     
-    @State private var catalogue: VerbCatalogue
     @State private var allVerbs: ListViewModel
     @State private var favorites: ListViewModel
-    @State private var tests = TestsViewModel(languageService: .init())
+    @State private var tests: TestsViewModel
     
     @State private var isShowingEmptyFavorites = false
     @State private var isShowingPaywall = false
-    @State private var isShowingOnboarding = FeatureToggle.isOnboardingAvailable
+    @State private var isShowingOnboarding: Bool
     @State private var accentColor = AccentColor.current
     
-    init() {
-        let catalogue = VerbCatalogue()
-        _catalogue = State(wrappedValue: catalogue)
-        _allVerbs = State(wrappedValue: ListViewModel(favoritesOnly: false, catalogue: catalogue))
-        _favorites = State(wrappedValue: ListViewModel(favoritesOnly: true, catalogue: catalogue))
+    private var router: AppRouter { dependencies.router }
+    
+    init(dependencies: AppDependencies) {
+        self.dependencies = dependencies
+        
+        _allVerbs = State(wrappedValue: ListViewModel(favoritesOnly: false,
+                                                      catalogue: dependencies.catalogue,
+                                                      preferences: dependencies.preferences,
+                                                      favorites: dependencies.favorites))
+        _favorites = State(wrappedValue: ListViewModel(favoritesOnly: true,
+                                                       catalogue: dependencies.catalogue,
+                                                       preferences: dependencies.preferences,
+                                                       favorites: dependencies.favorites))
+        _tests = State(wrappedValue: TestsViewModel(languageService: .init(),
+                                                    preferences: dependencies.preferences,
+                                                    favorites: dependencies.favorites))
+        _isShowingOnboarding = State(wrappedValue: FeatureToggle.isOnboardingAvailable(dependencies.preferences))
     }
     
     var body: some View {
-        Group {
+        @Bindable var router = dependencies.router
+        
+        return Group {
             if horizontalSizeClass == .compact {
                 tabs
             } else {
@@ -63,24 +76,27 @@ struct RootView: View {
             Text("empty_favorites")
         }
         .sheet(isPresented: $isShowingPaywall) {
-            PaywallView()
+            PaywallView(purchaseService: dependencies.purchaseService)
         }
         .sheet(item: $router.menuScreen) { screen in
             NavigationStack {
                 switch screen {
                 case .voice:
-                    VoiceView(settingsViewModel: .init())
+                    VoiceView(settingsViewModel: .init(dependencies: dependencies),
+                              dependencies: dependencies)
                 case .notifications:
-                    NotificationsView(settingsViewModel: .init())
+                    NotificationsView(settingsViewModel: .init(dependencies: dependencies),
+                                      dependencies: dependencies)
                 case .paywall:
-                    PaywallView()
+                    PaywallView(purchaseService: dependencies.purchaseService)
                 }
             }
         }
         .fullScreenCover(isPresented: $isShowingOnboarding) {
             OnboardingView()
-                .onDisappear { Preferences.shared.hasLaunchedBefore = true }
+                .onDisappear { dependencies.preferences.hasLaunchedBefore = true }
         }
+        .environment(\.dependencies, dependencies)
         .tint(accentColor.colorSwiftUI)
         .onReceive(NotificationCenter.default.publisher(for: .reload)) { _ in
             accentColor = .current
@@ -94,7 +110,7 @@ private extension RootView {
     
     var split: some View {
         NavigationSplitView {
-            SidebarView(selection: sidebarSelection)
+            SidebarView(selection: sidebarSelection, favorites: dependencies.favorites)
         } content: {
             NavigationStack {
                 contentColumn
@@ -133,7 +149,7 @@ private extension RootView {
             .tag(SidebarDestination.tests)
             
             NavigationStack {
-                SettingsView()
+                SettingsView(dependencies: dependencies)
             }
             .tabItem { Label("settings", systemImage: SystemIcon.gearFill.rawValue) }
                 .accessibilityIdentifier(AccessibilityIdentifier.settingsTab.rawValue)
@@ -151,7 +167,7 @@ private extension RootView {
         case .tests:
             TestsView(viewModel: tests)
         case .settings:
-            SettingsView()
+            SettingsView(dependencies: dependencies)
         }
     }
     
@@ -171,7 +187,7 @@ private extension RootView {
     func view(for route: VerbsRoute) -> some View {
         switch route {
         case .verb(let verb):
-            DetailScreen(verb: verb)
+            DetailScreen(verb: verb, dependencies: dependencies)
         }
     }
     
@@ -179,9 +195,9 @@ private extension RootView {
     func view(for route: TestsRoute) -> some View {
         switch route {
         case .test(let test):
-            TestSessionScreen(test: test, catalogue: catalogue) { router.testsRoute = nil }
+            TestSessionScreen(test: test, dependencies: dependencies) { router.testsRoute = nil }
         case .statistics:
-            StatisticsView()
+            StatisticsView(dependencies: dependencies)
         }
     }
 }
@@ -253,8 +269,8 @@ private struct DetailScreen: View {
     
     @State private var viewModel: DetailViewModel
     
-    init(verb: Verb) {
-        _viewModel = State(wrappedValue: DetailViewModel(verb: verb))
+    init(verb: Verb, dependencies: AppDependencies) {
+        _viewModel = State(wrappedValue: DetailViewModel(verb: verb, dependencies: dependencies))
     }
     
     var body: some View {
@@ -268,9 +284,9 @@ private struct TestSessionScreen: View {
     
     @State private var viewModel: TestSessionViewModel
     
-    init(test: Test, catalogue: VerbCatalogue, onFinish: @escaping () -> Void) {
+    init(test: Test, dependencies: AppDependencies, onFinish: @escaping () -> Void) {
         self.onFinish = onFinish
-        _viewModel = State(wrappedValue: TestAssembly(test: test, catalogue: catalogue).viewModel())
+        _viewModel = State(wrappedValue: TestSessionViewModel(test: test, dependencies: dependencies))
     }
     
     var body: some View {

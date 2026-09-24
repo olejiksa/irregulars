@@ -12,7 +12,12 @@ struct VoiceView: View {
     
     @State var settingsViewModel: SettingsViewModel
     
-    @State private var viewModel = VoiceViewModel()
+    @State private var viewModel: VoiceViewModel
+    
+    init(settingsViewModel: SettingsViewModel, dependencies: AppDependencies) {
+        _settingsViewModel = State(wrappedValue: settingsViewModel)
+        _viewModel = State(wrappedValue: VoiceViewModel(dependencies: dependencies))
+    }
     
     var body: some View {
         List {
@@ -60,7 +65,7 @@ struct VoiceView_Previews: PreviewProvider {
     
     static var previews: some View {
         NavigationView {
-            VoiceView(settingsViewModel: .init())
+            VoiceView(settingsViewModel: .init(dependencies: .shared), dependencies: .shared)
         }
     }
 }

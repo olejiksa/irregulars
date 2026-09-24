@@ -14,8 +14,8 @@ import SwiftUI
 final class NotificationsViewModel {
     
     private let calendarService = CalendarService()
-    private let preferences = Preferences.shared
-    private let notificationService = NotificationService(calendarService: .init())
+    private let preferences: Preferences
+    private let notificationService: NotificationService
     
     var areNotificationsAvailable = false
     
@@ -60,12 +60,16 @@ final class NotificationsViewModel {
     
     let frequencyRange = 1...6
     
-    init() {
-        areNotificationsEnabled = Preferences.shared.areNotificationsEnabled
-        frequency = Preferences.shared.notificationsPerDay
+    init(dependencies: AppDependencies) {
+        let preferences = dependencies.preferences
+        self.preferences = preferences
+        notificationService = dependencies.makeNotificationService()
         
-        let since = Preferences.shared.notificationsSince
-        let to = Preferences.shared.notificationsUntil
+        areNotificationsEnabled = preferences.areNotificationsEnabled
+        frequency = preferences.notificationsPerDay
+        
+        let since = preferences.notificationsSince
+        let to = preferences.notificationsUntil
         
         startDate = calendarService.date(from: since) ?? .now
         endDate = calendarService.date(from: to) ?? .now

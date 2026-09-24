@@ -16,7 +16,14 @@ final class StatisticsViewModel {
     
     @ObservationIgnored private var cancellable: AnyCancellable?
     
-    init() {
+    init(dependencies: AppDependencies) {
+        catalogue = dependencies.catalogue
+        rateService = dependencies.makeRateService()
+        preferences = dependencies.preferences
+        favorites = dependencies.favorites
+        statistics = dependencies.statistics
+        mistakes = dependencies.mistakes
+        
         cancellable = publisher
             .receive(on: RunLoop.main)
             .sink { [weak self] isPaid in self?.isPaid = isPaid }
@@ -36,8 +43,12 @@ final class StatisticsViewModel {
     
     private let demoService = DemoService()
     private let languageService = LanguageService()
-    private let rateService = RateService()
-    private let catalogue = VerbCatalogue()
+    private let rateService: RateService
+    private let catalogue: VerbCatalogue
+    private let preferences: Preferences
+    private let favorites: Favorites
+    private let statistics: Statistics
+    private let mistakes: Mistakes
     
     // MARK: Publishers
     
@@ -82,10 +93,10 @@ final class StatisticsViewModel {
         switch statisticsKind {
         case .correctAnswers:
             [.translationAnswers, .writingAnswers, .sentencesAnswers, .listeningAnswers].forEach {
-                Preferences.shared.setAnswers(0, for: $0)
+                preferences.setAnswers(0, for: $0)
             }
         case .learnedVerbs:
-            Locator.statistics.clear()
+            statistics.clear()
         }
         
         setup()
@@ -110,22 +121,22 @@ private extension StatisticsViewModel {
     }
     
     func prepareStatisticsModel() -> StatisticsModel {
-        let answeredCorrectlyTranslation = Preferences.shared.translationAnswers
-        let answeredCorrectlyWriting = Preferences.shared.writingAnswers
-        let answeredCorrectlySentences = Preferences.shared.sentencesAnswers
-        let answeredCorrectlyListening = Preferences.shared.listeningAnswers
+        let answeredCorrectlyTranslation = preferences.translationAnswers
+        let answeredCorrectlyWriting = preferences.writingAnswers
+        let answeredCorrectlySentences = preferences.sentencesAnswers
+        let answeredCorrectlyListening = preferences.listeningAnswers
         let answeredCorrectlyTotal = answeredCorrectlyTranslation +
             answeredCorrectlyWriting +
             answeredCorrectlySentences +
             answeredCorrectlyListening
         
-        let learnedCount = Locator.statistics.info.filter { $0.value >= 3 }.count
-        let inProgressCount = Locator.statistics.info.filter { $0.value > 0 && $0.value < 3 }.count
+        let learnedCount = statistics.info.filter { $0.value >= 3 }.count
+        let inProgressCount = statistics.info.filter { $0.value > 0 && $0.value < 3 }.count
         let verbsCount = catalogue.allVerbs.count
 
-        let mistakes = catalogue.allVerbs
-            .filter { !Locator.favorites.verbs.contains($0) &&
-                (Locator.mistakes.info[$0.infinitive.value] ?? 0) > 0 }
+        let worstVerbs = catalogue.allVerbs
+            .filter { !favorites.verbs.contains($0) &&
+                (mistakes.info[$0.infinitive.value] ?? 0) > 0 }
             .first(count: 5)
         
         return .init(verbsCount: verbsCount,
@@ -136,7 +147,7 @@ private extension StatisticsViewModel {
                      formsAnswersCount: answeredCorrectlyWriting,
                      sentenceAnswersCount: answeredCorrectlySentences,
                      listeningAnswersCount: answeredCorrectlyListening,
-                     mistakes: mistakes)
+                     mistakes: worstVerbs)
     }
     
     func prepareUITestsStatisticsModel() -> StatisticsModel {
@@ -153,7 +164,7 @@ private extension StatisticsViewModel {
         let inProgressCount = 100
         let verbsCount = catalogue.allVerbs.count
 
-        let mistakes = [catalogue.allVerbs.randomElement()].compactMap { $0 }
+        let worstVerbs = [catalogue.allVerbs.randomElement()].compactMap { $0 }
         
         return .init(verbsCount: verbsCount,
                      learnedWordsCount: learnedCount,
@@ -163,6 +174,6 @@ private extension StatisticsViewModel {
                      formsAnswersCount: answeredCorrectlyWriting,
                      sentenceAnswersCount: answeredCorrectlySentences,
                      listeningAnswersCount: answeredCorrectlyListening,
-                     mistakes: mistakes)
+                     mistakes: worstVerbs)
     }
 }

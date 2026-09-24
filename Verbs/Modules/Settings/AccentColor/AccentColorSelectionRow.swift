@@ -10,6 +10,8 @@ import SwiftUI
 
 struct AccentColorSelectionRow: View {
     
+    @Environment(\.dependencies) private var dependencies
+    
     let item: AccentColor
     @Binding var selectedItem: AccentColor?
     let onTap: (AccentColor) -> Void
@@ -45,7 +47,7 @@ struct AccentColorSelectionRow: View {
             onTap(item)
         }
         .sheet(isPresented: $isShowingPaywall) {
-            PaywallView()
+            PaywallView(purchaseService: dependencies.purchaseService)
         }
     }
 }

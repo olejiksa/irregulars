@@ -13,12 +13,13 @@ struct AccentColorView: View {
     @State var settingsViewModel: SettingsViewModel
     
     private let appIconService = AppIconService()
-    private let rateService = RateService()
+    private let rateService: RateService
     
     @State private var selectedItem: AccentColor? = .current
     
-    init(settingsViewModel: SettingsViewModel) {
+    init(settingsViewModel: SettingsViewModel, dependencies: AppDependencies) {
         _settingsViewModel = State(wrappedValue: settingsViewModel)
+        rateService = dependencies.makeRateService()
     }
 
     var body: some View {
@@ -52,7 +53,7 @@ struct AccentColorView_Previews: PreviewProvider {
     
     static var previews: some View {
         NavigationView {
-            AccentColorView(settingsViewModel: .init())
+            AccentColorView(settingsViewModel: .init(dependencies: .shared), dependencies: .shared)
         }
     }
 }

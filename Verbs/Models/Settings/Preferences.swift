@@ -15,9 +15,6 @@ import Observation
 @Observable
 final class Preferences {
     
-    /// Until there is a composition root to hand it out.
-    static let shared = Preferences()
-    
     // MARK: The verb list
     
     var showsRegularVerbs: Bool { didSet { write(showsRegularVerbs, .regularVerbs) } }
