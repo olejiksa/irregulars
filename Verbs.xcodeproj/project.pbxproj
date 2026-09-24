@@ -54,9 +54,6 @@
 		EB13943725B727A70001CE8C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB13943925B727A70001CE8C /* InfoPlist.strings */; };
 		EB1EC45925DD88BE00F6299B /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1EC45825DD88BE00F6299B /* CalendarService.swift */; };
 		EB1EC46525DD8B3300F6299B /* CalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1EC46425DD8B3300F6299B /* CalendarTests.swift */; };
-		EB23924225EB92A3009BE502 /* MistakeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB23924125EB92A3009BE502 /* MistakeItem.swift */; };
-		EB23924B25EB9381009BE502 /* MistakeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB23924925EB9381009BE502 /* MistakeCell.swift */; };
-		EB23924C25EB9381009BE502 /* MistakeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB23924A25EB9381009BE502 /* MistakeCell.xib */; };
 		EB23925425EBA201009BE502 /* Mistakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB23925325EBA201009BE502 /* Mistakes.swift */; };
 		EB23925B25EBA3BE009BE502 /* Mistakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB23925325EBA201009BE502 /* Mistakes.swift */; };
 		EB269962256CF0EF007CCF2E /* PlainDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB269961256CF0EF007CCF2E /* PlainDetailItem.swift */; };
@@ -222,7 +219,6 @@
 		EBF4A13B252EA2F6003E3A44 /* FeatureToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4A13A252EA2F6003E3A44 /* FeatureToggle.swift */; };
 		EBF4A13F252EC9A3003E3A44 /* SystemIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4A13E252EC9A3003E3A44 /* SystemIcon.swift */; };
 		EBF5935C2583AD580091FCE0 /* TestItemsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF5935B2583AD580091FCE0 /* TestItemsFactory.swift */; };
-		EBF593672583B3190091FCE0 /* StatisticsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF593662583B3190091FCE0 /* StatisticsPresenter.swift */; };
 		EBF593832583CC530091FCE0 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = EBF593852583CC530091FCE0 /* Localizable.stringsdict */; };
 		EBF593A52585730E0091FCE0 /* AnswerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF593A42585730E0091FCE0 /* AnswerItem.swift */; };
 		EBF593AA2585736B0091FCE0 /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF593A82585736B0091FCE0 /* AnswerCell.swift */; };
@@ -354,9 +350,6 @@
 		EB1EC46225DD8B3300F6299B /* VerbsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VerbsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1EC46425DD8B3300F6299B /* CalendarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTests.swift; sourceTree = "<group>"; };
 		EB1EC46625DD8B3300F6299B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EB23924125EB92A3009BE502 /* MistakeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MistakeItem.swift; sourceTree = "<group>"; };
-		EB23924925EB9381009BE502 /* MistakeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MistakeCell.swift; sourceTree = "<group>"; };
-		EB23924A25EB9381009BE502 /* MistakeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MistakeCell.xib; sourceTree = "<group>"; };
 		EB23925325EBA201009BE502 /* Mistakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mistakes.swift; sourceTree = "<group>"; };
 		EB269961256CF0EF007CCF2E /* PlainDetailItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainDetailItem.swift; sourceTree = "<group>"; };
 		EB269965256CF10C007CCF2E /* PlainDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainDetailCell.swift; sourceTree = "<group>"; };
@@ -512,7 +505,6 @@
 		EBF4A13A252EA2F6003E3A44 /* FeatureToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureToggle.swift; sourceTree = "<group>"; };
 		EBF4A13E252EC9A3003E3A44 /* SystemIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemIcon.swift; sourceTree = "<group>"; };
 		EBF5935B2583AD580091FCE0 /* TestItemsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestItemsFactory.swift; sourceTree = "<group>"; };
-		EBF593662583B3190091FCE0 /* StatisticsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsPresenter.swift; sourceTree = "<group>"; };
 		EBF593842583CC530091FCE0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		EBF593882583CC5A0091FCE0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		EBF593A42585730E0091FCE0 /* AnswerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerItem.swift; sourceTree = "<group>"; };
@@ -654,16 +646,6 @@
 				EB1EC46625DD8B3300F6299B /* Info.plist */,
 			);
 			path = VerbsTests;
-			sourceTree = "<group>";
-		};
-		EB23924025EB9295009BE502 /* MistakeItem */ = {
-			isa = PBXGroup;
-			children = (
-				EB23924125EB92A3009BE502 /* MistakeItem.swift */,
-				EB23924925EB9381009BE502 /* MistakeCell.swift */,
-				EB23924A25EB9381009BE502 /* MistakeCell.xib */,
-			);
-			path = MistakeItem;
 			sourceTree = "<group>";
 		};
 		EB269960256CF0DB007CCF2E /* PlainDetailItem */ = {
@@ -1253,9 +1235,7 @@
 		EBF593612583B27B0091FCE0 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
-				EB23924025EB9295009BE502 /* MistakeItem */,
 				EB3217BB258BE41300023F0B /* ProgressRow */,
-				EBF593662583B3190091FCE0 /* StatisticsPresenter.swift */,
 				EB3217B6258BDBE100023F0B /* StatisticsKind.swift */,
 				EBFC7BE825EFDFFA00C3D43B /* StatisticsModel.swift */,
 				E585BBD82A7FA67800ADE934 /* StatisticsView.swift */,
@@ -1464,7 +1444,6 @@
 				EB2E4B9925741832005B343A /* indigo@2x.png in Resources */,
 				EBF593BF258851CD0091FCE0 /* demo.json in Resources */,
 				EBB42C502615B5D2008CB9A5 /* RecordCell.xib in Resources */,
-				EB23924C25EB9381009BE502 /* MistakeCell.xib in Resources */,
 				EBF594852589030E0091FCE0 /* teal@2x~ipad.png in Resources */,
 				EBEB1D7F251F11910019972C /* Assets.xcassets in Resources */,
 				EB2E4B9025741832005B343A /* green@3x.png in Resources */,
@@ -1600,7 +1579,6 @@
 				EB269967256CF10C007CCF2E /* PlainDetailCell.swift in Sources */,
 				EB450A27254A8D2900D31858 /* TestsPresenter.swift in Sources */,
 				EB8B2BAE25AF5E83008E0118 /* HapticFeedback.swift in Sources */,
-				EB23924B25EB9381009BE502 /* MistakeCell.swift in Sources */,
 				EB59F02C258FE9E1004676D2 /* Gender.swift in Sources */,
 				EB995B5025E5177F0082DE32 /* MenuService.swift in Sources */,
 				EBF5935C2583AD580091FCE0 /* TestItemsFactory.swift in Sources */,
@@ -1616,7 +1594,6 @@
 				EB450973253B5CB300D31858 /* TableViewSection.swift in Sources */,
 				EBDF00A62562F1160041F458 /* FormTextField.swift in Sources */,
 				EB26996C256CFAC7007CCF2E /* RateService.swift in Sources */,
-				EB23924225EB92A3009BE502 /* MistakeItem.swift in Sources */,
 				EB69F8AF2569D7AA00759BAA /* TestRouter.swift in Sources */,
 				E52D5D5A2A7ED7950087F361 /* AccentColor.swift in Sources */,
 				E53CA78D2A375BE90058A28E /* PhrasalsService.swift in Sources */,
@@ -1664,7 +1641,6 @@
 				EB59AFC025AB312E005A212C /* NotificationService.swift in Sources */,
 				E5A737D62A7EA40F00F2F6BF /* IconDetailRow.swift in Sources */,
 				EB9C5BA82582A3F00086A3D5 /* PlaybackSpeed.swift in Sources */,
-				EBF593672583B3190091FCE0 /* StatisticsPresenter.swift in Sources */,
 				E58505E72A3E00A600071BF4 /* OnboardingItem.swift in Sources */,
 				EB8325A62556EFF0005E02C1 /* FavoritesService.swift in Sources */,
 				EB5D6E11259F33D200CCCA85 /* ListMenu.swift in Sources */,
