@@ -17,6 +17,7 @@ final class TestSessionViewModel: ObservableObject {
     @Published private(set) var sections: [TestSection] = []
     @Published private(set) var answeredIDs: Set<String> = []
     @Published var hint: String?
+    @Published var isShowingPlaybackSpeed = false
     
     /// Bumped whenever a new verb is drawn, so the view can announce the change.
     @Published private(set) var questionToken = 0

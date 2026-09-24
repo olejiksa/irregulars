@@ -12,7 +12,7 @@ import NotificationCenter
 
 final class AppDelegate: UIResponder {
 
-    private let deeplinkService = DeeplinkService()
+    private let deeplinkService = DeeplinkService(router: .shared)
     private let menuService = MenuService()
     private let printService = PrintService()
     private let purchaseService = Locator.purchaseService
@@ -47,6 +47,17 @@ final class AppDelegate: UIResponder {
 
 private extension AppDelegate {
     
+    func registerSettings() {
+        UserDefaults.shared.register(true, for: .regularVerbs)
+        UserDefaults.shared.register(true, for: .regularVerbsTests)
+        UserDefaults.shared.register(true, for: .derivatives)
+        UserDefaults.shared.register(true, for: .derivativesTests)
+        UserDefaults.shared.register(2, for: .playbackSpeed)
+        UserDefaults.shared.register(1, for: .frequency)
+        UserDefaults.shared.register(540, for: .since)
+        UserDefaults.shared.register(1260, for: .to)
+    }
+    
     func initializePurchaseActivity() {
         Task {
             do {
@@ -65,6 +76,7 @@ extension AppDelegate: UIApplicationDelegate {
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        registerSettings()
         UNUserNotificationCenter.current().delegate = self
         initializePurchaseActivity()
         return true
@@ -78,10 +90,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping Block) {
-        let scene = UIApplication.shared.connectedScenes.first
-        let sd = scene?.delegate as? SceneDelegate
-        guard let splitViewController = sd?.window?.rootViewController as? SplitViewController else { return }
-        deeplinkService.handle(response.notification.request.identifier,
-                               in: splitViewController)
+        deeplinkService.handle(response.notification.request.identifier)
     }
 }

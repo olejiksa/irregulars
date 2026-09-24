@@ -32,10 +32,8 @@ enum AccentColor: String, CaseIterable {
         }
         set {
             UserDefaults.shared.set(newValue.rawValue, for: .accentColor)
+            // RootView picks the new colour up from the notification.
             NotificationCenter.default.post(name: .reload, object: nil)
-            let scene = UIApplication.shared.connectedScenes.first
-            let sd = scene?.delegate as? SceneDelegate
-            sd?.window?.tintColor = newValue.color
         }
     }
     

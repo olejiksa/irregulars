@@ -7,7 +7,7 @@
 //
 
 import Combine
-import Foundation
+import SwiftUI
 
 @MainActor
 final class ListViewModel: ObservableObject {
@@ -26,6 +26,12 @@ final class ListViewModel: ObservableObject {
     @Published private(set) var scrollToTopToken = 0
     
     @Published var isSearchActive = false
+    @Published var searchText = "" {
+        didSet {
+            guard searchText != oldValue else { return }
+            updateSearch(text: searchText)
+        }
+    }
     @Published var isEditing = false
     @Published var selectedVerb: Verb?
     @Published var isShowingPaywall = false
@@ -128,6 +134,46 @@ final class ListViewModel: ObservableObject {
         scrollToTopToken += 1
     }
     
+    // MARK: Menu
+    
+    var showsTranslationBinding: Binding<Bool> {
+        .init(get: { [weak self] in self?.verbsService.shouldTranslationBeShown ?? false },
+              set: { [weak self] value in
+                  UserDefaults.shared.set(value, for: .shouldTranslationBeShown)
+                  self?.verbsService.shouldTranslationBeShown = value
+                  self?.rebuild()
+              })
+    }
+    
+    var groupsBySimilarityBinding: Binding<Bool> {
+        .init(get: { [weak self] in self?.verbsService.shouldSimilarBeShown ?? false },
+              set: { [weak self] value in
+                  UserDefaults.shared.set(value, for: .shouldSimilarBeShown)
+                  self?.verbsService.shouldSimilarBeShown = value
+                  self?.rebuild()
+              })
+    }
+    
+    var showsRegularsBinding: Binding<Bool> {
+        .init(get: { [weak self] in self?.verbsService.shouldRegularVerbsBeShown ?? false },
+              set: { [weak self] value in
+                  UserDefaults.shared.set(value, for: .regularVerbs)
+                  self?.updateRegulars(value)
+              })
+    }
+    
+    var showsDerivativesBinding: Binding<Bool> {
+        .init(get: { [weak self] in self?.verbsService.shouldDerivativesBeShown ?? false },
+              set: { [weak self] value in
+                  UserDefaults.shared.set(value, for: .derivatives)
+                  self?.updateDerivatives(value)
+              })
+    }
+    
+    var title: String {
+        favoritesOnly ? "favorites".localized : "all".localized
+    }
+    
     /// Highlights the verb the detail column is showing, without pushing it again.
     func setOpenedVerb(_ infinitive: String) {
         openedInfinitive = infinitive.isEmpty ? nil : infinitive
@@ -137,9 +183,9 @@ final class ListViewModel: ObservableObject {
 
 // MARK: - Private
 
-private extension ListViewModel {
+extension ListViewModel {
     
-    func loadSettings() {
+    fileprivate func loadSettings() {
         verbsService.shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .regularVerbs)
         verbsService.shouldDerivativesBeShown = UserDefaults.shared.bool(for: .derivatives)
         verbsService.shouldTranslationBeShown = UserDefaults.shared.bool(for: .shouldTranslationBeShown)

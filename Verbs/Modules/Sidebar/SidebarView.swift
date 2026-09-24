@@ -11,10 +11,10 @@ import UniformTypeIdentifiers
 
 struct SidebarView: View {
     
-    @ObservedObject var viewModel: SidebarViewModel
+    @Binding var selection: SidebarDestination?
     
     var body: some View {
-        List(selection: selection) {
+        List(selection: $selection) {
             Section("verbs") {
                 ForEach(SidebarDestination.verbs) { destination in
                     row(for: destination)
@@ -28,17 +28,13 @@ struct SidebarView: View {
             #endif
         }
         .listStyle(.sidebar)
+        .navigationTitle(Bundle.main.productName ?? "")
     }
 }
 
 // MARK: - Private
 
 private extension SidebarView {
-    
-    var selection: Binding<SidebarDestination?> {
-        .init(get: { viewModel.selection },
-              set: { viewModel.select($0) })
-    }
     
     @ViewBuilder
     func row(for destination: SidebarDestination) -> some View {
@@ -57,6 +53,8 @@ private extension SidebarView {
         }
     }
     
+    /// Dropping a verb onto the favourites row adds it, which is how the iPad has
+    /// always worked.
     func addDroppedVerbs(_ providers: [NSItemProvider]) -> Bool {
         let loadable = providers.filter { $0.canLoadObject(ofClass: VerbDragItem.self) }
         guard !loadable.isEmpty else { return false }
@@ -65,7 +63,7 @@ private extension SidebarView {
             _ = provider.loadObject(ofClass: VerbDragItem.self) { item, _ in
                 guard let verb = (item as? VerbDragItem)?.verb else { return }
                 
-                Task { @MainActor in viewModel.addToFavorites(verb) }
+                Task { @MainActor in Locator.favorites.add(verb) }
             }
         }
         

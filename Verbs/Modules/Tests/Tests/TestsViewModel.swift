@@ -7,7 +7,7 @@
 //
 
 import Combine
-import Foundation
+import SwiftUI
 
 @MainActor
 final class TestsViewModel: ObservableObject {
@@ -28,6 +28,7 @@ final class TestsViewModel: ObservableObject {
     /// Set by the view controller, which owns the navigation.
     var onSelect: ((Test?) -> Void)?
     var onEmptyFavorites: (() -> Void)?
+    var onPaywall: (() -> Void)?
     
     private let languageService: LanguageService
     private let hapticService: HapticService
@@ -61,6 +62,51 @@ final class TestsViewModel: ObservableObject {
     
     func scrollToTop() {
         scrollToTopToken += 1
+    }
+    
+    // MARK: Filter
+    
+    enum Scope: Hashable {
+        case demo, all, favorites
+    }
+    
+    var isPaid: Bool { FeatureToggle.isPaid }
+    
+    var isFiltered: Bool {
+        UserDefaults.shared.bool(for: .favoritesOnly) ||
+        !UserDefaults.shared.bool(for: .regularVerbsTests) ||
+        !UserDefaults.shared.bool(for: .derivativesTests)
+    }
+    
+    var scopeBinding: Binding<Scope> {
+        .init(get: {
+            guard FeatureToggle.isPaid else { return .demo }
+            return UserDefaults.shared.bool(for: .favoritesOnly) ? .favorites : .all
+        }, set: { [weak self] scope in
+            guard FeatureToggle.isPaid else {
+                self?.onPaywall?()
+                return
+            }
+            
+            UserDefaults.shared.set(scope == .favorites, for: .favoritesOnly)
+            self?.objectWillChange.send()
+        })
+    }
+    
+    var showsRegularsBinding: Binding<Bool> { toggle(for: .regularVerbsTests) }
+    var showsDerivativesBinding: Binding<Bool> { toggle(for: .derivativesTests) }
+    
+    private func toggle(for key: UserDefaults.Key) -> Binding<Bool> {
+        .init(get: { UserDefaults.shared.bool(for: key) },
+              set: { [weak self] value in
+                  guard FeatureToggle.isPaid else {
+                      self?.onPaywall?()
+                      return
+                  }
+                  
+                  UserDefaults.shared.set(value, for: key)
+                  self?.objectWillChange.send()
+              })
     }
 }
 
@@ -99,6 +145,11 @@ private extension TestsViewModel {
     func subscribe() {
         NotificationCenter.default.publisher(for: .test)
             .sink { [weak self] _ in self?.selectedID = nil }
+            .store(in: &cancellables)
+        
+        NotificationCenter.default.publisher(for: .reload)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in self?.objectWillChange.send() }
             .store(in: &cancellables)
     }
 }

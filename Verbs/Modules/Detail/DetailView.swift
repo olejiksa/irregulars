@@ -36,6 +36,29 @@ struct DetailView: View {
                 }
             }
         }
+        .navigationTitle(viewModel.title)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    viewModel.toggleFavorite()
+                } label: {
+                    (viewModel.isFavorite ? SystemIcon.starFill : SystemIcon.star).imageSwiftUI
+                }
+            }
+            
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    viewModel.isShowingPlaybackSpeed = true
+                } label: {
+                    SystemIcon.ellipsis.imageSwiftUI
+                }
+                .popover(isPresented: $viewModel.isShowingPlaybackSpeed) {
+                    PopoverView()
+                        .presentationCompactAdaptation(.popover)
+                }
+            }
+        }
         .sheet(isPresented: $viewModel.isShowingPaywall) {
             PaywallView()
         }

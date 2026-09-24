@@ -6,6 +6,7 @@
 //  Copyright © 2026 Oleg Samoylov. All rights reserved.
 //
 
+import Combine
 import Foundation
 
 @MainActor
@@ -18,10 +19,12 @@ final class DetailViewModel: ObservableObject {
     @Published private(set) var isFavorite: Bool
     @Published private(set) var speakingWord: String?
     @Published var isShowingPaywall = false
+    @Published var isShowingPlaybackSpeed = false
     
     private let audioService: AudioService
     private let favorites = Locator.favorites
     private let rateService = RateService()
+    private var cancellables = Set<AnyCancellable>()
     
     var title: String { verb.infinitive.value }
     
@@ -37,6 +40,11 @@ final class DetailViewModel: ObservableObject {
             .filter { $0.word == verb.infinitive.value }
             .flatMap(\.sentences)
         isFavorite = favorites.verbs.contains(verb)
+        
+        NotificationCenter.default.publisher(for: .favorites)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in self?.refreshFavorite() }
+            .store(in: &cancellables)
     }
     
     func play(_ word: Word) {

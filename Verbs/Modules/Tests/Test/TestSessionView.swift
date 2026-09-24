@@ -34,6 +34,32 @@ struct TestSessionView: View {
         } message: {
             Text(verbatim: viewModel.hint ?? "")
         }
+        .navigationTitle(viewModel.test.title)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    viewModel.skip()
+                } label: {
+                    SystemIcon.skip.imageSwiftUI
+                }
+                .accessibilityLabel("skip".localized)
+            }
+            
+            if [Test.listening, Test.speaking].contains(viewModel.test) {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        viewModel.isShowingPlaybackSpeed = true
+                    } label: {
+                        SystemIcon.ellipsis.imageSwiftUI
+                    }
+                    .popover(isPresented: $viewModel.isShowingPlaybackSpeed) {
+                        PopoverView()
+                            .presentationCompactAdaptation(.popover)
+                    }
+                }
+            }
+        }
     }
 }
 

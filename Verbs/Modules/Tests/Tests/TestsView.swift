@@ -29,6 +29,31 @@ struct TestsView: View {
                 withAnimation { proxy.scrollTo(first.id, anchor: .top) }
             }
         }
+        .navigationTitle("tests")
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Menu {
+                    Picker("", selection: viewModel.scopeBinding) {
+                        if !viewModel.isPaid {
+                            Label("demo", systemImage: SystemIcon.twentyFive.rawValue)
+                                .tag(TestsViewModel.Scope.demo)
+                        }
+                        Label("all", systemImage: SystemIcon.listBullet.rawValue)
+                            .tag(TestsViewModel.Scope.all)
+                        Label("favorites", systemImage: SystemIcon.star.rawValue)
+                            .tag(TestsViewModel.Scope.favorites)
+                    }
+                    .pickerStyle(.inline)
+                    
+                    if viewModel.isPaid, viewModel.scopeBinding.wrappedValue == .all {
+                        Toggle("regular_verbs", isOn: viewModel.showsRegularsBinding)
+                        Toggle("derivatives", isOn: viewModel.showsDerivativesBinding)
+                    }
+                } label: {
+                    (viewModel.isFiltered ? SystemIcon.unfilter : SystemIcon.filter).imageSwiftUI
+                }
+            }
+        }
     }
 }
 

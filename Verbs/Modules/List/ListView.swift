@@ -13,6 +13,19 @@ struct ListView: View {
     @ObservedObject var viewModel: ListViewModel
     
     var body: some View {
+        content
+            .searchable(text: $viewModel.searchText, prompt: Text("search"))
+            .navigationTitle(viewModel.title)
+            .navigationBarTitleDisplayMode(.large)
+            .toolbar { toolbar }
+            .sheet(isPresented: $viewModel.isShowingPaywall) {
+                PaywallView()
+            }
+    }
+    
+    /// Separate so that it can read whether the search field is active, which is only
+    /// published to the content of `searchable`.
+    private var content: some View {
         ZStack {
             list
             
@@ -27,8 +40,63 @@ struct ListView: View {
             }
         }
         .animation(.easeInOut(duration: 0.25), value: viewModel.state.message)
-        .sheet(isPresented: $viewModel.isShowingPaywall) {
-            PaywallView()
+        .modifier(SearchStateReporter(viewModel: viewModel))
+    }
+    
+    @ToolbarContentBuilder
+    private var toolbar: some ToolbarContent {
+        if viewModel.favoritesOnly {
+            ToolbarItem(placement: .topBarLeading) {
+                EditButton()
+                    .accessibilityIdentifier(AccessibilityIdentifier.editButton.rawValue)
+            }
+        }
+        
+        ToolbarItem(placement: .topBarTrailing) {
+            Menu {
+                if viewModel.hasTranslation {
+                    Picker("", selection: viewModel.showsTranslationBinding) {
+                        Text("three_forms").tag(false)
+                        Text("translation").tag(true)
+                    }
+                    .pickerStyle(.inline)
+                }
+                
+                Picker("", selection: viewModel.groupsBySimilarityBinding) {
+                    Text(verbatim: "A-Z").tag(false)
+                    Text("by_similarity").tag(true)
+                }
+                .pickerStyle(.inline)
+                
+                if !viewModel.favoritesOnly {
+                    Toggle("regular_verbs", isOn: viewModel.showsRegularsBinding)
+                    Toggle("derivatives", isOn: viewModel.showsDerivativesBinding)
+                }
+                
+                Button {
+                    viewModel.print()
+                } label: {
+                    Label("print", systemImage: "printer")
+                }
+                .keyboardShortcut("p", modifiers: .command)
+            } label: {
+                SystemIcon.ellipsis.imageSwiftUI
+            }
+        }
+    }
+}
+
+/// Reports the state of the search field back to the view model, which decides
+/// between the results, the hint and the not-found message.
+private struct SearchStateReporter: ViewModifier {
+    
+    @Environment(\.isSearching) private var isSearching
+    
+    let viewModel: ListViewModel
+    
+    func body(content: Content) -> some View {
+        content.onChange(of: isSearching) { _, isSearching in
+            viewModel.setSearchActive(isSearching)
         }
     }
 }
@@ -61,7 +129,6 @@ private extension ListView {
                 }
             }
             .listSectionIndexVisibility(viewModel.showsSectionIndex ? .visible : .hidden)
-            .environment(\.editMode, .constant(viewModel.isEditing ? .active : .inactive))
             .onChange(of: viewModel.scrollToTopToken) {
                 guard let first = viewModel.sections.first?.verbs.first else { return }
                 withAnimation { proxy.scrollTo(first.id, anchor: .top) }

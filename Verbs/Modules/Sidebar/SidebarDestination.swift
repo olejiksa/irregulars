@@ -58,8 +58,5 @@ enum SidebarDestination: Int, CaseIterable, Identifiable {
     
     /// Everything but settings, which the Mac keeps in its own menu.
     static let verbs: [SidebarDestination] = [.all, .favorites, .tests]
-    
-    init?(_ tabBarItem: TabBarItem) {
-        self.init(rawValue: tabBarItem.rawValue)
-    }
+
 }

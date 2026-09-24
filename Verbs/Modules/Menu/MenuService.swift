@@ -10,6 +10,7 @@ import SafariServices
 import UIKit
 import SwiftUI
 
+@MainActor
 final class MenuService {
     
     private let webURL = URL(string: "https://apps.apple.com/app/id1540487254")
@@ -19,10 +20,14 @@ final class MenuService {
     private let languageService = LanguageService()
     private let mailService = MailService()
     
-    private var viewController: SplitViewController? {
-        let scene = UIApplication.shared.connectedScenes.first
-        let sd = scene?.delegate as? SceneDelegate
-        return sd?.window?.rootViewController as? SplitViewController
+    private let router = AppRouter.shared
+    
+    /// Whatever SwiftUI put on screen, used only to present sheets from the menu bar.
+    private var viewController: UIViewController? {
+        UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .first?.keyWindow?
+            .rootViewController
     }
     
     func buildMenu(with builder: UIMenuBuilder) {
@@ -125,15 +130,7 @@ private extension MenuService {
     }
     
     @objc func goToAcknowledgements(_ action: UIAction) {
-        guard let top = viewController?.secondaryViewController?.topViewController,
-              !(top is UIHostingController<AcknowledgementsView>) else { return }
-        
-        let view = AcknowledgementsView()
-        let vc = UIHostingController(rootView: view)
-        vc.title = String.localized(.acknowledgements)
-        vc.hidesBottomBarWhenPushed = true
-        viewController?.navigationController?.view?.backgroundColor = .systemBackground
-        viewController?.secondaryViewController?.push(vc)
+        router.menuScreen = .acknowledgements
     }
     
     @objc func rateAndReview(_ action: UIAction) {
@@ -150,22 +147,11 @@ private extension MenuService {
     }
     
     @objc func goToVoice(_ action: UIAction) {
-        guard let top = viewController?.secondaryViewController?.topViewController,
-              !(top is UIHostingController<VoiceView>) else { return }
-        
-        let view = VoiceView(settingsViewModel: .init())
-        let vc = UIHostingController(rootView: view)
-        vc.title = String.localized(.voice)
-        vc.hidesBottomBarWhenPushed = true
-        viewController?.secondaryViewController?.push(vc)
+        router.menuScreen = .voice
     }
     
     @objc func goToNotifications(_ action: UIAction) {
-        guard let top = viewController?.secondaryViewController?.topViewController,
-              !(top is UIHostingController<AcknowledgementsView>) else { return }
-        
-        let vc = UIHostingController(rootView: NotificationsView(settingsViewModel: .init()))
-        viewController?.secondaryViewController?.push(vc)
+        router.menuScreen = .notifications
     }
     
     @objc func goToAllApps(_ action: UIAction) {
