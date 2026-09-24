@@ -22,9 +22,7 @@ final class ListRouter {
     
     func goToDetail(with verb: Verb) {
         guard !checkIfAlreadyOpened(by: verb.infinitive.value) else { return }
-        let vc = DetailAssembly(verb: verb,
-                                isOpenedByDeeplink: false,
-                                navigationController: navigationController).viewController()
+        let vc = DetailViewController(verb: verb)
         navigationController?.push(vc, in: splitViewController)
     }
     

@@ -6,11 +6,18 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
+import SwiftUI
 import UIKit
 
-final class EmptyViewController: UIViewController {
+final class EmptyViewController: UIHostingController<EmptyStateView> {
     
-    private let noDataLabel = UILabel.noDataLabel
+    init() {
+        super.init(rootView: EmptyStateView())
+    }
+    
+    @MainActor required dynamic init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -28,47 +35,8 @@ final class EmptyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        subscribe()
-        setupDelegate()
-        setupNoDataLabel()
-        setupView()
-    }
-}
-
-// MARK: - Private
-
-private extension EmptyViewController {
-    
-    func subscribe() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(didSidebarItemChange),
-                                               name: .sidebar,
-                                               object: nil)
-    }
-    
-    func setupDelegate() {
         navigationController?.delegate = self
-    }
-    
-    func setupNoDataLabel() {
-        view.addSubview(noDataLabel)
-        noDataLabel.text = .localized(.emptyVerbs)
-        noDataLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            noDataLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            noDataLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            noDataLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 2 / 3)
-        ])
-    }
-    
-    func setupView() {
         view.backgroundColor = .systemBackground
-    }
-    
-    @objc func didSidebarItemChange(_ notification: Notification) {
-        let areVerbs = notification.userInfo?[Notification.Name.sidebar] as? Bool ?? false
-        noDataLabel.text = areVerbs ? "empty_verbs".localized : "empty_tests".localized
     }
 }
 

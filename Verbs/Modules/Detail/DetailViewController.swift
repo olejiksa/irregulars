@@ -6,59 +6,42 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
+import Combine
+import SwiftUI
 import UIKit
 
-final class DetailViewController: UIViewController {
+final class DetailViewController: UIHostingController<DetailView> {
     
-    private let presenter: DetailPresenter
-    private let verb: Verb
+    private let viewModel: DetailViewModel
     private let isOpenedByDeeplink: Bool
     private var favoriteButton: UIBarButtonItem?
-    private var favorites = Locator.favorites
-    private var tableView: UITableView?
-    private var keyboardService: KeyboardService?
-    private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
+    private var cancellables = Set<AnyCancellable>()
     
-    init(presenter: DetailPresenter,
-         verb: Verb,
-         isOpenedByDeeplink: Bool = false) {
-        self.presenter = presenter
-        self.verb = verb
+    init(verb: Verb, isOpenedByDeeplink: Bool = false) {
+        viewModel = DetailViewModel(verb: verb)
         self.isOpenedByDeeplink = isOpenedByDeeplink
         
-        super.init(nibName: nil, bundle: nil)
+        super.init(rootView: DetailView(viewModel: viewModel))
         
         hidesBottomBarWhenPushed = true
     }
     
-    required init?(coder: NSCoder) {
+    @MainActor required dynamic init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupNavigationBar()
-        setupTableView()
         setupDelegate()
-        setupKeyboardService()
-        updateFavoriteButton()
+        subscribe()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationController.map { navigationController($0, willShow: self, animated: animated) }
-    }
-    
-    func getPaid() {
-        tableView?.reloadData()
-    }
-    
-    func updateFavoriteButton() {
-        favoriteButton?.image = !Locator.favorites.verbs.contains(verb) ?
-            SystemIcon.star.image :
-            SystemIcon.starFill.image
     }
 }
 
@@ -67,64 +50,37 @@ final class DetailViewController: UIViewController {
 private extension DetailViewController {
     
     func setupNavigationBar() {
-        navigationItem.title = presenter.title
+        navigationItem.title = viewModel.title
         navigationItem.largeTitleDisplayMode = .never
         
         let moreButton = UIBarButtonItem(icon: .ellipsis, target: self, action: #selector(didMoreButtonTap))
-        let isFavorite = Locator.favorites.verbs.contains(verb)
-        let icon = isFavorite ? SystemIcon.starFill : SystemIcon.star
-        favoriteButton = UIBarButtonItem(icon: icon, target: self, action: #selector(didFavoriteTap))
+        favoriteButton = UIBarButtonItem(icon: .star, target: self, action: #selector(didFavoriteTap))
         navigationItem.rightBarButtonItems = [favoriteButton, moreButton].compactMap { $0 }
-    }
-    
-    func setupTableView() {
-        let tableView = UITableView(frame: .zero, style: .insetGrouped)
         
-        view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let keyboardHeightLayoutConstraint = tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            keyboardHeightLayoutConstraint
-        ])
-        
-        tableView.dataSource = presenter.dataSource
-        tableView.delegate = presenter
-        
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 100
-        
-        tableView.register(DetailCell.self, TranslationCell.self, ExampleCell.self)
-        
-        self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
-        self.tableView = tableView
+        updateFavoriteButton(isFavorite: viewModel.isFavorite)
     }
     
     func setupDelegate() {
         navigationController?.delegate = self
     }
     
-    func setupKeyboardService() {
-        keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
+    func subscribe() {
+        viewModel.$isFavorite
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] isFavorite in self?.updateFavoriteButton(isFavorite: isFavorite) }
+            .store(in: &cancellables)
+        
+        NotificationCenter.default.publisher(for: .favorites)
+            .sink { [weak self] _ in self?.viewModel.refreshFavorite() }
+            .store(in: &cancellables)
+    }
+    
+    func updateFavoriteButton(isFavorite: Bool) {
+        favoriteButton?.image = isFavorite ? SystemIcon.starFill.image : SystemIcon.star.image
     }
     
     @objc func didFavoriteTap() {
-        updateFavoriteButton()
-
-        if !Locator.favorites.verbs.contains(verb) {
-            guard !Locator.favorites.shouldPaywallBeShown else {
-                presenter.router?.goToPaywall()
-                return
-            }
-            
-            Locator.favorites.add(verb)
-        } else {
-            Locator.favorites.remove(verb)
-        }
+        viewModel.toggleFavorite()
     }
     
     @objc func didMoreButtonTap(_ sender: UIBarButtonItem) {
@@ -134,13 +90,11 @@ private extension DetailViewController {
 
 // MARK: - Restorable
 
+/// `SplitStateManager` branches on this conformance to decide which screens travel
+/// between the split view columns. SwiftUI lays itself out again, so there is nothing to restore.
 extension DetailViewController: Restorable {
     
-    func restore() {
-        tableView?.removeFromSuperview()
-        tableView = nil
-        setupTableView()
-    }
+    func restore() {}
 }
 
 // MARK: - UINavigationControllerDelegate

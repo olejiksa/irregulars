@@ -220,11 +220,8 @@ extension ListPresenter: UITableViewDelegate {
             return .init(children: [action])
         }
         
-        let previewProvider: UIContextMenuContentPreviewProvider = { [weak self] in
-            guard let nvc = self?.viewController?.navigationController else { return nil }
-            return DetailAssembly(verb: verb,
-                                  isOpenedByDeeplink: false,
-                                  navigationController: nvc).viewController()
+        let previewProvider: UIContextMenuContentPreviewProvider = {
+            DetailViewController(verb: verb)
         }
         
         let svc = viewController?.splitViewController

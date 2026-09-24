@@ -138,9 +138,7 @@ private extension DeeplinkService {
                 splitViewController: UISplitViewController?) {
         guard !checkIfAlreadyOpened(by: host, in: navigationController) else { return }
         splitViewController?.dismiss(animated: true)
-        let vc = DetailAssembly(verb: verb,
-                                isOpenedByDeeplink: true,
-                                navigationController: navigationController).viewController()
+        let vc = DetailViewController(verb: verb, isOpenedByDeeplink: true)
         navigationController?.push(vc, in: splitViewController)
     }
     
