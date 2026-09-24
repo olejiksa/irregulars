@@ -128,12 +128,7 @@ private extension DetailViewController {
     }
     
     @objc func didMoreButtonTap(_ sender: UIBarButtonItem) {
-        let viewController = PopoverAssembly(width: view.frame.width - 40).viewController()
-        viewController.modalPresentationStyle = .popover
-        guard let popoverViewController = viewController.popoverPresentationController else { return }
-        popoverViewController.barButtonItem = sender
-        popoverViewController.delegate = viewController
-        present(viewController, animated: true)
+        presentPlaybackSpeedPopover(from: sender)
     }
 }
 

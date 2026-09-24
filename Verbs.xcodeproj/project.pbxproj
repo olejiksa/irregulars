@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC450FCF2903431E81C4CD1C /* PopoverHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A56035DF9F26378D8D05D3B /* PopoverHostingController.swift */; };
 		484C281E194D6D858C66B773 /* VerbsWidgetConfigurationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C04A63E8026AA6155C76DD6 /* VerbsWidgetConfigurationIntent.swift */; };
 		262E1B16930689E9AFC3AEB1 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 9A1EEBFE6DD2E5D9E5DDDA3A /* PrivacyInfo.xcprivacy */; };
 		CA11A2EB5691280E600F6837 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = D63D9073DE45178CA13E4BD9 /* PrivacyInfo.xcprivacy */; };
@@ -117,9 +118,6 @@
 		EB5547542553CB22001C5585 /* SidebarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5547532553CB22001C5585 /* SidebarCell.swift */; };
 		EB5547632554089F001C5585 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5547622554089F001C5585 /* TabBarController.swift */; };
 		EB59AF4025A60318005A212C /* PrintService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59AF3F25A60318005A212C /* PrintService.swift */; };
-		EB59AF8A25AAECEC005A212C /* PopoverViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59AF8925AAECEC005A212C /* PopoverViewControlller.swift */; };
-		EB59AF9225AAEDE4005A212C /* PopoverPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59AF9125AAEDE4005A212C /* PopoverPresenter.swift */; };
-		EB59AF9725AAEED6005A212C /* PopoverAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59AF9625AAEED6005A212C /* PopoverAssembly.swift */; };
 		EB59AFC025AB312E005A212C /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59AFBF25AB312E005A212C /* NotificationService.swift */; };
 		EB59F01F258FE429004676D2 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59F01E258FE429004676D2 /* Region.swift */; };
 		EB59F027258FE7F2004676D2 /* VoiceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59F026258FE7F2004676D2 /* VoiceService.swift */; };
@@ -160,9 +158,6 @@
 		EB995B7825E518E50082DE32 /* VerbsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB1D91251F15B40019972C /* VerbsService.swift */; };
 		EB995B7E25E518F70082DE32 /* SpotlightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5D6DF8259ECD2400CCCA85 /* SpotlightService.swift */; };
 		EB9A4FBC252E8D9800443D47 /* DeeplinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */; };
-		EB9C5B9B258295C70086A3D5 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9C5B99258295C70086A3D5 /* SliderCell.swift */; };
-		EB9C5B9C258295C70086A3D5 /* SliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB9C5B9A258295C70086A3D5 /* SliderCell.xib */; };
-		EB9C5BA2258296EC0086A3D5 /* SliderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9C5BA1258296EC0086A3D5 /* SliderItem.swift */; };
 		EB9C5BA82582A3F00086A3D5 /* PlaybackSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9C5BA72582A3F00086A3D5 /* PlaybackSpeed.swift */; };
 		EB9F046B25E94152009B1D6B /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9F046A25E94152009B1D6B /* Label.swift */; };
 		EBA644B4255988FC0012B973 /* ListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA644B3255988FC0012B973 /* ListState.swift */; };
@@ -316,6 +311,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5A56035DF9F26378D8D05D3B /* PopoverHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverHostingController.swift; sourceTree = "<group>"; };
 		1C04A63E8026AA6155C76DD6 /* VerbsWidgetConfigurationIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbsWidgetConfigurationIntent.swift; sourceTree = "<group>"; };
 		9A1EEBFE6DD2E5D9E5DDDA3A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		D63D9073DE45178CA13E4BD9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -429,9 +425,6 @@
 		EB5547532553CB22001C5585 /* SidebarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarCell.swift; sourceTree = "<group>"; };
 		EB5547622554089F001C5585 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		EB59AF3F25A60318005A212C /* PrintService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintService.swift; sourceTree = "<group>"; };
-		EB59AF8925AAECEC005A212C /* PopoverViewControlller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewControlller.swift; sourceTree = "<group>"; };
-		EB59AF9125AAEDE4005A212C /* PopoverPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverPresenter.swift; sourceTree = "<group>"; };
-		EB59AF9625AAEED6005A212C /* PopoverAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverAssembly.swift; sourceTree = "<group>"; };
 		EB59AFBF25AB312E005A212C /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		EB59F01E258FE429004676D2 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		EB59F026258FE7F2004676D2 /* VoiceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceService.swift; sourceTree = "<group>"; };
@@ -474,9 +467,6 @@
 		EB8B2BC225B33A0D008E0118 /* VerbsSectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbsSectionDataSource.swift; sourceTree = "<group>"; };
 		EB995B4F25E5177F0082DE32 /* MenuService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuService.swift; sourceTree = "<group>"; };
 		EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkService.swift; sourceTree = "<group>"; };
-		EB9C5B99258295C70086A3D5 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
-		EB9C5B9A258295C70086A3D5 /* SliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
-		EB9C5BA1258296EC0086A3D5 /* SliderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderItem.swift; sourceTree = "<group>"; };
 		EB9C5BA72582A3F00086A3D5 /* PlaybackSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackSpeed.swift; sourceTree = "<group>"; };
 		EB9F046A25E94152009B1D6B /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		EBA644B3255988FC0012B973 /* ListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListState.swift; sourceTree = "<group>"; };
@@ -914,11 +904,8 @@
 		EB59AF8825AAECDA005A212C /* Popover */ = {
 			isa = PBXGroup;
 			children = (
-				EB9C5B98258295620086A3D5 /* SliderItem */,
-				EB59AF9625AAEED6005A212C /* PopoverAssembly.swift */,
+				5A56035DF9F26378D8D05D3B /* PopoverHostingController.swift */,
 				E5059C342A39CE6400891998 /* PopoverView.swift */,
-				EB59AF8925AAECEC005A212C /* PopoverViewControlller.swift */,
-				EB59AF9125AAEDE4005A212C /* PopoverPresenter.swift */,
 			);
 			path = Popover;
 			sourceTree = "<group>";
@@ -1051,16 +1038,6 @@
 				EB995B4F25E5177F0082DE32 /* MenuService.swift */,
 			);
 			path = Menu;
-			sourceTree = "<group>";
-		};
-		EB9C5B98258295620086A3D5 /* SliderItem */ = {
-			isa = PBXGroup;
-			children = (
-				EB9C5BA1258296EC0086A3D5 /* SliderItem.swift */,
-				EB9C5B99258295C70086A3D5 /* SliderCell.swift */,
-				EB9C5B9A258295C70086A3D5 /* SliderCell.xib */,
-			);
-			path = SliderItem;
 			sourceTree = "<group>";
 		};
 		EBA644B9255A599B0012B973 /* ActionItem */ = {
@@ -1593,7 +1570,6 @@
 				EBF5948F2589030E0091FCE0 /* green@2x~ipad.png in Resources */,
 				EBB3BC15251F4BAA006E0DC7 /* irregulars.json in Resources */,
 				EB2E4B9725741832005B343A /* pink@2x.png in Resources */,
-				EB9C5B9C258295C70086A3D5 /* SliderCell.xib in Resources */,
 				EBA644C1255A5A1A0012B973 /* ActionCell.xib in Resources */,
 				EBF5948A2589030E0091FCE0 /* pink@3x~ipad.png in Resources */,
 				EBF5948B2589030E0091FCE0 /* purple@3x~ipad.png in Resources */,
@@ -1668,6 +1644,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC450FCF2903431E81C4CD1C /* PopoverHostingController.swift in Sources */,
 				EB5547632554089F001C5585 /* TabBarController.swift in Sources */,
 				EB4509A4253B6EB600D31858 /* Actionable.swift in Sources */,
 				E5A249452A55F08300F43830 /* PurchaseService.swift in Sources */,
@@ -1733,7 +1710,6 @@
 				EB23924225EB92A3009BE502 /* MistakeItem.swift in Sources */,
 				EBB01C0C2521825000BB646B /* TranslationCell.swift in Sources */,
 				EB69F8AF2569D7AA00759BAA /* TestRouter.swift in Sources */,
-				EB59AF9225AAEDE4005A212C /* PopoverPresenter.swift in Sources */,
 				E52D5D5A2A7ED7950087F361 /* AccentColor.swift in Sources */,
 				E53CA78D2A375BE90058A28E /* PhrasalsService.swift in Sources */,
 				E58C83232A4E224F00327ECE /* SettingsView.swift in Sources */,
@@ -1742,7 +1718,6 @@
 				EBE605E325B86C7F00EB1CB3 /* AppShortcut.swift in Sources */,
 				EB450A49254B1A2B00D31858 /* PlainCell.swift in Sources */,
 				E58505E52A3E009500071BF4 /* OnboardingViewModel.swift in Sources */,
-				EB9C5B9B258295C70086A3D5 /* SliderCell.swift in Sources */,
 				EBB3BC10251F3545006E0DC7 /* KeyboardService.swift in Sources */,
 				EBB42C582615B9C7008CB9A5 /* RecordItem.swift in Sources */,
 				EBEB1D92251F15B40019972C /* VerbsService.swift in Sources */,
@@ -1765,7 +1740,6 @@
 				E58505E32A3DFFB800071BF4 /* OnboardingView.swift in Sources */,
 				EBA644D7255ADC800012B973 /* SidebarPresenter.swift in Sources */,
 				E5059C352A39CE6400891998 /* PopoverView.swift in Sources */,
-				EB59AF9725AAEED6005A212C /* PopoverAssembly.swift in Sources */,
 				EBF00FAE257BB55A002FA49B /* TestItem.swift in Sources */,
 				EBA732B425704AF7001B69EF /* SplitStateManager.swift in Sources */,
 				EB355266260CAF5C00C7EA3C /* SimilarityService.swift in Sources */,
@@ -1795,9 +1769,7 @@
 				E585BBDD2A7FBC8500ADE934 /* ProgressRow.swift in Sources */,
 				EB3217A5258BCDAC00023F0B /* Statistics.swift in Sources */,
 				EB7B85652537FAE000542D3C /* Word.swift in Sources */,
-				EB9C5BA2258296EC0086A3D5 /* SliderItem.swift in Sources */,
 				EB2F5E0D251F543A007DCF60 /* DetailViewController.swift in Sources */,
-				EB59AF8A25AAECEC005A212C /* PopoverViewControlller.swift in Sources */,
 				EBB3BC09251F2ADB006E0DC7 /* String.swift in Sources */,
 				EBB42C4F2615B5D2008CB9A5 /* RecordCell.swift in Sources */,
 				E5F99A182A3F74CD00E275E5 /* VerbsApp.swift in Sources */,
