@@ -108,17 +108,16 @@ struct RootView: View {
 
 private extension RootView {
     
+    /// `NavigationSplitView` gives each column its own navigation container, so a
+    /// column only needs a `NavigationStack` when it pushes within itself — and then
+    /// the stack's path belongs to the router, never to the column.
     var split: some View {
         NavigationSplitView {
             SidebarView(selection: sidebarSelection, favorites: dependencies.favorites)
         } content: {
-            NavigationStack {
-                contentColumn
-            }
+            contentColumn
         } detail: {
-            NavigationStack {
-                detailColumn
-            }
+            detailColumn
         }
     }
     
@@ -148,7 +147,7 @@ private extension RootView {
             .accessibilityIdentifier(AccessibilityIdentifier.testsTab.rawValue)
             .tag(SidebarDestination.tests)
             
-            NavigationStack {
+            NavigationStack(path: router.settingsPath) {
                 SettingsView(dependencies: dependencies)
             }
             .tabItem { Label("settings", systemImage: SystemIcon.gearFill.rawValue) }
@@ -157,6 +156,8 @@ private extension RootView {
         }
     }
     
+    /// The lists hand their selection to the router, which the detail column reads;
+    /// only the settings push onto a stack, and that stack's path is the router's.
     @ViewBuilder
     var contentColumn: some View {
         switch router.destination {
@@ -167,7 +168,9 @@ private extension RootView {
         case .tests:
             TestsView(viewModel: tests)
         case .settings:
-            SettingsView(dependencies: dependencies)
+            NavigationStack(path: router.settingsPath) {
+                SettingsView(dependencies: dependencies)
+            }
         }
     }
     

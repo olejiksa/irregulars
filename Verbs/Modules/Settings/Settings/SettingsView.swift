@@ -32,23 +32,17 @@ struct SettingsView: View {
                 Link(destination: URL(string: UIApplication.openSettingsURLString)!) {
                     RightDetailRow(title: "language", subtitle: viewModel.language)
                 }
-                NavigationLink {
-                    AccentColorView(settingsViewModel: viewModel, dependencies: dependencies)
-                } label: {
+                NavigationLink(value: SettingsRoute.accentColor) {
                     RightDetailRow(title: "accent_color", subtitle: viewModel.accentColor.rawValue.localized)
                 }
-                NavigationLink {
-                    VoiceView(settingsViewModel: viewModel, dependencies: dependencies)
-                } label: {
+                NavigationLink(value: SettingsRoute.voice) {
                     if let voiceName = viewModel.voice?.name {
                         RightDetailRow(title: "voice", subtitle: voiceName)
                     } else {
                         RightDetailRow(title: "voice", subtitle: "default".localized)
                     }
                 }
-                NavigationLink {
-                    NotificationsView(settingsViewModel: viewModel, dependencies: dependencies)
-                } label: {
+                NavigationLink(value: SettingsRoute.notifications) {
                     RightDetailRow(title: "notifications", subtitle: viewModel.notificationsAvailability.rawValue.localized)
                 }
             }
@@ -81,6 +75,7 @@ struct SettingsView: View {
                 RightDetailRow(title: "version", subtitle: viewModel.version)
             }
         }
+        .navigationDestination(for: SettingsRoute.self, destination: view(for:))
         .sheet(isPresented: $viewModel.isShowingPaywall) {
             PaywallView(purchaseService: dependencies.purchaseService)
         }
@@ -93,6 +88,23 @@ struct SettingsView: View {
             for: UIScene.willEnterForegroundNotification
         )) { _ in
             viewModel.updateNotificationsAvailability()
+        }
+    }
+}
+
+// MARK: - Private
+
+private extension SettingsView {
+    
+    @ViewBuilder
+    func view(for route: SettingsRoute) -> some View {
+        switch route {
+        case .accentColor:
+            AccentColorView(settingsViewModel: viewModel, dependencies: dependencies)
+        case .voice:
+            VoiceView(settingsViewModel: viewModel, dependencies: dependencies)
+        case .notifications:
+            NotificationsView(settingsViewModel: viewModel, dependencies: dependencies)
         }
     }
 }

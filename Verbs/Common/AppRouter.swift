@@ -20,6 +20,14 @@ enum TestsRoute: Hashable {
     case statistics
 }
 
+/// What the settings column can push. It is the only column that pushes within
+/// itself, so it is the only one that needs a route of its own.
+enum SettingsRoute: Hashable {
+    case accentColor
+    case voice
+    case notifications
+}
+
 /// The whole navigation state of the app. The scene delegate writes to it when a
 /// deep link, a Spotlight result or a home screen shortcut arrives; the views read it.
 @MainActor
@@ -33,11 +41,13 @@ final class AppRouter {
             
             verbsRoute = nil
             testsRoute = nil
+            settingsRoute = nil
         }
     }
     
     var verbsRoute: VerbsRoute?
     var testsRoute: TestsRoute?
+    var settingsRoute: SettingsRoute?
     
     /// Screens the Mac menu bar opens, which has no column of its own to push into.
     var menuScreen: MenuScreen?
@@ -56,6 +66,11 @@ final class AppRouter {
     var testsPath: Binding<[TestsRoute]> {
         .init(get: { [weak self] in self?.testsRoute.map { [$0] } ?? [] },
               set: { [weak self] in self?.testsRoute = $0.last })
+    }
+    
+    var settingsPath: Binding<[SettingsRoute]> {
+        .init(get: { [weak self] in self?.settingsRoute.map { [$0] } ?? [] },
+              set: { [weak self] in self?.settingsRoute = $0.last })
     }
     
     // MARK: Entry points
