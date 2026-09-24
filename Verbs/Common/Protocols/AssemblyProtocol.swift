@@ -8,6 +8,7 @@
 
 import UIKit
 
+@MainActor
 protocol AssemblyProtocol {
     
     associatedtype ViewController: UIViewController

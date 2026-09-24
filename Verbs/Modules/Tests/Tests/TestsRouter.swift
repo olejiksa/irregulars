@@ -9,6 +9,7 @@
 import SwiftUI
 import UIKit
 
+@MainActor
 final class TestsRouter {
     
     private weak var viewController: UIViewController?

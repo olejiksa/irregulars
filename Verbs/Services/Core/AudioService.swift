@@ -8,6 +8,7 @@
 
 import AVFoundation
 
+@MainActor
 final class AudioService: NSObject {
     
     private let synthesizer = AVSpeechSynthesizer()
@@ -49,30 +50,32 @@ final class AudioService: NSObject {
 
 // MARK: - AVSpeechSynthesizerDelegate
 
+/// `AVSpeechSynthesizerDelegate` is `Sendable` in the SDK, so these can arrive on any
+/// thread. The handlers drive the UI, hence the hop back to the main actor.
 extension AudioService: AVSpeechSynthesizerDelegate {
     
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer,
-                           didStart utterance: AVSpeechUtterance) {
-        playHandler?()
+    nonisolated func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer,
+                                       didStart utterance: AVSpeechUtterance) {
+        Task { @MainActor in playHandler?() }
     }
     
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer,
-                           didContinue utterance: AVSpeechUtterance) {
-        playHandler?()
+    nonisolated func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer,
+                                       didContinue utterance: AVSpeechUtterance) {
+        Task { @MainActor in playHandler?() }
     }
     
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer,
-                           didPause utterance: AVSpeechUtterance) {
-        stopHandler?()
+    nonisolated func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer,
+                                       didPause utterance: AVSpeechUtterance) {
+        Task { @MainActor in stopHandler?() }
     }
     
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer,
-                           didCancel utterance: AVSpeechUtterance) {
-        stopHandler?()
+    nonisolated func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer,
+                                       didCancel utterance: AVSpeechUtterance) {
+        Task { @MainActor in stopHandler?() }
     }
     
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer,
-                           didFinish utterance: AVSpeechUtterance) {
-        stopHandler?()
+    nonisolated func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer,
+                                       didFinish utterance: AVSpeechUtterance) {
+        Task { @MainActor in stopHandler?() }
     }
 }

@@ -20,7 +20,7 @@ final class RecordService: NSObject {
         
         try? recordingSession?.setCategory(.playAndRecord, mode: .default)
         try? recordingSession?.setActive(true)
-        recordingSession?.requestRecordPermission() { allowed in
+        AVAudioApplication.requestRecordPermission { allowed in
             DispatchQueue.main.async {
                 availabilityBlock(allowed)
             }

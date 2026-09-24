@@ -27,11 +27,11 @@ final class SidebarCell: UICollectionViewListCell {
 private extension SidebarCell {
     
     func updateBackgroundConfiguration(using state: UICellConfigurationState) {
-        backgroundConfiguration = .listSidebarCell()
+        backgroundConfiguration = .listCell()
     }
     
     func updateContentConfiguration(using state: UICellConfigurationState) {
-        var newContentConfiguration = UIListContentConfiguration.sidebarCell()
+        var newContentConfiguration = UIListContentConfiguration.cell()
         
         newContentConfiguration.text = item?.title
         newContentConfiguration.secondaryText = item?.subtitle

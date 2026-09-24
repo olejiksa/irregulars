@@ -8,6 +8,7 @@
 
 import Foundation
 
+@MainActor
 final class DetailViewModel: ObservableObject {
     
     let verb: Verb
@@ -25,11 +26,11 @@ final class DetailViewModel: ObservableObject {
     var title: String { verb.infinitive.value }
     
     init(verb: Verb,
-         audioService: AudioService = .init(voiceService: .init()),
+         audioService: AudioService? = nil,
          languageService: LanguageService = .init(),
          sentencesService: SentencesService = .init()) {
         self.verb = verb
-        self.audioService = audioService
+        self.audioService = audioService ?? AudioService(voiceService: .init())
         
         hasTranslation = languageService.hasTranslation
         sentences = sentencesService.items

@@ -9,7 +9,7 @@
 import StoreKit
 
 @MainActor
-final class PurchaseService: NSObject, ObservableObject {
+final class PurchaseService: ObservableObject {
     
     var canMakePayments: Bool {
         AppStore.canMakePayments
@@ -23,15 +23,16 @@ final class PurchaseService: NSObject, ObservableObject {
     private var purchasedProductIDs = Set<String>()
     private var areProductsLoaded = false
     private var updates: Task<Void, Never>? = nil
+    private var purchaseIntents: Task<Void, Never>? = nil
     
-    override init() {
-        super.init()
-        SKPaymentQueue.default().add(self)
+    init() {
         updates = observeTransactionUpdates()
+        purchaseIntents = observePurchaseIntents()
     }
     
     deinit {
         updates?.cancel()
+        purchaseIntents?.cancel()
     }
     
     func loadProducts() async throws {
@@ -83,9 +84,19 @@ final class PurchaseService: NSObject, ObservableObject {
 private extension PurchaseService {
     
     func observeTransactionUpdates() -> Task<Void, Never> {
-        Task(priority: .background) { [unowned self] in
+        Task(priority: .background) { [weak self] in
             for await _ in Transaction.updates {
-                await self.updatePurchasedProducts()
+                await self?.updatePurchasedProducts()
+            }
+        }
+    }
+    
+    /// Handles the purchases started from the App Store product page,
+    /// which StoreKit 1 delivered through `shouldAddStorePayment`.
+    func observePurchaseIntents() -> Task<Void, Never> {
+        Task { [weak self] in
+            for await intent in PurchaseIntent.intents {
+                try? await self?.purchase(intent.product)
             }
         }
     }
@@ -100,16 +111,5 @@ private extension PurchaseService {
         } else {
             purchasedProductIDs.remove(transaction.productID)
         }
-    }
-}
-
-// MARK: - SKPaymentTransactionObserver
-
-extension PurchaseService: SKPaymentTransactionObserver {
-    
-    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {}
-    
-    func paymentQueue(_ queue: SKPaymentQueue, shouldAddStorePayment payment: SKPayment, for product: SKProduct) -> Bool {
-        true
     }
 }

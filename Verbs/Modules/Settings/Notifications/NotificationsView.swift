@@ -22,7 +22,7 @@ struct NotificationsView: View {
                 if viewModel.areNotificationsAvailable {
                     Toggle("notifications", isOn: $viewModel.areNotificationsEnabled)
                         .tint(AccentColor.current.colorSwiftUI)
-                        .onChange(of: viewModel.areNotificationsEnabled) { newValue in
+                        .onChange(of: viewModel.areNotificationsEnabled) { _, newValue in
                             settingsViewModel.notificationsAvailability = newValue ? .enabled : .disabled
                         }
                 } else {

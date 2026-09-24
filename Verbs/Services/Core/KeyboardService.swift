@@ -46,7 +46,9 @@ private extension KeyboardService {
         let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
         let animationCurve = UIView.AnimationOptions(rawValue: animationCurveRaw)
         
-        if endFrameY >= UIScreen.main.bounds.size.height {
+        let screenHeight = view.window?.windowScene?.screen.bounds.size.height ?? .greatestFiniteMagnitude
+        
+        if endFrameY >= screenHeight {
             keyboardHeightLayoutConstraint?.constant = 0
         } else {
             let newHeight = view.bounds.size.height - convertedFrame.origin.y

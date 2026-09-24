@@ -8,6 +8,7 @@
 
 import UIKit
 
+@MainActor
 final class TestPresenter: NSObject {
     
     let test: Test

@@ -8,6 +8,7 @@
 
 import Foundation
 
+@MainActor
 final class VoiceViewModel: ObservableObject {
     
     @Published var selectedItem: Voice? = .current

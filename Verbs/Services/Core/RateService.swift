@@ -39,6 +39,9 @@ private extension RateService {
         let scenes = UIApplication.shared.connectedScenes
         let isForegroundScene: (UIScene) -> Bool = { $0.activationState == .foregroundActive }
         guard let scene = scenes.first(where: isForegroundScene) as? UIWindowScene else { return }
-        SKStoreReviewController.requestReview(in: scene)
+        
+        Task { @MainActor in
+            AppStore.requestReview(in: scene)
+        }
     }
 }

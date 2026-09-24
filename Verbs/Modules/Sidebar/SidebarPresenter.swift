@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SwiftUI
 
+@MainActor
 final class SidebarPresenter: NSObject {
     
     private enum SidebarSection: Int {
@@ -39,7 +40,7 @@ final class SidebarPresenter: NSObject {
         let headerRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, SidebarItem> {
             (cell, _, item) in
             
-            var contentConfiguration = UIListContentConfiguration.sidebarHeader()
+            var contentConfiguration = UIListContentConfiguration.header()
             contentConfiguration.text = item.title
             
             cell.contentConfiguration = contentConfiguration
