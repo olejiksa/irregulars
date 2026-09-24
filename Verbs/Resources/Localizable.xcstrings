@@ -10574,7 +10574,7 @@
       }
     },
     "listen_to_pronunciation" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -21000,7 +21000,7 @@
       }
     },
     "store_unlimited_items_in_favorites" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -23820,7 +23820,7 @@
       }
     },
     "view_a_transcription" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
