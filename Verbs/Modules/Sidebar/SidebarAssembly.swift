@@ -2,7 +2,7 @@
 //  SidebarAssembly.swift
 //  Verbs
 //
-//  Created by Oleg Samoylov on 11.11.2020.
+//  Created by Oleg Samoylov on 08.11.2020.
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
@@ -11,10 +11,6 @@ import UIKit
 final class SidebarAssembly: AssemblyProtocol {
     
     func viewController() -> some SidebarViewController {
-        let presenter = SidebarPresenter()
-        let viewController = SidebarViewController(presenter: presenter)
-        presenter.viewController = viewController
-        return viewController
+        SidebarViewController(viewModel: SidebarViewModel())
     }
 }
-

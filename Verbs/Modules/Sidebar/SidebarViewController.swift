@@ -6,48 +6,35 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
+import SwiftUI
 import UIKit
 
-final class SidebarViewController: UIViewController {
+final class SidebarViewController: UIHostingController<SidebarView> {
     
-    private let presenter: SidebarPresenter
-    private var collectionView: UICollectionView?
-    private var keyboardService: KeyboardService?
-    private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
+    private let viewModel: SidebarViewModel
     
-    init(presenter: SidebarPresenter) {
-        self.presenter = presenter
+    init(viewModel: SidebarViewModel) {
+        self.viewModel = viewModel
         
-        super.init(nibName: nil, bundle: nil)
+        super.init(rootView: SidebarView(viewModel: viewModel))
+        
+        viewModel.onSelect = { [weak self] destination in self?.open(destination) }
     }
     
-    required init?(coder: NSCoder) {
+    @MainActor required dynamic init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupNavigationBar()
-        setupCollectionView()
-        setupDataSource()
-        setupKeyboardService()
+        
+        navigationItem.title = Bundle.main.productName
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    func select(at selectedIndexPath: IndexPath?) {
-        collectionView?.selectItem(at: selectedIndexPath,
-                                   animated: true,
-                                   scrollPosition: .centeredVertically)
-    }
-    
-    func restore(at indexPath: IndexPath) {
-        select(at: indexPath)
-        guard let collectionView = collectionView else { return }
-        collectionView.delegate?.collectionView?(collectionView, didSelectItemAt: indexPath)
-    }
-    
-    func getPaid() {
-        collectionView?.reloadData()
+    /// Selects the row and opens it, the way a tap would.
+    func restore(_ destination: SidebarDestination) {
+        viewModel.restore(destination)
     }
 }
 
@@ -55,47 +42,33 @@ final class SidebarViewController: UIViewController {
 
 private extension SidebarViewController {
     
-    func setupNavigationBar() {
-        navigationItem.title = Bundle.main.productName
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
-    func setupCollectionView() {
-        let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
+    func open(_ destination: SidebarDestination) {
+        guard let splitViewController = splitViewController else { return }
         
-        view.addSubview(collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let keyboardHeightLayoutConstraint = collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            keyboardHeightLayoutConstraint
-        ])
-        
-        collectionView.delegate = presenter
-        collectionView.dropDelegate = presenter
-        
-        self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
-        self.collectionView = collectionView
-    }
-    
-    func createLayout() -> UICollectionViewLayout {
-        UICollectionViewCompositionalLayout() {
-            var configuration = UICollectionLayoutListConfiguration(appearance: .sidebar)
-            configuration.showsSeparators = false
-            configuration.headerMode = .firstItemInSection
-            return .list(using: configuration, layoutEnvironment: $1)
+        switch destination {
+        case .all, .favorites:
+            let viewController = ListAssembly(splitViewController: splitViewController,
+                                              favoritesOnly: destination == .favorites).viewController()
+            splitViewController.setViewController(viewController.navigationController, for: .supplementary)
+            
+            NotificationCenter.default.post(name: .sidebar,
+                                            object: nil,
+                                            userInfo: [Notification.Name.sidebar: true])
+            
+            let navigationController = splitViewController.secondaryViewController
+            guard navigationController?.topViewController is TestViewController else { return }
+            
+            navigationController?.popToRootViewController(animated: true)
+        case .tests:
+            let viewController = TestsAssembly(splitViewController: splitViewController).viewController()
+            splitViewController.setViewController(viewController.navigationController, for: .supplementary)
+            
+            NotificationCenter.default.post(name: .sidebar,
+                                            object: nil,
+                                            userInfo: [Notification.Name.sidebar: false])
+        case .settings:
+            let viewController = UIHostingController(rootView: SettingsView().navigationBarHidden(true))
+            splitViewController.setViewController(viewController, for: .secondary)
         }
-    }
-    
-    func setupDataSource() {
-        presenter.setupDataSource(for: collectionView)
-    }
-    
-    func setupKeyboardService() {
-        keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
     }
 }

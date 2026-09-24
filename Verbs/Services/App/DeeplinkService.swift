@@ -55,7 +55,7 @@ final class DeeplinkService {
                 listViewController?.search(text: text)
             }
         case .regular:
-            splitViewController.sidebarViewController?.restore(at: IndexPath(row: 1, section: 0))
+            splitViewController.sidebarViewController?.restore(.all)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 let listViewController = splitViewController.supplementaryViewController as? ListViewController
                 listViewController?.search(text: text)
@@ -77,7 +77,7 @@ final class DeeplinkService {
                                        nvc: navigationController,
                                        endpoint: .favorites)
         case .regular:
-            splitViewController.sidebarViewController?.restore(at: IndexPath(row: 2, section: 0))
+            splitViewController.sidebarViewController?.restore(.favorites)
         case .unspecified:
             break
         @unknown default:
@@ -95,7 +95,7 @@ final class DeeplinkService {
                                        nvc: navigationController,
                                        endpoint: .tests)
         case .regular:
-            splitViewController.sidebarViewController?.restore(at: IndexPath(row: 3, section: 0))
+            splitViewController.sidebarViewController?.restore(.tests)
         case .unspecified:
             break
         @unknown default:
@@ -113,7 +113,7 @@ final class DeeplinkService {
                                        nvc: navigationController,
                                        endpoint: .statistics)
         case .regular:
-            splitViewController.sidebarViewController?.restore(at: IndexPath(row: 3, section: 0))
+            splitViewController.sidebarViewController?.restore(.tests)
             let vc = UIHostingController(rootView: StatisticsView())
             splitViewController.secondaryViewController?.push(vc, in: splitViewController)
         case .unspecified:

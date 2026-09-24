@@ -19,7 +19,8 @@ final class SplitStateManager: UISplitViewControllerDelegate {
         switch tabBarItem {
         case .all, .favorites, .tests:
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                svc.sidebarViewController?.restore(at: .init(row: tabBarItem.rawValue + 1, section: 0))
+                guard let destination = SidebarDestination(tabBarItem) else { return }
+                svc.sidebarViewController?.restore(destination)
             }
         case .settings:
             break
