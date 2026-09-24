@@ -25,8 +25,8 @@ enum VerbsDisplayOption: String, AppEnum {
 
 struct VerbsWidgetConfigurationIntent: WidgetConfigurationIntent {
     
-    static var title: LocalizedStringResource = "widget_intent_title"
-    static var description: IntentDescription = .init("widget_intent_description")
+    static let title: LocalizedStringResource = "widget_intent_title"
+    static let description: IntentDescription = .init("widget_intent_description")
     
     @Parameter(title: "widget_display_option_title", default: .all)
     var displayOption: VerbsDisplayOption

@@ -11,6 +11,7 @@ import Combine
 import Observation
 import UIKit
 
+@MainActor
 @Observable
 final class SettingsViewModel {
     

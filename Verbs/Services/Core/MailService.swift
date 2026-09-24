@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+@MainActor
 final class MailService {
     
     private var url: URL? {

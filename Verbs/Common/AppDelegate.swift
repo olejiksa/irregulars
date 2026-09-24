@@ -87,9 +87,11 @@ extension AppDelegate: UIApplicationDelegate {
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                didReceive response: UNNotificationResponse,
-                                withCompletionHandler completionHandler: @escaping Block) {
-        deeplinkService.handle(response.notification.request.identifier)
+    nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                            didReceive response: UNNotificationResponse,
+                                            withCompletionHandler completionHandler: @escaping Block) {
+        let identifier = response.notification.request.identifier
+        
+        Task { @MainActor in deeplinkService.handle(identifier) }
     }
 }

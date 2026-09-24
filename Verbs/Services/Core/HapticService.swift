@@ -9,6 +9,7 @@
 import UIKit
 import CoreHaptics
 
+@MainActor
 final class HapticService {
     
     func generateHapticFeedback(for hapticFeedback: HapticFeedback) {

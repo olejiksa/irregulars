@@ -88,7 +88,7 @@ final class TestsViewModel {
     var scopeBinding: Binding<Scope> {
         .init(get: { [weak self] in self?.scope ?? .demo },
               set: { [weak self] scope in
-                  guard let self = self else { return }
+                  guard let self else { return }
                   guard isPaid else {
                       onPaywall?()
                       return
@@ -105,7 +105,7 @@ final class TestsViewModel {
     private func toggle(for key: UserDefaults.Key) -> Binding<Bool> {
         .init(get: { key == .regularVerbsTests ? self.showsRegulars : self.showsDerivatives },
               set: { [weak self] value in
-                  guard let self = self else { return }
+                  guard let self else { return }
                   guard isPaid else {
                       onPaywall?()
                       return

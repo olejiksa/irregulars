@@ -9,6 +9,7 @@
 import UIKit
 import UserNotifications
 
+@MainActor
 final class NotificationService {
     
     private let verbsService: VerbsService

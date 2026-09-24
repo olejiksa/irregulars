@@ -164,8 +164,10 @@ final class TestSessionViewModel {
         // The current answer first, so the screen is right before any prompt appears.
         updateMicrophoneAvailability(recordService.isRecordPermissionGranted)
         
-        recordService.checkAvailability { [weak self] isGranted in
-            self?.updateMicrophoneAvailability(isGranted)
+        Task { [weak self] in
+            guard let self else { return }
+            
+            updateMicrophoneAvailability(await recordService.requestRecordPermission())
         }
     }
 }

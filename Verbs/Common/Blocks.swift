@@ -7,5 +7,3 @@
 //
 
 typealias Block = () -> Void
-
-typealias BoolBlock = (Bool) -> Void

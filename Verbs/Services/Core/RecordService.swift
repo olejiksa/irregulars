@@ -8,6 +8,7 @@
 
 import AVFoundation
 
+@MainActor
 final class RecordService: NSObject {
     
     private var audioRecorder: AVAudioRecorder?
@@ -20,14 +21,16 @@ final class RecordService: NSObject {
         AVAudioApplication.shared.recordPermission == .granted
     }
     
-    func checkAvailability(availabilityBlock: @escaping BoolBlock) {
+    /// Prepares the session and asks for permission, prompting only when it is undetermined.
+    func requestRecordPermission() async -> Bool {
         recordingSession = AVAudioSession.sharedInstance()
         
         try? recordingSession?.setCategory(.playAndRecord, mode: .default)
         try? recordingSession?.setActive(true)
-        AVAudioApplication.requestRecordPermission { allowed in
-            DispatchQueue.main.async {
-                availabilityBlock(allowed)
+        
+        return await withCheckedContinuation { continuation in
+            AVAudioApplication.requestRecordPermission { allowed in
+                continuation.resume(returning: allowed)
             }
         }
     }
@@ -100,15 +103,18 @@ private extension RecordService {
 
 // MARK: - AVAudioRecorderDelegate
 
+/// `AVAudioRecorderDelegate` is `Sendable` in the SDK, so these can arrive on any thread.
 extension RecordService: AVAudioRecorderDelegate {
     
-    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+    nonisolated func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         guard !flag else { return }
-        finishRecording(success: false)
+        
+        Task { @MainActor in finishRecording(success: false) }
     }
     
-    func audioRecorderEncodeErrorDidOccur(_ recorder: AVAudioRecorder, error: Error?) {
-        guard let error = error else { return }
+    nonisolated func audioRecorderEncodeErrorDidOccur(_ recorder: AVAudioRecorder, error: Error?) {
+        guard let error else { return }
+        
         print("Error while recording audio \(error.localizedDescription)")
     }
 }

@@ -8,6 +8,7 @@
 
 import StoreKit
 
+@MainActor
 final class RateService {
     
     func requestReviewIfAppropriate(minimumReviewWorthyActionCount: Int) {

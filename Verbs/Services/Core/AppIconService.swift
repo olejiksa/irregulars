@@ -8,6 +8,7 @@
 
 import UIKit
 
+@MainActor
 final class AppIconService {
     
     private var current: AppIcon {

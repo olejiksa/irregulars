@@ -9,6 +9,7 @@
 import UIKit
 import WebKit
 
+@MainActor
 final class PrintService {
     
     func print(_ verbs: [Verb], hasTranslation: Bool) {

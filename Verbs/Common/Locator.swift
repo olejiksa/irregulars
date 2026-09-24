@@ -9,12 +9,12 @@
 import UIKit
 import SwiftUI
 
+@MainActor
 struct Locator {
     
     static var areNotificationsAvailable = false
     static var isMicrophoneAvailable = false
     
-    @MainActor
     static let purchaseService = PurchaseService()
     static let favorites = Favorites()
     static let favoritesService = FavoritesService()

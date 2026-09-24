@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+@MainActor
 final class PhrasalsAssembly {
     
     var viewController: UIHostingController<PhrasalsView> {

@@ -8,6 +8,7 @@
 
 import Foundation
 
+@MainActor
 protocol VerbsServiceProtocol: AnyObject {
     
     var favoritesOnly: Bool { get }

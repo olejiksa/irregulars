@@ -9,6 +9,7 @@
 import CoreSpotlight
 import MobileCoreServices
 
+@MainActor
 final class SpotlightService {
     
     private var isIndexed = false
@@ -41,11 +42,12 @@ final class SpotlightService {
         }
         
         searchableIndex.indexSearchableItems(searchableItems) { [weak self] error in
-            guard let error = error else { return }
+            guard let error else { return }
+            
+            print(error.localizedDescription)
             
             // Let a later call try again.
-            self?.isIndexed = false
-            print(error.localizedDescription)
+            Task { @MainActor in self?.isIndexed = false }
         }
     }
 }

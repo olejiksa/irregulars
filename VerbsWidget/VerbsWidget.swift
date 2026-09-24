@@ -12,13 +12,6 @@ import WidgetKit
 
 struct Provider: AppIntentTimelineProvider {
     
-    private var service: VerbsService = {
-        let service = VerbsService()
-        service.shouldDerivativesBeShown = UserDefaults.shared.bool(for: .derivatives)
-        service.shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .regularVerbs)
-        return service
-    }()
-    
     func placeholder(in context: Context) -> VerbEntry {
         .init(date: Date(), state: .empty)
     }
@@ -35,16 +28,28 @@ struct Provider: AppIntentTimelineProvider {
 
     func timeline(for configuration: VerbsWidgetConfigurationIntent,
                   in context: Context) async -> Timeline<VerbEntry> {
+        let entries = await entries(for: configuration.displayOption)
+        return Timeline(entries: entries, policy: .atEnd)
+    }
+    
+    /// The verbs and the favourites both live on the main actor.
+    @MainActor
+    private func entries(for displayOption: VerbsDisplayOption) -> [VerbEntry] {
         var entries: [VerbEntry] = []
-        switch configuration.displayOption {
+        
+        switch displayOption {
         case .all:
+            let service = VerbsService()
+            service.shouldDerivativesBeShown = UserDefaults.shared.bool(for: .derivatives)
+            service.shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .regularVerbs)
+            
             for index in 0..<8 {
                 guard let verb = service.randomItem else { continue }
                 entries.append(VerbEntry(date: date(at: index), state: .data(verb)))
             }
         case .favorites:
             guard !Locator.favorites.verbs.isEmpty else {
-                return Timeline(entries: [VerbEntry(date: Date(), state: .empty)], policy: .atEnd)
+                return [VerbEntry(date: Date(), state: .empty)]
             }
             
             for index in 0..<8 {
@@ -53,7 +58,7 @@ struct Provider: AppIntentTimelineProvider {
             }
         }
         
-        return Timeline(entries: entries, policy: .atEnd)
+        return entries
     }
     
     /// Each entry is shown 15 minutes later than the previous one.

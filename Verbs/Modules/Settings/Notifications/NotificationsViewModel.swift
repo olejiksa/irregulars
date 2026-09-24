@@ -9,6 +9,7 @@
 import Foundation
 import SwiftUI
 
+@MainActor
 @Observable
 final class NotificationsViewModel {
     

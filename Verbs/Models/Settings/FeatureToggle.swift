@@ -12,20 +12,24 @@ import SwiftUI
 
 struct FeatureToggle {
     
-    @AppStorage(UserDefaults.Key.isPaid.rawValue, store: UserDefaults.shared)
-    static var isPaid: Bool = false {
-        didSet {
+    /// Stored in the shared defaults, so the widget sees it too. Computed rather than
+    /// held in a static, which Swift 6 will not allow across actors.
+    static var isPaid: Bool {
+        get { UserDefaults.shared.bool(for: .isPaid) }
+        set {
+            UserDefaults.shared.set(newValue, for: .isPaid)
             NotificationCenter.default.post(name: .reload, object: nil)
-            UIMenuSystem.main.setNeedsRebuild()
+            
+            Task { @MainActor in UIMenuSystem.main.setNeedsRebuild() }
         }
     }
     
     #if DEBUG
-    static var isDebug = false
-    static var arePhrasalsAvailable = false
+    static let isDebug = false
+    static let arePhrasalsAvailable = false
     #else
-    static var isDebug = false
-    static var arePhrasalsAvailable = false
+    static let isDebug = false
+    static let arePhrasalsAvailable = false
     #endif
     
     static var isOnboardingAvailable: Bool {
