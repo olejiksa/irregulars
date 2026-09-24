@@ -29,7 +29,7 @@ final class TestQuestionFactory {
                                 includingDerived: preferences.testsIncludeDerivatives)
     }
     
-    func build(with testKind: Test.Kind, verb: Verb, isMicrophoneAvailable: Bool) -> [TestSection] {
+    func build(with testKind: Test.Kind, verb: Verb, isSpeakingAvailable: Bool) -> [TestSection] {
         guard let simplePast = verb.simplePast,
               let pastParticiple = verb.pastParticiple else { return [] }
         
@@ -91,13 +91,13 @@ final class TestQuestionFactory {
         case .speaking:
             var sections: [(String?, [TestRow])] = []
             
-            if !isMicrophoneAvailable {
+            if !isSpeakingAvailable {
                 sections.append((nil, [.plain(plain("insufficient_permissions".localized)),
                                        .action(ActionRow(id: "allow-access",
                                                          title: "allow_access".localized))]))
             }
             
-            sections.append((nil, [.plain(plain("listen_and_record".localized, isSecondary: true))]))
+            sections.append((nil, [.plain(plain("listen_and_say".localized, isSecondary: true))]))
             sections.append((String(localized: "infinitive"), [.record(RecordField(word: verb.infinitive, tag: 0, index: 0))]))
             sections.append((String(localized: "past_simple"), simplePast.enumerated().map { index, word in
                 .record(RecordField(word: word, tag: 1, index: index))

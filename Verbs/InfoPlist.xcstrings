@@ -1,322 +1,381 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-    "CFBundleDisplayName" : {
-      "comment" : "Bundle display name",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Irregulars"
+  "sourceLanguage": "en",
+  "strings": {
+    "CFBundleDisplayName": {
+      "comment": "Bundle display name",
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Irregulars"
           }
         }
       }
     },
-    "CFBundleName" : {
-      "comment" : "Bundle name",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Irregulars"
+    "CFBundleName": {
+      "comment": "Bundle name",
+      "extractionState": "extracted_with_value",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Irregulars"
           }
         }
       }
     },
-    "FAVORITES" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Favoriten"
+    "FAVORITES": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favoriten"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Favorites"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favorites"
           }
         },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Favourites"
+        "en-GB": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favourites"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Favoritos"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favoritos"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Preferiti"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferiti"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "즐겨찾기"
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "즐겨찾기"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избранное"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Избранное"
           }
         },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Уподобання"
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Уподобання"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "收藏夹"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "收藏夹"
           }
         }
       }
     },
-    "NSMicrophoneUsageDescription" : {
-      "comment" : "Privacy - Microphone Usage Description",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Speech recording is used only for pronunciation training. The data associated with it is cleared from the cache after the application terminates."
+    "NSMicrophoneUsageDescription": {
+      "comment": "Privacy - Microphone Usage Description",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speech recording is used only for pronunciation training. The data associated with it is cleared from the cache after the application terminates."
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Speech recording is used only for pronunciation training. The data associated with it is cleared from the cache after the application terminates."
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speech recording is used only for pronunciation training. The data associated with it is cleared from the cache after the application terminates."
           }
         },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Speech recording is used only for pronunciation training. The data associated with it is cleared from the cache after the application terminates."
+        "en-GB": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speech recording is used only for pronunciation training. The data associated with it is cleared from the cache after the application terminates."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Speech recording is used only for pronunciation training. The data associated with it is cleared from the cache after the application terminates."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speech recording is used only for pronunciation training. The data associated with it is cleared from the cache after the application terminates."
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Speech recording is used only for pronunciation training. The data associated with it is cleared from the cache after the application terminates."
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speech recording is used only for pronunciation training. The data associated with it is cleared from the cache after the application terminates."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Speech recording is used only for pronunciation training. The data associated with it is cleared from the cache after the application terminates."
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speech recording is used only for pronunciation training. The data associated with it is cleared from the cache after the application terminates."
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Запись речи используется только для тренировки произношения. Связанные с ней данные очищаются из кэша после завершения работы приложения"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запись речи используется только для тренировки произношения. Связанные с ней данные очищаются из кэша после завершения работы приложения"
           }
         },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Запис мови використовується тільки для тренування вимови. Зв'язані з нею дані видаляються з кешу після завершення роботи програми."
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запис мови використовується тільки для тренування вимови. Зв'язані з нею дані видаляються з кешу після завершення роботи програми."
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Speech recording is used only for pronunciation training. The data associated with it is cleared from the cache after the application terminates."
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speech recording is used only for pronunciation training. The data associated with it is cleared from the cache after the application terminates."
           }
         }
       }
     },
-    "SEARCH" : {
-      "comment" : "InfoPlist.strings\n  Verbs\n\n  Created by Oleg Samoylov on 20.01.2021.\n  Copyright © 2021 Oleg Samoylov. All rights reserved.",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Suchen"
+    "NSSpeechRecognitionUsageDescription": {
+      "extractionState": "manual",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Spracherkennung läuft vollständig auf diesem Gerät und dient nur dazu, die Aussprache des angezeigten Verbs zu prüfen. Es wird nichts aufgezeichnet, gespeichert oder übertragen"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Search"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speech recognition runs entirely on this device and is used only to check the pronunciation of the verb on screen. Nothing is recorded, stored or sent anywhere"
           }
         },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Search"
+        "en-GB": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speech recognition runs entirely on this device and is used only to check the pronunciation of the verb on screen. Nothing is recorded, stored or sent anywhere"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Buscar"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El reconocimiento de voz funciona por completo en este dispositivo y solo sirve para comprobar la pronunciación del verbo en pantalla. No se graba, almacena ni envía nada"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cerca"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il riconoscimento vocale funziona interamente su questo dispositivo e serve solo a verificare la pronuncia del verbo mostrato. Nulla viene registrato, conservato o inviato"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "검색"
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "음성 인식은 전적으로 이 기기에서 실행되며 화면에 표시된 동사의 발음을 확인하는 데에만 사용됩니다. 어떤 것도 녹음, 저장되거나 전송되지 않습니다"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Поиск"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Распознавание речи работает целиком на этом устройстве и используется только для проверки произношения глагола на экране. Ничего не записывается, не хранится и никуда не передаётся"
           }
         },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Пошук"
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Розпізнавання мовлення працює повністю на цьому пристрої та використовується лише для перевірки вимови дієслова на екрані. Нічого не записується, не зберігається й нікуди не передається"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "搜索"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "语音识别完全在本设备上运行，仅用于检查屏幕上动词的发音。不会录制、存储或发送任何内容"
           }
         }
       }
     },
-    "STATISTICS" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Statistik"
+    "SEARCH": {
+      "comment": "InfoPlist.strings\n  Verbs\n\n  Created by Oleg Samoylov on 20.01.2021.\n  Copyright © 2021 Oleg Samoylov. All rights reserved.",
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suchen"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Statistics"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search"
           }
         },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Statistics"
+        "en-GB": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Estadísticas"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Statistiche"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerca"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "통계"
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "검색"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Статистика"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поиск"
           }
         },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Статистика"
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пошук"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "统计"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "搜索"
           }
         }
       }
     },
-    "TESTS" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tests"
+    "STATISTICS": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Statistik"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tests"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Statistics"
           }
         },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tests"
+        "en-GB": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Statistics"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pruebas"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estadísticas"
           }
         },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Test"
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Statistiche"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "테스트"
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "통계"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Тесты"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Статистика"
           }
         },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Тести"
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Статистика"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "测验"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "统计"
+          }
+        }
+      }
+    },
+    "TESTS": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tests"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tests"
+          }
+        },
+        "en-GB": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tests"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pruebas"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "테스트"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тесты"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тести"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "测验"
           }
         }
       }
     }
   },
-  "version" : "1.2"
+  "version": "1.2"
 }

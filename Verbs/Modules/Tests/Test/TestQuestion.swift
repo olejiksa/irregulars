@@ -100,18 +100,25 @@ final class InputField: Identifiable {
     }
 }
 
-/// A word the reader says out loud, then plays back against the original.
+/// A word the reader says out loud for the recogniser to check.
 @MainActor
 @Observable
 final class RecordField: Identifiable {
+    
+    enum Verdict: Equatable {
+        case correct
+        case wrong
+    }
     
     let id: String
     let word: Word
     
     private(set) var isPlaying = false
-    private(set) var isRecording = false
-    private(set) var isComparing = false
-    private(set) var hasRecording = false
+    private(set) var isListening = false
+    
+    /// What came back, kept even when it was wrong so the reader can see why.
+    private(set) var heard: String?
+    private(set) var verdict: Verdict?
     
     init(word: Word, tag: Int, index: Int) {
         id = "\(tag)-\(index)-\(word.value)"
@@ -122,15 +129,21 @@ final class RecordField: Identifiable {
         self.isPlaying = isPlaying
     }
     
-    func setRecording(_ isRecording: Bool) {
-        self.isRecording = isRecording
+    /// Starting over clears the last answer, so a second try begins from nothing.
+    func setListening(_ isListening: Bool) {
+        self.isListening = isListening
         
-        guard !isRecording else { return }
+        guard isListening else { return }
         
-        hasRecording = true
+        heard = nil
+        verdict = nil
     }
     
-    func setComparing(_ isComparing: Bool) {
-        self.isComparing = isComparing
+    func setHeard(_ heard: String) {
+        self.heard = heard
+    }
+    
+    func setVerdict(_ verdict: Verdict) {
+        self.verdict = verdict
     }
 }

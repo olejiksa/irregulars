@@ -6,6 +6,7 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
+import AVFoundation
 import Foundation
 import Observation
 import UIKit
@@ -21,8 +22,9 @@ final class TestSessionViewModel {
     var hint: String?
     var isShowingPlaybackSpeed = false
     
-    /// Whether the microphone may be used, which the record rows read.
-    private(set) var isMicrophoneAvailable = false
+    /// Whether the reader may be listened to at all: the microphone and the recogniser
+    /// are two separate permissions and the rows need both.
+    private(set) var isSpeakingAvailable = false
     
     /// Bumped whenever a new verb is drawn, so the view can announce the change.
     private(set) var questionToken = 0
@@ -32,8 +34,7 @@ final class TestSessionViewModel {
     
     private var items: [String]
     private let audioService: AudioService
-    private let recordService: RecordService
-    private let playerService: PlayerService
+    private let speechService: SpeechRecognitionService
     private let catalogue: VerbCatalogue
     private let preferences: Preferences
     private let statistics: Statistics
@@ -51,8 +52,7 @@ final class TestSessionViewModel {
         let preferences = dependencies.preferences
         
         self.init(audioService: dependencies.makeAudioService(),
-                  recordService: .init(),
-                  playerService: .init(),
+                  speechService: .init(),
                   catalogue: catalogue,
                   preferences: preferences,
                   statistics: dependencies.statistics,
@@ -63,8 +63,7 @@ final class TestSessionViewModel {
     }
     
     init(audioService: AudioService,
-         recordService: RecordService,
-         playerService: PlayerService,
+         speechService: SpeechRecognitionService,
          catalogue: VerbCatalogue,
          preferences: Preferences,
          statistics: Statistics,
@@ -73,8 +72,7 @@ final class TestSessionViewModel {
          factory: TestQuestionFactory,
          test: Test) {
         self.audioService = audioService
-        self.recordService = recordService
-        self.playerService = playerService
+        self.speechService = speechService
         self.catalogue = catalogue
         self.preferences = preferences
         self.statistics = statistics
@@ -163,19 +161,26 @@ final class TestSessionViewModel {
         }
     }
     
-    func record(_ field: RecordField) {
-        recordService.record { [weak field] in
-            field?.setRecording(true)
-        } stopHandler: { [weak field] in
-            field?.setRecording(false)
-        }
-    }
-    
-    func compare(_ field: RecordField) {
-        playerService.compare { [weak field] in
-            field?.setComparing(true)
-        } stopHandler: { [weak field] in
-            field?.setComparing(false)
+    /// Listens to the reader and checks what came back against the form on screen.
+    func listen(_ field: RecordField) {
+        let wasListening = field.isListening
+        
+        // Settles whatever was being said, whether it was this row or another one —
+        // otherwise the row left behind would listen forever.
+        speechService.stop()
+        
+        guard !wasListening else { return }
+        
+        field.setListening(true)
+        
+        do {
+            try speechService.start(expecting: field.word.value) { [weak field] heard in
+                field?.setHeard(heard)
+            } onFinish: { [weak self] heard in
+                self?.finishListening(field, heard: heard)
+            }
+        } catch {
+            field.setListening(false)
         }
     }
     
@@ -185,12 +190,15 @@ final class TestSessionViewModel {
         guard test == .speaking else { return }
         
         // The current answer first, so the screen is right before any prompt appears.
-        updateMicrophoneAvailability(recordService.isRecordPermissionGranted)
+        updateSpeakingAvailability(isMicrophoneGranted && speechService.isAuthorized)
         
         Task { [weak self] in
             guard let self else { return }
             
-            updateMicrophoneAvailability(await recordService.requestRecordPermission())
+            let canRecognize = await speechService.requestAuthorization()
+            let canRecord = await requestMicrophonePermission()
+            
+            updateSpeakingAvailability(canRecognize && canRecord && speechService.isAvailable)
         }
     }
 }
@@ -241,20 +249,65 @@ private extension TestSessionViewModel {
     func buildSections() -> Bool {
         guard let verb = verb, let kind = currentKind else { return false }
         
-        let built = factory.build(with: kind, verb: verb, isMicrophoneAvailable: isMicrophoneAvailable)
+        let built = factory.build(with: kind, verb: verb, isSpeakingAvailable: isSpeakingAvailable)
         guard !built.isEmpty else { return false }
         
         sections = built
         return true
     }
     
-    /// The record button and the "no access" block are built from the flag,
+    /// The microphone button and the "no access" block are built from the flag,
     /// so a change has to rebuild them.
-    func updateMicrophoneAvailability(_ isAvailable: Bool) {
-        guard isMicrophoneAvailable != isAvailable else { return }
+    func updateSpeakingAvailability(_ isAvailable: Bool) {
+        guard isSpeakingAvailable != isAvailable else { return }
         
-        isMicrophoneAvailable = isAvailable
+        isSpeakingAvailable = isAvailable
         buildSections()
+    }
+    
+    /// A form is done when the recogniser heard it. Getting it wrong marks the
+    /// question the same way a wrong tap does elsewhere in the test.
+    func finishListening(_ field: RecordField, heard: String) {
+        field.setListening(false)
+        
+        guard !heard.isEmpty else { return }
+        
+        field.setHeard(heard)
+        
+        let isCorrect = SpeechRecognitionService.heard(heard, matches: field.word.value)
+        field.setVerdict(isCorrect ? .correct : .wrong)
+        
+        guard isCorrect else {
+            wasHintUsed = true
+            return
+        }
+        
+        guard recordFields.allSatisfy({ $0.verdict == .correct }) else { return }
+        
+        Task {
+            try? await Task.sleep(for: .milliseconds(750))
+            finishTask()
+        }
+    }
+    
+    var isMicrophoneGranted: Bool {
+        AVAudioApplication.shared.recordPermission == .granted
+    }
+    
+    func requestMicrophonePermission() async -> Bool {
+        await withCheckedContinuation { continuation in
+            AVAudioApplication.requestRecordPermission { allowed in
+                continuation.resume(returning: allowed)
+            }
+        }
+    }
+    
+    var recordFields: [RecordField] {
+        sections.flatMap(\.rows).compactMap { row in
+            guard case .record(let field) = row else { return nil }
+            
+            return field
+        }
     }
     
     func finishTask() {

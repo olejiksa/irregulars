@@ -97,6 +97,7 @@
 		EB2E4BC52576A8DC005B343A /* Array+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4BC42576A8DC005B343A /* Array+Safe.swift */; };
 		EB2E4BCB2576B59F005B343A /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E4BCA2576B59F005B343A /* Test.swift */; };
 		EB2F5E16251F71DD007DCF60 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2F5E15251F71DD007DCF60 /* AudioService.swift */; };
+		A5211CD2A034425190C54569 /* SpeechRecognitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F177D9D31FD44E3C911FF384 /* SpeechRecognitionService.swift */; };
 		EB3217A5258BCDAC00023F0B /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3217A4258BCDAC00023F0B /* Statistics.swift */; };
 		EB3217AC258BCFEC00023F0B /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3217A4258BCDAC00023F0B /* Statistics.swift */; };
 		EB3217B7258BDBE100023F0B /* StatisticsKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3217B6258BDBE100023F0B /* StatisticsKind.swift */; };
@@ -115,7 +116,6 @@
 		EB59F03C258FF0D6004676D2 /* Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59F03B258FF0D6004676D2 /* Voice.swift */; };
 		EB5D6DF9259ECD2400CCCA85 /* SpotlightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5D6DF8259ECD2400CCCA85 /* SpotlightService.swift */; };
 		EB69A26925322AFA00DD1827 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB69A26825322AF900DD1827 /* Notification.swift */; };
-		EB6D58EA2619F81D00FDA88F /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D58E92619F81D00FDA88F /* PlayerService.swift */; };
 		EB7B85652537FAE000542D3C /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7B85642537FAE000542D3C /* Word.swift */; };
 		EB7B85682537FB0C00542D3C /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7B85642537FAE000542D3C /* Word.swift */; };
 		EB7DFF64252451D2000B711D /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7DFF63252451D1000B711D /* WidgetKit.framework */; };
@@ -136,7 +136,6 @@
 		EBB3BC09251F2ADB006E0DC7 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3BC08251F2ADB006E0DC7 /* String.swift */; };
 		EBB3BC15251F4BAA006E0DC7 /* irregulars.json in Resources */ = {isa = PBXBuildFile; fileRef = EBB3BC14251F4BAA006E0DC7 /* irregulars.json */; };
 		EBB3BC17251F4D60006E0DC7 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3BC16251F4D60006E0DC7 /* JSONParser.swift */; };
-		EBB42C6E2615D6C4008CB9A5 /* RecordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB42C6D2615D6C4008CB9A5 /* RecordService.swift */; };
 		EBB95BFE25335C3E00376C3F /* LanguageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB95BFD25335C3E00376C3F /* LanguageService.swift */; };
 		EBD2C4E9257E95AE0023AED4 /* Blocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD2C4E8257E95AE0023AED4 /* Blocks.swift */; };
 		EBD2C4F5257FD6860023AED4 /* sentences.json in Resources */ = {isa = PBXBuildFile; fileRef = EBD2C4F4257FD6860023AED4 /* sentences.json */; };
@@ -312,6 +311,7 @@
 		EB2E4BC42576A8DC005B343A /* Array+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Safe.swift"; sourceTree = "<group>"; };
 		EB2E4BCA2576B59F005B343A /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		EB2F5E15251F71DD007DCF60 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+F177D9D31FD44E3C911FF384 /* SpeechRecognitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionService.swift; sourceTree = "<group>"; };
 		EB3217A4258BCDAC00023F0B /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		EB3217B6258BDBE100023F0B /* StatisticsKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsKind.swift; sourceTree = "<group>"; };
 		EB35524A260CAD4200C7EA3C /* Similarity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Similarity.swift; sourceTree = "<group>"; };
@@ -326,7 +326,6 @@
 		EB59F03B258FF0D6004676D2 /* Voice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voice.swift; sourceTree = "<group>"; };
 		EB5D6DF8259ECD2400CCCA85 /* SpotlightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightService.swift; sourceTree = "<group>"; };
 		EB69A26825322AF900DD1827 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
-		EB6D58E92619F81D00FDA88F /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
 		EB7B85642537FAE000542D3C /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		EB7DFF61252451D1000B711D /* VerbsWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VerbsWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB7DFF63252451D1000B711D /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -341,7 +340,6 @@
 		EBB3BC08251F2ADB006E0DC7 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		EBB3BC14251F4BAA006E0DC7 /* irregulars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = irregulars.json; sourceTree = "<group>"; };
 		EBB3BC16251F4D60006E0DC7 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
-		EBB42C6D2615D6C4008CB9A5 /* RecordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordService.swift; sourceTree = "<group>"; };
 		EBB95BFD25335C3E00376C3F /* LanguageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageService.swift; sourceTree = "<group>"; };
 		EBD2C4E8257E95AE0023AED4 /* Blocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blocks.swift; sourceTree = "<group>"; };
 		EBD2C4F4257FD6860023AED4 /* sentences.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sentences.json; sourceTree = "<group>"; };
@@ -747,12 +745,11 @@
 			children = (
 				EB2E4BA525741970005B343A /* AppIconService.swift */,
 				EB2F5E15251F71DD007DCF60 /* AudioService.swift */,
+				F177D9D31FD44E3C911FF384 /* SpeechRecognitionService.swift */,
 				EB1EC45825DD88BE00F6299B /* CalendarService.swift */,
 				EB59AFBF25AB312E005A212C /* NotificationService.swift */,
-				EB6D58E92619F81D00FDA88F /* PlayerService.swift */,
 				EB59AF3F25A60318005A212C /* PrintService.swift */,
 				EB26996B256CFAC7007CCF2E /* RateService.swift */,
-				EBB42C6D2615D6C4008CB9A5 /* RecordService.swift */,
 				EB5D6DF8259ECD2400CCCA85 /* SpotlightService.swift */,
 			);
 			path = Core;
@@ -1246,7 +1243,6 @@
 				EB2E4BA625741970005B343A /* AppIconService.swift in Sources */,
 				E53CA7882A37521B0058A28E /* PhrasalsAssembly.swift in Sources */,
 				EBEB1D76251F11900019972C /* AppDelegate.swift in Sources */,
-				EB6D58EA2619F81D00FDA88F /* PlayerService.swift in Sources */,
 				EB59F027258FE7F2004676D2 /* VoiceService.swift in Sources */,
 				EB59F02C258FE9E1004676D2 /* Gender.swift in Sources */,
 				EB5D6DF9259ECD2400CCCA85 /* SpotlightService.swift in Sources */,
@@ -1262,7 +1258,6 @@
 				E58505E52A3E009500071BF4 /* OnboardingViewModel.swift in Sources */,
 				EBF8A62F2559172100A6265C /* Favorites.swift in Sources */,
 				EB35524B260CAD4200C7EA3C /* Similarity.swift in Sources */,
-				EBB42C6E2615D6C4008CB9A5 /* RecordService.swift in Sources */,
 				EBD2C503257FDA4B0023AED4 /* SentencesService.swift in Sources */,
 				EBA644B4255988FC0012B973 /* ListState.swift in Sources */,
 				EB69A26925322AFA00DD1827 /* Notification.swift in Sources */,
@@ -1282,6 +1277,7 @@
 				EBF593CF258865680091FCE0 /* MenuAction.swift in Sources */,
 				EB1EC45925DD88BE00F6299B /* CalendarService.swift in Sources */,
 				EB2F5E16251F71DD007DCF60 /* AudioService.swift in Sources */,
+				A5211CD2A034425190C54569 /* SpeechRecognitionService.swift in Sources */,
 				EB59AFC025AB312E005A212C /* NotificationService.swift in Sources */,
 				E5A737D62A7EA40F00F2F6BF /* IconDetailRow.swift in Sources */,
 				EB9C5BA82582A3F00086A3D5 /* PlaybackSpeed.swift in Sources */,

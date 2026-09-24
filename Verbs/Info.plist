@@ -175,6 +175,8 @@
 	<true/>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Speech recording is used only for pronunciation training. The data associated with it is cleared from the cache after the application terminates</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Speech recognition runs entirely on this device and is used only to check the pronunciation of the verb on screen. Nothing is recorded, stored or sent anywhere</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

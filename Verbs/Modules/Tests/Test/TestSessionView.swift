@@ -214,25 +214,47 @@ private struct RecordRow: View {
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                     .accessibilityHidden(true)
+                
+                if let heard = field.heard {
+                    Text(verbatim: heard)
+                        .font(.subheadline)
+                        .foregroundStyle(field.verdict == .wrong ? .red : .secondary)
+                }
             }
             
             Spacer()
+            
+            verdict
             
             button(icon: field.isPlaying ? .stop : .play, label: "speak".localized) {
                 viewModel.play(field)
             }
             
-            // The original cells left these two unlabelled, and there are no
-            // translations to borrow, so they stay that way rather than reading a key aloud.
-            button(icon: field.isRecording ? .stopRecord : .record,
-                   isEnabled: viewModel.isMicrophoneAvailable) {
-                viewModel.record(field)
+            button(icon: field.isListening ? .stopRecord : .record,
+                   label: "say_it".localized,
+                   isEnabled: viewModel.isSpeakingAvailable) {
+                viewModel.listen(field)
             }
-            
-            button(icon: field.isComparing ? .stopCompare : .compare,
-                   isEnabled: field.hasRecording) {
-                viewModel.compare(field)
-            }
+        }
+        .animation(.easeInOut(duration: 0.2), value: field.verdict)
+    }
+    
+    /// Empty until the recogniser has been, so the row does not jump while listening.
+    @ViewBuilder
+    private var verdict: some View {
+        switch field.verdict {
+        case .correct:
+            SystemIcon.checkmark.imageSwiftUI?
+                .font(.title2)
+                .foregroundStyle(.green)
+                .transition(.scale.combined(with: .opacity))
+        case .wrong:
+            SystemIcon.close.imageSwiftUI?
+                .font(.title2)
+                .foregroundStyle(.red)
+                .transition(.scale.combined(with: .opacity))
+        case nil:
+            EmptyView()
         }
     }
     
