@@ -186,11 +186,15 @@ private extension RootView {
         }
     }
     
+    /// The detail column keeps the same place in the view tree, so the screen has to
+    /// say which route it is showing. Without that its `@State` outlives the route and
+    /// the reader sees the verb they left behind.
     @ViewBuilder
     func view(for route: VerbsRoute) -> some View {
         switch route {
         case .verb(let verb):
             DetailScreen(verb: verb, dependencies: dependencies)
+                .id(route)
         }
     }
     
@@ -199,6 +203,7 @@ private extension RootView {
         switch route {
         case .test(let test):
             TestSessionScreen(test: test, dependencies: dependencies) { router.testsRoute = nil }
+                .id(route)
         case .statistics:
             StatisticsView(dependencies: dependencies)
         }
@@ -266,8 +271,9 @@ private extension RootView {
 
 // MARK: - Pushed screens
 
-/// Each pushed screen owns its view model, so a redraw of the container does not
-/// throw away what the reader has typed or recorded.
+/// Each screen owns its view model, so a redraw of the container does not throw away
+/// what the reader has typed or recorded. The route's identity, set where the screen is
+/// built, is what decides when that state should start over instead.
 private struct DetailScreen: View {
     
     @State private var viewModel: DetailViewModel
