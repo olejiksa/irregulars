@@ -7,16 +7,17 @@
 //
 
 import Foundation
+import Observation
 
+@MainActor
+@Observable
 final class Favorites {
-    
-    var didUpdateBlock: Block?
     
     private(set) var verbs: Set<Verb>
     
-    private let defaults = UserDefaults.shared
-    private let encoder = JSONEncoder()
-    private let decoder = JSONDecoder()
+    @ObservationIgnored private let defaults = UserDefaults.shared
+    @ObservationIgnored private let encoder = JSONEncoder()
+    @ObservationIgnored private let decoder = JSONDecoder()
     
     var shouldPaywallBeShown: Bool { verbs.count >= 10 && !FeatureToggle.isPaid }
     
@@ -31,13 +32,11 @@ final class Favorites {
     
     func add(_ verb: Verb) {
         verbs.insert(verb)
-        didUpdateBlock?()
         save()
     }
     
     func remove(_ verb: Verb) {
         verbs.remove(verb)
-        didUpdateBlock?()
         save()
     }
 }

@@ -7,16 +7,19 @@
 //
 
 import Foundation
+import Observation
 
+@MainActor
+@Observable
 final class Statistics {
     
     private let consideredAsLearned = 3
     
     private(set) var info: [Verb: Int]
     
-    private let defaults = UserDefaults.shared
-    private let encoder = JSONEncoder()
-    private let decoder = JSONDecoder()
+    @ObservationIgnored private let defaults = UserDefaults.shared
+    @ObservationIgnored private let encoder = JSONEncoder()
+    @ObservationIgnored private let decoder = JSONDecoder()
     
     init() {
         guard let data = defaults.data(for: .statistics) else {

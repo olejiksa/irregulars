@@ -7,14 +7,17 @@
 //
 
 import Foundation
+import Observation
 
+@MainActor
+@Observable
 final class Mistakes {
     
     private(set) var info: [String: Int]
     
-    private let defaults = UserDefaults.shared
-    private let encoder = JSONEncoder()
-    private let decoder = JSONDecoder()
+    @ObservationIgnored private let defaults = UserDefaults.shared
+    @ObservationIgnored private let encoder = JSONEncoder()
+    @ObservationIgnored private let decoder = JSONDecoder()
     
     init() {
         guard let data = defaults.data(for: .mistakes) else {
@@ -40,7 +43,7 @@ final class Mistakes {
     
     func clear() {
         info = [:]
-        defaults.set(nil, for: .statistics)
+        defaults.set(nil, for: .mistakes)
     }
 }
 

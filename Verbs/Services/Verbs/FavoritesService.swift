@@ -27,14 +27,16 @@ final class FavoritesService: VerbsServiceProtocol {
     
     var randomItem: Verb? { items.randomElement() }
 
-    private(set) var items: [Verb] = []
-    private(set) var groupedItems: [[Verb]] = []
-    private(set) var headers: [String] = []
+    /// Derived on demand: the favourites are observable, so there is nothing to cache.
+    var items: [Verb] {
+        Array(VerbsStore.all.intersection(Locator.favorites.verbs)).sorted(by: <)
+    }
+    
+    var groupedItems: [[Verb]] { grouping.groups }
+    var headers: [String] { grouping.headers }
     
     var shouldTranslationBeShown: Bool = false {
         didSet {
-            setItems()
-            setGroupedItems()
         }
     }
     
@@ -43,15 +45,10 @@ final class FavoritesService: VerbsServiceProtocol {
     
     var shouldSimilarBeShown: Bool = false {
         didSet {
-            setItems()
-            setGroupedItems()
         }
     }
     
     init() {
-        setupFavorites()
-        setItems()
-        setGroupedItems()
     }
     
     func indexPath(of infinitive: String?) -> IndexPath? {
@@ -76,54 +73,32 @@ final class FavoritesService: VerbsServiceProtocol {
 
 private extension FavoritesService {
     
-    func setupFavorites() {
-        Locator.favorites.didUpdateBlock = { [weak self] in
-            self?.setItems()
-            self?.setGroupedItems()
+    /// Groups and headers come from one place, so a reader cannot get one without the other.
+    var grouping: (groups: [[Verb]], headers: [String]) {
+        guard !shouldSimilarBeShown else {
+            let grouped = Dictionary(grouping: items) { $0.similarity ?? .others }
+            let sorted = Array(grouped).sorted { $0.key < $1.key }
+            return (sorted.map(\.value), sorted.map(\.key.description))
         }
-    }
-    
-    func setItems() {
-//        #if DEBUG
-//        items = VerbsService().items.filter { ["get", "go", "make", "slit", "strew", "teach", "vex"].contains($0.infinitive.value) }
-//        #else
-        let set = VerbsStore.all
         
-        items = Array(set.intersection(Locator.favorites.verbs)).sorted(by: <)
-//        #endif
-    }
-    
-    func setGroupedItems() {
-        groupedItems = !shouldSimilarBeShown ?
-            groupedItemsAlphabetically() :
-            groupedItemsBySimilarity()
-    }
-    
-    func groupedItemsAlphabetically() -> [[Verb]] {
-        var grouped = [[Verb]]()
+        var groups = [[Verb]]()
         var letter: Character?
-        var index = -1
+        
         for item in items {
             if item.infinitive.value.first != letter {
                 letter = item.infinitive.value.first
-                grouped.append([Verb]())
-                index += 1
+                groups.append([])
             }
-            grouped[index].append(item)
+            
+            groups[groups.count - 1].append(item)
         }
         
-        headers = grouped.map(\.first?.infinitive.value).compactMap {
-            guard let letter = $0?.first else { return nil }
-            return String(letter.uppercased())
-        }
-        
-        return grouped
+        let headers = groups.compactMap { $0.first?.infinitive.value.first }.map { String($0.uppercased()) }
+        return (groups, headers)
     }
     
-    func groupedItemsBySimilarity() -> [[Verb]] {
-        let grouped = Dictionary(grouping: items) { $0.similarity ?? .others }
-        let array = Array(grouped).sorted { $0.key < $1.key }
-        headers = array.map(\.key.description)
-        return array.map(\.value)
-    }
+    
+    
+    
+    
 }
