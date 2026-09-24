@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		262E1B16930689E9AFC3AEB1 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 9A1EEBFE6DD2E5D9E5DDDA3A /* PrivacyInfo.xcprivacy */; };
+		CA11A2EB5691280E600F6837 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = D63D9073DE45178CA13E4BD9 /* PrivacyInfo.xcprivacy */; };
 		E5059C332A39CC3100891998 /* VoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5059C322A39CC3100891998 /* VoiceView.swift */; };
 		E5059C352A39CE6400891998 /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5059C342A39CE6400891998 /* PopoverView.swift */; };
 		E5059C372A39D45B00891998 /* VoiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5059C362A39D45B00891998 /* VoiceViewModel.swift */; };
@@ -325,6 +327,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9A1EEBFE6DD2E5D9E5DDDA3A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		D63D9073DE45178CA13E4BD9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		E5059C322A39CC3100891998 /* VoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceView.swift; sourceTree = "<group>"; };
 		E5059C342A39CE6400891998 /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
 		E5059C362A39D45B00891998 /* VoiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceViewModel.swift; sourceTree = "<group>"; };
@@ -1022,6 +1026,7 @@
 		EB7DFF67252451D2000B711D /* VerbsWidget */ = {
 			isa = PBXGroup;
 			children = (
+				D63D9073DE45178CA13E4BD9 /* PrivacyInfo.xcprivacy */,
 				EB7DFF68252451D2000B711D /* VerbsWidget.swift */,
 				EB7DFF6B252451D4000B711D /* Assets.xcassets */,
 				EB7DFF6D252451D4000B711D /* Info.plist */,
@@ -1320,6 +1325,7 @@
 		EBEB1D74251F11900019972C /* Verbs */ = {
 			isa = PBXGroup;
 			children = (
+				9A1EEBFE6DD2E5D9E5DDDA3A /* PrivacyInfo.xcprivacy */,
 				EB2F5E17251F78F8007DCF60 /* Common */,
 				EBB3BC07251F2749006E0DC7 /* Extensions */,
 				EBEB1D95251F15FD0019972C /* Models */,
@@ -1586,6 +1592,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA11A2EB5691280E600F6837 /* PrivacyInfo.xcprivacy in Resources */,
 				EB7DFF6C252451D4000B711D /* Assets.xcassets in Resources */,
 				EB4509CB2541650300D31858 /* Localizable.strings in Resources */,
 				EB7DFF95252B25DD000B711D /* irregulars.json in Resources */,
@@ -1603,6 +1610,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				262E1B16930689E9AFC3AEB1 /* PrivacyInfo.xcprivacy in Resources */,
 				EB2E4B9A25741832005B343A /* orange@3x.png in Resources */,
 				EB13943725B727A70001CE8C /* InfoPlist.strings in Resources */,
 				EBF594822589030E0091FCE0 /* red@3x~ipad.png in Resources */,
