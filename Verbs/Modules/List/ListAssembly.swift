@@ -18,18 +18,20 @@ final class ListAssembly {
         self.favoritesOnly = favoritesOnly
     }
     
+    @MainActor
     func viewController() -> some ListViewController {
         let verbsService: VerbsServiceProtocol = favoritesOnly ? Locator.favoritesService : VerbsService()
-        let presenter = ListPresenter(languageService: .init(),
+        let viewModel = ListViewModel(languageService: .init(),
                                       verbsService: verbsService,
                                       printService: .init())
-        let viewController = ListViewController(presenter: presenter)
-        let navigationController = UINavigationController(rootViewController: viewController)
+        
+        let navigationController = UINavigationController()
         navigationController.view.backgroundColor = .systemBackground
         let router = ListRouter(navigationController: navigationController,
                                 splitViewController: splitViewController)
-        presenter.viewController = viewController
-        presenter.router = router
+        
+        let viewController = ListViewController(viewModel: viewModel, router: router)
+        navigationController.setViewControllers([viewController], animated: false)
         return viewController
     }
 }

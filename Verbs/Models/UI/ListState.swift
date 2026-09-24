@@ -26,3 +26,18 @@ enum ListState {
         }
     }
 }
+
+// MARK: - Message
+
+extension ListState {
+    
+    /// The text to show instead of the list, or nil when there is data.
+    var message: String? {
+        switch self {
+        case .data:
+            return nil
+        case .empty(let text), .searchNotFound(let text), .searchStarted(let text):
+            return text
+        }
+    }
+}

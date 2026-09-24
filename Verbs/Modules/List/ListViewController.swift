@@ -6,11 +6,12 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
+import SwiftUI
 import UIKit
 
-final class ListViewController: UIViewController {
+final class ListViewController: UIHostingController<ListView> {
     
-    var favoritesOnly: Bool { presenter.favoritesOnly }
+    var favoritesOnly: Bool { viewModel.favoritesOnly }
     
     // MARK: Keyboard Shortcuts
     
@@ -33,15 +34,10 @@ final class ListViewController: UIViewController {
     }
     
     // MARK: Private Properties
-
-    private let presenter: ListPresenter
-    private let searchController = UISearchController(searchResultsController: nil)
-    private var keyboardService: KeyboardService?
-    private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     
-    private var tableView: UITableView?
-    private var state: ListState = .data
-    private var topInset: CGFloat = 0
+    private let viewModel: ListViewModel
+    private let router: ListRouter
+    private let searchController = UISearchController(searchResultsController: nil)
     private var listMenu: ListMenu?
     
     private var moreButton: UIBarButtonItem?
@@ -49,35 +45,26 @@ final class ListViewController: UIViewController {
     private var doneButton: UIBarButtonItem?
     private var phrasalsButton: UIBarButtonItem?
     
-    private let noDataLabel = UILabel.noDataLabel
-    
-    init(presenter: ListPresenter) {
-        self.presenter = presenter
+    init(viewModel: ListViewModel, router: ListRouter) {
+        self.viewModel = viewModel
+        self.router = router
         
-        super.init(nibName: nil, bundle: nil)
+        super.init(rootView: ListView(viewModel: viewModel))
+        
+        viewModel.onSelect = { [weak self] verb in self?.open(verb) }
     }
     
-    required init?(coder: NSCoder) {
+    @MainActor required dynamic init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupNavigationBar()
         setupMenu()
-        setupTableView()
         setupSearchController()
-        setupNoDataLabel()
-        setupView()
-        setupKeyboardService()
-        presenter.selectWhenRegular()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        topInset = -(tableView?.safeAreaInsets.top ?? 0)
+        selectWhenRegular()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,67 +73,19 @@ final class ListViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationController?.navigationBar.sizeToFit()
-        deselectWhenCompact()
+        
         guard animated else { return }
+        
         NotificationCenter.default.post(name: .infinitive,
                                         object: nil,
                                         userInfo: [Notification.Name.infinitive: ""])
-    }
-    
-    func reloadData() {
-        listMenu?.build()
-        tableView?.reloadData()
-    }
-    
-    func getPaid() {
-        DispatchQueue.main.async {
-            self.reloadData()
-            self.setupSearchController()
-        }
-    }
-    
-    func selectRow(at indexPath: IndexPath?) {
-        guard let indexPath = indexPath else {
-            if let indexPathForSelectedRow = tableView?.indexPathForSelectedRow {
-                tableView?.deselectRow(at: indexPathForSelectedRow, animated: true)
-            }
-            
-            return
-        }
-        
-        tableView?.selectRow(at: indexPath, animated: true, scrollPosition: .none)
-    }
-    
-    func deselectWhenCompact() {
-        guard splitViewController?.isCollapsed == true,
-              let indexPath = tableView?.indexPathForSelectedRow else { return }
-        tableView?.deselectRow(at: indexPath, animated: true)
     }
     
     func search(text: String) {
         searchController.isActive = true
         searchController.searchBar.becomeFirstResponder()
         searchController.searchBar.text = text
-        presenter.updateSearchResults(for: searchController)
-    }
-    
-    func setState(_ state: ListState) {
-        switch state {
-        case .data:
-            tableView?.isScrollEnabled = true
-            noDataLabel.isHidden = true
-        case .empty(let text), .searchNotFound(let text), .searchStarted(let text):
-            tableView?.isScrollEnabled = false
-            noDataLabel.isHidden = false
-            
-            UIView.transition(with: noDataLabel,
-                              duration: 0.25,
-                              options: .transitionCrossDissolve,
-                              animations: { self.noDataLabel.text = text },
-                              completion: nil)
-        }
-        
-        self.state = state
+        viewModel.updateSearch(text: text)
     }
 }
 
@@ -168,100 +107,69 @@ private extension ListViewController {
         navigationItem.rightBarButtonItem = moreButton
         
         if favoritesOnly {
-            editButton = .init(barButtonSystemItem: .edit,
-                               target: self,
-                               action: #selector(didEditTap))
-            doneButton = .init(barButtonSystemItem: .done,
-                               target: self,
-                               action: #selector(didEditTap))
+            editButton = .init(barButtonSystemItem: .edit, target: self, action: #selector(didEditTap))
+            doneButton = .init(barButtonSystemItem: .done, target: self, action: #selector(didEditTap))
             
             navigationItem.leftBarButtonItem = editButton
-            navigationItem.rightBarButtonItem = moreButton
             
             editButton?.accessibilityIdentifier = AccessibilityIdentifier.editButton.rawValue
             doneButton?.accessibilityIdentifier = AccessibilityIdentifier.doneButton.rawValue
         } else if FeatureToggle.arePhrasalsAvailable {
-            phrasalsButton = .init(title: "phrasal_verbs".localized, image: nil, target: self, action: #selector(didPhrasalsTap))
+            phrasalsButton = .init(title: "phrasal_verbs".localized,
+                                   image: nil,
+                                   target: self,
+                                   action: #selector(didPhrasalsTap))
             navigationItem.leftBarButtonItem = phrasalsButton
         }
     }
     
-    func setupTableView() {
-        let tableViewStyle: UITableView.Style = splitViewController?.isCollapsed == true ? .plain : .insetGrouped
-        let tableView = UITableView(frame: .zero, style: tableViewStyle)
-        
-        view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-
-        let keyboardHeightLayoutConstraint = tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            keyboardHeightLayoutConstraint
-        ])
-        
-        tableView.dataSource = presenter.dataSource
-        tableView.delegate = presenter
-        tableView.dragDelegate = presenter
-        
-        tableView.register(ListCell.self, SubtitleCell.self)
-        tableView.tableFooterView = UIView()
-        
-        self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
-        self.tableView = tableView
-    }
-    
-    func setupNoDataLabel() {
-        view.addSubview(noDataLabel)
-        noDataLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            noDataLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            noDataLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            noDataLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 2 / 3)
-        ])
-    }
-    
-    func setupView() {
-        view.backgroundColor = .systemBackground
-    }
-    
     func setupSearchController() {
-        searchController.delegate = presenter
-        searchController.searchResultsUpdater = presenter
+        searchController.delegate = self
+        searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         
         navigationItem.searchController = searchController
     }
     
     func setupMenu() {
-        listMenu = .init(barButtonItem: moreButton,
-                         hasTranslation: presenter.hasTranslation,
-                         favoritesOnly: favoritesOnly,
-                         printInfoBlock: presenter.print,
-                         updateDerivativesBlock: favoritesOnly ? nil : presenter.updateDerivatives,
-                         updateRegularsBlock: favoritesOnly ? nil : presenter.updateRegulars)
+        let printInfoBlock: Block = { [weak self] in self?.viewModel.print() }
+        var updateDerivativesBlock: BoolBlock?
+        var updateRegularsBlock: BoolBlock?
+        
+        if !favoritesOnly {
+            updateDerivativesBlock = { [weak self] value in self?.viewModel.updateDerivatives(value) }
+            updateRegularsBlock = { [weak self] value in self?.viewModel.updateRegulars(value) }
+        }
+        
+        listMenu = ListMenu(barButtonItem: moreButton,
+                            hasTranslation: viewModel.hasTranslation,
+                            favoritesOnly: favoritesOnly,
+                            printInfoBlock: printInfoBlock,
+                            updateDerivativesBlock: updateDerivativesBlock,
+                            updateRegularsBlock: updateRegularsBlock)
         listMenu?.build()
     }
     
-    func setupKeyboardService() {
-        keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
+    /// On a regular width the detail column already shows a verb, so highlight it.
+    func selectWhenRegular() {
+        guard splitViewController?.isCollapsed == false,
+              let title = splitViewController?.secondaryViewController?.topViewController?.navigationItem.title
+        else { return }
+        
+        viewModel.setOpenedVerb(title)
+    }
+    
+    func open(_ verb: Verb) {
+        router.goToDetail(with: verb)
+        
+        guard splitViewController?.isCollapsed != false else { return }
+        
+        viewModel.selectedVerb = nil
     }
     
     @objc func didEditTap() {
-        guard let tableView = tableView else { return }
-        
-        if tableView.isEditing {
-            tableView.setEditing(false, animated: true)
-            presenter.isEditing = false
-            navigationItem.leftBarButtonItem = editButton
-        } else {
-            tableView.setEditing(true, animated: true)
-            presenter.isEditing = true
-            navigationItem.leftBarButtonItem = doneButton
-        }
+        viewModel.isEditing.toggle()
+        navigationItem.leftBarButtonItem = viewModel.isEditing ? doneButton : editButton
     }
     
     @objc func didPhrasalsTap() {
@@ -272,7 +180,7 @@ private extension ListViewController {
     // MARK: Keyboard Shortcuts
     
     @objc func didPrintPress() {
-        presenter.print()
+        viewModel.print()
     }
     
     @objc func didSearchPress() {
@@ -281,13 +189,34 @@ private extension ListViewController {
     }
 }
 
+// MARK: - UISearchResultsUpdating
+
+extension ListViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        viewModel.updateSearch(text: searchController.searchBar.text ?? "")
+    }
+}
+
+// MARK: - UISearchControllerDelegate
+
+extension ListViewController: UISearchControllerDelegate {
+    
+    func willPresentSearchController(_ searchController: UISearchController) {
+        viewModel.setSearchActive(true)
+    }
+    
+    func willDismissSearchController(_ searchController: UISearchController) {
+        viewModel.setSearchActive(false)
+        searchController.searchBar.resignFirstResponder()
+    }
+}
+
 // MARK: - Scrollable
 
 extension ListViewController: Scrollable {
     
     func scrollToTop() {
-        guard let tableView = tableView else { return }
-        let y = max(topInset, -tableView.safeAreaInsets.top - 52)
-        tableView.setContentOffset(.init(x: 0, y: y), animated: true)
+        viewModel.scrollToTop()
     }
 }
