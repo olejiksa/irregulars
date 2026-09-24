@@ -75,4 +75,7 @@ VerbsUITests/   UI tests, which also take the App Store screenshots
 
 ## License
 
-© Oleg Samoylov. All rights reserved.
+© 2020–2026 Oleg Samoylov. All rights reserved.
+
+The source is published to be read, not reused: see [LICENSE](LICENSE). Nothing here
+may be copied, modified or shipped without written permission.
