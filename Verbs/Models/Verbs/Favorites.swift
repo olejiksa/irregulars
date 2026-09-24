@@ -19,8 +19,6 @@ final class Favorites {
     @ObservationIgnored private let encoder = JSONEncoder()
     @ObservationIgnored private let decoder = JSONDecoder()
     
-    var shouldPaywallBeShown: Bool { verbs.count >= 10 && !FeatureToggle.isPaid }
-    
     init() {
         guard let data = defaults.data(for: .favorites) else {
             verbs = []

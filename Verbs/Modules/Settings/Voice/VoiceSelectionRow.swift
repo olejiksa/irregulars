@@ -10,13 +10,10 @@ import SwiftUI
 
 struct VoiceSelectionRow: View {
     
-    @Environment(\.dependencies) private var dependencies
-    
     let item: Voice
     @Binding var selectedItem: Voice?
     let onTap: (Voice) -> Void
     
-    @State private var isShowingPaywall = false
     
     var body: some View {
         HStack {
@@ -36,16 +33,8 @@ struct VoiceSelectionRow: View {
         .padding(.vertical, 5)
         .contentShape(Rectangle())
         .onTapGesture {
-            guard FeatureToggle.isPaid else {
-                isShowingPaywall = true
-                return
-            }
-            
             selectedItem = item
             onTap(item)
-        }
-        .sheet(isPresented: $isShowingPaywall) {
-            PaywallView(purchaseService: dependencies.purchaseService)
         }
     }
 }

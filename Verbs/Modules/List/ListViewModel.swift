@@ -35,7 +35,6 @@ final class ListViewModel {
     }
     var isEditing = false
     var selectedVerb: Verb?
-    var isShowingPaywall = false
     
     let favoritesOnly: Bool
     let hasTranslation: Bool
@@ -117,11 +116,6 @@ final class ListViewModel {
         if favorites.verbs.contains(verb) {
             favorites.remove(verb)
         } else {
-            guard !favorites.shouldPaywallBeShown else {
-                isShowingPaywall = true
-                return
-            }
-            
             favorites.add(verb)
         }
     }

@@ -10,8 +10,6 @@ import SwiftUI
 
 struct ListView: View {
     
-    @Environment(\.dependencies) private var dependencies
-    
     @Bindable var viewModel: ListViewModel
     
     var body: some View {
@@ -21,9 +19,6 @@ struct ListView: View {
             .navigationTitle(viewModel.title)
             .navigationBarTitleDisplayMode(.large)
             .toolbar { toolbar }
-            .sheet(isPresented: $viewModel.isShowingPaywall) {
-                PaywallView(purchaseService: dependencies.purchaseService)
-            }
     }
     
     /// Separate so that it can read whether the search field is active, which is only
@@ -212,10 +207,8 @@ private extension ListView {
             HStack(spacing: 8) {
                 Text(verbatim: word.value)
                     .bold()
-                if FeatureToggle.isPaid {
-                    Text(verbatim: word.transcription)
-                        .foregroundStyle(.secondary)
-                }
+                Text(verbatim: word.transcription)
+                    .foregroundStyle(.secondary)
             }
         }
     }

@@ -19,7 +19,6 @@ final class DetailViewModel {
     
     var isFavorite: Bool { favorites.verbs.contains(verb) }
     private(set) var speakingWord: String?
-    var isShowingPaywall = false
     var isShowingPlaybackSpeed = false
     
     private let audioService: AudioService
@@ -44,11 +43,6 @@ final class DetailViewModel {
     }
     
     func play(_ word: Word) {
-        guard FeatureToggle.isPaid else {
-            isShowingPaywall = true
-            return
-        }
-        
         audioService.play(text: word.value) { [weak self] in
             self?.speakingWord = word.value
         } stopHandler: { [weak self] in
@@ -61,14 +55,8 @@ final class DetailViewModel {
         if isFavorite {
             favorites.remove(verb)
         } else {
-            guard !favorites.shouldPaywallBeShown else {
-                isShowingPaywall = true
-                return
-            }
-            
             favorites.add(verb)
         }
-        
     }
     
 }

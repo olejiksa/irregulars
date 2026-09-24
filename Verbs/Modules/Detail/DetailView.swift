@@ -10,12 +10,7 @@ import SwiftUI
 
 struct DetailView: View {
     
-    @Environment(\.dependencies) private var dependencies
-    
     @Bindable var viewModel: DetailViewModel
-    
-    @AppStorage(UserDefaults.Key.isPaid.rawValue, store: .shared)
-    private var isPaid = false
     
     var body: some View {
         List {
@@ -64,9 +59,6 @@ struct DetailView: View {
                 }
             }
         }
-        .sheet(isPresented: $viewModel.isShowingPaywall) {
-            PaywallView(purchaseService: dependencies.purchaseService)
-        }
     }
 }
 
@@ -89,12 +81,10 @@ private extension DetailView {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
                 Text(verbatim: word.value)
-                if isPaid {
-                    Text(verbatim: word.transcription)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .accessibilityHidden(true)
-                }
+                Text(verbatim: word.transcription)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .accessibilityHidden(true)
             }
             
             Spacer()

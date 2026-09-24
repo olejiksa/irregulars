@@ -22,20 +22,12 @@ struct PaywallView: View {
         NavigationStack {
             List {
                 PaywallItem(
+                    icon: .creditcard,
+                    text: "one_time_payment"
+                )
+                PaywallItem(
                     icon: .key,
                     text: "unlock_all_verbs_in_tests"
-                )
-                PaywallItem(
-                    icon: .speaker,
-                    text: "listen_to_pronunciation"
-                )
-                PaywallItem(
-                    icon: .transcription,
-                    text: "view_a_transcription"
-                )
-                PaywallItem(
-                    icon: .listStar,
-                    text: "store_unlimited_items_in_favorites"
                 )
 #if !targetEnvironment(macCatalyst)
                 PaywallItem(
@@ -43,10 +35,6 @@ struct PaywallView: View {
                     text: "personalize"
                 )
 #endif
-                PaywallItem(
-                    icon: .creditcard,
-                    text: "one_time_payment"
-                )
             }
             .listStyle(.plain)
             // The list runs under the buttons and the system fades its edge, which the
