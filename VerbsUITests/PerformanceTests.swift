@@ -15,10 +15,8 @@ final class PerformanceTests: XCTestCase {
     }
 
     func testLaunchPerformance() {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
+        measure(metrics: [XCTApplicationLaunchMetric()]) {
+            XCUIApplication().launch()
         }
     }
 }

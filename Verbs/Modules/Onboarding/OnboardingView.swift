@@ -65,11 +65,7 @@ struct OnboardingView: View {
                 }
             }
             
-            if #available(macCatalyst 13.2, *) {
-                view.background(Color.accentColor)
-            } else {
-                view.background(AccentColor.current.colorSwiftUI)
-            }
+            view.background(Color.accentColor)
         }
     }
 }
