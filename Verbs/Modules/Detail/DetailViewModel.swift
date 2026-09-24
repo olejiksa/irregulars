@@ -28,10 +28,6 @@ final class DetailViewModel {
     
     var title: String { verb.infinitive.value }
     
-    /// Shown under the title, which is where a word's meaning belongs — it used to take
-    /// a section of its own.
-    var subtitle: String? { hasTranslation ? verb.translation : nil }
-    
     init(verb: Verb,
          dependencies: AppDependencies,
          languageService: LanguageService = .init(),

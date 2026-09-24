@@ -23,6 +23,12 @@ struct DetailView: View {
             section("past_simple", words: viewModel.verb.simplePast ?? [])
             section("past_participle", words: viewModel.verb.pastParticiple ?? [])
             
+            if viewModel.hasTranslation {
+                Section(String(localized: "translation")) {
+                    Text(verbatim: viewModel.verb.translation)
+                }
+            }
+            
             if !viewModel.sentences.isEmpty {
                 Section(String(localized: "examples")) {
                     ForEach(viewModel.sentences, id: \.self) { sentence in
@@ -33,7 +39,6 @@ struct DetailView: View {
             }
         }
         .navigationTitle(viewModel.title)
-        .navigationSubtitle(ifPresent: viewModel.subtitle)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
@@ -66,20 +71,6 @@ struct DetailView: View {
 }
 
 // MARK: - Private
-
-private extension View {
-    
-    /// Whether the app's language has translations at all is settled before the screen
-    /// appears and never changes while it is on, so branching here is safe.
-    @ViewBuilder
-    func navigationSubtitle(ifPresent subtitle: String?) -> some View {
-        if let subtitle {
-            navigationSubtitle(subtitle)
-        } else {
-            self
-        }
-    }
-}
 
 private extension DetailView {
     
