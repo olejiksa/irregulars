@@ -36,6 +36,14 @@ struct RootView: View {
             }
         }
         .onAppear(perform: connect)
+        .onChange(of: horizontalSizeClass) { updateTitles() }
+        .onChange(of: router.verbsRoute) { _, route in
+            // Returning from a verb leaves the row highlighted otherwise.
+            guard route == nil else { return }
+            
+            allVerbs.clearSelection()
+            favorites.clearSelection()
+        }
         .onChange(of: router.pendingSearch) { _, text in
             guard let text = text else { return }
             
@@ -101,7 +109,7 @@ private extension RootView {
             .accessibilityIdentifier(AccessibilityIdentifier.verbsTab.rawValue)
             .tag(SidebarDestination.all)
             
-            NavigationStack {
+            NavigationStack(path: router.verbsPath) {
                 ListView(viewModel: favorites)
                     .navigationDestination(for: VerbsRoute.self, destination: view(for:))
             }
@@ -203,9 +211,16 @@ private extension RootView {
         }
     }
     
+    /// The all-verbs list is called "verbs" beside a tab bar and "all" beside the sidebar.
+    func updateTitles() {
+        allVerbs.title = horizontalSizeClass == .compact ? "verbs".localized : "all".localized
+    }
+    
     func connect() {
-        allVerbs.onSelect = { router.show($0) }
-        favorites.onSelect = { router.show($0) }
+        allVerbs.onSelect = { router.open($0) }
+        favorites.onSelect = { router.open($0) }
+        favorites.title = "favorites".localized
+        updateTitles()
         
         tests.onSelect = { test in
             guard let test = test else {

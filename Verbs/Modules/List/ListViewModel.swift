@@ -170,8 +170,12 @@ final class ListViewModel: ObservableObject {
               })
     }
     
-    var title: String {
-        favoritesOnly ? "favorites".localized : "all".localized
+    /// Set by the container: the all-verbs list is called "verbs" next to a tab bar
+    /// and "all" next to the sidebar.
+    @Published var title = ""
+    
+    func clearSelection() {
+        selectedVerb = nil
     }
     
     /// Highlights the verb the detail column is showing, without pushing it again.

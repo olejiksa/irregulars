@@ -51,8 +51,17 @@ final class AppRouter: ObservableObject {
     
     // MARK: Entry points
     
+    /// A tap in whichever list is on screen: it must not move the reader to another tab.
+    func open(_ verb: Verb) {
+        verbsRoute = .verb(verb)
+    }
+    
+    /// A deep link, which has no list on screen to start from.
     func show(_ verb: Verb) {
-        destination = .all
+        if destination != .favorites {
+            destination = .all
+        }
+        
         verbsRoute = .verb(verb)
     }
     
