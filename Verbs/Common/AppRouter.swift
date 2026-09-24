@@ -37,6 +37,9 @@ final class AppRouter {
     /// Screens the Mac menu bar opens, which has no column of its own to push into.
     var menuScreen: MenuScreen?
     
+    /// Bumped by the print command in the menu bar.
+    private(set) var printRequests = 0
+    
     /// Text handed over by Spotlight or by the search shortcut.
     var pendingSearch: String?
     
@@ -82,6 +85,10 @@ final class AppRouter {
         testsRoute = nil
     }
     
+    func requestPrint() {
+        printRequests += 1
+    }
+    
     func showStatistics() {
         destination = .tests
         testsRoute = .statistics
@@ -94,6 +101,7 @@ enum MenuScreen: Int, Identifiable {
     
     case voice
     case notifications
+    case paywall
     
     var id: Int { rawValue }
 }

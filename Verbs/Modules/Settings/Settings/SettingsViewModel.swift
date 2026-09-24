@@ -27,7 +27,6 @@ final class SettingsViewModel {
     // MARK: Services
     
     private let languageService = LanguageService()
-    private let mailService = MailService()
     private let notificationService = NotificationService(verbsService: .init(), calendarService: .init())
     
     // MARK: Publishers
@@ -83,7 +82,7 @@ final class SettingsViewModel {
     // MARK: - Can open
     
     var canOpenMail: Bool {
-        mailService.isMailAvailable
+        mailURL.map(UIApplication.shared.canOpenURL) ?? false
     }
     
     var canOpenAllApps: Bool {
@@ -97,7 +96,19 @@ final class SettingsViewModel {
     // MARK: - Methods
     
     func openMail() {
-        mailService.present()
+        guard let mailURL else { return }
+        
+        UIApplication.shared.open(mailURL)
+    }
+    
+    /// A pre-addressed message with the app and its version in the subject.
+    private var mailURL: URL? {
+        guard let productName = Bundle.main.productName,
+              let version = Bundle.main.releaseVersionNumber else { return nil }
+        
+        var components = URLComponents(string: "mailto:quillaur@outlook.com")
+        components?.queryItems = [URLQueryItem(name: "subject", value: "\(productName) \(version)")]
+        return components?.url
     }
     
     func rateAndReview() {

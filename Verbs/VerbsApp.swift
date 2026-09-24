@@ -38,5 +38,6 @@ struct VerbsApp: App {
                     deeplinkService.search(text: text)
                 }
         }
+        .commands { VerbsCommands() }
     }
 }

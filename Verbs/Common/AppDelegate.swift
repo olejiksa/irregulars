@@ -13,26 +13,7 @@ import NotificationCenter
 final class AppDelegate: UIResponder {
 
     private let deeplinkService = DeeplinkService(router: .shared)
-    private let menuService = MenuService()
-    private let printService = PrintService()
     private let purchaseService = Locator.purchaseService
-    private let verbsService = VerbsService()
-    private let languageService = LanguageService()
-    
-    override func buildMenu(with builder: UIMenuBuilder) {
-        super.buildMenu(with: builder)
-        menuService.buildMenu(with: builder)
-    }
-    
-    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
-        let canPerform = super.canPerformAction(action, withSender: sender)
-        let menuCanPerform = menuService.canPerformAction(action, with: sender)
-        return canPerform || menuCanPerform
-    }
-    
-    @objc func printFile() {
-        printService.print(verbsService.items, hasTranslation: languageService.hasTranslation)
-    }
 
     // MARK: UISceneSession Lifecycle
 

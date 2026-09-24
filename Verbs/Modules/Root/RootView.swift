@@ -37,6 +37,9 @@ struct RootView: View {
         }
         .onAppear(perform: connect)
         .onChange(of: horizontalSizeClass) { updateTitles() }
+        .onChange(of: router.printRequests) {
+            allVerbs.print()
+        }
         .onChange(of: router.verbsRoute) { _, route in
             // Returning from a verb leaves the row highlighted otherwise.
             guard route == nil else { return }
@@ -65,6 +68,8 @@ struct RootView: View {
                     VoiceView(settingsViewModel: .init())
                 case .notifications:
                     NotificationsView(settingsViewModel: .init())
+                case .paywall:
+                    PaywallView()
                 }
             }
         }
