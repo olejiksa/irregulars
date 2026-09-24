@@ -8,7 +8,6 @@
 "accent_color" = "Colore accento";
 
 /* The title of the acknowledgements page as well as the corresponding link text */
-"acknowledgements" = "Riconoscimenti";
 
 /* (No Comment) */
 "activation" = "Attivazione";
@@ -77,7 +76,6 @@
 "bet" = "scommettere";
 
 /* The title of the section for beta testing participants */
-"beta_testing" = "Beta test";
 
 /* (No Comment) */
 "bid" = "fare un'offerta";
@@ -1150,21 +1148,14 @@
 "zinc" = "zinco";
 
 /* (No Comment) */
-"sofia_sokolova" = "Sofia Sokolova";
 
 /* (No Comment) */
-"artem_shumilov" = "Artem Shumilov";
 
 /* (No Comment) */
-"elizabeth_keplin" = "Elisabetta Keplin";
 
-"paulina_litvinova" = "Paolina Litvinova";
-"tatiana_perfilieva" = "Tatiana Perfilieva";
-"vladislav_plotnikov" = "Vladislav Plotnikov";
 "notifications" = "Notifiche";
 "not_allowed" = "Non consentite";
 "what_is" = "Qual è la risposta giusta?";
-"julian_eduardo_couoh_pablo" = "Julián Eduardo Couoh Pablo";
 "since" = "Since";
 "to" = "To";
 "time" = "Time";
@@ -1183,7 +1174,6 @@
 "frequent_mistakes" = "Frequent mistakes";
 "frequent_mistakes_footer" = "Add these verbs to Favorites and check yourself again by passing the test on them: Tests → three dots → Favorites";
 "wrong_answer" = "Wrong answer";
-"anastasia_ovcharenko" = "Anastasia Ovcharenko";
 "skip" = "Skip";
 "by_similarity" = "By similarity";
 "similarity_all" = "All three forms are the same";

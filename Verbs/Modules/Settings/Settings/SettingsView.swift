@@ -73,9 +73,6 @@ struct SettingsView: View {
                         viewModel.isShowingFAQ = true
                     }
                     RightDetailRow(title: "version", subtitle: viewModel.version)
-                    NavigationLink("acknowledgements") {
-                        AcknowledgementsView()
-                    }
                 }
             }
             .sheet(isPresented: $viewModel.isShowingPaywall) {

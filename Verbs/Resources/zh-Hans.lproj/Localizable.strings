@@ -111,20 +111,11 @@
 "faster" = "更快";
 "voice_hint" = "为了使用更好的声音版本，请添加新的声音，或取消以前添加的声音，请转至设置→通用访问→VoiceOver→语音→声音";
 "print" = "打印";
-"acknowledgements" = "感谢";
-"beta_testing" = "贝塔测试";
-"sofia_sokolova" = "索菲娅·索科落娃";
-"artem_shumilov" = "阿尔乔姆·舒米落夫";
-"vladislav_plotnikov" = "弗拉季斯拉夫·普落特尼科夫";
-"elizabeth_keplin" = "伊丽莎白·克普林";
 "buy_for" = "为...买";
 "one_time_payment" = "好的";
-"paulina_litvinova" = "波利娜·利特维诺娃";
-"tatiana_perfilieva" = "塔季亚娜·佩尔菲列娃";
 "notifications" = "通知";
 "not_allowed" = "不允许";
 "what_is" = "正确答案是什么？";
-"julian_eduardo_couoh_pablo" = "朱利安·爱德华多·郭·帕勃罗";
 "ok" = "好的";
 
 "abide" = "守候";
@@ -418,7 +409,6 @@
 "frequent_mistakes" = "Frequent mistakes";
 "frequent_mistakes_footer" = "Add these verbs to Favorites and check yourself again by passing the test on them: Tests → three dots → Favorites";
 "wrong_answer" = "Wrong answer";
-"anastasia_ovcharenko" = "Anastasia Ovcharenko";
 "skip" = "Skip";
 "by_similarity" = "By similarity";
 "similarity_all" = "All three forms are the same";

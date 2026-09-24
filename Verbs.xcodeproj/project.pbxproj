@@ -56,7 +56,6 @@
 		E5A737D22A7E96FC00F2F6BF /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A737D12A7E96FC00F2F6BF /* SettingsViewModel.swift */; };
 		E5A737D42A7E9F1D00F2F6BF /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A737D32A7E9F1D00F2F6BF /* NotificationsView.swift */; };
 		E5A737D62A7EA40F00F2F6BF /* IconDetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A737D52A7EA40F00F2F6BF /* IconDetailRow.swift */; };
-		E5CF0F112A329E6200627224 /* AcknowledgementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CF0F102A329E6200627224 /* AcknowledgementsView.swift */; };
 		E5CF0F132A32A9B200627224 /* RightDetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CF0F122A32A9B200627224 /* RightDetailRow.swift */; };
 		E5F99A182A3F74CD00E275E5 /* VerbsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F99A172A3F74CD00E275E5 /* VerbsApp.swift */; };
 		EB13943725B727A70001CE8C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB13943925B727A70001CE8C /* InfoPlist.strings */; };
@@ -286,7 +285,6 @@
 		E5A737D12A7E96FC00F2F6BF /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		E5A737D32A7E9F1D00F2F6BF /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		E5A737D52A7EA40F00F2F6BF /* IconDetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconDetailRow.swift; sourceTree = "<group>"; };
-		E5CF0F102A329E6200627224 /* AcknowledgementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsView.swift; sourceTree = "<group>"; };
 		E5CF0F122A32A9B200627224 /* RightDetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDetailRow.swift; sourceTree = "<group>"; };
 		E5F99A172A3F74CD00E275E5 /* VerbsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbsApp.swift; sourceTree = "<group>"; };
 		EB13940525B6B5500001CE8C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -491,7 +489,6 @@
 			isa = PBXGroup;
 			children = (
 				E52D5D522A7ED7950087F361 /* AccentColor */,
-				EB5D6E1525A0191A00CCCA85 /* Acknowledgements */,
 				EB68F73325D5849500D6DF63 /* Notifications */,
 				EBF4A144252ED2B8003E3A44 /* Settings */,
 				EB59F008258FE311004676D2 /* Voice */,
@@ -723,14 +720,6 @@
 				E5059C362A39D45B00891998 /* VoiceViewModel.swift */,
 			);
 			path = Voice;
-			sourceTree = "<group>";
-		};
-		EB5D6E1525A0191A00CCCA85 /* Acknowledgements */ = {
-			isa = PBXGroup;
-			children = (
-				E5CF0F102A329E6200627224 /* AcknowledgementsView.swift */,
-			);
-			path = Acknowledgements;
 			sourceTree = "<group>";
 		};
 		EB68F73325D5849500D6DF63 /* Notifications */ = {
@@ -1371,7 +1360,6 @@
 				EB7B8581253B30C600542D3C /* MailService.swift in Sources */,
 				EBF4A13B252EA2F6003E3A44 /* FeatureToggle.swift in Sources */,
 				E5059C372A39D45B00891998 /* VoiceViewModel.swift in Sources */,
-				E5CF0F112A329E6200627224 /* AcknowledgementsView.swift in Sources */,
 				EB2E4BCB2576B59F005B343A /* Test.swift in Sources */,
 				EBE4AD072582AF34001E9E4A /* VerbsServiceProtocol.swift in Sources */,
 				EB23925425EBA201009BE502 /* Mistakes.swift in Sources */,

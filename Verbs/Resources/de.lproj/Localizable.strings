@@ -111,20 +111,12 @@
 "faster" = "Schneller";
 "voice_hint" = "Um eine bessere Version einer Stimme zu verwenden, eine neue hinzuzufügen oder eine zuvor hinzugefügte Stimme zu entfernen, wählen Sie Einstellungen → Bedienungshilfen → VoiceOver → Sprachausgabe → Stimme";
 "print" = "Drucken";
-"acknowledgements" = "Dankbarkeiten";
-"beta_testing" = "Beta-Testen";
-"sofia_sokolova" = "Sophia Sokolowa";
-"artem_shumilov" = "Artöm Schumilow";
-"vladislav_plotnikov" = "Wladislaw Plotnikow";
-"elizabeth_keplin" = "Elisabeth Keplin";
 "buy_for" = "Kaufen für";
 "one_time_payment" = "Einmalige Zahlung, der Zugang für unbegrenzte Zeit";
 "ok" = "In Ordnung";
-"tatiana_perfilieva" = "Tatiana Perfiljewa";
 "notifications" = "Benachrichtigungen";
 "not_allowed" = "Verboten";
 "what_is" = "Welche Antwort ist richtig?";
-"julian_eduardo_couoh_pablo" = "Julián Eduardo Couoh Pablo";
 
 "abide" = "ertragen";
 "alight" = "aussteigen";
@@ -399,7 +391,6 @@
 "overtake" = "überholen, einholen";
 "overthrow" = "stürzen";
 
-"paulina_litvinova" = "Pauline Litwinowa";
 "since" = "Since";
 "to" = "To";
 "time" = "Time";
@@ -418,7 +409,6 @@
 "frequent_mistakes" = "Frequent mistakes";
 "frequent_mistakes_footer" = "Add these verbs to Favorites and check yourself again by passing the test on them: Tests → three dots → Favorites";
 "wrong_answer" = "Wrong answer";
-"anastasia_ovcharenko" = "Anastasia Ovcharenko";
 "skip" = "Skip";
 "by_similarity" = "By similarity";
 "similarity_all" = "All three forms are the same";

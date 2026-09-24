@@ -91,7 +91,6 @@ final class AppRouter: ObservableObject {
 
 enum MenuScreen: Int, Identifiable {
     
-    case acknowledgements
     case voice
     case notifications
     

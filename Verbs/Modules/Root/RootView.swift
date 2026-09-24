@@ -61,8 +61,6 @@ struct RootView: View {
         .sheet(item: $router.menuScreen) { screen in
             NavigationStack {
                 switch screen {
-                case .acknowledgements:
-                    AcknowledgementsView()
                 case .voice:
                     VoiceView(settingsViewModel: .init())
                 case .notifications:

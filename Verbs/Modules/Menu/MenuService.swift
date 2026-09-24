@@ -41,11 +41,6 @@ final class MenuService {
                                                                      contactUsCommand])
         builder.insertChild(helpSubmenu, atEndOfMenu: .help)
 
-        let acknowledgementsCommand = UIAction(title: .localized(.acknowledgements),
-                                               handler: goToAcknowledgements)
-        let secondHelpSubmenu = UIMenu(options: .displayInline, children: [acknowledgementsCommand])
-        builder.insertChild(secondHelpSubmenu, atEndOfMenu: .help)
-
         let upgradeToProCommand = UIAction(title: "upgrade_to_pro".localized + "…", handler: upgradeToPro)
         let downgradeToLiteCommand = FeatureToggle.isDebug ?
             UIAction(title: "downgrade_to".localized, handler: downgrade)
@@ -82,7 +77,6 @@ final class MenuService {
             #selector(goToTermsOfUse),
             #selector(rateAndReview),
             #selector(shareApp),
-            #selector(goToAcknowledgements),
             #selector(AppDelegate.printFile)].contains(action) {
             return true
         } else if action == #selector(goToMail) {
@@ -127,10 +121,6 @@ private extension MenuService {
         let vc = UIHostingController(rootView: PaywallView())
         vc.modalPresentationStyle = .formSheet
         viewController?.present(vc, animated: true)
-    }
-    
-    @objc func goToAcknowledgements(_ action: UIAction) {
-        router.menuScreen = .acknowledgements
     }
     
     @objc func rateAndReview(_ action: UIAction) {

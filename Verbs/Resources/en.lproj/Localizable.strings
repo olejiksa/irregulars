@@ -111,12 +111,6 @@
 "faster" = "Faster";
 "voice_hint" = "To use a better version of a voice, add a new one, or remove a previously added one, go to Settings → Accessibility → VoiceOver → Speech → Voice";
 "print" = "Print";
-"acknowledgements" = "Acknowledgments";
-"beta_testing" = "Beta testing";
-"sofia_sokolova" = "Sophie Sokolova";
-"artem_shumilov" = "Artem Shumilov";
-"vladislav_plotnikov" = "Vladislav Plotnikov";
-"elizabeth_keplin" = "Elizabeth Keplin";
 "buy_for" = "Buy for";
 "one_time_payment" = "One-time payment, lifetime access";
 "ok" = "OK";
@@ -125,12 +119,9 @@
 "time" = "Time";
 "enabled" = "On";
 "disabled" = "Off";
-"paulina_litvinova" = "Paulina Litvinova";
-"tatiana_perfilieva" = "Tatiana Perfilieva";
 "notifications" = "Notifications";
 "not_allowed" = "Not allowed";
 "what_is" = "What is the right answer?";
-"julian_eduardo_couoh_pablo" = "Julián Eduardo Couoh Pablo";
 "frequency" = "Frequency";
 "count" = "Quantity";
 "setup_notifications" = "Set up a convenient time and frequency of reminders of words for you during the day";
@@ -144,7 +135,6 @@
 "frequent_mistakes" = "Frequent mistakes";
 "frequent_mistakes_footer" = "Add these verbs to Favorites and check yourself again by passing the test on them: Tests → three dots → Favorites";
 "wrong_answer" = "Wrong answer";
-"anastasia_ovcharenko" = "Anastasia Ovcharenko";
 "skip" = "Skip";
 "by_similarity" = "By similarity";
 "similarity_all" = "All three forms are the same";

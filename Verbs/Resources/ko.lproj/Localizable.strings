@@ -71,7 +71,6 @@
 "bet" = "내기하다";
 
 /* The title of the section for beta testing participants */
-"beta_testing" = "베타 테스트";
 
 /* (No Comment) */
 "bid" = "시키다";
@@ -1123,12 +1122,6 @@
 "zinc" = "어연을 입하다";
 
 "indian" = "인도 사람";
-"sofia_sokolova" = "소피아 소콜로바";
-"elizabeth_keplin" = "엘리자베타 케플린";
-"paulina_litvinova" = "폴리나 리트 비 노바";
-"tatiana_perfilieva" = "타티아나 퍼 필리 에바";
-"artem_shumilov" = "아르템 슈미로프";
-"vladislav_plotnikov" = "블라디슬라프 플로트 니 코프";
 "past_simple" = "단순 과거";
 "forms" = "동사 형태";
 "backslide" = "(이전의 나쁜 상태로) 되돌아가다, 뒷걸음치다";
@@ -1136,11 +1129,9 @@
 "empty_favorites_title" = "즐겨 찾기 없음";
 "empty_tests" = "테스트를 시작하려면 화면 왼쪽에있는 테스트를 클릭하십시오";
 "empty_verbs" = "불규칙 동사에 대한 정보를 보려면 화면 왼쪽에있는 해당 동사를 클릭하십시오";
-"acknowledgements" = "감사";
 "notifications" = "알림";
 "not_allowed" = "허용되지 않음";
 "what_is" = "정답은 무엇입니까?";
-"julian_eduardo_couoh_pablo" = "줄리안 에두아르도 쿠오 파블로";
 "since" = "Since";
 "to" = "To";
 "time" = "Time";
@@ -1159,7 +1150,6 @@
 "frequent_mistakes" = "Frequent mistakes";
 "frequent_mistakes_footer" = "Add these verbs to Favorites and check yourself again by passing the test on them: Tests → three dots → Favorites";
 "wrong_answer" = "Wrong answer";
-"anastasia_ovcharenko" = "Anastasia Ovcharenko";
 "skip" = "Skip";
 "by_similarity" = "By similarity";
 "similarity_all" = "All three forms are the same";

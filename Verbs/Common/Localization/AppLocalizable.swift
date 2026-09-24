@@ -63,8 +63,6 @@ extension Localizable {
         NSLocalizedString("contact_us", comment: "The Contact Us link text"))
     static let shareApp = Localizable(
         NSLocalizedString("share_app", comment: "Lets a user to tell a friend about the app"))
-    static let acknowledgements = Localizable(
-        NSLocalizedString("acknowledgements", comment: "The title of the acknowledgements page as well as the corresponding link text"))
     
     static let rateAndReviewCapitalized = Localizable(
         NSLocalizedString("rate_and_review_capitalized", comment: "The App Store Rate and Review link text capitalized for the Mac menu"))
@@ -76,8 +74,6 @@ extension Localizable {
         NSLocalizedString("contact_support_capitalized", comment: "The Contact Support link text capitalized for the Mac menu"))
     static let shareAppCapitalized = Localizable(
         NSLocalizedString("share_app_capitalized", comment: "Lets a user to tell a friend about the app capitalized for the Mac menu"))
-    static let acknowledgementsCapitalized = Localizable(
-        NSLocalizedString("acknowledgements_capitalized", comment: "The title of the acknowledgements page as well as the corresponding link text capitalized for the Mac menu"))
     static let allOurAppsCapitalized = Localizable(
         NSLocalizedString("all_our_apps_capitalized", comment: "The All Our Apps link text capitalized for the Mac menu"))
     static let upgradeToProCapitalized = Localizable(
@@ -91,8 +87,6 @@ extension Localizable {
         NSLocalizedString("edition", comment: "The app's edition: Lite, Pro"))
     static let version = Localizable(
         NSLocalizedString("version", comment: "The current version of the app"))
-    static let betaTesting = Localizable(
-        NSLocalizedString("beta_testing", comment: "The title of the section for beta testing participants"))
     
     static let notifications = Localizable(
         NSLocalizedString("notifications", comment: "Refers to the Notifications page"))
@@ -146,20 +140,4 @@ extension Localizable {
     
     static let olegSamoylov = Localizable(
         NSLocalizedString("oleg_samoylov", comment: "The full name of the app's develop"))
-    static let sofiaSokolova = Localizable(
-        NSLocalizedString("sofia_sokolova", comment: "Refers to Sofia Sokolova"))
-    static let artemShumilov = Localizable(
-        NSLocalizedString("artem_shumilov", comment: "Refers to Artem Shumilov"))
-    static let elizabethKeplin = Localizable(
-        NSLocalizedString("elizabeth_keplin", comment: "Refers to Elizabeth Keplin"))
-    static let tatianaPerfilieva = Localizable(
-        NSLocalizedString("tatiana_perfilieva", comment: "Refers to Tatiana Perfilieva"))
-    static let polinaLitvinova = Localizable(
-        NSLocalizedString("paulina_litvinova", comment: "Refers to Polina Litvinova"))
-    static let vladislavPlotnikov = Localizable(
-        NSLocalizedString("vladislav_plotnikov", comment: "Refers to Vladislav Plotnikov"))
-    static let julianEduardo = Localizable(
-        NSLocalizedString("julian_eduardo_couoh_pablo", comment: "Refers to Julián Eduardo"))
-    static let anastasiaOvcharenko = Localizable(
-        NSLocalizedString("anastasia_ovcharenko", comment: "Refers to Anastasia Ovcharenko"))
 }
