@@ -14,6 +14,11 @@
 "version" = "Версия";
 "widget_configuration_display_title" = "Слова на каждый день";
 "widget_description" = "Запоминайте все три формы неправильных глаголов легко и просто, даже не заходя в приложение";
+"widget_intent_title" = "Verbs Intent";
+"widget_intent_description" = "Choose an option on your own";
+"widget_display_option_title" = "Глаголы";
+"widget_display_option_all" = "Все";
+"widget_display_option_favorites" = "Избранное";
 "verbs" = "Глаголы";
 "settings" = "Настройки";
 "general" = "Общее";

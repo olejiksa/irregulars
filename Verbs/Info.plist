@@ -175,11 +175,6 @@
 	<true/>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Speech recording is used only for pronunciation training. The data associated with it is cleared from the cache after the application terminates</string>
-	<key>NSUserActivityTypes</key>
-	<array>
-		<string>ConfigurationIntent</string>
-		<string>VerbsIntentIntent</string>
-	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

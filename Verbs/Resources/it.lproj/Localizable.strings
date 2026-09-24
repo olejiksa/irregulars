@@ -1104,6 +1104,11 @@
 
 /* The title displayed at the top of the add widget view */
 "widget_description" = "Memorizzare tutte e tre le forme di verbi irregolari in modo semplice e facile";
+"widget_intent_title" = "Verbi Intenti";
+"widget_intent_description" = "Scegli un'opzione de solo";
+"widget_display_option_title" = "Verbi";
+"widget_display_option_all" = "Tutti";
+"widget_display_option_favorites" = "Preferiti";
 
 /* (No Comment) */
 "will" = "volere";

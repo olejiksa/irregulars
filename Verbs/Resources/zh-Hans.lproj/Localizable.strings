@@ -14,6 +14,11 @@
 "version" = "版本";
 "widget_configuration_display_title" = "每天用的词汇";
 "widget_description" = "三种不规则动词形式记得很容易也很简单，即使不必打开应用程序";
+"widget_intent_title" = "Verbs Intent";
+"widget_intent_description" = "Choose an option on your own";
+"widget_display_option_title" = "动词";
+"widget_display_option_all" = "所有一切";
+"widget_display_option_favorites" = "收藏夹";
 "verbs" = "动词";
 "settings" = "设置";
 "general" = "一般性";

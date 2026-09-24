@@ -1095,6 +1095,11 @@
 
 /* The title displayed at the top of the add widget view */
 "widget_description" = "Memoriza las tres formas de verbos irregulares de forma sencilla y sencilla";
+"widget_intent_title" = "Verbs Intent";
+"widget_intent_description" = "Choose an option on your own";
+"widget_display_option_title" = "Verbos";
+"widget_display_option_all" = "Todo";
+"widget_display_option_favorites" = "Favoritos";
 
 /* (No Comment) */
 "will" = "querer";

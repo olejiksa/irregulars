@@ -14,6 +14,11 @@
 "version" = "Version";
 "widget_configuration_display_title" = "Words for every day";
 "widget_description" = "Memorize all three forms of irregular verbs simply and easily";
+"widget_intent_title" = "Verbs Intent";
+"widget_intent_description" = "Choose an option on your own";
+"widget_display_option_title" = "Verbs";
+"widget_display_option_all" = "All";
+"widget_display_option_favorites" = "Favorites";
 "verbs" = "Verbs";
 "settings" = "Settings";
 "general" = "General";

@@ -1077,6 +1077,11 @@
 
 /* The title displayed at the top of the add widget view */
 "widget_description" = "З앱에 들어 가지 않고도 쉽고 간편하게 세 가지 형태의 불규칙 동사를 외우세요";
+"widget_intent_title" = "동사 의도";
+"widget_intent_description" = "직접 옵션 선택하다";
+"widget_display_option_title" = "동사";
+"widget_display_option_all" = "모든";
+"widget_display_option_favorites" = "즐겨찾기";
 
 /* (No Comment) */
 "will" = "미래에 하다";

@@ -6,11 +6,11 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
+import AppIntents
 import SwiftUI
 import WidgetKit
-import Intents
 
-struct Provider: IntentTimelineProvider {
+struct Provider: AppIntentTimelineProvider {
     
     private var service: VerbsService = {
         let service = VerbsService()
@@ -23,49 +23,42 @@ struct Provider: IntentTimelineProvider {
         .init(date: Date(), state: .empty)
     }
 
-    func getSnapshot(for configuration: VerbsIntentIntent,
-                     in context: Context,
-                     completion: @escaping (VerbEntry) -> ()) {
+    func snapshot(for configuration: VerbsWidgetConfigurationIntent,
+                  in context: Context) async -> VerbEntry {
         let verb = Verb(infinitive: Word(value: "arise", transcription: "/əˈrʌɪz/"),
                         simplePast: [Word(value: "arose", transcription: "/əˈrəʊz/")],
                         pastParticiple: [Word(value: "arisen", transcription: "/əˈrɪz(ə)n/")],
                         hasRegular: false,
                         isDerived: true)
-        let entry = VerbEntry(date: Date(), state: .data(verb))
-        completion(entry)
+        return VerbEntry(date: Date(), state: .data(verb))
     }
 
-    func getTimeline(for configuration: VerbsIntentIntent,
-                     in context: Context,
-                     completion: @escaping (Timeline<Entry>) -> ()) {
+    func timeline(for configuration: VerbsWidgetConfigurationIntent,
+                  in context: Context) async -> Timeline<VerbEntry> {
         var entries: [VerbEntry] = []
         switch configuration.displayOption {
-        case .unknown, .all:
-            for _ in 1...8 {
+        case .all:
+            for index in 0..<8 {
                 guard let verb = service.randomItem else { continue }
-                let date = Calendar.autoupdatingCurrent.date(byAdding: .minute, value: 15, to: Date()) ?? Date()
-                let entry = VerbEntry(date: date, state: .data(verb))
-                entries.append(entry)
+                entries.append(VerbEntry(date: date(at: index), state: .data(verb)))
             }
         case .favorites:
             guard !Locator.favorites.verbs.isEmpty else {
-                let entry = VerbEntry(date: Date(), state: .empty)
-                entries.append(entry)
-                let timeline = Timeline(entries: entries, policy: .atEnd)
-                completion(timeline)
-                return
+                return Timeline(entries: [VerbEntry(date: Date(), state: .empty)], policy: .atEnd)
             }
             
-            for _ in 1...8 {
+            for index in 0..<8 {
                 guard let verb = Locator.favorites.verbs.randomElement() else { continue }
-                let date = Calendar.autoupdatingCurrent.date(byAdding: .minute, value: 15, to: Date()) ?? Date()
-                let entry = VerbEntry(date: date, state: .data(verb))
-                entries.append(entry)
+                entries.append(VerbEntry(date: date(at: index), state: .data(verb)))
             }
         }
         
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
+        return Timeline(entries: entries, policy: .atEnd)
+    }
+    
+    /// Each entry is shown 15 minutes later than the previous one.
+    private func date(at index: Int) -> Date {
+        Calendar.autoupdatingCurrent.date(byAdding: .minute, value: 15 * index, to: Date()) ?? Date()
     }
 }
 
@@ -256,25 +249,28 @@ struct VerbsWidget: Widget {
     let kind: String = "VerbsWidget"
 
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: VerbsIntentIntent.self, provider: Provider()) { entry in
+        AppIntentConfiguration(kind: kind,
+                               intent: VerbsWidgetConfigurationIntent.self,
+                               provider: Provider()) { entry in
             VerbsWidgetEntryView(entry: entry)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color(UIColor.systemBackground))
+                .containerBackground(for: .widget) {
+                    Color(UIColor.systemBackground)
+                }
         }
         .configurationDisplayName(String.localized(.widgetConfigurationDisplayTitle))
         .description(String.localized(.widgetDescription))
         .supportedFamilies([.systemSmall, .systemMedium])
+        .contentMarginsDisabled()
     }
 }
 
-struct VerbsWidget_Previews: PreviewProvider {
-    static var previews: some View {
-        let verb = Verb(infinitive: Word(value: "arisearise", transcription: "/əˈrʌɪz/"),
-                        simplePast: [Word(value: "arosearisearise", transcription: "/əˈrəʊz/")],
-                        pastParticiple: [Word(value: "arisenarisearise", transcription: "/əˈrɪz(ə)n/")],
-                        hasRegular: false,
-                        isDerived: true)
-        VerbsWidgetEntryView(entry: VerbEntry(date: Date(), state: .data(verb)))
-            .previewContext(WidgetPreviewContext(family: .systemMedium))
-    }
+#Preview(as: .systemMedium) {
+    VerbsWidget()
+} timeline: {
+    let verb = Verb(infinitive: Word(value: "arisearise", transcription: "/əˈrʌɪz/"),
+                    simplePast: [Word(value: "arosearisearise", transcription: "/əˈrəʊz/")],
+                    pastParticiple: [Word(value: "arisenarisearise", transcription: "/əˈrɪz(ə)n/")],
+                    hasRegular: false,
+                    isDerived: true)
+    VerbEntry(date: Date(), state: .data(verb))
 }
