@@ -49,6 +49,9 @@ struct DetailView: View {
                 }
             }
             
+            // Keeps the two buttons in glass capsules of their own.
+            ToolbarSpacer(.fixed, placement: .topBarTrailing)
+            
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
                     viewModel.isShowingPlaybackSpeed = true

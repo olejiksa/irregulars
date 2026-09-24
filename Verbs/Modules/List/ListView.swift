@@ -17,6 +17,7 @@ struct ListView: View {
     var body: some View {
         content
             .searchable(text: $viewModel.searchText, prompt: Text("search"))
+            .searchToolbarBehavior(.minimize)
             .navigationTitle(viewModel.title)
             .navigationBarTitleDisplayMode(.large)
             .toolbar { toolbar }

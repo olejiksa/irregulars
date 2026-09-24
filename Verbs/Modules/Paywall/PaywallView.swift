@@ -18,110 +18,103 @@ struct PaywallView: View {
     
     @Environment(\.dismiss) var dismiss
     
-    private enum Constants {
-        static let buttonHeight: CGFloat = 54
-    }
-    
     var body: some View {
-        NavigationView {
-            VStack {
-                List {
-                    PaywallItem(
-                        icon: .key,
-                        text: "unlock_all_verbs_in_tests"
-                    )
-                    PaywallItem(
-                        icon: .speaker,
-                        text: "listen_to_pronunciation"
-                    )
-                    PaywallItem(
-                        icon: .transcription,
-                        text: "view_a_transcription"
-                    )
-                    PaywallItem(
-                        icon: .listStar,
-                        text: "store_unlimited_items_in_favorites"
-                    )
+        NavigationStack {
+            List {
+                PaywallItem(
+                    icon: .key,
+                    text: "unlock_all_verbs_in_tests"
+                )
+                PaywallItem(
+                    icon: .speaker,
+                    text: "listen_to_pronunciation"
+                )
+                PaywallItem(
+                    icon: .transcription,
+                    text: "view_a_transcription"
+                )
+                PaywallItem(
+                    icon: .listStar,
+                    text: "store_unlimited_items_in_favorites"
+                )
 #if !targetEnvironment(macCatalyst)
-                    PaywallItem(
-                        icon: .paintpalette,
-                        text: "personalize"
-                    )
+                PaywallItem(
+                    icon: .paintpalette,
+                    text: "personalize"
+                )
 #endif
-                    PaywallItem(
-                        icon: .creditcard,
-                        text: "one_time_payment"
-                    )
-                }
-                .listStyle(.plain)
-                .mask(LinearGradient(gradient: Gradient(stops: [
-                    .init(color: .black, location: 0.75),
-                    .init(color: .clear, location: 1)
-                ]), startPoint: .top, endPoint: .bottom))
-                
-                VStack {
-                    if FeatureToggle.isPaid {
-                        Text("thank_you")
-                            .font(.headline)
-                            .foregroundColor(.accentColor)
-                            .padding()
-                    } else {
-                        if viewModel.canMakePayments {
-                            ForEach(viewModel.purchaseService.products) { product in
-                                Button {
-                                    viewModel.buy(product: product) {
-                                        dismiss()
-                                    }
-                                } label: {
-                                    Text("\("buy_for".localized) \(product.displayPrice)")
-                                        .font(.headline)
-                                        .frame(maxWidth: .infinity)
-                                        .opacity(viewModel.isBuyingPurchaseNotInProgress ? 1 : 0)
-                                        .padding()
-                                }
-                                .buttonStyle(.borderedProminent)
-                                .overlay(Group {
-                                    ProgressView()
-                                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                                        .opacity(viewModel.isBuyingPurchaseNotInProgress ? 0 : 1)
-                                })
-                            }
-                        }
-                        
-                        Button {
-                            viewModel.restore { dismiss() }
-                        } label: {
-                            Text("restore_purchases")
-                                .font(.headline)
-                                .frame(maxWidth: .infinity)
-                                .opacity(viewModel.isRestoringPurchaseNotInProgress ? 1 : 0)
-                                .padding()
-                        }
-                        .buttonStyle(.bordered)
-                        .overlay(Group {
-                            ProgressView()
-                                .progressViewStyle(CircularProgressViewStyle(tint: .accentColor))
-                                .opacity(viewModel.isRestoringPurchaseNotInProgress ? 0 : 1)
-                        })
-                    }
-                }
-                .navigationTitle(viewModel.title)
-                .navigationBarTitleDisplayMode(.inline)
-                .sensoryFeedback(.error, trigger: viewModel.errorFeedback)
-                .padding()
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            dismiss()
-                        } label: {
-                            SystemIcon.close.imageSwiftUI?
-                                .fontWeight(.bold)
-                                .foregroundColor(Color(UIColor.systemGray2))
-                        }
-                    }
+                PaywallItem(
+                    icon: .creditcard,
+                    text: "one_time_payment"
+                )
+            }
+            .listStyle(.plain)
+            // The list runs under the buttons and the system fades its edge, which the
+            // screen used to do for itself with a gradient mask.
+            .safeAreaInset(edge: .bottom) { actions }
+            .navigationTitle(viewModel.title)
+            .navigationBarTitleDisplayMode(.inline)
+            .sensoryFeedback(.error, trigger: viewModel.errorFeedback)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button(role: .close) { dismiss() }
                 }
             }
         }
+    }
+}
+
+// MARK: - Private
+
+private extension PaywallView {
+    
+    @ViewBuilder
+    var actions: some View {
+        VStack {
+            if FeatureToggle.isPaid {
+                Text("thank_you")
+                    .font(.headline)
+                    .foregroundColor(.accentColor)
+                    .padding()
+            } else {
+                if viewModel.canMakePayments {
+                    ForEach(viewModel.purchaseService.products) { product in
+                        Button {
+                            viewModel.buy(product: product) {
+                                dismiss()
+                            }
+                        } label: {
+                            Text("\("buy_for".localized) \(product.displayPrice)")
+                                .font(.headline)
+                                .frame(maxWidth: .infinity)
+                                .opacity(viewModel.isBuyingPurchaseNotInProgress ? 1 : 0)
+                                .padding()
+                        }
+                        .buttonStyle(.glassProminent)
+                        .overlay(Group {
+                            ProgressView()
+                                .opacity(viewModel.isBuyingPurchaseNotInProgress ? 0 : 1)
+                        })
+                    }
+                }
+                
+                Button {
+                    viewModel.restore { dismiss() }
+                } label: {
+                    Text("restore_purchases")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .opacity(viewModel.isRestoringPurchaseNotInProgress ? 1 : 0)
+                        .padding()
+                }
+                .buttonStyle(.glass)
+                .overlay(Group {
+                    ProgressView()
+                        .opacity(viewModel.isRestoringPurchaseNotInProgress ? 0 : 1)
+                })
+            }
+        }
+        .padding()
     }
 }
 

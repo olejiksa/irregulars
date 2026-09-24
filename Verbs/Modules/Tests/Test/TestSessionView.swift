@@ -47,6 +47,8 @@ struct TestSessionView: View {
             }
             
             if [Test.listening, Test.speaking].contains(viewModel.test) {
+                ToolbarSpacer(.fixed, placement: .topBarTrailing)
+                
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         viewModel.isShowingPlaybackSpeed = true

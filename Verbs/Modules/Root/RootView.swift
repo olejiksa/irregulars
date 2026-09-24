@@ -123,37 +123,47 @@ private extension RootView {
     
     var tabs: some View {
         TabView(selection: tabSelection) {
-            NavigationStack(path: router.verbsPath) {
-                ListView(viewModel: allVerbs)
-                    .navigationDestination(for: VerbsRoute.self, destination: view(for:))
+            Tab(value: SidebarDestination.all) {
+                NavigationStack(path: router.verbsPath) {
+                    ListView(viewModel: allVerbs)
+                        .navigationDestination(for: VerbsRoute.self, destination: view(for:))
+                }
+            } label: {
+                Label("verbs", systemImage: SystemIcon.bookFill.rawValue)
+                    .accessibilityIdentifier(AccessibilityIdentifier.verbsTab.rawValue)
             }
-            .tabItem { Label("verbs", systemImage: SystemIcon.bookFill.rawValue) }
-            .accessibilityIdentifier(AccessibilityIdentifier.verbsTab.rawValue)
-            .tag(SidebarDestination.all)
             
-            NavigationStack(path: router.verbsPath) {
-                ListView(viewModel: favorites)
-                    .navigationDestination(for: VerbsRoute.self, destination: view(for:))
+            Tab(value: SidebarDestination.favorites) {
+                NavigationStack(path: router.verbsPath) {
+                    ListView(viewModel: favorites)
+                        .navigationDestination(for: VerbsRoute.self, destination: view(for:))
+                }
+            } label: {
+                Label("favorites", systemImage: SystemIcon.starFill.rawValue)
+                    .accessibilityIdentifier(AccessibilityIdentifier.favoritesTab.rawValue)
             }
-            .tabItem { Label("favorites", systemImage: SystemIcon.starFill.rawValue) }
-            .accessibilityIdentifier(AccessibilityIdentifier.favoritesTab.rawValue)
-            .tag(SidebarDestination.favorites)
             
-            NavigationStack(path: router.testsPath) {
-                TestsView(viewModel: tests)
-                    .navigationDestination(for: TestsRoute.self, destination: view(for:))
+            Tab(value: SidebarDestination.tests) {
+                NavigationStack(path: router.testsPath) {
+                    TestsView(viewModel: tests)
+                        .navigationDestination(for: TestsRoute.self, destination: view(for:))
+                }
+            } label: {
+                Label("tests", systemImage: SystemIcon.puzzleFill.rawValue)
+                    .accessibilityIdentifier(AccessibilityIdentifier.testsTab.rawValue)
             }
-            .tabItem { Label("tests", systemImage: SystemIcon.puzzleFill.rawValue) }
-            .accessibilityIdentifier(AccessibilityIdentifier.testsTab.rawValue)
-            .tag(SidebarDestination.tests)
             
-            NavigationStack(path: router.settingsPath) {
-                SettingsView(dependencies: dependencies)
+            Tab(value: SidebarDestination.settings) {
+                NavigationStack(path: router.settingsPath) {
+                    SettingsView(dependencies: dependencies)
+                }
+            } label: {
+                Label("settings", systemImage: SystemIcon.gearFill.rawValue)
+                    .accessibilityIdentifier(AccessibilityIdentifier.settingsTab.rawValue)
             }
-            .tabItem { Label("settings", systemImage: SystemIcon.gearFill.rawValue) }
-                .accessibilityIdentifier(AccessibilityIdentifier.settingsTab.rawValue)
-                .tag(SidebarDestination.settings)
         }
+        // The tab bar shrinks out of the way as the reader scrolls down a long list.
+        .tabBarMinimizeBehavior(.onScrollDown)
     }
     
     /// The lists hand their selection to the router, which the detail column reads;
