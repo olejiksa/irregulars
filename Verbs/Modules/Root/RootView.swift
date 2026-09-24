@@ -128,8 +128,10 @@ private extension RootView {
             .accessibilityIdentifier(AccessibilityIdentifier.testsTab.rawValue)
             .tag(SidebarDestination.tests)
             
-            SettingsView()
-                .tabItem { Label("settings", systemImage: SystemIcon.gearFill.rawValue) }
+            NavigationStack {
+                SettingsView()
+            }
+            .tabItem { Label("settings", systemImage: SystemIcon.gearFill.rawValue) }
                 .accessibilityIdentifier(AccessibilityIdentifier.settingsTab.rawValue)
                 .tag(SidebarDestination.settings)
         }
@@ -157,7 +159,7 @@ private extension RootView {
         case (_, .some(let route), _):
             view(for: route)
         default:
-            EmptyStateView()
+            EmptyStateView(destination: router.destination)
         }
     }
     

@@ -48,9 +48,6 @@ final class ListViewModel {
     private let printService: PrintService
     private var cancellables = Set<AnyCancellable>()
     
-    /// The verb the detail column is showing, so tapping it again does not push a second time.
-    private var openedInfinitive: String?
-    
     init(languageService: LanguageService,
          verbsService: VerbsServiceProtocol,
          printService: PrintService) {
@@ -71,7 +68,7 @@ final class ListViewModel {
     func select(_ verb: Verb?) {
         selectedVerb = verb
         
-        guard let verb = verb, verb.infinitive.value != openedInfinitive else { return }
+        guard let verb else { return }
         
         onSelect?(verb)
     }
@@ -179,11 +176,6 @@ final class ListViewModel {
         selectedVerb = nil
     }
     
-    /// Highlights the verb the detail column is showing, without pushing it again.
-    func setOpenedVerb(_ infinitive: String) {
-        openedInfinitive = infinitive.isEmpty ? nil : infinitive
-        selectedVerb = verbsService.items.first { $0.infinitive.value == infinitive }
-    }
 }
 
 // MARK: - Private
@@ -200,28 +192,8 @@ extension ListViewModel {
     func subscribe() {
         let center = NotificationCenter.default
         
-        center.publisher(for: .infinitive)
-            .sink { [weak self] notification in
-                let infinitive = notification.userInfo?[Notification.Name.infinitive] as? String ?? ""
-                self?.setOpenedVerb(infinitive)
-            }
-            .store(in: &cancellables)
         
-        center.publisher(for: .listView)
-            .sink { [weak self] notification in
-                let value = notification.userInfo?[Notification.Name.listView] as? Bool ?? false
-                self?.verbsService.shouldTranslationBeShown = value
-                self?.rebuild()
-            }
-            .store(in: &cancellables)
         
-        center.publisher(for: .grouping)
-            .sink { [weak self] notification in
-                let value = notification.userInfo?[Notification.Name.grouping] as? Bool ?? false
-                self?.verbsService.shouldSimilarBeShown = value
-                self?.rebuild()
-            }
-            .store(in: &cancellables)
         
         center.publisher(for: .favorites)
             .sink { [weak self] _ in self?.rebuild() }

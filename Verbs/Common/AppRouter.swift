@@ -29,7 +29,15 @@ final class AppRouter {
     /// The delegates are created by UIKit and the views by SwiftUI, so they meet here.
     static let shared = AppRouter()
     
-    var destination: SidebarDestination = .all
+    var destination: SidebarDestination = .all {
+        didSet {
+            // A new section starts with an empty detail column.
+            guard destination != oldValue else { return }
+            
+            verbsRoute = nil
+            testsRoute = nil
+        }
+    }
     
     var verbsRoute: VerbsRoute?
     var testsRoute: TestsRoute?

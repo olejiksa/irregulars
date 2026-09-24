@@ -37,8 +37,6 @@ final class TestsViewModel {
     private let languageService: LanguageService
     private var cancellables = Set<AnyCancellable>()
     
-    /// The row already open in the detail column, so it is not pushed twice.
-    private var selectedID: String?
     
     init(languageService: LanguageService) {
         self.languageService = languageService
@@ -56,9 +54,6 @@ final class TestsViewModel {
             return
         }
         
-        guard row.id != selectedID else { return }
-        
-        selectedID = row.id
         onSelect?(row.test)
     }
     
@@ -158,9 +153,6 @@ private extension TestsViewModel {
     }
     
     func subscribe() {
-        NotificationCenter.default.publisher(for: .test)
-            .sink { [weak self] _ in self?.selectedID = nil }
-            .store(in: &cancellables)
         
         NotificationCenter.default.publisher(for: .reload)
             .receive(on: DispatchQueue.main)

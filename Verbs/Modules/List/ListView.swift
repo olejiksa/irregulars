@@ -26,17 +26,17 @@ struct ListView: View {
     /// Separate so that it can read whether the search field is active, which is only
     /// published to the content of `searchable`.
     private var content: some View {
-        ZStack {
-            list
-            
+        Group {
             if let message = viewModel.state.message {
+                // Shown instead of the list: an opaque overlay would paint over the title.
                 Text(message)
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
+                    .padding(.horizontal, 40)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color(uiColor: .systemBackground))
-                    .transition(.opacity)
+            } else {
+                list
             }
         }
         .animation(.easeInOut(duration: 0.25), value: viewModel.state.message)

@@ -455,9 +455,6 @@
         }
       }
     },
-    "all_our_apps_capitalized" : {
-      "comment" : "The All Our Apps link text capitalized for the Mac menu"
-    },
     "allow_access" : {
       "extractionState" : "migrated",
       "localizations" : {
@@ -3894,9 +3891,6 @@
         }
       }
     },
-    "contact_support_capitalized" : {
-      "comment" : "The Contact Support link text capitalized for the Mac menu"
-    },
     "contact_us" : {
       "comment" : "The Contact Us link text",
       "localizations" : {
@@ -4981,7 +4975,6 @@
       }
     },
     "downgrade_to" : {
-      "extractionState" : "migrated",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15448,9 +15441,6 @@
         }
       }
     },
-    "privacy_policy_capitalized" : {
-      "comment" : "The Privacy Policy link text capitalized for the Mac menu"
-    },
     "pro_suggestion_statistics" : {
       "extractionState" : "migrated",
       "localizations" : {
@@ -15804,9 +15794,6 @@
           }
         }
       }
-    },
-    "rate_and_review_capitalized" : {
-      "comment" : "The App Store Rate and Review link text capitalized for the Mac menu"
     },
     "read" : {
       "extractionState" : "manual",
@@ -17864,9 +17851,6 @@
           }
         }
       }
-    },
-    "share_app_capitalized" : {
-      "comment" : "Lets a user to tell a friend about the app capitalized for the Mac menu"
     },
     "shave" : {
       "extractionState" : "manual",
@@ -22368,9 +22352,6 @@
         }
       }
     },
-    "terms_of_use_capitalized" : {
-      "comment" : "The Terms of Use link text capitalized for the Mac menu"
-    },
     "tests" : {
       "localizations" : {
         "de" : {
@@ -23544,9 +23525,6 @@
           }
         }
       }
-    },
-    "upgrade_to_pro_capitalized" : {
-      "comment" : "The Upgrade to Pro link text capitalized for the Mac menu"
     },
     "upset" : {
       "extractionState" : "manual",
