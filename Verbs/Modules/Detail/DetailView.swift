@@ -17,18 +17,18 @@ struct DetailView: View {
     
     var body: some View {
         List {
-            section(.infinitive, words: [viewModel.verb.infinitive])
-            section(.pastSimple, words: viewModel.verb.simplePast ?? [])
-            section(.pastParticiple, words: viewModel.verb.pastParticiple ?? [])
+            section("infinitive", words: [viewModel.verb.infinitive])
+            section("past_simple", words: viewModel.verb.simplePast ?? [])
+            section("past_participle", words: viewModel.verb.pastParticiple ?? [])
             
             if viewModel.hasTranslation {
-                Section(String.localized(.translation)) {
+                Section(String(localized: "translation")) {
                     Text(verbatim: viewModel.verb.translation)
                 }
             }
             
             if !viewModel.sentences.isEmpty {
-                Section(String.localized(.examples)) {
+                Section(String(localized: "examples")) {
                     ForEach(viewModel.sentences, id: \.self) { sentence in
                         Text(highlighted(sentence))
                             .textSelection(.enabled)
@@ -70,9 +70,9 @@ struct DetailView: View {
 private extension DetailView {
     
     @ViewBuilder
-    func section(_ header: Localizable, words: [Word]) -> some View {
+    func section(_ header: LocalizedStringKey, words: [Word]) -> some View {
         if !words.isEmpty {
-            Section(String.localized(header)) {
+            Section(header) {
                 ForEach(words, id: \.self) { word in
                     row(for: word)
                 }

@@ -87,7 +87,7 @@ tr    { page-break-inside:avoid; page-break-after:auto }
         string += "<th>Infinitive</th>"
         string += "<th>Past Simple</th>"
         string += "<th>Past Participle</th>"
-        if hasTranslation { string += "<th>\(String.localized(.translation))</th>" }
+        if hasTranslation { string += "<th>\(String(localized: "translation"))</th>" }
         string += "</tr>"
         string += "</thead>"
         string += "</tbody>"

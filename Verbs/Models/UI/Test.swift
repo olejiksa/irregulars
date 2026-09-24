@@ -41,15 +41,15 @@ enum Test {
     var title: String {
         switch self {
         case .translation:
-            return .localized(.translation)
+            return String(localized: "translation")
         case .writing:
-            return .localized(.forms)
+            return String(localized: "forms")
         case .sentences:
-            return .localized(.sentences)
+            return String(localized: "sentences")
         case .listening:
-            return .localized(.listening)
+            return String(localized: "listening")
         case .speaking:
-            return .localized(.speaking)
+            return String(localized: "speaking")
         }
     }
     

@@ -28,7 +28,7 @@ struct VoiceView: View {
             }
             
             Section {
-                Text(String.localized(.voiceHint))
+                Text(String(localized: "voice_hint"))
                     .foregroundColor(.secondary)
             }
         }

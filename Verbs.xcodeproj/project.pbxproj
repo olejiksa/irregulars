@@ -100,10 +100,6 @@
 		EB355274260CB44F00C7EA3C /* Similarity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB35524A260CAD4200C7EA3C /* Similarity.swift */; };
 		EB39619925A1A42F00E3B65F /* VerbDragItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB39619825A1A42F00E3B65F /* VerbDragItem.swift */; };
 		EB3ADAD025C87AC8009E48A0 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE00C9C25C86F2900560A7D /* AccessibilityIdentifier.swift */; };
-		EB409E36259B8CC800E3B690 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB409E35259B8CC800E3B690 /* Localizable.swift */; };
-		EB409E3F259B8D4A00E3B690 /* AppLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB409E3E259B8D4A00E3B690 /* AppLocalizable.swift */; };
-		EB409E46259B8D9D00E3B690 /* AppLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB409E3E259B8D4A00E3B690 /* AppLocalizable.swift */; };
-		EB409E4A259B8DA200E3B690 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB409E35259B8CC800E3B690 /* Localizable.swift */; };
 		EB409E4E259B8DA500E3B690 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3BC08251F2ADB006E0DC7 /* String.swift */; };
 		EB59AF4025A60318005A212C /* PrintService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59AF3F25A60318005A212C /* PrintService.swift */; };
 		EB59AFC025AB312E005A212C /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59AFBF25AB312E005A212C /* NotificationService.swift */; };
@@ -325,8 +321,6 @@
 		EB355265260CAF5C00C7EA3C /* SimilarityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarityService.swift; sourceTree = "<group>"; };
 		EB39619825A1A42F00E3B65F /* VerbDragItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbDragItem.swift; sourceTree = "<group>"; };
 		EB3ADADE25C9B9FD009E48A0 /* VerbsUITests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = VerbsUITests.xctestplan; sourceTree = "<group>"; };
-		EB409E35259B8CC800E3B690 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
-		EB409E3E259B8D4A00E3B690 /* AppLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocalizable.swift; sourceTree = "<group>"; };
 		EB59AF3F25A60318005A212C /* PrintService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintService.swift; sourceTree = "<group>"; };
 		EB59AFBF25AB312E005A212C /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		EB59F01E258FE429004676D2 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
@@ -662,8 +656,6 @@
 		EB409E3A259B8CFD00E3B690 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
-				EB409E3E259B8D4A00E3B690 /* AppLocalizable.swift */,
-				EB409E35259B8CC800E3B690 /* Localizable.swift */,
 				EBB3BC08251F2ADB006E0DC7 /* String.swift */,
 			);
 			path = Localization;
@@ -1195,14 +1187,12 @@
 				EBE605C325B86B7D00EB1CB3 /* FeatureToggle.swift in Sources */,
 				EB7DFF69252451D2000B711D /* VerbsWidget.swift in Sources */,
 				EB995B7825E518E50082DE32 /* VerbsService.swift in Sources */,
-				EB409E4A259B8DA200E3B690 /* Localizable.swift in Sources */,
 				EB3217AC258BCFEC00023F0B /* Statistics.swift in Sources */,
 				EBE4AD0F2582AF7E001E9E4A /* VerbsServiceProtocol.swift in Sources */,
 				EB995B7225E518D50082DE32 /* SentencesService.swift in Sources */,
 				EB35526D260CB40D00C7EA3C /* SimilarityService.swift in Sources */,
 				EB409E4E259B8DA500E3B690 /* String.swift in Sources */,
 				EBF593E3258869C00091FCE0 /* Blocks.swift in Sources */,
-				EB409E46259B8D9D00E3B690 /* AppLocalizable.swift in Sources */,
 				EB7DFF89252B1CD7000B711D /* Verb.swift in Sources */,
 				EB7B85682537FB0C00542D3C /* Word.swift in Sources */,
 				EB7DFF8C252B1CE6000B711D /* JSONParser.swift in Sources */,
@@ -1264,7 +1254,6 @@
 				EBD2C4E9257E95AE0023AED4 /* Blocks.swift in Sources */,
 				E5A249412A55E57400F43830 /* PaywallItem.swift in Sources */,
 				E5A737D42A7E9F1D00F2F6BF /* NotificationsView.swift in Sources */,
-				EB409E36259B8CC800E3B690 /* Localizable.swift in Sources */,
 				EBF8A6522559225D00A6265C /* Locator.swift in Sources */,
 				EB2E4BC52576A8DC005B343A /* Array+Safe.swift in Sources */,
 				EB269972256D1009007CCF2E /* UserDefaults+Key.swift in Sources */,
@@ -1338,7 +1327,6 @@
 				EBE4AD072582AF34001E9E4A /* VerbsServiceProtocol.swift in Sources */,
 				EB23925425EBA201009BE502 /* Mistakes.swift in Sources */,
 				E58505E92A3E035000071BF4 /* OnboardingItemView.swift in Sources */,
-				EB409E3F259B8D4A00E3B690 /* AppLocalizable.swift in Sources */,
 				E5A2493F2A55D75400F43830 /* PaywallViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

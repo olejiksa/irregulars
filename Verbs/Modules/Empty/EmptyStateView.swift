@@ -10,7 +10,7 @@ import SwiftUI
 
 struct EmptyStateView: View {
     
-    @State private var text = String.localized(.emptyVerbs)
+    @State private var text = String(localized: "empty_verbs")
     
     var body: some View {
         GeometryReader { geometry in

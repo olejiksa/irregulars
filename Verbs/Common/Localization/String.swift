@@ -10,6 +10,8 @@ import Foundation
 
 extension String {
     
+    /// For keys only known at run time: a verb's own translation, or the raw value of
+    /// an enum. Everything written literally goes through `String(localized:)` or `Text`.
     var localized: String {
         NSLocalizedString(self, comment: "")
     }

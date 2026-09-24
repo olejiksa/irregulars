@@ -33,12 +33,12 @@ final class TestQuestionFactory {
         switch testKind {
         case .twoForms:
             return numbered([
-                (.localized(.infinitive), [.plain(plain(verb.infinitive.value))]),
-                (.localized(.pastSimple), [.input(InputField(id: 0,
+                (String(localized: "infinitive"), [.plain(plain(verb.infinitive.value))]),
+                (String(localized: "past_simple"), [.input(InputField(id: 0,
                                                              words: simplePast,
                                                              isAudio: false,
                                                              isLast: false))]),
-                (.localized(.pastParticiple), [.input(InputField(id: 1,
+                (String(localized: "past_participle"), [.input(InputField(id: 1,
                                                                  words: pastParticiple,
                                                                  isAudio: false,
                                                                  isLast: true))])
@@ -47,28 +47,28 @@ final class TestQuestionFactory {
             guard languageService.hasTranslation else { return [] }
             
             return numbered([
-                (.localized(.infinitive), [.plain(plain(verb.infinitive.value))]),
-                (.localized(.translation), answers(for: verb, form: .translation, correct: [verb.translation]))
+                (String(localized: "infinitive"), [.plain(plain(verb.infinitive.value))]),
+                (String(localized: "translation"), answers(for: verb, form: .translation, correct: [verb.translation]))
             ])
         case .retranslation:
             guard languageService.hasTranslation else { return [] }
             
             return numbered([
-                (.localized(.translation), [.plain(plain(verb.translation))]),
-                (.localized(.infinitive), answers(for: verb, form: .infinitive, correct: [verb.infinitive.value]))
+                (String(localized: "translation"), [.plain(plain(verb.translation))]),
+                (String(localized: "infinitive"), answers(for: verb, form: .infinitive, correct: [verb.infinitive.value]))
             ])
         case .listening:
             return numbered([
                 (nil, [.plain(plain("listen_and_write".localized, isSecondary: true))]),
-                (.localized(.infinitive), [.input(InputField(id: 0,
+                (String(localized: "infinitive"), [.input(InputField(id: 0,
                                                              words: [verb.infinitive],
                                                              isAudio: true,
                                                              isLast: false))]),
-                (.localized(.pastSimple), [.input(InputField(id: 1,
+                (String(localized: "past_simple"), [.input(InputField(id: 1,
                                                              words: simplePast,
                                                              isAudio: true,
                                                              isLast: false))]),
-                (.localized(.pastParticiple), [.input(InputField(id: 2,
+                (String(localized: "past_participle"), [.input(InputField(id: 2,
                                                                  words: pastParticiple,
                                                                  isAudio: true,
                                                                  isLast: true))])
@@ -95,11 +95,11 @@ final class TestQuestionFactory {
             }
             
             sections.append((nil, [.plain(plain("listen_and_record".localized, isSecondary: true))]))
-            sections.append((.localized(.infinitive), [.record(RecordField(word: verb.infinitive, tag: 0, index: 0))]))
-            sections.append((.localized(.pastSimple), simplePast.enumerated().map { index, word in
+            sections.append((String(localized: "infinitive"), [.record(RecordField(word: verb.infinitive, tag: 0, index: 0))]))
+            sections.append((String(localized: "past_simple"), simplePast.enumerated().map { index, word in
                 .record(RecordField(word: word, tag: 1, index: index))
             }))
-            sections.append((.localized(.pastParticiple), pastParticiple.enumerated().map { index, word in
+            sections.append((String(localized: "past_participle"), pastParticiple.enumerated().map { index, word in
                 .record(RecordField(word: word, tag: 2, index: index))
             }))
             

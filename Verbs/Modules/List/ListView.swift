@@ -182,14 +182,14 @@ private extension ListView {
     /// touch any service.
     func preview(for verb: Verb) -> some View {
         VStack(alignment: .leading, spacing: 10) {
-            previewRow(String.localized(.infinitive), word: verb.infinitive)
+            previewRow(String(localized: "infinitive"), word: verb.infinitive)
             
             if let simplePast = verb.simplePast?.first {
-                previewRow(String.localized(.pastSimple), word: simplePast)
+                previewRow(String(localized: "past_simple"), word: simplePast)
             }
             
             if let pastParticiple = verb.pastParticiple?.first {
-                previewRow(String.localized(.pastParticiple), word: pastParticiple)
+                previewRow(String(localized: "past_participle"), word: pastParticiple)
             }
             
             if viewModel.hasTranslation {

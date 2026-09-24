@@ -35,7 +35,7 @@ struct AccentColorView: View {
                 }
                 
                 Section {
-                    Button(String.localized(.matchAppIconWithAccentColor)) {
+                    Button(String(localized: "match_app_icon_with_accent_color")) {
                         appIconService.setIcon(for: AccentColor.current)
                     }
                 }

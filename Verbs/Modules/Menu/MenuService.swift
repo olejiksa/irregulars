@@ -33,9 +33,9 @@ final class MenuService {
     func buildMenu(with builder: UIMenuBuilder) {
         guard builder.system == UIMenuSystem.main else { return }
         
-        let privacyPolicyCommand = UIAction(title: .localized(.privacyPolicy), handler: goToPrivacyPolicy)
-        let termsOfUseCommand = UIAction(title: .localized(.terms), handler: goToTermsOfUse)
-        let contactUsCommand = UIAction(title: .localized(.contactUs), handler: goToMail)
+        let privacyPolicyCommand = UIAction(title: String(localized: "privacy_policy"), handler: goToPrivacyPolicy)
+        let termsOfUseCommand = UIAction(title: String(localized: "terms"), handler: goToTermsOfUse)
+        let contactUsCommand = UIAction(title: String(localized: "contact_us"), handler: goToMail)
         let helpSubmenu = UIMenu(options: .displayInline, children: [privacyPolicyCommand,
                                                                      termsOfUseCommand,
                                                                      contactUsCommand])
@@ -54,14 +54,14 @@ final class MenuService {
                                         : [upgradeToProCommand])
         builder.insertSibling(licenseSubmenu, afterMenu: .about)
 
-        let voiceCommand = UIAction(title: .localized(.voice), handler: goToVoice)
-        let notificationsCommand = UIAction(title: .localized(.notifications), handler: goToNotifications)
+        let voiceCommand = UIAction(title: String(localized: "voice"), handler: goToVoice)
+        let notificationsCommand = UIAction(title: String(localized: "notifications"), handler: goToNotifications)
         let settingsSubmenu = UIMenu(options: .displayInline, children: [voiceCommand,
                                                                          notificationsCommand])
         builder.insertSibling(settingsSubmenu, beforeMenu: licenseSubmenuID)
 
-        let rateAndReviewCommand = UIAction(title: .localized(.rateAndReview) + "…", handler: rateAndReview)
-        let shareAppCommand = UIAction(title: .localized(.shareApp) + "…", handler: shareApp)
+        let rateAndReviewCommand = UIAction(title: String(localized: "rate_and_review") + "…", handler: rateAndReview)
+        let shareAppCommand = UIAction(title: String(localized: "share_app") + "…", handler: shareApp)
         let socialSubmenu = UIMenu(options: .displayInline, children: [rateAndReviewCommand, shareAppCommand])
         builder.insertChild(socialSubmenu, atEndOfMenu: .help)
         let printCommand = UIKeyCommand(title: "print".localized + "…",

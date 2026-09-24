@@ -262,8 +262,8 @@ struct VerbsWidget: Widget {
                     Color(UIColor.systemBackground)
                 }
         }
-        .configurationDisplayName(String.localized(.widgetConfigurationDisplayTitle))
-        .description(String.localized(.widgetDescription))
+        .configurationDisplayName(String(localized: "widget_configuration_display_title"))
+        .description(String(localized: "widget_description"))
         .supportedFamilies([.systemSmall, .systemMedium])
         .contentMarginsDisabled()
     }
