@@ -62,6 +62,11 @@ final class TestViewController: UIViewController {
         UIAccessibility.post(notification: .screenChanged, argument: tableView)
     }
     
+    /// Refreshes the rows in place, without the transition that announces a new question.
+    func refreshRows() {
+        tableView?.reloadData()
+    }
+    
     func endEditing() {
         view.endEditing(true)
     }

@@ -26,6 +26,7 @@ final class TestPresenter: NSObject {
     private let itemsFactory: TestItemsFactory
     
     private var verb: Verb?
+    private var currentTestKind: Test.Kind?
     private var wasHintUsed = false
     
     init(audioService: AudioService,
@@ -68,8 +69,11 @@ final class TestPresenter: NSObject {
     func checkAvailability() {
         guard test == .speaking else { return }
         
-        recordService.checkAvailability {
-            Locator.isMicrophoneAvailable = $0
+        // The current answer first, so the screen is right before any prompt appears.
+        updateMicrophoneAvailability(recordService.isRecordPermissionGranted)
+        
+        recordService.checkAvailability { [weak self] isGranted in
+            self?.updateMicrophoneAvailability(isGranted)
         }
     }
 }
@@ -108,6 +112,20 @@ private extension TestPresenter {
         }
         
         items.remove(at: index)
+        self.currentTestKind = currentTestKind
+        
+        guard buildSections() else {
+            wasHintUsed = false
+            configureRandomComposition()
+            viewController?.reloadData()
+            return
+        }
+    }
+    
+    /// Rebuilds the sections for the verb already on screen. Returns false when there is nothing to show.
+    @discardableResult
+    func buildSections() -> Bool {
+        guard let verb = verb, let currentTestKind = currentTestKind else { return false }
         
         let sections = itemsFactory.build(with: currentTestKind,
                                           verb: verb,
@@ -118,14 +136,20 @@ private extension TestPresenter {
                                           compare: compare,
                                           answerActionBlock: didAnswerTap)
         
-        guard !sections.isEmpty else {
-            wasHintUsed = false
-            configureRandomComposition()
-            viewController?.reloadData()
-            return
-        }
+        guard !sections.isEmpty else { return false }
         
         dataSource.setup(sections)
+        return true
+    }
+    
+    /// Keeps the cached flag and the visible sections in step: the record button and the
+    /// "no access" block are built from it, so a change has to rebuild them.
+    func updateMicrophoneAvailability(_ isAvailable: Bool) {
+        guard Locator.isMicrophoneAvailable != isAvailable else { return }
+        
+        Locator.isMicrophoneAvailable = isAvailable
+        buildSections()
+        viewController?.refreshRows()
     }
     
     func didEndEntering() {

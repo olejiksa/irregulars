@@ -15,6 +15,11 @@ final class RecordService: NSObject {
     private var recordHandler: Block?
     private var stopHandler: Block?
     
+    /// The permission as it stands right now, without prompting.
+    var isRecordPermissionGranted: Bool {
+        AVAudioApplication.shared.recordPermission == .granted
+    }
+    
     func checkAvailability(availabilityBlock: @escaping BoolBlock) {
         recordingSession = AVAudioSession.sharedInstance()
         
