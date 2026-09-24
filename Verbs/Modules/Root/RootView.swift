@@ -20,7 +20,7 @@ struct RootView: View {
     @State private var favorites = ListViewModel(languageService: .init(),
                                                        verbsService: Locator.favoritesService,
                                                        printService: .init())
-    @State private var tests = TestsViewModel(languageService: .init(), hapticService: .init())
+    @State private var tests = TestsViewModel(languageService: .init())
     
     @State private var isShowingEmptyFavorites = false
     @State private var isShowingPaywall = false

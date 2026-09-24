@@ -6,7 +6,6 @@
 //  Copyright © 2021 Oleg Samoylov. All rights reserved.
 //
 
-import UIKit
 import UserNotifications
 
 @MainActor

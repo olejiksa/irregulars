@@ -26,21 +26,22 @@ final class TestsViewModel {
     private(set) var rows: [Row] = []
     private(set) var scrollToTopToken = 0
     
+    /// Bumped to ask the view for a haptic tap.
+    private(set) var errorFeedback = 0
+    
     /// Set by the view controller, which owns the navigation.
     var onSelect: ((Test?) -> Void)?
     var onEmptyFavorites: (() -> Void)?
     var onPaywall: (() -> Void)?
     
     private let languageService: LanguageService
-    private let hapticService: HapticService
     private var cancellables = Set<AnyCancellable>()
     
     /// The row already open in the detail column, so it is not pushed twice.
     private var selectedID: String?
     
-    init(languageService: LanguageService, hapticService: HapticService) {
+    init(languageService: LanguageService) {
         self.languageService = languageService
-        self.hapticService = hapticService
         
         build()
         subscribe()
@@ -50,7 +51,7 @@ final class TestsViewModel {
         if row.test != nil,
            UserDefaults.shared.bool(for: .favoritesOnly),
            Locator.favorites.verbs.isEmpty {
-            hapticService.generateHapticFeedback(for: .notification(.error))
+            errorFeedback += 1
             onEmptyFavorites?()
             return
         }

@@ -29,6 +29,7 @@ struct TestsView: View {
                 withAnimation { proxy.scrollTo(first.id, anchor: .top) }
             }
         }
+        .sensoryFeedback(.error, trigger: viewModel.errorFeedback)
         .navigationTitle("tests")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {

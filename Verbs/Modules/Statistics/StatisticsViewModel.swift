@@ -36,7 +36,6 @@ final class StatisticsViewModel {
     
     private let demoService = DemoService()
     private let languageService = LanguageService()
-    private let hapticService = HapticService()
     private let rateService = RateService()
     private let verbsService = VerbsService()
     
@@ -49,6 +48,9 @@ final class StatisticsViewModel {
     
     var isPaid = FeatureToggle.isPaid
     var isShowingPaywall = false
+
+    /// Bumped to ask the view for a haptic tap.
+    private(set) var warningFeedback = 0
     
     var learnedVerbsCount = 0
     var versbCount = 0
@@ -66,7 +68,7 @@ final class StatisticsViewModel {
     // MARK: Methods
     
     func startErasing(_ statisticsKind: StatisticsKind) {
-        hapticService.generateHapticFeedback(for: .notification(.warning))
+        warningFeedback += 1
         
         switch statisticsKind {
         case .correctAnswers:

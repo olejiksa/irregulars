@@ -14,13 +14,15 @@ import StoreKit
 @Observable
 final class PaywallViewModel {
     
-    private let hapticService = HapticService()
     
     var purchaseService = Locator.purchaseService
     
     var isBuyingPurchaseNotInProgress = true
     
     var isRestoringPurchaseNotInProgress = true
+    
+    /// Bumped to ask the view for a haptic tap.
+    private(set) var errorFeedback = 0
     
     let title: String
     
@@ -45,7 +47,7 @@ final class PaywallViewModel {
             do {
                 try await self?.purchaseService.purchase(product)
             } catch {
-                self?.hapticService.generateHapticFeedback(for: .notification(.error))
+                self?.errorFeedback += 1
                 print(error)
                 // self.router?.show(error: error)
             }
@@ -67,7 +69,7 @@ final class PaywallViewModel {
             do {
                 try await self?.purchaseService.restorePurchases()
             } catch {
-                self?.hapticService.generateHapticFeedback(for: .notification(.error))
+                self?.errorFeedback += 1
                 print(error)
                 // self.router?.show(error: error)
             }

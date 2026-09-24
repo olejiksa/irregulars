@@ -103,6 +103,7 @@ struct PaywallView: View {
                 }
                 .navigationTitle(viewModel.title)
                 .navigationBarTitleDisplayMode(.inline)
+                .sensoryFeedback(.error, trigger: viewModel.errorFeedback)
                 .padding()
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {

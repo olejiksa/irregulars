@@ -106,6 +106,7 @@ struct StatisticsView: View {
         } message: {
             Text("reset_statistics_correct_answers")
         }
+        .sensoryFeedback(.warning, trigger: viewModel.warningFeedback)
         .sheet(isPresented: $viewModel.isShowingPaywall) {
             PaywallView()
         }

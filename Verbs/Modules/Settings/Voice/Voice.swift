@@ -6,7 +6,7 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 struct Voice: Identifiable, Equatable {
     

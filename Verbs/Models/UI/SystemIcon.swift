@@ -6,7 +6,6 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
-import UIKit
 import SwiftUI
 
 enum SystemIcon: String {
@@ -56,6 +55,5 @@ enum SystemIcon: String {
     case compare = "waveform.circle"
     case stopCompare = "waveform.circle.fill"
     
-    var image: UIImage? { UIImage(systemName: rawValue) }
     var imageSwiftUI: Image? { Image(systemName: rawValue) }
 }

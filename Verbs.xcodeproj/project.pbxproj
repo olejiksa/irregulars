@@ -122,8 +122,6 @@
 		EB7DFF8C252B1CE6000B711D /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3BC16251F4D60006E0DC7 /* JSONParser.swift */; };
 		EB7DFF95252B25DD000B711D /* irregulars.json in Resources */ = {isa = PBXBuildFile; fileRef = EBB3BC14251F4BAA006E0DC7 /* irregulars.json */; };
 		EB8325A62556EFF0005E02C1 /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325A52556EFF0005E02C1 /* FavoritesService.swift */; };
-		EB8B2BA925AF5DD5008E0118 /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B2BA825AF5DD5008E0118 /* HapticService.swift */; };
-		EB8B2BAE25AF5E83008E0118 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B2BAD25AF5E83008E0118 /* HapticFeedback.swift */; };
 		EB995B5025E5177F0082DE32 /* MenuService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB995B4F25E5177F0082DE32 /* MenuService.swift */; };
 		EB995B6025E518BC0082DE32 /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8325A52556EFF0005E02C1 /* FavoritesService.swift */; };
 		EB995B6C25E518D10082DE32 /* LanguageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB95BFD25335C3E00376C3F /* LanguageService.swift */; };
@@ -339,8 +337,6 @@
 		EB7DFF6B252451D4000B711D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB7DFF6D252451D4000B711D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB8325A52556EFF0005E02C1 /* FavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesService.swift; sourceTree = "<group>"; };
-		EB8B2BA825AF5DD5008E0118 /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
-		EB8B2BAD25AF5E83008E0118 /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
 		EB995B4F25E5177F0082DE32 /* MenuService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuService.swift; sourceTree = "<group>"; };
 		EB9A4FBB252E8D9800443D47 /* DeeplinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkService.swift; sourceTree = "<group>"; };
 		EB9C5BA72582A3F00086A3D5 /* PlaybackSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackSpeed.swift; sourceTree = "<group>"; };
@@ -760,7 +756,6 @@
 				EB2E4BA525741970005B343A /* AppIconService.swift */,
 				EB2F5E15251F71DD007DCF60 /* AudioService.swift */,
 				EB1EC45825DD88BE00F6299B /* CalendarService.swift */,
-				EB8B2BA825AF5DD5008E0118 /* HapticService.swift */,
 				EB7B8580253B30C600542D3C /* MailService.swift */,
 				EB59AFBF25AB312E005A212C /* NotificationService.swift */,
 				EB6D58E92619F81D00FDA88F /* PlayerService.swift */,
@@ -874,7 +869,6 @@
 			children = (
 				EBE00C9C25C86F2900560A7D /* AccessibilityIdentifier.swift */,
 				EBE605E225B86C7F00EB1CB3 /* AppShortcut.swift */,
-				EB8B2BAD25AF5E83008E0118 /* HapticFeedback.swift */,
 				EBA644B3255988FC0012B973 /* ListState.swift */,
 				EBF593CE258865680091FCE0 /* MenuAction.swift */,
 				EBF4A13E252EC9A3003E3A44 /* SystemIcon.swift */,
@@ -1264,7 +1258,6 @@
 				EBEB1D76251F11900019972C /* AppDelegate.swift in Sources */,
 				EB6D58EA2619F81D00FDA88F /* PlayerService.swift in Sources */,
 				EB59F027258FE7F2004676D2 /* VoiceService.swift in Sources */,
-				EB8B2BAE25AF5E83008E0118 /* HapticFeedback.swift in Sources */,
 				EB59F02C258FE9E1004676D2 /* Gender.swift in Sources */,
 				EB995B5025E5177F0082DE32 /* MenuService.swift in Sources */,
 				EB5D6DF9259ECD2400CCCA85 /* SpotlightService.swift in Sources */,
@@ -1272,7 +1265,6 @@
 				E585BBDB2A7FAD3000ADE934 /* StatisticsViewModel.swift in Sources */,
 				E5059C332A39CC3100891998 /* VoiceView.swift in Sources */,
 				EBDF00892562E8A30041F458 /* TestAssembly.swift in Sources */,
-				EB8B2BA925AF5DD5008E0118 /* HapticService.swift in Sources */,
 				EB26996C256CFAC7007CCF2E /* RateService.swift in Sources */,
 				E52D5D5A2A7ED7950087F361 /* AccentColor.swift in Sources */,
 				E53CA78D2A375BE90058A28E /* PhrasalsService.swift in Sources */,
