@@ -49,7 +49,10 @@ final class SpeechRecognitionService {
         return recognizer.isAvailable && recognizer.supportsOnDeviceRecognition
     }
 
-    func requestAuthorization() async -> Bool {
+    /// `nonisolated` on purpose: the Speech headers do not mark this handler
+    /// `@Sendable`, so from a `@MainActor` context it would inherit that isolation and
+    /// assert the main queue — which is not where the framework calls it back.
+    nonisolated func requestAuthorization() async -> Bool {
         await withCheckedContinuation { continuation in
             SFSpeechRecognizer.requestAuthorization { status in
                 continuation.resume(returning: status == .authorized)

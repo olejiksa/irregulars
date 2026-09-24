@@ -294,7 +294,9 @@ private extension TestSessionViewModel {
         AVAudioApplication.shared.recordPermission == .granted
     }
     
-    func requestMicrophonePermission() async -> Bool {
+    /// Off the main actor for the same reason as the recogniser's own request: the
+    /// handler comes back on a queue of the framework's choosing.
+    nonisolated func requestMicrophonePermission() async -> Bool {
         await withCheckedContinuation { continuation in
             AVAudioApplication.requestRecordPermission { allowed in
                 continuation.resume(returning: allowed)
