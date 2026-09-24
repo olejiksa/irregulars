@@ -31,10 +31,8 @@ struct OnboardingView: View {
                 
                 Button {
                     if viewModel.isLast {
-                        viewModel.finish()
                         dismiss()
                     } else {
-                        viewModel.continue()
                         viewModel.selection += 1
                     }
                 } label: {
@@ -60,7 +58,6 @@ struct OnboardingView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-                        viewModel.close()
                         dismiss()
                     }) {
                         SystemIcon.close.imageSwiftUI?.foregroundColor(.white)

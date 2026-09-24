@@ -9,11 +9,9 @@
 import UIKit
 import StoreKit
 import NotificationCenter
-import YandexMobileMetrica
 
 final class AppDelegate: UIResponder {
 
-    private let analyticsService = AnalyticsService()
     private let deeplinkService = DeeplinkService()
     private let menuService = MenuService()
     private let printService = PrintService()
@@ -69,7 +67,6 @@ extension AppDelegate: UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UNUserNotificationCenter.current().delegate = self
         initializePurchaseActivity()
-        analyticsService.start()
         return true
     }
 }

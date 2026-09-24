@@ -12,7 +12,6 @@ import StoreKit
 @MainActor
 final class PaywallViewModel: ObservableObject {
     
-    private let analyticsService = AnalyticsService()
     private let hapticService = HapticService()
     
     @Published
@@ -28,7 +27,6 @@ final class PaywallViewModel: ObservableObject {
     
     init() {
         title = Bundle.main.productName.map { "\($0) Pro" } ?? ""
-        analyticsService.send(event: .paywallOpened)
     }
     
     var canMakePayments: Bool {
@@ -55,8 +53,6 @@ final class PaywallViewModel: ObservableObject {
             
             self?.isBuyingPurchaseNotInProgress = true
         }
-        
-        analyticsService.send(event: .paywallBuyTapped)
     }
     
     func restore(dismiss: @escaping Block) {

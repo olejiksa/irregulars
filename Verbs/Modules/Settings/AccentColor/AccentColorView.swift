@@ -18,7 +18,6 @@ struct AccentColorView: View {
     @State private var selectedItem: AccentColor? = .current
     
     init(settingsViewModel: SettingsViewModel) {
-        AnalyticsService().send(event: .accentColorOpened)
         _settingsViewModel = StateObject(wrappedValue: settingsViewModel)
     }
 

@@ -11,7 +11,6 @@ import SwiftUI
 
 final class NotificationsViewModel: ObservableObject {
     
-    private let analyticsService = AnalyticsService()
     private let calendarService = CalendarService()
     private let notificationService = NotificationService(verbsService: .init(), calendarService: .init())
     
@@ -68,7 +67,6 @@ final class NotificationsViewModel: ObservableObject {
         startDate = calendarService.date(from: since) ?? .now
         endDate = calendarService.date(from: to) ?? .now
         
-        analyticsService.send(event: .notificationsOpened)
         updateNotificationsAvailability()
     }
     

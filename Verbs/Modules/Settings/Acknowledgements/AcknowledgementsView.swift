@@ -10,10 +10,6 @@ import SwiftUI
 
 struct AcknowledgementsView: View {
     
-    init() {
-        AnalyticsService().send(event: .acknowledgmentsOpened)
-    }
-    
     var body: some View {
         List {
             Section("sentences") {

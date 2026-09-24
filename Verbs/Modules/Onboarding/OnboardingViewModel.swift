@@ -17,8 +17,6 @@ final class OnboardingViewModel: ObservableObject {
         selection == items.count - 1
     }
     
-    private let analyticsService = AnalyticsService()
-    
     init() {
         items = [
             .init(id: 0,
@@ -50,19 +48,5 @@ final class OnboardingViewModel: ObservableObject {
                   title: "onboarding.are_you_ready_for_it".localized,
                   content: "onboarding.are_you_ready_for_it.description".localized)
         ]
-        
-        analyticsService.send(event: .onboardingStarted)
-    }
-    
-    func close() {
-        analyticsService.send(event: .onboardingClosed)
-    }
-    
-    func `continue`() {
-        analyticsService.send(event: .onboardingContinueTapped)
-    }
-    
-    func finish() {
-        analyticsService.send(event: .onboardingFinished)
     }
 }
