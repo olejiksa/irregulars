@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6217C04232432D0B1F7C02DE /* VerbsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD399F5875A464DF00519AF3 /* VerbsStore.swift */; };
+		E339E17DDC2FD479418C989F /* VerbsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD399F5875A464DF00519AF3 /* VerbsStore.swift */; };
 		877566C32B29AA50DAEAC3E3 /* TestsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D385C59BB7ED93030464CCCB /* TestsViewModel.swift */; };
 		CF518AB6F796504A204BA91F /* TestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD818E9CA6B2128FC177E8D /* TestsView.swift */; };
 		48F2B5CA440B4CAEC4BB7A84 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6D43B2632BB8FAA1F7D6A6 /* ListViewModel.swift */; };
@@ -287,6 +289,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FD399F5875A464DF00519AF3 /* VerbsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbsStore.swift; sourceTree = "<group>"; };
 		D385C59BB7ED93030464CCCB /* TestsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsViewModel.swift; sourceTree = "<group>"; };
 		1AD818E9CA6B2128FC177E8D /* TestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsView.swift; sourceTree = "<group>"; };
 		6D6D43B2632BB8FAA1F7D6A6 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
@@ -1097,6 +1100,7 @@
 		EBE4AD052582AF1F001E9E4A /* Verbs */ = {
 			isa = PBXGroup;
 			children = (
+				FD399F5875A464DF00519AF3 /* VerbsStore.swift */,
 				EB8325A52556EFF0005E02C1 /* FavoritesService.swift */,
 				EBEB1D91251F15B40019972C /* VerbsService.swift */,
 				EBE4AD062582AF33001E9E4A /* VerbsServiceProtocol.swift */,
@@ -1450,6 +1454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6217C04232432D0B1F7C02DE /* VerbsStore.swift in Sources */,
 				484C281E194D6D858C66B773 /* VerbsWidgetConfigurationIntent.swift in Sources */,
 				EB23925B25EBA3BE009BE502 /* Mistakes.swift in Sources */,
 				EB995B7E25E518F70082DE32 /* SpotlightService.swift in Sources */,
@@ -1500,6 +1505,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E339E17DDC2FD479418C989F /* VerbsStore.swift in Sources */,
 				877566C32B29AA50DAEAC3E3 /* TestsViewModel.swift in Sources */,
 				CF518AB6F796504A204BA91F /* TestsView.swift in Sources */,
 				48F2B5CA440B4CAEC4BB7A84 /* ListViewModel.swift in Sources */,

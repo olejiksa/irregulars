@@ -10,8 +10,6 @@ import Foundation
 
 final class FavoritesService: VerbsServiceProtocol {
     
-    private let parser = JSONParser<Verb>()
-    private let similarityService = SimilarityService()
     
     var favoritesOnly: Bool { true }
     
@@ -88,8 +86,7 @@ private extension FavoritesService {
 //        #if DEBUG
 //        items = VerbsService().items.filter { ["get", "go", "make", "slit", "strew", "teach", "vex"].contains($0.infinitive.value) }
 //        #else
-        var set = Set(parser.read(from: .irregulars))
-        set = Set(set.map(similarityService.similar))
+        let set = VerbsStore.all
         
         items = Array(set.intersection(Locator.favorites.verbs)).sorted(by: <)
 //        #endif

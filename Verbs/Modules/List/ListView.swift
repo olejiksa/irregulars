@@ -95,7 +95,7 @@ private extension ListView {
         .contextMenu {
             favoriteButton(for: verb)
         } preview: {
-            DetailView(viewModel: .init(verb: verb))
+            preview(for: verb)
         }
         .swipeActions(edge: .trailing) {
             if viewModel.favoritesOnly {
@@ -108,6 +108,45 @@ private extension ListView {
         }
         .if(viewModel.canDrag(verb)) { view in
             view.onDrag { NSItemProvider(object: VerbDragItem(verb: verb)) }
+        }
+    }
+    
+    /// Built from the verb alone: this runs for every visible row, so it must not
+    /// touch any service.
+    func preview(for verb: Verb) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            previewRow(String.localized(.infinitive), word: verb.infinitive)
+            
+            if let simplePast = verb.simplePast?.first {
+                previewRow(String.localized(.pastSimple), word: simplePast)
+            }
+            
+            if let pastParticiple = verb.pastParticiple?.first {
+                previewRow(String.localized(.pastParticiple), word: pastParticiple)
+            }
+            
+            if viewModel.hasTranslation {
+                Text(verbatim: verb.translation)
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+            }
+        }
+        .padding(20)
+    }
+    
+    func previewRow(_ caption: String, word: Word) -> some View {
+        VStack(alignment: .leading, spacing: 2) {
+            Text(verbatim: caption)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+            HStack(spacing: 8) {
+                Text(verbatim: word.value)
+                    .bold()
+                if FeatureToggle.isPaid {
+                    Text(verbatim: word.transcription)
+                        .foregroundStyle(.secondary)
+                }
+            }
         }
     }
     

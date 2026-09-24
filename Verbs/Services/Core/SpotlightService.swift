@@ -17,6 +17,10 @@ final class SpotlightService {
     func setupSpotlight(with verbs: [Verb]) {
         guard !isIndexed else { return }
         
+        // Claimed up front: indexing is asynchronous, and the callers change several
+        // settings in a row, so the flag would otherwise still be false on each call.
+        isIndexed = true
+        
         let searchableItems: [CSSearchableItem] = verbs.map {
             let infinitive = "\($0.infinitive.value)"
             let simplePast = $0.simplePast?.map(\.value).joined(separator: ", ") ?? ""
@@ -37,11 +41,10 @@ final class SpotlightService {
         }
         
         searchableIndex.indexSearchableItems(searchableItems) { [weak self] error in
-            guard let error = error else {
-                self?.isIndexed = true
-                return
-            }
+            guard let error = error else { return }
             
+            // Let a later call try again.
+            self?.isIndexed = false
             print(error.localizedDescription)
         }
     }

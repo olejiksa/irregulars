@@ -8,7 +8,9 @@
 
 final class SentencesService {
     
-    private let parser = JSONParser<Sentence>()
+    /// Decoding the file costs real time, and the contents never change,
+    /// so every instance shares one parse.
+    private static let allItems: [Sentence] = JSONParser<Sentence>().read(from: .sentences)
 
     private(set) var items: [Sentence] = []
     
@@ -60,6 +62,6 @@ final class SentencesService {
 private extension SentencesService {
     
     func setItems() {
-        items = parser.read(from: .sentences)
+        items = Self.allItems
     }
 }
