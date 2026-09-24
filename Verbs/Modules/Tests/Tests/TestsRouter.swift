@@ -12,7 +12,7 @@ import UIKit
 @MainActor
 final class TestsRouter {
     
-    private weak var viewController: UIViewController?
+    weak var viewController: UIViewController?
     private weak var splitViewController: UISplitViewController?
     
     init(viewController: UIViewController?,

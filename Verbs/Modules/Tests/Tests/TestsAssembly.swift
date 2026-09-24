@@ -17,13 +17,15 @@ final class TestsAssembly: AssemblyProtocol {
     }
     
     func viewController() -> some TestsViewController {
-        let presenter = TestsPresenter(languageService: .init(), hapticService: .init())
-        let viewConroller = TestsViewController(presenter: presenter)
-        let navigationController = UINavigationController(rootViewController: viewConroller)
+        let viewModel = TestsViewModel(languageService: .init(), hapticService: .init())
+        
+        let navigationController = UINavigationController()
         navigationController.view.backgroundColor = .systemBackground
-        let router = TestsRouter(viewController: viewConroller, splitViewController: splitViewController)
-        presenter.viewController = viewConroller
-        presenter.router = router
-        return viewConroller
+        let router = TestsRouter(viewController: nil, splitViewController: splitViewController)
+        
+        let viewController = TestsViewController(viewModel: viewModel, router: router)
+        navigationController.setViewControllers([viewController], animated: false)
+        router.viewController = viewController
+        return viewController
     }
 }

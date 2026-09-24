@@ -6,24 +6,28 @@
 //  Copyright © 2020 Oleg Samoylov. All rights reserved.
 //
 
+import Combine
+import SwiftUI
 import UIKit
 
-final class TestsViewController: UIViewController {
+final class TestsViewController: UIHostingController<TestsView> {
     
-    private let presenter: TestsPresenter
-    private var tableView: UITableView?
-    private var keyboardService: KeyboardService?
-    private var keyboardHeightLayoutConstraint: NSLayoutConstraint?
+    private let viewModel: TestsViewModel
+    private let router: TestsRouter
     private var moreButton: UIBarButtonItem?
-    private var topInset: CGFloat = 0
+    private var cancellables = Set<AnyCancellable>()
     
-    init(presenter: TestsPresenter) {
-        self.presenter = presenter
+    init(viewModel: TestsViewModel, router: TestsRouter) {
+        self.viewModel = viewModel
+        self.router = router
         
-        super.init(nibName: nil, bundle: nil)
+        super.init(rootView: TestsView(viewModel: viewModel))
+        
+        viewModel.onSelect = { [weak self] test in self?.open(test) }
+        viewModel.onEmptyFavorites = { [weak self] in self?.router.showEmptyFavorites() }
     }
     
-    required init?(coder: NSCoder) {
+    @MainActor required dynamic init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -31,16 +35,7 @@ final class TestsViewController: UIViewController {
         super.viewDidLoad()
 
         setupNavigationBar()
-        setupTableView()
-        setupView()
-        setupSections()
-        setupKeyboardService()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        topInset = -(tableView?.safeAreaInsets.top ?? 0)
+        subscribe()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,13 +45,6 @@ final class TestsViewController: UIViewController {
                                         object: nil,
                                         userInfo: [:])
     }
-    
-    func reloadData() {
-        DispatchQueue.main.async {
-            self.buildMenu(for: self.moreButton)
-            self.tableView?.reloadData()
-        }
-    }
 }
 
 // MARK: - Scrollable
@@ -64,9 +52,7 @@ final class TestsViewController: UIViewController {
 extension TestsViewController: Scrollable {
     
     func scrollToTop() {
-        guard let tableView = tableView else { return }
-        let y = max(topInset, -tableView.safeAreaInsets.top - 52)
-        tableView.setContentOffset(.init(x: 0, y: y), animated: true)
+        viewModel.scrollToTop()
     }
 }
 
@@ -92,43 +78,21 @@ private extension TestsViewController {
             : SystemIcon.unfilter.image
     }
     
-    func setupTableView() {
-        let tableViewStyle: UITableView.Style = splitViewController?.isCollapsed == true ? .plain : .insetGrouped
-        let tableView = UITableView(frame: .zero, style: tableViewStyle)
-        
-        view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-
-        let keyboardHeightLayoutConstraint = tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            keyboardHeightLayoutConstraint
-        ])
-        
-        tableView.dataSource = presenter.dataSource
-        tableView.delegate = presenter
-        
-        tableView.register(TestCell.self)
-        
-        tableView.tableFooterView = UIView()
-        
-        self.keyboardHeightLayoutConstraint = keyboardHeightLayoutConstraint
-        self.tableView = tableView
+    /// The purchase can unlock menu options, so the menu is rebuilt when it lands.
+    func subscribe() {
+        NotificationCenter.default.publisher(for: .reload)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in self?.buildMenu(for: self?.moreButton) }
+            .store(in: &cancellables)
     }
     
-    func setupView() {
-        view.backgroundColor = .systemBackground
-    }
-    
-    func setupSections() {
-        presenter.setupSections()
-    }
-    
-    func setupKeyboardService() {
-        keyboardService = .init(keyboardHeightLayoutConstraint: keyboardHeightLayoutConstraint, view: view)
+    func open(_ test: Test?) {
+        guard let test = test else {
+            router.goToStatistics()
+            return
+        }
+        
+        router.goTo(test: test)
     }
     
     func buildMenu(for barButtonItem: UIBarButtonItem?) {
@@ -179,7 +143,7 @@ private extension TestsViewController {
             let newState = favoritesOnly == state
             UserDefaults.shared.set(newState, for: .favoritesOnly)
         } else if action.state == .off {
-            presenter.router?.goToPaywall()
+            router.goToPaywall()
         } else {
             return
         }
@@ -189,7 +153,7 @@ private extension TestsViewController {
     
     func handleRegularsMenu(action: UIAction) {
         guard FeatureToggle.isPaid else {
-            presenter.router?.goToPaywall()
+            router.goToPaywall()
             return
         }
         
@@ -200,7 +164,7 @@ private extension TestsViewController {
     
     func handleDerivativesMenu(action: UIAction) {
         guard FeatureToggle.isPaid else {
-            presenter.router?.goToPaywall()
+            router.goToPaywall()
             return
         }
         
