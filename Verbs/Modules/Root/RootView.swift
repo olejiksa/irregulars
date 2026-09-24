@@ -10,22 +10,26 @@ import SwiftUI
 
 struct RootView: View {
     
-    @Bindable var router: AppRouter
+    @Bindable var router = AppRouter.shared
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     
-    @State private var allVerbs = ListViewModel(languageService: .init(),
-                                                      verbsService: VerbsService(),
-                                                      printService: .init())
-    @State private var favorites = ListViewModel(languageService: .init(),
-                                                       verbsService: Locator.favoritesService,
-                                                       printService: .init())
+    @State private var catalogue: VerbCatalogue
+    @State private var allVerbs: ListViewModel
+    @State private var favorites: ListViewModel
     @State private var tests = TestsViewModel(languageService: .init())
     
     @State private var isShowingEmptyFavorites = false
     @State private var isShowingPaywall = false
     @State private var isShowingOnboarding = FeatureToggle.isOnboardingAvailable
     @State private var accentColor = AccentColor.current
+    
+    init() {
+        let catalogue = VerbCatalogue()
+        _catalogue = State(wrappedValue: catalogue)
+        _allVerbs = State(wrappedValue: ListViewModel(favoritesOnly: false, catalogue: catalogue))
+        _favorites = State(wrappedValue: ListViewModel(favoritesOnly: true, catalogue: catalogue))
+    }
     
     var body: some View {
         Group {
@@ -175,7 +179,7 @@ private extension RootView {
     func view(for route: TestsRoute) -> some View {
         switch route {
         case .test(let test):
-            TestSessionScreen(test: test) { router.testsRoute = nil }
+            TestSessionScreen(test: test, catalogue: catalogue) { router.testsRoute = nil }
         case .statistics:
             StatisticsView()
         }
@@ -264,9 +268,9 @@ private struct TestSessionScreen: View {
     
     @State private var viewModel: TestSessionViewModel
     
-    init(test: Test, onFinish: @escaping () -> Void) {
+    init(test: Test, catalogue: VerbCatalogue, onFinish: @escaping () -> Void) {
         self.onFinish = onFinish
-        _viewModel = State(wrappedValue: TestAssembly(test: test).viewModel())
+        _viewModel = State(wrappedValue: TestAssembly(test: test, catalogue: catalogue).viewModel())
     }
     
     var body: some View {

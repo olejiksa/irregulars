@@ -14,14 +14,14 @@ import Foundation
 final class DeeplinkService {
     
     private let router: AppRouter
-    private let verbsService = VerbsService()
+    private let catalogue = VerbCatalogue()
     
     init(router: AppRouter) {
         self.router = router
     }
     
     func handle(_ host: String) {
-        guard let verb = verbsService.items.first(where: { host == $0.infinitive.value }) else { return }
+        guard let verb = catalogue.verb(named: host) else { return }
         
         router.show(verb)
     }

@@ -14,7 +14,7 @@ import SwiftUI
 final class NotificationsViewModel {
     
     private let calendarService = CalendarService()
-    private let notificationService = NotificationService(verbsService: .init(), calendarService: .init())
+    private let notificationService = NotificationService(calendarService: .init())
     
     var areNotificationsAvailable = false
     

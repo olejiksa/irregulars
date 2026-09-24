@@ -12,21 +12,19 @@ import Foundation
 final class TestAssembly {
     
     private let test: Test
+    private let catalogue: VerbCatalogue
     
-    init(test: Test) {
+    init(test: Test, catalogue: VerbCatalogue) {
         self.test = test
+        self.catalogue = catalogue
     }
     
     func viewModel() -> TestSessionViewModel {
-        let verbsService = VerbsService()
-        let factory = TestQuestionFactory(languageService: .init(),
-                                          sentencesService: .init(),
-                                          verbsService: verbsService)
+        let factory = TestQuestionFactory(catalogue: catalogue)
         return TestSessionViewModel(audioService: AudioService(voiceService: .init()),
                                              recordService: .init(),
                                              playerService: .init(),
-                                             verbsService: verbsService,
-                                             favoritesService: Locator.favoritesService,
+                                             catalogue: catalogue,
                                              demoService: .init(),
                                              factory: factory,
                                     test: test)

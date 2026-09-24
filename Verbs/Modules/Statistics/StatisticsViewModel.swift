@@ -29,7 +29,7 @@ final class StatisticsViewModel {
     }
     
     var counts: [Int] {
-        [demoService.items.count, verbsService.items.count]
+        [demoService.items.count, catalogue.allVerbs.count]
     }
     
     // MARK: Services
@@ -37,7 +37,7 @@ final class StatisticsViewModel {
     private let demoService = DemoService()
     private let languageService = LanguageService()
     private let rateService = RateService()
-    private let verbsService = VerbsService()
+    private let catalogue = VerbCatalogue()
     
     // MARK: Publishers
     
@@ -121,9 +121,9 @@ private extension StatisticsViewModel {
         
         let learnedCount = Locator.statistics.info.filter { $0.value >= 3 }.count
         let inProgressCount = Locator.statistics.info.filter { $0.value > 0 && $0.value < 3 }.count
-        let verbsCount = verbsService.items.count
+        let verbsCount = catalogue.allVerbs.count
 
-        let mistakes = verbsService.items
+        let mistakes = catalogue.allVerbs
             .filter { !Locator.favorites.verbs.contains($0) &&
                 (Locator.mistakes.info[$0.infinitive.value] ?? 0) > 0 }
             .first(count: 5)
@@ -151,9 +151,9 @@ private extension StatisticsViewModel {
         
         let learnedCount = 50
         let inProgressCount = 100
-        let verbsCount = verbsService.items.count
+        let verbsCount = catalogue.allVerbs.count
 
-        let mistakes = [verbsService.randomItem].compactMap { $0 }
+        let mistakes = [catalogue.allVerbs.randomElement()].compactMap { $0 }
         
         return .init(verbsCount: verbsCount,
                      learnedWordsCount: learnedCount,

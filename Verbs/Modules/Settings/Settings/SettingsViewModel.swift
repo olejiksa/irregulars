@@ -27,7 +27,7 @@ final class SettingsViewModel {
     // MARK: Services
     
     private let languageService = LanguageService()
-    private let notificationService = NotificationService(verbsService: .init(), calendarService: .init())
+    private let notificationService = NotificationService(calendarService: .init())
     
     // MARK: Publishers
     

@@ -22,7 +22,7 @@ final class ListViewModel {
     private(set) var sections: [VerbSection] = []
     private(set) var searchResults: [Verb] = []
     private(set) var state: ListState = .data
-    private(set) var showsTranslation = false
+    var showsTranslation = false
     private(set) var showsSectionIndex = true
     private(set) var scrollToTopToken = 0
     
@@ -43,19 +43,24 @@ final class ListViewModel {
     /// Set by the view controller, which owns the navigation.
     var onSelect: ((Verb) -> Void)?
     
-    private let languageService: LanguageService
-    private let verbsService: VerbsServiceProtocol
+    private let catalogue: VerbCatalogue
     private let printService: PrintService
     private var cancellables = Set<AnyCancellable>()
     
-    init(languageService: LanguageService,
-         verbsService: VerbsServiceProtocol,
-         printService: PrintService) {
-        self.languageService = languageService
-        self.verbsService = verbsService
+    /// The filters this list applies, kept here rather than inside a shared service:
+    /// the tests screen has its own pair and they must not merge.
+    private var showsRegulars = true
+    private var showsDerivatives = true
+    private var groupsBySimilarity = false
+    
+    init(favoritesOnly: Bool,
+         catalogue: VerbCatalogue,
+         languageService: LanguageService = .init(),
+         printService: PrintService = .init()) {
+        self.favoritesOnly = favoritesOnly
+        self.catalogue = catalogue
         self.printService = printService
         
-        favoritesOnly = verbsService.favoritesOnly
         hasTranslation = languageService.hasTranslation
         
         loadSettings()
@@ -76,7 +81,6 @@ final class ListViewModel {
     // MARK: Search
     
     func updateSearch(text: String) {
-        verbsService.searchText = text
         rebuild()
     }
     
@@ -88,17 +92,17 @@ final class ListViewModel {
     // MARK: Menu
     
     func updateRegulars(_ value: Bool) {
-        verbsService.shouldRegularVerbsBeShown = value
+        showsRegulars = value
         rebuild()
     }
     
     func updateDerivatives(_ value: Bool) {
-        verbsService.shouldDerivativesBeShown = value
+        showsDerivatives = value
         rebuild()
     }
     
     func print() {
-        printService.print(verbsService.items, hasTranslation: hasTranslation)
+        printService.print(verbs, hasTranslation: hasTranslation)
     }
     
     // MARK: Favorites
@@ -135,25 +139,25 @@ final class ListViewModel {
     // MARK: Menu
     
     var showsTranslationBinding: Binding<Bool> {
-        .init(get: { [weak self] in self?.verbsService.shouldTranslationBeShown ?? false },
+        .init(get: { [weak self] in self?.showsTranslation ?? false },
               set: { [weak self] value in
                   UserDefaults.shared.set(value, for: .shouldTranslationBeShown)
-                  self?.verbsService.shouldTranslationBeShown = value
+                  self?.showsTranslation = value && (self?.hasTranslation ?? false)
                   self?.rebuild()
               })
     }
     
     var groupsBySimilarityBinding: Binding<Bool> {
-        .init(get: { [weak self] in self?.verbsService.shouldSimilarBeShown ?? false },
+        .init(get: { [weak self] in self?.groupsBySimilarity ?? false },
               set: { [weak self] value in
                   UserDefaults.shared.set(value, for: .shouldSimilarBeShown)
-                  self?.verbsService.shouldSimilarBeShown = value
+                  self?.groupsBySimilarity = value
                   self?.rebuild()
               })
     }
     
     var showsRegularsBinding: Binding<Bool> {
-        .init(get: { [weak self] in self?.verbsService.shouldRegularVerbsBeShown ?? false },
+        .init(get: { [weak self] in self?.showsRegulars ?? false },
               set: { [weak self] value in
                   UserDefaults.shared.set(value, for: .regularVerbs)
                   self?.updateRegulars(value)
@@ -161,7 +165,7 @@ final class ListViewModel {
     }
     
     var showsDerivativesBinding: Binding<Bool> {
-        .init(get: { [weak self] in self?.verbsService.shouldDerivativesBeShown ?? false },
+        .init(get: { [weak self] in self?.showsDerivatives ?? false },
               set: { [weak self] value in
                   UserDefaults.shared.set(value, for: .derivatives)
                   self?.updateDerivatives(value)
@@ -183,10 +187,17 @@ final class ListViewModel {
 extension ListViewModel {
     
     fileprivate func loadSettings() {
-        verbsService.shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .regularVerbs)
-        verbsService.shouldDerivativesBeShown = UserDefaults.shared.bool(for: .derivatives)
-        verbsService.shouldTranslationBeShown = UserDefaults.shared.bool(for: .shouldTranslationBeShown)
-        verbsService.shouldSimilarBeShown = UserDefaults.shared.bool(for: .shouldSimilarBeShown)
+        showsRegulars = UserDefaults.shared.bool(for: .regularVerbs)
+        showsDerivatives = UserDefaults.shared.bool(for: .derivatives)
+        showsTranslation = UserDefaults.shared.bool(for: .shouldTranslationBeShown) && hasTranslation
+        groupsBySimilarity = UserDefaults.shared.bool(for: .shouldSimilarBeShown)
+    }
+    
+    /// The verbs this list shows, before searching.
+    var verbs: [Verb] {
+        catalogue.verbs(favoritesOnly: favoritesOnly,
+                        includingRegular: showsRegulars,
+                        includingDerived: showsDerivatives)
     }
     
     func subscribe() {
@@ -205,17 +216,19 @@ extension ListViewModel {
     }
     
     func rebuild() {
-        showsTranslation = verbsService.shouldTranslationBeShown && hasTranslation
-        showsSectionIndex = !isSearchActive && !verbsService.shouldSimilarBeShown
+        showsSectionIndex = !isSearchActive && !groupsBySimilarity
         
-        sections = verbsService.headers.enumerated().map { index, header in
-            VerbSection(id: index, header: header, verbs: verbsService.groupedItems[safe: index] ?? [])
+        let verbs = verbs
+        let grouping = catalogue.grouped(verbs, bySimilarity: groupsBySimilarity)
+        sections = zip(grouping.headers.indices, grouping.headers).map { index, header in
+            VerbSection(id: index, header: header, verbs: grouping.groups[safe: index] ?? [])
         }
-        searchResults = verbsService.searchedItems
         
-        let items = isSearchActive ? verbsService.searchedItems : verbsService.items
+        searchResults = catalogue.search(searchText, in: verbs)
+        
+        let shown = isSearchActive ? searchResults : verbs
         state = ListState(isSearchActive: isSearchActive,
-                          isSearchTextEmpty: verbsService.searchText.isEmpty,
-                          areItemsEmpty: items.isEmpty)
+                          isSearchTextEmpty: searchText.isEmpty,
+                          areItemsEmpty: shown.isEmpty)
     }
 }

@@ -15,15 +15,15 @@ final class TestQuestionFactory {
     private let sentencesService: SentencesService
     private let verbs: [Verb]
     
-    init(languageService: LanguageService,
-         sentencesService: SentencesService,
-         verbsService: VerbsService) {
+    init(catalogue: VerbCatalogue,
+         languageService: LanguageService = .init(),
+         sentencesService: SentencesService = .init()) {
         self.languageService = languageService
         self.sentencesService = sentencesService
         
-        verbsService.shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .regularVerbsTests)
-        verbsService.shouldDerivativesBeShown = UserDefaults.shared.bool(for: .derivativesTests)
-        verbs = verbsService.items
+        // The wrong answers are drawn from whatever the tests are set to cover.
+        verbs = catalogue.verbs(includingRegular: UserDefaults.shared.bool(for: .regularVerbsTests),
+                                includingDerived: UserDefaults.shared.bool(for: .derivativesTests))
     }
     
     func build(with testKind: Test.Kind, verb: Verb) -> [TestSection] {

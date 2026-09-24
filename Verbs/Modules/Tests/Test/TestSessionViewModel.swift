@@ -31,8 +31,7 @@ final class TestSessionViewModel {
     private let audioService: AudioService
     private let recordService: RecordService
     private let playerService: PlayerService
-    private let verbsService: VerbsService
-    private let favoritesService: FavoritesService
+    private let catalogue: VerbCatalogue
     private let factory: TestQuestionFactory
     
     private var verb: Verb?
@@ -42,30 +41,24 @@ final class TestSessionViewModel {
     init(audioService: AudioService,
          recordService: RecordService,
          playerService: PlayerService,
-         verbsService: VerbsService,
-         favoritesService: FavoritesService,
+         catalogue: VerbCatalogue,
          demoService: DemoService,
          factory: TestQuestionFactory,
          test: Test) {
         self.audioService = audioService
         self.recordService = recordService
         self.playerService = playerService
-        self.verbsService = verbsService
-        self.favoritesService = favoritesService
+        self.catalogue = catalogue
         self.factory = factory
         self.test = test
         
-        switch (UserDefaults.shared.bool(for: .favoritesOnly), !UserDefaults.shared.bool(for: .isPaid)) {
-        case (true, false):
-            items = favoritesService.items.map(\.infinitive.value)
-        case (false, false):
-            items = verbsService.items.map(\.infinitive.value)
-        case (_, true):
-            items = verbsService.items.map(\.infinitive.value).filter(demoService.items.contains)
-        }
+        // The filters have to be applied before the pool is taken, not after.
+        let pool = catalogue.verbs(favoritesOnly: UserDefaults.shared.bool(for: .favoritesOnly),
+                                   includingRegular: UserDefaults.shared.bool(for: .regularVerbsTests),
+                                   includingDerived: UserDefaults.shared.bool(for: .derivativesTests))
+            .map(\.infinitive.value)
         
-        verbsService.shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .regularVerbsTests)
-        verbsService.shouldDerivativesBeShown = UserDefaults.shared.bool(for: .derivativesTests)
+        items = FeatureToggle.isPaid ? pool : pool.filter(demoService.items.contains)
         
         nextQuestion()
     }
@@ -192,9 +185,7 @@ private extension TestSessionViewModel {
         wasHintUsed = false
         answeredIDs = []
         
-        verb = UserDefaults.shared.bool(for: .favoritesOnly) && FeatureToggle.isPaid
-            ? favoritesService.verb(of: items.randomElement())
-            : verbsService.verb(of: items.randomElement())
+        verb = catalogue.verb(named: items.randomElement())
         
         guard let verb = verb,
               let index = items.firstIndex(of: verb.infinitive.value),

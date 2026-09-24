@@ -28,6 +28,11 @@ final class AppDelegate: UIResponder {
 
 private extension AppDelegate {
     
+    /// Used to happen inside the verbs service, which each screen had its own copy of.
+    func indexForSpotlight() {
+        SpotlightService().setupSpotlight(with: VerbCatalogue().allVerbs)
+    }
+    
     func registerSettings() {
         UserDefaults.shared.register(true, for: .regularVerbs)
         UserDefaults.shared.register(true, for: .regularVerbsTests)
@@ -60,6 +65,7 @@ extension AppDelegate: UIApplicationDelegate {
         registerSettings()
         UNUserNotificationCenter.current().delegate = self
         initializePurchaseActivity()
+        indexForSpotlight()
         return true
     }
 }

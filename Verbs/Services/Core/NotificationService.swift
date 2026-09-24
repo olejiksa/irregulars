@@ -11,13 +11,13 @@ import UserNotifications
 @MainActor
 final class NotificationService {
     
-    private let verbsService: VerbsService
+    private let catalogue: VerbCatalogue
     private let calendarService: CalendarService
     private let center = UNUserNotificationCenter.current()
     
-    init(verbsService: VerbsService,
+    init(catalogue: VerbCatalogue = .init(),
          calendarService: CalendarService) {
-        self.verbsService = verbsService
+        self.catalogue = catalogue
         self.calendarService = calendarService
     }
     
@@ -82,7 +82,7 @@ final class NotificationService {
             let dates = calendarService.schedule(count: frequency, startDate: sinceDate, endDate: toDate)
             
             for frequencyDate in dates {
-                guard let verb = verbsService.randomItem,
+                guard let verb = catalogue.allVerbs.randomElement(),
                       let missed = (0...2).randomElement() else { continue }
                 
                 let infinitive = verb.infinitive.value

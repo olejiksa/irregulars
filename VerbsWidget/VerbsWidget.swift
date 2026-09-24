@@ -39,12 +39,12 @@ struct Provider: AppIntentTimelineProvider {
         
         switch displayOption {
         case .all:
-            let service = VerbsService()
-            service.shouldDerivativesBeShown = UserDefaults.shared.bool(for: .derivatives)
-            service.shouldRegularVerbsBeShown = UserDefaults.shared.bool(for: .regularVerbs)
+            let verbs = VerbCatalogue()
+                .verbs(includingRegular: UserDefaults.shared.bool(for: .regularVerbs),
+                       includingDerived: UserDefaults.shared.bool(for: .derivatives))
             
             for index in 0..<8 {
-                guard let verb = service.randomItem else { continue }
+                guard let verb = verbs.randomElement() else { continue }
                 entries.append(VerbEntry(date: date(at: index), state: .data(verb)))
             }
         case .favorites:

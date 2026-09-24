@@ -20,7 +20,7 @@ struct VerbsApp: App {
 
     var body: some Scene {
         WindowGroup {
-            RootView(router: router)
+            RootView()
                 .onOpenURL { url in
                     guard let host = url.host else { return }
                     
